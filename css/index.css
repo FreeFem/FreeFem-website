@@ -32,13 +32,19 @@ html, body{
 	max-height:70%;
 }
 
+#left .x3d{
+	border:none;
+}
+
 #left p{
 	color:#384560;
 	font-size:1.5em;
 }
 
 #left .slidesImages{
-	display:none;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
 }
 
 #left .slidesImages .title{
@@ -72,6 +78,10 @@ html, body{
 	outline:0;
 }
 
+#left .slidesDot::-moz-focus-inner{
+	border:0;
+}
+
 #left .active {
 	background-color: #717171;
 }
@@ -90,6 +100,10 @@ html, body{
 
 #slidesPlayPause:focus{
 	outline:0;
+}
+
+#slidesPlayPause::-moz-focus-inner{
+	border:0;
 }
 
 #leftContainer{

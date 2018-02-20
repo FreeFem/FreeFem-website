@@ -1,8 +1,11 @@
 <html>
 	<head>
+		<meta charset="UTF-8" />
 		<title>FreeFem++</title>
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
 		<script async defer src="https://buttons.github.io/buttons.js"></script>
+		<script src="http://www.x3dom.org/release/x3dom.js"></script>
+		<link rel="stylesheet" href="http://www.x3dom.org/release/x3dom.css" />
 	</head>
 	<body>
 		<div id="globalContainer">
@@ -10,39 +13,58 @@
 				<div id="leftContainer">
 					<div id="up">
 						<div class="slidesImages">
-							<img src="img/vis3d.jpg" />
-							<p class="title">
-								Title
-							</p>
-							<p class="description">
-								Description
-							</p>
-							<p class="author">
-								Author
-							</p>
+							<div>
+								<img src="img/aorte.jpg" />
+							</div>
+							<div>
+								<p class="title">
+									Title
+								</p>
+								<p class="description">
+									Description
+								</p>
+								<p class="author">
+									Author
+								</p>
+							</div>
 						</div>
 						<div class="slidesImages">
-							<img src="img/magnetostatic.png" />
-							<p class="title">
-								Magnetostatic magnet study
-							</p>
-							<p class="description">
-								Magnetic field streamlines
-							</p>
-							<p class="author">
-							</p>
+							<div>
+								<img src="img/slides/x3d.png" />
+								<x3d class="x3d">
+									<!--TODO: disable double click-->
+									<scene>
+										<navigationInfo type="examine" speed="0"></navigationInfo>
+										<inline url="x3d/Magnetostatic.x3d"></inline>
+									</scene>
+								</x3d>
+							</div>
+							<div>
+								<p class="title">
+									Magnetostatic magnet study
+								</p>
+								<p class="description">
+									Magnetic field streamlines
+								</p>
+								<p class="author">
+								</p>
+							</div>
 						</div>
 						<div class="slidesImages">
-							<img src="img/aorte.jpg" />
-							<p class="title">
-								Title
-							</p>
-							<p class="description">
-								Description
-							</p>
-							<p class="author">
-								Author
-							</p>
+							<div>
+								<img src="img/vis3d.jpg" />
+							</div>
+							<div>
+								<p class="title">
+									Title
+								</p>
+								<p class="description">
+									Description
+								</p>
+								<p class="author">
+									Author
+								</p>
+							</div>
 						</div>
 					</div>
 					<div id="down">
