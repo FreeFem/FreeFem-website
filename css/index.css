@@ -76,6 +76,22 @@ html, body{
 	background-color: #717171;
 }
 
+#slidesPlayPause{
+	height:15px;
+	width:15px;
+	margin:0px 2px;
+	border:none;
+	border-radius:50%;
+	display:inline-block;
+	background-color:white;
+	background-image:url("../img/slides/pause.png");
+	background-position:center;
+}
+
+#slidesPlayPause:focus{
+	outline:0;
+}
+
 #leftContainer{
 	display:flex;
 	height:100%;
