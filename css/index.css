@@ -1,0 +1,169 @@
+html, body{
+	font-family:Roboto, sans-serif;
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+}
+
+#globalContainer{
+	display:flex;
+	height:100%;
+	margin:0;
+	padding:0;
+}
+
+#left{
+	order:1;
+	flex-grow:1;
+	flex-basis:50%;
+	margin:0;
+	padding:0;
+	text-align:center;
+	
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:column;
+}
+
+#left img{
+	padding:10px;
+	max-width:70%;
+	max-height:70%;
+}
+
+#left p{
+	color:#384560;
+	font-size:1.5em;
+}
+
+#left .slidesImages{
+	display:none;
+}
+
+#left .slidesImages .title{
+	font-size:1.5em;
+	padding:1px;
+	margin:1px;
+}
+
+#left .slidesImages .description{
+	font-size:1em;
+	padding:1px;
+	margin:1px;
+}
+
+#left .slidesImages .author{
+	font-size:.75em;
+}
+
+#left .slidesDot {
+	height:15px;
+	width:15px;
+	margin:0 2px;
+	background-color:#bbb;
+	border:none;
+	border-radius:50%;
+	display:inline-block;
+	transition:background-color 0.6s ease;
+}
+
+#left .slidesDot:focus{
+	outline:0;
+}
+
+#left .active {
+	background-color: #717171;
+}
+
+#leftContainer{
+	display:flex;
+	height:100%;
+	margin:0;
+	padding:0;
+	flex-direction:column;
+	justify-content:space-between;
+}
+
+#up{
+	padding:50px;
+	margin:auto;
+}
+
+#down{
+	padding:50px;
+}
+
+#right{
+	background-color:#384560;
+	order:2;
+	flex-grow:1;
+	flew-basis:auto;
+	min-width:350px;
+	max-width:600px;
+	margin:0;
+	padding:0;
+}
+
+#right h1{
+	color:white;
+	padding:10px;
+	margin:0;
+	font-size:3em;
+	text-align:center;
+}
+
+#right h2{
+	color:white;
+	padding:20px;
+	margin:0;
+	font-size:1.7em;
+}
+
+#right p{
+	color:white;
+	padding-right:20px;
+	padding-left:20px;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-size:1.2em;
+	text-align:justify;
+}
+
+#github{
+	display:flex;
+	align-items:center;
+	padding-right:20px;
+	padding-left:20px;
+	justify-content:center;
+}
+
+#github p{
+	color:white;
+	font-size:1em;
+}
+
+#github a{
+	text-decoration:none;
+	color:white;
+	font-weight:bold;
+}
+
+#compatibility{
+	display:flex;
+	padding-right:20px;
+	padding-left:20px;
+	align-items:center;
+	justify-content:center;
+}
+
+#compatibility p{
+	color:white;
+	font-size:0.7em;
+}
+
+#compatibility img{
+	width:20px;
+	padding:5px;
+}
+
