@@ -32,13 +32,13 @@ a{
 }
 
 #left img{
-	padding:10px;
-	max-width:70%;
-	max-height:70%;
+	padding:20px;
+	margin:0;
 }
 
 #left .x3d{
 	border:none;
+	margin:0;
 }
 
 #left p{
@@ -122,8 +122,8 @@ a{
 }
 
 #up{
-	padding:50px;
-	margin:auto;
+	padding:0px;
+	margin:0;
 }
 
 #down{
@@ -239,20 +239,20 @@ a{
 	margin-left:20px;
 }
 
-@media (max-width:900px) {
-	/*TODO*/
-	#globalContainer{
-		flex-direction:column;
-	}
-	
-	#left{
-		order:2;
-	}
-	
-	#right{
-		order:1;
-	}
-}
+/*@media (max-width:900px) {*/
+/*	/*TODO*/*/
+/*	#globalContainer{*/
+/*		flex-direction:column;*/
+/*	}*/
+/*	*/
+/*	#left{*/
+/*		order:2;*/
+/*	}*/
+/*	*/
+/*	#right{*/
+/*		order:1;*/
+/*	}*/
+/*}*/
 
 
 
