@@ -1,11 +1,15 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
 		<title>FreeFem++</title>
+		
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" href="http://www.x3dom.org/release/x3dom.css" />
+		
 		<script async defer src="https://buttons.github.io/buttons.js"></script>
 		<script src="http://www.x3dom.org/release/x3dom.js"></script>
-		<link rel="stylesheet" href="http://www.x3dom.org/release/x3dom.css" />
 	</head>
 	<body>
 		<div id="globalContainer">
@@ -30,7 +34,7 @@
 						</div>
 						<div class="slidesImages">
 							<div>
-								<img src="img/slides/x3d.png" />
+								<img src="img/icons/x3d.png" />
 								<x3d class="x3d">
 									<!--TODO: disable double click-->
 									<scene>
@@ -88,7 +92,6 @@
 				<p>
 					FreeFem++ is written in C++ and the FreeFem++ language is a C++ idiom.
 				</p>
-				
 				<div id="github">
 					<div>
 						<p>
@@ -106,13 +109,34 @@
 						</p>
 					</div>
 					<div id="mac">
-						<img src="img/logo/apple_white.png" alt="Apple" title="Apple" />
+						<img src="img/icons/apple_white.png" alt="Apple" title="Apple" />
 					</div>
 					<div id="window">
-						<img src="img/logo/windows_white.png" alt="Windows" title="Windows" />
+						<img src="img/icons/windows_white.png" alt="Windows" title="Windows" />
 					</div>
 					<div id="linux">
-						<img src="img/logo/linux_white.png" alt="Linux" title="Linux" />
+						<img src="img/icons/linux_white.png" alt="Linux" title="Linux" />
+					</div>
+				</div>
+				<div id="cite">
+					<img src="img/icons/cite.png" alt="cite" title="Cite FreeFem++" onclick="showCite();" />
+					<div id="citetext">
+						<p>
+							If you use FreeFem++, please cite the <a href="http://hal.upmc.fr/hal-01476313" target="_blank">following reference</a> in your works:
+						</p>
+						<code>
+							@article{MR3043640,<br/>
+								<span class="spanTab"/>AUTHOR = {Hecht, F.},<br/>
+								<span class="spanTab"/>TITLE = {New development in FreeFem++},<br/>
+								<span class="spanTab"/>JOURNAL = {J. Numer. Math.},<br/>
+								<span class="spanTab"/>FJOURNAL = {Journal of Numerical Mathematics},<br/>
+								<span class="spanTab"/>VOLUME = {20}, YEAR = {2012},<br/>
+								<span class="spanTab"/>NUMBER = {3-4}, PAGES = {251--265},<br/>
+								<span class="spanTab"/>ISSN = {1570-2820},<br/>
+								<span class="spanTab"/>MRCLASS = {65Y15},<br/>
+								<span class="spanTab"/>MRNUMBER = {3043640}<br/>
+							}
+						</code>
 					</div>
 				</div>
 			</div>

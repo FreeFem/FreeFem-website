@@ -5,6 +5,12 @@ html, body{
 	padding:0;
 }
 
+a{
+	text-decoration:none;
+	color:white;
+	font-weight:bold;
+}
+
 #globalContainer{
 	display:flex;
 	height:100%;
@@ -19,7 +25,6 @@ html, body{
 	margin:0;
 	padding:0;
 	text-align:center;
-	
 	display:flex;
 	justify-content:center;
 	align-items:center;
@@ -94,8 +99,9 @@ html, body{
 	border-radius:50%;
 	display:inline-block;
 	background-color:white;
-	background-image:url("../img/slides/pause.png");
+	background-image:url("../img/icons/pause.png");
 	background-position:center;
+	opacity:0.5;
 }
 
 #slidesPlayPause:focus{
@@ -133,6 +139,7 @@ html, body{
 	max-width:600px;
 	margin:0;
 	padding:0;
+	overflow:auto;
 }
 
 #right h1{
@@ -196,4 +203,56 @@ html, body{
 	width:20px;
 	padding:5px;
 }
+
+#cite{
+	padding:20px;
+	text-align:right;
+}
+
+#cite img{
+	width:18px;
+	padding:3px;
+}
+
+#cite img:hover{
+	width:24px;
+	padding:0px;
+}
+
+#cite p{
+	padding:5px;
+	font-size:1em;
+}
+
+#cite code{
+	color:white;
+	padding:5px;
+}
+
+#citetext{
+	display:none;
+	padding:20px;
+	text-align:left;
+}
+
+.spanTab{
+	margin-left:20px;
+}
+
+@media (max-width:900px) {
+	/*TODO*/
+	#globalContainer{
+		flex-direction:column;
+	}
+	
+	#left{
+		order:2;
+	}
+	
+	#right{
+		order:1;
+	}
+}
+
+
 
