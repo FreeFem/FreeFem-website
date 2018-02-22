@@ -93,20 +93,26 @@ function resizeSlides() {
 	// to get the height of the descriptions and compute the correct size of one slide
 	var slides = document.getElementsByClassName('slidesImages');
 	for (var i = 0; i < slides.length; i++) {
-		// description height
-		var descriptionHeight = slides[i].children[1].offsetHeight;
-		// slide width & height
-		slides[i].children[0].style.maxWidth = (leftWidth) + "px";
-		slides[i].children[0].style.maxHeight = (leftHeight - descriptionHeight - downHeight) + "px";
-		// force img or x3d
-		if (slides[i].children[0].children.length === 1) {	//this is an image
+		if (slides[i].children.length == 2){	//this is an img
+			// description height
+			var descriptionHeight = slides[i].children[1].offsetHeight;
+			// slide width & height
+			slides[i].children[0].style.maxWidth = (leftWidth) + "px";
+			slides[i].children[0].style.maxHeight = (leftHeight - descriptionHeight - downHeight) + "px";
+			// force img
 			slides[i].children[0].children[0].style.maxWidth = imgRatio*(leftWidth) + "px";
 			slides[i].children[0].children[0].style.maxHeight = imgRatio*(leftHeight - descriptionHeight - downHeight) + "px";
 		}
-		else if (slides[i].children[0].children.length === 2) { //this is an x3d container
+		else if (slides[i].children.length == 3){	//this is an x3d container
+			// description height
+			var descriptionHeight = slides[i].children[2].offsetHeight;
+			// slide width & height
+			slides[i].children[1].style.maxWidth = (leftWidth) + "px";
+			slides[i].children[1].style.maxHeight = (leftHeight - descriptionHeight - downHeight) + "px";
+			// force x3d
 			var imgHeight = slides[i].children[0].children[0].offsetHeight;
-			slides[i].children[0].children[1].style.width = imgRatio*(leftWidth) + "px";
-			slides[i].children[0].children[1].style.height = imgRatio*(leftHeight - descriptionHeight - downHeight - imgHeight) + "px";
+			slides[i].children[1].children[0].style.width = imgRatio*(leftWidth) + "px";
+			slides[i].children[1].children[0].style.height = imgRatio*(leftHeight - descriptionHeight - downHeight - imgHeight) + "px";
 		}
 	}
 	// begin (or continue) show slide
