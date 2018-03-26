@@ -2,12 +2,12 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		
+
 		<title>FreeFem++</title>
-		
+
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
 		<link rel="stylesheet" href="css/x3dom.css" />
-		
+
 		<script async defer src="https://buttons.github.io/buttons.js"></script>
 		<script src="js/x3dom.js"></script>
 	</head>
@@ -15,8 +15,18 @@
 		<div id="globalContainer">
 			<div id="left">
 				<div id="leftContainer">
-					<div style="height:0;">
+					<!-- MENU -->
+					<div id="menu">
+						<ul>
+							<li><a href="#">FreeFem++ days</a></li>
+							<li><a href="https://www.ljll.math.upmc.fr/lehyaric/ffjs/15.6/ffjs.htm" target="_blank">FreeFem++ on the web</a></li>
+							<li><a href="https://ljll.math.upmc.fr/cgi-bin/mailman/listinfo/freefempp" target="_blank">Mailing list</a></li>
+							<li class="menuImage"><img src="img/icons/github2_white.png" alt="github" /></li>
+							<li class="github"><a href="https://github.com/FreeFem/FreeFem-sources" target="_blank">Sources</a></li>
+							<li class="github"><a href="https://github.com/FreeFem/FreeFem-modules" target="_blank">Modules</a></li>
+						</ul>
 					</div>
+					<!-- UP -->
 					<div id="up">
 						<div class="slidesImages">
 							<div>
@@ -38,7 +48,7 @@
 							<div>
 								<img src="img/icons/x3d.png" />
 							</div>
-							<div>
+							<div class="x3dcontainer">
 								<x3d class="x3d">
 									<!--TODO: disable double click-->
 									<scene>
@@ -75,6 +85,7 @@
 							</div>
 						</div>
 					</div>
+					<!-- DOWN -->
 					<div id="down">
 						<div>
 							<button class="slidesDot" onclick="changeSlides(1);"></button>
@@ -99,17 +110,14 @@
 				<div id="github">
 					<div>
 						<p>
-							Downloads and <a href="http://13.93.1.249/" target="_blank">documentation</a>
+							<a href="http://13.93.1.249/introduction/download/" target="_blank">Downloads</a> and <a href="http://13.93.1.249/" target="_blank">documentation</a>
 						</p>
-					</div>
-					<div>
-						<a class="github-button" href="https://github.com/freefem" data-size="large" data-show-count="true" aria-label="Follow @freefem on GitHub">FreeFem++</a>
 					</div>
 				</div>
 				<div id="compatibility">
 					<div>
 						<p>
-							Available on: 
+							Available on:
 						</p>
 					</div>
 					<div id="mac">
@@ -128,7 +136,24 @@
 						<p>
 							If you use FreeFem++, please cite the <a href="http://hal.upmc.fr/hal-01476313" target="_blank">following reference</a> in your works:
 						</p>
-						<code>
+						<div id="citeSelector">
+							<ul>
+								<li onclick="showCiteCode('APA');">APA</li>
+								<li onclick="showCiteCode('ISO690');">ISO 690</li>
+								<li onclick="showCiteCode('MLA');">MLA</li>
+								<li onclick="showCiteCode('BibTeX');">BibTeX</li>
+							</ul>
+						</div>
+						<code id="citeAPA">
+							Hecht, F. (2012). New development in FreeFem++. Journal of numerical mathematics, 20(3-4), 251-266.
+						</code>
+						<code id="citeISO690">
+							HECHT, Frédéric. New development in FreeFem++. Journal of numerical mathematics, 2012, vol. 20, no 3-4, p. 251-266.
+						</code>
+						<code id="citeMLA">
+							Hecht, Frédéric. "New development in FreeFem++." Journal of numerical mathematics 20.3-4 (2012): 251-266.
+						</code>
+						<code id="citeBibTeX">
 							@article{MR3043640,<br/>
 								<span class="spanTab"/>AUTHOR = {Hecht, F.},<br/>
 								<span class="spanTab"/>TITLE = {New development in FreeFem++},<br/>
@@ -148,6 +173,3 @@
 		<script type="application/javascript" src="js/index.js"></script>
 	</body>
 </html>
-
-
-

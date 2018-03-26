@@ -1,102 +1,168 @@
 html, body{
-	font-family:Roboto, sans-serif;
-	box-sizing:border-box;
-	margin:0;
-	padding:0;
+	font-family: Roboto, sans-serif;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+	font-weight: bold;
 }
 
 #globalContainer{
-	display:flex;
-	height:100%;
-	margin:0;
-	padding:0;
+	display: flex;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 #left{
-	display:flex;
-	order:1;
-	flex-grow:1;
-	flex-basis:50%;
-	justify-content:center;
-	align-items:center;
-	flex-direction:column;
-	margin:0;
-	padding:0;
-	text-align:center;
+	display: flex;
+	order: 1;
+	flex-grow: 1;
+	flex-basis: 50%;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	text-align: center;
 }
 
 #leftContainer{
-	display:flex;
-	flex-direction:column;
-	justify-content:space-between;
-	height:100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#menu{
+	background-color: #384560;
+	width: 100%;
+	height: 50px;
+	padding:0px;
+	margin:0px;
+	line-height: 30px;
+}
+
+#menu ul{
+	list-style-type: none;
+	margin:0;
+	padding:0;
+	line-height: 30px;
+}
+
+#menu li{
+	float:left;
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:5px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin:5px;
+	line-height: 30px;
+}
+
+#menu li:hover{
+	background-color:rgba(255, 255, 255, 0.9);
+}
+
+#menu img{
+	height: 30px;
 	margin:0;
 	padding:0;
 }
 
+.menuImage{
+	background-color: transparent !important;
+}
+
+.menuImage:hover{
+	background-color: transparent !important;
+}
+
+.github{
+	background-color: transparent !important;
+	color: white !important;
+}
+
+.github:hover{
+	background-color: transparent !important;
+}
+
 #up{
-	padding:0px;
-	margin:0;
+	padding: 0px;
+	margin: 0;
+	width: 100%;
 }
 
 .slidesImages{
-	display:flex;
-	flex-direction:column;
-	justify-content:center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .slidesImages img{
-	padding:20px;
-	margin:0;
+	padding: 20px;
+	margin: 0;
+}
+
+.x3dcontainer{
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .x3d{
-	border:none;
-	margin:0;
+	border: none;
+	margin: 0;
 }
 
 .slidesImages p{
-	color:#384560;
-	font-size:1.5em;
+	color: #384560;
+	font-size: 1.5em;
 }
 
 .slidesImages .title{
-	font-size:1.5em;
-	padding:1px;
-	margin:1px;
+	font-size: 1.5em;
+	padding: 1px;
+	margin: 1px;
 }
 
 .slidesImages .description{
-	font-size:1em;
-	padding:1px;
-	margin:1px;
+	font-size: 1em;
+	padding: 1px;
+	margin: 1px;
 }
 
 .slidesImages .author{
-	font-size:.75em;
+	font-size: .75em;
 }
 
 #down{
-	padding:50px;
+	padding: 50px;
 }
 
 .slidesDot {
-	height:15px;
-	width:15px;
-	margin:0 2px;
-	background-color:#bbb;
-	border:none;
-	border-radius:50%;
-	display:inline-block;
-	transition:background-color 0.6s ease;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border: none;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
 }
 
 .slidesDot:focus{
-	outline:0;
+	outline: 0;
 }
 
 .slidesDot::-moz-focus-inner{
-	border:0;
+	border: 0;
 }
 
 .active {
@@ -162,9 +228,7 @@ html, body{
 }
 
 #right a{
-	text-decoration:none;
 	color:white;
-	font-weight:bold;
 }
 
 #github{
@@ -219,6 +283,48 @@ html, body{
 	text-align:left;
 }
 
+#citeSelector{
+}
+
+#citeSelector ul{
+	list-style-type: none;
+}
+
+#citeSelector li{
+	float:left;
+	background-color:rgba(255, 255, 255, 0.5);
+	padding:10px;
+	margin:5px;
+}
+
+#citeSelector li:hover{
+	background-color:rgba(255, 255, 255, 0.9);
+}
+
+#citeAPA{
+	float: left;
+	display: none;
+	margin:10px;
+}
+
+#citeISO690{
+	float: left;
+	display: none;
+	margin:10px;
+}
+
+#citeMLA{
+	float: left;
+	display: none;
+	margin:10px;
+}
+
+#citeBibTeX{
+	float: left;
+	display: none;
+	margin:10px;
+}
+
 .spanTab{
 	margin-left:20px;
 }
@@ -229,14 +335,14 @@ html, body{
 		width:100%;
 		height:200%;
 	}
-	
+
 	#left{
 		order:2;
 		width:100%;
 		height:50%;
 		max-width:700px;
 	}
-	
+
 	#right{
 		order:1;
 		width:100%;
@@ -244,6 +350,3 @@ html, body{
 		max-width:700px;
 	}
 }
-
-
-

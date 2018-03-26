@@ -46,7 +46,7 @@ function changeSlides(i) {
 //activate play/pause
 function playPause() {
 	var button = document.getElementById('slidesPlayPause');
-	
+
 	if (play === 1) {
 		button.style.backgroundImage = 'url("img/icons/play.png")';
 		play = 0;
@@ -75,6 +75,45 @@ function showCite() {
 	}
 }
 
+function showCiteCode(Code) {
+	var APA = document.getElementById("citeAPA");
+	var ISO690 = document.getElementById("citeISO690");
+	var MLA = document.getElementById("citeMLA");
+	var BibTeX = document.getElementById("citeBibTeX");
+
+	switch (Code) {
+		case 'APA':
+			APA.style.display = 'block';
+			ISO690.style.display = 'none';
+			MLA.style.display = 'none';
+			BibTeX.style.display = 'none';
+			break;
+		case 'ISO690':
+			APA.style.display = 'none';
+			ISO690.style.display = 'block';
+			MLA.style.display = 'none';
+			BibTeX.style.display = 'none';
+			break;
+		case 'MLA':
+			APA.style.display = 'none';
+			ISO690.style.display = 'none';
+			MLA.style.display = 'block';
+			BibTeX.style.display = 'none';
+			break;
+		case 'BibTeX':
+			APA.style.display = 'none';
+			ISO690.style.display = 'none';
+			MLA.style.display = 'none';
+			BibTeX.style.display = 'block';
+			break;
+		default:
+			APA.style.display = 'none';
+			ISO690.style.display = 'none';
+			MLA.style.display = 'none';
+			BibTeX.style.display = 'none';
+	}
+}
+
 // Resize
 //resize slides
 function resizeSlides() {
@@ -85,6 +124,9 @@ function resizeSlides() {
 	var left = document.getElementById('left');
 	var leftWidth = left.offsetWidth;
 	var leftHeight = left.offsetHeight;
+	// get the menu height
+	var menu = document.getElementById('menu');
+	var menuHeight = menu.offsetHeight;
 	// get the down height
 	var down = document.getElementById('down');
 	var downHeight = down.offsetHeight;
@@ -98,21 +140,21 @@ function resizeSlides() {
 			var descriptionHeight = slides[i].children[1].offsetHeight;
 			// slide width & height
 			slides[i].children[0].style.maxWidth = (leftWidth) + "px";
-			slides[i].children[0].style.maxHeight = (leftHeight - descriptionHeight - downHeight) + "px";
+			slides[i].children[0].style.maxHeight = (leftHeight - descriptionHeight - downHeight - menuHeight) + "px";
 			// force img
 			slides[i].children[0].children[0].style.maxWidth = imgRatio*(leftWidth) + "px";
-			slides[i].children[0].children[0].style.maxHeight = imgRatio*(leftHeight - descriptionHeight - downHeight) + "px";
+			slides[i].children[0].children[0].style.maxHeight = imgRatio*(leftHeight - descriptionHeight - downHeight - menuHeight) + "px";
 		}
 		else if (slides[i].children.length == 3){	//this is an x3d container
 			// description height
 			var descriptionHeight = slides[i].children[2].offsetHeight;
 			// slide width & height
 			slides[i].children[1].style.maxWidth = (leftWidth) + "px";
-			slides[i].children[1].style.maxHeight = (leftHeight - descriptionHeight - downHeight) + "px";
+			slides[i].children[1].style.maxHeight = (leftHeight - descriptionHeight - downHeight - menuHeight) + "px";
 			// force x3d
 			var imgHeight = slides[i].children[0].children[0].offsetHeight;
 			slides[i].children[1].children[0].style.width = imgRatio*(leftWidth) + "px";
-			slides[i].children[1].children[0].style.height = imgRatio*(leftHeight - descriptionHeight - downHeight - imgHeight) + "px";
+			slides[i].children[1].children[0].style.height = imgRatio*(leftHeight - descriptionHeight - downHeight - imgHeight - menuHeight) + "px";
 		}
 	}
 	// begin (or continue) show slide
@@ -121,11 +163,6 @@ function resizeSlides() {
 	showOneSlide(0);
 }
 
-
-
 // Start
 resizeSlides();
 window.onresize = resizeSlides;
-
-
-
