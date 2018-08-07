@@ -1,175 +1,264 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<title>FreeFem++</title>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./dist/css/froala_blocks.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
 
-		<link rel="stylesheet" type="text/css" href="css/index.css" />
-		<link rel="stylesheet" href="css/x3dom.css" />
-
-		<script async defer src="https://buttons.github.io/buttons.js"></script>
-		<script src="js/x3dom.js"></script>
-	</head>
-	<body>
-		<div id="globalContainer">
-			<div id="left">
-				<div id="leftContainer">
-					<!-- MENU -->
-					<div id="menu">
-						<ul>
-							<li><a href="#">FreeFem++ days</a></li>
-							<li><a href="https://www.ljll.math.upmc.fr/lehyaric/ffjs/15.6/ffjs.htm" target="_blank">FreeFem++ on the web</a></li>
-							<li><a href="https://ljll.math.upmc.fr/cgi-bin/mailman/listinfo/freefempp" target="_blank">Mailing list</a></li>
-							<li class="menuImage"><img src="img/icons/github2_white.png" alt="github" /></li>
-							<li class="github"><a href="https://github.com/FreeFem/FreeFem-sources" target="_blank">Sources</a></li>
-							<li class="github"><a href="https://github.com/FreeFem/FreeFem-modules" target="_blank">Modules</a></li>
-						</ul>
-					</div>
-					<!-- UP -->
-					<div id="up">
-						<div class="slidesImages">
-							<div>
-								<img src="img/aorte.jpg" />
-							</div>
-							<div>
-								<p class="title">
-									Title
-								</p>
-								<p class="description">
-									Description
-								</p>
-								<p class="author">
-									Author
-								</p>
-							</div>
-						</div>
-						<div class="slidesImages">
-							<div>
-								<img src="img/icons/x3d.png" />
-							</div>
-							<div class="x3dcontainer">
-								<x3d class="x3d">
-									<!--TODO: disable double click-->
-									<scene>
-										<navigationInfo type="examine" speed="0"></navigationInfo>
-										<inline url="x3d/Magnetostatic.x3d"></inline>
-									</scene>
-								</x3d>
-							</div>
-							<div>
-								<p class="title">
-									Magnetostatic magnet study
-								</p>
-								<p class="description">
-									Magnetic field streamlines
-								</p>
-								<p class="author">
-								</p>
-							</div>
-						</div>
-						<div class="slidesImages">
-							<div>
-								<img src="img/vis3d.jpg" />
-							</div>
-							<div>
-								<p class="title">
-									Title
-								</p>
-								<p class="description">
-									Description
-								</p>
-								<p class="author">
-									Author
-								</p>
-							</div>
-						</div>
-					</div>
-					<!-- DOWN -->
-					<div id="down">
-						<div>
-							<button class="slidesDot" onclick="changeSlides(1);"></button>
-							<button class="slidesDot" onclick="changeSlides(2);"></button>
-							<button class="slidesDot" onclick="changeSlides(3);"></button>
-							<button id="slidesPlayPause" onclick="playPause();"></button>
-						</div>
-					</div>
+<body>
+	<header data-block-type="headers" data-id="16" class="">
+		<div class="container">
+			<nav class="navbar navbar-expand-md">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav0" aria-controls="navbarNav0" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+				<div class="collapse navbar-collapse" id="navbarNav0">
+					<ul class="navbar-nav mr-auto ml-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="https://www.freefem.org">Features <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="https://doc.freefem.org">Documentation</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/FreeFem/FreeFem-sources">Source Code</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="https://www.freefem.org/changelog">Changelog</a>
+						</li>
+					</ul>
 				</div>
-			</div>
-			<div id="right">
-				<h1>FreeFem++</h1>
-				<h2>
-					A partial differential equation solver for non-linear multi-physics systems in 2D and 3D
-				</h2>
-				<p>
-					Problems involving <strong>partial differential equations</strong> from several branches of physics such as fluid-structure interactions require interpolations of data on several meshes and their manipulation within one program.<br/>FreeFem++ includes a fast interpolation algorithm and a language for the manipulation of data on multiple meshes.
-				</p>
-				<p>
-					FreeFem++ is written in C++ and the FreeFem++ language is a C++ idiom.
-				</p>
-				<div id="github">
-					<div>
-						<p>
-							<a href="http://13.93.1.249/introduction/download/" target="_blank">Downloads</a> and <a href="http://13.93.1.249/" target="_blank">documentation</a>
+			</nav>
+		</div>
+	</header>
+	<section class="fdb-block pb-0" style="background-image: url(./disc.png)" data-block-type="call_to_action" data-id="7" draggable="true">
+		<div class="container">
+			<div class="row justify-content-end">
+				<div class="col-12 col-md-8 col-lg-6 text-center">
+					<div class="fdb-box br-0">
+						<h1><img alt="image" src="./dist/imgs/freefem_logo.png" height="80"></h1>
+						<p class="text-h3">
+							Version 3.61 is now available.
 						</p>
-					</div>
-				</div>
-				<div id="compatibility">
-					<div>
-						<p>
-							Available on:
+						<p class="mt-4">
+							<a class="btn" href="https://www.froala.com">Download</a>
 						</p>
-					</div>
-					<div id="mac">
-						<img src="img/icons/apple_white.png" alt="Apple" title="Apple" />
-					</div>
-					<div id="window">
-						<img src="img/icons/windows_white.png" alt="Windows" title="Windows" />
-					</div>
-					<div id="linux">
-						<img src="img/icons/linux_white.png" alt="Linux" title="Linux" />
-					</div>
-				</div>
-				<div id="cite">
-					<img src="img/icons/cite.png" alt="cite" title="Cite FreeFem++" onclick="showCite();" />
-					<div id="citetext">
-						<p>
-							If you use FreeFem++, please cite the <a href="http://hal.upmc.fr/hal-01476313" target="_blank">following reference</a> in your works:
-						</p>
-						<div id="citeSelector">
-							<ul>
-								<li onclick="showCiteCode('APA');">APA</li>
-								<li onclick="showCiteCode('ISO690');">ISO 690</li>
-								<li onclick="showCiteCode('MLA');">MLA</li>
-								<li onclick="showCiteCode('BibTeX');">BibTeX</li>
-							</ul>
-						</div>
-						<code id="citeAPA">
-							Hecht, F. (2012). New development in FreeFem++. Journal of numerical mathematics, 20(3-4), 251-266.
-						</code>
-						<code id="citeISO690">
-							HECHT, Frédéric. New development in FreeFem++. Journal of numerical mathematics, 2012, vol. 20, no 3-4, p. 251-266.
-						</code>
-						<code id="citeMLA">
-							Hecht, Frédéric. "New development in FreeFem++." Journal of numerical mathematics 20.3-4 (2012): 251-266.
-						</code>
-						<code id="citeBibTeX">
-							@article{MR3043640,<br/>
-								<span class="spanTab"/>AUTHOR = {Hecht, F.},<br/>
-								<span class="spanTab"/>TITLE = {New development in FreeFem++},<br/>
-								<span class="spanTab"/>JOURNAL = {J. Numer. Math.},<br/>
-								<span class="spanTab"/>FJOURNAL = {Journal of Numerical Mathematics},<br/>
-								<span class="spanTab"/>VOLUME = {20}, YEAR = {2012},<br/>
-								<span class="spanTab"/>NUMBER = {3-4}, PAGES = {251--265},<br/>
-								<span class="spanTab"/>ISSN = {1570-2820},<br/>
-								<span class="spanTab"/>MRCLASS = {65Y15},<br/>
-								<span class="spanTab"/>MRNUMBER = {3043640}<br/>
-							}
-						</code>
 					</div>
 				</div>
 			</div>
 		</div>
-		<script type="application/javascript" src="js/index.js"></script>
-	</body>
+	</section>
+	<section class="fdb-block" data-block-type="contents" data-id="18" draggable="true">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col col-md-8 text-center">
+					<h2>A blazing fast partial differential equation solver</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="fdb-block" data-block-type="contents" data-id="20" draggable="true">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-6 mb-4 mb-md-0">
+					<img alt="image" class="img-fluid" src="./dist/imgs/simulation_poisson_3d.jpg" alt="Poisson's equation 3D - Iso-surfaces of the solution">
+				</div>
+				<div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
+					<h1>For non-linear multi-physics in 2D and 3D</h1>
+					<p class="text-h3">FreeFem++ offers a fast interpolation algorithm and a language for the manipulation of data on multiple meshes.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="fdb-block" data-block-type="features" data-id="17" draggable="true">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-12 col-sm-6 col-md-3">
+					<img alt="image" class="fdb-icon" src="./dist/imgs/logo_cpp.svg">
+					<h3><strong>Harnessing the speed of C++</strong></h3>
+					<p class="mt-3"><a class="btn" href="https://www.froala.com">Learn</a></p>
+				</div>
+
+				<div class="col-12 col-sm-6 col-md-3 pt-5 pt-sm-0">
+					<img alt="image" class="fdb-icon" src="./dist/imgs/img_round.svg">
+					<h3><strong>Far far away, behind the word mountains</strong></h3>
+					<p class="mt-3"><a class="btn" href="https://www.froala.com">Learn</a></p>
+				</div>
+
+				<div class="col-12 col-sm-6 col-md-3 pt-5 pt-md-0">
+					<img alt="image" class="fdb-icon" src="./dist/imgs/img_round.svg">
+					<h3><strong>The Big Oxmox advised her not to do so</strong></h3>
+					<p class="mt-3"><a class="btn" href="https://www.froala.com">Learn</a></p>
+				</div>
+
+				<div class="col-12 col-sm-6 col-md-3 pt-5 pt-md-0">
+					<img alt="image" class="fdb-icon" src="./dist/imgs/img_round.svg">
+					<h3><strong>The copy warned the Little Blind Text</strong></h3>
+					<p class="mt-3"><a class="btn" href="https://www.froala.com">Learn</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="fdb-block" data-block-type="contents" data-id="21" draggable="true">
+		<div class="col-fill-left" style="background-image: url(./dist/imgs/bg_c_1.svg)">
+		</div>
+
+		<div class="container">
+			<div class="row justify-content-end">
+				<div class="col-12 col-md-5 text-center">
+					<h1>Froala Blocks</h1>
+					<p class="text-h3">When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove</p>
+
+					<p class="mt-4"><a href="https://www.froala.com">Learn More &gt;</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="fdb-block" data-block-type="contents" data-id="23" draggable="true">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-12">
+					<h1>Froala Design Blocks</h1>
+					<p class="text-h2"><em>Right at the coast of the Semantics, a large language ocean.</em></p>
+				</div>
+			</div>
+
+			<div class="row text-center pt-3 pt-xl-5">
+				<div class="col-12 col-sm-10 m-auto m-md-0 col-md-6">
+					<img alt="image" class="img-fluid" src="./dist/imgs/colors_wide_1.jpg">
+					<p class="text-h3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+				</div>
+
+				<div class="col-12 col-sm-10 m-auto m-md-0 col-md-6 pt-5 pt-md-0">
+					<img alt="image" class="img-fluid" src="./dist/imgs/colors_wide_2.jpg">
+					<p class="text-h3">Right at the coast of the Semantics, a large language ocean. A small river named Duden.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="fdb-block" data-block-type="contents" data-id="22" draggable="true">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-6 col-lg-3">
+					<img alt="image" class="img-fluid" src="./dist/imgs/colors_wide_1.jpg">
+				</div>
+
+				<div class="col-6 col-lg-3">
+					<img alt="image" class="img-fluid" src="./dist/imgs/colors_wide_2.jpg">
+				</div>
+
+				<div class="col-12 col-lg-6 pt-5 pt-lg-0">
+					<p class="text-h3 text-left">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+					<p class="text-h3 text-left">Right at the coast of the Semantics, a large language ocean. A small river named Duden. <a href="https://www.froala.com">[Read More]</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="fdb-block" data-block-type="contents" data-id="24" draggable="true">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-12 col-lg-6 col-xl-5">
+					<h1>A full documentation</h1>
+					<p class="text-h3 mb-0">Good documentation matters. Have a look at the examples, the language references, and the new tutorials.</p>
+					<p class="text-h3 mb-5">Users contributions are always welcome, feel free to submit a GitHub PR.</p>
+
+					<p><strong>Works in every browser:</strong></p>
+					<p>
+						<img alt="image" class="fdb-icon" src="./dist/imgs/img_square_1.svg">
+						<img alt="image" class="fdb-icon ml-2" src="./dist/imgs/img_square_2.svg">
+						<img alt="image" class="fdb-icon ml-2" src="./dist/imgs/img_square_3.svg">
+						<img alt="image" class="fdb-icon ml-2" src="./dist/imgs/img_square_4.svg"></p>
+				</div>
+				<div class="col-12 col-md-8 m-auto ml-lg-auto mr-lg-0 col-lg-6 pt-5 pt-lg-0">
+					<img alt="image" class="img-fluid" src="./dist/imgs/colors_wide_1.jpg">
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="fdb-block" data-block-type="testimonials" data-id="25" draggable="true">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-12">
+					<h2><strong>You are in good company</strong></h2>
+
+					<div class="mt-5 justify-content-center">
+						<img alt="image" height="60" class="ml-3 mr-3 mb-2 mt-2" src="./dist/imgs/customers/logo_INRIA_EN.svg">
+						<img alt="image" height="60" class="ml-3 mr-3 mb-2 mt-2" src="./dist/imgs/customers/logo_CNRS.svg">
+						<img alt="image" height="60" class="ml-3 mr-3 mb-2 mt-2" src="./dist/imgs/customers/logo_Sorbonne.svg">
+						<img alt="image" height="60" class="ml-3 mr-3 mb-2 mt-2" src="./dist/imgs/customers/logo_Diderot.png">
+						<!--
+						<img alt="image" height="30" class="ml-3 mr-3 mb-2 mt-2" src="./dist/imgs/customers/orange.svg">
+						<img alt="image" height="30" class="ml-3 mr-3 mb-2 mt-2" src="./dist/imgs/customers/salesforce.svg">
+						-->
+					</div>
+					<!--
+					<div class="mt-2 mt-md-5 justify-content-center">
+						<img alt="image" height="60" class="ml-3 mr-3 mb-2 mt-2" src="./dist/imgs/customers/logo_Michelin_group_EN.svg">
+						<img alt="image" height="30" class="ml-3 mr-3 mb-2 mt-2" src="./dist/imgs/customers/apple.svg">
+						<img alt="image" height="30" class="ml-3 mr-3 mb-2 mt-2" src="./dist/imgs/customers/ibm.svg">
+						<img alt="image" height="30" class="ml-3 mr-3 mb-2 mt-2" src="./dist/imgs/customers/intel.svg">
+						<img alt="image" height="30" class="ml-3 mr-3 mb-2 mt-2" src="./dist/imgs/customers/panasonic.svg">
+					</div>
+					-->
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="fdb-block" style="background-image: url(./dist/imgs/bg_2.svg)" data-block-type="forms" data-id="4" draggable="true">
+		<div class="container">
+			<div class="fdb-box">
+				<div class="row justify-content-center align-items-center">
+					<div class="col-12 col-lg-6">
+						<h2>Never miss an update</h2>
+						<p class="text-h3">We will send you an email when a new major version is released.</p>
+					</div>
+					<div class="col-12 col-lg-5 text-center">
+						<div class="input-group mt-4">
+							<input type="text" class="form-control" placeholder="Enter your email address">
+							<span class="input-group-btn">
+                <button class="btn" type="button">Submit</button>
+              </span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="fdb-block footer-small" data-block-type="footers" data-id="6">
+		<div class="container">
+			<div class="row align-items-center text-center">
+				<div class="col-12 col-lg-4 text-lg-left">
+					Coded with <i class="fas fa-heart"></i> since <a href="https://en.wikipedia.org/wiki/FreeFem%2B%2B">1987</a>
+				</div>
+
+				<div class="col-12 col-lg-4 mt-4 mt-lg-0">
+					<img alt="image" src="./dist/imgs/freefem_logo.png" height="40">
+				</div>
+
+				<div class="col-12 col-lg-4 text-lg-right mt-4 mt-lg-0">
+					<ul class="nav justify-content-lg-end justify-content-center">
+						<li class="nav-item">
+							<a class="nav-link" href="https://www.froala.com">Privacy</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="https://www.froala.com">Terms</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="https://www.froala.com">About</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+</body>
+
 </html>
