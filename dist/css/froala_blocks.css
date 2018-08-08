@@ -6,7 +6,12 @@
 	color: #f783ac;
 }
 
+.fa-download {
+	margin-right: .8em;
+}
+
 .btn {
+	font-weight: 500 !important;
     padding: 9px 26px;
     background-color: #528bff;
     color: #FFF;
