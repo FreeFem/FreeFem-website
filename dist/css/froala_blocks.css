@@ -2,6 +2,10 @@
 	margin-bottom: 10px;
 }
 
+.img-fluid {
+	max-height: 380px;
+}
+
 .fa-heart {
 	color: #f783ac;
 }
