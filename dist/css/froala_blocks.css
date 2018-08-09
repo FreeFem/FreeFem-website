@@ -260,6 +260,11 @@
     width: 60px;
 }
 
+img.fdb-icon-small {
+    width: auto;
+    width: 40px;
+}
+
 .fdb-block img.fdb-icon-round {
     width: auto;
     width: 60px;
