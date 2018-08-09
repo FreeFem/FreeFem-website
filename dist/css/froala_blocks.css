@@ -2,6 +2,10 @@
 	margin-bottom: 10px;
 }
 
+.fdb-block h3 {
+	line-height: 1.5;
+}
+
 .img-fluid {
 	max-height: 380px;
 }
