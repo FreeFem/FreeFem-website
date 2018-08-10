@@ -3,7 +3,16 @@
 }
 
 .h3-link {
+	border-left: 0.5px solid #777;
     color: #777;
+}
+
+#ffdays:hover {
+    color: rgb(231,110,0);
+}
+
+#ffdays {
+    color: rgb(232,53,0);
 }
 
 .fdb-block h3 {
