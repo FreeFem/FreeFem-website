@@ -43,14 +43,21 @@
 					<div class="fdb-box br-0">
 						<h1><img alt="FreeFem++ Logo" src="./dist/imgs/freefem_logo.png" height="40"></h1>
 						<p class="text-h3" id="releaseVersion"></p>
-						<p class="mt-4">
-							<a class="btn" href="https://github.com/FreeFem/FreeFem-sources/releases"><i class="fas fa-download"></i>Download</a>
-						</p>
-						<p><strong>Works in every OS:</strong></p>
-						<p>
+						<!--<p class="text-h3">
+							<span style="top: 5px;position: relative;">Works in every OS:</span>
 							<img alt="apple" class="fdb-icon-small" id="apple" src="./dist/icons/apple_grey.png">
 							<img alt="linux" class="fdb-icon-small ml-2" id="linux" src="./dist/icons/linux_color.png">
 							<img alt="windows" class="fdb-icon-small ml-2" id="windows" src="./dist/icons/windows_blue.png">
+						</p>-->
+						<p class="mt-4">
+							<a class="btn" href="https://github.com/FreeFem/FreeFem-sources/releases">
+								<i class="fab fa-apple"></i>
+								<i class="fab fa-linux"></i>
+								<i class="fab fa-windows"></i>
+								<i class="" style="padding-right: 11px; border-right: 1px solid #fff; margin-right: 12px;"></i>
+								<!--<i class="fas fa-download">--></i>
+								Download
+							</a>
 						</p>
 					</div>
 				</div>
@@ -269,7 +276,7 @@
     		}
   		})
   		.then(data => {
-    		document.getElementById("releaseVersion").innerHTML = "Version " + data.tag_name + " is now available (LGPL)"
+    		document.getElementById("releaseVersion").innerHTML = "Version " + data.tag_name + " is now available (LGPL) on all platforms"
   		})
   		.catch(error => document.getElementById("releaseVersion").innerHTML = "Grab the latest version (LGPL)");
 	</script>
