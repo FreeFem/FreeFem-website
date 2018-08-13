@@ -6,6 +6,7 @@
 
 .text-justify {
 	text-align: justify;
+	text-justify: inter-word;
 }
 
 #calendar-right-pane {
