@@ -4,6 +4,10 @@
 	border-radius: 10px 0 0 10px;
 }
 
+.text-justify {
+	text-align: justify;
+}
+
 #calendar-right-pane {
 	background-color: white;
 	border-radius: 0 10px 10px 0;
