@@ -1,3 +1,14 @@
+#calendar-left-pane {
+	background-color: #43cc62;
+	color: white;
+	border-radius: 10px 0 0 10px;
+}
+
+#calendar-right-pane {
+	background-color: white;
+	border-radius: 0 10px 10px 0;
+}
+
 .black-style {
 	background-color: #343233 !important;
 	color: #e4e4e4 !important;
