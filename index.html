@@ -276,7 +276,7 @@
     		}
   		})
   		.then(data => {
-    		document.getElementById("releaseVersion").innerHTML = "Version " + data.tag_name + " is now available (LGPL) on all platforms"
+    		document.getElementById("releaseVersion").innerHTML = "Version " + data.tag_name + " is now available on all platforms (LGPL)"
   		})
   		.catch(error => document.getElementById("releaseVersion").innerHTML = "Grab the latest version (LGPL)");
 	</script>
