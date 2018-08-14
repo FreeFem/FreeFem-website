@@ -2,13 +2,14 @@ th {
 	white-space: nowrap;
 }
 
-
-
+.table td, .table th {
+	border: 1px solid #dee2e6;
+}
 
 #calendar-left-pane {
 	background-color: #43cc62;
 	color: white;
-	border-radius: 10px 0 0 10px;
+	padding-top: 3.9em;
 }
 
 .text-justify {
@@ -18,7 +19,6 @@ th {
 
 #calendar-right-pane {
 	background-color: white;
-	border-radius: 0 10px 10px 0;
 }
 
 .black-style {
