@@ -59,6 +59,29 @@ th {
 	background-color: white;
 }
 
+#laplacianCode {
+	display: none;
+}
+
+#laplacianCode > button {
+	position: relative;
+	background: none;
+	border: none;
+}
+
+#laplacianCode > pre {
+	max-height: 380px;
+	margin: 0;
+	padding: 0;
+}
+
+#laplacianCode > pre > code {
+	max-height: 380px;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+
 .fa-heart {
 	color: #f783ac;
 }
