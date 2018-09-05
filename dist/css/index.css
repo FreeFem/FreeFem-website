@@ -63,6 +63,12 @@ th {
 	position: absolute;
 	z-index: 10;
 	right:30px;
+	background: none;
+	border: none;
+}
+
+#laplacian button:focus {
+	outline: 0;
 }
 
 #laplacianCode {
