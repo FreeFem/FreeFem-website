@@ -1,5 +1,5 @@
 # [FreeFem++ website](https://freefem.github.io/FreeFem-website/)
 
-# Do you use FreeFem++
+# Do you use FreeFem++ ?
 
-You can append your logo in the "They use FreeFem++" section using a pull request
+See the [CONTRIBUTING](CONTRIBUTING.md) file to see how to show your love for FreeFem++

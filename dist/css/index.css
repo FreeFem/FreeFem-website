@@ -10,7 +10,7 @@ th {
 	border: 1px solid #dee2e6;
 }
 
-#calendar-left-pane {
+.calendar-left-pane {
 	background-color: #43cc62;
 	color: white;
 	padding-top: 3.9em;
@@ -21,7 +21,7 @@ th {
 	text-justify: inter-word;
 }
 
-#calendar-right-pane {
+.calendar-right-pane {
 	background-color: white;
 }
 
