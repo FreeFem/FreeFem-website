@@ -5,11 +5,10 @@ func ue = 2.*x*x + 3.*y*y + 4.*z*z + 5.*x*y + 6.*x*z + 1.;
 real f = -18.;
 
 // Mesh
-mesh3 Th3 = readmesh3("Sphere.mesh");
-plot(Th3);
+mesh3 Th = readmesh3("Sphere.mesh");
 
 // Fespace
-fespace Vh(Th3, P23d);
+fespace Vh(Th, P23d);
 Vh u, v;
 
 // Macro
@@ -17,10 +16,10 @@ macro Grad3(u) [dx(u), dy(u), dz(u)] //
 
 // Problem
 problem Lap3d (u, v, solver=CG)
-    = int3d(Th3)(
+    = int3d(Th)(
           Grad3(v)' * Grad3(u)
     )
-    - int3d(Th3)(
+    - int3d(Th)(
           f * v
     )
     + on(0, 1, u=ue)
@@ -36,11 +35,11 @@ plot(u, wait=true);
 // Save
 load "iovtk"
 {
-	fespace PVh(Th3, P1);
+	fespace PVh(Th, P1);
 	PVh uu = u;
 	
 	string DataName = "u";
 	int[int] Order = [1];
 	
-	savevtk("Result.vtu", Th3, uu, dataname=DataName, order=Order);
+	savevtk("Result.vtu", Th, uu, dataname=DataName, order=Order);
 }

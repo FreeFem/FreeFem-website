@@ -6,7 +6,7 @@
 	<link rel="shortcut icon" href="./dist/imgs/favicon.png" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="Description" CONTENT="FreeFem++ homepage - A free and open source software to solve partial differential equations (PDE) using the Finite Element Method (FEM)">
-	<link rel="stylesheet" href="./dist/css/froala_blocks.css">
+	<link rel="stylesheet" href="./dist/css/index.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
@@ -68,13 +68,18 @@
 	<section class="fdb-block" data-block-type="contents" data-id="20" draggable="false">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-12 col-md-6 mb-4 mb-md-0">
-					<video id="laplacianVideo" class="img-fluid" playsinline autoplay muted loop onmouseover="showCode(this.id);">
+				<div id="laplacian" class="col-12 col-md-6 mb-4 mb-md-0">
+					<button type="button" onclick="laplacianSwitch();">
+						<img src="dist/imgs/switch.svg" alt=switch" title="switch" />
+					</button>
+					<button type="button" onclick="laplacianDownload();" style="top:40px;">
+						<img src="dist/imgs/download.svg" alt=switch" title="switch" />
+					</button>
+					<video id="laplacianVideo" class="img-fluid" playsinline autoplay muted loop>
 						<source src="dist/vids/sphere.webm" type="video/webm" />
 						<img class="img-fluid" src="./dist/imgs/simulation_poisson_3d.jpg" alt="Poisson's equation 3D - Iso-surfaces of the solution">
 					</video>
-					<div id="laplacianCode" onmouseout="showImage(this.id);">
-						<button onclick="copyCode()"><img alt="copy" src="dist/icons/copy.svg" /></button>
+					<div id="laplacianCode">
 						<pre><code>load "msh3"
 
 // Parameters
@@ -82,11 +87,11 @@ func ue = 2.*x*x + 3.*y*y + 4.*z*z + 5.*x*y + 6.*x*z + 1.;
 real f = -18.;
 
 // Mesh
-mesh3 Th3 = readmesh3("Sphere.mesh");
-plot(Th3);
+mesh3 Th = readmesh3("Sphere.mesh");
+int[int] Wall = [1];
 
 // Fespace
-fespace Vh(Th3, P23d);
+fespace Vh(Th, P23d);
 Vh u, v;
 
 // Macro
@@ -94,13 +99,13 @@ macro Grad3(u) [dx(u), dy(u), dz(u)] //
 
 // Problem
 problem Lap3d (u, v, solver=CG)
-    = int3d(Th3)(
+    = int3d(Th)(
           Grad3(v)' * Grad3(u)
     )
-    - int3d(Th3)(
+    - int3d(Th)(
           f * v
     )
-    + on(0, 1, u=ue)
+    + on(Wall, u=ue)
     ;
 
 // Solve
@@ -113,62 +118,14 @@ plot(u, wait=true);
 // Save
 load "iovtk"
 {
-	fespace PVh(Th3, P1);
+	fespace PVh(Th, P1);
 	PVh uu = u;
 
 	string DataName = "u";
 	int[int] Order = [1];
 
-	savevtk("Result.vtu", Th3, uu, dataname=DataName, order=Order);
+	savevtk("Result.vtu", Th, uu, dataname=DataName, order=Order);
 }</code></pre>
-<!-- <p style="display:none;">
-	load "msh3"
-
-// Parameters
-func ue = 2.*x*x + 3.*y*y + 4.*z*z + 5.*x*y + 6.*x*z + 1.;
-real f = -18.;
-
-// Mesh
-mesh3 Th3 = readmesh3("Sphere.mesh");
-plot(Th3);
-
-// Fespace
-fespace Vh(Th3, P23d);
-Vh u, v;
-
-// Macro
-macro Grad3(u) [dx(u), dy(u), dz(u)] //
-
-// Problem
-problem Lap3d (u, v, solver=CG)
-= int3d(Th3)(
-Grad3(v)' * Grad3(u)
-)
-- int3d(Th3)(
-f * v
-)
-+ on(0, 1, u=ue)
-;
-
-// Solve
-Lap3d;
-cout << "u min: " << u[]. min << " - max: " << u[].max << endl;
-
-// Plot
-plot(u, wait=true);
-
-// Save
-load "iovtk"
-{
-fespace PVh(Th3, P1);
-PVh uu = u;
-
-string DataName = "u";
-int[int] Order = [1];
-
-savevtk("Result.vtu", Th3, uu, dataname=DataName, order=Order);
-}
-</p> -->
 					</div>
 				</div>
 				<div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
@@ -199,7 +156,6 @@ savevtk("Result.vtu", Th3, uu, dataname=DataName, order=Order);
 				<div class="col-12 col-sm-6 col-md-3 pt-5 pt-md-0">
 					<img alt="Icons made by www.freepik.com from www.flaticon.com is licensed by CC 3.0 BY" class="fdb-icon" src="./dist/imgs/logo_gear.png">
 					<h3>Compatible with the best mesh and vizualization software : <a href="http://www.gmsh.info">Gmsh</a>, <a href="https://www.mmgtools.org">Mmg3d</a> and <a href="https://www.paraview.org">ParaView</a>.</h3>
-					<!--<p class="mt-3"><a class="btn" href="https://www.froala.com">Learn</a></p>-->
 				</div>
 
 			</div>
@@ -352,238 +308,30 @@ savevtk("Result.vtu", Th3, uu, dataname=DataName, order=Order);
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-	<!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> -->
-	<script>
-		fetch('https://api.github.com/repos/freefem/FreeFem-sources/releases/latest')
-		.then(response => {
-    		if (response.ok) {
-      			return response.json()
-    		} else {
-      			return Promise.reject('something went wrong!')
-    		}
-  		})
-  		.then(data => {
-    		document.getElementById("releaseVersion").innerHTML = "Version " + data.tag_name + " is now available on all platforms (LGPL)"
-  		})
-  		.catch(error => document.getElementById("releaseVersion").innerHTML = "Grab the latest version (LGPL)");
-	</script>
-	<script>
-		function showCode(elementId) {
-			var img = document.getElementById(elementId);
-			var code = document.getElementById('laplacianCode');
+	<script src="utils/index.js"></script>
+		
+<!--	<script>-->
+<!--		function showCode(elementId) {-->
+<!--			var img = document.getElementById(elementId);-->
+<!--			var code = document.getElementById('laplacianCode');-->
 
-			var imgHeight = img.clientHeight;
-			img.style.display = 'none';
+<!--			var imgHeight = img.clientHeight;-->
+<!--			img.style.display = 'none';-->
 
-			code.style.maxHeight = imgHeight + 'px';
-			code.style.display = 'block';
-		}
+<!--			code.style.maxHeight = imgHeight + 'px';-->
+<!--			code.style.display = 'block';-->
+<!--		}-->
 
-		function showImage(elementId) {
-			var code = document.getElementById(elementId);
-			var img = document.getElementById('laplacianVideo');
+<!--		function showImage(elementId) {-->
+<!--			var code = document.getElementById(elementId);-->
+<!--			var img = document.getElementById('laplacianVideo');-->
 
-			code.style.display = 'none';
+<!--			code.style.display = 'none';-->
 
-			img.style.display = 'block';
-		}
-	</script>
-	<!-- <script>
-		function copyCode() {
-			var code = document.getElementById("laplacianCode").children[2];
-			console.log(code);
-			code[0].select();
-			document.execCommand("copy");
-		}
-	</script> -->
-	<script>
-		codeColor(document.getElementById("laplacianCode").children[1].children[0]);
+<!--			img.style.display = 'block';-->
+<!--		}-->
+<!--	</script>-->
 
-		function codeColor(element) {
-			var elementText = element.innerHTML;
-
-			var commentColor = "green";
-			var preprocessorColor = "mediumblue";
-			var stringColor = "purple";
-			var typeColor = "darkorange";
-			var functionColor = "darkred";
-			var variableColor = "brown";
-			var attributeColor = "red";
-
-			elementText = commentMode(elementText);
-			elementText = preprocessorMode(elementText);
-			elementText = stringMode(elementText);
-			elementText = typeMode(elementText);
-			elementText = functionMode(elementText);
-			elementText = variableMode(elementText);
-			elementText = attributeMode(elementText);
-
-			element.innerHTML = elementText;
-
-			function extract(str, start, end, func, repl, plus=0, minus=0) {
-				var s, e, d = "", a = [];
-				while (str.search(start) > -1) {
-					s = str.search(start);
-					e = str.indexOf(end, s+plus);
-					if (e == -1) {e = str.length-minus;}
-					if (repl) {
-						a.push(func(str.substring(s, e-minus + (end.length))));
-						str = str.substring(0, s) + repl + str.substr(e-minus + (end.length));
-					} else {
-						d += str.substring(0, s);
-						d += func(str.substring(s, e-minus + (end.length)));
-						str = str.substr(e-minus + (end.length));
-					}
-				}
-				this.rest = d + str;
-				this.arr = a;
-			}
-
-			function commentMode(txt) {
-				var rest = txt, comment, i;
-				comment = new extract(rest, "//", "\n", commentColoration, "FFCOMMENTPOS");
-				rest = comment.rest;
-
-				for (i = 0; i < comment.arr.length; i++) {
-					rest = rest.replace("FFCOMMENTPOS", comment.arr[i]);
-				}
-				return rest;
-			}
-
-			function preprocessorMode(txt) {
-				var rest = txt, preprocessor, i;
-				preprocessor = new extract(rest, "load", "\"", preprocessorColoration, "FFPREPROCESSORPOS", 0, 1);
-				rest = preprocessor.rest;
-
-				for (i = 0; i < preprocessor.arr.length; i++) {
-					rest = rest.replace("FFPREPROCESSORPOS", preprocessor.arr[i]);
-				}
-				return rest;
-			}
-
-			function stringMode(txt) {
-				var rest = txt, string, i;
-				string = new extract(rest, "\"", "\"", stringColoration, "FFSTRINGPOS", 1);
-				rest = string.rest;
-
-				for (i = 0; i < string.arr.length; i++) {
-					rest = rest.replace("FFSTRINGPOS", string.arr[i]);
-				}
-				return rest;
-			}
-
-			function typeMode(txt) {
-				var rest = txt, types, i;
-				var types = [
-					"func",
-					"real",
-					"mesh3",
-					"fespace",
-					"macro",
-					"problem",
-					"string",
-					"int",
-					"cout"
-				];
-
-				types.forEach(function(type) {
-					type = new extract(rest, "\\b"+type+"\\b", type, typeColoration, "FFTYPEPOS");
-					rest = type.rest;
-
-					for (i = 0; i < type.arr.length; i++) {
-						rest = rest.replace("FFTYPEPOS", type.arr[i]);
-					}
-				});
-				return rest;
-			}
-
-			function functionMode(txt) {
-				var rest = txt, functions, i;
-				var functions = [
-					"readmesh3",
-					"plot",
-					"int3d",
-					"on",
-					"savevtk"
-				];
-
-				functions.forEach(function(func) {
-					func = new extract(rest, func, func, functionColoration, "FFFUNCPOS");
-					rest = func.rest;
-
-					for (i = 0; i < func.arr.length; i++) {
-						rest = rest.replace("FFFUNCPOS", func.arr[i]);
-					}
-				});
-				return rest;
-			}
-
-			function variableMode(txt) {
-				var rest = txt, variables, i;
-				var variables = [
-					"P23d",
-					"dx",
-					"dy",
-					"dz",
-					"CG",
-					"true",
-					"P1"
-				];
-
-				variables.forEach(function(variable) {
-					variable = new extract(rest, variable, variable, variableColoration, "FFVARIABLEPOS");
-					rest = variable.rest;
-
-					for (i = 0; i < variable.arr.length; i++) {
-						rest = rest.replace("FFVARIABLEPOS", variable.arr[i]);
-					}
-				});
-				return rest;
-			}
-
-			function attributeMode(txt) {
-				var rest = txt, attributes, i;
-				var attributes = [
-					"solver",
-					"wait",
-					"dataname",
-					"order"
-				];
-
-				attributes.forEach(function(attribute) {
-					attribute = new extract(rest, attribute, attribute, attributeColoration, "FFATTRIBUTEPOS");
-					rest = attribute.rest;
-
-					for (i = 0; i < attribute.arr.length; i++) {
-						rest = rest.replace("FFATTRIBUTEPOS", attribute.arr[i]);
-					}
-				});
-				return rest;
-			}
-
-			function commentColoration(txt) {
-				return "<span style=color:" + commentColor + ">" + txt + "</span>";
-			}
-			function preprocessorColoration(txt) {
-				return "<span style=color:" + preprocessorColor + ">" + txt + "</span>";
-			}
-			function stringColoration(txt) {
-				return "<span style=color:" + stringColor + ">" + txt + "</span>";
-			}
-			function typeColoration(txt) {
-				return "<span style=color:" + typeColor + ">" + txt + "</span>";
-			}
-			function functionColoration(txt) {
-				return "<span style=color:" + functionColor + ">" + txt + "</span>";
-			}
-			function variableColoration(txt) {
-				return "<span style=color:" + variableColor + ">" + txt + "</span>";
-			}
-			function attributeColoration(txt) {
-				return "<span style=color:" + attributeColor + ">" + txt + "</span>";
-			}
-		}
-	</script>
 </body>
 
 </html>

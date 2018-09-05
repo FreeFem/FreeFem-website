@@ -1,73 +1,226 @@
-const fs = require('fs-extra');
-const gutil = require('gulp-util');
-const puppeteer = require('puppeteer');
+// Github release
+fetch('https://api.github.com/repos/freefem/FreeFem-sources/releases/latest')
+	.then(response => {
+		if (response.ok) {
+			return response.json()
+		} else {
+			return Promise.reject('something went wrong!')
+		}
+	})
+	.then(data => {
+		document.getElementById("releaseVersion").innerHTML = "Version " + data.tag_name + " is now available on all platforms (LGPL)"
+	})
+	.catch(error => document.getElementById("releaseVersion").innerHTML = "Grab the latest version (LGPL)");
 
-function delay(timeout) {
-  return new Promise(function(resolve) {
-    setTimeout(resolve, timeout);
-  })
-};
+// Code coloration
+codeColor(document.getElementById("laplacianCode").children[0].children[0]);
 
-function getDirPath(name) {
-  return `./screenshots/${name}`;
-};
+function codeColor(element) {
+	var elementText = element.innerHTML;
 
-function getFileName(index) {
-  return `${index + 1}.jpg`;
-};
+	var commentColor = "green";
+	var preprocessorColor = "mediumblue";
+	var stringColor = "purple";
+	var typeColor = "darkorange";
+	var functionColor = "darkred";
+	var variableColor = "brown";
+	var attributeColor = "red";
 
-function getUrl(name) {
-  return `http://127.0.0.1:8001/${name}.html`;
-};
+	elementText = commentMode(elementText);
+	elementText = preprocessorMode(elementText);
+	elementText = stringMode(elementText);
+	elementText = typeMode(elementText);
+	elementText = functionMode(elementText);
+	elementText = variableMode(elementText);
+	elementText = attributeMode(elementText);
 
-async function makeScreenshotsByName(name, selector) {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
+	element.innerHTML = elementText;
 
-  await page.setViewport({
-    width: 1536,
-    height: 30000, // Fix after https://github.com/GoogleChrome/puppeteer/issues/959 is closed
-    deviceScaleFactor: 2
-  });
+	function extract(str, start, end, func, repl, plus=0, minus=0) {
+		var s, e, d = "", a = [];
+		while (str.search(start) > -1) {
+			s = str.search(start);
+			e = str.indexOf(end, s+plus);
+			if (e == -1) {e = str.length-minus;}
+			if (repl) {
+				a.push(func(str.substring(s, e-minus + (end.length))));
+				str = str.substring(0, s) + repl + str.substr(e-minus + (end.length));
+			} else {
+				d += str.substring(0, s);
+				d += func(str.substring(s, e-minus + (end.length)));
+				str = str.substr(e-minus + (end.length));
+			}
+		}
+		this.rest = d + str;
+		this.arr = a;
+	}
 
-  const url = getUrl(name);
+	function commentMode(txt) {
+		var rest = txt, comment, i;
+		comment = new extract(rest, "//", "\n", commentColoration, "FFCOMMENTPOS");
+		rest = comment.rest;
 
-  await page.goto(url, { timeout: 90000 });
+		for (i = 0; i < comment.arr.length; i++) {
+			rest = rest.replace("FFCOMMENTPOS", comment.arr[i]);
+		}
+		return rest;
+	}
 
-  const dirPath = getDirPath(name);
+	function preprocessorMode(txt) {
+		var rest = txt, preprocessor, i;
+		preprocessor = new extract(rest, "load", "\"", preprocessorColoration, "FFPREPROCESSORPOS", 0, 1);
+		rest = preprocessor.rest;
 
-  await fs.ensureDirSync(dirPath);
+		for (i = 0; i < preprocessor.arr.length; i++) {
+			rest = rest.replace("FFPREPROCESSORPOS", preprocessor.arr[i]);
+		}
+		return rest;
+	}
 
-  await delay(3000);
+	function stringMode(txt) {
+		var rest = txt, string, i;
+		string = new extract(rest, "\"", "\"", stringColoration, "FFSTRINGPOS", 1);
+		rest = string.rest;
 
-  const blocks = await page.$$(selector);
+		for (i = 0; i < string.arr.length; i++) {
+			rest = rest.replace("FFSTRINGPOS", string.arr[i]);
+		}
+		return rest;
+	}
 
-  for (var index = 0; index < blocks.length; index++) {
-    const path = `${dirPath}/${getFileName(index)}`;
+	function typeMode(txt) {
+		var rest = txt, types, i;
+		var types = [
+			"func",
+			"real",
+			"mesh3",
+			"fespace",
+			"macro",
+			"problem",
+			"string",
+			"int",
+			"cout"
+		];
 
-    await blocks[index].screenshot({
-      path: path,
-      type: 'jpeg',
-      quality: 100,
-    });
+		types.forEach(function(type) {
+			type = new extract(rest, "\\b"+type+"\\b", type, typeColoration, "FFTYPEPOS");
+			rest = type.rest;
 
-    gutil.log(`Saved screenshot for '${gutil.colors.cyan(name)}' to '${gutil.colors.magenta(path)}'`);
-  }
+			for (i = 0; i < type.arr.length; i++) {
+				rest = rest.replace("FFTYPEPOS", type.arr[i]);
+			}
+		});
+		return rest;
+	}
 
-  await browser.close();
-};
+	function functionMode(txt) {
+		var rest = txt, functions, i;
+		var functions = [
+			"readmesh3",
+			"plot",
+			"int3d",
+			"on",
+			"savevtk"
+		];
 
-const MAX_CONCURRENT_BROWSERS_COUNT = 6;
+		functions.forEach(function(func) {
+			func = new extract(rest, func, func, functionColoration, "FFFUNCPOS");
+			rest = func.rest;
 
-async function makeScreenshots(description) {
-  if (description.length > MAX_CONCURRENT_BROWSERS_COUNT) {
-    await makeScreenshots(description.slice(0, MAX_CONCURRENT_BROWSERS_COUNT));
-    await makeScreenshots(description.slice(MAX_CONCURRENT_BROWSERS_COUNT));
-  } else {
-    await Promise.all(description.map(([name, selector]) => makeScreenshotsByName(name, selector)));
-  }
-};
+			for (i = 0; i < func.arr.length; i++) {
+				rest = rest.replace("FFFUNCPOS", func.arr[i]);
+			}
+		});
+		return rest;
+	}
 
-module.exports = {
-  makeScreenshots,
-};
+	function variableMode(txt) {
+		var rest = txt, variables, i;
+		var variables = [
+			"P23d",
+			"dx",
+			"dy",
+			"dz",
+			"CG",
+			"true",
+			"P1"
+		];
+
+		variables.forEach(function(variable) {
+			variable = new extract(rest, variable, variable, variableColoration, "FFVARIABLEPOS");
+			rest = variable.rest;
+
+			for (i = 0; i < variable.arr.length; i++) {
+				rest = rest.replace("FFVARIABLEPOS", variable.arr[i]);
+			}
+		});
+		return rest;
+	}
+
+	function attributeMode(txt) {
+		var rest = txt, attributes, i;
+		var attributes = [
+			"solver",
+			"wait",
+			"dataname",
+			"order"
+		];
+
+		attributes.forEach(function(attribute) {
+			attribute = new extract(rest, attribute, attribute, attributeColoration, "FFATTRIBUTEPOS");
+			rest = attribute.rest;
+
+			for (i = 0; i < attribute.arr.length; i++) {
+				rest = rest.replace("FFATTRIBUTEPOS", attribute.arr[i]);
+			}
+		});
+		return rest;
+	}
+
+	function commentColoration(txt) {
+		return "<span style=color:" + commentColor + ">" + txt + "</span>";
+	}
+	function preprocessorColoration(txt) {
+		return "<span style=color:" + preprocessorColor + ">" + txt + "</span>";
+	}
+	function stringColoration(txt) {
+		return "<span style=color:" + stringColor + ">" + txt + "</span>";
+	}
+	function typeColoration(txt) {
+		return "<span style=color:" + typeColor + ">" + txt + "</span>";
+	}
+	function functionColoration(txt) {
+		return "<span style=color:" + functionColor + ">" + txt + "</span>";
+	}
+	function variableColoration(txt) {
+		return "<span style=color:" + variableColor + ">" + txt + "</span>";
+	}
+	function attributeColoration(txt) {
+		return "<span style=color:" + attributeColor + ">" + txt + "</span>";
+	}
+}
+
+// Switch function
+var current = 'img';
+function laplacianSwitch() {
+	var image = document.getElementById('laplacianVideo');
+	var code = document.getElementById('laplacianCode');
+	
+	if (current === 'img') {
+		image.style.display = 'none';
+		code.style.display = 'flex';
+		current = 'code';
+	} else {
+		image.style.display = 'block';
+		code.style.display = 'none';
+		current = 'img';
+	}
+}
+
+// Download function
+function laplacianDownload() {
+	window.open('dist/code/laplacian/laplacian.zip');
+}
+
+
+
