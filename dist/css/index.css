@@ -50,6 +50,14 @@ th {
     color: rgb(232,53,0);
 }
 
+#OSMiframe {
+	width: 100%;
+	height: 300px;
+	border: none;
+	margin: 0;
+	overflow: hidden;
+}
+
 .fdb-block h3 {
 	line-height: 1.5;
 }
