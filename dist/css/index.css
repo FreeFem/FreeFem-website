@@ -477,3 +477,14 @@ header+header {
 table tr.no-border th, table tr.no-border td {
     border-top: 0;
 }
+
+.gallery {
+}
+
+.gallery img {
+	height: 380px;
+}
+
+.gallerySeparator {
+	border: 3px solid #2d313c;
+}

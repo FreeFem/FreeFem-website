@@ -43,186 +43,184 @@
 		</div>
 	</section>
 
-	<!-- <section class="fdb-block" data-block-type="contents" data-id="2" draggable="false">
+	<section class="fdb-block" data-block-type="contents" data-id="3" draggable="false">
 		<div class="container">
-			<div class="row">
-				<div class="col col-12 text-justify">
-					<h2>An academic and industrial research conference</h2>
-					<p class="text-h3">FreeFem++ is now used as research tool or investigation software by a continuously increasing community gathering scientists from different areas of research (mathematics, physics, finance, mechanics, industry, etc).</p>
-					<p class="text-h3">Following the success of the previous workshops on FreeFem++, this new event is aimed to reflect the latest new capabilities and applications of the software and to exchange information with other communities involved in the development of generic solvers for PDEs.</p>
-					<p class='text-h3'>The previous editions presentations are available on <a target='_blank' href='https://github.com/FreeFem/FreeFem-days'>this repository</a>.</p>
+			<div class="row align-items-center">
+				<div class="col-12 col-md-6 mb-4 mb-md-0 text-left">
+					<h2>Electromagnetic scattering from the COBRA cavity</h2>
+
+					<p>This is a simulation of scattering from the COBRA cavity of a plane wave incident upon the cavity aperture, obtained by solving the time-harmonic Maxwell equations.</p>
+					<p>The problem is discretized with order 2 Nédélec edge finite elements, with 10 mesh points per wavelength.</p>
+					<p>The resulting indefinite linear system has 198 million degrees of freedom at frequency f = 16 GHz.</p>
+					<p>The problem is solved in parallel by a two-level Schwarz domain decomposition method, with a total computing time of 363 seconds on 6144 cores.</p>
+				</div>
+				<div class="col-12 col-md-6 col-lg-5 ml-md-auto">
+					<figure class="gallery">
+						<img src="../dist/imgs/gallery/cobra1.png" alt="cobra1" />
+						<figcaption>Scattering from the COBRA cavity of a plane wave incident upon the cavity aperture at frequency f = 16 GHz: magnitude of the electric field</figcaption>
+					</figure>
+				</div>
+				<div class="col-12 col-md-6 col-lg-5 ml-md-auto">
+					<figure class="gallery">
+						<img src="../dist/imgs/gallery/cobra2.png" alt="cobra2" />
+						<figcaption>Scattering from the COBRA cavity of a plane wave incident upon the cavity aperture at frequency f = 10 GHz: magnitude of the electric field</figcaption>
+					</figure>
+				</div>
+				<div class="col-12 col-md-6 col-lg-5 ml-md-auto">
+					<figure class="gallery">
+						<img src="../dist/imgs/gallery/cobra3.png" alt="cobra3" />
+						<figcaption>Scattering from the COBRA cavity of a plane wave incident upon the cavity aperture at frequency f = 10 GHz: magnitude of the electric field</figcaption>
+					</figure>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="fdb-block" data-block-type="features" data-id="3" draggable="false">
+	<hr class="gallerySeparator"/>
+
+	<section class="fdb-block" data-block-type="contents" data-id="4" draggable="false">
 		<div class="container">
-			<div class="row text-center">
-				<div class="col-12 col-sm-6 col-md-3">
-					<img alt="Development" class="fdb-icon" src="../dist/imgs/developments.svg">
-					<h3>Recent developments</h3>
-				</div>
+			<div class="row align-items-center">
+				<div class="col-12 col-md-6 mb-4 mb-md-0">
+					<h2>3D acoustic simulation with the SEG/EAGE Overthrust model</h2>
 
-				<div class="col-12 col-sm-6 col-md-3 pt-5 pt-sm-0">
-					<img alt="Capabilities" class="fdb-icon" src="../dist/imgs/capabilities.svg">
-					<h3>Latest capabilities</h3>
+					<p>This is a direct acoustic simulation with the SEG/EAGE Overthrust model seismic model, obtained by solving the Helmholtz equation.</p>
+					<p>The problem is discretized with P2 Lagrange finite elements, with 5 mesh points per wavelength.</p>
+					<p>The mesh is adapted to the spatial variations of the velocity to obtain a constant number of points per wavelength in the whole domain to save computation time.</p>
+					<p>The resulting indefinite linear system has 678 million degrees of freedom at frequency f = 20 Hz.</p>
+					<p>The problem is solved in parallel by a Schwarz domain decomposition method, with a total computing time of 218 seconds on 12288 cores.</p>
 				</div>
-
-				<div class="col-12 col-sm-6 col-md-3 pt-5 pt-md-0">
-					<img alt="Applications" class="fdb-icon" src="../dist/imgs/applications.svg">
-					<h3>Academic and industrial applications</h3>
+				<div class="col-12 col-md-6 col-lg-5 ml-md-auto">
+					<figure class="gallery">
+						<img src="../dist/imgs/gallery/ovt1.png" alt="ovt1" />
+						<figcaption>Velocity field of the SEG/EAGE Overthrust model (bottom) and simulated acoustic field at frequency f = 10 Hz (top) [clip at depth d >= 580m]</figcaption>
+					</figure>
 				</div>
-
-				<div class="col-12 col-sm-6 col-md-3 pt-5 pt-md-0">
-					<img alt="Training" class="fdb-icon" src="../dist/imgs/training.svg">
-					<h3>Users training courses</h3>
+				<div class="col-12 col-md-6 col-lg-5 ml-md-auto">
+					<figure class="gallery">
+						<img src="../dist/imgs/gallery/ovt2.png" alt="ovt2" />
+						<figcaption>Simulated acoustic field at frequency f = 10 Hz [horizontal slice at depth d = 580m]</figcaption>
+					</figure>
 				</div>
-
+				<div class="col-12 col-md-6 col-lg-5 ml-md-auto">
+					<figure class="gallery">
+						<img src="../dist/imgs/gallery/ovt3.gif" alt="ovt3" />
+						<figcaption>Simulated acoustic field at frequency f = 10 Hz [horizontal slice at depth d = 580m]</figcaption>
+					</figure>
+				</div>
+				<div class="col-12 col-md-6 col-lg-5 ml-md-auto">
+					<figure class="gallery">
+						<img src="../dist/imgs/gallery/ovt4.png" alt="ovt4" />
+						<figcaption>Mesh adapted to the SEG/EAGE Overthrust velocity model to obtain a constant number of points per wavelength [clip at depth d >= 580m]</figcaption>
+					</figure>
+				</div>
+				<div class="col-12 col-md-6 col-lg-5 ml-md-auto">
+					<figure class="gallery">
+						<img src="../dist/imgs/gallery/ovt5.png" alt="ovt5" />
+						<figcaption>Simulated acoustic field at frequency f = 20 Hz [clip at depth d >= 580m]</figcaption>
+					</figure>
+				</div>
+				<div class="col-12 col-md-6 col-lg-5 ml-md-auto">
+					<figure class="gallery">
+						<img src="../dist/imgs/gallery/ovt6.png" alt="ovt6" />
+						<figcaption>Simulated acoustic field at frequency f = 20 Hz [horizontal slice at depth d = 580m]</figcaption>
+					</figure>
+				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="fdb-block black-style" data-block-type="contents" data-id="4" draggable="false">
-		<div class='container custom-margin2'>
-			<div class="row text-left">
-				<div class="col-12 col-sm-12 m-auto m-lg-0 col-lg-4" id='calendar-left-pane'>
-					<p class="text-h3" style='text-align: center !important;'>MONDAY</p>
-					<h2 style='font-size: 5rem; margin-bottom: -20px !important; margin-top: -20px !important; font-weight: 900; text-align: center!important;'>27</h2>
-					<p class="text-h3" style='text-align: center !important;'>DECEMBER</p>
-					<p></br>Morning : Room 23</br>Afternoon : Room 21</p>
-				</div>
-
-				<div class="col-12 col-lg-8 pt-4 pt-lg-0" id='calendar-right-pane'>
-					<h2>Day 1</h2>
-					<table class="table table-striped">
-						<tbody>
-							<tr>
-								<th scope="row">09.00 - 09.05</th>
-								<td>
-									<strong>F. Hecht</strong> (LJLL, UPMC) :
-									</br>
-									Introduction
-								</td>
-							</tr>
-							<tr>
-								<th scope="row">09.05-09.15</th>
-								<td>
-									<strong>Y. Maday</strong> (LJLL, UPMC) :
-									</br>
-									Présentation de l'institut Carnot Smiles
-								</td>
-							</tr>
-							<tr>
-								<th scope="row">14.30 - 15.00</th>
-								<td>Augmented Lagrangian preconditioner for Linear Stability Analysis of the incompressible Navier-Stokes equation (abstract pdf,slides pdf)</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row text-left">
-				<div class="col-12 col-sm-12 m-auto m-lg-0 col-lg-4" id='calendar-left-pane'>
-					<p class="text-h3" style='text-align: center !important;'>TUESDAY</p>
-					<h2 style='font-size: 5rem; margin-bottom: -20px !important; margin-top: -20px !important; font-weight: 900; text-align: center!important;'>28</h2>
-					<p class="text-h3" style='text-align: center !important;'>DECEMBER</p>
-					<p></br>Morning : Room 23</br>Afternoon : Room 21</p>
-				</div>
-
-				<div class="col-12 col-lg-8 pt-4 pt-lg-0" id='calendar-right-pane'>
-					<h2>Day 2</h2>
-					<table class="table table-striped">
-						<tbody>
-							<tr>
-								<th scope="row">09.00 - 09.05</th>
-								<td>
-									<strong>F. Hecht</strong> (LJLL, UPMC) :
-									</br>
-									Introduction
-								</td>
-							</tr>
-							<tr>
-								<th scope="row">09.05-09.15</th>
-								<td>
-									<strong>Y. Maday</strong> (LJLL, UPMC) :
-									</br>
-									Présentation de l'institut Carnot Smiles
-								</td>
-							</tr>
-							<tr>
-								<th scope="row">14.30 - 15.00</th>
-								<td>Augmented Lagrangian preconditioner for Linear Stability Analysis of the incompressible Navier-Stokes equation (abstract pdf,slides pdf)</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-	</section>
+	<hr class="gallerySeparator" />
 
 	<section class="fdb-block" data-block-type="contents" data-id="5" draggable="false">
 		<div class="container">
-			<div class="row text-left">
-				<div class="col-12">
-					<h2>Organization commitee</h2>
-					<ul>
-						<li><a target='_blank' href='http://www.cmap.polytechnique.fr/~allaire/'>Grégoire Allaire</a> (CMAP, École Polytechnique),</li>
-						<li><a target='_blank' href='https://www.ljll.math.upmc.fr/membres/fiches/coquel.html'>Frédéric Coquel</a> (CMAP, École Polytechnique),</li>
-						<li><a target='_blank' href='http://ionut.danaila.perso.math.cnrs.fr/'>Ionut Danaila</a> (LMRS, Université de Rouen),</li>
-						<li><a target='_blank' href='https://www.ljll.math.upmc.fr/frey/'>Pascal Frey</a> (LJLL, Université Pierre et Marie Curie),</li>
-						<li><a target='_blank' href='https://www.ljll.math.upmc.fr/hecht/'>Frédéric Hecht</a> (LJLL, Université Pierre et Marie Curie),</li>
-						<li><a target='_blank' href='https://www.ljll.math.upmc.fr/maday/'>Yvon Maday</a> (LJLL, Université Pierre et Marie Curie),</li>
-						<li><a target='_blank' href='https://www.math.u-psud.fr/~maury/'>Bertrand Maury</a> (Université Paris Sud - Orsay),</li>
-						<li><a target='_blank' href='https://www.ljll.math.upmc.fr/pironneau/'>Olivier Pironneau</a> (LJLL, Université Pierre et Marie Curie)</li>
-					</ul>
+			<div class="row align-items-center">
+				<div class="col-12 col-md-6 mb-4 mb-md-0 text-left">
+					<h2>Microwave imaging of cerebrovascular accidents</h2>
+
+					<p>This is a medical application of microwave tomographic imaging of cerebrovascular accidents (CVAs), or brain strokes. This work has been carried out within the ANR project MEDIMAX and in collaboration with EMTensor GmbH, Vienna (Austria), an electromagnetic medical imaging company.</p>
+					<p>It has been awarded the Bull-Joseph Fourier 1st Prize 2015 and demonstrates on synthetic data the feasibility of a new microwave imaging technique allowing for the characterization of CVAs (ischemic orhemorrhagic), beginning with the very first instance of patient care in an ambulance and extending to continuous patient monitoring during hospitalization.</p>
+					<p>EMTensor’s experimental system consists of an electromagnetic reverberating chamber surrounded by five layers of 32 antennas each.</p>
+					<p>The inversion algorithm reconstructs an image of the head from the measurements (the 160x160 scattering matrix), corresponding to a map of the dielectric properties of the different head tissues.</p>
+					<p>The inversion is done using a L-BFGS algorithm, which involves repeatedly solving the direct problem modeled by Maxwell equations in the chamber, with a complex and highly heterogeneous medium.</p>
+					<p>Results are obtained using synthetic data corresponding to a very precise numerical brain model from EMTensor with a simulated hemorrhagic stroke.</p>
+					<p>We add 10% Gaussian white noise to the data.</p>
+					<p>We can create parallelism by reconstructing the image in successive slices and solving five smaller inverse problems independently, each problem corresponding to one ring of antennas.</p>
+					<p>This, together with the parallelism coming from the domain decomposition method as well as solving for multiple right-hand sides, allows us to reconstruct an image corresponding to one ring in less than two minutes (94 seconds) using 4096 computing cores.</p>
+				</div>
+				<div class="col-12 col-md-6 col-lg-5 ml-md-auto">
+					<figure class="gallery">
+						<img src="../dist/imgs/gallery/medimax1.png" alt="medimax1" />
+						<figcaption>Numerical head immersed in the imaging chamber, with a simulated ellipsoid-shaped hemorrhagic stroke</figcaption>
+					</figure>
+				</div>
+				<div class="col-12 col-md-6 col-lg-5 ml-md-auto">
+					<figure class="gallery">
+						<img src="../dist/imgs/gallery/medimax2.png" alt="medimax2" />
+						<figcaption>Computational domain corresponding to the EMTensor imaging system prototype</figcaption>
+					</figure>
+				</div>
+				<div class="col-12 col-md-6 col-lg-5 ml-md-auto">
+					<figure class="gallery">
+						<img src="../dist/imgs/gallery/medimax3.png" alt="medimax3" />
+						<figcaption>Imaginary part of the reconstructed permittivity obtained by solving the inverse problem for the top layer with three different synthetic data sets (bottom row), created from a numerical brain model with three steps of the stroke evolution (healthy, small stroke, large stroke) with 10% white Gaussian noise (top row)</figcaption>
+					</figure>
+				</div>
+				<div class="col-12 col-md-6 col-lg-5 ml-md-auto">
+					<figure class="gallery">
+						<img src="../dist/imgs/gallery/medimax4.gif" alt="medimax4" />
+						<figcaption>Real (top row) and imaginary (bottom row) part of the reconstructed permittivity during 30 BFGS iterations (right column) using synthetic data created from a numerical brain model with hemorrhagic stroke (left column) with 10% white Gaussian noise</figcaption>
+					</figure>
+				</div>
+				<div class="col-12 col-md-6 col-lg-5 ml-md-auto">
+					<figure class="gallery">
+						<img src="../dist/imgs/gallery/medimax5.gif" alt="medimax5" />
+						<figcaption>Imaginary part of the reconstructed permittivity in the whole chamber (right) from synthetic data created from a numerical brain model with hemorrhagic stroke (left) with 10% white Gaussian noise</figcaption>
+					</figure>
 				</div>
 			</div>
 		</div>
 	</section>
 
+	<hr class="gallerySeparator" />
+
 	<section class="fdb-block" data-block-type="contents" data-id="6" draggable="false">
 		<div class="container">
-			<div class="row text-left">
-				<div class="col-12">
-					<h2>Access & Housing</h2>
-					<p>The conference will be held at the <a target='_blank' href="https://www.ljll.math.upmc.fr/"><i>Laboratoire Jacques-Louis Lions</i></a>, 4 Place Jussieu, Paris, <i>Tour 15-25</i> at the 3<sup>th</sup> floor.</p>
+			<div class="row align-items-center">
+				<div class="col-12 col-md-6 mb-4 mb-md-0">
+					<h2>Water and nutrient uptake by plant roots</h2>
+
+					<p>Coming soon</p>
 				</div>
-			</div>
-			<div class="row text-center">
-				<div class="col text-center">
-					<p>
-						<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=2.3438328411430125%2C48.842055593299726%2C2.3659342434257273%2C48.850881120609344&amp;layer=mapnik&amp;marker=48.846468551381356%2C2.3548835422843695"
-						    style="border: 1px solid black">
-						</iframe>
-						<br/>
-						<small><a target='_blank' href="https://www.openstreetmap.org/?mlat=48.8465&mlon=2.3549#map=16/48.8465/2.3549">Show a larger map</a></small>
-					</p>
+				<div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
+					<figure class="gallery">
+						<img src="../dist/imgs/gallery/roots1.png" alt="root1" />
+						<figcaption>Coming soon</figcaption>
+					</figure>
 				</div>
-			</div>
-			<div class="row text-left">
-				<div class="col-12">
-					<p><strong><i>Métro</i> and RER</strong> (<a href="https://www.vianavigo.com">Transport society</a>)</p>
-					<p>
-						Station <i>Jussieu</i> (lines 7 & 10)<br/> Station <i>Cluny - La Sorbonne</i> (RER B) within 700m<br/> Station <i>Austerlitz</i> (lines 5, 10 and RER C) within 1000m
-					</p>
-					<p><strong>Bus</strong> (<a href="https://www.vianavigo.com">Transport society</a>)</p>
-					<p>
-						Line 24: station <i>Quai Saint-Bernard</i><br/> Line 63: station <i>Rue des fossés Saint-Bernard</i> or <i>Quai Saint Bernard</i><br/> Line 67: station <i>Jussieu</i><br/> Line 89: station <i>Jussieu</i>, <i>Cardinal Lemoine</i> or <i>Quai Saint Bernard</i>
-					</p>
-					<p><strong>Housing</strong></p>
-					<p>
-						We recommend you to book your hotel room as soon as possible. Here are a few addresses for your information:
-					</p>
-					<ul>
-						<li>TIMHOTEL - Jardin Des Plantes : 5 rue Linné, 75005 Paris</li>
-						<li>Grand Hôtel Jeanne d'Arc : 43 boulevard Saint Mercel, 75013 Paris</li>
-					</ul>
+				<div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
+					<figure class="gallery">
+						<img src="../dist/imgs/gallery/roots2.png" alt="root2" />
+						<figcaption>Coming soon</figcaption>
+					</figure>
+				</div>
+				<div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
+					<figure class="gallery">
+						<img src="../dist/imgs/gallery/roots3.gif" alt="root3" />
+						<figcaption>Coming soon</figcaption>
+					</figure>
+				</div>
+				<div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
+					<figure class="gallery">
+						<img src="../dist/imgs/gallery/roots4.gif" alt="root4" />
+						<figcaption>Coming soon</figcaption>
+					</figure>
 				</div>
 			</div>
 		</div>
-	</section> -->
+	</section>
+
+	<hr class="gallerySeparator" />
 
 	<footer class="fdb-block footer-small" data-block-type="footers" data-id="7">
 		<div class="container">
