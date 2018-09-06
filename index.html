@@ -86,7 +86,9 @@
 						<pre><code>load "msh3"
 
 // Parameters
-func ue = 2.*x*x + 3.*y*y + 4.*z*z + 5.*x*y + 6.*x*z + 1.;
+func ue = 2.*x*x + 3.*y*y
+        + 4.*z*z + 5.*x*y
+        + 6.*x*z + 1.;
 real f = -18.;
 
 // Mesh
@@ -113,7 +115,9 @@ problem Lap3d (u, v, solver=CG)
 
 // Solve
 Lap3d;
-cout &lt;&lt; "u min: " &lt;&lt; u[]. min &lt;&lt; " - max: " &lt;&lt; u[].max &lt;&lt; endl;
+cout &lt;&lt; "u min: " &lt;&lt; u[]. min
+     &lt;&lt; " - max: " &lt;&lt; u[].max
+     &lt;&lt; endl;
 
 // Plot
 plot(u, wait=true);
@@ -127,7 +131,9 @@ load "iovtk"
 	string DataName = "u";
 	int[int] Order = [1];
 
-	savevtk("Result.vtu", Th, uu, dataname=DataName, order=Order);
+	savevtk("Result.vtu", Th,
+	        uu, dataname=DataName,
+	        order=Order);
 }</code></pre>
 					</div>
 				</div>

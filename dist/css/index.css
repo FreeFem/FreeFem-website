@@ -80,12 +80,18 @@ th {
 }
 
 #laplacianCode {
+	width: 100%;
 	display: none;
-}
-
-#laplacianCode{
 	max-height: 380px;
 	background-color:white;
+}
+
+#laplacianCode pre {
+	width: 100%;
+}
+
+#laplacianCode code {
+	width: 100%;
 }
 
 .fa-heart {
