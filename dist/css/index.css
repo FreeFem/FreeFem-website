@@ -488,7 +488,8 @@ table tr.no-border th, table tr.no-border td {
 }
 
 .gallery img {
-	height: 380px;
+	max-height: 380px;
+	width: 100%;
 }
 
 .gallerySeparator {
