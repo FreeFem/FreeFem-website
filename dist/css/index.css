@@ -403,7 +403,10 @@ footer a {
 }
 
 header {
-    background-color: #FFFFFF;
+	position: sticky;
+	top:0;
+	z-index:11;
+  background-color: #FFFFFF;
 }
 
 header .navbar-nav a.nav-link {
