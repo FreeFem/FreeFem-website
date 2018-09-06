@@ -205,22 +205,18 @@ var current = 'img';
 function laplacianSwitch() {
 	var image = document.getElementById('laplacianVideo');
 	var code = document.getElementById('laplacianCode');
-	
+	var button = document.getElementById('laplacian').children[0];
+
 	if (current === 'img') {
 		image.style.display = 'none';
 		code.style.display = 'flex';
 		current = 'code';
+		button.innerHTML = 'Show result';
+
 	} else {
 		image.style.display = 'block';
 		code.style.display = 'none';
 		current = 'img';
+		button.innerHTML = 'Show code';
 	}
 }
-
-// Download function
-function laplacianDownload() {
-	window.open('dist/code/laplacian/laplacian.zip');
-}
-
-
-

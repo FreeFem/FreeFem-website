@@ -73,10 +73,11 @@ th {
 	right:30px;
 	background: none;
 	border: none;
+	text-decoration: underline;
 }
 
 #laplacian button:focus {
-	outline: 0;
+	outline: none;
 }
 
 #laplacianCode {
