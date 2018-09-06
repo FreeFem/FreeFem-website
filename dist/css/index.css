@@ -486,11 +486,12 @@ table tr.no-border th, table tr.no-border td {
 }
 
 .gallery {
+	text-align: center;
 }
 
 .gallery img {
 	max-height: 380px;
-	width: 100%;
+	max-width: 100%;
 }
 
 .gallerySeparator {
