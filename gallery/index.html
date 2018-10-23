@@ -61,9 +61,9 @@
 				<div class="col-12 col-md-6 mb-4 mb-md-0 text-left">
 					<h2>Mesh adaptation</h2>
 
-					<p>FreeFem++ embbed a powerfull 2D mesh adaptation algorithm.</p>
-					<p>Mesh adaptation could be done <i>in-situ</i> during the simulation, as many time as necessary.</p>
-					<p>For 3D mesh adaptation, <a href="https://www.mmgtools.org/" target="_blank">mmg3d</a> and <a href="http://wias-berlin.de/software/tetgen/" target="_blank">tetgen</a> are available as plugin.</p>
+					<p>FreeFem++ embeds a powerful 2D mesh adaptation algorithm.</p>
+					<p>Mesh adaptation can be done <i>in-situ</i> during the simulation, as many time as necessary.</p>
+					<p>For 3D mesh adaptation, <a href="https://www.mmgtools.org/" target="_blank">mmg3d</a> and <a href="http://wias-berlin.de/software/index.jsp?id=TetGen" target="_blank">TetGen</a> are available as plugins.</p>
 				</div>
 				<div class="col-12 col-md-6 col-lg-5 ml-md-auto">
 					<figure class="gallery">
@@ -124,7 +124,7 @@
 				<div class="col-12 col-md-6 mb-4 mb-md-0">
 					<h2>3D acoustic simulation with the SEG/EAGE Overthrust model</h2>
 
-					<p>This is a direct acoustic simulation with the SEG/EAGE Overthrust model seismic model, obtained by solving the Helmholtz equation.</p>
+					<p>This is a direct acoustic simulation with the SEG/EAGE Overthrust seismic model, obtained by solving the Helmholtz equation.</p>
 					<p>The problem is discretized with P2 Lagrange finite elements, with 5 mesh points per wavelength.</p>
 					<p>The mesh is adapted to the spatial variations of the velocity to obtain a constant number of points per wavelength in the whole domain to save computation time.</p>
 					<p>The resulting indefinite linear system has 678 million degrees of freedom at frequency f = 20 Hz.</p>
@@ -178,8 +178,8 @@
 				<div class="col-12 col-md-6 mb-4 mb-md-0 text-left">
 					<h2>Microwave imaging of cerebrovascular accidents</h2>
 
-					<p>This is a medical application of microwave tomographic imaging of cerebrovascular accidents (CVAs), or brain strokes. This work has been carried out within the ANR project MEDIMAX and in collaboration with EMTensor GmbH, Vienna (Austria), an electromagnetic medical imaging company.</p>
-					<p>It has been awarded the Bull-Joseph Fourier 1st Prize 2015 and demonstrates on synthetic data the feasibility of a new microwave imaging technique allowing for the characterization of CVAs (ischemic orhemorrhagic), beginning with the very first instance of patient care in an ambulance and extending to continuous patient monitoring during hospitalization.</p>
+					<p>This is a medical application of microwave tomographic imaging of cerebrovascular accidents (CVAs), also called brain strokes. This work has been carried out within the ANR project MEDIMAX and in collaboration with EMTensor GmbH, Vienna (Austria), an electromagnetic medical imaging company.</p>
+					<p>It has been awarded the Bull-Joseph Fourier 1st Prize 2015 and demonstrates on synthetic data the feasibility of a new microwave imaging technique allowing for the characterization of CVAs (ischemic or hemorrhagic), beginning with the very first instance of patient care in an ambulance and extending to continuous patient monitoring during hospitalization.</p>
 					<p>EMTensor’s experimental system consists of an electromagnetic reverberating chamber surrounded by five layers of 32 antennas each.</p>
 					<p>The inversion algorithm reconstructs an image of the head from the measurements (the 160x160 scattering matrix), corresponding to a map of the dielectric properties of the different head tissues.</p>
 					<p>The inversion is done using a L-BFGS algorithm, which involves repeatedly solving the direct problem modeled by Maxwell equations in the chamber, with a complex and highly heterogeneous medium.</p>
@@ -231,7 +231,7 @@
 					<h2>Water and nutrient uptake by plant roots</h2>
 
 					<p>In the context of the development of sustainable agriculture aiming at preserving natural resources and ecosystems, it is necessary to improve our understanding of underground processes and interactions between soil and plant roots. Although the root system is responsible for taking up water and nutrients from the surrounding soil, roots are hidden below ground and measurements are difficult to obtain.</p>
-					<p>In this work, mechanistic models and numerical tools were developed for the simulation of soil water and solute transport with plant root uptake at the whole root system scale while taking the three-dimensional architecture of the root system explicitly into account. An emphasis is put on resolving the geometry of the root system as well as small scale processes occurring in the rhizosphere, which play a major role in plant root uptake. The models are governed by nonlinear parabolic equations, and can be used to study how the uptake pattern is affected by the shape and architecture of the root system.</p>
+					<p>In this work, mechanistic models and numerical tools were developed for the simulation of soil water and solute transport with plant root uptake at the whole root system scale while taking the three-dimensional architecture of the root system explicitly into account. An emphasis is put on resolving the geometry of the root system as well as small-scale processes occurring in the rhizosphere, which play a major role in plant root uptake. The models are governed by nonlinear parabolic equations and can be used to study how the uptake pattern is affected by the shape and architecture of the root system.</p>
 					<p>In order to make these large 3D numerical simulations tractable, we take advantage of unstructured mesh adaptation and parallel computing tools available in FreeFem++. The mesh adaptation procedure allows to accurately represent the geometry of the root system in the soil domain and capture the high gradients expected near the roots. The most accurate model relies on an implicit representation of the actual surface of the roots through a level set approach, splitting the computational domain between the soil domain and the root system. Soil and root water flow are then coupled and solved in a monolithic way. Some numerical simulations of water uptake by maize root systems are shown here.</p>
 				</div>
 				<div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
@@ -288,10 +288,10 @@
 				</div>
 			</div>
 	</footer>
+	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 
 </body>
-
 </html>
