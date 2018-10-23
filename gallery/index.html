@@ -230,30 +230,32 @@
 				<div class="col-12 col-md-6 mb-4 mb-md-0">
 					<h2>Water and nutrient uptake by plant roots</h2>
 
-					<p>Coming soon</p>
+					<p>In the context of the development of sustainable agriculture aiming at preserving natural resources and ecosystems, it is necessary to improve our understanding of underground processes and interactions between soil and plant roots. Although the root system is responsible for taking up water and nutrients from the surrounding soil, roots are hidden below ground and measurements are difficult to obtain.</p>
+					<p>In this work, mechanistic models and numerical tools were developed for the simulation of soil water and solute transport with plant root uptake at the whole root system scale while taking the three-dimensional architecture of the root system explicitly into account. An emphasis is put on resolving the geometry of the root system as well as small scale processes occurring in the rhizosphere, which play a major role in plant root uptake. The models are governed by nonlinear parabolic equations, and can be used to study how the uptake pattern is affected by the shape and architecture of the root system.</p>
+					<p>In order to make these large 3D numerical simulations tractable, we take advantage of unstructured mesh adaptation and parallel computing tools available in FreeFem++. The mesh adaptation procedure allows to accurately represent the geometry of the root system in the soil domain and capture the high gradients expected near the roots. The most accurate model relies on an implicit representation of the actual surface of the roots through a level set approach, splitting the computational domain between the soil domain and the root system. Soil and root water flow are then coupled and solved in a monolithic way. Some numerical simulations of water uptake by maize root systems are shown here.</p>
 				</div>
 				<div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
 					<figure class="gallery">
 						<img src="../dist/imgs/gallery/roots1.png" alt="root1" />
-						<figcaption>Coming soon</figcaption>
+						<figcaption>Soil water flow near the roots of a 20-days-old maize plant in a drying soil scenario</figcaption>
 					</figure>
 				</div>
 				<div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
 					<figure class="gallery">
 						<img src="../dist/imgs/gallery/roots2.png" alt="root2" />
-						<figcaption>Coming soon</figcaption>
+						<figcaption>Soil and root water potential for a 20-days-old maize plant root system in a drying soil scenario</figcaption>
 					</figure>
 				</div>
 				<div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
 					<figure class="gallery">
 						<img src="../dist/imgs/gallery/roots3.gif" alt="root3" />
-						<figcaption>Coming soon</figcaption>
+						<figcaption>Evolution of the water uptake pattern of a 20-days-old maize root system in a drying soil scenario. Left: Soil water flow near the roots. Right: Distribution of the soil water potential – horizontal slice highlighted in Left</figcaption>
 					</figure>
 				</div>
 				<div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
 					<figure class="gallery">
 						<img src="../dist/imgs/gallery/roots4.gif" alt="root4" />
-						<figcaption>Coming soon</figcaption>
+						<figcaption>Simulation of the impact of two different strengths of hydrotropism on the development of a growing maize root system. Root water potential u and isosurfaces of the soil water potential h</figcaption>
 					</figure>
 				</div>
 			</div>
@@ -270,7 +272,7 @@
 					</div>
 
 					<div class="col-12 col-lg-4 mt-4 mt-lg-0">
-						<img alt="FreeFem++ Logo" src="./dist/imgs/freefem_logo.png" height="40">
+						<img alt="FreeFem++ Logo" src="../dist/imgs/freefem_logo.png" height="40">
 					</div>
 
 					<div class="col-12 col-lg-4 text-lg-right mt-4 mt-lg-0">
