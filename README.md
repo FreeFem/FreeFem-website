@@ -1,4 +1,4 @@
-# [FreeFem++ website](https://freefem.github.io/FreeFem-website/)
+# [FreeFem++ website](https://freefem.org/)
 
 # Do you use FreeFem++ ?
 
