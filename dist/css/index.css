@@ -10,6 +10,10 @@ th {
 	border: 1px solid #dee2e6;
 }
 
+tr th {
+    width: 1%;
+}
+
 .calendar-left-pane {
 	background-color: #43cc62;
 	color: white;
