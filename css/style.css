@@ -88,7 +88,8 @@ nav a {
 /** BANNER **/
 #banner {
   background-color: #00007F;
-  display: grid;
+  /* display: grid; */
+  display: none;
   grid-template-columns: auto 20px;
   grid-auto-rows: auto;
   justify-items: center;
