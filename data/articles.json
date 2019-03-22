@@ -1,0 +1,54 @@
+{
+  "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
+  "articles": [
+    {
+      "title": "The EMAC Scheme for Navier-Stokes Simulations, and Application to Flow Past Bluff Bodies",
+      "authors": "S. Charnyi",
+      "date": "2019-03-05T23:00:00.000Z",
+      "abstract": "The  Navier-Stokes  equations  model  the  evolution  of  water,  oil,  and  air  flow  (air  under220 m.p.h.),  and  therefore  the  ability  to  solve  them  is  important  in  a  wide  array  of  engineeringdesign  problems.  However,  analytic  solution of  these  equations is  generally  not possible,  exceptfor  a  few  trivial  cases,  and  therefore  numerical  methods  must  be  employed  to  obtain  solutions.In the present dissertation we address several important issues in the area of computational fluiddynamics",
+      "link": "https://search.proquest.com/openview/b19bfb91b61dc057ce2ad7c9e0677f71/1?pq-origsite=gscholar&cbl=18750&diss=y"
+    },
+    {
+      "title": "Particle swarm optimization-based algorithms for solving inverse problems of designing thermal cloaking and shielding devices",
+      "authors": "Gennady V. Alekseev, Dmitry A.Tereshkoa",
+      "date": "2019-03-05T23:00:00.000Z",
+      "abstract": "Inverse problems associated with designing cylindrical thermal layered shielding and cloaking shells are studied. Using the optimization method these inverse problems are reduced to corresponding control problems. Thermal conductivities of the shell layers play the role of passive controls. A numerical algorithm based on the particle swarm optimization is proposed and the results of numerical experiments are discussed. Important properties of optimal solutions are established. Based on these properties simple design rules are formulated allowing to design cloaking and shielding shells which possess the best cloaking or shielding performance in addition to easy manufacturability.",
+      "link": "https://www.sciencedirect.com/science/article/pii/S0017931018356394"
+    },
+    {
+      "title": "A Practical Review on Linear and Nonlinear Global Approaches to Flow Instabilities",
+      "authors": "D. Fabre, V. Citro, D. Ferreira Sabino, P. Bonnefis, J. Sierra, F. Giannetti, M. Pigou",
+      "date": "2019-02-14T23:00:00.000Z",
+      "abstract": "This paper aims at reviewing linear and nonlinear approaches to study the stability offluid flows. We provide a concise but self-contained exposition of the main concepts andspecific numerical methods designed for global stability studies, including the classicallinear stability analysis, the adjoint-based sensitivity, and the most recent nonlineardevelopments. Regarding numerical implementation, a number of ideas making resolu-tion particularly efficient are discussed, including mesh adaptation, simple shift-invertstrategy instead of the classical Arnoldi algorithm, and a simplification of the recent non-linear self-consistent (SC) approach proposed by Manticˇ-Lugo et al. (2014, “Self-Consistent Mean Flow Description of the Nonlinear Saturation of the Vortex Shedding inthe Cylinder Wake,” Phys. Rev. Lett., 113(8), p. 084501). An open-source software imple-menting all the concepts discussed in this paper is provided. The software is demon-strated for the reference case of the two-dimensional (2D) flow around a circularcylinder, in both incompressible and compressible cases, but is easily customizable to avariety of other flow configurations or flow equations.",
+      "link": "https://www.researchgate.net/profile/Vincenzo_Citro2/publication/331167790_A_Practical_Review_on_Linear_and_Nonlinear_Global_Approaches_to_Flow_Instabilities/links/5c6a8f1d4585156b5703611a/A-Practical-Review-on-Linear-and-Nonlinear-Global-Approaches-to-Flow-Instabilities.pdf"
+    },
+    {
+      "title": "Option Pricing with the Finite Element Method",
+      "authors": "Nicolas André",
+      "date": "2019-02-14T23:00:00.000Z",
+      "abstract": "This  work  proposes  to  solve  multidimensional  financial  problems  using  a  numerical  methodwidely known in Mechanical Engineering:  the Finite Element Method.The idea of this method is to approximate the solution of a Partial Differential Equations(PDE), or a Partial Integro-Differential (PIDE) Equations, with a combination of simple func-tions.  In other words, from a complex, infinite dimensional functional space, we want to projectthe solution of a given weak problem on a simpler functional space of finite dimension.  Thisapproximation is done thanks to the Galerkin method which focuses the problem on a reducedzone, divides this zone in non-overlapping subdomains, and approximates on each domain thesolution  with  easy  functions  such  as  polynomials.   This  method  is  here  applied  to  financialmulti-dimensional problems.Here we consider the pricing of complex derivatives such as basket options on two or threeassets, under the Black-Scholes and the Merton model, and the pricing of simple products (plainvanillas) under complex models such as stochastic volatility models.  This financial problemsinvolve in general two or three dimensional parabolic PDEs or PIDEs.  We have to set theirvariational form, choose an appriopriate approximated space, derive the linear equations solvedby the components of the approximated form.We perform this computations thanks to a special PDE solver which performs Finite Elementmethods, and we want to see if increasing the number dimension of the approximated subspace,by increasing the number of subdomains or the number of simple functions, we reach a solutionand put a price on our derivatives.",
+      "link": "https://www.politesi.polimi.it/bitstream/10589/144423/3/2018_12_Andre.pdf"
+    },
+    {
+      "title": "Shear rate projection schemes for non–Newtonian fluids.",
+      "authors": "J. Deteixa, D. Yakoubi",
+      "date": "2019-02-14T23:00:00.000Z",
+      "abstract": "The operator splitting approach applied to the Navier-Stokes equations, gave rise to various numerical methods for the simulations of the dynamics of fluids. The separate work of Chorin and Temam on this subject gave birth to the so-called projection methods. The basic projection schemes, either the incremental or non-incremental variant (see [1]) induces an artificial Neumann boundary condition on the pressure. By getting rid of this boundary condition on the pressure, the so-call rotational incremental pressure-correction scheme as proposed by Timmermans et al. [2] for Newtonian fluids with constant viscosity gives a consistent equation for the pressure. In this work we propose a family of projection methods for generalized Newtonian fluids based on an extension of the rotational projection scheme. Called shear rate projections, these methods produces consistent pressure when applied to generalized Newtonian fluids. Accuracy of the methods will be illustrated using a manufactured solution. Numerical experiments for the flow past a cylinder, with aCarreau rheological model, will also be presented.",
+      "link": "https://arxiv.org/pdf/1902.05643.pdf"
+    },
+    {
+      "title": "Optimal Control of Part Load Vortex Rope in Francis Turbines",
+      "authors": " S. Pasche, F. Avellan, F. Gallaire",
+      "date": "2019-02-13T23:00:00.000Z",
+      "abstract": "The mitigation of the precessing vortex core developing in the draft tube of Francis turbines operating under part load conditions is crucial to increase the operation flexibility of these hydraulic machines to balance the massive power production of intermittent energy sources. A systematic approach following the optimal control theory is, therefore, presented to control this vortical flow structure. Modal analysis characterizes the part load vortex rope as a self-sustained instability associated with an unstable eigenmode. Based on this physical characteristic, an objective function targeting a zero value of the unstable eigenvalue growth rate is defined and subsequently minimized using an adjoint-based optimization algorithm. We determine an optimal force distribution that successfully quenches the part load vortex rope and sketches the design of a realistic control appendage.",
+      "link": "https://fluidsengineering.asmedigitalcollection.asme.org/article.aspx?articleid=2722923"
+    },
+    {
+      "title": "Mathematical modelling of convective drying of feijoa (Acca sellowiana Berg) slices",
+      "authors": "A.M. Castro, E.Y. Mayorga, F.L. Moreno",
+      "date": "2019-02-09T23:00:00.000Z",
+      "abstract": "A two-dimensional mathematical model for coupled heat and mass transfer during convective drying of feijoa (Acca sellowiana Berg) slices was implemented. The thermophysical and transport properties were considered variable and the effective moisture diffusion coefficient was determined based on the Arrhenius-type temperature dependence. The convective heat and mass transfer coefficients were obtained from the minimization of the function in terms of the error of experimental and predicted data. The model was solved by means of the finite element method programmed in FreeFEM. This is a free software that has not been reported for fruit convective drying modelling, but this software can be used for drying modelling in fruits. The model was validated against experimental data for air velocities of 0.5 and 1 ms−1, temperatures of 50, 60, and 70 °C and slice thicknesses of 0.003 and 0.005 m through Lin's concordance correlation coefficient (ρc). Which has not been reported for validation in drying modelling though it is a reliable indicator of model agreement. Experimental data were well predicted with the model, with concordance correlation coefficients of 0.9653 and 0.9872 for moisture content and temperature, respectively. The model was found to be suitable to describe, with sufficient accuracy, the heat and mass transfer during drying, and hence, it is appropriate for engineering applications.",
+      "link": "https://www.sciencedirect.com/science/article/abs/pii/S0260877419300536"
+    }
+  ]
+}

@@ -1,2 +1,4 @@
-.DS_Store
-dist/code
+Gemfile.lock
+_site
+code/LaplacianOnCube.vtu
+code/frames

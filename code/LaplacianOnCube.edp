@@ -1,0 +1,37 @@
+load "msh3"
+
+// Parameters
+int nn = 20; // Mesh quality
+
+// Mesh
+int[int] labs = [1, 2, 2, 1, 1, 2]; // Label numbering
+mesh3 Th = cube(nn, nn, nn, [-0.5+x, -0.5+y, -0.5+z], label=labs);
+Th = trunc(Th, (x < 0) | (y < 0) | (z < 0), label=1); // Remove the ]0.5,1[^3 domaine of the cube
+
+// Fespace
+fespace Vh(Th, P1);
+Vh u, v;
+
+// Macro
+macro Grad(u) [dx(u), dy(u), dz(u)] //
+
+// Define the problem and solve
+solve Poisson(u, v, solver=CG)
+    = int3d(Th)(
+          Grad(u)' * Grad(v)
+    )
+    -int3d(Th)(
+          1 * v
+    )
+    + on(1, u=0)
+    ;
+
+// Plot
+plot(u, nbiso=15);
+
+{
+    load "iovtk"
+    int[int] order = [1];
+    string dataname = "u";
+    savevtk("LaplacianOnCube.vtu", Th, u, dataname=dataname, order=order, bin=true);
+}

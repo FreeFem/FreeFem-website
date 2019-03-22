@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+{% include head.html %}
+
+<body>
+  {% include header.html %}
+
+  {% include banner.html %}
+
+  <section id="main">
+    <article id="demo">
+      <div id="code">
+        <pre><code>load "msh3"
+
+// Parameters
+int nn = 20; // Mesh quality
+
+// Mesh
+int[int] labs = [1, 2, 2, 1, 1, 2]; // Label numbering
+mesh3 Th = cube(nn, nn, nn, label=labs);
+Th = trunc(Th, (x < 0.5) | (y < 0.5) | (z < 0.5), label=1); // Remove the ]0.5,1[^3 domaine of the cube
+
+// Fespace
+fespace Vh(Th, P1);
+Vh u, v;
+
+// Macro
+macro Grad(u) [dx(u), dy(u), dz(u)] //
+
+// Define the problem and solve
+solve Poisson(u, v, solver=CG)
+    = int3d(Th)(
+          Grad(u)' * Grad(v)
+    )
+    -int3d(Th)(
+          1 * v
+    )
+    + on(1, u=0)
+    ;
+
+// Plot
+plot(u, nbiso=15);</code></pre>
+      </div>
+
+      <div id="blank">
+        <video id="laplacianVideo" playsinline autoplay muted loop>
+          <source src="{{ site.url }}{{ site.baseurl }}/vid/LaplacianOnCube.webm" type="video/webm" />
+          <source src="{{ site.url }}{{ site.baseurl }}/vid/LaplacianOnCube.mp4" type="video/mp4" />
+          <img src="{{ site.url }}{{ site.baseurl }}/img/LaplacianOnCube.jpg" alt="Poisson's equation 3D - Iso-surfaces of the solution">
+        </video>
+      </div>
+    </article>
+
+    <article id="intro">
+      <h1>A high level multiphysics finite element software</h1>
+      <p>FreeFEM offers a fast interpolation algorithm and a language for the manipulation of data on multiple meshes.</p>
+    </article>
+  </section>
+
+  <aside>
+    <div id="release">RELEASE</div>
+    <div id="download"><a href="https://github.com/FreeFem/FreeFem-sources/releases" target="_blank">Download</a></div>
+    <div id="platforms">
+      <p><span><i class="fab fa-apple"></i> <i class="fab fa-linux"></i> <i class="fab fa-windows"></i></span>All platforms (LGPL)</p>
+    </div>
+  </aside>
+
+  <section id="content">
+    <h1>FreeFEM capabilities</h1>
+    <article class="content-left">
+      <div class="article-img">
+        <img src="{{ site.url }}{{ site.baseurl }}/img/cpp.png" alt="cpp" />
+      </div>
+      <div class="article-text">
+        <h2>Easy to use PDE solver</h2>
+        <p>
+          FreeFEM is a C++ idiom, with its own longuage, but don't need compilation
+        </p>
+        <p>
+          Just write the weak form to solve the associated Partial Differential Equations (PDE)
+        </p>
+        <p>
+          Finite elements collection is included (Lagrange, Taylor-Hood, Raviard-Thomas, Nedelec, ...)
+        </p>
+      </div>
+    </article>
+    <article class="content-right">
+      <div class="article-text">
+        <h2>Embedded mesh capabilities</h2>
+        <p>
+          FreeFEM has it own internal mesher: BAMG
+        </p>
+        <p>
+          Interfaces with <a href="http://wias-berlin.de/software/tetgen/" target="_blank">Tetgen</a>, <a href="http://gmsh.info/" traget="_blank">Gmsh</a> and <a href="https://www.mmgtools.org/" target="_blank">MMG</a> are available
+        </p>
+      </div>
+      <div class="article-img">
+        <img src="{{ site.url }}{{ site.baseurl }}/img/mesh.png" alt="mesh" />
+      </div>
+    </article>
+    <article class="content-left">
+      <div class="article-img">
+        <img src="{{ site.url }}{{ site.baseurl }}/img/physics.svg" alt="physics" />
+      </div>
+      <div class="article-text">
+        <h2>Pre-build physics</h2>
+        <ul>
+          <li>Incompressible Navier-Stokes (using the P1-P2 Taylor Hood element)</li>
+        </ul>
+        <ul>
+          <li>Lamé equations (linear elasticity)</li>
+          <li>Neo-Hookean, Mooney-Rivlin (nonlinear elasticity)</li>
+        </ul>
+        <ul>
+          <li>Thermal diffusion</li>
+          <li>Thermal convection</li>
+          <li>Thermal radiation</li>
+        </ul>
+        <ul>
+          <li>Magnetostatics</li>
+          <li>Electrostatics</li>
+        </ul>
+        <ul>
+          <li>Fluid-structure interaction (FSI)</li>
+        </ul>
+      </div>
+    </article>
+    <article class="content-right">
+      <div class="article-text">
+        <h2>Massively parallel</h2>
+        <p>
+          FreeFEM is interfaced with the popular <a href="http://mumps.enseeiht.fr/" target="_blank">mumps</a>, <a href="https://www.mcs.anl.gov/petsc/" target="_blank">PETSc</a> and <a href="https://github.com/hpddm/hpddm" target="_blank">HPDDM</a> solvers
+        </p>
+      </div>
+      <div class="article-img">
+        <img src="{{ site.url }}{{ site.baseurl }}/img/parallel.png" alt="mesh" />
+      </div>
+    </article>
+  </section>
+
+  <section id="articles">
+    <h1>Latest Articles</h1>
+    <article id="artFirst">
+      <p>{{ site.data.articles.articles[0].date | date: '%B %d, %Y' }} | {{ site.data.articles.articles[0].authors }}</p>
+      <h2><a href="{{ site.data.articles.articles[0].link }}" target="_blank">{{ site.data.articles.articles[0].title }}</a></h2>
+      <p>
+        {{ site.data.articles.articles[0].abstract }}
+      </p>
+    </article>
+    <article id="artSecond">
+      <p>{{ site.data.articles.articles[1].date | date: '%B %d, %Y' }} | {{ site.data.articles.articles[1].authors }}</p>
+      <h2><a href="{{ site.data.articles.articles[1].link }}" target="_blank">{{ site.data.articles.articles[1].title }}</a></h2>
+      <p>
+        {{ site.data.articles.articles[1].abstract }}
+      </p>
+    </article>
+    <article id="artThird">
+      <p>{{ site.data.articles.articles[2].date | date: '%B %d, %Y' }} | {{ site.data.articles.articles[2].authors }}</p>
+      <h2><a href="{{ site.data.articles.articles[2].link }}" target="_blank">{{ site.data.articles.articles[2].title }}</a></h2>
+      <p>
+        {{ site.data.articles.articles[2].abstract }}
+      </p>
+    </article>
+  </section>
+
+  <section id="info">
+    <section id="events">
+      <h1>Events</h1>
+      <div class="event-grid">
+        <div class="date">21-23 MAY 2019</div>
+        <h2 class="title"><a href='http://hpcse.it4i.cz/HPCSE19/' target='_blank'>HPCSE 2019 - Ostrava, Czech Republic</a></h2>
+        <p class="description">High Performance Computing in Science and Engineering
+          <p />
+      </div>
+      <div class="event-grid">
+        <div class="date">3-5 JUNE 2019</div>
+        <h2 class="title"><a href='https://congress.cimne.com/coupled201/' target='_blank'>COUPLED 2019 - Sitges (Barcelona)</a></h2>
+        <p class="description">Brain imaging with FreeFEM.
+          <p />
+      </div>
+      <div class="event-grid">
+        <div class="date">19-21 JUNE 2019</div>
+        <h2 class="title"><a href='https://rmr2019.sciencesconf.org/' target='_blank'>Rencontre Mathématiques de Rouen</a></h2>
+        <p class="description">Introduction to FreeFEM version 4
+          <p />
+      </div>
+    </section>
+
+    <section id="team">
+      <h1>You are in good company</h1>
+      <div>
+        <a href="http://www.sorbonne-universite.fr/" target="_blank"><img alt="Sorbonne université" src="{{ site.url }}{{ site.baseurl }}/img/logo_Sorbonne.svg" /></a>
+        <a href="https://www.inria.fr/" target="_blank"><img alt="INRIA" src="{{ site.url }}{{ site.baseurl }}/img/logo_INRIA_EN.svg" /></a>
+        <a href="http://www.agence-nationale-recherche.fr/" target="_blank"><img alt="ANR" src="{{ site.url }}{{ site.baseurl }}/img/logo_ANR.svg" /></a>
+        <a href="http://www.genci.fr/" target="_blank"><img alt="Genci" src="{{ site.url }}{{ site.baseurl }}/img/logo_Genci.jpg" /></a>
+        <a href="http://www.cnrs.fr/" target="_blank"><img alt="CNRS" src="{{ site.url }}{{ site.baseurl }}/img/logo_CNRS.svg" /></a>
+      </div>
+    </section>
+  </section>
+
+  {% include footer.html %}
+  <script src="{{ site.url }}{{ site.baseurl }}/js/codeColor.js"></script>
+  <script>
+    const code = document.getElementById('code')
+    codeColor(code)
+  </script>
+  <script async src="{{ site.url }}{{ site.baseurl }}/js/githubRelease.js"></script>
+</body>
+
+</html>

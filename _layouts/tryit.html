@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,900" rel="stylesheet">
+  <link rel="icon" href="{{ site.url }}{{ site.baseurl }}/img/FreeFEM_Symbol_592x592.png" />
+  <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/codemirror.css">
+  <script src="{{ site.url }}{{ site.baseurl }}/js/codemirror.js"></script>
+  <script src="{{ site.url }}{{ site.baseurl }}/js/mode/freefem/freefem.js"></script>
+  <script src="{{ site.url }}{{ site.baseurl }}/js/split-grid.min.js"></script>
+  <script defer src="https://www.ljll.math.upmc.fr/lehyaric/ffjs/jquery-1.11.2.min.js"></script>
+  <script>
+    console.log('loading FreeFEM')
+    var freefemScript = document.createElement("script");
+    freefemScript.type = 'text/javascript';
+    freefemScript.src = './js/freefem-js-compiled.js';
+    freefemScript.defer = true;
+    document.getElementsByTagName('head')[0].appendChild(freefemScript);
+
+    freefemScript.onload = freefemScript.onreadystatechange = function() {
+      if (document.readyState) {
+        document.getElementById('orbit-spinner').classList.add('is-invisible')
+        document.getElementById('arrow').style.pointerEvents = 'auto';
+        console.log('loaded!')
+      }
+    }
+  </script>
+  <script defer src="./js/custom-freefem-api.js" type="text/javascript"></script>
+  <title>{{ page.title }}</title>
+</head>
+
+<body>
+  {% include header.html %}
+
+  <section id="exampleMain">
+    <div id="orbit-spinner">
+      <div class="orbit"></div>
+      <div class="orbit"></div>
+      <div class="orbit"></div>
+      <div class="orbitMsg">LOADING</div>
+    </div>
+    <div id="exampleScripts">
+      <h2>Example Scripts</h2>
+      <div id="exampleLinks">
+
+      </div>
+      <div id="example2D">
+        <i class="fas fa-times" onclick="this.parentNode.style.display = 'none'; const exampleGithub = document.getElementById('exampleGithub'); exampleGithub.style.marginTop = 'auto'"></i>
+        <p>FreeFEM JS only works in 2D</p>
+      </div>
+      <div id="exampleGithub">
+        <a class="header-github" href="https://github.com/FreeFem/FreeFem-sources" target="_blank">
+          <i class="fab fa-github"></i>
+          <p class="header-github-title">
+            FreeFEM on GitHub
+          </p>
+
+          <p class="header-github-stars" id="headerGithubStarsForks">
+            <span id="headerGithubStars"></span> stars - <span id="headerGithubForks"></span> forks
+          </p>
+        </a>
+        <script async src="{{ site.url }}{{ site.baseurl }}/js/github.js"></script>
+      </div>
+    </div>
+    <div class="gutter" id="gutter1"></div>
+    <div id="exampleCode" spellcheck="false">
+      <h2>Code <span id="exampleSave" onclick="saveEDP(editor)">Save as EDP</span></h2>
+
+      <textarea class="ffjs" id="code">mesh Th=square(10, 10, flags=2);
+plot(Th);
+
+fespace Uh(Th, P1);
+Uh u;
+
+macro grad(u)[dx(u), dy(u)]//
+
+varf vLaplacian (u, v)
+	= int2d(Th)(
+		grad(u)' * grad(v)
+	)
+	+ int2d(Th)(
+		1. * v
+	)
+	+ on(1, 2, 3, 4, u=0)
+	;
+
+matrix Laplacian = vLaplacian(Uh, Uh, solver=sparsesolver);
+real[int] LaplacianRHS = vLaplacian(0, Uh);
+
+u[] = Laplacian^-1 * LaplacianRHS;
+
+plot(u);</textarea>
+      <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+          lineNumbers: true,
+          mode: "text/x-ff++src"
+        })
+      </script>
+      <script async src="{{ site.url }}{{ site.baseurl }}/js/saveEDP.js"></script>
+    </div>
+    <div class="gutter" id="gutter2"></div>
+    <div id="exampleResult">
+      <h2>Result</h2>
+      <div id="resultContainer">
+        <div id="arrow">
+          <div id="arrow-right" type="button" onclick="ffjs_evaluate()"></div>
+          <div id="arrow-text">RUN</div>
+          <div id="arrow-spinner" class="sk-fading-circle is-invisible">
+            <div class="sk-circle1 sk-circle"></div>
+            <div class="sk-circle2 sk-circle"></div>
+            <div class="sk-circle3 sk-circle"></div>
+            <div class="sk-circle4 sk-circle"></div>
+            <div class="sk-circle5 sk-circle"></div>
+            <div class="sk-circle6 sk-circle"></div>
+            <div class="sk-circle7 sk-circle"></div>
+            <div class="sk-circle8 sk-circle"></div>
+            <div class="sk-circle9 sk-circle"></div>
+            <div class="sk-circle10 sk-circle"></div>
+            <div class="sk-circle11 sk-circle"></div>
+            <div class="sk-circle12 sk-circle"></div>
+          </div>
+        </div>
+        <canvas class="ffjs_graph" data-ffjs="default">
+          FreeFEM JS is not available for your browser as it doesn't support javascript Canvas.
+        </canvas>
+      </div>
+    </div>
+    <div id="exampleConsole">
+      <h2 onclick="openConsole()">Console</h2>
+      <div id="ffjs_stdout" class="is-invisible">Please click on the RUN button first.</div>
+      <div id="ffjs_stderr" style="font-family:monospace;"></div>
+    </div>
+  </section>
+
+  {% include footer.html %}
+
+  <script src="{{ site.url }}{{ site.baseurl }}/js/openConsole.js"></script>
+  <script>
+    Split({
+      columnGutters: [{
+          track: 1,
+          element: document.querySelector('#gutter1'),
+        },
+        {
+          track: 3,
+          element: document.querySelector('#gutter2'),
+        }
+      ]
+    })
+  </script>
+</body>
+
+</html>
