@@ -131,12 +131,25 @@
     flex-direction: column !important;
   }
 
+  #content article {
+      margin: unset !important;
+      padding: 1rem !important;
+  }
+
   #content article.content-left {
   	margin-right: 0 !important;
   }
 
   #content article.content-right {
   	margin-left: 0 !important;
+  }
+  
+  #content .article-img {
+    width: 100px !important;
+  }
+  
+  #content .article-img img {
+    width: 80px !important;
   }
 
   #events {
