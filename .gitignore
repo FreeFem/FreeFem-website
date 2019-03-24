@@ -2,3 +2,5 @@ Gemfile.lock
 _site
 code/LaplacianOnCube.vtu
 code/frames
+dist/.DS_Store
+dist/imgs/.DS_Store
