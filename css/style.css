@@ -720,7 +720,7 @@ body::-webkit-scrollbar {
   display: grid;
   grid-template-columns: 1fr 2px 3fr 2px 3fr;
   grid-template-rows: calc(100% - 1.875rem) 1.875rem;
-  padding: 0 calc((100% - 1200px)/2);
+  /* padding: 0 calc((100% - 1200px)/2); */
 }
 
 #exampleMain h2 {
