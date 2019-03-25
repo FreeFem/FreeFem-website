@@ -67,44 +67,14 @@ plot(u, nbiso=15);</code></pre>
   </aside>
 
   <section id="content">
-    <h1>FreeFEM capabilities</h1>
     <article class="content-left">
-      <div class="article-img">
-        <img src="{{ site.url }}{{ site.baseurl }}/img/cpp.png" alt="cpp" />
-      </div>
       <div class="article-text">
         <h2>Easy to use PDE solver</h2>
-        <p>
-          FreeFEM is a C++ idiom, with its own longuage, but don't need compilation
+        <p>FreeFEM is a popular 2D and 3D partial differential equations (PDE) solver used by thousands of researchers across the world.
+          It allows you to easily implement your own physics modules using the provided FreeFEM language.
+          FreeFEM offers a large list of finite elements, like the Lagrange, Taylor-Hood, etc., usable in the continuous and discontinuous Galerkin method framework.
         </p>
-        <p>
-          Just write the weak form to solve the associated Partial Differential Equations (PDE)
-        </p>
-        <p>
-          Finite elements collection is included (Lagrange, Taylor-Hood, Raviard-Thomas, Nedelec, ...)
-        </p>
-      </div>
-    </article>
-    <article class="content-right">
-      <div class="article-text">
-        <h2>Embedded mesh capabilities</h2>
-        <p>
-          FreeFEM has it own internal mesher: BAMG
-        </p>
-        <p>
-          Interfaces with <a href="http://wias-berlin.de/software/tetgen/" target="_blank">Tetgen</a>, <a href="http://gmsh.info/" traget="_blank">Gmsh</a> and <a href="https://www.mmgtools.org/" target="_blank">MMG</a> are available
-        </p>
-      </div>
-      <div class="article-img">
-        <img src="{{ site.url }}{{ site.baseurl }}/img/mesh.png" alt="mesh" />
-      </div>
-    </article>
-    <article class="content-left">
-      <div class="article-img">
-        <img src="{{ site.url }}{{ site.baseurl }}/img/physics.svg" alt="physics" />
-      </div>
-      <div class="article-text">
-        <h2>Pre-build physics</h2>
+        <p>Numerous physics are pre-built :</p>
         <ul>
           <li>Incompressible Navier-Stokes (using the P1-P2 Taylor Hood element)</li>
         </ul>
@@ -128,13 +98,11 @@ plot(u, nbiso=15);</code></pre>
     </article>
     <article class="content-right">
       <div class="article-text">
-        <h2>Massively parallel</h2>
+        <h2>Strong mesh and parallel capabilities</h2>
         <p>
-          FreeFEM is interfaced with the popular <a href="http://mumps.enseeiht.fr/" target="_blank">mumps</a>, <a href="https://www.mcs.anl.gov/petsc/" target="_blank">PETSc</a> and <a href="https://github.com/hpddm/hpddm" target="_blank">HPDDM</a> solvers
+          FreeFEM has it own internal mesher, called BAMG, and is compatible with the best open-source mesh and visualization software like <a href="http://wias-berlin.de/software/tetgen/" target="_blank">Tetgen</a>, <a href="http://gmsh.info/" traget="_blank">Gmsh</a>, <a href="https://www.mmgtools.org/" target="_blank">Mmg</a> and <a href="https://www.paraview.org/" target="_blank">ParaView</a>.
+          Written in C++ to optimize for speed, FreeFEM is interfaced with the popular <a href="http://mumps.enseeiht.fr/" target="_blank">mumps</a>, <a href="https://www.mcs.anl.gov/petsc/" target="_blank">PETSc</a> and <a href="https://github.com/hpddm/hpddm" target="_blank">HPDDM</a> solvers.
         </p>
-      </div>
-      <div class="article-img">
-        <img src="{{ site.url }}{{ site.baseurl }}/img/parallel.png" alt="mesh" />
       </div>
     </article>
   </section>
