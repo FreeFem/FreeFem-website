@@ -93,8 +93,11 @@
 		history.pushState({url: url, title: title}, title, url)
 	}
 
+  const url = window.location.href
+  if (url === 'https://freefem.org/gallery/') {
     const first = document.getElementById('galleryFirst')
     first.click()
+  }
 	</script>
 </body>
 
