@@ -498,6 +498,7 @@ body::-webkit-scrollbar {
   padding: 0;
   margin: 0;
   overflow: auto;
+  line-height: 1.375rem;
 }
 
 #galleryTitle ul a {
@@ -541,7 +542,6 @@ body::-webkit-scrollbar {
 
 #galleryTitle li.active a {
   color: #00007F;
-  padding: 0.55rem;
 }
 
 #galleryTitle li a:hover {
@@ -559,17 +559,21 @@ body::-webkit-scrollbar {
 	flex-direction: column;
 	align-items: center;
 	overflow: auto;
+  padding-top: 1rem;
 }
 
 #galleryImg table {
 	max-width: 90%;
 	text-align: center;
-	margin-bottom: 1rem;
-	box-shadow: 2px 2px 2px grey;
+	padding-bottom: 1rem;
 }
 
 #galleryImg tbody {
 	font-weight: bold;
+}
+
+#galleryImg th {
+	padding-bottom: .5rem;
 }
 
 #galleryImg img {
