@@ -565,7 +565,7 @@ body::-webkit-scrollbar {
 #galleryImg table {
 	max-width: 90%;
 	text-align: center;
-	padding-bottom: 1rem;
+	padding-bottom: 2rem;
 }
 
 #galleryImg tbody {
