@@ -95,8 +95,7 @@
 
   const url = window.location.href
   const lastURLSegment = url.substr(url.lastIndexOf('/')+1)
-  console.log(lastURLSegment)
-  if (lastURLSegment === '') {
+  if (lastURLSegment === 'gallery') {
     const first = document.getElementById('galleryFirst')
     first.click()
   } else {
