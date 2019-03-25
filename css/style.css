@@ -281,6 +281,7 @@ aside span {
 
 #content article p {
 	padding: 0.55rem;
+  line-height: 1.375rem;
 }
 
 #content article ul {
