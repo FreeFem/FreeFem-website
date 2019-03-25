@@ -1,11 +1,11 @@
-{
+ {
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
       "title": "The EMAC Scheme for Navier-Stokes Simulations, and Application to Flow Past Bluff Bodies",
       "authors": "S. Charnyi",
       "date": "2019-03-05T23:00:00.000Z",
-      "abstract": "The  Navier-Stokes  equations  model  the  evolution  of  water,  oil,  and  air  flow  (air  under220 m.p.h.),  and  therefore  the  ability  to  solve  them  is  important  in  a  wide  array  of  engineering design  problems.  However,  analytic  solution of  these  equations is  generally  not possible,  exceptfor  a  few  trivial  cases,  and  therefore  numerical  methods  must  be  employed  to  obtain  solutions. In the present dissertation we address several important issues in the area of computational fluid dynamics",
+      "abstract": "The Navier-Stokes equations model the evolution of water, oil, and air flow (air under220 m.p.h.), and therefore the ability to solve them is important in a wide array of engineering design problems. However, analytic solution of these equations is generally not possible, except for a few trivial cases, and therefore numerical methods must be employed to obtain solutions. In the present dissertation we address several important issues in the area of computational fluid  dynamics",
       "link": "https://search.proquest.com/openview/b19bfb91b61dc057ce2ad7c9e0677f71/1?pq-origsite=gscholar&cbl=18750&diss=y"
     },
     {
