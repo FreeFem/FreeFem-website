@@ -8,7 +8,7 @@
   <section id="galleryMain">
     <div id="galleryTitle">
       <ul>
-        <li>
+        <li id="meshAdaptation">
           <div class="wrap">
             <a href="{{ site.url }}{{ site.baseurl }}/gallery/meshAdaptation" onclick="fetchGallery(event, '{{ site.url }}{{ site.baseurl }}/gallery/meshAdaptation', 'Mesh adaptation'); activateGallery(this.parentNode.parentNode)" id="galleryFirst">Mesh adaptation</a>
             <div>
@@ -18,7 +18,7 @@
             </div>
           </div>
         </li>
-        <li>
+        <li id="cobra">
           <div class="wrap">
             <a href="{{ site.url }}{{ site.baseurl }}/gallery/cobra" onclick="fetchGallery(event, '{{ site.url }}{{ site.baseurl }}/gallery/cobra', 'Electromagnetic scattering from COBRA cavity'); activateGallery(this.parentNode.parentNode)">Electromagnetic scattering from COBRA cavity</a>
             <div>
@@ -29,7 +29,7 @@
             </div>
           </div>
         </li>
-        <li>
+        <li id="ovt">
           <div class="wrap">
             <a href="{{ site.url }}{{ site.baseurl }}/gallery/ovt" onclick="fetchGallery(event, '{{ site.url }}{{ site.baseurl }}/gallery/ovt', '3D acoustic simulation with the SEG/EAGE Overthrust model'); activateGallery(this.parentNode.parentNode)">3D acoustic simulation with the SEG/EAGE Overthrust model</a>
             <div>
@@ -41,7 +41,7 @@
             </div>
           </div>
         </li>
-        <li>
+        <li id="mediMax">
           <div class="wrap">
             <a href="{{ site.url }}{{ site.baseurl }}/gallery/mediMax"onclick="fetchGallery(event, '{{ site.url }}{{ site.baseurl }}/gallery/mediMax', 'Microwave imaging of cerebrovascular accidents'); activateGallery(this.parentNode.parentNode)">Microwave imaging of cerebrovascular accidents</a>
             <div>
@@ -60,7 +60,7 @@
             </div>
           </div>
         </li>
-        <li>
+        <li id="roots">
           <div class="wrap">
             <a href="{{ site.url }}{{ site.baseurl }}/gallery/roots" onclick="fetchGallery(event, '{{ site.url }}{{ site.baseurl }}/gallery/roots', 'Water and nutrient uptake by plant roots'); activateGallery(this.parentNode.parentNode)">Water and nutrient uptake by plant roots</a>
             <div>
@@ -93,8 +93,17 @@
 		history.pushState({url: url, title: title}, title, url)
 	}
 
+  const url = window.location.href
+  const lastURLSegment = url.substr(url.lastIndexOf('/')+1)
+  console.log(lastURLSegment)
+  if (lastURLSegment === '') {
     const first = document.getElementById('galleryFirst')
     first.click()
+  } else {
+    const toActivate = document.getElementById(lastURLSegment)
+    if (toActivate)
+      activateGallery(toActivate)
+  }
 	</script>
 </body>
 
