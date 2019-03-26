@@ -834,6 +834,14 @@ body::-webkit-scrollbar {
 
 #exampleLinks {
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: .55rem;
+}
+
+#exampleLinks a {
+  padding: .1rem;
+  margin: .2rem 0;
 }
 
 .gutter {

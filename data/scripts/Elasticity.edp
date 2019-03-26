@@ -1,5 +1,5 @@
 // Parameters
-int nn = 10;
+int nn = 5;
 real L = 5.;
 real H = 1.;
 

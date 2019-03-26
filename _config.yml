@@ -1,7 +1,7 @@
 source: .
 destination: _site
 
-excldue: [_data/articles.json]
+exclude: [_data/articles.json]
 keep_files: [_data/articles.json]
 
 encoding: utf-8

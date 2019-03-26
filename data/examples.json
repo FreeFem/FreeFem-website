@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Laplacian",
+		"desc": "Academic - Laplacian equation solved on a cube",
+		"path": "data/scripts/Laplacian.edp"
+	},
+	{
+		"name": "Stokes",
+		"desc": "Fluid mechanics - Stokes equations on a pipe",
+		"path": "data/scripts/Stokes.edp"
+	},
+	{
+		"name": "Elasticity",
+		"desc": "Mechanics - Lamé equation on a beam",
+		"path": "data/scripts/Elasticity.edp"
+	}
+]

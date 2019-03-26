@@ -47,7 +47,6 @@
     <div id="exampleScripts">
       <h2>Example Scripts</h2>
       <div id="exampleLinks">
-
       </div>
       <div id="example2D">
         <i class="fas fa-times" onclick="this.parentNode.style.display = 'none'; const exampleGithub = document.getElementById('exampleGithub'); exampleGithub.style.marginTop = 'auto'"></i>
@@ -71,30 +70,7 @@
     <div id="exampleCode" spellcheck="false">
       <h2>Code <span id="exampleSave" onclick="saveEDP(editor)">Save as EDP</span></h2>
 
-      <textarea class="ffjs" id="code">mesh Th=square(10, 10, flags=2);
-plot(Th);
-
-fespace Uh(Th, P1);
-Uh u;
-
-macro grad(u)[dx(u), dy(u)]//
-
-varf vLaplacian (u, v)
-	= int2d(Th)(
-		grad(u)' * grad(v)
-	)
-	+ int2d(Th)(
-		1. * v
-	)
-	+ on(1, 2, 3, 4, u=0)
-	;
-
-matrix Laplacian = vLaplacian(Uh, Uh, solver=sparsesolver);
-real[int] LaplacianRHS = vLaplacian(0, Uh);
-
-u[] = Laplacian^-1 * LaplacianRHS;
-
-plot(u);</textarea>
+      <textarea class="ffjs" id="code"></textarea>
       <script>
         var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
           lineNumbers: true,
@@ -140,6 +116,7 @@ plot(u);</textarea>
   {% include footer.html %}
 
   <script src="{{ site.url }}{{ site.baseurl }}/js/openConsole.js"></script>
+  <script src="{{ site.url }}{{ site.baseurl }}/js/loadExample.js"></script>
   <script>
     Split({
       columnGutters: [{
@@ -152,6 +129,12 @@ plot(u);</textarea>
         }
       ]
     })
+    const examplesList = document.getElementById('exampleLinks')
+    {% for example in site.data.examples %}
+    examplesList.innerHTML += '<a href="#" title="{{ example.desc }}" onclick="loadExample(\'{{ example.path }}\', editor)">{{ example.name }}</a>\n'
+    {% endfor %}
+
+    loadExample('{{ site.data.examples[0].path }}', editor)
   </script>
 </body>
 
