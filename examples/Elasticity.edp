@@ -1,0 +1,46 @@
+// Parameters
+int nn = 10;
+real L = 5.;
+real H = 1.;
+
+real Mu = 1.;
+real Lambda = 1.;
+
+real Fx = 0.;
+real Fy = -1.e-3;
+
+// Mesh
+mesh Th = square(L*nn, H*nn, [L*x, H*y]);
+
+// Fespace
+fespace Uh(Th, P1);
+Uh Ux, Uy;
+Uh Uhx, Uhy;
+
+// Macro
+real sqrt2 = sqrt(2.);
+macro Epsilon(U) [dx(U#x), dy(U#y), div(U#y, U#x)/sqrt2] //
+macro div(ux, uy) (dx(ux) + dy(uy)) //
+macro Div(U) div(U#x, U#y) //
+
+// Problem
+problem Lame ([Ux, Uy], [Uhx, Uhy])
+	= int2d(Th)(
+		  Lambda * Div(U) * Div(Uh)
+		+ 2.*Mu * Epsilon(U)' * Epsilon(Uh)
+	)
+	- int2d(Th)(
+		  [Fx, Fy]' * [Uhx, Uhy]
+	)
+	+ on(4, Ux=0, Uy=0)
+	;
+
+// Solve
+Lame;
+
+// Move mesh
+Th = movemesh(Th, [x+Ux, y+Uy]);
+Ux=Ux; Uy=Uy;
+
+// Plot
+plot([Ux, Uy]);

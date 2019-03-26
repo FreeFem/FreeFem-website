@@ -1,0 +1,48 @@
+// Parameters
+int nn = 10;
+real L = 5.;
+real H = 1.;
+
+real uMax = 0.5;
+
+real Mu = 1.;
+real pEps = 1.e-6;
+
+// Mesh
+mesh Th = square(L*nn, H*nn, [L*x, H*y]);
+
+// Fespace
+fespace Uh(Th, P2);
+Uh Ux, Uy;
+Uh Uhx, Uhy;
+
+fespace Ph(Th, P1);
+Ph p;
+Ph ph;
+
+// Macro
+macro grad(u) [dx(u), dy(u)] //
+macro Grad(U) [grad(U#x), grad(U#y)] //
+macro div(ux, uy) (dx(ux) + dy(uy)) //
+macro Div(U) div(U#x, U#y) //
+
+// Functions
+func uIn = uMax * y*(H-y) / (H/2.)^2;
+
+// Problem
+problem Stokes ([Ux, Uy, p], [Uhx, Uhy, ph])
+	= int2d(Th)(
+		  Mu * (Grad(U) : Grad(Uh))
+		- p *Div(Uh)
+		- ph * Div(U)
+		- pEps * p * ph
+	)
+	+ on(4, Ux=uIn, Uy=0)
+	+ on(1, 3, Ux=0, Uy=0)
+	;
+
+// Solve
+Stokes;
+
+// Plot
+plot([Ux, Uy], p);
