@@ -1,7 +1,4 @@
 loadExample = (path, editor) => {
-	console.log(path)
-	console.log(editor)
-
 	const xhr = new XMLHttpRequest()
 	xhr.open('GET', path, true)
 	xhr.onload = function(e) {
