@@ -720,7 +720,7 @@ body::-webkit-scrollbar {
   display: grid;
   grid-template-columns: 1fr 2px 3fr 2px 3fr;
   grid-template-rows: calc(100% - 1.875rem) 1.875rem;
-  /* padding: 0 calc((100% - 1200px)/2); */
+  overflow: hidden;
 }
 
 #exampleMain h2 {
@@ -1183,8 +1183,7 @@ body::-webkit-scrollbar {
   padding: .25rem 1.125rem;
   font-family: monospace;
   order: 1;
-  overflow: scroll;
-  ;
+  overflow: auto;
 }
 
 .is-invisible {
