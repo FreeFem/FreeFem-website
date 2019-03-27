@@ -13,5 +13,15 @@
 		"name": "Elasticity",
 		"desc": "Mechanics - Lamé equation on a beam",
 		"path": "data/scripts/Elasticity.edp"
+	},
+	{
+		"name": "Thermal conduction",
+		"desc": "Thermic - Thermal conduction on a rectangle",
+		"path": "data/scripts/ThermalConduction.edp"
+	},
+	{
+		"name": "Acoustics",
+		"desc": "Acoustics - Acoustics on a custom geometry",
+		"path": "data/scripts/Acoustics.edp"
 	}
 ]

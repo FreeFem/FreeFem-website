@@ -1,9 +1,11 @@
-// Parameters
-int nn = 5;
-real L = 1.;
-real H = 1.;
+// See https://doc.freefem.org/tutorials/poisson.html for more information
 
-real f = 1.;
+// Parameters
+int nn = 5;	//mesh quality
+real L = 1.; //geometry length
+real H = 1.;	//geometry height
+
+real f = 1.;	//external force
 
 // Mesh
 mesh Th = square(L*nn, H*nn, [L*x, H*y]);

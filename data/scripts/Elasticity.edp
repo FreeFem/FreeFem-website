@@ -1,3 +1,5 @@
+// See https://doc.freefem.org/tutorials/elasticity.html for more information
+
 // Parameters
 int nn = 5;
 real L = 5.;

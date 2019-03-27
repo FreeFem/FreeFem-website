@@ -1,12 +1,14 @@
+// See https://doc.freefem.org/tutorials/stokes.html for more information
+
 // Parameters
-int nn = 5;
-real L = 5.;
-real H = 1.;
+int nn = 5;		//mesh quality
+real L = 5.;	//geometry length
+real H = 1.;	//geometry height
 
-real uMax = 0.5;
+real uMax = 0.5;	//max inlet velocity
 
-real Mu = 1.;
-real pEps = 1.e-6;
+real Mu = 1.;	//viscosity
+real pEps = 1.e-6;	//stabilization term
 
 // Mesh
 mesh Th = square(L*nn, H*nn, [L*x, H*y]);
@@ -27,7 +29,7 @@ macro div(ux, uy) (dx(ux) + dy(uy)) //
 macro Div(U) div(U#x, U#y) //
 
 // Functions
-func uIn = uMax * y*(H-y) / (H/2.)^2;
+func uIn = uMax * y*(H-y) / (H/2.)^2;	//poiseuille profile
 
 // Problem
 problem Stokes ([Ux, Uy, p], [Uhx, Uhy, ph])
