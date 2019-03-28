@@ -718,7 +718,7 @@ body::-webkit-scrollbar {
 #exampleMain {
   flex: 1;
   display: grid;
-  grid-template-columns: 1fr 2px 3fr 2px 3fr;
+  grid-template-columns: 250px 2px 1fr 2px 1fr;
   grid-template-rows: calc(100% - 1.875rem) 1.875rem;
   overflow: hidden;
 }
@@ -1203,9 +1203,8 @@ body::-webkit-scrollbar {
 }
 
 #example2D p {
-	padding: 0.55rem;
+	padding: .55rem 1.125rem;
 	color: grey;
-	text-align: center;
 	margin: 0;
 	background-color: #FFF;
 }
