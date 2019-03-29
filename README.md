@@ -1,5 +1,5 @@
-# [FreeFem++ website](https://freefem.org/)
+# [FreeFEM website](https://freefem.org/)
 
-# Do you use FreeFem++ ?
+# Do you use FreeFEM ?
 
 See the [CONTRIBUTING](CONTRIBUTING.md) file to see how to show your love for FreeFem++
