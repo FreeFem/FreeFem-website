@@ -1175,7 +1175,7 @@ body::-webkit-scrollbar {
   order: 0;
 }
 
-#exampleConsole h2:hover {
+#exampleConsole,#exampleResult h2:hover {
   cursor: pointer;
 }
 
