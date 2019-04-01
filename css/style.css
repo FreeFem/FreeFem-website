@@ -129,6 +129,20 @@ nav a {
   outline: none;
 }
 
+/** 404 **/
+#four0four {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   justify-content: stretch;
+   align-items: center;
+}
+
+#four0four h1 {
+   font-size: 3rem;
+   line-height: 3rem;
+}
+
 /** MAIN (index) **/
 #main {
 	flex: 1;
