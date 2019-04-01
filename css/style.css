@@ -1,6 +1,3 @@
-/** IMPORT **/
-@import "media.css";
-
 /** GLOBAL **/
 html {
   width: 100%;
@@ -26,7 +23,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-body > section {
+body>section {
   border-bottom: 0.125rem solid #EFEFEF;
 }
 
@@ -70,12 +67,8 @@ header a.icon {
 nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  margin-right: 3.75rem;
-}
-
-nav a {
-  margin-left: 2.5rem;
+  justify-content: space-between;
+  width: 100%;
 }
 
 #donate {
@@ -131,13 +124,13 @@ nav a {
 
 /** MAIN (index) **/
 #main {
-	flex: 1;
-	display: flex;
-	flex-direction: row;
-	background-color: #F7F7F9;
-	align-items: stretch;
-	justify-content: space-between;
-	padding: 1.875rem calc((100% - 1200px)/2);
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  background-color: #F7F7F9;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 1.875rem calc((100% - 1200px)/2);
 }
 
 #demo {
@@ -251,13 +244,13 @@ aside span {
 }
 
 #content article {
-	display: flex;
+  display: flex;
   justify-content: stretch;
   align-items: center;
-	padding: 1rem calc((100% - 1200px)/2);
+  padding: 1rem calc((100% - 1200px)/2);
   margin: 1rem calc((100% - 1000px)/2);
-	background-color: #F7F7F9;
-	text-align: justify;
+  background-color: #F7F7F9;
+  text-align: justify;
 }
 
 #content .article-img {
@@ -276,32 +269,32 @@ aside span {
 }
 
 #content article h2 {
-	margin: 0.55rem;
+  margin: 0.55rem;
 }
 
 #content article p {
-	padding: 0.55rem;
+  padding: 0.55rem;
   line-height: 1.375rem;
 }
 
 #content article ul {
   list-style-type: none;
-  list-style-image:  url("../img/angle-right-solid.svg");
+  list-style-image: url("../img/angle-right-solid.svg");
 }
 
 #content article.content-left {
-	padding-right: 1rem;
-	margin-right: calc(75%/2);
+  padding-right: 1rem;
+  margin-right: calc(75%/2);
   /*padding-left: calc(40%/2); */
 }
 
 #content article.content-left h2 {
-	text-align :right;
+  text-align: right;
 }
 
 #content article.content-right {
-	padding-left: 1rem;
-	margin-left: calc(75%/2);
+  padding-left: 1rem;
+  margin-left: calc(75%/2);
   /*padding-right: calc(40%/2); */
 }
 
@@ -470,7 +463,7 @@ body::-webkit-scrollbar {
   background: #0000FF;
 }
 
-#lgpl {
+#old-website {
   margin-right: 1rem;
 }
 
@@ -528,7 +521,6 @@ body::-webkit-scrollbar {
   font-weight: 700;
 }
 
-
 #galleryTitle li p a {
   font-size: inherit;
   font-weight: inherit;
@@ -554,30 +546,30 @@ body::-webkit-scrollbar {
 }
 
 #galleryImg {
-	width: 60%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	overflow: auto;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
   padding-top: 1rem;
 }
 
 #galleryImg table {
-	max-width: 90%;
-	text-align: center;
-	padding-bottom: 2rem;
+  max-width: 90%;
+  text-align: center;
+  padding-bottom: 2rem;
 }
 
 #galleryImg tbody {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 #galleryImg th {
-	padding-bottom: .5rem;
+  padding-bottom: .5rem;
 }
 
 #galleryImg img {
-	max-width: 90%;
+  max-width: 90%;
 }
 
 /** FREEFEM DAYS **/
@@ -876,11 +868,11 @@ body::-webkit-scrollbar {
 }
 
 #exampleSave {
-	text-transform: uppercase;
-	color: white;
-	background-color: #00007F;
-	cursor: pointer;
-	padding: 0 0.25rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: #00007F;
+  cursor: pointer;
+  padding: 0 0.25rem;
 }
 
 #codeArea {
@@ -948,7 +940,7 @@ body::-webkit-scrollbar {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  pointer-events:none;
+  pointer-events: none;
 }
 
 #exampleResult #arrow-right {
@@ -1175,7 +1167,7 @@ body::-webkit-scrollbar {
   order: 0;
 }
 
-#exampleConsole,#exampleResult h2:hover {
+#exampleConsole, #exampleResult h2:hover {
   cursor: pointer;
 }
 
@@ -1191,26 +1183,26 @@ body::-webkit-scrollbar {
 }
 
 #example2D {
-	margin: 0 0.55rem;
-	margin-top: auto;
+  margin: 0 0.55rem;
+  margin-top: auto;
 }
 
 #example2D i {
-	background-color: #FFF;
-	padding: 0.25rem;
-	font-size: 0.5rem;
-	cursor: pointer;
+  background-color: #FFF;
+  padding: 0.25rem;
+  font-size: 0.5rem;
+  cursor: pointer;
 }
 
 #example2D p {
-	padding: .55rem 1.125rem;
-	color: grey;
-	margin: 0;
-	background-color: #FFF;
+  padding: .55rem 1.125rem;
+  color: grey;
+  margin: 0;
+  background-color: #FFF;
 }
 
 #exampleGithub {
-	margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .header-github {
@@ -1254,4 +1246,290 @@ body::-webkit-scrollbar {
 
 .header-github:hover, .header-github-stars:hover, .header-github-title {
   color: #0000FF;
+}
+
+/** FOR TABLETS **/
+@media screen and (max-width:1200px) {
+  #main {
+    flex-direction: column !important;
+    padding: 1.875rem 0.55rem !important;
+  }
+
+  #code {
+    width: 35% !important;
+    height: unset !important;
+    min-width: unset !important;
+  }
+
+  #blank {
+    width: 65% !important;
+  }
+
+  #intro {
+    order: 1;
+    width: 100% !important;
+    height: unset !important;
+    margin-bottom: 0.5rem !important;
+    padding-left: 0 !important;
+  }
+
+  #demo {
+    order: 2;
+    width: 100% !important;
+    justify-content: stretch;
+  }
+
+  #blank video {
+    width: 100% !important;
+  }
+
+  #platforms, #release, #download {
+    margin: 10px !important;
+  }
+
+  #articles {
+    display: block !important;
+    padding: 3.75rem 0.55rem !important;
+  }
+
+  #articles article {
+    margin-bottom: 1.875rem !important;
+  }
+
+  #artFirst, #artSecond {
+    margin-right: 0 !important;
+  }
+
+  nav {
+    width: 0;
+    overflow: hidden;
+    flex-direction: column !important;
+    position: absolute;
+    top: 3.75rem;
+    background-color: #FFF;
+    border-bottom: 0.125rem solid #EFEFEF;
+    padding: 1.25rem 0;
+  }
+
+  nav a {
+    text-align: left !important;
+    margin: 0 auto 0 3.75rem;
+    padding: 0.75rem 0;
+  }
+
+  #donate {
+    border-top: 0.75rem solid transparent;
+    background-clip: padding-box;
+    border-bottom: 0.75rem solid transparent;
+  }
+
+  header a.icon {
+    float: right;
+    display: block !important;
+  }
+}
+
+/** FOR MOBILE PHONES **/
+@media screen and (max-width:600px) {
+  header img {
+    margin: 0 1.25rem !important;
+  }
+
+  #banner button {
+    margin-right: 1.25rem !important;
+    padding: 0 !important;
+  }
+
+  #main {
+    padding: 1.25rem !important;
+  }
+
+  #demo {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  #blank {
+    order: 1;
+    width: 100% !important;
+  }
+
+  #code {
+    order: 2;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  aside {
+    flex-direction: column !important;
+    min-height: 15.625rem;
+  }
+
+  aside p {
+    margin: 0 !important;
+  }
+
+  #download {
+    margin: 0 !important;
+  }
+
+  #articles {
+    padding: 1.25rem !important;
+  }
+
+  #info {
+    flex-direction: column !important;
+  }
+
+  #content article {
+    margin: unset !important;
+    padding: 1rem !important;
+  }
+
+  #content article.content-left {
+    margin-right: 0 !important;
+  }
+
+  #content article.content-right {
+    margin-left: 0 !important;
+  }
+
+  #content .article-img {
+    width: 100px !important;
+  }
+
+  #content .article-img img {
+    width: 80px !important;
+  }
+
+  #events {
+    border-top: 4.7rem solid transparent;
+    margin-top: -4.7rem;
+    background-clip: padding-box;
+    order: 1;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  #events h1 {
+    margin-left: 1.25rem;
+  }
+
+  .event-grid {
+    grid-template-rows: auto auto !important;
+    margin: 0 1.25rem !important;
+  }
+
+  #team {
+    order: 2;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  #team img {
+    height: 2.5rem !important;
+  }
+
+  #ffdaysMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #ffdaysTitle img {
+    height: unset !important;
+    width: 80%;
+  }
+
+  #ffdaysCal {
+    width: 100% !important;
+  }
+
+  #ffdaysDesc {
+    width: unset !important;
+    margin: 20px 10px !important;
+  }
+
+  #ffdaysCal .days {
+    display: flex !important;
+    flex-direction: column;
+    margin: 20px 10px !important;
+  }
+
+  #ffdaysCal .days .day {
+    width: unset !important;
+    border-right: none !important;
+    border-bottom: 2px solid #EFEFEF;
+    padding: 20px;
+  }
+
+  #ffdaysCal .days .program {
+    width: unset !important;
+    padding: 0 10px !important;
+  }
+
+  #ffdaysCal table {
+    display: block !important;
+    overflow-x: auto;
+  }
+
+  #ffdaysCal th, #ffdaysCal td {
+    white-space: nowrap;
+    border: none !important;
+  }
+
+  footer {
+    flex-direction: column !important;
+  }
+
+  #galleryMain {
+    flex-direction: column !important;
+    max-height: unset !important;
+  }
+
+  #galleryTitle {
+    width: unset !important;
+  }
+
+  #galleryTitle li {
+    margin: 0.55rem !important;
+  }
+
+  #galleryImg {
+    width: unset !important;
+  }
+
+  #galleryImg table {
+    margin: 1rem;
+  }
+
+  #exampleMain {
+    grid-template-columns: 100% !important;
+    grid-template-rows: 1fr 2px 3fr 2px 3fr auto !important;
+  }
+
+  #exampleScripts {
+    grid-column: 1/3 !important;
+    grid-row: 1 !important;
+  }
+
+  #gutter1 {
+    grid-column: 1/3 !important;
+    grid-row: 2 !important;
+  }
+
+  #exampleCode {
+    grid-column: 1/3 !important;
+    grid-row: 3 !important;
+  }
+
+  #exampleResult {
+    grid-column: 1/3 !important;
+    grid-row: 5 !important;
+  }
+
+  #exampleConsole {
+    grid-column: 1/3 !important;
+    grid-row: 6 !important;
+  }
 }
