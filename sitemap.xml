@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://freefem.org/gallery/cobra</loc>
+  </url>
+  <url>
+    <loc>https://freefem.org/gallery</loc>
+  </url>
+  <url>
+    <loc>https://freefem.org</loc>
+  </url>
+  <url>
+    <loc>https://freefem.org/gallery/mediMax</loc>
+  </url>
+  <url>
+    <loc>https://freefem.org/gallery/meshAdaptation</loc>
+  </url>
+  <url>
+    <loc>https://freefem.org/gallery/ovt</loc>
+  </url>
+  <url>
+    <loc>https://freefem.org/gallery/roots</loc>
+  </url>
+  <url>
+    <loc>https://freefem.org/tryit</loc>
+  </url>
+</urlset>
