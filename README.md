@@ -2,4 +2,4 @@
 
 # Do you use FreeFEM ?
 
-See the [CONTRIBUTING](CONTRIBUTING.md) file to see how to show your love for FreeFem++
+See the [CONTRIBUTING](CONTRIBUTING.md) file to see how to show your passion for FreeFEM
