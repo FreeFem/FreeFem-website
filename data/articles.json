@@ -2,13 +2,19 @@
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
+      "title": "A reduced basis method for parametrized variational inequalities applied to contact mechanics",
+      "authors": " Amina Benaceur, Alexandre Ern, Virginie Ehrlacher",
+      "date": "2019-03-27T23:00:00.000Z",
+      "abstract": "We investigate new developments of the Reduced-Basis (RB) method for parametrized optimization problems with nonlinear constraints. We propose a reduced-basis scheme in a saddle-point form combined with the Empirical Interpolation Method to deal with the nonlinear constraint. In this setting, a primal reduced-basis is needed for the primal solution and a dual one is needed for the Lagrange multipliers. We suggest to construct the latter using a cone-projected greedy algorithm that conserves the non-negativity of the dual basis vectors. The reduction strategy is applied to elastic frictionless contact problems including the possibility of using non-matching meshes. The numerical examples confirm the efficiency of the reduction strategy.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02081485/file/contact.pdf"
+    },
+    {
       "title": "Effect of soluble surfactants on vertical liquid film drainage",
       "authors": "Chunxi Li (李春曦), Minglan Li (李明兰), Zhixian Shi (施智贤), and Xuemin Ye (叶学民)",
       "date": "2019-03-22T23:00:00.000Z",
       "abstract": "A mathematical model is established to investigate the gravity-driven drainage of vertical films containing a soluble surfactant by considering the coupling effect of surface elasticity, adsorption coefficient, and surfactant solubility. The lubrication theory is applied to derive the four coupled nonlinear partial differential equations describing the film thickness, surface velocity, and surfactant concentration on the surface and in the bulk. Simulated results showed that the surface elasticity, adsorption coefficient, and surfactant solubility are indispensable factors in the drainage process of a liquid film containing a soluble surfactant. In the initial stage of the drainage, the initial film thickness increases with increasing surface elasticity and the film surface tends to be more rigid. With further drainage, the liquid film exhibits different notable features for high and low elasticity. For low surface elasticity, the surfactant distribution produces a positive Marangoni effect, which counteracts gravity. However, for high surface elasticity, the film surface exhibits a reverse Marangoni effect, which accelerates the drainage and leads to an unstable film. As the solubility decreases, both the film stability and initial surface elasticity enhance. The surface elasticity gradually approaches a limiting dilational elasticity modulus owing to the film thinning. For a large Ks, the film surface is insufficient to produce a strong Marangoni effect and then the liquid film tends to easily destabilize. For a small Ks, the soluble surfactant is similar to an insoluble surfactant, and the film is much thicker in the later stage of the drainage.",
       "link": "https://aip.scitation.org/doi/full/10.1063/1.5085791"
     },
-
     {
       "title": "The EMAC Scheme for Navier-Stokes Simulations, and Application to Flow Past Bluff Bodies",
       "authors": "S. Charnyi",
