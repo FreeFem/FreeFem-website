@@ -7,3 +7,6 @@ keep_files: [_data/articles.json]
 encoding: utf-8
 
 data_dir: data
+
+plugins:
+  - jekyll-redirect-from
