@@ -373,6 +373,7 @@ aside span {
   grid-template-columns: 8rem auto;
   grid-template-rows: 1.875rem auto;
   grid-template-areas: "date title""date description";
+  margin-bottom: 15px;
 }
 
 #events h1 {
