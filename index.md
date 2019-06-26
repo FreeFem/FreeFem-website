@@ -1,5 +1,5 @@
 ---
-title: FreeFEM - Home
+title: FreeFEM - An open-source PDE Solver using the Finite Element Method
 layout: index
 redirect_from:
   - "/ff++/index.php"
