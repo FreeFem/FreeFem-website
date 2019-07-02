@@ -1161,6 +1161,10 @@ body::-webkit-scrollbar {
   }
 }
 
+#tryit {
+  height: 100%;
+}
+
 #exampleConsole {
   grid-column: 5;
   grid-row: 2/3;
@@ -1518,9 +1522,15 @@ body::-webkit-scrollbar {
     margin: 1rem;
   }
 
+  #tryit {
+    height: unset;
+  }
+
   #exampleMain {
     grid-template-columns: 100% !important;
-    grid-template-rows: 1fr 2px 3fr 2px 3fr auto !important;
+    grid-template-rows: auto auto auto auto auto auto !important;
+    grid-row-gap: .55rem;
+    background-color: #F7F7F9;
   }
 
   #exampleScripts {
