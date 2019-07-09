@@ -2,6 +2,20 @@
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
+      "title": "A linear, stabilized, non-spatial iterative, partitioned time stepping method for the nonlinear Navier–Stokes/Navier–Stokes interaction model",
+      "authors": "Jian Li, Pengzhan Huang, Jian Su and Zhangxin Chen",
+      "date": "2019-07-03T23:00:00.000Z",
+      "abstract": "In this paper, a linear, stabilized, non-spatial iterative, partitioned time stepping method is developed and studied for the nonlinear Navier–Stokes/Navier–Stokes interaction. A backward Euler scheme is utilized for the temporal discretization while a linear Oseen scheme for the trilinear term is used to affect the spatial discretization approximated by the equal order elements. Therefore, we only solve a linear Stokes problem without spatial iterative per time step for each individual domain. Then, the method exploits properties of the Navier–Stokes/Navier–Stokes system to establish the stability and convergence by rigorous analysis. Finally, numerical experiments are presented to show the performance of the proposed method.",
+      "link": "https://doi.org/10.1186/s13661-019-1220-2"
+    },
+    {
+      "title": "Stability properties of the mean flow after a steady symmetry-breaking bifurcation and prediction of the nonlinear saturation",
+      "authors": "Simone Camarri, Giacomo Mengali",
+      "date": "2019-07-02T23:00:00.000Z",
+      "abstract": "In this paper, it is shown that when a flow undergoes a steady bifurcation breaking one reflection symmetry, the mean flow obtained by averaging the two possible asymmetric flow fields resulting from the instability remains marginally stable in the postcritical regime. This property is demonstrated rigorously through an asymptotic analysis which closely follows that proposed in Sipp and Lebedev (J Fluid Mech 792:620–657, 2007) for a Hopf bifurcation with focus on wakes. In the case of wakes, the marginal stability of the mean flow is well known and had several consequences documented in the literature. To the authors’ knowledge, the marginal stability of mean flows after a symmetry-breaking pitchfork bifurcation is demonstrated here for the first time. As an example of possible consequences of marginal stability, the self-consistent model proposed for wakes in Mantič-Lugo et al. (Phys Rev Lett 113:084501, 2014) and relying on marginal stability is also applied here to the symmetry-breaking instability of the flow in a channel with a sudden expansion. For this specific case, the marginal stability of the mean flow is first demonstrated by dedicated direct numerical simulations; successively, it is shown that the resulting self-consistent model predicts the nonlinear saturation of the instability with remarkable accuracy.",
+      "link": "https://doi.org/10.1007/s00707-019-02456-1"
+    },
+    {
       "title": "Model order reduction in aerodynamics: Review and applications",
       "authors": "Gonçalo Mendonça, Frederico Afonso, Fernando Lau",
       "date": "2019-06-11T23:00:00.000Z",
