@@ -2,6 +2,13 @@
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
+      "title": "A CFD Study of Flow Around an Elevator Towards Potential Kinetic Energy Harvesting",
+      "authors": "Jia Hui Ang, Y Yusup, Sheikh Ahmad Zaki Shaikh Salim, Mardiana Idayu Ahmad",
+      "date": "2019-07-15T23:00:00.000Z",
+      "abstract": "The  regenerative  drive  and  braking  elevator  technology  capture  the  kinetic  energy from the rope movement based on Faraday’s law of electromagnetic induction, thus only applicable to the roped elevator system. The rope-less elevator is anticipated to be  future  predominant  elevator  type  and  can  only  transfer  its  kinetic  energy  via  the airflow induced by its car movement, which can be evaluated via aerodynamic studies. However, past aerodynamic studies focus only on the effect of the induced airflow to energy and operational efficiency of the elevator. There are very limited studies on the use of the induced airflow for kinetic energy harvesting. Therefore, thisstudy evaluates the induced flow in terms ofairvelocity, kinematic pressure, and turbulence, towards the  potential  kinetic  energy  harvesting  pertaining  to  the  possibility  of  wind  power generation and electricity generation of the rope-less elevator system using CFD based approach  through  OpenFOAMsoftware.  Aerodynamics  of  the  elevator  system  is simulated   using   symmetrical   quarter   three-dimensional   elevator   model,   with parameters of car rated speed and shaft height. The results reveal the potential kinetic energy harvesting from the moving elevator car. Appropriate elevator speed and shaft height should be adjusted accordingly to get the optimum match with the longest time period for the car to run at its rated speed, to generate the most electricity.",
+      "link": "www.akademiabaru.com/doc/ARFMTSV59_N1_P54_65.pdf"
+    },
+    {
       "title": "A linear, stabilized, non-spatial iterative, partitioned time stepping method for the nonlinear Navier–Stokes/Navier–Stokes interaction model",
       "authors": "Jian Li, Pengzhan Huang, Jian Su and Zhangxin Chen",
       "date": "2019-07-03T23:00:00.000Z",
