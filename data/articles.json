@@ -2,11 +2,25 @@
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
+      "title": "Numerical analysis of a projection-based stabilized POD-ROM for incompressible flows",
+      "authors": "Samuele Rubino",
+      "date": "2019-07-23T23:00:00.000Z",
+      "abstract": "In this paper, we propose a new stabilized projection-based POD-ROM for the numerical simulation of incompressible flows. The new method draws inspiration from successful numerical stabilization techniques used in the context of Finite Element (FE) methods, such as Local Projection Stabilization (LPS). In particular, the new LPS-ROM is a velocity-pressure ROM that uses pressure modes as well to compute the reduced order pressure, needed for instance in the computation of relevant quantities, such as drag and lift forces on bodies in the flow. The new LPS-ROM circumvents the standard discrete inf-sup condition for the POD velocity-pressure spaces, whose fulfillment can be rather expensive in realistic applications in Computational Fluid Dynamics (CFD). Also, the velocity modes does not have to be neither strongly nor weakly divergence-free, which allows to use snapshots generated for instance with penalty or projection-based stabilized methods. The numerical analysis of the fully Navier-Stokes discretization for the new LPS-ROM is presented, by mainly deriving the corresponding error estimates. Numerical studies are performed to discuss the accuracy and performance of the new LPS-ROM on a two-dimensional laminar unsteady flow past a circular obstacle.",
+      "link": "https://arxiv.org/abs/1907.09213"
+    },
+    {
+      "title": "Crystal elasto-plasticity on the Poincaré half-plane",
+      "authors": "Edoardo Arbib, Paolo Biscari, Luca Bortoloni, Clara Patriarca, Giovanni Zanzotto",
+      "date": "2019-07-21T23:00:00.000Z",
+      "abstract": "We explore the nonlinear variational modelling of two-dimensional (2D) crystal plasticity based on strain energies which are invariant under the full symmetry group of 2D lattices. We use a natural parameterization of strain space via the upper complex Poincaré half-plane. This transparently displays the constraints imposed by lattice symmetry on the energy landscape. Quasi-static energy minimization naturally induces bursty plastic flow and shape change in the crystal due to the underlying coordinated basin-hopping local strain activity. This is mediated by the nucleation, interaction, and annihilation of lattice defects occurring with no need for auxiliary hypotheses. Numerical simulations highlight the marked effect of symmetry on all these processes. The kinematical atlas induced by symmetry on strain space elucidates how the arrangement of the energy extremals and the possible bifurcations of the strain-jump paths affect the plastification mechanisms and defect-pattern complexity in the lattice.",
+      "link": "https://arxiv.org/abs/1907.09037"
+    },
+    {
       "title": "A CFD Study of Flow Around an Elevator Towards Potential Kinetic Energy Harvesting",
       "authors": "Jia Hui Ang, Y Yusup, Sheikh Ahmad Zaki Shaikh Salim, Mardiana Idayu Ahmad",
       "date": "2019-07-15T23:00:00.000Z",
       "abstract": "The  regenerative  drive  and  braking  elevator  technology  capture  the  kinetic  energy from the rope movement based on Faraday’s law of electromagnetic induction, thus only applicable to the roped elevator system. The rope-less elevator is anticipated to be  future  predominant  elevator  type  and  can  only  transfer  its  kinetic  energy  via  the airflow induced by its car movement, which can be evaluated via aerodynamic studies. However, past aerodynamic studies focus only on the effect of the induced airflow to energy and operational efficiency of the elevator. There are very limited studies on the use of the induced airflow for kinetic energy harvesting. Therefore, thisstudy evaluates the induced flow in terms ofairvelocity, kinematic pressure, and turbulence, towards the  potential  kinetic  energy  harvesting  pertaining  to  the  possibility  of  wind  power generation and electricity generation of the rope-less elevator system using CFD based approach  through  OpenFOAMsoftware.  Aerodynamics  of  the  elevator  system  is simulated   using   symmetrical   quarter   three-dimensional   elevator   model,   with parameters of car rated speed and shaft height. The results reveal the potential kinetic energy harvesting from the moving elevator car. Appropriate elevator speed and shaft height should be adjusted accordingly to get the optimum match with the longest time period for the car to run at its rated speed, to generate the most electricity.",
-      "link": "www.akademiabaru.com/doc/ARFMTSV59_N1_P54_65.pdf"
+      "link": "https://www.akademiabaru.com/doc/ARFMTSV59_N1_P54_65.pdf"
     },
     {
       "title": "A linear, stabilized, non-spatial iterative, partitioned time stepping method for the nonlinear Navier–Stokes/Navier–Stokes interaction model",
