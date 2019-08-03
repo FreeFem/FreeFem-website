@@ -721,6 +721,47 @@ body::-webkit-scrollbar {
   margin: 10px 0;
 }
 
+/** FFdonate **/
+#iframe-container {
+  background-color: #F7F7F9;
+  text-align: center;
+  border-bottom: 2px solid #EFEFEF;
+}
+#ffdonationTitle img {
+    max-height: 80px;
+    margin: 60px auto 30px auto;
+    max-width: 80%;
+}
+#ffdonationTitle {
+    text-align: center;
+    color: #00007F;
+    font-size: 1.2rem;
+}
+
+#ffdonateDesc {
+    background-color: #FFF;
+    border: 2px solid #EFEFEF;
+    max-width: 910px;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: justify;
+    line-height: 23px;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+}
+
+#ffdonationContent {
+  flex: 2 1 0;
+  padding: 0 20px 0 10px;
+  max-width:571px;
+}
+#ffdonationImg {
+  flex: 1 0 0;
+  text-align: right;
+  padding: 10px 10px 0 0;
+}
+
 /** EXAMPLE **/
 #exampleMain {
   flex: 1;
@@ -1495,6 +1536,18 @@ body::-webkit-scrollbar {
   #ffdaysCal th, #ffdaysCal td {
     white-space: nowrap;
     border: none !important;
+  }
+
+  #ffdonationTitle img {
+    margin: 30px auto 10px auto;
+  }
+  #ffdonateDesc {
+    flex-flow: column-reverse;
+  }
+  #ffdonationImg {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 10px;
   }
 
   footer {

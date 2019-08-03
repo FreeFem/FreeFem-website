@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+{% include head.html %}
+
+<body>
+  {% include header.html %}
+
+  <div id="ffdaysMain">
+    <div id="ffdonationTitle">
+      <img src="{{ site.url }}{{ site.baseurl }}/img/freefem_fondation.png" alt="FreeFEM Fondation">
+    </div>
+    <div id="ffdonateDesc">
+      <div id="ffdonationContent">
+        <h2>Help us improve FreeFEM's codebase</h2>
+        <p>I am Frédéric Hecht, the main developer at FreeFEM and a professor at Sorbonne University in Paris.
+          In 1992, I released FreeFEM, a new implementation of MacFEM completely re-written in C++.
+          Twenty-seven years later, we were very proud to announce the release of <b>FreeFEM version 4</b>.</p>
+        <p>With such a long history, a major code clean-up is now required to make FreeFEM's code easier to understand, maintain and modify.
+          <b>Your donations are necessary to finance this heavy refactoring</b>. On behalf of the dev team, I thank you in advance for your support.</p>
+        <p>FreeFEM is part of the <a href="https://www.sciencesmaths-paris.fr/en/" target="_blank">FSMP</a>, the Paris Foundation for Mathematical Sciences.</p>
+      </div>
+      <div id="ffdonationImg">
+        <img src="{{ site.url }}{{ site.baseurl }}/img/Frederic_Hecht.jpg" alt="Frédéric Hecht">
+      </div>
+    </div>
+  </div>
+<div id="iframe-container">
+  <iframe id="haWidget" allowtransparency="true" scrolling="auto" src="https://www.helloasso.com/associations/fondation-sciences-mathematiques-de-paris/formulaires/4/widget/en" style="max-width:992px;width:100%;height:2250px;border:none;"></iframe>
+</div>
+  {% include footer.html %}
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 # CONTRIBUTING
 
-## I am a research user
+## I am a researcher
 
 Share your most beautiful simulation code and results in the [Gallery](_layouts/gallery.html) using a Pull Request.
 
