@@ -2,6 +2,20 @@
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
+      "title": "A new unified stabilized mixed finite element method of the Stokes-Darcy coupled problem: Isotropic discretization",
+      "authors": "Houédanou Koffi Wilfrid",
+      "date": "2019-08-05T23:00:00.000Z",
+      "abstract": "In this paper we develop an a priori error analysis of a new unified mixed finite element method for the coupling of fluid flow with porous media flow in ℝN, N∈{2,3} on isotropic meshes. Flows are governed by the Stokes and Darcy equations, respectively, and the corresponding transmission conditions are given by mass conservation, balance of normal forces, and the Beavers-Joseph-Saffman law. The approach utilizes a modification of the Darcy problem which allows us to apply a variant nonconforming Crouzeix-Raviart finite element to the whole coupled Stokes-Darcy problem. The well-posedness of the finite element scheme and its convergence analysis are derived. Finally, the numerical experiments are presented, which confirm the excellent stability and accuracy of our method.",
+      "link": "https://arxiv.org/abs/1908.01892"
+    },
+    {
+      "title": "Finite Element Simulation, Fabrication and Characterization of Vertical Field Effect Transistors in Narrowing Nanopores for Biomolecule Detection",
+      "authors": "J. R. Sauer, C. Rodriguez-Quijada, J. Cohen, M. Kalashnikov, J. Campbell, A. K. Boardman, K. Vossough, H. Wirz, F. Hecht, and A. F. Sauer-Budge",
+      "date": "2019-07-30T23:00:00.000Z",
+      "abstract": "To enable the high-throughput study of single molecules in solution phase, we have been developing a semiconductor nanopore sensor array for biomolecule analysis. Our silicon-based nanopores have embedded vertical field effect transistors (FETs) in the walls of an inverted pyramidal nanopore (npFETs). This geometry was chosen in part because etching allows small pore exit dimensions with length tolerances largely controlled by the surface etch mask while epitaxial growth enables well-defined field effect transistor axial dimensions. This design is fundamentally different from other nanopore detection schemes, which measure current flowing through or across an occupied pore. Other FET detection methods require the adsorption of analytes onto coated surfaces to measure binding, whereas our sensors are designed to respond to the charges present on a passing protein. Molecules are moved through the pore by electro-osmosis force (EOF). Biomolecule analysis is performed as the variations in the charge structure of molecules passing near the FET gate regions cause detectable variations in source-drain current that can be used to characterize the passing molecule. This is possible because the EOF partially descreens the molecules, permitting sensing from distances greater than several Debye lengths. We undertook simulation efforts to better understand the potential of this nanopore design. The finite element simultaneous solution of the Poisson-Nernst-Plank ion transport and Navier-Stokes fluid flow equations was achieved by alternating between iterative Newton solutions until quantities common to both sets of equations were consistent. According to our simulations, the flow dynamics through the pore's constricting geometry force biomolecules of both charges close enough to the sensor surface for detection. In this paper, we present a finite element simulation of narrowing nanopores, the fabrication of such nanopore arrays, and electrical characterization of the embedded npFETs. This work lays the foundation for the future study of individual protein measurements.",
+      "link": "https://www.doi.org/10.13140/RG.2.2.22591.25767"
+    },
+    {
       "title": "Numerical analysis of a projection-based stabilized POD-ROM for incompressible flows",
       "authors": "Samuele Rubino",
       "date": "2019-07-23T23:00:00.000Z",
