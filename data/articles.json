@@ -2,6 +2,20 @@
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
+      "title": "Capillary action in scalar active matter",
+      "authors": "Adam Wysocki, Heiko Rieger",
+      "date": "2019-08-12T23:00:00.000Z",
+      "abstract": "We study the capacity of active matter to rise in thin tubes against gravity and other relatedbphenomena, like, wetting of vertical plates and spontaneous imbibition, where a wetting liquid isbdrawn into a porous medium. This capillary action or capillarity is well known in classical fluids and originates from attractive interactions between the liquid molecules and the container walls, and from the attraction of the liquid molecules among each other. We observe capillarity in a minimal model for scalar active matter with purely repulsive interactions, where an effective attraction emerges due to slowdown during collisions between active particles and between active particles and walls. Simulations indicate that the capillary rise in thin tubes is approximately proportional to the active sedimentation length λ and that the wetting height of a vertical plate grows superlinear with λ. In a disordered porous medium the imbibition height scales as〈h〉∝λφm, where φm is its packing fraction.",
+      "link": "https://arxiv.org/pdf/1908.03368.pdf"
+    },
+    {
+      "title": "An inexpensive Parametrized Background Data-Weak approach for time-dependent problems",
+      "authors": "Amina Benaceur",
+      "date": "2019-08-09T23:00:00.000Z",
+      "abstract": "We propose a contribution that combines model reduction with data assimilation.  A dedicated Parametrized Background Data-Weak (PBDW) approach has been introduced in the literature so as to combine numerical models with experimental measurements.  We extend the approach to a time-dependent framework by means of a POD-greedy reduced basis construction. Since the construction of the basis is performed offline, the algorithm addresses the time dependence of the problem while the time stepping scheme remains unchanged. Moreover, we devise a new algorithm that exploits offline state estimates in order to diminish both the dimension of the online PBDW statement and the number of required sensors collecting data. The idea is to exploit in situ observations in order to update the best-knowledge model, thereby improving the approximation capacity of the background space.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02265533"
+    },
+    {
       "title": "A new unified stabilized mixed finite element method of the Stokes-Darcy coupled problem: Isotropic discretization",
       "authors": "Houédanou Koffi Wilfrid",
       "date": "2019-08-05T23:00:00.000Z",
