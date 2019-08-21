@@ -2,6 +2,20 @@
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
+      "title": "Conductance Model for Single-Crystalline/Compact Metal Oxide Gas Sensing Layers in the Non-Degenerate Limit: Example of Epitaxial SnO2(101)",
+      "authors": "C. E. Simion, F. Schipani, A. Papadogianni, A. Stanoiu, M. Budde, A. Oprea, U. Weimar, O. Bierwagen, N. Barsan",
+      "date": "2019-08-15T23:00:00.000Z",
+      "abstract": "Semiconducting metal oxide (SMOX)-based gas sensors are indispensable for safety and health applications, e.g. explosive, toxic gas alarms, controls for intake into car cabins and monitor for industrial processes. In the past, the sensor community has been studying polycrystalline materials as sensors where the porous and random microstructure of the SMOX does not allow a separation of the phenomena involved in the sensing process. This lead to conduction models that can model and predict the behavior of the overall response, but they were not capable of giving fundamental information regarding the basic mechanisms taking place. The study of epitaxial layers is a definite improvement allowing clarifying the different aspects and contributions of the sensing mechanisms. A detailed analytical model of the transduction function for n and p-type single-crystalline/compact metal oxide gas sensors was developed that directly relates the conductance of the sample with changes in the surface electrostatic potential. Combined DC resistance and work function measurements were used in a compact SnO2 (101) layer in operando conditions that allowed us to check the validity of our model in the region where Boltzmann approximation holds to determine surface and bulk properties of the material.",
+      "link": "https://doi.org/10.1021/acssensors.9b01018"
+    },
+    {
+      "title": "T-IFISS: a toolbox for adaptive FEM computation",
+      "authors": "A Bespalov, L Rocchi, D Silvester",
+      "date": "2019-08-15T23:00:00.000Z",
+      "abstract": "T-IFISS is a finite element software package for studying finite element solution algorithms for deterministic and parametric elliptic partial differential equations. The emphasis is on self-adaptive algorithms with rigorous error control using a variety of a posteriori error estimation techniques. The open-source MATLAB framework provides a computational laboratory for experimentation and exploration, enabling users to quickly develop new discretizations and test alternative algorithms. The package is also valuable as a teaching tool for students who want to learn about state-of-the-art finite element methodology.",
+      "link": "https://arxiv.org/pdf/1908.05618.pdf"
+    },
+    {
       "title": "Capillary action in scalar active matter",
       "authors": "Adam Wysocki, Heiko Rieger",
       "date": "2019-08-12T23:00:00.000Z",
