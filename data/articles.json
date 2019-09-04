@@ -2,6 +2,34 @@
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
+      "title": "Numerical simulations for the dynamics of flexural shells",
+      "authors": "X Shen, L Piersanti, P Piersanti",
+      "date": "2019-09-01T23:00:00.000Z",
+      "abstract": "In this paper we study a model describing the displacement of a linearly elastic flexural shell subjectedto given dynamic loads from the computational point of view. The model under consideration takesthe form of a set of hyperbolic variational equations posed over the space of admissible linearizedinextensional displacements, and a set of initial conditions. Since the original model is not suitable for theimplementation of a finite element method, we conduct the experiments on the corresponding penalisedmodel. It was recently shown that the solution to such a penalised model is a good approximation ofthe solution to the original model. Numerical tests are therefore conducted on the the penalised model;the approximation of the solution to the penalised model is obtained via Newmark’s scheme, which isthen implemented and tested for shells having the following middle surfaces: a portion of a cylinder, anda portion of a cone. For sake of completeness, we also present the results of the numerical tests relatedto a model describing the displacement of a linearly elastic elliptic membrane shell under the action ofgiven dynamic loads.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02275020/"
+    },
+    {
+      "title": "Calibration of Heston Model with Keras",
+      "authors": "Olivier Pironneau",
+      "date": "2019-08-29T23:00:00.000Z",
+      "abstract": "In this work, we consider the calibration of the Heston model for European put or call options on a single or a basket of financial assets. We use the high level environment Keras of Google in Python. The calibration is done directly with prices corresponding to an array of values for the strike and the maturity or the initial values of the asset and its volatility. The calibration is for the three parameters of the Heston model or the correlation between the asset and the stochastic volatility. It turns out to be a rather easy programming exercise but a large and computer-intensive generation of the synthetic data is necessary to calibrate the Neural Network. A simple network with one hidden layer seems to be appropriate, yet the precision stalls upon a problem dependent threshold beyond which it seems difficult to go.",
+      "link": "https://hal.sorbonne-universite.fr/hal-02273889/document"
+    },
+    {
+      "title": "Characteristic stabilized finite element method for non-stationary conduction-convection problems",
+      "authors": "Y Wang, MA Al Mahbub, H Zheng",
+      "date": "2019-08-22T23:00:00.000Z",
+      "abstract": "In this paper, a characteristic stabilized finite element method for non-stationary conduction–convection problems is proposed.",
+      "link": "https://www.emerald.com/insight/content/doi/10.1108/HFF-04-2019-0318/full/html"
+    },
+    {
+      "title": "The embryonic origin of periodic color patterns",
+      "authors": "N Haupaix, M Manceau",
+      "date": "2019-08-19T23:00:00.000Z",
+      "abstract": "The periodic color motifs such as the spots or stripes that adorn the coat of vertebrates have served as emblematic systems in empirical and theoretical studies of pattern formation, because they vary extensively between taxa but often have conserved orientation and are highly reproducible within species. Two major patterning theories have been proposed, namely instructional signaling, in which positional information is encoded as a program, and self-organization, in which position is spontaneously acquired within the developing tissue. We review here recent empirical evidence that supports both theories in vertebrates: with the advent of new molecular techniques and functional approaches, researchers nowadays take advantage of natural populations of mammals, birds and fish species, closely-related to model organisms and varying in periodic patterns. As a whole, results strongly suggest that instruction and self-organization act in combination in space and time. The orientation and reproducibility of periodic patterns relies on initial foundations provided by early developmental landmarks while their periodicity and natural variation are shaped by late-acting self-organizing processes.",
+      "link": "https://doi.org/10.1016/j.ydbio.2019.08.003"
+    },
+    {
       "title": "Conductance Model for Single-Crystalline/Compact Metal Oxide Gas Sensing Layers in the Non-Degenerate Limit: Example of Epitaxial SnO2(101)",
       "authors": "C. E. Simion, F. Schipani, A. Papadogianni, A. Stanoiu, M. Budde, A. Oprea, U. Weimar, O. Bierwagen, N. Barsan",
       "date": "2019-08-15T23:00:00.000Z",
