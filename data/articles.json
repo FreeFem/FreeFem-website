@@ -2,6 +2,20 @@
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
+      "title": "Modification Effects of Microsecond High Current Electron Beam Exposure on Titanium VT22 Alloy",
+      "authors": "S.Ye. Donets, V.F. Klepikov, V.V. Lytvynenko, E.M. Prokhorenko, O.A. Startsev, Yu.F. Lonin, A.G. Ponomarev, V.T. Uvarov, R.I. Starovoytov",
+      "date": "2019-09-05T23:00:00.000Z",
+      "abstract": "Titanium VT22 alloy was irradiated in the TEMP-A accelerator with the high current electron beam with the en-ergy of 350 keV, beam current of 2 kA, pulse length around 5μs, and beam diameter of 45 mm. The irradiation was performed for three samples with 1 to 3 pulses separately. Numeric simulations of the temperature distributions in the targets were conducted using the thermoelastic ablation model. The microstructural and mechanical properties of the irradiated alloy were studied using microhardness testing, metallography and fractography analysis.",
+      "link": "https://vant.kipt.kharkov.ua/ARTICLE/VANT_2019_4/article_2019_4_174.pdf"
+    },
+    {
+      "title": "Application of radiation processes for testing of gas turbine blades",
+      "authors": "M.I. Bazaleev, V.V. Bryukhovetsky, S.Ye. Donets, V.F. Klepikov, V.V. Lytvynenko, E.M. Prokhorenko, O.A. Startsev, Yu.F. Lonin, A.G. Ponomarev, V.T. Uvarov",
+      "date": "2019-09-05T23:00:00.000Z",
+      "abstract": "Structural integrity of the gas turbine blades is of great concern. A set of methods and instruments is proposed to study the problems of the test loading of the industrial turbine blades. The approach aims to model the possible high-temperature, shock and irradiation impacts. The test loading is performed using the high-current relativistic electron beam. The developed methodology can be used for test and identification trails of the turbine blades. The experi-mental bench is designed to assist the thermographic measurements of the temperature dynamics in the blades. It also comprises the corresponding algorithms and software to perform the necessary calculations with.",
+      "link": "https://vant.kipt.kharkov.ua/ARTICLE/VANT_2019_4/article_2019_4_179.pdf"
+    },
+    {
       "title": "Numerical simulations for the dynamics of flexural shells",
       "authors": "X Shen, L Piersanti, P Piersanti",
       "date": "2019-09-01T23:00:00.000Z",
