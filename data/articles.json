@@ -16,6 +16,13 @@
       "link": "https://vant.kipt.kharkov.ua/ARTICLE/VANT_2019_4/article_2019_4_179.pdf"
     },
     {
+      "title": "A priori and a posteriori estimates of the stabilized finite element methods for the incompressible flow with slip boundary conditions arising in arteriosclerosis",
+      "authors": "J Li, H Zheng, Q Zou",
+      "date": "2019-09-02T23:00:00.000Z",
+      "abstract": "In this paper, we develop the lower order stabilized finite element methods for the incompressible flow with the slip boundary conditions of friction type whose weak solution satisfies a variational inequality. The 𝐻1-norm for the velocity and the 𝐿2-norm for the pressure decrease with optimal convergence order. The reliable and efficient a posteriori error estimates are also derived. Finally, numerical experiments are presented to validate the theoretical results.",
+      "link": "https://link.springer.com/article/10.1186/s13662-019-2312-0"
+    },
+    {
       "title": "Numerical simulations for the dynamics of flexural shells",
       "authors": "X Shen, L Piersanti, P Piersanti",
       "date": "2019-09-01T23:00:00.000Z",
