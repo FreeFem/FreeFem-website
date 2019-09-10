@@ -686,6 +686,7 @@ body::-webkit-scrollbar {
   font-size: 26px;
   margin: 20px 0;
   padding: 10px;
+  text-align: center;
 }
 
 #ffdaysCal table {
