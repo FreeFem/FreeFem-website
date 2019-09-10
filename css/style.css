@@ -684,8 +684,8 @@ body::-webkit-scrollbar {
 
 #ffdaysCal .days .programTBA h2 {
   font-size: 26px;
-  line-height: 20px;
   margin: 20px 0;
+  padding: 10px;
 }
 
 #ffdaysCal table {
@@ -1487,7 +1487,7 @@ body::-webkit-scrollbar {
 
   .event-grid {
     grid-template-rows: auto auto !important;
-    margin: 0 1.25rem !important;
+    margin: 0 1.25rem 1rem !important;
   }
 
   #team {
@@ -1508,7 +1508,6 @@ body::-webkit-scrollbar {
 
   #ffdaysTitle img {
     height: unset !important;
-    width: 80%;
   }
 
   #ffdaysCal {
