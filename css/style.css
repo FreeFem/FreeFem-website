@@ -601,10 +601,10 @@ body::-webkit-scrollbar {
 
 #ffdaysTitle img {
   height: 65px;
-  margin: 60px auto 30px auto;
+  margin: 60px auto 0 auto;
 }
 
-#ffdaysDesc {
+#ffdaysDesc, .ffdays-form {
   background-color: #FFF;
   border: 2px solid #EFEFEF;
   width: 60%;
@@ -612,6 +612,7 @@ body::-webkit-scrollbar {
   padding: 10px 20px;
   text-align: center;
   line-height: 23px;
+
 }
 
 #ffdaysDesc h2 {
@@ -1505,10 +1506,17 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1.25rem !important;
+  }
+
+  #ffdaysTitle {
+    width: 100% !important;
   }
 
   #ffdaysTitle img {
     height: unset !important;
+    margin: unset !important;
+    width: 100% !important;
   }
 
   #ffdaysCal {
@@ -1518,6 +1526,22 @@ body::-webkit-scrollbar {
   #ffdaysDesc {
     width: unset !important;
     margin: 20px 10px !important;
+  }
+
+  #ffdaysDesc #download a {
+    padding: 1rem 1.5rem;
+  }
+
+  .ffdays-form {
+    width: 100% !important;
+    height: 100% !important;
+    margin: unset !important;
+    padding: unset !important;
+  }
+
+  .ffdays-form iframe {
+    padding: 10px !important;
+    width: auto !important;
   }
 
   #ffdaysCal .days {
