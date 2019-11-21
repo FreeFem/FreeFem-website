@@ -2,6 +2,188 @@
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
+      "title": "The Penrose inequality for perturbations of the Schwarzschild initial data",
+      "authors": "Jarosław Maciej Kopiński, Jacek Tafel",
+      "date": "2019-11-14T23:00:00.000Z",
+      "abstract": "We show that in the conformally flat case the Penrose inequality is satisfied for the Schwarzschild initial data with a small addition of the axially symmetric traceless exterior curvature. In this class the inequality is saturated only for data related to special sections of the Schwarzschild spacetime.",
+      "link": "https://iopscience.iop.org/article/10.1088/1361-6382/ab57b2/pdf"
+    },
+    {
+      "title": "Preliminary study of liquid metal stability for a fusion reactor divertor target using a capillary-porous structure",
+      "authors": "Roberto Silvestro, Fabio Subba",
+      "date": "2019-11-07T23:00:00.000Z",
+      "abstract": "The issue of power exhaust in fusion reactors is currently considered as one of the potential show-stoppers on the pathway towards the realization of fusion energy. As the power of fusion devices increases (from current experiments to the foreseen demonstrator reactor DEMO), also the specific load on the divertor -the component which is responsible for exhausting the power- increases. Under such conditions, the currently envisaged baseline divertor design -based on actively cooled tungsten monoblocks- would have a lifetime of less than two operation years, forcing the fusion power plant to be shut down for maintenance for a relatively long time. For nuclear fusion electricity to be competitive, this would be unacceptable. One of the alternatives to this baseline strategy is to employ a liquid metal (LM) divertor. The working principle consists in keeping in place a thin film of liquid metal in the region where the plasma ions and electrons imping, i.e. the divertor targets. Exposing a liquid surface to the plasma would avoid issues associated with melting. Moreover, concerns about thermomechanical stresses could be relaxed. The issues of power handling and of neutron compatibility could be decoupled (the plasma-facing surface would be the molten metal, whereas the substrate on which the LM film is placed could be designed optimizing the compatibility with the high neutron fluences foreseen in the reactor). Moreover, both the LM evaporation and the interactions of the evaporated metal with the near-divertor plasma could reduce the heat to be exhausted by the component. Among the difficulties associated with the implementation of an LM divertor, we can cite issues associated with the LM surface and with the plasma response to the presence of the divertor. From the point of view of the surface, confining an LM film in an environment with extremely large magnetic fields is a challenge. It is also necessary to constantly replenish the surface to compensate for the material erosion associated with evaporation and sputtering by plasma ions. To face these challenges, it has been proposed to employ a Capillary-Porous Structure (CPS) to hold the LM in place, avoiding droplet emission and providing passive replenishment -in a similar way as it is done in heat pipes-. From the plasma physics point of view, it has been mentioned that the evaporated metal interacts beneficially with the near-divertor plasma, since it allows to exhaust part of the heat load via line radiation and Bremsstrahlung. Nevertheless, should the metal radiate in the core plasma or excessively dilute it, the fusion reactor performances would be heavily reduced. This thesis is focused on theoretically assessing, based on literature data and simple calculations, the capability of the CPS to hold the LM in place. To this aim, a detailed pressure balance for the LM in the CPS has been performed. Various terms of the balance are evaluated based on conditions expected in a fusion reactor. The simplicity of the model allows for performing fast parametric scans, thereby grasping the effect of design choices and of reactor operating conditions on the LM confinement.",
+      "link": "https://webthesis.biblio.polito.it/12391/1/tesi.pdf"
+    },
+    {
+      "title": "Numerical analysis of the thermal effects of a runaway electron event on EU DEMO plasma facing components",
+      "authors": "Gianluca Ragno, Fabio Subba, Laura Savoldi",
+      "date": "2019-11-07T23:00:00.000Z",
+      "abstract": "An important issue in the design of tokamak divertors is to deal with high energy fluxes carried by runaway electron beams generated inside the plasma during disruption events. These beams hit the Plasma Facing Components (PFCs), first wall and divertor, which must be designed in order to withstand the consequent loads, that could otherwise cause phenomena such as erosion or melting, followed by a LOCA (Loss Of Cooling Accident). With the use of the Monte Carlo code FLUKA, the distribution profile of energy deposited by runaway electrons in PFCs has been assessed by ENEA, considering all the possible reactions derived by the collision of the particles inside the materials.  The scope of the present work is to compute the temperature patterns in the EU DEMO divertor and first wall, in order to forecast the presence of one of the unwanted phenomena, starting from the energy profiles computed by ENEA. In first place, all the assumptions made and all the data used to set up the model in the FE solver Freefem++ are illustrated: the choice of the energy deposited and its duration, together with the correlations used for the heat transfer and the ones used for the thermal properties of the materials. At the end, the computed results are highlighted: the analysis has confirmed that, for both the components, large melting can occur, requiring their replacement in case of runaway electron events, but more catastrophic events (as LOCA) are not expected. This work constitutes a good starting point for the analysis of the effects of disruptions in DEMO, which could affect the design of plasma facing components, in order to minimize the maintenance costs of the reactor.",
+      "link": "https://webthesis.biblio.polito.it/12386/1/tesi.pdf"
+    },
+    {
+      "title": "Topological optimization and minimal compliance in linear elasticity",
+      "authors": "Cornel Marius Murea, Dan Tiba",
+      "date": "2019-11-07T23:00:00.000Z",
+      "abstract": "We investigate a fixed domain approach in shape optimization, using a regularization of the Heaviside function both in the cost functional and in the state system. We consider the compliance minimization problem in linear elasticity, a well known application in this area of research. The optimal design problem is approached by an optimal control problem defined in a prescribed domain including all the admissible unknown domains. This approximating optimization problem has good differentiability properties and a gradient algorithm can be applied. Moreover, the paper also includes several numerical experiments that demonstrate the descent of the obtained cost values and show the topological and the boundary variations of the computed domains. The proposed approximation technique is new and can be applied to state systems given by various boundary value problems.",
+      "link": "https://arxiv.org/pdf/1909.05592.pdf"
+    },
+    {
+      "title": "Numerical simulation and modelling of phase-change materials",
+      "authors": "Aina Rakotondrandisa",
+      "date": "2019-11-06T23:00:00.000Z",
+      "abstract": "In this thesis we develop a numerical simulation tool for computing two and three-dimensional liquid-solid phase-change systems involving natural convection. It consists of solving the incompressible Navier-Stokes equations with Boussinesq approximation for thermal effects combined with an enthalpy-porosity method for the phase-change modeling, using a finite elements method with mesh adaptivity. A single-domain approach is applied by solving the same set of equations over the whole domain. A Carman-Kozeny-type penalty term is added to the momentum equation to bring to zero the velocity in the solid phase through an artificial mushy region. Model equations are discretized using Galerkin triangular finite elements. Piecewise quadratic (P2) finite-elements are used for the velocity and piecewise linear (P1) for the pressure. The coupled system of equations is integrated in time using a second-order Gear scheme. Non-linearities are treated implicitly and the resulting discrete equations are solved using a Newton algorithm. The numerical method is implemented with the finite elements software FreeFem++ (www.freefem.org), available for all existing operating systems. The programs are written and distributed as an easy-to-use open-source toolbox, allowing the user to code new numerical algorithms for similar problems with phase-change. We present several validations, by simulating classical benchmark cases of increasing difficulty: natural convection of air, melting of a phase-change material, a melting-solidification cycle, a basal melting of a phase-change material, and finally, a water freezing case.",
+      "link": "https://tel.archives-ouvertes.fr/tel-02349536"
+    },
+    {
+      "title": "Spreading of chemical substance after its accidental spillage onto the soil surface under unsaturated conditions and variable porosity",
+      "authors": "Olena Kozhushko, Petro Martyniuk",
+      "date": "2019-11-05T23:00:00.000Z",
+      "abstract": " In this paper we study a mathematical model of soil moisture transport with variable porosity. The problem is set for the case of highly concentrated solute spilled onto soil surface. We investigate the way solute transfer, adsorption of contaminant by soil particles and variable porosity influence infiltration of solute into the soil profile. For that purpose, two models are used: a classical one and the one with consideration of mentioned factors. By comparing the results of both models, we established that high concentration of solute causes moisture transport to transpire more slowly, and the pollutant to remain on the soil surface for longer time. Numerical results indicate that porosity can vary considerably under the conditions of intensive contamination with salts.",
+      "link": "http://itconfdoc.nuwm.edu.ua/index.php/ITConf/article/download/41/17"
+    },
+    {
+      "title": "Plantar pressure and shear measurement using surface stress sensitive film",
+      "authors": "Larry P Goss, Jim W Crafton, Brian L Davis, Grant R McMillan, Visar Berki, Amelia E Howe, and Marisa Papp",
+      "date": "2019-11-05T23:00:00.000Z",
+      "abstract": "This paper describes the performance of a system for dynamic measurements of pressure and shear forces over the entire plantar surface of the foot. During human locomotion, mechanical stress at the plantar surface is 3D: pressure acting vertically and shear stress acting longitudinally and laterally. The system described here offers gait, foot deformity, diabetic ulceration, and foot-ankle kinetics researchers a means to obtain the full 3D data that is missing in most current research efforts. Surface Stress Sensitive Film™ (S3F) provides the sensing element for this measurement device. S3F is an incompressible elastic film that deforms in response to applied forces. Upon removal of the forces, the film returns to its original shape. The dynamic, 3D deformations are captured with a digital camera. The measured deformations can be analyzed directly, since they are proportional to the applied forces, or used as inputs to a finite element model of the film to reconstruct the pressure and shear force values. System performance is evaluated using both a standard form and human foot contact. The fundamental approach involves comparing the integrated normal and shear loads from the S3F-based sensor to the measurements provided by a force plate. The results showed high linearity (<3% nonlinearity), low uncertainty (<4%), low cross talk (<3%), high spatial resolution (1.6 mm2), no loss of fidelity at walking speeds with a 45 Hz sampling rate, and good repeatability for human foot contact measurements.",
+      "link": "https://doi.org/10.1088/1361-6501/ab4453"
+    },
+    {
+      "title": "Uniform observability of the one-dimensional wave equation for non-cylindrical domains. Application to the control's support optimization",
+      "authors": "Arthur Bottois, Nicolae Cindea, Arnaud Munch",
+      "date": "2019-11-04T23:00:00.000Z",
+      "abstract": "This work is concerned with the distributed controllability of the one-dimensional wave equation over non-cylindrical domains. The controllability in that case has been obtained in [Castro-Cindea-Munch, Controllability of the linear one-dimensional wave equation with inner moving forces, SIAM J. Control Optim 2014] for domains satisfying the usual geometric optics condition. In the present work, we first show that the corresponding observability property holds true uniformly in a precise class of non-cylindrical domains. Within this class, we then consider, for a given initial datum, the problem of the optimization of the control support and prove its well-posedness. Numerical experiments are then discussed and highlight the influence of the initial condition on the optimal domain.",
+      "link": "https://arxiv.org/pdf/1911.01284.pdf"
+    },
+    {
+      "title": "Abstractions and automated algorithms for mixed domain finite element methods",
+      "authors": "Cécile Daversin-Catty, Chris N. Richardson, Ada J. Ellingsrud, Marie E. Rognes",
+      "date": "2019-11-04T23:00:00.000Z",
+      "abstract": "Mixed dimensional partial differential equations (PDEs) are equations coupling unknown fields defined over domains of differing topological dimension. Such equations naturally arise in a wide range of scientific fields including geology, physiology, biology and fracture mechanics. Mixed dimensional PDEs are also commonly encountered when imposing non-standard conditions over a subspace of lower dimension e.g. through a Lagrange multiplier. In this paper, we present general abstractions and algorithms for finite element discretizations of mixed domain and mixed dimensional PDEs of co-dimension up to one (i.e. nD-mD with |n-m| <= 1). We introduce high level mathematical software abstractions together with lower level algorithms for expressing and efficiently solving such coupled systems. The concepts introduced here have also been implemented in the context of the FEniCS finite element software. We illustrate the new features through a range of examples, including a constrained Poisson problem, a set of Stokes-type flow models and a model for ionic electrodiffusion.",
+      "link": "https://arxiv.org/pdf/1911.01166.pdf"
+    },
+    {
+      "title": "Direct numerical simulation of infusion and flow-front tracking in materials with heterogeneous permeability using a pressure mapping sensor",
+      "authors": "Arthur Levy, James Kratz",
+      "date": "2019-11-01T23:00:00.000Z",
+      "abstract": "This paper explores the use of thin film piezoresistive pressure mapping sensors as a means to improve resin transfer moulding processes. The pressure mapping sensor was located between the preform and mould, giving information regarding the permeability map prior to infusion. The permeability map is used as an input to a direct numerical simulation of the infusion step of a highly variable reclaimed carbon fibre preform. The pressure sensor was also used to track the flow front position in-situ, due to a change in load sharing between the preform and liquid during the infusion experiment. Flow front tracking with the pressure mapping sensor was validated against conventional camera images taken through a transparent mould. The direct numerical simulation was able to account for local permeability variation in the preform, providing improved flow-front prediction than homogeneous permeability only, and could be part of a wider strategy to improve resin transfer moulding process robustness.",
+      "link": "https://doi.org/10.1177/0021998319883931"
+    },
+    {
+      "title": "Analysis of the magneto-mechanical anisotropy of steel sheets in electrical applications",
+      "authors": "F. Martin, U. Aydin., A. Ruzibaev, Y. Ge, L. Daniel, L. Bernard, P. Rasilo, A. Benabou, A. Belahcen",
+      "date": "2019-10-26T23:00:00.000Z",
+      "abstract": "We investigate the effect of magneto-mechanical and magneto-crystalline anisotropy in a test application by coupling a multiscale magneto-mechanical model with a finite element method. This first application is composed of a cylindrical conductor surrounded by a ring composed of a non oriented FeSi3%steel sheet which contains 396 representative grain orientations. Such application can reveal the anisotropy due to the texture of the material by inducing a rotational flux density within the ring. Moreover, the effect of the texture and the magneto-mechanical characteristic of the steel sheets is analyzed in an axially laminated synchronous reluctance machine. The effect of stress strongly emphasizes the anisotropic behavior of NO steel sheets.",
+      "link": "http://butler.cc.tut.fi/~rasilo/pubs/Martin2019.pdf"
+    },
+    {
+      "title": "Optimization Method in 2D DC Electric Field Cloaking and Shielding",
+      "authors": "Gennadii V. Alekseev, Dmitry A. Tereshko",
+      "date": "2019-10-24T23:00:00.000Z",
+      "abstract": "In order to design shielding or cloaking shells for manipulating DC electric fields we formulate and solve inverse problems of electrical conductivity. The shells consist of a finite number of layers filled with homogeneous isotropic medium. The design problems under study are reduced to control problems with the electrical conductivities of layers taken as controls. These problems are solved numerically using the particle swarm optimization algorithm. Results of numerical experiments obtained in this study describe easy-to-manufacture layered shells that have the high cloaking or shielding performance.",
+      "link": "https://doi.org/10.1109/ICEAA.2019.8879239"
+    },
+    {
+      "title": "Temporal simulations and stability analyses of elastic splitter plates interacting with cylinder wake flow",
+      "authors": "J.-L Pfister, O. Marquet",
+      "date": "2019-10-23T23:00:00.000Z",
+      "abstract": "Instabilities developing in a configuration constituted by an elastic plate clamped behind a rigid cylinder are analysed in this paper. The interaction between the wake flow generated by the cylinder with the elastic plate leads to self-developing vortex-induced vibrations. Depending of the stiffness of the elastic plate, the plate may oscillate about a non-deviated or a deviated mean transverse position. After having presented non-linear results computed with time-marching simulations, the instabilities are analysed in terms of a fully coupled fluid-structure eigenvalue analysis. We show that the linear stability analysis is able to predict the unstable regions, and provide a good prediction of the unstable vibration frequencies. The mean deviation is characterized by a steady divergence mode in the eigenvalue spectrum, while unstable, unsteady vortex-induced vibration modes show lock-in phenomena.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02321791/document"
+    },
+    {
+      "title": "Mathematical modelling of biodegradation in situ application to biodenitrification",
+      "authors": "Mostafa Abaali, Zoubida Mghazli",
+      "date": "2019-10-19T23:00:00.000Z",
+      "abstract": "In the biological units in situ, there is proved the existence of free and adherent bacteria. Most mathematical models deal with only free or adherent bacteria, and do not consider the bacteria diffusion and transport. In this work we consider a mathematical model of biodenitrification taking into account free and adherent bacteria, their interdependence and the diffusion and transport related to them. The model is presented first in a reactor and then in a porous medium. The equations obtained are approximated by a Finite Element method. The numerical tests presented are close to experimental results in the literature, that confirm the validity of the model, and show the importance of considering the complete model taking into account both types of bacteria and their evolution in time and space.",
+      "link": "https://doi.org/10.1016/j.camwa.2019.10.004"
+    },
+    {
+      "title": "Large eddy simulations and global stability analyses of an annular and cylindrical rotor/stator cavity limit cycles",
+      "authors": "Matthieu Queguineur, Thibault Bridel-Bertomeu, Laurent Y. M. Gicquel, Gabriel Staffelbach",
+      "date": "2019-10-18T23:00:00.000Z",
+      "abstract": "Although rotating cavity flows are essential components of industrial applications, their dynamics is still largely misunderstood. From computer hard-drives to turbopumps of space launchers, designed devices often produce flow oscillations that can destroy the component prematurely, or produce disturbing noise or undesired operating modes of the system. The fundamentals of encountered static and rotating flow boundary layers have evidenced, a long time ago now, the presence of specific boundary layer instabilities and structures for low Reynolds numbers. For higher Reynolds numbers and fully enclosed systems, features are, however, more complex with the apparition of multifrequency oscillations populating the entire cavity limit cycle. For these flows, Large Eddy Simulation (LES) has illustrated the capacity of reproducing features and limit cycles. However, identifying the origin and region within these flows that are responsible for mode selections remains difficult if not impossible using such computational fluid dynamics tools. The present contribution evaluates a LES and a global stability analysis framework to identify the mechanisms responsible for the observed limit-cycles of two types of rotor-stator cavities. In particular, the presence of a central body or shaft and its impact on the instability selection is of interest here, i.e., the identification of the regions of mode activation for a cylindrical as well as an annular cavity is detailed. Results issued by the conjunct use of dynamical mode decomposition and Global Linear Stability Analysis (GLSA) confirm the observed LES dynamics. Most importantly, GLSA gives access to the triggering mechanisms at the root of the limit-cycles expression as well as hints on the mode selection. In that respect, a cylindrical cavity is shown to sustain more complex features than an annular cavity because of an enhanced flow curvature near the central shaft.",
+      "link": "https://doi.org/10.1063/1.5118322"
+    },
+    {
+      "title": "Tuning effective dynamical properties of periodic media by FFT-accelerated topological optimization",
+      "authors": "Rémi Cornaggia, Cédric Bellis",
+      "date": "2019-10-10T23:00:00.000Z",
+      "abstract": "This works concerns the propagation of waves in periodic media, whose microstruc-ture is optimized to obtain specific dynamical properties (typically, to maximize the dispersion in given directions). The present study, focusing on scalar waves in two dimensions, e.g. antiplane shear waves, aims at setting a generic optimization framework. The proposed optimization procedure relies on a number of mathematical and numerical tools. First, the two-scale asymptotic homogenization method is deployed up to second-order to provide an effective dispersive model, valid for low and medium frequencies. Simple dispersion indicators and cost functionals are then considered on the basis of this model. Then, the minimization of these functionals is performed thanks to an algorithm that relies on the concept of topological derivative to iteratively perform phase changes in the unit cell characterizing the material. Finally, FFT-accelerated solvers are extensively used to solve the cell problems underlying the homogenized model. To illustrate the proposed approach, the resulting procedure is applied to the design of anisotropic media with maximal dispersion in specific directions, and to the reconstruction of unknown microstructures from effective phase velocity data. Several extensions are discussed, notably to address microstructured interfaces, elastic waves, and higher frequency regimes.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02311019/document"
+    },
+    {
+      "title": "Numerical approximation of the dynamic Koiter's model for the hyperbolic parabolic shell",
+      "authors": "Xiaoqin Shen, Qian Yang, Linjin Li, Zhiming Gao, Tiantian Wang",
+      "date": "2019-10-10T23:00:00.000Z",
+      "abstract": "In this paper, the dynamic Koiter's model is discussed for the hyperbolic parabolic shell, i.e., the saddle surface as its middle surface. The numerical computation for this kind of shell is the most difficult as its complex differential geometry. We provide a numerical algorithm for solving the dynamic problems with finite elements and finite difference methods. At the same time, we do the numerical experiments for the hyperbolic parabolic shell. Concretly, we consider the roof of the Valencia Aquarium as a hyperbolic parabolic shell with a geometric model of the roof deduced. Then, we simulate the deformation of the roof by the dynamic applied force coupled with the dynamic Koiter's model. Finally, a comparison of the displacement distribution on the middle surface is made, which verifies that the dynamic Koiter's model is efficient and that numerical algorithm is stable for the hyperbolic parabolic shell. This result provides a strong theoretical and applicable support for the design and protection of such large-span buildings whose roofs and walls are of one whole object.",
+      "link": "https://doi.org/10.1016/j.apnum.2019.10.003"
+    },
+    {
+      "title": "Linear and nonlinear oscillations of sessile drops and partially filled container",
+      "authors": "Nabil Achour",
+      "date": "2019-10-08T23:00:00.000Z",
+      "abstract": "A sessile droplet partially wets a planar solid support. We study the linear stability of an inviscid sessile drops. Drops are in natural and forced oscillations. The three-phase contact line is pinned and moves with fixed contact angle. The governing hydrodynamic equations for inviscid motions are reduced to a functional eigenvalue problem on linear operators. A solution is facilitated using the finite element method to report frequencies and modal shapes identified by a polar k and azimuthal m wavenumber. Otherwise, the sloshing of a liquid in a vertical cylindrical tank. We investigate theoretically the effects of capillarity at the contact line on the decay time of capillary–gravity waves. To this end, we marry a model for the inviscid waves to a nonlinear empiric law for the contact line that incorporates contact angle hysteresis. The resulting system of equations is solved by means of a weakly nonlinear analysis using the method of multiple scales. Capillary effects have a dramatic influence on the damping rate, especially when the sloshing amplitude gets small: this nonlinear interfacial term increases in the limit of zero wave amplitude.",
+      "link": "https://www.researchgate.net/profile/Nabil_Achour/publication/328019608_Linear_and_nonlinear_oscillations_of_sessile_drops_and_partially_filled_container/links/5befcf6092851c6b27c4adb0/Linear-and-nonlinear-oscillations-of-sessile-drops-and-partially-filled-container.pdf"
+    },
+    {
+      "title": "Identification of Piecewise Constant Robin Coefficient for the Stokes Problem Using the Levenberg-Marquardt Method",
+      "authors": "Faten Khayat",
+      "date": "2019-10-04T23:00:00.000Z",
+      "abstract": " In this work, we prove the quadratic convergence of the Levenberg-Marquardt method for the inverse problem of identifying a Robin coefficient for the Stokes system, where we suppose that this parameter is piecewise constant on some non accessible part of the boundary and under the assumption that on this part, the velocity of a given reference solution stays far from zero.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02303363/document"
+    },
+    {
+      "title": "The DUNE Framework: Basic Concepts and Recent Developments",
+      "authors": "Peter Bastian, Markus Blatt, Andreas Dedner, Nils-Arne Dreier, Christian Engwerd, René Fritze, Carsten Gräser, Dominic Kempf, Robert Klöfkorn, Mario Ohlberger, Oliver Sander",
+      "date": "2019-09-30T23:00:00.000Z",
+      "abstract": "This paper presents the basic concepts and the module structure of the Distributed and Unified Numerics Environment and reflects on recent developments and general changes that happened since the release of the first Dune version in 2007 and the main papers describing that state [1, 2]. This discussion is accompanied with a description of various advanced features, such as coupling of domains and cut cells, grid modifications such as adaptation and moving domains, high order discretizations and node level performance, non-smooth multigrid methods, and multiscale methods. A brief discussion on current and future development directions of the framework concludes the paper.",
+      "link": "https://arxiv.org/pdf/1909.13672.pdf"
+    },
+    {
+      "title": "Design of compliant mechanisms using continuum topology optimization: A review",
+      "authors": "Benliang Zhu, Xianmin Zhang, Hongchuan Zhang, Junwen Liang, Haoyan Zang, Hai Li, Rixin Wang",
+      "date": "2019-09-27T23:00:00.000Z",
+      "abstract": "Compliant mechanisms have become an important branch of modern mechanisms. Unlike conventional rigid body mechanisms, compliant mechanisms transform the displacement and force at least partly through the deformation of their structural components, which can offer a great reduction in friction, lubrication and assemblage. Therefore, compliant mechanisms are particularly suitable for applications in microscale/nanoscale manipulation systems. The significant demand of practical applications has also promoted the development of systematic design methods for compliant mechanisms. Several methods have been developed to design compliant mechanisms. In this paper, we focus on the continuum topology optimization methods and present a survey of the state-of-the-art design advances in this research area over the past 20 years. The presented overview can be helpful to those engaged in the topology optimization of compliant mechanisms who desire to be apprised of the field’s recent state and research tendency.",
+      "link": "https://doi.org/10.1016/j.mechmachtheory.2019.103622"
+    },
+    {
+      "title": "A stabilized coupled method and its optimal error estimates for elliptic interface problems",
+      "authors": "Jiaping Yu, Feng Shi, Jianping Zhao",
+      "date": "2019-09-18T23:00:00.000Z",
+      "abstract": "In this paper, we present a stabilized coupled algorithm for solving elliptic interface problems, mainly by introducing the jump of the solutions along the interface. A framework of theoretical proofs is provided to show the optimal error estimates of this stabilized method. Several numerical experiments are carried out to demonstrate the computational stability and effectiveness of the method.",
+      "link": "https://link.springer.com/article/10.1186/s13662-019-2332-9"
+    },
+    {
+      "title": "Radiation optimization of piezoelectric plates",
+      "authors": "Olivier DOARÉ, Emil GARNELL, Corinne ROUBY",
+      "date": "2019-09-13T23:00:00.000Z",
+      "abstract": "The goal of the present work is to control the modal dynamics of a piezo-electric loudspeaker in order to reach directivity of efficiency criteria. In this context, we study the dynamics and sound radiation of a piezoelectric plate biased by a static pressure on one side. This pressure inflates the plate and its forced dynamics around this equilibrium position are then studied. With the help of von Karman plate theory, the static equilibrium position of a plate of arbitrary shape is sought for before writing its linear dynamics around this equilibrium position. This two-step problem is solved numerically using a finite elements software (Freefem++). This results in a series of eigen modes and eigen frequencies for each value of the static pressure difference. Next the modal forces due to the piezoelectric coupling are calculted. By considering a baffled plate, the acoustical radiation is computed using the Rayleigh integral. The numerical model is used to perform a parametric optimisation of the system.",
+      "link": "http://pub.dega-akustik.de/ICA2019/data/articles/000766.pdf"
+    },
+    {
+      "title": "On existence of optimal potentials on unbounded domains",
+      "authors": "G Buttazzo, J Casado-díaz, F Maestre",
+      "date": "2019-09-13T23:00:00.000Z",
+      "abstract": "We consider elliptic equations of Schrodinger type with a right-hand side fixed and with the linear part of order zero given by a potential V. The main goal is to study the optimization problem for an integral cost depending on the solution uV, when V varies in a suitable class of admissible potentials. These problems can be seen as the natural extension of shape optimization problems to the framework of potentials. The main result is an existence theorem for optimal potentials, and the main difficulty is to work in the whole Euclidean space Rd, which implies a lack of compactness in several crucial points. In the last section we present some numerical simulations.",
+      "link": "https://arxiv.org/pdf/1909.06128.pdf"
+    },
+    {
+      "title": "Influence of interface-mediated elastic relaxation of lithiation precipitates in aluminium electrodes",
+      "authors": "Felix Wilms",
+      "date": "2019-09-11T23:00:00.000Z",
+      "abstract": "We consider the thermodynamic preferential lithiation of aluminium electrodes subject to formation stresses. A continuum model is described to account for the elastic contributions from a thermodynamic perspective of lithium precipitation during the charging half cycle. The influence of the elastic effects mainly depends on the relative elastic stiffness of electrolyte and electrode material and the presence of a stiff interfacial film. Specifically, we refer two experimental findings which show either interface-dominated precipitation or bulk lithiation in the Aluminium electrode. Our findings suggest that in spite of the kinetic nature of the charging process, thermodynamic aspects can explain a substantial part of the precipiation.",
+      "link": "http://www.mathcces.rwth-aachen.de/_media/3teaching/00projects/aluminiumel.pdf"
+    },
+    {
+      "title": "Calibration of a Fluid-Structure Problem with Keras",
+      "authors": "Olivier Pironneau",
+      "date": "2019-09-09T23:00:00.000Z",
+      "abstract": "In this short paper we report on an inverse problem issued from a physical system, namelya fluid structure problem where the parameters are the rigidity constant, the solid-fluiddensity  ratio  and  the  fluid  viscosity.   We  have  chosen  a  simple  geometry  so  that  thenumerical solution of the system is easy.  We compare the solution of this inverse problemby a Neural Network with a more classical solution obtained with a genetic algorithm.The Neural Network does much better.",
+      "link": "https://arxiv.org/pdf/1909.03708.pdf"
+    },
+    {
       "title": "Modification Effects of Microsecond High Current Electron Beam Exposure on Titanium VT22 Alloy",
       "authors": "S.Ye. Donets, V.F. Klepikov, V.V. Lytvynenko, E.M. Prokhorenko, O.A. Startsev, Yu.F. Lonin, A.G. Ponomarev, V.T. Uvarov, R.I. Starovoytov",
       "date": "2019-09-05T23:00:00.000Z",
@@ -21,6 +203,13 @@
       "date": "2019-09-02T23:00:00.000Z",
       "abstract": "In this paper, we develop the lower order stabilized finite element methods for the incompressible flow with the slip boundary conditions of friction type whose weak solution satisfies a variational inequality. The 𝐻1-norm for the velocity and the 𝐿2-norm for the pressure decrease with optimal convergence order. The reliable and efficient a posteriori error estimates are also derived. Finally, numerical experiments are presented to validate the theoretical results.",
       "link": "https://link.springer.com/article/10.1186/s13662-019-2312-0"
+    },
+    {
+      "title": "Coarse spaces for Helmholtz",
+      "authors": "Niall Bootland",
+      "date": "2019-09-01T23:00:00.000Z",
+      "abstract": "On coarse spaces for solving the heterogeneous Helmholtzequation with domain decomposition methods",
+      "link": "http://personal.strath.ac.uk/jennifer.pestana/lms19/Bootland.pdf"
     },
     {
       "title": "Numerical simulations for the dynamics of flexural shells",
@@ -79,6 +268,13 @@
       "link": "https://hal.archives-ouvertes.fr/hal-02265533"
     },
     {
+      "title": "The role of conductive heat losses on the formation of isolated flame cells in Hele-Shaw chambers",
+      "authors": "Daniel Martínez-Ruiza, Fernando Veiga-López, Daniel Fernández-Galisteo, Vadim N. Kurdyumov, Mariov Sánchez-Sanz",
+      "date": "2019-08-07T23:00:00.000Z",
+      "abstract": "The propagation of low-Lewis-number premixed flames is analyzed in a partially confined Hele-Shaw chamber formed by two parallel plates separated a distance h apart. An asymptotic-numerical study can be performed for small gaps compared to the flame thickness δT. In this narrow-channel limit, the problem formulation simplifies to a quasi-2D description in which the velocity field is controlled by dominant viscous effects. After accounting for conductive heat losses through the plates in our formulation, we found that the reaction front breaks into one or several isolated flame cells where the temperature is large enough to sustain the reaction, both in absence and in presence of buoyancy effects. Under these near-limit conditions, the isolated flame cells either travel steadily or undergo a slow random walk over the chamber in which the reacting front splits successively to form a tree-like pathway, burning only a small fraction of the fuel before reaching the end of the chamber. The production of quasi-2D circular or comet-like flames under specific favorable conditions is demonstrated in this paper, with convection, conductive heat losses and differential diffusion playing an essential role in the formation of the isolated one and two-headed flame cells.",
+      "link": "https://doi.org/10.1016/j.combustflame.2019.07.019"
+    },
+    {
       "title": "A new unified stabilized mixed finite element method of the Stokes-Darcy coupled problem: Isotropic discretization",
       "authors": "Houédanou Koffi Wilfrid",
       "date": "2019-08-05T23:00:00.000Z",
@@ -112,6 +308,13 @@
       "date": "2019-07-15T23:00:00.000Z",
       "abstract": "The  regenerative  drive  and  braking  elevator  technology  capture  the  kinetic  energy from the rope movement based on Faraday’s law of electromagnetic induction, thus only applicable to the roped elevator system. The rope-less elevator is anticipated to be  future  predominant  elevator  type  and  can  only  transfer  its  kinetic  energy  via  the airflow induced by its car movement, which can be evaluated via aerodynamic studies. However, past aerodynamic studies focus only on the effect of the induced airflow to energy and operational efficiency of the elevator. There are very limited studies on the use of the induced airflow for kinetic energy harvesting. Therefore, thisstudy evaluates the induced flow in terms ofairvelocity, kinematic pressure, and turbulence, towards the  potential  kinetic  energy  harvesting  pertaining  to  the  possibility  of  wind  power generation and electricity generation of the rope-less elevator system using CFD based approach  through  OpenFOAMsoftware.  Aerodynamics  of  the  elevator  system  is simulated   using   symmetrical   quarter   three-dimensional   elevator   model,   with parameters of car rated speed and shaft height. The results reveal the potential kinetic energy harvesting from the moving elevator car. Appropriate elevator speed and shaft height should be adjusted accordingly to get the optimum match with the longest time period for the car to run at its rated speed, to generate the most electricity.",
       "link": "https://www.akademiabaru.com/doc/ARFMTSV59_N1_P54_65.pdf"
+    },
+    {
+      "title": "Mesh refinement for parallel-adaptive FEM: theory and implementation",
+      "authors": "Martin Jürgen Alkämper",
+      "date": "2019-07-11T23:00:00.000Z",
+      "abstract": "We investigate parallel adaptive grid refinement and focus in particular on hierarchically adaptive, parallel and conforming simplicial grids that use Newest Vertex Bisection (NVB) as their refinement strategy. One challenge of NVB is its applicability to arbitrary simplex grids, which is not possible with the current compatibility condition. We define a novel, more natural weak compatibility condition for the initial grid and show that using this condition the iterative refinement algorithm terminates using NVB. We design an algorithm to relabel an arbitrary d-dimensional simplicial grid to fulfil this weak compatibility condition. The algorithm is of complexity O(n), where n is the number of elements in the grid. We also consider NVB on partitioned grids for parallel computing. Another challenge is that refinement may propagate over partition boundaries. This is resolved by adding an outer loop to the refinement algorithm, that requires global communication. We prove that the amount of global communication needed and the number of outer iterations in the refinement propagation to reach a conforming situation is bounded. We extend the grid manager Dune-ALUGrid to provide parallel, adaptive, conforming 2d grids. Furthermore we develop the software package Dune-ACFem which is able to conveniently describe mathematical problems within efficient C++ code. We demonstrate the utility of Dune-ACFem and Dune-ALUGrid at the problem of noise removal on images with adaptive finite elements.",
+      "link": "https://elib.uni-stuttgart.de/bitstream/11682/10585/7/alkaemper_dissertation.pdf"
     },
     {
       "title": "A linear, stabilized, non-spatial iterative, partitioned time stepping method for the nonlinear Navier–Stokes/Navier–Stokes interaction model",
@@ -238,6 +441,13 @@
       "date": "2019-03-05T23:00:00.000Z",
       "abstract": "Inverse problems associated with designing cylindrical thermal layered shielding and cloaking shells are studied. Using the optimization method these inverse problems are reduced to corresponding control problems. Thermal conductivities of the shell layers play the role of passive controls. A numerical algorithm based on the particle swarm optimization is proposed and the results of numerical experiments are discussed. Important properties of optimal solutions are established. Based on these properties simple design rules are formulated allowing to design cloaking and shielding shells which possess the best cloaking or shielding performance in addition to easy manufacturability.",
       "link": "https://www.sciencedirect.com/science/article/pii/S0017931018356394"
+    },
+    {
+      "title": "On theoretical and numerical properties of solutions to a Keller-Segel system",
+      "authors": "Elena Floris, Giuseppe Viglialoro, Rafael Rodríguez Galván",
+      "date": "2019-02-15T23:00:00.000Z",
+      "abstract": "",
+      "link": "https://people.unica.it/giuseppeviglialoro/files/2019/02/tesiteorica_15_2_2019finale.pdf"
     },
     {
       "title": "A Practical Review on Linear and Nonlinear Global Approaches to Flow Instabilities",
