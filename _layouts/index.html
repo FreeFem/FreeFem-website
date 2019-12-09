@@ -63,50 +63,58 @@ plot(u, nbiso=15);</code></pre>
     <div id="release">RELEASE</div>
     <div id="download"><a href="https://github.com/FreeFem/FreeFem-sources/releases" target="_blank">Download</a></div>
     <div id="platforms">
-      <p><span><i class="fab fa-apple"></i> <i class="fab fa-linux"></i> <i class="fab fa-windows"></i></span>All platforms (<a href="https://www.gnu.org/licenses/lgpl-3.0.txt" target="_blank">LGPL 3.0</a>)</p>
+      <p><span>
+        <i class="fab fa-apple"></i>
+        <i class="fab fa-linux"></i>
+        <i class="fab fa-windows"></i>
+        <i class="fab fa-docker"></i>
+      </span>All platforms (<a href="https://www.gnu.org/licenses/lgpl-3.0.txt" target="_blank">LGPL 3.0</a>)</p>
     </div>
   </aside>
 
   <section id="content">
-    <article class="content-left">
-      <div class="article-text">
+    <article class="content-1">
         <h2>Easy to use PDE solver</h2>
-        <p>FreeFEM is a popular 2D and 3D partial differential equations (PDE) solver used by thousands of researchers across the world.
+        <p>FreeFEM is a popular 2D and 3D partial differential equations (PDE) solver used by thousands of researchers across the world.<br/><br/>
           It allows you to easily implement your own physics modules using the provided FreeFEM language.
           FreeFEM offers a large list of finite elements, like the Lagrange, Taylor-Hood, etc., usable in the continuous and discontinuous Galerkin method framework.
         </p>
-        <p>Numerous physics are pre-built :</p>
-        <ul>
-          <li>Incompressible Navier-Stokes (using the P1-P2 Taylor Hood element)</li>
-        </ul>
-        <ul>
-          <li>Lamé equations (linear elasticity)</li>
-          <li>Neo-Hookean, Mooney-Rivlin (nonlinear elasticity)</li>
-        </ul>
-        <ul>
-          <li>Thermal diffusion</li>
-          <li>Thermal convection</li>
-          <li>Thermal radiation</li>
-        </ul>
-        <ul>
-          <li>Magnetostatics</li>
-          <li>Electrostatics</li>
-        </ul>
-        <ul>
-          <li>Fluid-structure interaction (FSI)</li>
-        </ul>
-      </div>
     </article>
-    <article class="content-right">
-      <div class="article-text">
+    <article class="content-2">
+      <h2>Pre-built physics</h2>
+      <ul>
+        <li>Incompressible Navier-Stokes (using the P1-P2 Taylor Hood element)</li>
+      </ul>
+      <ul>
+        <li>Lamé equations (linear elasticity)</li>
+        <li>Neo-Hookean, Mooney-Rivlin (nonlinear elasticity)</li>
+      </ul>
+      <ul>
+        <li>Thermal diffusion</li>
+        <li>Thermal convection</li>
+        <li>Thermal radiation</li>
+      </ul>
+      <ul>
+        <li>Magnetostatics</li>
+        <li>Electrostatics</li>
+      </ul>
+      <ul>
+        <li>Fluid-structure interaction (FSI)</li>
+      </ul>
+    </article>
+    <article class="content-3">
         <h2>Strong mesh and parallel capabilities</h2>
         <p>
           FreeFEM has it own internal mesher, called BAMG, and is compatible with the best open-source mesh and visualization software like <a href="http://wias-berlin.de/software/tetgen/" target="_blank">Tetgen</a>, <a href="http://gmsh.info/"
-            target="_blank">Gmsh</a>, <a href="https://www.mmgtools.org/" target="_blank">Mmg</a> and <a href="https://www.paraview.org/" target="_blank">ParaView</a>.
+            target="_blank">Gmsh</a>, <a href="https://www.mmgtools.org/" target="_blank">Mmg</a> and <a href="https://www.paraview.org/" target="_blank">ParaView</a>.<br/><br/>
           Written in C++ to optimize for speed, FreeFEM is interfaced with the popular <a href="http://mumps.enseeiht.fr/" target="_blank">mumps</a>, <a href="https://www.mcs.anl.gov/petsc/" target="_blank">PETSc</a> and <a
             href="https://github.com/hpddm/hpddm" target="_blank">HPDDM</a> solvers.
         </p>
-      </div>
+    </article>
+    <article class="content-4">
+      <h2>HPC in the cloud integration</h2>
+      <p><b>7 lines</b> of python code and a <a href="https://computing.qarnot.com/" target="_blank"><img src="https://www.qarnot.com/wp-content/uploads/Qarnot_Logo.svg" alt="Qarnot Computing Logo"></a> account is all you need to run a FreeFEM simulation in the cloud.</p><p>Thanks to a partnership with Qarnot's advanced HPC platform, you won't have to worry about deploying FreeFEM on the cloud, everything is automated. </p>
+      <p>Learn how to run FreeFEM with Qarnot's sustainable HPC platform on <a href="https://blog.qarnot.com/freefem-and-the-finite-element-method-on-qarnot/" target="_blank">Qarnot's blog</a>.</p>
     </article>
   </section>
 
