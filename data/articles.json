@@ -2,6 +2,77 @@
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
+      "title": "Optimal Control of Thermal Pollution Emitted by Power Plants",
+      "authors": "Lèye Babacar, Tine Léon Matar, Sy Mamadou",
+      "date": "2019-12-13T23:00:00.000Z",
+      "abstract": "The coastal areas near thermal or nuclear plants are subject to hot water discharges produced by cooling processes. These activities induce an increase of the temperature near the outlet vicinity, which can extend for miles. The temperature variation affects the metabolic rate of organisms and the level of dissolved oxygen. Cooling by cold water from an additional discharge can be considered in order to limit this thermal pollution. This paper present a methodology based on the implementation of a two-dimensional numerical model to study the dynamic of the temperature originated from the industrial discharges. Moreover the optimal injection rate of cold water is sought to keep the water temperature as close as possible to the survival of the ecosystem. Numerical simulations are performed to illustrate the efficiency approach.",
+      "link": "https://www.intechopen.com/online-first/optimal-control-of-thermal-pollution-emitted-by-power-plants"
+    },
+    {
+      "title": "On the Dirichlet-to-Neumann coarse space for solving the Helmholtz problem using domain decomposition",
+      "authors": "Niall Bootland, Victorita Dolean",
+      "date": "2019-12-12T23:00:00.000Z",
+      "abstract": "We examine the use of the Dirichlet-to-Neumann coarse space within an additive Schwarz method to solve the Helmholtz equation in 2D. In particular, we focus on the selection of how many eigenfunctions should go into the coarse space. We find that wave number independent convergence of a preconditioned iterative method can be achieved in certain special cases with an appropriate and novel choice of threshold in the selection criteria. However, this property is lost in a more general setting, including the heterogeneous problem. Nonetheless, the approach converges in a small number of iterations for the homogeneous problem even for relatively large wave numbers and is robust to the number of subdomains used.",
+      "link": "https://arxiv.org/pdf/1912.06053.pdf"
+    },
+    {
+      "title": "Simulation of soft tissue deformation in real-time using domain decomposition",
+      "authors": "Ryadh Haferssas, Pierre-Henri Tournier, Frédéric Nataf, Stéphane Cotin",
+      "date": "2019-12-11T23:00:00.000Z",
+      "abstract": "Non-linear models used in dynamic simulations usually re- quire the solution of multiple large and sparse linear systems in a succes- sive manner. In this paper, we conduct a study of numerical solvers in the framework of real-time soft tissue deformation. Domain Decomposition paradigm has the potential of providing parallelism at both levels of equa- tion assembling and linear system solving. In our case domain decompo- sition is employed to solve a non-linear model in a dynamic simulation in order to meet real-time computation by using parallel architecture. Nu- merical test on liver deformations using a non-linear deformation model is presented to evaluate the acceleration impact of the domain decompo- sition paradigm. Performances tests clearly show the efficiency of using a domain decomposition approach for real-time feedback.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02400982/document"
+    },
+    {
+      "title": "Operator splitting method for solving anisotropic problem",
+      "authors": "Is Bunyamin Suryo, Maureen Clerc",
+      "date": "2019-12-10T23:00:00.000Z",
+      "abstract": "The electroencephalography is a non-invasive technique to study electrical brain activity. The electrical brain activity is a complex process of electrical propagation because the brain structure is an incredibly complex structure. This complex structure leads to different conductivity property in term of its magnitude and orientation, called anisotropic conductivity. Using Maxwell’s equations, the electrical brain activity has been studied intensively. For simplification, the quasistatic Maxwell’s equations are used to model the electrical brain activity and it leads to deal with a Poisson’s equation. In this research, a feasibility study of using Operator Splitting Method (OSM) to solve anisotropic 2-Dimensional (2D) Poisson’s equation is performed. A freeware of finite element method (FEM) is employed to build matrices used in the OSM algorithm. The OSM algorithm which is written in Matlab is then tested to solve anisotropic 2D Laplace’s equation and anisotropic Poisson’s equation with dipolar source. Some numerical experiments have been performed to test the performance of the OSM algorithm. The OSM solution of anisotropic 2D Laplace’s equation coincide with the exact and direct numerical solution of the problem. For anisotropic 2D Poisson’s equation with dipolar source, some similar results has been obtained too. The pattern of the OSM solutions are similar to the pattern of direct numerical solutions of the problem. The results arise a hope to attempt implementing the OSM algorithm for more complex problem such as a realistic human head model.",
+      "link": "https://doi.org/10.1063/1.5138341"
+    },
+    {
+      "title": "Open-Source Software for Electromagnetic Scattering Simulation: The Case of Antenna Design",
+      "authors": "Alessandro Fedeli, Claudio Montecucco, Gian Luigi Gragnani",
+      "date": "2019-12-09T23:00:00.000Z",
+      "abstract": "Electromagnetic scattering simulation is an extremely wide and interesting field, and its continuous evolution is associated with the development of computing resources. Undeniably, antenna design at all levels strongly relies on electromagnetic simulation software. However, despite the large number and the high quality of the available open-source simulation packages, most companies have no doubts about the choice of commercial program suites. At the same time, in the academic world, it is frequent to develop in-house simulation software, even from scratch and without proper knowledge of the existing possibilities. The rationale of the present paper is to review, from a practical viewpoint, the open-source software that can be useful in the antenna design process. To this end, an introductory overview of the usual design workflow is firstly presented. Subsequently, the strengths and weaknesses of open-source software compared to its commercial counterpart are analyzed. After that, the main open-source packages that are currently available online are briefly described. The last part of this paper is devoted to a preliminary numerical benchmark for the assessment of the capabilities and limitations of a subset of the presented open-source programs. The benchmark includes the calculation of some fundamental antenna parameters for four different typologies of radiating elements.",
+      "link": "https://doi.org/10.3390/electronics8121506"
+    },
+    {
+      "title": "Searching for Waves in the Incompressible Navier-Stokes Equations - The Adventure",
+      "authors": "Desmond Aubery",
+      "date": "2019-12-08T23:00:00.000Z",
+      "abstract": "This article traces a journey of discovery undertaken to search for wave phenomena in the incompressible Navier-Stokes equations. From the early days of my interest in Computational Fluid Dynamics (CFD) used for consulting purposes, and the use of various commercial solvers eventually leading to research programs, at a number of universities, spanning a number of years. It reviews research programs at Dortmund University (Dortmund, Germany), and this author's postgraduate study at Chulalongkorn University (Bangkok, Thailand). During the latter, it was noticed that flow solutions became unstable when certain combinations of parameters were used-especially when real-life density and viscosity were used. Clarity was needed. This author had a perception that this research could lead to an understanding of the turbulence phenomenon, Tensor calculus was used to understand the macro nature of the NS Equations, and to place them firmly into the family of wave equations. My research continued in private for some 15 years, with the occasional presentation of findings at conferences, and an internet blog. In recent months major breakthroughs have been made, and now the evidence for wave phenomena is convincingly demonstrated.",
+      "link": "https://www.researchgate.net/publication/337824046_Searching_for_Waves_in_the_Incompressible_Navier-Stokes_Equations_-_The_Adventure_v2"
+    },
+
+    {
+      "title": "Hierarchical Model reduction on bifurcations: a novel approach using POD and Domain Decomposition",
+      "authors": "Luca Zampieri, Andrea Zanoni",
+      "date": "2019-12-03T23:00:00.000Z",
+      "abstract": "In this work we explore a way to expand the Hierarchical Model Reduction (HiMod) to bifurcated domain by solving the bifurcation itself with Proper Orthogonal Decomposition (POD) and linking the solution through Domain Decomposition (DD). An implementation coupling Matlab and C++ is also provided.",
+      "link": "http://www1.mate.polimi.it/~forma/Didattica/ProgettiPacs/Zampieri17-18/POD_HiMod_Report.pdf"
+    },
+    {
+      "title": "Mathematical Modeling of the Cerebrospinal Fluid Flow and Its Interactions",
+      "authors": "Lorenzo Sala, Fabrizia Salerni, Marcela Szopos",
+      "date": "2019-11-26T23:00:00.000Z",
+      "abstract": "The present chapter provides an overview of mathematical models that describe the cerebrospinal fluid and its possible interactions with other biofluids or neighboring tissues. The description of the underlying mechanisms stems from the basic principles of fluid and solid dynamics and it is translated into systems of partial or ordinary differential equations. The current review aims at specifying a complementary view with respect to other revisions in the field by illustrating some selected studies that may constitute a first step in the connection between cerebral and ocular fluid dynamics. First we present lumped-parameter models with a simplified mathematical structure that allow fast computations of the average values of the unknowns and capture the main behavior of the cerebral flow. The discussion then moves onto distributed models, which produce a three-dimensional representation of cerebrospinal fluid flows in complex geometries that may derive from medical imaging. These models allow the investigation of the fluid flow at fine scales, constituting a highly valuable tool in providing a better understanding of pathophysiology. We acknowledge that significant efforts have already been made in the attempt to unify mathematics and medicine in the context of brain diseases caused by cerebrospinal fluid abnormalities; nevertheless, we report a pressing demand for innovative mathematical models that may achieve the complete description and simulation of the biophysical connections between the eye and the brain.",
+      "link": "https://doi.org/10.1007/978-3-030-25886-3_21"
+    },
+    {
+      "title": "Suppression of soft spots and excited modes in the shape deformation model with spatio-temporal growth noise",
+      "authors": "Satoru Tsugawa",
+      "date": "2019-11-23T23:00:00.000Z",
+      "abstract": "The shapes of plant organs such as sepals are precise and reproducible, although the cells composing these organs are highly heterogeneous. We investigate the collective behavior of a shape deformation model with spatio-temporal fluctuations in elasticity (Hong et al., Dev. Cell, 38, 15, 2016). It is shown that the spatio-temporal growth noise has two opposing effect: the temporal noise promotes the reproducibility of the organ shape, whereas the spatial noise disturbs it, leading to the organ undergoing an abnormal shape deformation. To understand how such abnormality can emerge, we study the eigenvectors of the correlation matrix of the growth velocity. It is revealed that the anomalous shape deformations can be created by two independent factors: (1) excited modes where the orientations of the eigenvectors with m ≥ 2 are spatially correlated, and/or (2) soft spots where spot structures with high fluctuations in the magnitudes of the eigenvectors appear non-uniformly.",
+      "link": "https://doi.org/10.1016/j.jtbi.2019.110092"
+    },
+    {
+      "title": "Effect of operating conditions and geometric structure on the gas crossover in PEM fuel cell",
+      "authors": "The-Truc Nguyen, Kazuyoshi Fushinobu",
+      "date": "2019-11-22T23:00:00.000Z",
+      "abstract": "Gas crossover is an unavoidable phenomenon in proton exchange membrane fuel cells. Gas crossover leads to heat and water generations without conducting any useful works, hence increasing fuel consumption. Particularly, Gas crossover can result in the degradation and formation of pinholes inside the membrane. Therefore, the gas crossover is a critical factor significantly affecting the durability of a fuel cell and quality of the membrane. Herein, we numerically investigate the effects of gas crossover across the membrane in a proton exchange membrane fuel cell. A two-dimensional, two-phase, steady state model of the gas crossover using the partial differential equation solver FreeFem++, was built to investigate the crossover characteristics of hydrogen and oxygen across the membrane versus changes in operating conditions and various geometric structure of components in the proton exchange membrane fuel cell. Results indicated that higher equivalent weight of Nafion® is required to significantly decrease gas crossover phenomenon while the cell performance was reduced negligibly. In addition, as the increase in the stoichiometric flow ratio and channel length, the gas crossover decreased and the cell performance improved.",
+      "link": "https://doi.org/10.1016/j.seta.2019.100584"
+    },
+    {
       "title": "The Penrose inequality for perturbations of the Schwarzschild initial data",
       "authors": "Jarosław Maciej Kopiński, Jacek Tafel",
       "date": "2019-11-14T23:00:00.000Z",
