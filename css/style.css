@@ -92,6 +92,10 @@ nav {
   padding: 5px;
 }
 
+#happy-birthday img {
+  max-width: 100%;
+}
+
 #donate {
   background-color: #00007F;
   color: #fff;
