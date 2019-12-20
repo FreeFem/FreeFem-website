@@ -8,6 +8,22 @@
 
   {% include banner.html %}
 
+  <section id="happy-birthday">
+    <script>
+      function closeHappyBirthday () {
+        var div = document.getElementById("happy-birthday");
+        div.style.display = "none";
+      }
+    </script>
+    <button onclick="closeHappyBirthday()">X</button>
+
+    <img src="{{ site.url }}{{ site.baseurl }}/img/Frederic_Hecht.jpg" alt="Frédéric Hecht" />
+
+    <p>
+      Remember this day to wish an <strong>happy birthday</strong> to Frederic Hecht, principal developer of FreeFEM
+    </p>
+  </section>
+
   <section id="main">
     <article id="demo">
       <div id="code">

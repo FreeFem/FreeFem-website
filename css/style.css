@@ -71,6 +71,27 @@ nav {
   width: 100%;
 }
 
+#happy-birthday {
+  position: absolute;
+  font-size: 1.25rem;
+  font-weight: 300;
+  padding: 20px;
+  align-self: center;
+  text-align: center;
+  background-color: white;
+  max-width: 50%;
+  top: 200px;
+}
+
+#happy-birthday button {
+  position: absolute;
+  background: none;
+  border: none;
+  top: 5px;
+  right: 5px;
+  padding: 5px;
+}
+
 #donate {
   background-color: #00007F;
   color: #fff;
