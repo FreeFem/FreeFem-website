@@ -2,6 +2,13 @@
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
+      "title": "Topology optimization of thermal fluid-structure systems using body-fitted meshes and parallel computing",
+      "authors": "Florian Feppon, Grégoire Allaire, Charles Dapogny, Pierre Jolivet",
+      "date": "2020-03-30T23:00:00.000Z",
+      "abstract": "An efficient framework is described for the shape and topology optimization of realistic three-dimensional, weakly-coupled fluid-thermal-mechanical systems. At the theoretical level, the proposed methodology relies on the boundary variation of Hadamard for describing the sensitivity of functions with respect to the domain. From the numerical point of view, three key ingredients are used: (i) a level set based mesh evolution method allowing to describe large deformations of the shape while maintaining an adapted, high-quality mesh of the latter at every stage of the optimization process; (ii) an efficient constrained optimization algorithm which is very well adapted to the infinite-dimensional shape optimization context; (iii) efficient preconditioning techniques for the solution of large finite element systems in a reasonable computational time. The performance of our strategy is illustrated with two examples of coupled physics: respectively fluid-structure interaction and convective heat transfer. Before that, we perform three other test cases, involving a single physics (structural, thermal and aerodynamic design), for comparison purposes and for assessing our various tools: in particular, they prove the ability of the mesh evolution technique to capture very thin bodies or shells in 3D.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02518207/document"
+    },
+    {
       "title": "Optimal Control of Thermal Pollution Emitted by Power Plants",
       "authors": "Lèye Babacar, Tine Léon Matar, Sy Mamadou",
       "date": "2019-12-13T23:00:00.000Z",
