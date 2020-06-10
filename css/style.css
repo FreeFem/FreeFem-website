@@ -790,6 +790,21 @@ body::-webkit-scrollbar {
   text-align: center !important;
 }
 
+#ffdaysSponsors {
+  margin: 20px 60px;
+  line-height: 26px;
+  font-size: 20px;
+}
+
+#ffdaysSponsors > div {
+  display: flex;
+  justify-content: space-around;
+}
+
+#ffdaysSponsors > div img {
+  height: 75px;
+}
+
 #ffdaysMap {
   margin: 20px 60px;
   line-height: 26px;
