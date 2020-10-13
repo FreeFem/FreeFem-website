@@ -2,6 +2,162 @@
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
+      "title": "Scanning Path Optimization Using Shape Optimization Tools",
+      "authors": "M. Boissier, G. Allaire, C. Tournier",
+      "date": "2020-10-05T23:00:00.000Z",
+      "abstract": "This paper investigates path planning strategies for additive manufacturing processes such as powder bed fusion. The state of the art mainly studies trajectories based on existing patterns. Parametric optimization on these patterns or allocating them to the object areas are the main strategies. We propose in this work a more systematic optimization approach without any a priori restriction on the trajectories. The typical optimization problem is to melt the desired structure, without overheating (to avoid thermally induced residual stresses) and possibly with a minimal path length. The state equation is the heat equation with a source term depending on the scanning path. First, in a steady-state context, shape optimization tools are applied to trajec-tories. Second, for time-dependent problems, an optimal control method is considered instead. In both cases, gradient type algorithms are deduced and tested on 2-d examples. Numerical results are discussed, leading to a better understanding of the problem and thus to short-and long-term perspectives.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02410481"
+    },
+    {
+      "title": "Micropolar pulsatile blood flow conveying nanoparticles in a stenotic tapered artery : non-Newtonian pharmacodynamic simulation",
+      "authors": "B.Vasua, Ankita Dubey, O. Anwar Bég, Rama Subba Reddy Gorla",
+      "date": "2020-10-02T23:00:00.000Z",
+      "abstract": "Two-dimensional rheological laminar hemodynamics through a diseased tapered artery with a mild stenosis present is simulated theoretically and computationally. The effect of different metallic nanoparticles homogeneously suspended in the blood is considered, motivated by drug delivery (pharmacology) applications. The Eringen micropolar model has been deployed for hemorheological characteristics in the whole arterial region. The conservation equations for mass, linear momentum, angular momentum (micro-rotation), and energy and nanoparticle species are normalized by employing suitable non-dimensional variables. The transformed equations are solved numerically subject to physically appropriate boundary conditions using the finite element method with the variational formulation scheme available in the FreeFEM++ code. A good correlation is achieved between the FreeFEM++ computations and existing results. The effect of selected parameters (taper angle, Prandtl number, Womersley parameter, pulsatile constants, and volumetric concentration) on velocity, temperature, and microrotational (Eringen angular) velocity has been calculated for a stenosed arterial segment. Wall shear stress, volumetric flow rate, and hemodynamic impedance of blood flow are also computed. Colour contours and graphs are employed to visualize the simulated blood flow characteristics. It is observed that by increasing Prandtl number (Pr), the micro-rotational velocity decreases i.e., microelement (blood cell) spin is suppressed. Wall shear stress decreases with the increment in pulsatile parameters (B and e), whereas linear velocity increases with a decrement in these parameters. Furthermore, the velocity decreases in the tapered region with elevation in the Womersley parameter (α). The simulations are relevant to transport phenomena in pharmacology and nano-drug targeted delivery in hematology.",
+      "link": "https://doi.org/10.1016/j.compbiomed.2020.104025"
+    },
+    {
+      "title": "Analysis of a novel finite element method for a modified Cahn–Hilliard–Hele–Shaw system",
+      "authors": "Hongen Jia, Yayu Guo, Jichun Li, Yunqing Huang",
+      "date": "2020-10-01T23:00:00.000Z",
+      "abstract": "In this paper, a novel finite element method for solving a modified Cahn–Hilliard–Hele–Shaw system is proposed. The time discretization is based on the convex splitting of the energy functional in the modified Cahn–Hilliard equation, i.e., the high-order nonlinear term and the linear term in the chemical potential are treated explicitly and implicitly, respectively. Designing in this way leads to solving a linear system at each time step, which is much efficient compared to solving a nonlinear system resulting from most existing schemes. The proposed scheme is proved to be unconditionally energy stable and optimally convergent for the phase variable. Numerical results are presented to support our theoretical analysis.",
+      "link": "https://doi.org/10.1016/j.cam.2020.112846"
+    },
+    {
+      "title": "Comparative Study of Heuristic Algorithms for Electrical Impedance Tomography",
+      "authors": "Arrianne Crystal Velasco, Marion Darbas, Renier Mendoza, Monica Bacon, John Cedrick de Leon",
+      "date": "2020-10-01T23:00:00.000Z",
+      "abstract": "Based on electrical measurements from electrodes placed around the boundary of a body, Electrical Impedance Tomography (EIT) is an imaging procedure that recovers the spatial distribution of the conductivities in the interior of a body. Recent studies have shown promising results in reconstructing EIT images using heuristic algorithms. This work presents a study of the applicability of six heuristic algorithms: Firefly Algorithm (FA), Novel Bat Algorithm (NBA), Genetic Algorithm with New Multi-Parent Crossover (GA-MPC), Success History-based Adaptive Differential Evolution with Linear Population Size Reduction with Semi-Parameter Adaptation Hybrid with Covariance Matrix Adaptation Evolutionary Strategy (LSHADE-SPACMA), Ensemble Sinusoidal Differential Covariance Matrix Adaptation (LSHADE-cnEpSin), and Effective Butterfly Optimizer with Covariance Matrix Adapted Retreat Phase (EBOwithCMAR) - for the EIT image reconstruction problem. These algorithms have never been employed to solve the EIT inverse problem. Series of numerical tests were carried out to compare the performance of the selected algorithms.",
+      "link": "https://philjournalsci.dost.gov.ph/publication/regular-issues/next-issue/99-vol-149-no3a-october-2020/1230-comparative-study-of-heuristic-algorithms-for-electrical-impedance-tomography"
+    },
+    {
+      "title": "Topology Optimization Problems of Density Variation Type",
+      "authors": "Hideyuki Azegami",
+      "date": "2020-10-01T23:00:00.000Z",
+      "abstract": "From this chapter, we finally examine shape optimization problems in continua. Firstly, let us think about a problem seeking the appropriate arrangement of holes in a domain where the boundary value problem of a partial differential equation is defined. Such a problem is known as the topology optimization problem. Here, the term topology refers to the study of geometrical properties and spatial relation of objects unaffected by the continuous change of their shape or size. In mathematics, two mathematical objects are said to belong to the same topology if they are images of two homotopic maps; that is, if one can be continuously deformed into the other. Therefore, letting n be a natural number, a set of n-connected domains are regarded as belonging to the same homotopy groups. Here, the term “topology optimization” in the topology optimization problem refers to the determination of the connectivity of the design domain that optimizes an object’s material distribution through insertion and arrangement of holes in its structure. However, as will be explained in detail later, the shape of the holes actually becomes the target. Therefore, the problems dealt with in this chapter also become included in shape optimization problems in a wider sense. In this book, it will be referred to as the topology optimization problem in the sense that topology is also in the scope of the design.",
+      "link": "https://doi.org/10.1007/978-981-15-7618-8_8"
+    },
+    {
+      "title": "Data completion problem for the advection‐diffusion equation with aquifer point sources",
+      "authors": "Anis Bel Hadj Hassin, Nejla T. Hariga, Faten Khayat",
+      "date": "2020-09-27T23:00:00.000Z",
+      "abstract": "We consider the inverse problem of recovering the missing flux and concentration on some part of a boundary of an aquifer using overspecified measurements available on some accessible part. The aquifer is under the action of point‐forces located inside the domain and governed by the advection‐diffusion equation. The method used is based on a fictitious domain decomposition. Numerical tests are done attesting the performance of the identification process.",
+      "link": "https://doi.org/10.1002/mma.6868"
+    },
+    {
+      "title": "Impact of Dual Substrate Limitation on Biodenitrification Modeling in Porous Media",
+      "authors": "Jérome Harmand, Mostafa Abaali, Jérôme Harmand, Zoubida Mghazli",
+      "date": "2020-09-25T23:00:00.000Z",
+      "abstract": "In this work, we consider a model of the biodenitrification process taking place in a spatially-distributed bioreactor, and we take into account the limitation of the kinetics by both the carbon source and the oxidized nitrogen. This model concerns a single type of bacteria growing on nitrate, which splits into adherent bacteria or free bacteria in the liquid, taking all interactions into account. The system obtained consists of four diffusion-convection-reaction equations for which we show the existence and uniqueness of a global solution. The system is approximated by a standard finite element method that satisfies an optimal a priori error estimate. We compare the results obtained for three forms of the growth function: single substrate limiting, "multiplicative" form, and "minimum" form. We highlight the limitation of the ' single substrate limiting model", where the dependency of the bacterial growth on the nitrate is neglected, and find that the 'minimum' model gives numerical results closer to the experimental results.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02948952/"
+    },
+    {
+      "title": "Energy stable finite element method for an electrohydrodynamic model with variable density",
+      "authors": "Mingyang Pan, Dongdong He, Kejia Pan",
+      "date": "2020-09-25T23:00:00.000Z",
+      "abstract": "In this paper, we present two linear time-marching methods for an electrohydrodynamic model of charge transport with variable density dielectric fluid. The model is a highly coupled nonlinear system and an energy dissipation law of the system is discovered. The main feature of the proposed methods is that energy stability is preserved at the fully discrete level by using suitable reformulations of the continuous equations and implicit-explicit time discretization schemes. The mixed finite element method is employed for the spatial discretization. Numerical experiments are carried out to validate the convergence rates and the energy stability of the schemes. To further demonstrate the robustness of the proposed schemes, the effects of injected charges for Rayleigh-Taylor instability and the electro-convection phenomenon between two concentric half-cylinders are simulated. Results show that the injected charges can accelerate the evolutions of Rayleigh-Taylor instability and the number of vortices increases in the electro-convective flow when the inner radius increases.",
+      "link": "https://doi.org/10.1016/j.jcp.2020.109870"
+    },
+    {
+      "title": "An 89-line code for geometrically nonlinear topology optimization written in FreeFEM",
+      "authors": "Benliang Zhu, Xianmin Zhang, Hai Li, Junwen Liang, Rixin Wang, Hao Li, Shinji Nishiwaki",
+      "date": "2020-09-24T23:00:00.000Z",
+      "abstract": "Topology optimization has emerged as a powerful tool for structural configuration design. To further promote the development of topology optimization, many computer programs have been published for educational purposes over the past decades. However, most of the computer programs are constructed based on a linear assumption. This paper presents an 89-line code for nonlinear topology optimization written in FreeFEM based on the popular SIMP (solid isotropic material with penalization) method. Excluding thirteen lines which are used for explanation, only 76 lines are needed for the initialization of the design parameters, nonlinear finite element analysis, sensitivity calculation, and updated design variables. Different design problems can be solved by modifying several lines in the proposed program. The complete program is given in the Appendix and is intended for educational purposes only.",
+      "link": "https://doi.org/10.1007/s00158-020-02733-x"
+    },
+    {
+      "title": "Surface anchoring controls orientation of a microswimmer in nematic liquid crystal",
+      "authors": "Hai Chi, Mykhailo Potomkin, Lei Zhang, Leonid Berlyand, Igor S. Aranson ",
+      "date": "2020-09-18T23:00:00.000Z",
+      "abstract": "Microscopic swimmers, both living and synthetic, often dwell in anisotropic viscoelastic environments. The most representative realization of such an environment is water-soluble liquid crystals. Here, we study how the local orientation order of liquid crystal affects the motion of a prototypical elliptical microswimmer. In the framework of well-validated Beris-Edwards model, we show that the microswimmer’s shape and its surface anchoring strength affect the swimming direction and can lead to reorientation transition. Furthermore, there exists a critical surface anchoring strength for non-spherical bacteria-like microswimmers, such that swimming occurs perpendicular in a sub-critical case and parallel in super-critical case. Finally, we demonstrate that for large propulsion speeds active microswimmers generate topological defects in the bulk of the liquid crystal. We show that the location of these defects elucidates how a microswimmer chooses its swimming direction. Our results can guide experimental works on control of bacteria transport in complex anisotropic environments.",
+      "link": "https://doi.org/10.1038/s42005-020-00432-z"
+    },
+    {
+      "title": "Conductive-radiative heat transfer within SiC-based cellular ceramics at high-temperatures: A discrete-scale finite element analysis",
+      "authors": "M. A. Badria, Y.Favennec, P. Jolivet, B.Rousseau",
+      "date": "2020-09-15T23:00:00.000Z",
+      "abstract": "Cellular ceramic materials possess many favorable properties that allow to develop efficient modern-day high-temperature thermal energy conversion systems and processes. The energy conversion within these porous media is governed by tightly coupled conduction–radiation physics. To efficiently design and optimize these systems, a comprehensive understanding of the conduction–radiation behavior within these materials becomes important. In this study, by performing large-scale numerical experiments, we analyze the conduction–radiation coupling characteristics within different (with respect to topology and porosity) silicon carbide (SiC)-based open-cell cellular ceramics surrounded by fictitious vacuum up to temperatures of 1800 K. To induct minimal approximations, our finite element simulations are based on a discrete-scale approach within which realistic discrete (pore-level) representations of the cellular ceramics are used as numerical media. The results presented in this study provide means to better understand the role of radiation in the coupled conduction–radiation physics within the ceramic samples. A detailed comparison on effectiveness of energy conversion is established for SiC-based full-scale cubic-cell, Kelvin-cell, and pseudo-random-cell ceramic structures which are at 80% and 90% porosity each. In conclusion, among the different standalone and full-scale ceramic samples, the Kelvin-cell structures at 90% porosity have proven to benefit the most from radiation coupling.",
+      "link": "https://doi.org/10.1016/j.finel.2020.103410"
+    },
+
+    {
+      "title": "Modelling Light Propagation In Ocular Tissues",
+      "authors": "Sunčica Sakić",
+      "date": "2020-09-11T23:00:00.000Z",
+      "abstract": "In the past few decades, the medical imaging techniques have made significant contribution to the revealing of internal body structures as well as the diagnosis and treatment of disease. Specifically, in ophthalmology, one of the popular non–invasive means of ocular tissue imaging is the Optical Coherence Tomography (OCT). In this thesis we deal with the modelling of the corneal tissue whose opacity is subject of interest among scientists still today. Our goal is to generate a virtual OCT scan using an appropriate mathematical model which could further locate conditions that lead to clouding of the human cornea. Since eye’s structures, in physical sense, represent anisotropic materials, the model requires the study of such materials. Although the numerical analysis, present in the literature, is restricted to isotropic materials, we well modify the computational tool to the anisotropic case. Comprehension of optical eye’s properties is certainly necessary to establish a mathematical model. For the purpose of numerical simulations and analysis of the numerical algorithm, different types of boundary conditions encountered in electromagnetism are considered. Numerical simulations are performed by applying so–called Runge–Kutta discontinuous Galerkin method on Maxwell’s equations previously adapted to the model. A detailed analysis of obtained results is presented. A large part of thesis is occupied by the proposition of discontinuous Galerkin (DG) method, a procedure that belongs to the family of finite element methods. The DG method is applied on spatial discretization, while an explicit Runge–Kutta method is employed for temporal integration. In this way we get a full discretization of initial equations. In addition, convergence and stability of these methods are well studied and numerically tested on various schemes defined on different meshes.",
+      "link": "http://www.dmi.uns.ac.rs/site/dmi/download/master/primenjena_matematika/SuncicaSakic.pdf"
+    },
+
+    {
+      "title": "A data-driven strategy for xenon dynamical forecasting using dynamic mode decomposition",
+      "authors": "Helin Gong, Yingrui Yu, Xingjie Peng, Qing Li",
+      "date": "2020-09-11T23:00:00.000Z",
+      "abstract": "Detection and prediction of xenon induced oscillations are an important part in the operation of pressurized water reactors. Several models have been proposed for the prediction or estimation of xenon oscillations with drawbacks e.g. strongly depend on the initial xenon and iodine distributions, hard-to-implement or computationally costly. In this article, we proposed a fast, model-free and easy-to-implement data-driven strategy based on dynamic mode decomposition (DMD) to forecast the power distribution during the process of xenon oscillations. Various comparative experiments based on HPR1000 reactor show that the proposed data driven strategy is able to capture the complex relational characteristics of the temporal and spatial data of xenon oscillations. It can efficiently discover the hidden dynamicities and thus offers an accurate prediction of the system behavior.",
+      "link": "https://doi.org/10.1016/j.anucene.2020.107826"
+    },
+    {
+      "title": "Equivalent Circuit in Cauer Form for Eddy Current Field Including a Translational Mover",
+      "authors": "Yuji Shindo, Ryoma Yamamoto, Kengo Sugahara, Tetsuji Matsuo, Akihisa Kameari",
+      "date": "2020-09-10T23:00:00.000Z",
+      "abstract": "As an extension of the Cauer ladder network method, this paper presents the equivalent circuit for an eddy current field including a translational mover. The speed voltages for the inductors in the equivalent circuit are obtained by using the directional derivatives of the inductors in the direction of mover displacement. These directional derivatives are determined by using the fact that the electromagnetic force can be represented in two forms, namely, Maxwell’s stress tensor and the virtual work principle. This result is also verified by using the theory of continuum mechanics. Finally, numerical examples of an electromagnet are presented.",
+      "link": "https://doi.org/10.1109/TMAG.2020.3023234"
+    },
+    {
+      "title": "Numerical Stackelberg--Nash Control for the Heat Equation",
+      "authors": "Pitágoras P. de Carvalho, Enrique Fernández-Cara",
+      "date": "2020-09-09T23:00:00.000Z",
+      "abstract": "This paper deals with a strategy to solve numerically control problems of the Stackelberg--Nash kind for heat equations with Dirichlet boundary conditions. We assume that we can act on the system through several controls, respecting an order and a hierarchy: a first control (the leader) is assumed to choose the policy; then, a Nash equilibrium pair, determined by the choice of the leader and corresponding to a noncooperative multiple-objective optimization strategy, is found (these are the followers). Our method relies on a formulation inspired by the work of Fursikov and Imanuvilov. More precisely, we minimize over the class of admissible null controls a functional that involves weighted integrals of the state and the control, with weights that blow up at the final time. The use of the weights is crucial to ensure the existence of the controls and the associated state in a reasonable space. We present several mixed formulations of the problems and, then, associated mixed finite element approximations that are easy to handle. In a final step, we exhibit some numerical experiments making use of the Freefem++ package.",
+      "link": "https://doi.org/10.1137/19M1253320"
+    },
+    {
+      "title": "Fast Sampling Field Deployable Mud Gas Carbon Isotope Analyzer",
+      "authors": "Sheng Wu, Andrei Deev, Yan Zhuang, Le Lu, Zhengyou Wang, Yongchun Tang, Andrew Sneddon",
+      "date": "2020-09-04T23:00:00.000Z",
+      "abstract": "We report the details of a field deployable mud gas carbon isotope analyzer for mud gas analysis based on coupling a gas chromatograph with a mid-infrared spectrometer using a quantum cascade laser and hollow waveguide. The GC–IR2 (gas chromatograph–infrared isotope ratio) system features a fast sampling cycle as short as 123 s for analyzing all three components, i.e., methane, ethane and propane. The samples are automatically diluted so the system could carry out effective measurements while sample concentrations vary from 400 ppm to 100% purity. The accuracy is guaranteed through periodic reference calibration, and variations due to field temperature changes are minimized.",
+      "link": "https://doi.org/10.3390/geosciences10090350"
+    },
+    {
+      "title": "Absolute/Convective Instabilities and Front Propagation in Lipid Membrane Tubes",
+      "authors": "Joël Tchoufag, Amaresh Sahu, Kranthi K. Mandadapu",
+      "date": "2020-09-01T23:00:00.000Z",
+      "abstract": "We analyze the stability of biological membrane tubes, with and without a base flow of lipids. Membrane dynamics are completely specified by two dimensionless numbers: the well-known Föppl–von Kármán number Γ and the recently introduced Scriven–Love number SL, respectively quantifying the base tension and base flow speed. For unstable tubes, the growth rate of a local perturbation depends only on Γ, whereas SL governs the absolute or convective nature of the instability. Furthermore, nonlinear simulations of unstable tubes reveal an initially localized disturbance results in propagating fronts, which leave a thin atrophied tube in their wake. Depending on the value of Γ, the thin tube is connected to the unperturbed regions via oscillatory or monotonic shape transitions— reminiscent of recent experimental observations on the retraction and atrophy of axons. We elucidate our findings through a weakly nonlinear analysis, which shows membrane dynamics may be approximated by a model of the class of extended Fisher–Kolmogorov equations. This model possesses Lifshitz points, where the front dynamics undergo a steady-to-oscillatory bifurcation, thus shedding light on the pattern selection mechanism in neurons.",
+      "link": "https://amaresh-sahu.github.io/papers/tchoufag-mandadapu-convective-SM.pdf"
+    },
+    {
+      "title": "An optimization algorithm for automatic structural design",
+      "authors": "Nicola Ferro, Stefano Micheletti, Simona Perotto",
+      "date": "2020-09-01T23:00:00.000Z",
+      "abstract": "We propose a new algorithm to design lightweight and stiff structures exhibiting free-form features, with the aim of minimizing the compliance under a volume inequality constraint. The procedure is based on the coupling of geometric shape optimization with topology optimization. We start from a full-mass body corresponding to a given material occupying entirely the initial design domain. The first phase of geometric shape optimization acts as an out-of-the-box paradigm. It allows one to modify the initial design domain by acting only on its boundary, keeping the same volume and topology. With respect to the full-mass body, this phase reduces the compliance to a large extent. The successive step of topology optimization does actually change the topology of the structure, e.g., by introducing holes, reduces the volume according to the volume constraint, but does not affect the boundary of the structure, which is fixed by the previous phase. Overall, the combined approach allows us to design a new structure, that is lighter and stiffer with respect to the full-mass body. Additionally, the employment of a structure-tailored computational mesh, via an anisotropic mesh adaptation procedure during topology optimization, yields an intrinsically smooth final layout characterized by free-form features. An extensive numerical assessment corroborates both qualitatively and quantitatively the performances of the proposed optimization algorithm.",
+      "link": "https://doi.org/10.1016/j.cma.2020.113335"
+    },
+    {
+      "title": "2D Fourier finite element formulation for magnetostatics in curvilinear coordinates with a symmetry direction",
+      "authors": "Christopher G. Albert, Oszkár Bíró, Patrick Lainer",
+      "date": "2020-08-31T23:00:00.000Z",
+      "abstract": "We present a numerical method for the solution of linear magnetostatic problems in domains with a symmetry direction, including axial and translational symmetry. The approach uses a Fourier series decomposition of the vector potential formulation along the symmetry direction and covers both, zeroth (non-oscillatory) and non-zero (oscillatory) harmonics. For the latter it is possible to eliminate one component of the vector potential resulting in a fully transverse vector potential orthogonal to the transverse magnetic field. In addition to the Poisson-like equation for the longitudinal component of the non-oscillatory problem, a general curl-curl Helmholtz equation results for the transverse problem covering both, non-oscillatory and oscillatory case. The derivation is performed in the covariant formalism for curvilinear coordinates with a tensorial permeability and symmetry restrictions on metric and permeability tensor. The resulting variational forms are treated by the usual nodal finite element method for the longitudinal problem and by a two-dimensional edge element method for the transverse problem. The numerical solution can be computed independently for each harmonic which is favourable with regard to memory usage and parallelisation.",
+      "link": "https://arxiv.org/abs/2008.13681"
+    },
+    {
+      "title": "A simple extrapolation method for clustered eigenvalues",
+      "authors": "Nilima Nigam, Sara Pollock",
+      "date": "2020-08-31T23:00:00.000Z",
+      "abstract": "This paper introduces a simple variant of the power method. It is shown analytically and numerically to accelerate convergence to the dominant eigenvalue/eigenvector pair; and, it is particularly effective for problems featuring a small spectral gap. The introduced method is a one-step extrapolation technique that uses a linear combination of current and previous update steps to form a better approximation of the dominant eigenvector. The provided analysis shows the method converges exponentially with respect to the ratio between the two largest eigenvalues, which is also approximated during the process. An augmented technique is also introduced, and is shown to stabilize the early stages of the iteration. Numerical examples are provided to illustrate the theory and demonstrate the methods.",
+      "link": "https://arxiv.org/abs/2006.10164"
+    },
+    {
+      "title": "Stochastic Control: from Gradient Methods and Dynamic Programming to Statistical Learning",
+      "authors": "Gilles Pagès, Olivier Pironneau",
+      "date": "2020-08-28T23:00:00.000Z",
+      "abstract": "In this article the authors wish to contribute to the evaluation of statistical learning for stochastic control. We will review the well known methods for stochastic control and compare their numerical performance to those of a neural network. This will be done on a simple but practical example arising for fishing quotas to preserve the biomass of fish.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02911078/"
+    },
+    {
+      "title": "Differences between Robin and Neumann eigenvalues",
+      "authors": "Zeev Rudnick, Igor Wigman, Nadav Yesha",
+      "date": "2020-08-27T23:00:00.000Z",
+      "abstract": "Let Ω⊂ℝ2 be a bounded planar domain, with piecewise smooth boundary ∂Ω. For σ>0, we consider the Robin boundary value problem −Δf=λf,∂f∂n+σf=0 on ∂Ω where ∂f∂n is the derivative in the direction of the outward pointing normal to ∂Ω. Let 0<λσ0≤λσ1≤… be the corresponding eigenvalues. The purpose of this paper is to study the Robin-Neumann gaps dn(σ):=λσn−λ0n. For a wide class of planar domains we show that there is a limiting mean value, equal to 2length(∂Ω)/area(Ω)⋅σ and give an upper bound of dn(σ)≤C(Ω)n1/3σ in the smooth case, and a uniform lower bound. For ergodic billiards we show that along a density-one subsequence, the gaps converge to the mean value. We obtain further properties for rectangles, where we have a uniform upper bound, and for disks, where we improve the general upper bound.",
+      "link": "https://arxiv.org/abs/2008.07400"
+    },
+    {
       "title": "Body-fitted topology optimization of 2D and 3D fluid-to-fluid heat exchangers",
       "authors": "Florian Feppon, Grégoire Allaire, Charles Dapogny, Pierre Jolivet",
       "date": "2020-08-27T23:00:00.000Z",
@@ -9,11 +165,603 @@
       "link": "https://hal.archives-ouvertes.fr/hal-02924308"
     },
     {
+      "title": "Highly scalable numerical simulation of coupled reaction-diffusion systems with moving interfaces",
+      "authors": "Mojtaba Barzegari, Liesbet Geris",
+      "date": "2020-08-25T23:00:00.000Z",
+      "abstract": "A combination of reaction-diffusion models with moving-boundary problems yields a system in which the diffusion (spreading and penetration) and reaction (transformation) evolve the system's state and geometry over time. These systems can be used in a wide range of engineering applications. In this study, as an example of such a system, the degradation of metallic materials is investigated. A mathematical model is constructed of the diffusion-reaction processes and the movement of corrosion front of a magnesium block floating in a chemical solution. The corresponding parallelized computational model is implemented using the finite element method, and the weak and strong scaling behaviors of the model are evaluated to analyze the performance and efficiency of the employed high-performance computing techniques.",
+      "link": "https://arxiv.org/abs/2008.11057"
+    },
+    {
+      "title": "Elimination of spurious velocities generated by curvature dependent surface force in finite element flow simulation with mesh-fitted interface",
+      "authors": "Filip Ivančić, Tony W.H. Sheu, Maxim Solovchuk",
+      "date": "2020-08-22T23:00:00.000Z",
+      "abstract": "It is known that spurious non-physical velocities can occur when one employs the finite element method for simulation of incompressible flows subjected to external forces. In presence of external body forces, the main reason for this is the incompressibility constraint that is satisfied only in a weak sense against test functions from the pressure function space. In case of the two-phase (incompressible) immiscible flow, a surface force, which is a function of the interface curvature, arises and introduces additional problematics to the finite element model. Due to discrete representation of the interface, the question arises on how to approximate the curvature. A particularly natural approach for the finite element method employs the Laplace–Beltrami operator which allows to express the mean curvature in a weak sense. However, once incorporated into the equations governing the fluid flow, Laplace–Beltrami-reconstructed curvature may introduce spurious non-physical forces at the interface if finite element spaces are chosen arbitrarily. The reason for this is that the test space used for curvature calculation is the test space associated with the velocity field. We show that it is necessary for the function space used for the geometry construction to be of the order equal to or higher than the order of the test space involved in curvature evaluation. This leaves two possibilities for practical fluid flow problems: use the same function spaces for the mesh geometry and the velocity field (isoparametric concept) or decouple the curvature calculation from the main problem.",
+      "link": "https://doi.org/10.1016/j.cma.2020.113356"
+    },
+    {
+      "title": "Topology optimization for considering distortion in additive manufacturing",
+      "authors": "Takao Miki, Takayuki Yamada",
+      "date": "2020-08-14T23:00:00.000Z",
+      "abstract": "This paper proposes a topology optimization method that takes account of distortion induced by additive manufacturing (AM). AM is a free-form manufacturing technique in which the part is built in a layer-by-layer manner. In particular, laser powder bed fusion (LPBF) is one of the most widespread technologies for metal parts. However, LPBF is known to cause residual stress and distortion during fabrication, which adversely affects the mechanical properties and dimensional accuracy of the part. Therefore, predicting and avoiding the residual stress and distortion are critical issues. Our goal is to propose a topology optimization method that considers distortion in AM and an analytical model of AM suitable for incorporation into topology optimization. First, we propose an analytical model of the AM building process by LPBF, and formulate an optimization problem. Next, a topological derivative of the objective functional is approximately derived using an adjoint variable method and is utilized to update the level set function via a time evolutionary reaction-diffusion equation. Finally, two-dimensional design examples demonstrate the validations and effectiveness of the proposed optimization methodology.",
+      "link": "https://arxiv.org/abs/2008.06153"
+    },
+    {
+      "title": "Resolvent Estimates and Discrete Maximal Parabolic Regularity for Galerkin Finite Element Methods",
+      "authors": "Kyle Allaire",
+      "date": "2020-08-08T23:00:00.000Z",
+      "abstract": "We study space-time fully discrete maximal parabolic regularity for second order advection-diffusion operators. These estimates have many applications, including in the establishment of optimal a priori estimates in non Hilbert space norms. For time discretization, we use discontinuous Galerkin finite element methods that, in the simplest case of piecewise constant approximating functions, are equivalent to a modified backwards Euler time-stepping scheme. For discretization of the spatial variable, we analyze both continuous Galerkin (cG) and discontinuous Galerkin finite element methods (dG). Discontinuous Galerkin methods in space are analyzed because of our particular interest in the case where advection dominates diffusion, where stablized methods are needed.",
+      "link": "https://opencommons.uconn.edu/dissertations/2584"
+    },
+    {
+      "title": "Modeling Superconductor SFN-Structures Using the Finite Element Method",
+      "authors": "M. M. Khapaev, M. Yu. Kupriyanov, S. V. Bakurskiy, N. V. Klenov, I. I. Soloviev",
+      "date": "2020-08-06T23:00:00.000Z",
+      "abstract": "We consider the problem of mathematical modeling of the current distribution in Josephson structures based on semiclassical equations of the microscopic theory of superconductivity (the Usadel equations). These equations are a system of quasilinear elliptic equations for Green’s functions Φ𝜔(𝑟) and 𝐺𝜔(𝑟) and the pairing potential Δ(𝑟), which is determined from the equation of self-consistency by summation of the functions Φ𝜔(𝑟) over the frequencies 𝜔. To solve the quasilinear equations, we propose a special mixed finite element method, and to solve the self-consistency equations, we apply the successive approximation method and Anderson’s convergence acceleration algorithm. Results of calculations are provided for a structure with a wedge-shaped ferromagnetic layer.",
+      "link": "https://doi.org/10.1134/S0012266120070149"
+    },
+    {
+      "title": "Surface localization of plasmons in three dimensions and convexity",
+      "authors": "Kazunori Ando, Hyeonbae Kang, Yoshihisa Miyanishi, Takashi Nakazawa",
+      "date": "2020-07-31T23:00:00.000Z",
+      "abstract": "The Neumann--Poincaré operator defined on a smooth surface has a sequence of eigenvalues converging to zero, and the single layer potentials of the corresponding eigenfunctions, called plasmons, decay to zero, i.e., are localized on the surface, as the index of the sequence j tends to infinity. We investigate quantitatively the surface localization of the plasmons in three dimensions. The results are threefold. We first prove that on smooth bounded domains of general shape the sequence of plasmons converges to zero off the boundary surface almost surely at the rate of j−1/2. We then prove that if the domain is strictly convex, then the convergence rate becomes j−∞, namely, it is faster than j−N for any integer N. As a consequence, we prove that cloaking by anomalous localized resonance does not occur on three-dimensional strictly convex smooth domains. We then look into the surface localization of the plasmons on the Clifford torus by numerical computations. The Clifford torus is taken as an example of non-convex surfaces. The computational results show that the torus exhibits the spectral property completely different from strictly convex domains. In particular, they suggest that there is a subsequence of plasmons on the torus which has much slower decay than other entries of the sequence.",
+      "link": "https://arxiv.org/abs/2007.16157"
+    },
+    {
+      "title": "A numerical model of elasticity for cardiovascular system that includes 2/3D displacements and deformations",
+      "authors": "Ayoub Azzayani",
+      "date": "2020-07-30T23:00:00.000Z",
+      "abstract": "In this work, we deal an elasticity model in 2D and 3D dimension for deformation under constraint by taking into account the direction of the deformation displacement. This work is a result of an article [A. Azzayani et al., Br. J. Math. Comput. Sci. (2016)] in which we use the same mathematical model by fixing the fiber orientation. Then, if we considered the case of eignvalue and eigenvector, and which is the case of this work, we can be able to control the deformation of the heart in the image processing. This mathematical model can be used to describe the heart deformation taking into account the orientation of the fibers for estimating global and regional parameters of the left ventricular function. In first, we start by presenting the proposed mathematical model on a domain Ω ⊂ ℝn (n = 2 or 3), and we give the existence and uniqueness of solution to the mathematical model is given (in both 2D and 3D dimension). Secondly, we give numerical simulations with FreeFem software, simulations results and comments are given in the end. In the end, we will discuss about the image treatment with this model and its feasibility to help doctors in the diagnosis of heart disease.",
+      "link": "https://doi.org/10.1051/smdo/2020014"
+    },
+    {
+      "title": "Large scale simulation of pressure induced phase-field fracture propagation using Utopia",
+      "authors": "Patrick Zulian, Alena Kopaničáková, Maria Giuseppina Chiara Nestola, Andreas Fink, Nur Aiman Fadel, Joost Vandevondele, Rolf Krause",
+      "date": "2020-07-25T23:00:00.000Z",
+      "abstract": "Non-linear phase field models are increasingly used for the simulation of fracture propagation models. The numerical simulation of fracture networks of realistic size requires the efficient parallel solution of large coupled non-linear systems. Although in principle efficient iterative multi-level methods for these types of problems are available, they are not widely used in practice due to the complexity of their parallel implementation. Here, we present Utopia, which is an open-source C++ library for parallel non-linear multilevel solution strategies. Utopia provides the advantages of high-level programming interfaces while at the same time a framework to access low-level data-structures without breaking code encapsulation. Complex numerical procedures can be expressed with few lines of code, and evaluated by different implementations, libraries, or computing hardware. In this paper, we investigate the parallel performance of our implementation of the recursive multilevel trust-region (RMTR) method based on the Utopia library. RMTR is a globally convergent multilevel solution strategy designed to solve non-convex constrained minimization problems. In particular, we solve pressure-induced phase-field fracture propagation in large and complex fracture networks. Solving such problems is deemed challenging even for a few fractures, however, here we are considering networks of realistic size with up to 1000 fractures.",
+      "link": "https://arxiv.org/abs/2007.12908"
+    },
+    {
+      "title": "Effective boundary conditions at a rough wall: a high-order homogenization approach",
+      "authors": "Alessandro Bottaro, Sahrish B. Naqvi",
+      "date": "2020-07-22T23:00:00.000Z",
+      "abstract": "Effective boundary conditions, correct to third order in a small parameter 𝜖, are derived by homogenization theory for the motion of an incompressible fluid over a rough wall with periodic micro-indentations. The length scale of the indentations is l, and 𝜖=𝑙/𝐿≪1, with L a characteristic length of the macroscopic problem. A multiple scale expansion of the variables allows to recover, at leading order, the usual Navier slip condition. At next order the slip velocity includes a term arising from the streamwise pressure gradient; furthermore, a transpiration velocity (𝜖2) appears at the fictitious wall where the effective boundary conditions are enforced. Additional terms appear at third order in both wall-tangent and wall-normal components of the velocity. The application of the effective conditions to a macroscopic problem is carried out for the Hiemenz stagnation point flow over a rough wall, highlighting the differences among the exact results and those obtained using conditions of different asymptotic orders.",
+      "link": "https://doi.org/10.1007/s11012-020-01205-2"
+    },
+    {
+      "title": "On the Positivity of the Discrete Green's Function for Unstructured Finite Elements Discretizations in Three Dimensions",
+      "authors": "Andrew Miller",
+      "date": "2020-07-22T23:00:00.000Z",
+      "abstract": "The aim of this thesis is twofold. First, we will establish new estimates for the discrete Green's function and obtain some positivity results. In particular, we establish that the discrete Green's functions with singularity in the interior of the domain cannot be bounded uniformly with respect of the mesh parameter h. Actually, we show that at the singularity the Green's function is of order h^(-1), which is consistent with the behavior of the continuous Green's function. In addition, we also show that the discrete Green's function is positive and decays exponentially away from the singularity. We also establish numerically persistent negative values of the discrete Green's function on Delaunay meshes which then implies a discrete Harnack inequality cannot be establish for unstructured Finite Element discretizations. Of independent interest we also prove Lp estimates for a regularized Green's function in three dimensions which may have implications in establishing best approximation results in optimal control.",
+      "link": "https://opencommons.uconn.edu/dissertations/2582"
+    },
+    {
+      "title": "Parallel finite-element codes for the simulation of two-dimensional and three-dimensional solid-liquid phase-change systems with natural convection",
+      "authors": "Georges Sadaka, Aina Rakotondrandisa, Pierre-Henri Tournier, Francky Luddens, Corentin Lothodé, Ionut Danaila",
+      "date": "2020-07-22T23:00:00.000Z",
+      "abstract": "We present and distribute a FreeFem++ Toolbox for the parallel computing of two-or three-dimensional liquid-solid phase-change systems involving natural convection. FreeFem++ (www.freefem.org) is a free finite-element software available for all existing operating systems. We use the recent library ffddm that makes available in FreeFem++ state-of-the-art scalable Schwarz domain decomposition methods (DDM). The single domain approach used in our previous contribution [A. Rakotondrandisa, G. Sadaka, I. Danaila, A finite-element Toolbox for the simulation of solid-liquid phase-change systems with] is adapted for the use of the DDM method. As a result, the computational time is considerably reduced for 2D configurations and furthermore 3D problems become affordable. The numerical method is based on an enthalpy-porosity model. The same set of equations is solved in both liquid and solid phases: the incompressible Navier-Stokes equations with Boussinesq approximation for thermal effects. A Carman-Kozeny-type penalty term is added to the momentum equations to bring progressively the velocity to zero into the solid. Model equations are discretized using Galerkin triangular or tetrahedral finite elements. The coupled system of equations is integrated in time using a second-order Gear implicit scheme. The resulting discrete equations are solved using a Newton algorithm. The DDM approach is based on an overlapping Schwarz method. The mesh is first split in subdomains using Scotch or Metis libraries. The final linear system is then solved in parallel using a GMRES Krylov method, with a Restricted Additive Schwarz (RAS) preconditioner. The mesh is adapted during the computation using metrics control. The 3D-mesh adaptivity uses the mmg (www.mmgtools.org) open source library. Parallel 2D and 3D computations of benchmark cases of increasing difficulty are presented: natural convection of air, natural convection of water, melting or solidification of a phase-change material, and, finally, a water freezing case. For each case, careful validations are provided and the performance of the code is assessed. The robustness of the Toolbox in 3D is also demonstrated by adapting the number of processors to the number of tetrahedra, which can considerably vary after the mesh adaptation.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02486213/"
+    },
+    {
+      "title": "Demonstration of a Selective Oversized Cavity in a Terahertz Second-Harmonic Gyrotron",
+      "authors": "Ilya V. Bandurkin, Andrey P. Fokin, Mikhail Yu Glyavin, Alexey G. Luchinin, Ivan V. Osharin, Andrey V. Savilov",
+      "date": "2020-07-20T23:00:00.000Z",
+      "abstract": "A method of increasing the selectivity of highly-oversized open cavities is experimentally demonstrated in the electron cyclotron maser (gyrotron) operating at the second cyclotron harmonic in a high transverse mode (presumably, TE 58,13 ) of a circular cylindrical cavity at a frequency near 1.2 THz in the magnetic field of 24 T. This method is purely electrodynamical and based on a simple deformation of the cavity wall. The proposed approach paves the way for increase of the gyrotron frequencies and for enhancing the selectivity of open cavities in other applications.",
+      "link": "https://doi.org/10.1109/LED.2020.3010445"
+    },
+    {
+      "title": "An Efficient Online-Offline Method for Elliptic Homogenization Problems",
+      "authors": "Yufang Huang, Pingbing Ming, Siqi Song",
+      "date": "2020-07-19T23:00:00.000Z",
+      "abstract": "We present a new numerical method for solving the elliptic homogenization problem. The main idea is that the missing effective matrix is reconstructed by solving the local least-squares in an offline stage, which shall be served as the input data for the online computation. The accuracy of the proposed method are analyzed with the aid of the refined estimates of the reconstruction operator. Two dimensional and three dimensional numerical tests confirm the efficiency of the proposed method, and illustrate that this online-offline strategy may significantly reduce the cost without loss of accuracy.",
+      "link": "https://arxiv.org/abs/2007.09619"
+    },
+    {
+      "title": "Homogenization of Maxwell's equations and related scalar problems with sign-changing coefficients",
+      "authors": "Renata Bunoiu, Lucas Chesnel, Karim Ramdani, Mahran Rihani",
+      "date": "2020-07-10T23:00:00.000Z",
+      "abstract": "In this work, we are interested in the homogenization of time-harmonic Maxwell's equations in a composite medium with periodically distributed small inclusions of a negative material. Here a negative material is a material modelled by negative permittivity and permeability. Due to the sign-changing coefficients in the equations, it is not straightforward to obtain uniform energy estimates to apply the usual homogenization techniques. The goal of this article is to explain how to proceed in this context. The analysis of Maxwell's equations is based on a precise study of two associated scalar problems: one involving the sign-changing permittivity with Dirichlet boundary conditions, another involving the sign-changing permeability with Neumann boundary conditions. For both problems, we obtain a criterion on the physical parameters ensuring uniform invertibility of the corresponding operators as the size of the inclusions tends to zero. In the process, we explain the link existing with the so-called Neumann-Poincaré operator, complementing the existing literature on this topic. Then we use the results obtained for the scalar problems to derive uniform energy estimates for Maxwell's system. At this stage, an additional difficulty comes from the fact that Maxwell's equations are also sign-indefinite due to the term involving the frequency. To cope with it, we establish some sort of uniform compactness result.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02421312/"
+    },
+    {
+      "title": "Implicit parametrizations in shape optimization: boundary observation",
+      "authors": "Cornel Marius Murea, Dan Tiba",
+      "date": "2020-07-06T23:00:00.000Z",
+      "abstract": "We present first a brief review of the existing literature on shape optimization, stressing the recent use of Hamiltonian systems in topology optimization. In the second section, we collect some preliminaries on the implicit parametrization theorem, especially in dimension two, which is a case of interest in shape optimization. The formulation of the problem is also discussed. The approximation via penalization and its differentiability properties are analyzed in Section 3. Next, we investigate the discretization process in Section 4. The last section is devoted to numerical experiments.",
+      "link": "https://arxiv.org/abs/2003.10384"
+    },
+    {
+      "title": "Stiffnessometer: A magnetic-field-free superconducting stiffness meter and its application",
+      "authors": "Itay Mangel, Itzik Kapon, Nitzan Blau, Katrine Golubkov, Nir Gavish, Amit Keren",
+      "date": "2020-07-02T23:00:00.000Z",
+      "abstract": "We provide a detailed account for a method to measure superconducting stiffness ρs, critical current density jc, and coherence length ξ, in one apparatus, without subjecting the sample to magnetic field or attaching leads. The method is based on the London equation j=−ρsA, where j is the current density and A is the vector potential. Using a rotor free A and a measurement of j via the magnetic moment of a superconducting ring, we determine ρs. By increasing A until the London equation fails we determine jc and ξ. The method is sensitive to very small stiffness, which translates to penetration depth λ≲1 mm. It is also sensitive to low critical current density jc∼103Amm−2 or long coherence length ξ∼1μm. Naturally the method does not suffer from demagnetization factor complications, the presence of vortices, or out-of-equilibrium conditions. Therefore, the absolute values of the different parameters can be determined. We demonstrate the application of this method to La2−xSrxCuO4 with x=0.17.",
+      "link": "https://doi.org/10.1103/PhysRevB.102.024502"
+    },
+    {
+      "title": "Damping, Stabilization and Numerical Filtering for the Modeling and the Simulation of time dependent PDEs",
+      "authors": "Jean-Paul Chehab",
+      "date": "2020-06-30T23:00:00.000Z",
+      "abstract": "We present here different situations in which the filtering of high or low modes is used either for stabilizing semi-implicit numerical schemes when solving nonlinear parabolic equations, either for building adapted damping operators in the case of dispersive equation. We consider numerical filtering provided by mutigrid-like techniques as well as the filtering resulting from operator with monotone symbols. Our approach applies to several discretization techniques and we focus on finite elements and finite differences. Numerical illustrations are given on Cahn-Hilliard, Korteweig-de-Vries and Ku-ramoto Sivashinsky equations. In memory of Ezzeddine Zahrouni.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02885153/"
+    },
+    {
+      "title": "Non-geometric convergence of the classical alternating Schwarz method",
+      "authors": "Gabriele Ciaramella, Richard M. Höfer",
+      "date": "2020-06-27T23:00:00.000Z",
+      "abstract": "Contribution to the 25th International Domain Decomposition Conference",
+      "link": "https://kops.uni-konstanz.de/handle/123456789/49957"
+    },
+    {
+      "title": "Propagation for KPP bulk-surface systems in a general cylindrical domain",
+      "authors": "Beniamin Bogosel, Thomas Giletti, Andrea Tellini",
+      "date": "2020-06-26T23:00:00.000Z",
+      "abstract": "In this paper, we investigate propagation phenomena for KPP bulk-surface systems in a cylindrical domain with general section and heterogeneous coefficients. As for the scalar KPP equation, we show that the asymptotic spreading speed of solutions can be computed in terms of the principal eigenvalues of a family of self-adjoint elliptic operators. Using this characterization, we analyze the dependence of the spreading speed on various parameters, including diffusion rates and the size and shape of the section of the domain. In particular, we provide new theoretical results on several asymptotic regimes like small and high diffusion rates and sections with small and large sizes. These results generalize earlier ones which were available in the radial homogeneous case. Finally, we numerically investigate the issue of shape optimization of the spreading speed. By computing its shape derivative, we observe, in the case of homogeneous coefficients, that a disk either maximizes or minimizes the speed, depending on the parameters of the problem, both with or without constraints. We also show the results of numerical shape optimization with non homogeneous coefficients, when the disk is no longer an optimizer.",
+      "link": "https://arxiv.org/abs/2006.14224"
+    },
+    {
+      "title": "Additive manufacturing scanning paths optimization using shape optimization tools",
+      "authors": "M. Boissier, G. Allaire, C. Tournier",
+      "date": "2020-06-24T23:00:00.000Z",
+      "abstract": "This paper investigates path planning strategies for additive manufacturing processes such as powder bed fusion. The state of the art mainly studies trajectories based on existing patterns. Parametric optimization on these patterns and allocating them to the object areas are the main strategies. We propose in this work a more systematic optimization approach without any a priori restriction on the trajectories. The typical optimization problem is to melt the desired structure, without over-heating (to avoid thermally induced residual stresses) and possibly with a minimal path length. The state equation is the heat equation with a source term depending on the scanning path. First, in a steady-state context, shape optimization tools are applied to trajectories. Second, for time-dependent problems, an optimal control method is considered instead. In both cases, gradient-type algorithms are deduced and tested on 2-D examples. Numerical results are discussed, leading to a better understanding of the problem and thus to short- and long-term perspectives.",
+      "link": "https://doi.org/10.1007/s00158-020-02614-3"
+    },
+    {
+      "title": "Variational Approach to Data Graduation",
+      "authors": "James Lee Manejero, Renier Mendoza",
+      "date": "2020-06-23T23:00:00.000Z",
+      "abstract": "The Whittaker-Henderson graduation is a data smoothing method commonly used in actuarial science for mortality table computation. This method is a finite-dimensional minimization problem, which aims to give a smooth approximation of the crude data. Our goal is to treat the Whittaker-Henderson method as a minimization problem in a Sobolev space. We take advantage of some results in the study of Sobolev spaces to analyze the solution to the graduation problem. Solving the arising minimization problem is equivalent to solving a partial differential equation (PDE). To solve the PDE numerically, we use the finite element method (FEM). We apply this variational approach to the data sets found in the literature. In particular, we test our method to check for patterns in (1) mortality rates for Filipino males, (2) global average temperature anomaly, and (3) monthly eBay share price. We also compare the results with that of the Whittaker-Henderson method.",
+      "link": "https://philjournalsci.dost.gov.ph/images/pdf/pjs_pdf/vol149no2/variational_approach_to_data_graduation_.pdf"
+    },
+    {
+      "title": "Modelling coronary blood flow using a non Newtonian fluid model : fractional flow reserve estimation",
+      "authors": "Keltoum Chahour",
+      "date": "2020-06-22T23:00:00.000Z",
+      "abstract": "In this thesis, we explore the possibility of virtual coronary stenosis assessment, through the simulation of Fractional Flow Reserve (FFR) measurement, that is an indispensable but binding tool during diagnosis. First, we use a 2D non Newtonian flow model, and later a weakly coupled FSI model to make a preliminary study of the main features of flow over a stenotic coronary arterial portion. We then introduce a methodology to estimate the virtual FFR in analogy with the clinical device. The FFR device was considered non-physical (integrated to the flow domain) at a first place. We led different experiments to enumerate the factors affecting the virtual FFR and computed its profiles with respect to different lesion’s parameters. Second, we consider two realistic geometries: a 2D left coronary tree obtained from the segmentation of an angiography image and a 3D bifurcation tree. We define generalized flow models inside the two geometries and consider the arterial wall to be rigid. The presence of several outlets in these new geometries led us to define a new type of boundary conditions. For the inlet, we propose a bi-sinusoidal function approaching the velocity profile recorded inside a left coronary tree. For the outlets, we implement a 2 elementWindkessel model. We led a comparative study between Navier Stokes and the flow model considered and between free outlets boundary conditions and Windkessel model in 2D and define the flow inside the 3D bifurcation tree. We also compute the virtual FFR of two artificial lesions added to the coronary tree and demonstrate that angiography alone is not enough to evaluate the severity of stenosis. Third, we investigate - through 2D and 3D modelling - one possible reason of pressure drift during FFR measurement, that is the arbitrary position and configuration of the FFR device, considered during this study extrinsic to the flow domain. We consider the same non Newtonian flow models as previously. In 2D, the FFR device is assimilated to a disk with a variable position incorporated inside the left coronary tree. While the 3D domain corresponds to a diseased arterial portion to which we introduce a deformed 3D tube (wire+sensor) with a given length and coefficient of bending. The bending effect of the tube is obtained thanks to an elastic problem based on Hooke’s law. Using a Gaussian process, we model the FFR depending on these variables - and two additional stenosis variables later - we perform a set of samples corresponding to the design space considered. The 2D data indicates a good accuracy for FFR prediction while the 4D data emphasis the fact that mi- crocatheters with important diameters overestimate lesion’s severity. The results obtained demonstrate that drift occurring because of the variable device configuration may lead to stenosis misclassification. All resolution algorithms and simulation tools were implemented under FreeFem++ software. The need of more space memory for 3D simulations led us to adopt a parallel resolution strategy using FreeFem++ MPI and MUMPS solver.",
+      "link": "https://tel.archives-ouvertes.fr/tel-02430901/"
+    },
+    {
+      "title": "Influence of the CdZnTe Substrate Thickness on the Response of HgCdTe Detectors Under Irradiation: Modeling of the Substrate Luminescence",
+      "authors": "Thibault Pichon, Salima Mouzali, Olivier Boulade, Olivier Gravrand, Olivier Limousin ",
+      "date": "2020-06-17T23:00:00.000Z",
+      "abstract": "The most extensively used infrared (IR) detectors in astrophysics are based on mercury cadmium telluride (MCT) technology: the MCT light-sensitive layer is grown on a cadmium zinc telluride (CZT) substrate. When launched on a satellite, these detectors are subjected to ionizing radiation from cosmic rays or solar flares (mainly protons) which degrade the detector performance. Indeed, an elevation of the detector background was noted under irradiation, which is believed to be associated with the luminescence of the CZT substrate. Complete removal of the substrate eliminates the problem, but it is a challenging step in the fabrication process. A deeper understanding of the response of IR detectors under irradiation, when the substrate is fully removed, will enable the optimization of substrate design for high-performance space-based scientific imaging. Here, the first results of proton irradiation modeling in MCT detectors, including energy deposition in the CZT substrate, are presented. The estimation of image pollution relies on GEANT4 (GEometry ANd Tracking 4) Monte Carlo simulations as well as analytical and numerical calculations of carrier transport inside the detector structure. In particular, recombination processes in the CZT substrate are taken into account to model the luminescence effect induced by proton irradiation. According to this model, considering published material properties, the diffusion of the carriers generated inside the CZT substrate toward the MCT layer is the main source of pollution. As the substrate thickness increases, more pixels are impacted by a proton impact on the IR. Consequently, depending on the targeted application, either partial or complete removal may be chosen.",
+      "link": "https://doi.org/10.1007/s11664-020-08237-0"
+    },
+    {
+      "title": "An optimal design problem for a two-phase isolating material in the wall of a cavity",
+      "authors": "Juan Casado-Díaz, Faustino Maestre",
+      "date": "2020-06-17T23:00:00.000Z",
+      "abstract": "We are interested in the optimal distribution of two isolating materials in the wall of a cavity in order to get the best isolation when the amount of the best isolating material is limited. We assume that the wall is of width small. The problem can be formulated as the minimization of the first eigenvalue of a certain diffusion operator where the diffusion constant is of order one inside the cavity and of order in the wall. As it is usual in optimal design, the problem has not solution in general and therefore, it is necessary to work with a relaxed formulation. Passing to the limit when tends to zero we get an asymptotic model where the variable control is now in a Robin boundary condition instead of the diffusion operator. We also present some numerical simulations showing the behavior of the solutions.",
+      "link": "https://doi.org/10.1016/j.na.2020.112025"
+    },
+    {
+      "title": "Finite element error analysis of a time-fractional nonlocal diffusion equation with the Dirichlet energy",
+      "authors": "J. Manimaran, L. Shangerganesh, Amar Debbouche",
+      "date": "2020-06-17T23:00:00.000Z",
+      "abstract": "A time-fractional diffusion equation involving the Dirichlet energy is considered with nonlocal diffusion operator in the space which has dimension and the Caputo sense fractional derivative in time. Further, nonlocal term in diffusion operator is of Kirchhoff type. We discretize the space using the Galerkin finite elements and time using the finite difference scheme on a uniform mesh. First, we prove the existence and uniqueness of a fully discrete numerical solution of the problem using the Brouwer fixed point theorem. Then, we give a priori bounds and convergence estimates in and norms for fully-discrete problem. A more delicate analysis in the error provides the second order convergence for the proposed scheme. Numerical results are provided to validate the theoretical analysis.",
+      "link": "https://doi.org/10.1016/j.cam.2020.113066"
+    },
+    {
+      "title": "Periodic Hamiltonian systems in shape optimization problems with Neumann boundary conditions",
+      "authors": "Cornel Marius Murea, Dan Tiba",
+      "date": "2020-06-16T23:00:00.000Z",
+      "abstract": "The recent approach based on Hamiltonian systems and the implicit parametri\-za\-tion theorem, provides a general fixed domain approximation method in shape optimization problems, using optimal control theory. In previous works, we have examined Dirichlet boundary conditions with distributed or boundary observation. Here, we discuss the case of Neumann boundary conditions, with a combined cost functional, including both distributed and boundary observation. Extensions to nonlinear state systems are possible. This new technique allows simultaneous boundary and topological variations and we also report numerical experiments confirming the theoretical results.",
+      "link": "https://arxiv.org/abs/2006.09098"
+    },
+    {
+      "title": "Analysis of parallel Schwarz algorithms for time-harmonic problems using block Toeplitz matrices",
+      "authors": "Niall Bootland, Victorita Dolean, Alexandros Kyriakis, Jennifer Pestana",
+      "date": "2020-06-15T23:00:00.000Z",
+      "abstract": "In this work we study the convergence properties of the one-level parallel Schwarz method applied to the one-dimensional and two-dimensional Helmholtz and Maxwell's equations. One-level methods are not scalable in general. However, it has recently been proven that when impedance transmission conditions are used in the case of the algorithm applied to the equations with absorption, under certain assumptions, scalability can be achieved and no coarse space is required. We show here that this result is also true for the iterative version of the method at the continuous level for strip-wise decompositions into subdomains that can typically be encountered when solving wave-guide problems. The convergence proof relies on the particular block Toeplitz structure of the global iteration matrix. Although non-Hermitian, we prove that its limiting spectrum has a near identical form to that of a Hermitian matrix of the same structure. We illustrate our results with numerical experiments.",
+      "link": "https://arxiv.org/abs/2006.08801"
+    },
+    {
+      "title": "Flow of shear-thinning fluids through porous media",
+      "authors": "Christophe Airiau, Alessandro Bottaro",
+      "date": "2020-06-13T23:00:00.000Z",
+      "abstract": "Pseudo-plastic fluids exhibit a non-linear stress-strain relationship which can provoke large, localized viscosity gradients. For the flow of such fluids in porous media the consequence is a strong variability of the effective permeability with porosity, angle of the macroscopic pressure gradient, and rheological parameters of the fluid. Such a variability is investigated on the basis of adjoint homogenization theory for a Carreau fluid in an idealized porous medium geometry, highlighting differences with respect to the Newtonian case. It is shown in particular that the more we depart from Newtonian conditions, the more the (often used) hypothesis of an effective viscosity in Darcy’s law is a poor approximation, for the effective permeability tensor becomes strongly anisotropic.",
+      "link": "http://www3.dicca.unige.it/bottaro/Papers/Airiau_Bottaro.pdf"
+    },
+    {
+      "title": "Linearly Implicit and High-Order Energy-Conserving Schemes for Nonlinear Wave Equations",
+      "authors": "Dongfang Li, Weiwei Sun",
+      "date": "2020-06-13T23:00:00.000Z",
+      "abstract": "A key issue in developing efficient numerical schemes for nonlinear wave equations is the energy-conserving. Most existing schemes of the energy-conserving are fully implicit and the schemes require an extra iteration at each time step and considerable computational cost for a long time simulation, while the widely-used q-stage (implicit) Gauss scheme (method) only preserves polynomial Hamiltonians up to degree 2q. In this paper, we present a family of linearly implicit and high-order energy-conserving schemes for solving nonlinear wave equations. The construction of schemes is based on recently-developed scalar auxiliary variable technique with a combination of classical high-order Gauss methods and extrapolation approximation. We prove that the proposed schemes are unconditionally energy-conserved for a general nonlinear wave equation. Numerical results are given to show the energy-conserving and the effectiveness of schemes.",
+      "link": "https://doi.org/10.1007/s10915-020-01245-6"
+    },
+    {
+      "title": "Ample textures for electromagnetic scattering in radiative transfer",
+      "authors": "T.Mathew, B.Rousseau, A.Litman, Y.Favennec",
+      "date": "2020-06-13T23:00:00.000Z",
+      "abstract": "The numerical resolution of wave-matter interaction on complex micro heterogeneities constituting modern industrial materials poses significant computational hurdles. These computations hold a crucial role in the design cycle meant to optimize their participating behavior at high temperatures. To arrive at a reasonable conclusion at the expense of optimal resources, some textural details inherent to these materials are often truncated. For the accurate resolution of multi-scale thermal radiative transport, very little is known today about the role of these truncated textural information to the overall effective radiative properties. With the ultimate prospect of large scale finite element modeling of electromagnetic scattering for participating media, this initial attempt in 2D explores this aspect, learning from the ability of fractals to quantify textural details or roughness of complex objects. Based on a desirable error tolerance, critical quantitative limits were drawn, with which future large scale electromagnetic scattering computations can be performed confidently with optimum resources, without compromising the accuracy. From intensive numerical experiments, ample textural details relevant for a desired accuracy (1% error) of the extinction efficiency, scattering efficiency, and asymmetry parameter are quantified, and limits established. Error estimates for the aforementioned radiative properties at the limiting resolution (1 µm) of the economical imaging techniques today, are also drawn for better insights.",
+      "link": "https://doi.org/10.1016/j.jqsrt.2020.107113"
+    },
+    {
+      "title": "Numerical Analysis of a Finite Volume Scheme for the Optimal Control of Groundwater Pollution",
+      "authors": "Catherine Choquet, Moussa Mory Diédhiou, Houssein Nasser El Dine",
+      "date": "2020-06-10T23:00:00.000Z",
+      "abstract": "This paper is devoted to an optimal control problem of the underground water contaminated by agricultural pollution, the spatiotemporal objective taking into account the trade-off between the fertilizer used by the farmer to increase profits and the cleaning costs which are necessary to treat the water before it is distributed to users. The constraint is a hydrogeological model for the spread of the pollution in the aquifer which consists in a system of a parabolic partial differential equation and an elliptic equation. Hydrogeological and economic modelling are thus combined in the problem. We propose a finite volume scheme based on a two-point flux approximation with upwind mobilities of an optimal control. Numerical simulations are provided to illustrate the 2D and 3D optimal solutions.",
+      "link": "https://doi.org/10.1007/978-3-030-43651-3_43"
+    },
+    {
+      "title": "A linear implicit Euler method for the finite element discretization of a controlled stochastic heat equation",
+      "authors": "Peter Benner, Tony Stillfjord, Christoph Trautwein",
+      "date": "2020-06-09T23:00:00.000Z",
+      "abstract": "We consider a numerical approximation of a linear quadratic control problem constrained by the stochastic heat equation with non-homogeneous Neumann boundary conditions. This involves a combination of distributed and boundary control, as well as both distributed and boundary noise. We apply the finite element method for the spatial discretization and the linear implicit Euler method for the temporal discretization. Due to the low regularity induced by the boundary noise, convergence orders above 1/2 in space and 1/4 in time cannot be expected. We prove such optimal convergence orders for our full discretization when the distributed noise and the initial condition are sufficiently smooth. Under less smooth conditions, the convergence order is further decreased. Our results only assume that the related (deterministic) differential Riccati equation can be approximated with a certain convergence order, which is easy to achieve in practice. We confirm these theoretical results through a numerical experiment in a two dimensional domain.",
+      "link": "https://arxiv.org/abs/2006.05370"
+    },
+    {
+      "title": "Optimally Convergent Mixed Finite Element Methods for the Stochastic Stokes Equations",
+      "authors": "Xiaobing Feng, Andreas Prohl, Liet Vo",
+      "date": "2020-06-07T23:00:00.000Z",
+      "abstract": "We propose some new mixed finite element methods for the time dependent stochastic Stokes equations with multiplicative noise, which use the Helmholtz decomposition of the driving multiplicative noise. It is known [16] that the pressure solution has a low regularity, which manifests in sub-optimal convergence rates for well-known inf-sup stable mixed finite element methods in numerical simulations, see [10]. We show that eliminating this gradient part from the noise in the numerical scheme leads to optimally convergent mixed finite element methods, and that this conceptual idea may be used to retool numerical methods that are well-known in the deterministic setting, including pressure stabilization methods, so that their optimal convergence properties can still be maintained in the stochastic setting. Computational experiments are also provided to validate the theoretical results and to illustrate the conceptional usefulness of the proposed numerical approach.",
+      "link": "https://arxiv.org/abs/2005.03148"
+    },
+    {
+      "title": "Fluid–structure stability analyses and nonlinear dynamics of flexible splitter plates interacting with a circular cylinder flow",
+      "authors": "J.-L. Pfister, O. Marquet",
+      "date": "2020-06-05T23:00:00.000Z",
+      "abstract": "The dynamics of a hyperelastic splitter plate interacting with the laminar wake flow of a circular cylinder is investigated numerically at a Reynolds number of 80. By decreasing the plate’s stiffness, four regimes of flow-induced vibrations are identified: two regimes of periodic oscillation about a symmetric position, separated by a regime of periodic oscillation about asymmetric positions, and finally a regime of quasi-periodic oscillation occurring at very low stiffness and characterized by two fundamental (high and low) frequencies. A linear fully coupled fluid–solid analysis is then performed and reveals the destabilization of a steady symmetry-breaking mode, two high-frequency unsteady modes and one low-frequency unsteady mode, when varying the plate’s stiffness. These unstable eigenmodes explain the emergence of the nonlinear self-sustained oscillating states and provide a good prediction of the oscillation frequencies. A comparison with nonlinear calculations is provided to show the limits of the linear approach. Finally, two simplified analyses, based on the quiescent-fluid or quasi-static assumption, are proposed to further identify the linear mechanisms at play in the destabilization of the fully coupled modes. The quasi-static static analysis allows an understanding of the behaviour of the symmetry-breaking and low-frequency modes. The quiescent-fluid stability analysis provides a good prediction of the high-frequency vibrations, unlike the bending modes of the splitter plate in vacuum, as a result of the fluid added-mass correction. The emergence of the high-frequency periodic oscillations can thus be predicted based on a resonance condition between the frequencies of the hydrodynamic vortex-shedding mode and of the quiescent-fluid solid modes.",
+      "link": "https://doi.org/10.1017/jfm.2020.284"
+    },
+    {
+      "title": "Optimization approach for axisymmetric electric field cloaking and shielding",
+      "authors": "G. V. Alekseev, D. A. Tereshko, Yu. V. Shestopalov",
+      "date": "2020-06-02T23:00:00.000Z",
+      "abstract": "In this paper we study inverse problems of electric conductivity that arise in the design of spherical shielding or cloaking shells and other functional devices used to control static electric fields. The shells are considered consisting of a finite number of layers filled with homogeneous isotropic or anisotropic medium. The inverse problems under study are reduced to control problems with the layers electric conductivities taken as controls. A different choice of minimized functionals allows us to solve a wide range of design problems using one approach. A numerical algorithm to solve these problems is based on particle swarm optimization. Various results of numerical experiments are discussed in order to find the most effective designs. The findings obtained in this study describe a broad set of specific easy-to-manufacture structures that have the highest cloaking or shielding performance in the class of layered shells.",
+      "link": "https://doi.org/10.1080/17415977.2020.1772780"
+    },
+    {
+      "title": "Error analysis of proper orthogonal decomposition stabilized methods for incompressible flows",
+      "authors": "Julia Novo, Samuele Rubino",
+      "date": "2020-05-30T23:00:00.000Z",
+      "abstract": "Proper orthogonal decomposition (POD) stabilized methods for the Navier-Stokes equations are considered and analyzed. We consider two cases, the case in which the snapshots are based on a non inf-sup stable method and the case in which the snapshots are based on an inf-sup stable method. For both cases we construct approximations to the velocity and the pressure. For the first case, we analyze a method in which the snapshots are based on a stabilized scheme with equal order polynomials for the velocity and the pressure with Local Projection Stabilization (LPS) for the gradient of the velocity and the pressure. For the POD method we add the same kind of LPS stabilization for the gradient of the velocity and the pressure than the direct method, together with grad-div stabilization. In the second case, the snapshots are based on an inf-sup stable Galerkin method with grad-div stabilization and for the POD model we apply also grad-div stabilization. In this case, since the snapshots are discretely divergence-free, the pressure can be removed from the formulation of the POD approximation to the velocity. To approximate the pressure, needed in many engineering applications, we use a supremizer pressure recovery method. Error bounds with constants independent on inverse powers of the viscosity parameter are proved for both methods. Numerical experiments show the accuracy and performance of the schemes.",
+      "link": "https://arxiv.org/abs/2006.00211"
+    },
+    {
+      "title": "Analysis of variational formulations and low-regularity solutions for time-harmonic electromagnetic problems in complex anisotropic media",
+      "authors": "Damien Chicaud, Patrick Ciarlet, Axel Modave",
+      "date": "2020-05-29T23:00:00.000Z",
+      "abstract": "We consider the time-harmonic Maxwell's equations with physical parameters, namely the electric permittivity and the magnetic permeability, that are complex, possibly non-hermitian, tensor fields. Both tensor fields verify a general ellipticity condition. In this work, the well-posedness of formulations for the Dirichlet and Neumann problems (i.e. with a boundary condition on the electric field or its curl, respectively) is proven using well-suited functional spaces and Helmholtz decompositions. For both problems, the a priori regularity of the solution and the solution's curl is analysed. The regularity results are obtained by splitting the fields and using shift theorems for second-order divergence elliptic operators. Finally, the discretization of the formulations with a H(curl)-conforming approximation based on edge finite elements is considered. An a priori error estimate is derived and verified thanks to numerical results with an elementary benchmark.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02651682/"
+    },
+    {
+      "title": "A new two-level defect-correction method for the steady Navier–Stokes equations",
+      "authors": "Yueqiang Shang",
+      "date": "2020-05-29T23:00:00.000Z",
+      "abstract": "A new defect-correction method based on subgrid stabilization for the simulation of steady incompressible Navier–Stokes equations with high Reynolds numbers is proposed and studied. This method uses a two-grid finite element discretization strategy and consists of three steps: in the first step, a small nonlinear coarse mesh system is solved, and then, in the following two steps, two Newton-linearized fine mesh problems which have the same stiffness matrices with only different right-hand sides are solved. The nonlinear coarse mesh system incorporates an artificial viscosity term into the Navier–Stokes system as a stabilizing factor, making the nonlinear system easier to resolve. While the linear fine mesh problems are stabilized by a subgrid model defined by an elliptic projection into lower-order finite element spaces for the velocity. Error bounds of the approximate solutions are estimated. Algorithmic parameter scalings are derived from the analysis. Effectiveness of the proposed method is also illustrated by some numerical results.",
+      "link": "https://doi.org/10.1016/j.cam.2020.113009"
+    },
+    {
+      "title": "Nonoverlapping Dirichlet–Neumann method for transient bioheat transfer in the human eye",
+      "authors": "Salem Ahmedou Bamba, Abdellatif Ellabib",
+      "date": "2020-05-27T23:00:00.000Z",
+      "abstract": "This paper presents a 2D simulation of transient heat transfer in the human eye using appropriate boundary conditions. The mathematical model governing bioheat transfer in the human eye is discussed and the existence and uniqueness of the solution are proven. Four methods based on finite element method and nonoverlapping domain decomposition method to obtain transient heat transfer in the human eye are presented and described in details. After conducting numerous simulations using realistic parameters obtained from the open literature and after comparison with measurements reported by previous experimental studies, all proposed methods gave an accurate representation of transient heat transfer in the human eye. The results obtained by the domain decomposition of the human eye into four subdomains are found to be the closest to reality.",
+      "link": "https://doi.org/10.1142/S1793524520500357"
+    },
+    {
+      "title": "EdgeCFD: a parallel residual-based variational multiscale code for multiphysics",
+      "authors": "Adriano M. A. Cortes, Erb F. Lins, Gabriel M. Guerra, Rômulo M. Silva, José L. D. Alves, Renato N. Elias, Fernando A. Rochinha, Alvaro L. G. A. Coutinho",
+      "date": "2020-05-27T23:00:00.000Z",
+      "abstract": "High fidelity multiphysics simulations are ubiquitous in science and engineering but still face many challenges to run efficiently in today's supercomputers. This work reports advanced technologies present in EdgeCFD, a hybrid parallel variational multiscale multiphysics finite element software capable of running industrial problems involving turbulent incompressible, compressible, free-surface flows, advection-diffusion of multiple scalar fields, fluid-object interaction using an Arbitrary Lagrangian-Eulerian formulation, and, more recently, used to supporting uncertainty quantification. We also show the strategies to support the solution of large scale problems, including in-situ visualisation and how EdgeCFD handles computational steering. Industrial applications in the oil and gas industry are shown to demonstrate EdgeCFD capabilities. We present the analysis of vortex-induced vibration in cylindrical risers with appendages to reduce drag and lift, and the simulation of successive discharges of turbidity currents, a critical process for understanding the formation of oil reservoirs.",
+      "link": "https://doi.org/10.1080/10618562.2020.1771325"
+    },
+    {
+      "title": "Robust Stackelberg Controllability for the Kuramoto-Sivashinsky Equation",
+      "authors": "Cristhian Montoya, Louis Breton",
+      "date": "2020-05-26T23:00:00.000Z",
+      "abstract": "In this article the robust Stackelberg controllability (RSC) problem is studied for a nonlinear fourth-order parabolic equation, namely, the Kuramoto-Sivashinsky equation. When three external sources are acting into the system, the RSC problem consists essentially in combining two subproblems: the first one is a saddle point problem among two sources. Such an sources are called the 'follower control' and its associated 'disturbance signal'. This procedure corresponds to a robust control problem. The second one is a hierarchic control problem (Stackelberg strategy), which involves the third force, so-called leader control. The RSC problem establishes a simultaneous game for these forces in the sense that, the leader control has as objective to verify a controllability property, while the follower control and perturbation solve a robust control problem. In this paper the leader control obeys to the exact controllability to the trajectories. Additionally, iterative algorithms to approximate the robust control problem as well as the robust Stackelberg strategy for the nonlinear Kuramoto-Sivashinsky equation are developed and implemented.",
+      "link": "https://arxiv.org/abs/2005.13060"
+    },
+    {
       "title": "Topology optimization of thermal fluid-structure systems using body-fitted meshes and parallel computing",
       "authors": "Florian Feppon, Grégoire Allaire, Charles Dapogny, Pierre Jolivet",
-      "date": "2020-03-30T23:00:00.000Z",
+      "date": "2020-05-22T23:00:00.000Z",
       "abstract": "An efficient framework is described for the shape and topology optimization of realistic three-dimensional, weakly-coupled fluid-thermal-mechanical systems. At the theoretical level, the proposed methodology relies on the boundary variation of Hadamard for describing the sensitivity of functions with respect to the domain. From the numerical point of view, three key ingredients are used: (i) a level set based mesh evolution method allowing to describe large deformations of the shape while maintaining an adapted, high-quality mesh of the latter at every stage of the optimization process; (ii) an efficient constrained optimization algorithm which is very well adapted to the infinite-dimensional shape optimization context; (iii) efficient preconditioning techniques for the solution of large finite element systems in a reasonable computational time. The performance of our strategy is illustrated with two examples of coupled physics: respectively fluid-structure interaction and convective heat transfer. Before that, we perform three other test cases, involving a single physics (structural, thermal and aerodynamic design), for comparison purposes and for assessing our various tools: in particular, they prove the ability of the mesh evolution technique to capture very thin bodies or shells in 3D.",
       "link": "https://doi.org/10.1016/j.jcp.2020.109574"
+    },
+    {
+      "title": "Multi-Site Fishing Models",
+      "authors": "Pierre Auger, Olivier Pironneau",
+      "date": "2020-05-18T23:00:00.000Z",
+      "abstract": "Mathematical models are used to predict the long term effect of fishing on the fish biomass. The simplest models involve ordinary differential equations and functions of time only. Some more complex models have an array of functions of time only whose index represent the spatial position of each site. In this article we build on these and propose extensions using partial differential equations to account for the monodimensionality of the coast or the bidimensionality of the sea. We investigate the capacity of these models to validate non-fishing zones to fight over fishing. French title: Modèle de pêche multi-sites. Pour la pêche les modèles mathématiques serventà prédire la biomasse des poissons sur des temps longs. Les modèles les plus simples utilisent deséquations différentielles pour des fonctions du temps seulement. Quelques modèles plus complexes généralisent les modèles précédentsà un ensemble fini de sites avec deséquations différentielles pour un vecteur de fonctions du temps où les indices sont associés aux sites. Nous proposons de généraliser cette approche en passantà la limite sur le nombre de sites afin d'obtenir deś equations aux dérivées partiellesà une variable d'espace si l'on considère seulement la côte ou 2 variables d'espaces si l'on considère la mer. Nous nous intéressonsà la capacité de ces modèles a valider les zones de non-pêches pour combattre la surpêche.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02612044/"
+    },
+    {
+      "title": "Ring solitons and soliton sacks in imbalanced fermionic systems",
+      "authors": "Mats Barkman, Albert Samoilenka, Thomas Winyard, Egor Babaev",
+      "date": "2020-05-07T23:00:00.000Z",
+      "abstract": "We show that in superfluids with fermionic imbalance and uniform ground state, there are solitons representing multiple local minima of the free energy landscape. These solitons have nontrivial soliton-soliton and soliton-vortex interactions and can form complicated bound states in the form of 'soliton sacks'.",
+      "link": "https://arxiv.org/abs/2005.03738"
+    },
+    {
+      "title": "Nonlinear model reduction: a comparison between POD-Galerkin and POD-DEIM methods",
+      "authors": "Denis Sipp, Miguel Fosas de Pando, Peter J. Schmid",
+      "date": "2020-05-06T23:00:00.000Z",
+      "abstract": "Several nonlinear model reduction techniques are compared for the three cases of the non-parallel version of the Kuramoto-Sivashinsky equation, the transient regime of flow past a cylinder at Re=100 and fully developed flow past a cylinder at the same Reynolds number. The linear terms of the governing equations are reduced by Galerkin projection onto a POD basis of the flow state, while the reduced nonlinear convection terms are obtained either by a Galerkin projection onto the same state basis, by a Galerkin projection onto a POD basis representing the nonlinearities or by applying the Discrete Empirical Interpolation Method (DEIM) to a POD basis of the nonlinearities. The quality of the reduced order models is assessed as to their stability, accuracy and robustness, and appropriate quantitative measures are introduced and compared. In particular, the properties of the reduced linear terms are compared to those of the full-scale terms, and the structure of the nonlinear quadratic terms is analyzed as to the conservation of kinetic energy. It is shown that all three reduction techniques provide excellent and similar results for the cases of the Kuramoto-Sivashinsky equation and the limit-cycle cylinder flow. For the case of the transient regime of flow past a cylinder, only the pure Galerkin techniques are successful, while the DEIM technique produces reduced-order models that diverge in finite time.",
+      "link": "https://arxiv.org/abs/2005.03173"
+    },
+    {
+      "title": "h-adaptive topology optimization considering variations of material properties and energy error density recovery",
+      "authors": "Jéderson da Silva, Jucélio Tomás Pereira, Diego Amadeu F. Torres",
+      "date": "2020-05-06T23:00:00.000Z",
+      "abstract": "The purpose of this paper is to propose a new scheme for obtaining acceptable solutions for problems of continuum topology optimization of structures, regarding the distribution and limitation of discretization errors by considering h-adaptivity.",
+      "link": "https://doi.org/10.1108/EC-10-2019-0464"
+    },
+    {
+      "title": "A numerical model to introduce students to AC loss calculation in superconductors",
+      "authors": "Francesco Grilli, Enrico Rizzo",
+      "date": "2020-05-06T23:00:00.000Z",
+      "abstract": "A numerical model implemented in the open-source finite-element method FreeFEM program is presented, with the aim of introducing students to the calculation of AC losses in superconductors. With this simple approach, students can learn about the critical state model used to describe the macroscopic electromagnetic behavior of superconductors and the importance of different factors influencing the AC losses of superconductors.",
+      "link": "http://dx.doi.org/10.1088/1361-6404/ab90dc"
+    },
+    {
+      "title": "Stochastic phase-field modeling of brittle fracture: computing multiple crack patterns and their probabilities",
+      "authors": "Tymofiy Gerasimov, Ulrich Römer, Jaroslav Vondřejc, Hermann G. Matthies, Laura De Lorenzis",
+      "date": "2020-05-04T23:00:00.000Z",
+      "abstract": "In variational phase-field modeling of brittle fracture, the functional to be minimized is not convex, so that the necessary stationarity conditions of the functional may admit multiple solutions. The solution obtained in an actual computation is typically one out of several local minimizers. Evidence of multiple solutions induced by small perturbations of numerical or physical parameters was occasionally recorded but not explicitly investigated in the literature. In this work, we focus on this issue and advocate a paradigm shift, away from the search for one particular solution towards the simultaneous description of all possible solutions (local minimizers), along with the probabilities of their occurrence. Inspired by recent approaches advocating measure-valued solutions (Young measures as well as their generalization to statistical solutions) and their numerical approximations in fluid mechanics, we propose the stochastic relaxation of the variational brittle fracture problem through random perturbations of the functional. We introduce the concept of stochastic solution, with the main advantage that point-to-point correlations of the crack phase fields in the underlying domain can be captured. These stochastic solutions are represented by random fields or random variables with values in the classical deterministic solution spaces. In the numerical experiments, we use a simple Monte Carlo approach to compute approximations to such stochastic solutions. The final result of the computation is not a single crack pattern, but rather several possible crack patterns and their probabilities. The stochastic solution framework using evolving random fields allows additionally the interesting possibility of conditioning the probabilities of further crack paths on intermediate crack patterns.",
+      "link": "https://arxiv.org/abs/2005.01332"
+    },
+    {
+      "title": "Maximum Entropy Snapshot Sampling for Reduced Basis Generation",
+      "authors": "Fotios Kasolis, Markus Clemens",
+      "date": "2020-05-04T23:00:00.000Z",
+      "abstract": "Snapshot back-ended reduced basis methods for dynamical systems commonly rely on the singular value decomposition of a matrix whose columns are high-fidelity solution vectors. An alternative basis generation framework is developed here. The advocated maximum entropy snapshot sampling (MESS) identifies the snapshots that encode essential information regarding the system's evolution, by exploiting quantities that are suitable for quantifying a notion of dynamical stability. The maximum entropy snapshot sampling enables a direct reduction of the number of snapshots. A reduced basis is then obtained with any orthonormalization process on the resulting reduced sample of snapshots. The maximum entropy sampling strategy is supported by rigid mathematical foundations, it is computationally efficient, and it is inherently automated and easy to implement.",
+      "link": "https://arxiv.org/abs/2005.01280"
+    },
+    {
+      "title": "Numerical Modeling of Acousto–Plasmonic Coupling in Metallic Nanoparticles",
+      "authors": "Ophélie Saison-Francioso, Gaëtan Lévêque, Abdellatif Akjouj",
+      "date": "2020-05-04T23:00:00.000Z",
+      "abstract": "We describe a computational approach to study the acousto–plasmonic coupling in metallic nanoparticles. We use the high-level multiphysics finite element software FreeFEM developed at Laboratoire Jacques-Louis Lions of Pierre and Marie Curie University (Paris). Our numerical method determines one after the other the acoustic modes of the nanoparticles and the modulation of the electromagnetic properties. The transfer of the deformed geometries between acoustic and electromagnetic simulations is realized by an update of the nodal coordinates situated at the boundary between the nanoparticle and its host medium and using a mesh deformation algorithm based on radial basis function interpolation. Thus, we theoretically investigate different coupling mechanisms between confined vibrations and surface plasmons: shape effect, electron density effect due to changes of the nanoparticle volume, and interband transition effect which is evaluated by the deformation potential mechanism.",
+      "link": "https://doi.org/10.1021/acs.jpcc.0c00874"
+    },
+    {
+      "title": "Error analysis for the finite element approximation of the Brinkmann-Darcy-Forchheimer model for porous media with mixed boundary conditions",
+      "authors": "Pierre-Henri Cocquet, Michaël Rakotobe, Delphine Ramalingom, Alain Bastide",
+      "date": "2020-05-03T23:00:00.000Z",
+      "abstract": "This paper deals with the finite element approximation of the Darcy-Brinkman-Forchheimer equation, involving a porous media with spatially-varying porosity, with mixed boundary condition such as inhomogeneous Dirichlet and traction boundary conditions. We first prove that the considered problem has a unique solution if the source terms are small enough. The convergence of a Taylor-Hood finite element approximation using a finite element interpolation of the porosity is then proved under similar smallness assumptions. Some optimal error estimates are next obtained when assuming the solution to the Darcy-Brinkman-Forchheimer model are smooth enough. We end this paper by providing a fixed-point method to solve iteratively the discrete non-linear problems and with some numerical experiments to make more precise the smallness assumptions on the source terms and to illustrate the theoretical convergence results.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02561058/"
+    },
+    {
+      "title": "Maximization of the Steklov eigenvalues with a diameter constraint",
+      "authors": "Abdelkader Al Sayed, Beniamin Bogosel, Antoine Henrot, Florent Nacry",
+      "date": "2020-04-29T23:00:00.000Z",
+      "abstract": "In this paper, we address the problem of maximizing the Steklov eigenvalues with a diameter constraint. We provide an estimate of the Steklov eigenvalues for a convex domain in terms of its diameter and volume and we show the existence of an optimal convex domain. We establish that balls are never maximizers, even for the first non-trivial eigenvalue that contrasts with the case of volume or perimeter constraints. Under an additional regularity assumption, we are able to prove that the Steklov eigenvalue is multiple for the optimal domain. We illustrate our theoretical results by giving some optimal domains in the plane thanks to a numerical algorithm.",
+      "link": "https://arxiv.org/abs/2004.14142"
+    },
+
+
+    {
+      "title": "Accurate Closed-Form Formulas for the Electromagnetic Parameters of a New Low-Loss High Performance Quasi-TEM Sliced Coaxial Coupler",
+      "authors": "Djamal Lachachi, Yamina Bekri, Nadia Benabdallah, Abdelhakim Boudkhil, Mohammed Chetioui,  Nasreddine Benahme",
+      "date": "2020-04-28T23:00:00.000Z",
+      "abstract": "Coupled coaxial lines have long history of application in microwave and RF circuits. In this work, we present, for the first time, simple and concise formulas for the electromagnetic (EM) parameters of a new low-loss, high performance quasi-TEM sliced coaxial coupler, convenient for high-power and high-frequency applications. The proposed configuration allows a wide range of coupling coefficients from 2.5 to 61 dB with low losses and reduced dispersion. Based on finite element method (FEM) analysis and by solving the Laplace equation in two dimensions (2D), the study of the proposed coupler is realized under FreeFEM environment. In order to validate our numerical results, we have adapted our FEM-program to characterize the structure of interest for the homogenous case. Our FEM-results are very close with those obtained by other methods of the scientific literature. In a quasi-TEM approximation of the present work , we focus mainly on determining the even-and odd-mode characteristic impedances (Z 0e , Z 0o), the even-and odd-mode effective dielectric constants (ε 0eff , ε 0odd), coupling coefficient (k), and the primary inductive and capacitive matrices ([L], [C]). The effects of cut depth (u) and dielectric radius to the inner-conductor radius (w/r c) ratios on the EM-parameters have been taken into account. When the quasi-TEM parameters were determined, we have applied curve-fitting techniques under origin50 graph environment to find new simple, concise formulas for all the EM-parameters of the quasi-TEM sliced coaxial coupler. The difference between the calculated numerical values using our CAD program based on the FEM and the derived equations is less than 2% over a wide range of design parameters. Using these analytical models, an analysis can be readily implemented in modern CAE software tools for the design of high-power and high-frequency microwave and wireless components. To show the usefulness of the design equations, 50 Ω, 7-dB and 27-dB, microwave compact directional quasi-TEM sliced coaxial couplers with only 8.034×5.6×7.2 mm 3 and 10.71×5.6×11.8 mm 3 , of size, operating at 10 GHz and 5 GHz, respectively, will be designed. Index Terms-Closed-form expressions. quasi-TEM sliced coaxial coupler, EM-parameters, FEM results.",
+      "link": "https://www.researchgate.net/publication/340681724_Accurate_Closed-Form_Formulas_for_the_Electromagnetic_Parameters_of_a_New_Low-Loss_High_Performance_Quasi-TEM_Sliced_Coaxial_Coupler"
+    },
+    {
+      "title": "Galerkin Type Methods for Semilinear Time-Fractional Diffusion Problems",
+      "authors": "Samir Karaa",
+      "date": "2020-04-25T23:00:00.000Z",
+      "abstract": "We derive optimal L2-error estimates for semilinear time-fractional subdiffusion problems involving Caputo derivatives in time of order α∈(0,1), for cases with smooth and nonsmooth initial data. A general framework is introduced allowing a unified error analysis of Galerkin type space approximation methods. The analysis is based on a semigroup type approach and exploits the properties of the inverse of the associated elliptic operator. Completely discrete schemes are analyzed in the same framework using a backward Euler convolution quadrature method in time. Numerical examples including conforming, nonconforming and mixed finite element (FE) methods are presented to illustrate the theoretical results.",
+      "link": "https://arxiv.org/abs/2004.12113"
+    },
+    {
+      "title": "An adaptive finite element DtN method for the open cavity scattering problems",
+      "authors": "Xiaokai Yuan, Gang Bao, Peijun Li",
+      "date": "2020-04-22T23:00:00.000Z",
+      "abstract": "Consider the scattering of a time-harmonic electromagnetic plane wave by an open cavity which is embedded in a perfectly electrically conducting infinite ground plane. This paper concerns the numerical solutions of the open cavity scattering problems in both transverse magnetic and transverse electric polarizations. Based on the Dirichlet-to-Neumann (DtN) map for each polarization, a transparent boundary condition is imposed to reduce the scattering problem equivalently into a boundary value problem in a bounded domain. An a posteriori error estimate based adaptive finite element DtN method is proposed. The estimate consists of the finite element approximation error and the truncation error of the DtN operator, which is shown to decay exponentially with respect to the truncation parameter. Numerical experiments are presented for both polarizations to illustrate the competitive behavior of the adaptive method.",
+      "link": "https://arxiv.org/abs/2004.10831"
+    },
+    {
+      "title": "Error analysis of proper orthogonal decomposition data assimilation schemes for the Navier-Stokes equations",
+      "authors": "Bosco García Archilla, Julia Novo, Samuele Rubino",
+      "date": "2020-04-20T23:00:00.000Z",
+      "abstract": "The error analysis of a proper orthogonal decomposition (POD) data assimilation (DA) scheme for the Navier-Stokes equations is carried out. A grad-div stabilization term is added to the formulation of the POD method. Error bounds with constants independent on inverse powers of the viscosity parameter are derived for the POD algorithm. No upper bounds in the nudging parameter of the data assimilation method are required. Numerical experiments show that, for large values of the nudging parameter, the proposed method rapidly converges to the real solution, and greatly improves the overall accuracy of standard POD schemes up to low viscosities over predictive time intervals.",
+      "link": "https://arxiv.org/abs/2004.09127"
+    },
+    {
+      "title": "A Dimension-Reduction Model for Brittle Fractures on Thin Shells with Mesh Adaptivity",
+      "authors": "Stefano Almi, Sandro Belz, Stefano Micheletti, Simona Perotto",
+      "date": "2020-04-19T23:00:00.000Z",
+      "abstract": "In this paper we derive a new two-dimensional brittle fracture model for thin shells via dimension reduction, where the admissible displacements are only normal to the shell surface. The main steps include to endow the shell with a small thickness, to express the three-dimensional energy in terms of the variational model of brittle fracture in linear elasticity, and to study the Γ-limit of the functional as the thickness tends to zero. The numerical discretization is tackled by first approximating the fracture through a phase field, following an Ambrosio-Tortorelli like approach, and then resorting to an alternating minimization procedure, where the irreversibility of the crack propagation is rigorously imposed via an inequality constraint. The minimization is enriched with an anisotropic mesh adaptation driven by an a posteriori error estimator, which allows us to sharply track the whole crack path by optimizing the shape, the size, and the orientation of the mesh elements. Finally, the overall algorithm is successfully assessed on two Riemannian settings and proves not to bias the crack propagation.",
+      "link": "https://arxiv.org/abs/2004.08871"
+    },
+    {
+      "title": "Polynomial relations for cylindrical wheel stiffness characterization for use in a rolling noise prediction model",
+      "authors": "Matthew Edwards, Fabien Chevillotte, François-Xavier Bécot, Luc Jaouen, Nicolas Totaro",
+      "date": "2020-04-16T23:00:00.000Z",
+      "abstract": "In vehicle tire/road contact modeling, dynamic models are typically used which incorporate the vehicle’s suspension in their estimation: thus relying on a known stiffness to determine the movement of the wheel in response to roughness excitation. For the case of a wheeled device rolling on a floor (such as a delivery trolley moving merchandise around inside a commercial building), there is often no suspension, yet the wheel is still too soft to able to be considered mechanically rigid (as is the case in train/rail contact). A model which is aimed at incorporating the dynamic effects of the trolley in predicting the sound generated by rolling needs to provide a robust way of estimating the wheel’s effective stiffness. This work presents an original technique for estimating the stiffness of a solid cylindrical wheel. A parametric study was conducted in order to identify the dependence of the wheel stiffness on each of the relevant variables: including the wheel’s radius, axle size, width, applied load, and material properties. The methodology may be used to estimate the stiffness of new wheel types (i.e. different geometries and materials) without needing to solve a finite element model each time. Such a methodology has application beyond the field of acoustics, as the characterization of shapes with non-constant cross sections may be useful in the wider field of materials science.",
+      "link": "https://doi.org/10.1051/aacus/2020003 "
+    },
+    {
+      "title": "Calculation of the normal modes of closed waveguides",
+      "authors": "Malykh M.D., Divakov D.V., Egorov A.A., Kuziv Y.Y.",
+      "date": "2020-04-10T23:00:00.000Z",
+      "abstract": "The aim of the work is the development of numerical methods for solving waveguiding problems of the theory of waveguides, as well as their implementation in the form of software packages focused on a wide range of practical problems from the classical issues of microwave transmission to the design of optical waveguides and sensors. At the same time, we strive for ease of implementation of the developed methods in computer algebra systems (Maple, Sage) or in software oriented to the finite element method (FreeFem++). The work uses the representation of electromagnetic fields in a waveguide using four potentials. These potentials do not reduce the number of sought functions, but even in the case when the dielectric permittivity and magnetic permeability are described by discontinuous functions, they turn out to be quite smooth functions. A simple check of the operability of programs by calculating the normal modes of a hollow waveguide is made. It is shown that the relative error in the calculation of the first 10 normal modes does not exceed 4%. These results indicate the efficiency of the method proposed in this article.",
+      "link": "https://doi.org/10.22363/2658-4670-2020-28-1-62-76"
+    },
+    {
+      "title": "The liquid of aloe extract with shear-thinning Carreau fluids",
+      "authors": "Erhui Wang, Xuelan Zhang, Liancun Zheng, Goong Chen",
+      "date": "2020-04-08T23:00:00.000Z",
+      "abstract": "In the analysis of plant extracts, rheological and heat transfer characteristics are of great significance for one to study regarding applications, such as in the biorheology or pharmaceutical industries. In this paper, we examine the aloe extract experimentally and test its rheological properties. To gain a better understanding of the extract's fluid properties, numerical simulations using FEM are performed on a square channel. Results show that, under a large shear rate, such a fluid behavior closely to the shear-thinning power-law fluid. Combining with numerical simulations, we analyze the influence of the Pr number and the material coefficient λ on the motion of the fluid. We also discuss the effects of other parameter values.",
+      "link": "https://doi.org/10.1016/j.molliq.2020.113011"
+    },
+    {
+      "title": "Full-waveform redatuming via a TRAC approach: a first step towards target oriented inverse problem",
+      "authors": "Franck Assous, Frédéric Nataf",
+      "date": "2020-04-02T23:00:00.000Z",
+      "abstract": "In inverse problems, redatuming data consists in virtually moving thesensors from the original acquisition location to an arbitrary position. Thisis an essential tool for target oriented inversion. An exact redatumingmethod which has the peculiarity to be robust with respect to noise isproposed. Our iterative method is based on the Time Reversal AbsorbingConditions (TRAC) approach [1] and avoids the need for a regulariza-tion strategy. Numerical results and comparisons with other redatumingapproaches illustrate the robustness of our method.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02530264/"
+    },
+    {
+      "title": "Bridging a mesoscopic inhomogeneity to macroscopic performance of amorphous materials in the framework of the phase field modeling",
+      "authors": "Edgar Avalos, Shuangquan Xie, Kazuto Akagi, Yasumasa Nishiura",
+      "date": "2020-03-26T23:00:00.000Z",
+      "abstract": "One of the big challenges in materials science is to bridge microscopic or mesoscopic properties to macroscopic performance such as fracture toughness. This is particularly interesting for the amorphous materials such as epoxy resins because their micro/meso structures are difficult to characterize so that any information connecting different scales would be extremely useful. At the process level the polymerization rate, which influences considerably the performance of materials, can be changed experimentally. However, it is known that the maximum toughness does not always appear at the maximum polymerization rate, which suggests that some differences in the micro/meso-scopic structure affect the macroscopic property behind. The goal of this article is to present a framework to bridge between a mesoscopic observation of X-ray CT images and the macroscopic criterion of fracture toughness computed via phase field modeling. First we map the X-ray images with different polymerization rates into several categories using different methods: one is singular value decomposition (SVD) and the other is persistent homology. Secondly we compute a crack propagation of each sample and evaluate a scalar value called the effective toughness (ET) via J-integral, which is one of the good candidates indicating a toughness of materials. It turns out that ET reflects the performance of each sample and consistent with the experimental results.",
+      "link": "https://doi.org/10.1016/j.physd.2020.132470"
+    },
+    {
+      "title": "ϕ-FEM, a finite element method on domains defined by level-sets: the Neumann boundary case",
+      "authors": "Michel Duprez, Vanessa Lleras, Alexei Lozinski",
+      "date": "2020-03-26T23:00:00.000Z",
+      "abstract": "We extend a fictitious domain-type finite element method, called ϕ-FEM and introduced in arXiv:1903.03703 [math.NA], to the case of Neumann boundary conditions. The method is based on a multiplication by the level-set function and does not require a boundary fitted mesh. Unlike other recent fictitious domain-type methods (XFEM, CutFEM), our approach does not need any non-standard numerical integration on cut mesh elements or on the actual boundary. We prove the optimal convergence of ϕ-FEM and the fact that the discrete problem is well conditioned inependently of the mesh cuts. The numerical experiments confirm the theoretical results.",
+      "link": "https://arxiv.org/abs/2003.11733"
+    },
+    {
+      "title": "Coupled vibro-acoustic modeling of a dielectric elastomer loudspeaker",
+      "authors": "Emil Garnell, Olivier Doaré, Corinne Rouby",
+      "date": "2020-03-20T23:00:00.000Z",
+      "abstract": "Dielectric elastomer membranes are soft electro-active materials capable of large deformations. When inflated over a cavity, the membrane radiates sound and can therefore be used as a loudspeaker. This type of device has been studied both experimentally and numerically. However, most studies on the dynamics of dielectric elastomer membranes either focus on the very low frequency behavior to analyse viscosity effects for example, or try to maximise the overall radiated sound pressure level. Here the mid-frequency range is analysed in detail, by setting up a fully coupled finite element model of an inflated dielectric elastomer membrane. Electrostatics, vibro-acoustics, free-field radiation, and pre-stressed linear dynamics are solved together, to find the fluid loaded resonance modes. The dynamics of the membrane and the sound radiation are then computed using this resonance mode basis. Perfectly matched layers are used to implement the Sommerfeld radiation boundary condition. The model is validated by a comparison with measurements of the pressure radiated by a prototype, and predicts accurately the radiated pressure and the directivity. This model should therefore help the development of optimized dielectric elastomer loudspeakers, with improved frequency responses and directivity.",
+      "link": "https://doi.org/10.1121/10.0000930"
+    },
+    {
+      "title": "Linear global stability of liquid metal mixed convection in a horizontal bottom-heating duct under strong transverse magnetic field",
+      "authors": "Jun Hu (胡军)",
+      "date": "2020-03-17T23:00:00.000Z",
+      "abstract": "Two-dimensional steady-state solutions of liquid metal mixed convection in a horizontal bottom-heating duct under a strong magnetic field are first computed numerically by the Newton iteration method along with the spatial discretization of the Taylor–Hood finite element. Two branches of steady solutions with symmetrical rolls and a pair of asymmetrical solutions with a single roll are identified and can be regarded as the base flow for linear global stability analysis. The symmetrical steady solution for the first branch has a nearly uniform distribution for the temperature field in the transverse direction, while the second branch occurs at much larger Grashof numbers and the temperature field becomes nonuniform transversely. The linear stability analysis is performed for a fixed Reynolds number and Prandtl number with Re = 5000 and Pr = 0.0321. For the symmetrical rolls of the first branch, with an increase in the Grashof number, two-dimensional stationary instabilities first occur at small Hartmann numbers, while three-dimensional oscillatory instabilities first appear at moderate or large Hartmann numbers. From the further study of the two-dimensional instabilities, it is revealed that the asymmetrical solution is actually bifurcated supercritically from the symmetrical solution at a two-dimensional critical Grashof number. In addition, the critical curve of the Grashof number with respect to the Hartmann number for the three-dimensional oscillatory mode shows that there exists a minimum critical Grashof number, which occurs at a moderate Hartmann number. The critical curves of the one-roll asymmetrical solution are also exhibited and determined by two three-dimensional oscillatory unstable modes. It is revealed that there exists a minimum Hartmann number below which the asymmetrical steady-state can always remain stable for all Grashof numbers (5 × 105–107). The energy analyses at the oscillatory critical thresholds with different Hartmann numbers are performed to exhibit that buoyancy is the dominant destabilizing term, and the magnetic force is always the main stabilization term for both symmetrical and asymmetrical solutions. In addition, both streamwise and cross-sectional shears of the basic flow are important for the determination of the linear stability boundary of the asymmetrical solution.",
+      "link": "https://doi.org/10.1063/1.5145240"
+    },
+    {
+      "title": "Analysis of a bone remodeling model with myeloma disease arising in cellular dynamics",
+      "authors": "Jacobo Baldonedo, José R. Fernández, Abraham Segade",
+      "date": "2020-03-13T23:00:00.000Z",
+      "abstract": "In this work we study a bone remodeling model for the evolution of the myeloma disease. The biological problem is written as a coupled nonlinear system consisting of parabolic partial differential equations. They are written in terms of the concentrations of osteoblasts and osteoclasts, the density of the relative bone and the concentration of the tumor cells. Then, we deal with the numerical analysis of this variational problem, introducing a numerical approximation by using the finite element method and a hybrid combination of both implicit and explicit Euler schemes. We perform some a priori error estimates and show a few numerical simulations to demonstrate the accuracy of the approximation. Finally, we present the comparison with previous works and the behavior of the solution in two‐dimensional examples.",
+      "link": " https://doi.org/10.1002/cnm.3333"
+    },
+    {
+      "title": "An energy stable one-field monolithic arbitrary Lagrangian-Eulerian formulation for fluid-structure interaction",
+      "authors": "Yongxing Wang, Peter K. Jimack, Mark A. Walkley, Olivier Pironneau",
+      "date": "2020-03-08T23:00:00.000Z",
+      "abstract": "In this article we present a one-field monolithic finite element method in the Arbitrary Lagrangian-Eulerian (ALE) formulation for Fluid-Structure Interaction (FSI) problems. The method only solves for one velocity field in the whole FSI domain, and it solves in a monolithic manner so that the fluid solid interface conditions are satisfied automatically. We prove that the proposed scheme is unconditionally stable, through energy analysis, by utilising a conservative formulation and an exact quadrature rule. We implement the algorithm using both F-scheme and d-scheme, and demonstrate that the former has the same formulation in two and three dimensions. Finally several numerical examples are presented to validate this methodology, including combination with remesh techniques to handle the case of very large solid displacement.",
+      "link": "https://arxiv.org/abs/2003.03819"
+    },
+    {
+      "title": "Obstacle detection in fluid flow using asymptotic analysis technique",
+      "authors": "Rakia Malek, Mohamed Abdelwahed, Nejmeddine Chorfi & Maatoug Hassine",
+      "date": "2020-03-04T23:00:00.000Z",
+      "abstract": "We consider the geometric inverse problem of determining an immersed obstacle in a two-dimensional non-stationary Stokes fluid flow. We use the topological gradient method to solve this problem. The unknown obstacle is located and reconstructed using the leading term of the Khon–Vogelius shape function variation. We propose a simple and fast detection algorithm. The efficiency and accuracy of the proposed approach are illustrated by some numerical examples.",
+      "link": "https://boundaryvalueproblems.springeropen.com/articles/10.1186/s13661-020-01347-y"
+    },
+    {
+      "title": "Maxwell interface problems‐ existence and uniqueness of solutions for Maxwell's equations",
+      "authors": "Saoussen Boujemaa, Abdessatar Khelifi",
+      "date": "2020-02-28T23:00:00.000Z",
+      "abstract": "In this paper, we study the Maxwell interface problem. We provide existence and uniqueness results of solutions of this problem in the harmonic time case. Our results are obtained by setting up the problem as a variational problem in the sobolev space 𝐇 (curl,Ω) on a bounded domain. We prove analytical estimates on the convergence of perturbed solution. Numerical examples for different shapes of the domain will be presented.",
+      "link": "https://doi.org/10.1002/zamm.201800033"
+    },
+    {
+      "title": "Evolution of anisotropic diffusion in two-dimensional heterogeneous environments",
+      "authors": "Emeric Bouin, Guillaume Legendre, Yuan Lou, Nichole Slover",
+      "date": "2020-02-25T23:00:00.000Z",
+      "abstract": "We consider a system of two competing populations in two-dimensional heterogeneous environments. The populations are assumed to move horizontally and vertically with different probabilities, but are otherwise identical. We regard these probabilities as dispersal strategies. We show that the evolutionarily stable strategies are to move in one direction only. Our results predict that it is more beneficial for the species to choose the direction with smaller variation in the resource distribution. This finding seems to be in agreement with the classical results of Hasting [15] and Dockery et al. [11] for the evolution of slow dispersal, i.e. random diffusion is selected against in spatially heterogeneous environments. These conclusions also suggest that broader dispersal strategies should be considered regarding the movement in heterogeneous habitats.",
+      "link": "https://arxiv.org/abs/2002.10724"
+    },
+    {
+      "title": "FreeFEM++ code for reaction-diffusion equation–based topology optimization: for high-resolution boundary representation using adaptive mesh refinement",
+      "authors": "Cheolwoong Kim, Mingook Jung, Takayuki Yamada, Shinji Nishiwaki & Jeonghoon Yoo",
+      "date": "2020-02-18T23:00:00.000Z",
+      "abstract": "In this article, we present a simple FreeFEM++ code to represent high-resolution boundaries of the optimal shape using reaction-diffusion equation–based topology optimization and adaptive mesh refinement. The design algorithm is divided into two parts to achieve a high quality of the boundary. In the first part, loop 1, the ordinary method for a reaction-diffusion equation–based topology optimization, is applied to obtain the optimal shape. In the second part, loop 2, a modified reaction-diffusion equation combined with a double well potential, is employed as an optimizer and the adaptive mesh refinement is used with a gradual decrease of the diffusion coefficient. Because the code is intended for educational purposes, this paper provides background knowledge for understanding of the finite element method and topology optimization. Various numerical examples are discussed to confirm the robustness of the proposed design algorithm. The corresponding code may be downloaded from the website http://ssd.yonsei.ac.kr.",
+      "link": "https://link.springer.com/article/10.1007/s00158-020-02498-3"
+    },
+    {
+      "title": "Simulation of spatially distributed intensive biological systems",
+      "authors": "Antoine Haddon, Victor Alcaraz-Gonzalez, Maha Hmissi, Jérôme Harmand, Antoine Rousseau",
+      "date": "2020-02-17T23:00:00.000Z",
+      "abstract": "We introduce a new type of bioreactor model that offers a representation of the spatial features of a pilot scale upflow fixed bed reactor. This model couples fluid dynamics and biological activity in order to obtain the internal gradient of substrate and biomass concentrations. We take advantage of reactor geometry to reduce the model to a single spatial dimension in the section containing the fixed bed but in other sections, we consider a 3D model with Navier-Stokes equations for the fluid dynamics. To represent the biological activity, we use a 2 step model and for the substrates, advection-diffusion-reaction equations. We only consider the biomasses that are attached in the fixed bed section and to take into account crowding effects, we model their growth with a density dependent function. We show that this model can reproduce the spatial gradient of experimental data and helps to better understand the internal dynamics of the reactor.",
+      "link": "https://hal.inria.fr/hal-02480178/"
+    },
+    {
+      "title": "FEMEngine: Finite Element Method C++ Code Based on Functional and Template Metaprogramming",
+      "authors": "Alexey Gurin, Alexey Baykin, Timofey Polyansky, Anton Krivtsov",
+      "date": "2020-02-13T23:00:00.000Z",
+      "abstract": "The paper discusses the problems of a finite element method programming. Modern C++ functional programming and template metaprogramming approach to finite element analysis is presented. This approach simplifies the implementation of an effective assembly of the stiffness matrix for a problem defined by a weak form. This method is tested by a solution of the Poisson equation on an unstructured 3D tetrahedral mesh using FEM C++ library FEMEngine developed by authors. The function which calculates the matrix is generated by higher order functions during the compilation stage. The performance of the computation is analyzed by studying of a disassembled code and by comparison with the popular open source FEM software.",
+      "link": "https://ieeexplore.ieee.org/abstract/document/8991149/authors#authors"
+    },
+    {
+      "title": "Regularity of all minimizers of a class of spectral partition problems",
+      "authors": "Hugo Tavares, Alessandro Zilio",
+      "date": "2020-02-10T23:00:00.000Z",
+      "abstract": "We study a rather broad class of optimal partition problems with respect to monotone and coercive functional costs that involve the Dirichlet eigenvalues of the partitions. We show a sharp regularity result for the entire set of minimizers for a natural relaxed version of the original problem, together with the regularity of eigenfunctions and a universal free boundary condition. Among others, our result covers the cases of the following functional costs (ω1,…,ωm)↦∑i=1m(∑j=1kiλj(ωi)pi)1/pi,∏i=1m(∏j=1kiλj(ωi)),∏i=1m(∑j=1kiλj(ωi)) where (ω1,…,ωm) are the sets of the partition and λj(ωi) is the j-th Laplace eigenvalue of the set ωi with zero Dirichlet boundary conditions.",
+      "link": "https://arxiv.org/abs/2002.04064"
+    },
+    {
+      "title": "Numerical Implementation of Phase-Field Models of Brittle Fracture",
+      "authors": "Laura De Lorenzis, Tymofiy Gerasimov",
+      "date": "2020-02-09T23:00:00.000Z",
+      "abstract": "These lecture notes address the main challenging computational aspects of phase-field modeling of brittle fracture. We focus, in particular, on the irreversibility constraint and the iterative solution strategy for non-convex minimization problems. In the former case, we present multiple options of incorporating the constraint and discuss the equivalence of the resulting formulations. For the latter, we also consider various available options and critically assess the efficiency and robustness of some of them. Numerical examples on well-known benchmark problems illustrate the theoretical findings.",
+      "link": "https://link.springer.com/chapter/10.1007/978-3-030-37518-8_3"
+    },
+
+    {
+      "title": "Universal Algebraic Controllers and System Identification",
+      "authors": "Fredy Vides",
+      "date": "2020-01-29T23:00:00.000Z",
+      "abstract": "In this document, some structured operator approximation theoretical methods for system identification of nearly eventually periodic systems, are presented. Let ℂn×m denote the algebra of n×m complex matrices. Given ε>0, an arbitrary discrete-time dynamical system (Σ,) with state-space Σ contained in the finite dimensional Hilbert space ℂn, whose state-transition map :Σ×([0,∞)∩ℤ)→Σ is unknown or partially known, and needs to be determined based on some sampled data in a finite set Σ̂ ={xt}1≤t≤m⊂Σ according to the rule (xt,1)=xt+1 for each 1≤t≤m−1, and given x∈Σ̂ . We study the solvability of the existence problems for two triples (p,A,φ) and (p,Aη,Φ) determined by a polynomial p∈ℂ[z] with °(p)≤m, a matrix root A∈ℂm×m and an approximate matrix root Aη∈ℂr×r of p(z)=0 with r≤m, two completely positive linear multiplicative maps φ:ℂm×m→ℂn×n and Φ:ℂr×r→ℂn×n, such that ‖(x,t)−φ(At)x‖≤ε and ‖Φ(Atη)x−φ(At)x‖≤ε, for each integer t≥1 such that ‖(x,t)−y‖≤ε for some y∈Σ̂ . Some numerical implementations of these techniques for the reduced-order predictive simulation of dynamical systems in continuum and quantum mechanics, are outlined.",
+      "link": "https://arxiv.org/abs/2001.11133"
+    },
+    {
+      "title": "Automatic weak imposition of free slip boundary conditions via Nitsche's method: application to nonlinear problems in geodynamics",
+      "authors": "Nathan Sime, Cian R. Wilson",
+      "date": "2020-01-28T23:00:00.000Z",
+      "abstract": "Imposition of free slip boundary conditions in science and engineering simulations presents a challenge when the simulation domain is non-trivial. Inspired by recent progress in symbolic computation of discontinuous Galerkin finite element methods, we present a symmetric interior penalty form of Nitsche's method to weakly impose these slip boundary conditions and present examples of its use in the Stokes subsystem motivated by problems in geodynamics. We compare numerical results with well established benchmark problems. We also examine performance of the method with iterative solvers.",
+      "link": "https://arxiv.org/abs/2001.10639"
+    },
+    {
+      "title": "Mathematical modelling and numerical approximation of a leachate flow in the anaerobic biodegradation of waste in a landfill",
+      "authors": "Zakaria Belhachmi, Zoubida Mghazli, Salih Ouchtout",
+      "date": "2020-01-25T23:00:00.000Z",
+      "abstract": "We consider a coupled PDE-ODEs model that describes the bacterial dynamics of the anaerobic biodegradation of waste in a landfill taken as an unsatureted porous medium. We add a diffusion term in the ODEs part which gives a rise to a reaction-diffusion system coupled with porous media equations. This yields a new model of the biodegradation of the waste where the biological variables are varying in space and time. We perform the mathematical analysis of the resulting system and we consider a discretization based on BDF schemes and P1 conforming finite elements for the reaction-diffusion subsystem and a mixed finite elements RT0 /P0 for the Darcy flow. We carry out the numerical analysis and we obtain the expected a priori estimates. We perform several numerical 2D and 3D simulations which are in agreement with the theoretical results.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02455294"
+    },
+    {
+      "title": "Energy stable discretization for two-phase porous media flows",
+      "authors": "Clément Cancès, Flore Nabet",
+      "date": "2020-01-24T23:00:00.000Z",
+      "abstract": "We propose a P1 finite-element scheme with mass-lumping for a model of two incompressible and immiscible phases in a porous media flow. We prove the dissipation of the free energy and the existence of a solution to the nonlinear scheme. We also present numerical simulations to illustrate the behavior of the scheme.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02442233/"
+    },
+    {
+      "title": "Parameter Identification by Statistical Learning of a Stochastic Dynamical Systems Modelling a Fishery with price variation",
+      "authors": "Pierre Auger, Olivier Pironneau",
+      "date": "2020-01-19T23:00:00.000Z",
+      "abstract": "In this short paper we report on an inverse problem for parameter setting of a model used for the modelling of fishing on the West African coast. We compare the solution of this inverse problem by a Neural Network with the more classical algorithms of optimisation and stochastic control. The Neural Network does much better.",
+      "link": "https://hal.sorbonne-universite.fr/hal-02444862/"
+    },
+    {
+      "title": "Stability, analyticity, and maximal regularity for parabolic finite element problems on smooth domains",
+      "authors": "Takahito Kashiwabara, Tomoya Kemmochi",
+      "date": "2020-01-13T23:00:00.000Z",
+      "abstract": "In this paper, we consider the finite element semidiscretization for a parabolic problem on a smooth domain $ \Omega \subset \mathbb{R}^N$ with the Neumann boundary condition. We emphasize that the domain can be nonconvex in general. We discretize the this problem by the finite element method by constructing a family of polygonal or polyhedral domains $ \{ \Omega _h \}_h$ that approximate the original domain $ \Omega $. The aim of this study is to derive the smoothing property for the discrete parabolic semigroup and the maximal regularity for the discrete elliptic operator. The main difficulty is the effect of the boundary-skin (symmetric difference) $ \Omega \bigtriangleup \Omega _h$. In order to address the effect of the boundary-skin, we introduce the tubular neighborhood of the original boundary $ \partial \Omega $.",
+      "link": "https://doi.org/10.1090/mcom/3500"
+    },
+    {
+      "title": "Numerical simulation of rigid particles in Stokes flow: lubrication correction for any (regular) shape of particles",
+      "authors": "Aline Lefebvre-Lepot, Flore Nabet",
+      "date": "2020-01-09T23:00:00.000Z",
+      "abstract": "We address the problem of numerical simulation of suspensions of rigid particles in a Stokes flow. We focus on the inclusion of the singular short range interaction effects (lubrication effects) in the simulations when the particles come close one to another. The problem is solved without introducing new hypothesis nor model. As in [Lefebvre-Lepot, Merlet, Nguyen, JFM, 2015], the key idea is to decompose the velocity and pressure flows in a sum of a singular and a regular part. In this article, the singular part is computed using an explicit asymptotic expansion of the solution when the distance goes to zero. This expansion is similar to the asymptotic expansion proposed in [Hillairet, Kelai, Asymptotic Analysis, 2015] but is more appropriate for numerical simulations of suspensions. It can be computed for any shape of particles. Using [Hillairet, Kelai, Asymptotic Analysis, 2015] as an intermediate result, we prove that the remaining part is regular in the sense that it is bounded independently of the distance. As a consequence, only a small number of degrees of freedom are necessary to obtain accurate results. The method is tested in dimension 2 for clusters of two or three aligned particles with general rigid velocities. We show that, as expected, the convergence is independent on the distance.",
+      "link": "https://hal.archives-ouvertes.fr/hal-02433849/"
+    },
+    {
+      "title": "Medusa: A C++ Library for solving PDEs using Strong Form Mesh-Free methods",
+      "authors": "Jure Slak, Gregor Kosec",
+      "date": "2019-12-31T23:00:00.000Z",
+      "abstract": "Medusa, a novel library for implementation of strong form mesh-free methods, is described. We identify and present common parts and patterns among many such methods reported in the literature, such as node positioning, stencil selection and stencil weight computation. Many different algorithms exist for each part and the possible combinations offer a plethora of possibilities for improvements of solution procedures that are far from fully understood. As a consequence there are still many unanswered questions in mesh-free community resulting in vivid ongoing research in the field. Medusa implements the core mesh-free elements as independent blocks, which offers users great flexibility in experimenting with the method they are developing, as well as easily comparing it with other existing methods. The paper describes the chosen abstractions and their usage, illustrates aspects of the philosophy and design, offers some executions time benchmarks and demonstrates the application of the library on cases from linear elasticity and fluid flow in irregular 2D and 3D domains.",
+      "link": "https://arxiv.org/abs/1912.13282"
+    },
+    {
+      "title": "High-performance numerical simulation of biodegradation process with moving boundaries",
+      "authors": "Mojtaba Barzegari, Liesbet Geris",
+      "date": "2019-12-13T23:00:00.000Z",
+      "abstract": "",
+      "link": "https://lirias.kuleuven.be/retrieve/553011"
+    },
+
+    {
+      "title": "Assembly of multiscale linear PDE operators",
+      "authors": "Miroslav Kuchta",
+      "date": "2019-12-19T23:00:00.000Z",
+      "abstract": "In numerous applications the mathematical model consists of different processes coupled across a lower dimensional manifold. Due to the multiscale coupling, finite element discretization of such models presents a challenge. Assuming that only singlescale finite element forms can be assembled we present here a simple algorithm for representing multiscale models as linear operators suitable for Krylov methods. Flexibility of the approach is demonstrated by numerical examples with coupling across dimensionality gap 1 and 2. Preconditioners for several of the problems are discussed. ",
+      "link": "https://arxiv.org/abs/1912.09319"
     },
     {
       "title": "Optimal Control of Thermal Pollution Emitted by Power Plants",
@@ -85,6 +833,13 @@
       "date": "2019-11-22T23:00:00.000Z",
       "abstract": "Gas crossover is an unavoidable phenomenon in proton exchange membrane fuel cells. Gas crossover leads to heat and water generations without conducting any useful works, hence increasing fuel consumption. Particularly, Gas crossover can result in the degradation and formation of pinholes inside the membrane. Therefore, the gas crossover is a critical factor significantly affecting the durability of a fuel cell and quality of the membrane. Herein, we numerically investigate the effects of gas crossover across the membrane in a proton exchange membrane fuel cell. A two-dimensional, two-phase, steady state model of the gas crossover using the partial differential equation solver FreeFem++, was built to investigate the crossover characteristics of hydrogen and oxygen across the membrane versus changes in operating conditions and various geometric structure of components in the proton exchange membrane fuel cell. Results indicated that higher equivalent weight of Nafion® is required to significantly decrease gas crossover phenomenon while the cell performance was reduced negligibly. In addition, as the increase in the stoichiometric flow ratio and channel length, the gas crossover decreased and the cell performance improved.",
       "link": "https://doi.org/10.1016/j.seta.2019.100584"
+    },
+    {
+      "title": "Numerical study of an exothermic reaction with convective boundary conditions",
+      "authors": "Houda Biyadi, M. Er-Riani, M. El Jarroudi",
+      "date": "2019-11-15T23:00:00.000Z",
+      "abstract": "In this work, we used a finite element method to solve the boundary value problem governing the ignition of a solid reactant undergoing slow oxidation for some non-class Ageometries (infinite square rod and cube). We also examine the effect of Frank-Kamenetskii parameter on bifurcation and thermal stability by means of the block Lanczos method.",
+      "link": "http://inf.ucv.ro/~ami/index.php/ami/article/viewFile/1371/709"
     },
     {
       "title": "The Penrose inequality for perturbations of the Schwarzschild initial data",
