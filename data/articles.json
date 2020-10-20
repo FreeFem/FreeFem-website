@@ -2,6 +2,34 @@
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
+      "title": "Stable Semi-Implicit Monolithic Scheme for Interaction Between Incompressible Neo-hookean Structure and Navier-Stokes Fluid",
+      "authors": "Cornel Marius Murea",
+      "date": "2020-10-19T23:00:00.000Z",
+      "abstract": "We present a monolithic algorithm for solving fluid-structure interaction. The Updated Lagrangian framework is used for the incompressible neo-hookean structure and Arbitrary Lagrangian Eulerian coordinate is employed for the Navier-Stokes equations. The algorithm uses a global mesh for the fluid-structure domain which is compatible with the fluid-structure interface. At each time step, a non-linear system is solved in a domain corresponding to the precedent time step. It is a semi-implicit algorithm in the sense that the velocity, the pressure are computed implicitly, but the domain is updated explicitly. Using one velocity field defined over the fluid-structure mesh, and globally continuous finite elements, the continuity of the velocity at the interface is automatically verified. The equation of the continuity of the stress at the interface does not appear in this formulation due to action and reaction principle. The stability in time is proved. A second algorithm is introduced where at each time step, only a linear system is solved in order to find the velocity and the pressure. Numerical experiments are presented.",
+      "link": "http://www.edp.lmia.uha.fr/murea/ps/murea_jms.pdf"
+    },
+    {
+      "title": "Preconditioning strategies for vectorial finite element linear systems arising from phase-field models for fracture mechanics",
+      "authors": "M.A. Badri, G. Rastiello, E. Foerster",
+      "date": "2020-10-15T23:00:00.000Z",
+      "abstract": "Phase-field models are frequently adopted to simulate fracture mechanics problems in the context of the finite element method. To depict fracture, this method involves solving a coupled set of Helmholtz-like damage-field equation and augmented linear momentum balance equation. Solutions to these coupled equations are then used as descriptions of crack propagation phenomena within solids. However, this method imposes a constrain of using extremely fine meshing for properly predicting cracks. For practical problems of interest, this very often leads to linear systems with large sizes that have to be repetitively assembled and solved. As such, iterative solution procedures such as the Krylov subspace-based methods for solving these large linear systems within the framework of serial/parallel computing environments become mandatory to obtain results in a feasible time. In this work, the vectorial finite discretization for a hybrid phase-field formulation – a monolithic solving scheme – is presented. The underlying nonlinearity present in the coupled set of equations of the hybrid phase-field model is dealt through Picard iteration that helps to preserve the symmetry of the linearized system to solve. Due to the symmetric positive definite nature of the finite element linear systems obtained for this problem, the conjugate gradient method makes a standard choice of iterative solution algorithm. In this article, to improve convergence rates, consequently time to solution, of the conjugate gradient method applied to crack propagation problems, different preconditioning strategies are analyzed, tuned, and discussed. Brittle fracture benchmarks are used to measure the performance of preconditioners which are then applied to massively parallel simulations with millions of unknowns. A series of numerical experiments show that the algebraic multigrid preconditioner is well suited for solving the phase-field model for fracture, being superior to the Jacobi and the block Jacobi preconditioning in all regards: ease of solving the problem, iterations to converge, time to solution, and parallel scaling on more than a thousand processes.",
+      "link": "https://doi.org/10.1016/j.cma.2020.113472"
+    },
+    {
+      "title": "A new Sierpinski-based fractal photonic crystal fiber design with low dispersion and confinement loss",
+      "authors": "D. Martínez-Muñoz, A. Ortiz-Mora, A. Dengra, A. Sarsa-Rubio, A. Díaz-Soriano",
+      "date": "2020-10-12T23:00:00.000Z",
+      "abstract": "This paper proposes a Sierpinski fractal pattern implementation as a tool to fine-tune the properties of Microstructured Optical Fibers (MOFs). It has been applied to a hexagonal-MOF photonic crystal fiber (PCF) with solid core to decrease its chromatic dispersion, nonlinear and loss properties in order to show the flexibility that these fiber designing techniques can offer when applied to existing designs. An additional study is also included to model possible fluctuations in properties design that can occur by geometrical perturbations occasioned during the manufacturing process.",
+      "link": "https://doi.org/10.1016/j.ijleo.2020.165780"
+    },
+    {
+      "title": "Timecrystalline vorticity and anyonic exchange in a cold atom Bose-Einstein condensate",
+      "authors": "Julien Garaud, Jin Dai, Antti J. Niemi",
+      "date": "2020-10-09T23:00:00.000Z",
+      "abstract": "Quantum vortices are the principal excitations in many macroscopic quantum systems, including superfluids and cold atom Bose-Einstein condensates. They are characterized by a quantized phase circulation of the wave function around a vortex core. Here we employ the Gross-Pitaevskii equation to investigate the structure of minimum energy vortices in cold atom Bose-Einstein condensates, in a nonrotating axially symmetric harmonic trap. For a generic value of the angular momentum along the symmetry axis, the energy minima are eccentric vortices. We find that the vortices precess around the center of the trap uniformly, in a timecrystalline fashion. Furthermore, we demonstrate that when two identical vortices exchange their position, the wave function acquires a phase with an anyonic character. Our results reveal that quantum vortices have an unexpectedly rich phenomenology, suggestive of applications to emerging subjects from quantum computation to simulation and information processing.",
+      "link": "https://arxiv.org/abs/2010.04549"
+    },
+    {
       "title": "Scanning Path Optimization Using Shape Optimization Tools",
       "authors": "M. Boissier, G. Allaire, C. Tournier",
       "date": "2020-10-05T23:00:00.000Z",
