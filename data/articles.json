@@ -2,6 +2,27 @@
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
+      "title": "Mass-conservative and positivity preserving second-order semi-implicit methods for high-order parabolic equations",
+      "authors": "Sana Keita, Abdelaziz Beljadid, Yves Bourgault",
+      "date": "2020-10-22T23:00:00.000Z",
+      "abstract": "We consider a class of finite element approximations for fourth-order parabolic equations that can be written as a system of second-order equations by introducing an auxiliary variable. In our approach, we first solve a variational problem and then an optimization problem to satisfy the desired physical properties of the solution such as conservation of mass, positivity (non-negativity) of solution and dissipation of energy. Furthermore, we show existence and uniqueness of the solution to the optimization problem and we prove that the methods converge to the truncation schemes \cite{Berger1975}. We also propose new conservative truncation methods for high-order parabolic equations. A numerical convergence study is performed and a series of numerical tests are presented to show and compare the efficiency and robustness of the different schemes.",
+      "link": "https://arxiv.org/abs/2010.11913"
+    },
+    {
+      "title": "Topology optimization of acoustic metasurfaces by using a two-scale homogenization method",
+      "authors": "Yuki Noguchi, Takayuki Yamada",
+      "date": "2020-10-21T23:00:00.000Z",
+      "abstract": "In this paper, we propose a level set-based topology optimization method for the unit-cell design of acoustic metasurfaces by using a two-scale homogenization method. Based on previous works, we first propose a homogenization method for acoustic metasurfaces that can be combined with topology optimization. In this method, a nonlocal transmission condition depending on the unit cell of the metasurface appears in a macroscale problem. Next, we formulate an optimization problem within the framework of a level set-based topology optimization method, wherein an objective functional is expressed as the macroscopic responses obtained through the homogenization, and material distributions in the unit cell are set as design variables. A sensitivity analysis is conducted based on the concept of the topological derivative. To confirm the validity of the proposed method, two-dimensional numerical examples are provided. First, we numerically demonstrate the validity of the homogenization method, and then perform optimization calculations based on the waveguide settings of the acoustic metasurfaces. In addition, we discuss the mechanism of the obtained optimized structures.",
+      "link": "https://arxiv.org/abs/2010.10844"
+    },
+    {
+      "title": "A Fourier‐based machine learning technique with application in engineering",
+      "authors": "Michaёl Peigney",
+      "date": "2020-10-18T23:00:00.000Z",
+      "abstract": "The generic problem in supervised machine learning is to learn a function f from a collection of samples, with the objective of predicting the value taken by f for any given input. In effect, the learning procedure consists in constructing an explicit function that approximates f in some sense. In this paper is introduced a Fourier‐based machine learning method which could be an alternative or a complement to neural networks for applications in engineering. The basic idea is to extend f into a periodic function so as to use partial sums of the Fourier series as approximations. For this approach to be effective in high dimension, it proved necessary to use several ideas and concepts such as regularization, Sobol sequences and hyperbolic crosses. An attractive feature of the proposed method is that the training stage reduces to a quadratic programming problem. The presented method is first applied to some examples of high‐dimensional analytical functions, which allows some comparisons with neural networks to be made. An application to a homogenization problem in nonlinear conduction is discussed in detail. Various examples related to global sensitivity analysis, assessing effective energies of microstructures, and solving boundary value problems are presented.",
+      "link": "https://doi.org/10.1002/nme.6565"
+    },
+    {
       "title": "Stable Semi-Implicit Monolithic Scheme for Interaction Between Incompressible Neo-hookean Structure and Navier-Stokes Fluid",
       "authors": "Cornel Marius Murea",
       "date": "2020-10-19T23:00:00.000Z",
