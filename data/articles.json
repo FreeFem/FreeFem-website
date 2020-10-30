@@ -2,6 +2,13 @@
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
+      "title": "Approximate Deconvolution with Correction: A Member of a New Class of Models for High Reynolds Number Flows",
+      "authors": "Alexander E. Labovsky",
+      "date": "2020-10-27T23:00:00.000Z",
+      "abstract": "We propose a new family of models for fluid flows at high Reynolds numbers, large eddy simulation with correction (LES-C), that combines a LES approach to turbulence modeling with a defect correction methodology. We investigate, both numerically and theoretically, one of these models, based on the approximate deconvolution model (ADM). The new model, approximate deconvolution with correction, is shown to be stable and higher order accurate with respect to the filtering width. It is shown to outperform its most natural competitor, the ADM, on a variety of benchmark problems. These include the computation of errors (on a problem with known solution), a benchmark problem of finding maximal drag and lift coefficients, flow past the step, and the discussion on Taylor--Green vortex solutions.",
+      "link": "https://doi.org/10.1137/20M1311600"
+    },
+    {
       "title": "Mass-conservative and positivity preserving second-order semi-implicit methods for high-order parabolic equations",
       "authors": "Sana Keita, Abdelaziz Beljadid, Yves Bourgault",
       "date": "2020-10-22T23:00:00.000Z",
