@@ -1448,12 +1448,12 @@ body::-webkit-scrollbar {
     margin: 10px !important;
   }
 
-  #articles {
+  #content, #articles {
     display: block !important;
     padding: 3.75rem 0.55rem !important;
   }
 
-  #articles article {
+  #content article, #articles article {
     margin-bottom: 1.875rem !important;
   }
 
@@ -1534,7 +1534,7 @@ body::-webkit-scrollbar {
     margin: 0 !important;
   }
 
-  #articles {
+  #content, #articles {
     padding: 1.25rem !important;
   }
 
