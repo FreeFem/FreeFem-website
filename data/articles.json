@@ -2,6 +2,20 @@
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
+      "title": "Parametric speaker consisting of small number of transducers with sonic crystal waveguide",
+      "authors": "Jun Kuroda, Yasuhiro Oikawa",
+      "date": "2020-11-01T23:00:00.000Z",
+      "abstract": "In this paper, we discuss methods of designing parametric speakers consisting of a small number of transducers. The developed parametric speaker unit includes peripheral acoustic structures, such as radial cones and a waveguide comprising a sonic crystal. The purpose of this study is to fabricate small parametric speakers that can be installed in various equipment. To achieve this purpose, it is essential to minimize the sizes and numbers of transducers. Parametric speakers must fulfill two goals: (1) high sound pressure levels of ultrasonic waves and (2) narrow directivities of ultrasonic waves. These two design goals are accomplished by two measures: (1) two close resonant frequencies and resonant mode control function and (2) an external adapter to obtain narrow directivities and high sound pressure. The first measure was achieved equipping the piezoelectric transducer with double-linked diaphragms and two radial cones. The second measure was embodied by the waveguide consisting of a sonic crystal, which was named the loop horn in this paper. Details of the design and experimental data of a four-transducer parametric speaker unit including the loop horn were presented.",
+      "link": "https://doi.org/10.1250/ast.41.865"
+    },
+    {
+      "title": "Beyond the model of conductor with fixed cross-section and length: Exactly and numerically solvable problems",
+      "authors": "Vladimir Ivchenko",
+      "date": "2020-10-30T23:00:00.000Z",
+      "abstract": "In this paper we present an overview of methods of resistance finding for the conductor with variable cross-section or (and) length. First, we consider the cases of the finite size resistors and an infinite homogeneous weakly conducting medium with two electrodes. Next, we continue the Romano and Price analysis about the truncated cone problem by means of comprehensive numerical calculations done for the trapezoid plates. We conclude that in general case of a conductor with variable cross-section the homogeneous electric field approximation gives only the lower limit estimation for the resistance value. This fact can be explained on the basis of the minimum electric power principle. The issues outlined in this article will be useful for advanced undergraduates, who study methods for solving electrostatic problems.Keywords: problem solving, electrical resistance, trapezoid plate problem.",
+      "link": "http://orcid.org/0000-0001-7367-3669"
+    },
+    {
       "title": "Approximate Deconvolution with Correction: A Member of a New Class of Models for High Reynolds Number Flows",
       "authors": "Alexander E. Labovsky",
       "date": "2020-10-27T23:00:00.000Z",
