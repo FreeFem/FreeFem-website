@@ -2,6 +2,13 @@
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
+      "title": "Fluid-solid Floquet stability analysis of self-propelled heaving foils",
+      "authors": "Luis Benetti Ramos, Olivier Marquet, Michel Bergmann, Angelo Iollo",
+      "date": "2020-11-02T23:00:00.000Z",
+      "abstract": "We investigate the role of linear mechanisms in the emergence of nonlinear horizontal self-propelled states of a heaving foil in a quiescent fluid. Two states are analyzed: a periodic state of unidirectional motion and a quasi-periodic state of slow back & forth motion around a mean horizontal position. The states emergence is explained through a fluid-solid Floquet stability analysis of the non-propulsive symmetric base solution. Unlike a purely-hydrodynamic analysis, our analysis accurately determine the locomotion states onset. An unstable synchronous mode is found when the unidirectional propulsive solution is observed. The obtained mode has a propulsive character, featuring a mean horizontal velocity and an asymmetric flow that generates a horizontal force accelerating the foil. An unstable asynchronous mode, also featuring flow asymmetry and a non-zero velocity, is found when the back & forth state is observed. Its associated complex multiplier introduces a slow modulation of the flapping period, agreeing with the quasi-periodic nature of the back & forth regime. The temporal evolution of this perturbation shows how the horizontal force exerted by the flow is alternatively propulsive or resistive over a slow period. For both modes, an analysis of the velocity and force perturbation time-averaged over the flapping period is used to establish physical instability criteria. The behaviour for large solid-to-fluid density ratio of the modes is thus analyzed. The asynchronous fluid-solid mode converges towards the purely-hydrodynamic one, whereas the synchronous mode becomes marginally unstable in our analysis not converging to the purely-hydrodynamic analysis where it is never destabilised.",
+      "link": "https://arxiv.org/abs/2011.01124"
+    },
+    {
       "title": "Parametric speaker consisting of small number of transducers with sonic crystal waveguide",
       "authors": "Jun Kuroda, Yasuhiro Oikawa",
       "date": "2020-11-01T23:00:00.000Z",
