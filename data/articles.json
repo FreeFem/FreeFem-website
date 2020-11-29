@@ -2,6 +2,27 @@
   "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
   "articles": [
     {
+      "title": "Finite element modelling of partially saturated asphalt specimens subjected to frost – towards an explanation of winter potholes",
+      "authors": "V.T. Vu, O. Chupin, J.-M. Piau, F. Hammoum",
+      "date": "2020-11-18T23:00:00.000Z",
+      "abstract": "This article is related to the development of potholes in bituminous pavements possibly occurring in winter at negative temperature and in presence of pore water in the asphalt concrete (AC) layers. It was shown already that this type of degradation could be due to swelling of the AC pore water. A constitutive law was previously developed to model this phenomenon; the present article deals with its implementation in a finite element (FE) program to evaluate the mechanical effects induced by the propagation of a frost front in a pavement. This novel program handles the coupling between the thermoviscoelastic problem with swelling in AC materials and the heat equation with phase change. First applied to the modelling of characterization tests on partially saturated AC specimens, the developed program has proved to be relevant. Then, to get closer to onsite conditions, an original frost-thaw test was carried out on a bilayer AC structure partially saturated. The test led to the delamination of the two layers during the second frost-thaw cycle. Its modelling showed that the interface rupture was triggered by differential strains and self-stress fields developing in the sample. These results can provide an explanation to the initialisation of the pothole issue.",
+      "link": "https://doi.org/10.1080/10298436.2020.1843036"
+    },
+    {
+      "title": "Steklov Expansion Method for Regularized Harmonic Boundary Value Problems",
+      "authors": "Manki Cho",
+      "date": "2020-11-16T23:00:00.000Z",
+      "abstract": "A new type of meshless method is proposed in this paper to solve regularized Laplacian boundary value problems of the form ℒu:=r2u−Δu≡0. In this method, solving the Laplacian boundary value problem is starting from finding regularized Steklov eigenpairs which could provide the orthonormal basis of the space of solutions. The solutions are represented by orthogonal regularized Steklov eigenfunctions. Error bounds of Steklov approximations are provided in terms of the traces spaces of solutions. When rectangular domains are considered, explicit formulas for the regularized Steklov eigenpairs are provided. Some numerical experiments are presented to support the efficiency and accuracy of the new method.",
+      "link": "https://doi.org/10.1080/01630563.2020.1845728"
+    },
+    {
+      "title": "Theory for the Casimir effect and the partitioning of active matter",
+      "authors": "Camilla M. Kjeldbjerg, John F. Brady",
+      "date": "2020-11-12T23:00:00.000Z",
+      "abstract": "Active Brownian particles (ABPs) distribute non-homogeneously near surfaces, and understanding how this depends on system properties—size, shape, activity level, etc.—is essential for predicting and exploiting the behavior of active matter systems. Active particles accumulate at no-flux surfaces owing to their persistent swimming, which depends on their intrinsic swim speed and reorientation time, and are subject to confinement effects when their run or persistence length is comparable to the characteristic size of the confining geometry. It has been observed in simulations that two parallel plates experience a “Casimir effect” and attract each other when placed in a dilute bath of ABPs. In this work, we provide a theoretical model based on the Smoluchowski equation and a macroscopic mechanical momentum balance to analytically predict this attractive force. We extend this method to describe the concentration partitioning of active particles between a confining channel and a reservoir, showing that the ratio of the concentration in the channel to that in the bulk increases as either run length increases or channel height decreases. The theoretical results agree well with Brownian dynamics simulations and finite element calculations.",
+      "link": "https://doi.org/10.1039/D0SM01797C"
+    },
+    {
       "title": "Fluid-solid Floquet stability analysis of self-propelled heaving foils",
       "authors": "Luis Benetti Ramos, Olivier Marquet, Michel Bergmann, Angelo Iollo",
       "date": "2020-11-02T23:00:00.000Z",
