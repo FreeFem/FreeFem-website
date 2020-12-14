@@ -1,6 +1,13 @@
 {
     "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
     "articles": [{
+            "title": "Anisotropic Adapted Meshes for Image Segmentation: Application to Three-Dimensional Medical Data",
+            "authors": "Francesco Clerici, Nicola Ferro, Stefania Marconi, Stefano Micheletti, Erika Negrello, Simona Perotto",
+            "date": "2020-12-10T23:00:00.000Z",
+            "abstract": "This work focuses on a variational approach to image segmentation based on the Ambrosio--Tortorelli functional. We propose an efficient algorithm, which combines the functional minimization with a smart choice of the computational mesh. With this aim, we resort to an anisotropic mesh adaptation procedure driven by an a posteriori recovery-based error analysis. We apply the proposed algorithm to a computed tomography dataset of a fractured pelvis to create a virtual model of the anatomy. The result is verified against a semiautomatic segmentation carried out using the ITK-SNAP tool. Furthermore, a physical replica of the virtual model is produced by means of fused filament fabrication technology to assess the appropriateness of the proposed solution in terms of resolution-quality balance for three-dimensional printing production.",
+            "link": "https://doi.org/10.1137/20M1348303"
+        },
+        {
             "title": "Inversion of Eddy-Current Signals Using a Level-Set Method and Block Krylov Solvers",
             "authors": "Lorenzo Audibert, Hugo Girardon. Houssem Haddar, Pierre Jolivet",
             "date": "2020-12-07T23:00:00.000Z",
