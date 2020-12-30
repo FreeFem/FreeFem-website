@@ -1,6 +1,42 @@
 {
     "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
     "articles": [{
+            "title": "iceFEM: A FreeFem package for wave induced ice-shelf vibrations",
+            "authors": "Balaje Kalyanaraman, Michael H. Meylan, Bishnu P. Lamichhane, Luke G. Bennetts",
+            "date": "2020-12-10T24:00:00.000Z",
+            "abstract": "Vibrations of ice-shelves in response to ocean waves were first investigated by (Holdsworth & Glynn, 1978) who proposed that resonant vibrations lead to icebergs calving from the shelf front. Since then seismometric measurements on the Ross ice-shelf, the largest Antarctic ice-shelf, confirmed the presence of this ocean wave-induced ice-shelf vibration (Bromirski et al., 2015;Massom et al., 2018). The period of vibration ranged from the long infragravity/tsunami waves to shorter, swell waves. More recently, (Brunt et al., 2011) presented the first observational evidence that a Northern Hemisphere tsunami triggered calving on the Sulzberger ice-shelf. Mathematical models based on linear wave theory have been proposed to study these ocean-wave induced ice-shelf vibrations. The numerical method is based on finite element method and the modal expansion technique. This results in a system of equations [K-omega^(2)M+i*omega*B]{lambda}={f} whose entries are analytic functions of the incident frequency omega. The dimension of the above linear system is much smaller than the finite element degrees of freedom and can be solved efficiently. Further, using the analyticity of the resulting system, a large number of frequency domain solutions can be obtained by interpolating the linear system without having to solve the much larger finite element problem on a finer frequency grid as shown in Figure 1. Further details on the usage of the package can be found in the README.md file located in the repository page.",
+            "link": "https://doi.org/10.21105/joss.02922"
+        },
+        {
+            "title": "Application of the Protective Coating for Blade’s Thermal Protection",
+            "authors": "Andrzej Frąckowiak, Aleksander Olejnik, Agnieszka Wróblewska, Michał Ciałkowski",
+            "date": "2020-12-10T24:00:00.000Z",
+            "abstract": "This paper presents an algorithm applied for determining temperature distribution inside the gas turbine blade in which the external surface is coated with a protective layer. Inside the cooling channel, there is a porous material enabling heat to be transferred from the entire volume of the channel. This algorithm solves the nonlinear problem of heat conduction with the known: heat transfer coefficient on the external side of the blade surface, the temperature of gas surrounding the blade, coefficients of heat conduction of the protective coating and of the material the blade is made of as well as of the porous material inside the channel, the volumetric heat transfer coefficient for the porous material and the temperature of the air flowing through the porous material. Based on these data, the distribution of material porosity is determined in such a way that the temperature on the boundary between the protective coating and the material the blade is made of is equal to the assumed distribution To. This paper includes results of calculations for various thicknesses of the protective coating and the given constant values of temperature on the boundary between the protective coating and the material the blade is made of.",
+            "link": "https://doi.org/10.3390/en14010050"
+        },
+
+        {
+            "title": "Modification of superalloy honeycomb thermal protection system",
+            "authors": "Łukasz Brodzik",
+            "date": "2020-12-23T23:00:00.000Z",
+            "abstract": "Purpose: Paper aims to present problem of aerodynamic heating of a metallic heat shield. The key elements of this construction are metallic layers of superalloy honeycomb, which significantly increase the structure’s resistance to impact. Paper describes the problem of influence of damage size on increase of thermal load. Design/methodology/approach: Numerical analysis was performed in a non-commercial environment FreeFem++ using finite element method, and its results were compared with the results given in the literature. Findings: In thermal protection system, a modification was used to delay increase in temperature on the underlying structure as well as to reduce its maximum value. Originality/value: In the further part of the paper, selected insulation material was modified by adding additional conductive material.",
+            "link": "https://doi.org/10.1108/HFF-11-2019-0818"
+        },
+        {
+            "title": "Resistivity-induced coupling between voltage distribution and vibrations in dielectric elastomers",
+            "authors": "Emil Garnell, Corinne Rouby, Olivier Doaré",
+            "date": "2020-12-21T23:00:00.000Z",
+            "abstract": "Dielectric elastomers are soft actuators made of a thin layer of elastomer sandwiched between compliant electrodes. Because of the resistivity of the electrodes, the voltage is not uniform on the actuator at high frequencies. We present experimental evidence that the voltage spatial distribution is coupled to the membrane vibrations, as well as a model based on Maxwell's equations in a moving frame to explain the coupling. The model is validated experimentally, and is used to explain the physics of the observed coupling. As a result, information on the membrane deformation can be inferred from voltage measurements, which opens self-sensing possibilities at high frequencies.",
+            "link": "https://doi.org/10.1088/1361-665X/abd58f"
+        },
+        {
+            "title": "A posteriori error analysis of a momentum and thermal energy conservative mixed-FEM for the Boussinesq equations",
+            "authors": "Sergio Caucao, Ricardo Oyarzúa, Segundo Villa-Fuentes",
+            "date": "2020-12-21T23:00:00.000Z",
+            "abstract": "In this paper we complement the study of a new mixed finite element scheme, allowing conservation of momentum and thermal energy, for the Boussinesq model describing natural convection and derive a reliable and efficient residual-based a posteriori error estimator for the corresponding Galerkin scheme in two and three dimensions. More precisely, by extending standard techniques commonly used on Hilbert spaces to the case of Banach spaces, such us local estimates, suitable Helmholtz decompositions and the local approximation properties of the Clément and Raviart-Thomas operators, we derive the aforementioned a posteriori error estimator on arbitrary (convex or non-convex) polygonal and polyhedral regions. In turn, inverse inequalities, the localization technique based on bubble functions, and known results from previous works, are employed to prove the local efficiency of the proposed a posteriori error estimator. Finally, to illustrate the performance of the adaptive algorithm based on the proposed a posteriori error indicator and to corroborate the theoretical results, we provide some numerical examples.",
+            "link": "https://www.ci2ma.udec.cl/pdf/pre-publicaciones/2020/pp20-29.pdf"
+        },
+        {
             "title": "Anisotropic Adapted Meshes for Image Segmentation: Application to Three-Dimensional Medical Data",
             "authors": "Francesco Clerici, Nicola Ferro, Stefania Marconi, Stefano Micheletti, Erika Negrello, Simona Perotto",
             "date": "2020-12-10T23:00:00.000Z",
