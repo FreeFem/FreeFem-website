@@ -1,6 +1,20 @@
 {
     "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
     "articles": [{
+            "title": "Implicit and semi-implicit second-order time stepping methods for the Richards equation",
+            "authors": "Sana Keita, Abdelaziz Beljadid, Yves Bourgault",
+            "date": "2020-12-29T23:00:00.000Z",
+            "abstract": "This study concerns numerical methods for efficiently solving the Richards equation where different weak formulations and computational techniques are analyzed. The spatial discretizations are based on standard or mixed finite element methods. Different implicit and semi-implicit temporal discretization techniques of second-order accuracy are studied. To obtain a linear system for the semi-implicit schemes, we propose second-order techniques using extrapolation formulas and/or semi-implicit Taylor approximations for the temporal discretization of nonlinear terms. A numerical convergence study and a series of numerical tests are performed to analyze efficiency and robustness of the different schemes. The developed scheme, based on the proposed temporal extrapolation techniques and the mixed formulation involving the saturation and pressure head and using the standard linear Lagrange element, performs better than other schemes based on the saturation and the flux and using the Raviart-Thomas elements. The proposed semi-implicit scheme is a good alternative when implicit schemes meet convergence issues.",
+            "link": "https://doi.org/10.1016/j.advwatres.2020.103841"
+        },
+        {
+            "title": "Application of the Protective Coating for Blade’s Thermal Protection",
+            "authors": "Andrzej Frackowiak, Aleksander Olejnik, Agnieszka Wróblewska, Michał Ciałkowski",
+            "date": "2020-12-24T23:00:00.000Z",
+            "abstract": "This paper presents an algorithm applied for determining temperature distribution inside the gas turbine blade in which the external surface is coated with a protective layer. Inside the cooling channel, there is a porous material enabling heat to be transferred from the entire volume of the channel. This algorithm solves the nonlinear problem of heat conduction with the known: heat transfer coefficient on the external side of the blade surface, the temperature of gas surrounding the blade, coefficients of heat conduction of the protective coating and of the material the blade is made of as well as of the porous material inside the channel, the volumetric heat transfer coefficient for the porous material and the temperature of the air flowing through the porous material. Based on these data, the distribution of material porosity is determined in such a way that the temperature on the boundary between the protective coating and the material the blade is made of is equal to the assumed distribution To. This paper includes results of calculations for various thicknesses of the protective coating and the given constant values of temperature on the boundary between the protective coating and the material the blade is made of.",
+            "link": "https://dx.doi.org/10.3390/en14010050"
+        },
+        {
             "title": "iceFEM: A FreeFem package for wave induced ice-shelf vibrations",
             "authors": "Balaje Kalyanaraman, Michael H. Meylan, Bishnu P. Lamichhane, Luke G. Bennetts",
             "date": "2020-12-24T23:00:00.000Z",
