@@ -1,6 +1,83 @@
 {
     "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
     "articles": [{
+            "title": "KSPHPDDM and PCHPDDM: Extending PETSc with advanced Krylov methods and robust multilevel overlapping Schwarz preconditioners",
+            "authors": "Pierre Jolivet, Jose E. Roman, Stefano Zampinic",
+            "date": "2021-01-22T23:00:00.000Z",
+            "abstract": "Contemporary applications in computational science and engineering often require the solution of linear systems which may be of different sizes, shapes, and structures. The goal of this paper is to explain how two libraries, PETSc and HPDDM, have been interfaced in order to offer end-users robust overlapping Schwarz preconditioners and advanced Krylov methods featuring recycling and the ability to deal with multiple right-hand sides. The flexibility of the implementation is showcased and explained with minimalist, easy-to-run, and reproducible examples, to ease the integration of these algorithms into more advanced frameworks. The examples provided cover applications from eigenanalysis, elasticity, combustion, and electromagnetism.",
+            "link": "https://doi.org/10.1016/j.camwa.2021.01.003"
+        },
+        {
+            "title": "Modelling of surface and inner wall temperatures in the analysis of courtyard thermal performances in Mediterranean climates",
+            "authors": "V.P. López-Cabeza, F.J. Carmona-Molero, S. Rubino, C. Rivera-Gómez, E.D. Fernández-Nieto, C. Galán-Marín, T. Chacón-Rebollo",
+            "date": "2021-01-17T23:00:00.000Z",
+            "abstract": "Courtyards are an effective passive strategy for improving the energy performance of buildings. However, there is a lack of accurate simulation tools for their thermal performance due to their complex thermodynamics. This paper’s contribution is the coupling of a CFD model with a system of differential equations at the walls, governing surface and inner wall temperatures, providing an accurate computation of courtyard thermal performance. On this basis, boundary conditions for the standard Boussinesq equations governing temperatures, wind velocity, and pressure within the courtyard are established. Modelling results are compared with monitored data in two days of different months in a courtyard in Seville (Spain). Simultaneously, simulations carried out by existing software were performed. Resulting data showed more accuracy than existing tools, with a Root Mean Square Error of 1.19 (August) and 1.59 (October), while the corresponding values with ENVI-met were 3.31-3.4, and with Ladybug Tools 2.59-4.49.",
+            "link": "https://doi.org/10.1080/19401493.2020.1870561"
+        },
+        {
+            "title": "Vortex impingement onto an axisymmetric obstacle – subcritical bifurcation to vortex breakdown",
+            "authors": "S. Pasche, F. Avellan, F. Gallaire",
+            "date": "2021-01-15T23:00:00.000Z",
+            "abstract": "A swirling wake flow submitted to an adverse pressure gradient is studied by bifurcation analysis, modal analysis and direct numerical simulations. In contrast to experiments in diverging tubes, the adverse pressure gradient is imposed by the presence of a downstream axisymmetric obstacle centred on the vortex axis. Different adverse pressure gradients are investigated by modifying the obstacle radius, which results in the deceleration of the vortex axial velocity. Hence, vortex breakdown occurs for a sufficiently large pressure gradient. We observe a spiral vortex breakdown type without any recirculation bubble, which contrasts with classical spiral vortex breakdown developing in the bubble wake. A weakly nonlinear analysis is performed to characterize this self-sustained instability. The resulting Landau equation reveals the sub-critical character of this Hopf bifurcation, highlighting a sub-critical vortex breakdown. In addition, the stabilization mechanism of this spiral vortex breakdown caused by an off-centre displacement of the downstream axisymmetric obstacle is investigated by direct numerical simulations. Nonlinear dynamics, such as a quasi-periodic state, is observed as a consequence of nonlinear interactions between the spiral vortex breakdown and the misalignment of the obstacle before the stabilization occurs.",
+            "link": "https://doi.org/10.1017/jfm.2020.1011"
+        },
+        {
+            "title": "Energy Geoscience and Engineering",
+            "authors": "Juan Carlos Santamarina, Rached Rached",
+            "date": "2021-01-15T23:00:00.000Z",
+            "abstract": "Quality of life is strongly correlated with power consumption. The geo-disciplines have a crucial role to play in the energy challenge by contributing solutions to all kind of energy resources from resource recovery to energy and waste storage. Energy geoengineering requires a broad understanding of physical processes (sediments, fractured rocks and complex multiphase fluids), coupled phenomena, constitutive models for extreme conditions, and wide-ranging spatial and time scales. Numerical methods are critical for the analysis, design, and optimal operation of energy geosystems under both short and long-term conditions. Furthermore, they allow “numerical experiments” at temporal and spatial scales that are unattainable in the laboratory. Yet, computer power can provide a false sense of reality and unjustified confidence; simulations face uncertainties related to the validation of complex multi-physics codes, limited data, excessive numbers of degrees of freedom, ill-conditioning, and uncertain model parameters. Dimensional analyses help identify the governing processes and allow for simpler and more reliable simulations. Educational programs must evolve to address the knowledge needs in energy geoscience and engineering.",
+            "link": "https://doi.org/10.1007/978-3-030-64514-4_5"
+        },
+        {
+            "title": "Triple-deck analysis of the steady flow over a rotating disk with surface roughness",
+            "authors": "Claudio Chicchiero, Antonio Segalini, Simone Camarri",
+            "date": "2021-01-14T23:00:00.000Z",
+            "abstract": "The effect of surface roughness on the steady laminar flow induced by a rotating disk submerged by fluid otherwise at rest is investigated here theoretically and numerically. A theory is proposed where a triple-deck analysis is applied leading to a fast evaluation of the steady-flow modification due to the rough surface. The theory assumes that the roughness is much smaller than the boundary-layer height and is characterized by a significantly longer length scale (slender roughness). Only the leading-order correction is developed here, corresponding to a velocity-field correction that is linear with the roughness height. The proposed theory neglects some curvature terms (here partially accounted by means of a stretching of the radial coordinate and of a scaling of the dependent variables). Numerical simulations performed with different roughness geometries (axisymmetric roughness, radial grooves, and localized bumps) have been used to validate the theory. Results indicate that the proposed theory leads to a good quantification of the flow modifications due to surface roughness at a very low computational cost. A demonstration of the capabilities of the theory is finally proposed where the statistical effects on the flow due to a random (but statistically known) roughness distributed on the surface of a rotating disk are characterized.",
+            "link": "https://doi.org/10.1103/PhysRevFluids.6.014103"
+        },
+        {
+            "title": "Numerical Algorithms in Mechanics of Generalized Continua",
+            "authors": "Adina Chirilă, Marin Marin",
+            "date": "2021-01-14T23:00:00.000Z",
+            "abstract": "We study from a numerical point of view the solution of the system of partial differential equations arising in the theory of isotropic dipolar thermoelasticity with double porosity. We write the variational formulation and introduce fully discrete approximations by using the finite element method to approximate the spatial variable and the backward Euler scheme to discretize the first-order time derivatives. By using these algorithms, we perform numerical simulations in order to show the behaviour of the solution. To this end, we use the finite element software FreeFem++.",
+            "link": "https://link.springer.com/chapter/10.1007/978-3-030-61334-1_9"
+        },
+        {
+            "title": "An adaptive finite element DtN method for the elastic wave scattering problem in three dimensions",
+            "authors": "Gang Bao, Peijun Li, Xiaokai Yuan",
+            "date": "2021-01-14T23:00:00.000Z",
+            "abstract": "Consider the elastic scattering of an incident wave by a rigid obstacle in three dimensions, which is formulated as an exterior problem for the Navier equation. By constructing a Dirichlet-to-Neumann (DtN) operator and introducing a transparent boundary condition, the scattering problem is reduced equivalently to a boundary value problem in a bounded domain. The discrete problem with the truncated DtN operator is solved by using the a posteriori error estimate based adaptive finite element method. The estimate takes account of both the finite element approximation error and the truncation error of the DtN operator, where the latter is shown to converge exponentially with respect to the truncation parameter. Moreover, the generalized Woodbury matrix identity is utilized to solve the resulting linear system efficiently. Numerical experiments are presented to demonstrate the superior performance of the proposed method.",
+            "link": "https://arxiv.org/abs/2101.05835"
+        },
+        {
+            "title": "On the Greenhouse Effect",
+            "authors": " Claude Bardos, Olivier Pironneau",
+            "date": "2021-01-13T23:00:00.000Z",
+            "abstract": "Radiative transfer is at the heart of the mechanism to explain the greenhouse effect due to carbone dioxide, methane and others in the earth atmosphere. We revisit this much studied field from a mathematical and numerical point of view. Existence and uniqueness and semi-analytic solutions of the Milne problem for grey atmospheres are stated. Numerical simulations are given for grey and non grey atmosphere and applied to the greenhouse effect. It is found that greenhouse gases are indeed capable of making the earth temperature 1 − 2 o C hotter, even without taking into account the complexity of full ocean-atmosphere-chemical climate models.",
+            "link": "https://hal.sorbonne-universite.fr/hal-03094855"
+        },
+        {
+            "title": "Shape optimization of an imperfect interface: steady-state heat diffusion",
+            "authors": "Grégoire Allaire, Beniamin Bogosel, Matias Godoy",
+            "date": "2021-01-09T23:00:00.000Z",
+            "abstract": "In the context of a diffusion equation, this work is devoted to a two-phase optimal design problem where the interface, separating the phases, is imperfect, meaning that the solution is discontinuous while the normal flux is continuous and proportional to the jump of the solution. The shape derivative of an objective function with respect to the interface position is computed by the adjoint method. Numerical experiments are performed with the level set method and an exact remeshing algorithm so that the interface is captured by the mesh at each optimization iteration. Comparisons with a perfect interface are discussed in the setting of optimal design or inverse problems.",
+            "link": "https://hal.archives-ouvertes.fr/hal-03102760/"
+        },
+        {
+            "title": "Fabrication and Characterization of Double- and Single-Clamped CuO Nanowire Based Nanoelectromechanical Switches",
+            "authors": "Liga Jasulaneca, Alexander I. Livshits, Raimonds Meija, Jelena Kosmaca, Raitis Sondors, Matiss M. Ramma, Daniels Jevdokimovs, Juris Prikulis, Donats Erts",
+            "date": "2021-01-06T23:00:00.000Z",
+            "abstract": "Electrostatically actuated nanoelectromechanical (NEM) switches hold promise for operation with sharply defined ON/OFF states, high ON/OFF current ratio, low OFF state power consumption, and a compact design. The present challenge for the development of nanoelectromechanical system (NEMS) technology is fabrication of single nanowire based NEM switches. In this work, we demonstrate the first application of CuO nanowires as NEM switch active elements. We develop bottom-up and top-down approaches for NEM switch fabrication, such as CuO nanowire synthesis, lithography, etching, dielectrophoretic alignment of nanowires on electrodes, and nanomanipulations for building devices that are suitable for scalable production. Theoretical modelling finds the device geometry that is necessary for volatile switching. The modelling results are validated by constructing gateless double-clamped and single-clamped devices on-chip that show robust and repeatable switching. The proposed design and fabrication route enable the scalable integration of bottom-up synthesized nanowires in NEMS.",
+            "link": "https://doi.org/10.3390/nano11010117"
+        },
+        {
+            "title": "Eigenvalues of the truncated Helmholtz solution operator under strong trapping",
+            "authors": "Jeffrey Galkowski, Pierre Marchand, Euan A. Spence",
+            "date": "2021-01-06T23:00:00.000Z",
+            "abstract": "For the Helmholtz equation posed in the exterior of a Dirichlet obstacle, we prove that if there exists a family of quasimodes (as is the case when the exterior of the obstacle has stable trapped rays), then there exist near-zero eigenvalues of the standard variational formulation of the exterior Dirichlet problem (recall that this formulation involves truncating the exterior domain and applying the exterior Dirichlet-to-Neumann map on the truncation boundary). The significance of this result is a) the finite-element method for computing approximations to solutions of the Helmholtz equation is based on the standard variational formulation, and b) the location of eigenvalues, and especially near-zero ones, plays a key role in understanding how iterative solvers such as the generalised minimum residual method (GMRES) behave when used to solve linear systems, in particular those arising from the finite-element method. The result proved in this paper is thus the first step towards rigorously understanding how GMRES behaves when applied to discretisations of high-frequency Helmholtz problems under strong trapping (the subject of the companion paper [Marchand, Galkowski, Spence, Spence, 2021]).",
+            "link": "https://arxiv.org/abs/2101.02116"
+        },
+        {
             "title": "Implicit and semi-implicit second-order time stepping methods for the Richards equation",
             "authors": "Sana Keita, Abdelaziz Beljadid, Yves Bourgault",
             "date": "2020-12-29T23:00:00.000Z",
