@@ -1,6 +1,20 @@
 {
     "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
     "articles": [{
+            "title": "One Approach to the Numerical Solution of Mass-Transfer Problems with Large Péclet Numbers",
+            "authors": "Ya. H. Savula, Yu. I. Turchyn",
+            "date": "2021-01-29T23:00:00.000Z",
+            "abstract": "We consider a mathematical model of propagation of drugs in the wall of a vessel. The model is described by the advection-diffusion boundary-value problem with a system of two differential equations. In view of the specific features of the input parameters of the problem, when the advection coefficient significantly exceeds the diffusion coefficient, the application of the classical finite-element method with linear and quadratic basis functions leads to the loss of stability of the computational process. We propose a new approach to the solution of the advection-diffusion problems with large Péclet numbers based on the replacement of the unknown function by an exponential function in the formulation of the problem and the inverse replacement prior to the application of the finite-element method. We also perform the numerical analysis of the results obtained by the application of the proposed method for the approximate solution of the problem of propagation of drugs in the wall of a vessel.",
+            "link": "https://doi.org/10.1007/s10958-021-05221-9"
+        },
+        {
+            "title": "Energy law preserving continuous finite element schemes for a gas metal arc welding system",
+            "authors": "Yanhai Lin, Yongyue Jiang",
+            "date": "2021-01-25T23:00:00.000Z",
+            "abstract": "In this paper a modified continuous energy law was explored to investigate transport behavior in a gas metal arc welding (GMAW) system. The energy law equality at a discrete level for the GMAW system was derived by using the finite element scheme. The mass conservation and current density continuous equation with the penalty scheme was applied to improve the stability. According to the phase-field model coupled with the energy law preserving method, the GMAW model was discretized and a metal transfer process with a pulse current was simulated. It was found that the numerical solution agrees well with the data of the metal transfer process obtained by high-speed photography. Compared with the numerical solution of the volume of fluid model, which was widely studied in the GMAW system based on the finite element method Euler scheme, the energy law preserving method can provide better accuracy in predicting the shape evolution of the droplet and with a greater computing efficiency.",
+            "link": "https://doi.org/10.1088/1572-9494/abd0e3"
+        },
+        {
             "title": "KSPHPDDM and PCHPDDM: Extending PETSc with advanced Krylov methods and robust multilevel overlapping Schwarz preconditioners",
             "authors": "Pierre Jolivet, Jose E. Roman, Stefano Zampinic",
             "date": "2021-01-22T23:00:00.000Z",
