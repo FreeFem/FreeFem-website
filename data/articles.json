@@ -1,6 +1,13 @@
 {
     "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
     "articles": [{
+            "title": "The Two-Level Stabilized Finite Element Method Based on Multiscale Enrichment for the Stokes Eigenvalue Problem",
+            "authors": "Juan Wen, Pengzhan Huang, Ya-Ling He",
+            "date": "2021-01-29T23:00:00.000Z",
+            "abstract": "In this paper, we first propose a new stabilized finite element method for the Stokes eigenvalue problem. This new method is based on multiscale enrichment, and is derived from the Stokes eigenvalue problem itself. The convergence of this new stabilized method is proved and the optimal priori error estimates for the eigenfunctions and eigenvalues are also obtained. Moreover, we combine this new stabilized finite element method with the two-level method to give a new two-level stabilized finite element method for the Stokes eigenvalue problem. Furthermore, we have proved a priori error estimates for this new two-level stabilized method. Finally, numerical examples confirm our theoretical analysis and validate the high effectiveness of the new methods.",
+            "link": "https://doi.org/10.1007/s10473-021-0204-3"
+        },
+        {
             "title": "One Approach to the Numerical Solution of Mass-Transfer Problems with Large Péclet Numbers",
             "authors": "Ya. H. Savula, Yu. I. Turchyn",
             "date": "2021-01-29T23:00:00.000Z",
