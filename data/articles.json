@@ -1,6 +1,13 @@
 {
     "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
     "articles": [{
+            "title": "Theoretical and numerical local null controllability of a quasi-linear parabolic equation in dimensions 2 and 3",
+            "authors": "E. Fernández-Cara, J. Límaco, I. Marín-Gayte",
+            "date": "2021-01-30T23:00:00.000Z",
+            "abstract": "This paper is devoted to the theoretical and numerical analysis of the null controllability of a quasi-linear parabolic equation. First, we establish a local controllability result. The proof relies on an appropriate inverse function argument. Then, we formulate an iterative algorithm for the computation of the null control and we prove a convergence result. Finally, we illustrate the analysis with some numerical experiments.",
+            "link": "https://doi.org/10.1016/j.jfranklin.2021.01.031"
+        },
+        {
             "title": "The Two-Level Stabilized Finite Element Method Based on Multiscale Enrichment for the Stokes Eigenvalue Problem",
             "authors": "Juan Wen, Pengzhan Huang, Ya-Ling He",
             "date": "2021-01-29T23:00:00.000Z",
