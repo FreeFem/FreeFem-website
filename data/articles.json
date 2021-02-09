@@ -1,6 +1,13 @@
 {
     "readme": "This is a list of scientific articles referencing FreeFEM. Please add the latest articles at the top of the list and use the Date.prototype.toJSON() format",
     "articles": [{
+            "title": "Superconvergence of the finite element method for the Stokes eigenvalue problem",
+            "authors": "Ying Sheng, Tie Zhang, Zixing Pan",
+            "date": "2021-02-03T23:00:00.000Z",
+            "abstract": "In this paper we consider the stable P1 – P1 finite element pair solving the Stokes eigenvalue problem and derive some superconvergence results based on the interpolation post-processing technique. Firstly, we derive the superclose property of the interpolation function. Then a superconvergence result of O(h^3/2)-order for the pressure approximation and the velocity gradient approximation under the condition of strong regular mesh triangulation are obtained. Finally, the superconvergence rate of O(h^3)-order is proved for the eigenvalue approximation and the numerical experiment is provided to confirm the theoretical analysis.",
+            "link": "https://doi.org/10.1016/j.chaos.2021.110706"
+        },
+        {
             "title": "Theoretical and numerical local null controllability of a quasi-linear parabolic equation in dimensions 2 and 3",
             "authors": "E. Fernández-Cara, J. Límaco, I. Marín-Gayte",
             "date": "2021-01-30T23:00:00.000Z",
