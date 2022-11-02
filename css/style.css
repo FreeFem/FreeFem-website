@@ -109,7 +109,7 @@ nav {
   display: grid;
   /* display: none; */
   grid-template-columns: auto 20px;
-  grid-auto-rows: auto;
+  grid-auto-rows: auto auto;
   justify-items: center;
   align-items: center;
   padding: 0 calc((100% - 1200px)/2);
