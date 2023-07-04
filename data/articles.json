@@ -35,11 +35,15 @@
         [
           {
             "name": "M. S. Khan",
-            "ids": ["144332717"],
+            "ids": [
+              "144332717"
+            ],
             "slug": "M.-S.-Khan",
             "structuredName": {
               "firstName": "M.",
-              "middleNames": ["Sabeel"],
+              "middleNames": [
+                "Sabeel"
+              ],
               "lastName": "Khan"
             },
             "bitmap$0": false
@@ -52,7 +56,9 @@
         [
           {
             "name": "Isma Hameed",
-            "ids": ["3063110"],
+            "ids": [
+              "3063110"
+            ],
             "slug": "Isma-Hameed",
             "structuredName": {
               "firstName": "Isma",
@@ -69,11 +75,15 @@
         [
           {
             "name": "M. A. Memon",
-            "ids": ["16124777"],
+            "ids": [
+              "16124777"
+            ],
             "slug": "M.-A.-Memon",
             "structuredName": {
               "firstName": "Muhammad",
-              "middleNames": ["Asif"],
+              "middleNames": [
+                "Asif"
+              ],
               "lastName": "Memon"
             },
             "bitmap$0": false
@@ -86,7 +96,9 @@
         [
           {
             "name": "E. Bonyah",
-            "ids": ["145223467"],
+            "ids": [
+              "145223467"
+            ],
             "slug": "E.-Bonyah",
             "structuredName": {
               "firstName": "Ebenezer",
@@ -104,7 +116,9 @@
       "structuredAuthors": [
         {
           "firstName": "M.",
-          "middleNames": ["Sabeel"],
+          "middleNames": [
+            "Sabeel"
+          ],
           "lastName": "Khan"
         },
         {
@@ -114,7 +128,9 @@
         },
         {
           "firstName": "Muhammad",
-          "middleNames": ["Asif"],
+          "middleNames": [
+            "Asif"
+          ],
           "lastName": "Memon"
         },
         {
@@ -173,7 +189,9 @@
       "entityRelations": [],
       "faqs": [],
       "scorecardStats": [],
-      "fieldsOfStudy": ["Physics"],
+      "fieldsOfStudy": [
+        "Physics"
+      ],
       "openAccessInfo": {
         "license": "CCBY",
         "status": "GOLD",
@@ -216,7 +234,9 @@
         [
           {
             "name": "Sahar Borzooei",
-            "ids": ["1581605601"],
+            "ids": [
+              "1581605601"
+            ],
             "slug": "Sahar-Borzooei",
             "structuredName": {
               "firstName": "Sahar",
@@ -233,7 +253,9 @@
         [
           {
             "name": "Pierre-Henri Tournier",
-            "ids": ["17158457"],
+            "ids": [
+              "17158457"
+            ],
             "slug": "Pierre-Henri-Tournier",
             "structuredName": {
               "firstName": "Pierre-Henri",
@@ -250,7 +272,9 @@
         [
           {
             "name": "C. Migliaccio",
-            "ids": ["2854725"],
+            "ids": [
+              "2854725"
+            ],
             "slug": "C.-Migliaccio",
             "structuredName": {
               "firstName": "Claire",
@@ -267,7 +291,9 @@
         [
           {
             "name": "V. Dolean",
-            "ids": ["1815537"],
+            "ids": [
+              "1815537"
+            ],
             "slug": "V.-Dolean",
             "structuredName": {
               "firstName": "Victorita",
@@ -284,7 +310,9 @@
         [
           {
             "name": "C. Pichot",
-            "ids": ["48328542"],
+            "ids": [
+              "48328542"
+            ],
             "slug": "C.-Pichot",
             "structuredName": {
               "firstName": "Christian",
@@ -377,7 +405,9 @@
       "entityRelations": [],
       "faqs": [],
       "scorecardStats": [],
-      "fieldsOfStudy": ["Medicine"],
+      "fieldsOfStudy": [
+        "Medicine"
+      ],
       "pubDate": "2023-03-26",
       "pubUpdateDate": "2023-03-26",
       "badges": [],
@@ -410,7 +440,9 @@
         [
           {
             "name": "S. Brito-Espino",
-            "ids": ["1446651127"],
+            "ids": [
+              "1446651127"
+            ],
             "slug": "S.-Brito-Espino",
             "structuredName": {
               "firstName": "Saulo",
@@ -427,7 +459,9 @@
         [
           {
             "name": "Tania Garcia-Ramirez",
-            "ids": ["2145653839"],
+            "ids": [
+              "2145653839"
+            ],
             "slug": "Tania-Garcia-Ramirez",
             "structuredName": {
               "firstName": "Tania",
@@ -444,11 +478,15 @@
         [
           {
             "name": "F. León-Zerpa",
-            "ids": ["1686772048"],
+            "ids": [
+              "1686772048"
+            ],
             "slug": "F.-León-Zerpa",
             "structuredName": {
               "firstName": "Federico",
-              "middleNames": ["A."],
+              "middleNames": [
+                "A."
+              ],
               "lastName": "León-Zerpa"
             },
             "bitmap$0": false
@@ -461,11 +499,15 @@
         [
           {
             "name": "C. Mendieta-Pino",
-            "ids": ["1446651155"],
+            "ids": [
+              "1446651155"
+            ],
             "slug": "C.-Mendieta-Pino",
             "structuredName": {
               "firstName": "Carlos",
-              "middleNames": ["A."],
+              "middleNames": [
+                "A."
+              ],
               "lastName": "Mendieta-Pino"
             },
             "bitmap$0": false
@@ -478,11 +520,15 @@
         [
           {
             "name": "J. J. Santana",
-            "ids": ["32423291"],
+            "ids": [
+              "32423291"
+            ],
             "slug": "J.-J.-Santana",
             "structuredName": {
               "firstName": "Juan",
-              "middleNames": ["J."],
+              "middleNames": [
+                "J."
+              ],
               "lastName": "Santana"
             },
             "bitmap$0": false
@@ -495,7 +541,9 @@
         [
           {
             "name": "A. Ramos-Martín",
-            "ids": ["1412329451"],
+            "ids": [
+              "1412329451"
+            ],
             "slug": "A.-Ramos-Martín",
             "structuredName": {
               "firstName": "Alejandro",
@@ -523,17 +571,23 @@
         },
         {
           "firstName": "Federico",
-          "middleNames": ["A."],
+          "middleNames": [
+            "A."
+          ],
           "lastName": "León-Zerpa"
         },
         {
           "firstName": "Carlos",
-          "middleNames": ["A."],
+          "middleNames": [
+            "A."
+          ],
           "lastName": "Mendieta-Pino"
         },
         {
           "firstName": "Juan",
-          "middleNames": ["J."],
+          "middleNames": [
+            "J."
+          ],
           "lastName": "Santana"
         },
         {
@@ -592,7 +646,9 @@
       "entityRelations": [],
       "faqs": [],
       "scorecardStats": [],
-      "fieldsOfStudy": ["Engineering"],
+      "fieldsOfStudy": [
+        "Engineering"
+      ],
       "openAccessInfo": {
         "license": "CCBY",
         "status": "GOLD",
@@ -636,11 +692,16 @@
         [
           {
             "name": "Jorge Morvan Marotte Luz Filho",
-            "ids": ["2159304238"],
+            "ids": [
+              "2159304238"
+            ],
             "slug": "Jorge-Morvan-Marotte-Luz-Filho",
             "structuredName": {
               "firstName": "Jorge",
-              "middleNames": ["Morvan", "Marotte"],
+              "middleNames": [
+                "Morvan",
+                "Marotte"
+              ],
               "lastName": "Luz Filho"
             },
             "bitmap$0": false
@@ -653,7 +714,9 @@
         [
           {
             "name": "Raquel Mattoso",
-            "ids": ["1579760654"],
+            "ids": [
+              "1579760654"
+            ],
             "slug": "Raquel-Mattoso",
             "structuredName": {
               "firstName": "Raquel",
@@ -670,7 +733,9 @@
         [
           {
             "name": "L. Fernandez",
-            "ids": ["49013825"],
+            "ids": [
+              "49013825"
+            ],
             "slug": "L.-Fernandez",
             "structuredName": {
               "firstName": "Lucas",
@@ -688,7 +753,10 @@
       "structuredAuthors": [
         {
           "firstName": "Jorge",
-          "middleNames": ["Morvan", "Marotte"],
+          "middleNames": [
+            "Morvan",
+            "Marotte"
+          ],
           "lastName": "Luz Filho"
         },
         {
@@ -751,7 +819,9 @@
       "entityRelations": [],
       "faqs": [],
       "scorecardStats": [],
-      "fieldsOfStudy": ["Computer Science"],
+      "fieldsOfStudy": [
+        "Computer Science"
+      ],
       "pubDate": "2023-03-17",
       "pubUpdateDate": "2023-03-17",
       "publisher": {
@@ -782,7 +852,9 @@
         [
           {
             "name": "G. Sadaka",
-            "ids": ["2643277"],
+            "ids": [
+              "2643277"
+            ],
             "slug": "G.-Sadaka",
             "structuredName": {
               "firstName": "Georges",
@@ -799,7 +871,9 @@
         [
           {
             "name": "Victor Kalt",
-            "ids": ["67210505"],
+            "ids": [
+              "67210505"
+            ],
             "slug": "Victor-Kalt",
             "structuredName": {
               "firstName": "Victor",
@@ -816,7 +890,9 @@
         [
           {
             "name": "I. Danaila",
-            "ids": ["1823374"],
+            "ids": [
+              "1823374"
+            ],
             "slug": "I.-Danaila",
             "structuredName": {
               "firstName": "Ionut",
@@ -833,7 +909,9 @@
         [
           {
             "name": "F. Hecht",
-            "ids": ["1690488"],
+            "ids": [
+              "1690488"
+            ],
             "slug": "F.-Hecht",
             "structuredName": {
               "firstName": "Frédéric",
@@ -915,7 +993,9 @@
       "entityRelations": [],
       "faqs": [],
       "scorecardStats": [],
-      "fieldsOfStudy": ["Physics"],
+      "fieldsOfStudy": [
+        "Physics"
+      ],
       "openAccessInfo": {
         "status": "GREEN",
         "location": {
@@ -954,11 +1034,15 @@
         [
           {
             "name": "O. Solnyshkina",
-            "ids": ["71024237"],
+            "ids": [
+              "71024237"
+            ],
             "slug": "O.-Solnyshkina",
             "structuredName": {
               "firstName": "Olga",
-              "middleNames": ["A."],
+              "middleNames": [
+                "A."
+              ],
               "lastName": "Solnyshkina"
             },
             "bitmap$0": false
@@ -971,11 +1055,15 @@
         [
           {
             "name": "N. Fatkullina",
-            "ids": ["81126776"],
+            "ids": [
+              "81126776"
+            ],
             "slug": "N.-Fatkullina",
             "structuredName": {
               "firstName": "N.",
-              "middleNames": ["B."],
+              "middleNames": [
+                "B."
+              ],
               "lastName": "Fatkullina"
             },
             "bitmap$0": false
@@ -988,11 +1076,15 @@
         [
           {
             "name": "A. Bulatova",
-            "ids": ["114578030"],
+            "ids": [
+              "114578030"
+            ],
             "slug": "A.-Bulatova",
             "structuredName": {
               "firstName": "A.",
-              "middleNames": ["Z."],
+              "middleNames": [
+                "Z."
+              ],
               "lastName": "Bulatova"
             },
             "bitmap$0": false
@@ -1005,7 +1097,9 @@
         [
           {
             "name": "V. Kireev",
-            "ids": ["153119412"],
+            "ids": [
+              "153119412"
+            ],
             "slug": "V.-Kireev",
             "structuredName": {
               "firstName": "Victor",
@@ -1022,7 +1116,9 @@
         [
           {
             "name": "A. Bilyalov",
-            "ids": ["88295575"],
+            "ids": [
+              "88295575"
+            ],
             "slug": "A.-Bilyalov",
             "structuredName": {
               "firstName": "AR",
@@ -1039,11 +1135,15 @@
         [
           {
             "name": "I. Akhatov",
-            "ids": ["49343264"],
+            "ids": [
+              "49343264"
+            ],
             "slug": "I.-Akhatov",
             "structuredName": {
               "firstName": "Iskander",
-              "middleNames": ["Sh."],
+              "middleNames": [
+                "Sh."
+              ],
               "lastName": "Akhatov"
             },
             "bitmap$0": false
@@ -1056,11 +1156,15 @@
         [
           {
             "name": "V. Pavlov",
-            "ids": ["2058529159"],
+            "ids": [
+              "2058529159"
+            ],
             "slug": "V.-Pavlov",
             "structuredName": {
               "firstName": "V.",
-              "middleNames": ["N."],
+              "middleNames": [
+                "N."
+              ],
               "lastName": "Pavlov"
             },
             "bitmap$0": false
@@ -1074,17 +1178,23 @@
       "structuredAuthors": [
         {
           "firstName": "Olga",
-          "middleNames": ["A."],
+          "middleNames": [
+            "A."
+          ],
           "lastName": "Solnyshkina"
         },
         {
           "firstName": "N.",
-          "middleNames": ["B."],
+          "middleNames": [
+            "B."
+          ],
           "lastName": "Fatkullina"
         },
         {
           "firstName": "A.",
-          "middleNames": ["Z."],
+          "middleNames": [
+            "Z."
+          ],
           "lastName": "Bulatova"
         },
         {
@@ -1099,12 +1209,16 @@
         },
         {
           "firstName": "Iskander",
-          "middleNames": ["Sh."],
+          "middleNames": [
+            "Sh."
+          ],
           "lastName": "Akhatov"
         },
         {
           "firstName": "V.",
-          "middleNames": ["N."],
+          "middleNames": [
+            "N."
+          ],
           "lastName": "Pavlov"
         }
       ],
@@ -1157,7 +1271,9 @@
       "entityRelations": [],
       "faqs": [],
       "scorecardStats": [],
-      "fieldsOfStudy": ["Materials Science"],
+      "fieldsOfStudy": [
+        "Materials Science"
+      ],
       "pubDate": "2023-03-01",
       "pubUpdateDate": "2023-03-01",
       "publisher": {
@@ -1188,11 +1304,15 @@
         [
           {
             "name": "P. P. de Carvalho",
-            "ids": ["2124087297"],
+            "ids": [
+              "2124087297"
+            ],
             "slug": "P.-P.-de-Carvalho",
             "structuredName": {
               "firstName": "Pitágoras",
-              "middleNames": ["Pinheiro"],
+              "middleNames": [
+                "Pinheiro"
+              ],
               "lastName": "de Carvalho"
             },
             "bitmap$0": false
@@ -1205,7 +1325,9 @@
         [
           {
             "name": "R. Demarque",
-            "ids": ["103261736"],
+            "ids": [
+              "103261736"
+            ],
             "slug": "R.-Demarque",
             "structuredName": {
               "firstName": "R.",
@@ -1222,7 +1344,9 @@
         [
           {
             "name": "J. Límaco",
-            "ids": ["25287881"],
+            "ids": [
+              "25287881"
+            ],
             "slug": "J.-Límaco",
             "structuredName": {
               "firstName": "Juan",
@@ -1239,11 +1363,16 @@
         [
           {
             "name": "L. Viana",
-            "ids": ["1394410083"],
+            "ids": [
+              "1394410083"
+            ],
             "slug": "L.-Viana",
             "structuredName": {
               "firstName": "Luiz",
-              "middleNames": ["Fernando", "Câmara"],
+              "middleNames": [
+                "Fernando",
+                "Câmara"
+              ],
               "lastName": "Viana"
             },
             "bitmap$0": false
@@ -1257,7 +1386,9 @@
       "structuredAuthors": [
         {
           "firstName": "Pitágoras",
-          "middleNames": ["Pinheiro"],
+          "middleNames": [
+            "Pinheiro"
+          ],
           "lastName": "de Carvalho"
         },
         {
@@ -1272,7 +1403,10 @@
         },
         {
           "firstName": "Luiz",
-          "middleNames": ["Fernando", "Câmara"],
+          "middleNames": [
+            "Fernando",
+            "Câmara"
+          ],
           "lastName": "Viana"
         }
       ],
@@ -1337,7 +1471,9 @@
           "score": 10
         }
       ],
-      "fieldsOfStudy": ["Mathematics"],
+      "fieldsOfStudy": [
+        "Mathematics"
+      ],
       "pubDate": "2023-02-08",
       "pubUpdateDate": "2023-02-08",
       "publisher": {
@@ -1368,7 +1504,9 @@
         [
           {
             "name": "Li Chun-Xi",
-            "ids": ["2189880866"],
+            "ids": [
+              "2189880866"
+            ],
             "slug": "Li-Chun-Xi",
             "structuredName": {
               "firstName": "",
@@ -1385,7 +1523,9 @@
         [
           {
             "name": "Ma Cheng",
-            "ids": ["2189885242"],
+            "ids": [
+              "2189885242"
+            ],
             "slug": "Ma-Cheng",
             "structuredName": {
               "firstName": "",
@@ -1402,7 +1542,9 @@
         [
           {
             "name": "Ye Xue-Min",
-            "ids": ["2177808534"],
+            "ids": [
+              "2177808534"
+            ],
             "slug": "Ye-Xue-Min",
             "structuredName": {
               "firstName": "",
@@ -1484,7 +1626,9 @@
       "entityRelations": [],
       "faqs": [],
       "scorecardStats": [],
-      "fieldsOfStudy": ["Physics"],
+      "fieldsOfStudy": [
+        "Physics"
+      ],
       "openAccessInfo": {
         "license": "CCBY",
         "status": "GOLD",
@@ -1522,7 +1666,9 @@
         [
           {
             "name": "J. Galkowski",
-            "ids": ["11225281"],
+            "ids": [
+              "11225281"
+            ],
             "slug": "J.-Galkowski",
             "structuredName": {
               "firstName": "Jeffrey",
@@ -1539,7 +1685,9 @@
         [
           {
             "name": "P. Marchand",
-            "ids": ["2061390380"],
+            "ids": [
+              "2061390380"
+            ],
             "slug": "P.-Marchand",
             "structuredName": {
               "firstName": "Pierre",
@@ -1556,7 +1704,9 @@
         [
           {
             "name": "Jian Wang",
-            "ids": ["2152766005"],
+            "ids": [
+              "2152766005"
+            ],
             "slug": "Jian-Wang",
             "structuredName": {
               "firstName": "Jian",
@@ -1573,7 +1723,9 @@
         [
           {
             "name": "M. Zworski",
-            "ids": ["1725350"],
+            "ids": [
+              "1725350"
+            ],
             "slug": "M.-Zworski",
             "structuredName": {
               "firstName": "Maciej",
@@ -1661,7 +1813,9 @@
           "score": 10
         }
       ],
-      "fieldsOfStudy": ["Mathematics"],
+      "fieldsOfStudy": [
+        "Mathematics"
+      ],
       "pubDate": "2022-10-18",
       "pubUpdateDate": "2022-10-18",
       "badges": [
@@ -1693,7 +1847,9 @@
         [
           {
             "name": "Hao Ren",
-            "ids": ["2114292812"],
+            "ids": [
+              "2114292812"
+            ],
             "slug": "Hao-Ren",
             "structuredName": {
               "firstName": "Hao",
@@ -1710,7 +1866,9 @@
         [
           {
             "name": "Pengcheng Zhou",
-            "ids": ["49865411"],
+            "ids": [
+              "49865411"
+            ],
             "slug": "Pengcheng-Zhou",
             "structuredName": {
               "firstName": "Pengcheng",
@@ -1727,7 +1885,9 @@
         [
           {
             "name": "Chunming Zhou",
-            "ids": ["2184569086"],
+            "ids": [
+              "2184569086"
+            ],
             "slug": "Chunming-Zhou",
             "structuredName": {
               "firstName": "Chunming",
@@ -1810,7 +1970,9 @@
       "entityRelations": [],
       "faqs": [],
       "scorecardStats": [],
-      "fieldsOfStudy": ["Engineering"],
+      "fieldsOfStudy": [
+        "Engineering"
+      ],
       "pubDate": "2022-08-10",
       "pubUpdateDate": "2022-08-10",
       "badges": [],
