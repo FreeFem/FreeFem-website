@@ -1,0 +1,34 @@
+name: SemanticScholar
+on:
+  schedule:
+    - cron: "0 0 * * 0"
+
+jobs:
+  semantic:
+    name: Semantic Scholar
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@main
+
+      - uses: actions/setup-node@master
+        with:
+          node-version: 18.x
+
+      - name: Install
+        run: |
+          cd tools/semanticScholar
+          yarn
+          cd -
+
+      - name: Run
+        run: node tools/semanticScholar/index.js
+
+      - name: Update articles.json
+        run: |
+          git config --global user.name "FreeFEM bot"
+          git config --global user.email "bot@freefem.org"
+          git add data/articles.json
+          git commit -m"[BOT] update articles.json"
+          git push

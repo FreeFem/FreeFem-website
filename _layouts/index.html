@@ -1,14 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-{% include head.html %}
+  {% include head.html %}
 
-<body>
-  {% include schema.html %}
-  {% include header.html %}
+  <body>
+    {% include schema.html %} {% include header.html %} {% include banner.html
+    %}
 
-  {% include banner.html %}
-
-  <!--<section id="happy-birthday">
+    <!--<section id="happy-birthday">
     <script>
       function closeHappyBirthday () {
         var div = document.getElementById("happy-birthday");
@@ -24,10 +22,10 @@
     </p>
   </section>-->
 
-  <section id="main">
-    <article id="demo">
-      <div id="code">
-        <pre><code>load "msh3"
+    <section id="main">
+      <article id="demo">
+        <div id="code">
+          <pre><code>load "msh3"
 
 // Parameters
 int nn = 20; // Mesh quality
@@ -58,129 +56,211 @@ solve Poisson(u, v, solver=CG)
 
 // Plot
 plot(u, nbiso=15);</code></pre>
-      </div>
+        </div>
 
-      <div id="blank">
-        <video id="laplacianVideo" playsinline autoplay muted loop>
-          <source src="{{ site.url }}{{ site.baseurl }}/vid/LaplacianOnCube.webm" type="video/webm" />
-          <source src="{{ site.url }}{{ site.baseurl }}/vid/LaplacianOnCube.mp4" type="video/mp4" />
-          <img src="{{ site.url }}{{ site.baseurl }}/img/LaplacianOnCube.jpg" alt="Poisson's equation 3D - Iso-surfaces of the solution">
-        </video>
-      </div>
-    </article>
+        <div id="blank">
+          <video id="laplacianVideo" playsinline autoplay muted loop>
+            <source
+              src="{{ site.url }}{{ site.baseurl }}/vid/LaplacianOnCube.webm"
+              type="video/webm"
+            />
+            <source
+              src="{{ site.url }}{{ site.baseurl }}/vid/LaplacianOnCube.mp4"
+              type="video/mp4"
+            />
+            <img
+              src="{{ site.url }}{{ site.baseurl }}/img/LaplacianOnCube.jpg"
+              alt="Poisson's equation 3D - Iso-surfaces of the solution"
+            />
+          </video>
+        </div>
+      </article>
 
-    <article id="intro">
-      <h1>A high level multiphysics finite element software</h1>
-      <p>FreeFEM offers a fast interpolation algorithm and a language for the manipulation of data on multiple meshes.</p>
-    </article>
-  </section>
-
-  <aside>
-    <div id="release">RELEASE</div>
-    <div id="download"><a href="https://github.com/FreeFem/FreeFem-sources/releases" target="_blank">Download</a></div>
-    <div id="platforms">
-      <p><span>
-        <i class="fab fa-apple"></i>
-        <i class="fab fa-linux"></i>
-        <i class="fab fa-windows"></i>
-        <i class="fab fa-docker"></i>
-      </span>All platforms (<a href="https://www.gnu.org/licenses/lgpl-3.0.txt" target="_blank">LGPL 3.0</a>)</p>
-    </div>
-  </aside>
-
-  <section id="content">
-    <article class="content-1">
-        <h2>Easy to use PDE solver</h2>
-        <p>FreeFEM is a popular 2D and 3D partial differential equations (PDE) solver used by thousands of researchers across the world.<br/><br/>
-          It allows you to easily implement your own physics modules using the provided FreeFEM language.
-          FreeFEM offers a large list of finite elements, like the Lagrange, Taylor-Hood, etc., usable in the continuous and discontinuous Galerkin method framework.
+      <article id="intro">
+        <h1>A high level multiphysics finite element software</h1>
+        <p>
+          FreeFEM offers a fast interpolation algorithm and a language for the
+          manipulation of data on multiple meshes.
         </p>
-    </article>
-    <article class="content-2">
-      <h2>Pre-built physics</h2>
-      <ul>
-        <li>Incompressible Navier-Stokes (using the P1-P2 Taylor Hood element)</li>
-      </ul>
-      <ul>
-        <li>Lamé equations (linear elasticity)</li>
-        <li>Neo-Hookean, Mooney-Rivlin (nonlinear elasticity)</li>
-      </ul>
-      <ul>
-        <li>Thermal diffusion</li>
-        <li>Thermal convection</li>
-        <li>Thermal radiation</li>
-      </ul>
-      <ul>
-        <li>Magnetostatics</li>
-        <li>Electrostatics</li>
-      </ul>
-      <ul>
-        <li>Fluid-structure interaction (FSI)</li>
-      </ul>
-    </article>
-    <article class="content-3">
+      </article>
+    </section>
+
+    <aside>
+      <div id="release">RELEASE</div>
+      <div id="download">
+        <a
+          href="https://github.com/FreeFem/FreeFem-sources/releases"
+          target="_blank"
+          >Download</a
+        >
+      </div>
+      <div id="platforms">
+        <p>
+          <span>
+            <i class="fab fa-apple"></i>
+            <i class="fab fa-linux"></i>
+            <i class="fab fa-windows"></i>
+            <i class="fab fa-docker"></i> </span
+          >All platforms (<a
+            href="https://www.gnu.org/licenses/lgpl-3.0.txt"
+            target="_blank"
+            >LGPL 3.0</a
+          >)
+        </p>
+      </div>
+    </aside>
+
+    <section id="content">
+      <article class="content-1">
+        <h2>Easy to use PDE solver</h2>
+        <p>
+          FreeFEM is a popular 2D and 3D partial differential equations (PDE)
+          solver used by thousands of researchers across the world.<br /><br />
+          It allows you to easily implement your own physics modules using the
+          provided FreeFEM language. FreeFEM offers a large list of finite
+          elements, like the Lagrange, Taylor-Hood, etc., usable in the
+          continuous and discontinuous Galerkin method framework.
+        </p>
+      </article>
+      <article class="content-2">
+        <h2>Pre-built physics</h2>
+        <ul>
+          <li>
+            Incompressible Navier-Stokes (using the P1-P2 Taylor Hood element)
+          </li>
+        </ul>
+        <ul>
+          <li>Lamé equations (linear elasticity)</li>
+          <li>Neo-Hookean, Mooney-Rivlin (nonlinear elasticity)</li>
+        </ul>
+        <ul>
+          <li>Thermal diffusion</li>
+          <li>Thermal convection</li>
+          <li>Thermal radiation</li>
+        </ul>
+        <ul>
+          <li>Magnetostatics</li>
+          <li>Electrostatics</li>
+        </ul>
+        <ul>
+          <li>Fluid-structure interaction (FSI)</li>
+        </ul>
+      </article>
+      <article class="content-3">
         <h2>Strong mesh and parallel capabilities</h2>
         <p>
-          FreeFEM has it own internal mesher, called BAMG, and is compatible with the best open-source mesh and visualization software like <a href="http://wias-berlin.de/software/tetgen/" target="_blank">Tetgen</a>, <a href="http://gmsh.info/"
-            target="_blank">Gmsh</a>, <a href="https://www.mmgtools.org/" target="_blank">Mmg</a> and <a href="https://www.paraview.org/" target="_blank">ParaView</a>.<br/><br/>
-          Written in C++ to optimize for speed, FreeFEM is interfaced with the popular <a href="http://mumps.enseeiht.fr/" target="_blank">mumps</a>, <a href="https://www.mcs.anl.gov/petsc/" target="_blank">PETSc</a> and <a
-            href="https://github.com/hpddm/hpddm" target="_blank">HPDDM</a> solvers.
+          FreeFEM has it own internal mesher, called BAMG, and is compatible
+          with the best open-source mesh and visualization software like
+          <a href="http://wias-berlin.de/software/tetgen/" target="_blank"
+            >Tetgen</a
+          >, <a href="http://gmsh.info/" target="_blank">Gmsh</a>,
+          <a href="https://www.mmgtools.org/" target="_blank">Mmg</a> and
+          <a href="https://www.paraview.org/" target="_blank">ParaView</a
+          >.<br /><br />
+          Written in C++ to optimize for speed, FreeFEM is interfaced with the
+          popular <a href="http://mumps.enseeiht.fr/" target="_blank">mumps</a>,
+          <a href="https://www.mcs.anl.gov/petsc/" target="_blank">PETSc</a> and
+          <a href="https://github.com/hpddm/hpddm" target="_blank">HPDDM</a>
+          solvers.
         </p>
-    </article>
-    <article class="content-4">
-      <h2>HPC in the cloud integration</h2>
-      <p>With <a href="https://computing.qarnot.com/" target="_blank">Qarnot</a>'s HPC platform, <b>7 lines</b> of python code is all you need to run a FreeFEM simulation in the cloud. Learn how to run FreeFEM with Qarnot's sustainable HPC platform on <a href="https://blog.qarnot.com/freefem-and-the-finite-element-method-on-qarnot/" target="_blank">Qarnot's blog</a>.</p>
-      <p>FreeFEM is also available on <a href="https://www.rescale.com" target="_blank">Rescale</a>'s ScaleX® Pro. Rescale offers academic users up to 500 core hours on their HPC cloud.</p>
-    </article>
-    <article class="content-5">
-      <h2>Video tutorials</h2>
-      <p>Thanks to <a href="https://mbarzegary.github.io/" target="_blank">Mojtaba Barzegari</a></p>
-      <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PL6fjYEpJFi7Wu9ZFlak7r0QgrF0aNi8H1" title="FreeFEM video tutorials" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </article>
-  </section>
+      </article>
+      <article class="content-4">
+        <h2>HPC in the cloud integration</h2>
+        <p>
+          With
+          <a href="https://computing.qarnot.com/" target="_blank">Qarnot</a>'s
+          HPC platform, <b>7 lines</b> of python code is all you need to run a
+          FreeFEM simulation in the cloud. Learn how to run FreeFEM with
+          Qarnot's sustainable HPC platform on
+          <a
+            href="https://blog.qarnot.com/freefem-and-the-finite-element-method-on-qarnot/"
+            target="_blank"
+            >Qarnot's blog</a
+          >.
+        </p>
+        <p>
+          FreeFEM is also available on
+          <a href="https://www.rescale.com" target="_blank">Rescale</a>'s
+          ScaleX® Pro. Rescale offers academic users up to 500 core hours on
+          their HPC cloud.
+        </p>
+      </article>
+      <article class="content-5">
+        <h2>Video tutorials</h2>
+        <p>
+          Thanks to
+          <a href="https://mbarzegary.github.io/" target="_blank"
+            >Mojtaba Barzegari</a
+          >
+        </p>
+        <iframe
+          width="100%"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/videoseries?list=PL6fjYEpJFi7Wu9ZFlak7r0QgrF0aNi8H1"
+          title="FreeFEM video tutorials"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </article>
+    </section>
 
-  <section id="articles">
-    <h1>Latest Articles</h1>
-    <article id="artFirst">
-      <p>{{ site.data.articles.articles[0].date | date: '%B %d, %Y' }} | {{ site.data.articles.articles[0].authors }}</p>
-      <h2><a href="{{ site.data.articles.articles[0].link }}" target="_blank">{{ site.data.articles.articles[0].title }}</a></h2>
-      <p>
-        {{ site.data.articles.articles[0].abstract }}
-      </p>
-    </article>
-    <article id="artSecond">
-      <p>{{ site.data.articles.articles[1].date | date: '%B %d, %Y' }} | {{ site.data.articles.articles[1].authors }}</p>
-      <h2><a href="{{ site.data.articles.articles[1].link }}" target="_blank">{{ site.data.articles.articles[1].title }}</a></h2>
-      <p>
-        {{ site.data.articles.articles[1].abstract }}
-      </p>
-    </article>
-    <article id="artThird">
-      <p>{{ site.data.articles.articles[2].date | date: '%B %d, %Y' }} | {{ site.data.articles.articles[2].authors }}</p>
-      <h2><a href="{{ site.data.articles.articles[2].link }}" target="_blank">{{ site.data.articles.articles[2].title }}</a></h2>
-      <p>
-        {{ site.data.articles.articles[2].abstract }}
-      </p>
-    </article>
-  </section>
-
-  <section id="info">
-    <section id="events">
-      <h1>Events</h1>
-
-      <div class="event-grid">
-        <div class="date">9 September 2021</div>
-        <h2 class="title"><a href='https://sites.google.com/a/comfos.org/comfos/freefem/jsiam2021' target='_blank'>JSIAM 2021</a></h2>
-        <p class="description">FreeFEM tutorial : Parallel computation of incompressible flow problem in three dimension is shown.<br>  Zoom webinar, Japan</p>
+    <section id="articles">
+      <h1>Latest Articles</h1>
+      <div id="articles-list">
+        {% for article in site.data.articles.articles %}
+        <article>
+          <span>{{ article.pubDate | date: '%B %d, %Y' }}</span>
+          <h2>
+            <a href="{{ article.doiInfo.doiUrl }}" target="_blank"
+              >{{ article.title.text }}</a
+            >
+          </h2>
+          <div>
+            {% for author in article.authors %}
+            <span>{{ author[0].name }}</span>
+            {% endfor %}
+          </div>
+          <p>{{ article.paperAbstract.text }}</p>
+        </article>
+        {% endfor %}
       </div>
+    </section>
 
+    <section id="info">
+      <section id="events">
+        <h1>Events</h1>
 
-      <div class="event-grid">
-        <div class="date">-8-9 DECEMBER 2022</div>
-        <h2 class="title"><a href='https://freefem.org/ffdays' target='_blank'>FreeFEM Days </a></h2>
-        <p class="description">Save te date and joint  us for the 14th FreeFEM Days 2022 edition ! <br>  Paris, France</p>
-      </div>
-      <!--
+        <div class="event-grid">
+          <div class="date">9 September 2021</div>
+          <h2 class="title">
+            <a
+              href="https://sites.google.com/a/comfos.org/comfos/freefem/jsiam2021"
+              target="_blank"
+              >JSIAM 2021</a
+            >
+          </h2>
+          <p class="description">
+            FreeFEM tutorial : Parallel computation of incompressible flow
+            problem in three dimension is shown.<br />
+            Zoom webinar, Japan
+          </p>
+        </div>
+
+        <div class="event-grid">
+          <div class="date">-8-9 DECEMBER 2022</div>
+          <h2 class="title">
+            <a href="https://freefem.org/ffdays" target="_blank"
+              >FreeFEM Days
+            </a>
+          </h2>
+          <p class="description">
+            Save te date and joint us for the 14th FreeFEM Days 2022 edition !
+            <br />
+            Paris, France
+          </p>
+        </div>
+        <!--
       <div class="event-grid">
         <div class="date">11-13 MAY 2020</div>
         <h2 class="title"><a href='http://www.eurosae.com/formation/?formation=1053' target='_blank'> EUROSAE </a></h2>
@@ -221,28 +301,49 @@ https://sites.google.com/a/comfos.org/comfos/ffempp/jsiam2021
         <h2 class="title"><a href='http://hpcse.it4i.cz/HPCSE19/' target='_blank'>HPCSE 2019 - Ostrava, Czech Republic</a></h2>
         <p class="description">High Performance Computing in Science and Engineering</p>
       </div>
-      -->
+      --></section>
+
+      <section id="team">
+        <h1>You are in good company</h1>
+        <div>
+          <a href="http://www.sorbonne-universite.fr/" target="_blank"
+            ><img
+              alt="Sorbonne université"
+              src="{{ site.url }}{{ site.baseurl }}/img/logo_Sorbonne.svg"
+          /></a>
+          <a href="https://www.inria.fr/" target="_blank"
+            ><img
+              alt="INRIA"
+              src="{{ site.url }}{{ site.baseurl }}/img/logo_INRIA_EN.svg"
+          /></a>
+          <a href="http://www.agence-nationale-recherche.fr/" target="_blank"
+            ><img
+              alt="ANR"
+              src="{{ site.url }}{{ site.baseurl }}/img/logo_ANR.svg"
+          /></a>
+          <a href="http://www.genci.fr/" target="_blank"
+            ><img
+              alt="Genci"
+              src="{{ site.url }}{{ site.baseurl }}/img/logo_Genci.jpg"
+          /></a>
+          <a href="http://www.cnrs.fr/" target="_blank"
+            ><img
+              alt="CNRS"
+              src="{{ site.url }}{{ site.baseurl }}/img/logo_CNRS.svg"
+          /></a>
+        </div>
+      </section>
     </section>
 
-    <section id="team">
-      <h1>You are in good company</h1>
-      <div>
-        <a href="http://www.sorbonne-universite.fr/" target="_blank"><img alt="Sorbonne université" src="{{ site.url }}{{ site.baseurl }}/img/logo_Sorbonne.svg" /></a>
-        <a href="https://www.inria.fr/" target="_blank"><img alt="INRIA" src="{{ site.url }}{{ site.baseurl }}/img/logo_INRIA_EN.svg" /></a>
-        <a href="http://www.agence-nationale-recherche.fr/" target="_blank"><img alt="ANR" src="{{ site.url }}{{ site.baseurl }}/img/logo_ANR.svg" /></a>
-        <a href="http://www.genci.fr/" target="_blank"><img alt="Genci" src="{{ site.url }}{{ site.baseurl }}/img/logo_Genci.jpg" /></a>
-        <a href="http://www.cnrs.fr/" target="_blank"><img alt="CNRS" src="{{ site.url }}{{ site.baseurl }}/img/logo_CNRS.svg" /></a>
-      </div>
-    </section>
-  </section>
-
-  {% include footer.html %}
-  <script src="{{ site.url }}{{ site.baseurl }}/js/codeColor.js"></script>
-  <script>
-    const code = document.getElementById('code')
-    codeColor(code)
-  </script>
-  <script async src="{{ site.url }}{{ site.baseurl }}/js/githubRelease.js"></script>
-</body>
-
+    {% include footer.html %}
+    <script src="{{ site.url }}{{ site.baseurl }}/js/codeColor.js"></script>
+    <script>
+      const code = document.getElementById("code");
+      codeColor(code);
+    </script>
+    <script
+      async
+      src="{{ site.url }}{{ site.baseurl }}/js/githubRelease.js"
+    ></script>
+  </body>
 </html>

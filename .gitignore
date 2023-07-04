@@ -6,3 +6,6 @@ dist/.DS_Store
 dist/imgs/.DS_Store
 img/gallery/.DS_Store
 img/.DS_Store
+
+# Node
+node_modules
