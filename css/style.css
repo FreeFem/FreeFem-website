@@ -411,7 +411,7 @@ aside span {
   overflow-x: auto;
   grid-template-rows: auto;
   grid-template-columns: repeat(10, 300px);
-  column-gap: 50px;
+  column-gap: 3.75rem;
 }
 
 #articles-list > article {
