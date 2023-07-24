@@ -216,8 +216,8 @@ plot(u, nbiso=15);</code></pre>
           </h2>
           <div>
             {% for author in article.authors %}
-            <span>{{ author.name }}</span>
-            {% endfor %}
+            <span>{{ author.name }}</span>{% if forloop.last %}{% else %},{%
+            endif %} {% endfor %}
           </div>
           <p>{{ article.abstract }}</p>
         </article>
