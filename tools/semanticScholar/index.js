@@ -3,10 +3,10 @@ import { promises as fs } from 'fs'
 
 const apiUrl = 'https://api.semanticscholar.org/graph/v1/paper/search'
 
-const main = async () => {
+const getArticles = async (currentYear) => {
   // Params
   const query = 'query=freefem'
-  const year = 'year=' + new Date().getFullYear()
+  const year = 'year=' + currentYear
   const fields =
     'fields=' +
     ['title', 'authors', 'abstract', 'url', 'publicationDate'].join(',')
@@ -28,6 +28,24 @@ const main = async () => {
 
   // Max length 10
   if (articles.length > 10) articles.length = 10
+
+  return articles
+}
+
+const main = async () => {
+  const currentYear = new Date().getFullYear()
+
+  // Get articles
+  let articles = await getArticles(currentYear)
+
+  // Check enought
+  if (articles.length < 10) {
+    const otherArticles = await getArticles(currentYear - 1)
+    articles = [...articles, ...otherArticles]
+
+    // Max length 10
+    if (articles.length > 10) articles.length = 10
+  }
 
   // Write
   await fs.writeFile(
