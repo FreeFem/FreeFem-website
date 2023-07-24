@@ -18,7 +18,7 @@ body {
   color: #444;
   position: relative;
   font-size: 1rem;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -410,7 +410,8 @@ aside span {
   display: grid;
   overflow-x: auto;
   grid-template-rows: auto;
-  grid-template-columns: repeat(10, 300px);
+  grid-auto-columns: 300px;
+  grid-auto-flow: column;
   column-gap: 3.75rem;
 }
 
@@ -476,7 +477,7 @@ aside span {
   display: grid;
   grid-template-columns: 8rem auto;
   grid-template-rows: 1.875rem auto;
-  grid-template-areas: "date title" "date description";
+  grid-template-areas: 'date title' 'date description';
   margin-bottom: 15px;
 }
 
@@ -1189,7 +1190,7 @@ body::-webkit-scrollbar {
 }
 
 .sk-fading-circle .sk-circle:before {
-  content: "";
+  content: '';
   display: block;
   margin: 0 auto;
   width: 5%;

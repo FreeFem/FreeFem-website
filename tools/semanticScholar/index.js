@@ -1,38 +1,39 @@
 import fetch from 'node-fetch'
 import { promises as fs } from 'fs'
 
-const apiUrl = 'https://www.semanticscholar.org/api/1'
+const apiUrl = 'https://api.semanticscholar.org/graph/v1/paper/search'
 
 const main = async () => {
-    const res = await fetch(apiUrl + '/search', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-        },
-        body: JSON.stringify({
-            authors: [],
-            coAuthors: [],
-            cues: ["CitedByLibraryPaperCue"],
-            fieldsOfStudy: [],
-            getQuerySuggestions: false,
-            hydrateWithDdb: true,
-            includeBadges: true,
-            includeTldrs: true,
-            page: 1,
-            pageSize: 10,
-            performTitleMatch: true,
-            queryString: "freefem",
-            requireViewablePdf: false,
-            sort: "pub-date",
-            useFallbackRankerService: false,
-            useFallbackSearchCluster: false,
-            venues: [],
-            yearFilter: null,
-        })
-    })
-    const resJSON = await res.json()
+  // Params
+  const query = 'query=freefem'
+  const year = 'year=' + new Date().getFullYear()
+  const fields =
+    'fields=' +
+    ['title', 'authors', 'abstract', 'url', 'publicationDate'].join(',')
+  const limit = 'limit=99'
 
-    await fs.writeFile('data/articles.json', JSON.stringify({ articles: resJSON.results }, null, '  '))
+  // Fetch
+  const res = await fetch(
+    apiUrl + '?' + query + '&' + year + '&' + fields + '&' + limit
+  )
+  const resJSON = await res.json()
+
+  // Sort by date
+  const articles = resJSON.data.filter((d) => d?.abstract)
+  articles.sort(
+    (a, b) =>
+      new Date(b.publicationDate).getTime() -
+      new Date(a.publicationDate).getTime()
+  )
+
+  // Max length 10
+  if (articles.length > 10) articles.length = 10
+
+  // Write
+  await fs.writeFile(
+    'data/articles.json',
+    JSON.stringify({ articles }, null, '  ')
+  )
 }
 
 main().catch(console.error)

@@ -210,18 +210,16 @@ plot(u, nbiso=15);</code></pre>
       <div id="articles-list">
         {% for article in site.data.articles.articles %}
         <article>
-          <span>{{ article.pubDate | date: '%B %d, %Y' }}</span>
+          <span>{{ article.publicationDate | date: '%B %d, %Y' }}</span>
           <h2>
-            <a href="{{ article.doiInfo.doiUrl }}" target="_blank"
-              >{{ article.title.text }}</a
-            >
+            <a href="{{ article.url }}" target="_blank">{{ article.title }}</a>
           </h2>
           <div>
             {% for author in article.authors %}
-            <span>{{ author[0].name }}</span>
+            <span>{{ author.name }}</span>
             {% endfor %}
           </div>
-          <p>{{ article.paperAbstract.text }}</p>
+          <p>{{ article.abstract }}</p>
         </article>
         {% endfor %}
       </div>
@@ -338,8 +336,8 @@ https://sites.google.com/a/comfos.org/comfos/ffempp/jsiam2021
     {% include footer.html %}
     <script src="{{ site.url }}{{ site.baseurl }}/js/codeColor.js"></script>
     <script>
-      const code = document.getElementById("code");
-      codeColor(code);
+      const code = document.getElementById('code')
+      codeColor(code)
     </script>
     <script
       async
