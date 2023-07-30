@@ -186,6 +186,73 @@
           "name": "Ye Xue-Min"
         }
       ]
+    },
+    {
+      "paperId": "f57f4788a9e1d36f41676249b823b31ab27eccca",
+      "url": "https://www.semanticscholar.org/paper/f57f4788a9e1d36f41676249b823b31ab27eccca",
+      "title": "Increasing Micro-Rotational Viscosity Results in Large Micro-Rotations: A Study Based on Monolithic Eulerian Cosserat Fluid–Structure Interaction Formulation",
+      "abstract": "In classical continuum mechanics, a monolithic Eulerian formulation is used for numerically solving fluid–structure interaction (FSI) problems in the frame of a physically deformed configuration. This numerical approach is well adapted to large-displacement fluid–structure configurations where velocities of solids and fluids are computed all at once in a single variational equation. In the recent past, a monolithic Eulerian formulation for solving FSI problems of finite deformation to study the different physical features of fluid flow has been employed. Almost all the current studies use a classical framework in their approach. Despite producing decent results, such methods still need to be appropriately configured to generate exceptional results. Recently, a number of researchers have used a non-classical framework in their approach to analyze several physical problems. Therefore, in this paper, a monolithic Eulerian formulation is employed for solving FSI problems in a non-classical framework to study the micro-structural characteristics of fluid flow by validating the results with classical benchmark solutions present in the literature. In this respect, the Cosserat theory of continuum is considered where a continuum of oriented rigid particles has, in addition to the three translational degrees of freedom of classical continuum, three micro-rotational degrees of freedom. The mathematical formulation of model equations is derived from the general laws of continuum mechanics. Based on the variational formulation of the FSI system, we propose the finite element method and semi-implicit scheme for discretizing space and time domains. The results are obtained by computing a well-known classical FSI benchmark test problem FLUSTRUK-FSI-3* with FreeFem++. The results of the study indicate that the increase in micro-rotational viscosity μr leads to significantly large micro-rotations in fluid flow at the micro-structural level. Further, it is found that the amplitude of oscillations is related inversely to the material parameters c1 and μr while the increase in c1 stabilizes the amplitude of oscillations relatively more quickly than increasing μr The color snapshots of the numerical results at different times during the computer simulations and general conclusions drawn from the results are presented.",
+      "publicationDate": "2022-11-09",
+      "authors": [
+        {
+          "authorId": "2190524679",
+          "name": "Nazim Hussain Hajano"
+        },
+        {
+          "authorId": "2115771994",
+          "name": "M. S. Khan"
+        },
+        {
+          "authorId": "150189681",
+          "name": "Lisheng Liu"
+        }
+      ]
+    },
+    {
+      "paperId": "d1ce6ecc33c806681a4c7dd9e6cd62ffce43220c",
+      "url": "https://www.semanticscholar.org/paper/d1ce6ecc33c806681a4c7dd9e6cd62ffce43220c",
+      "title": "The scattering phase: seen at last",
+      "abstract": ". The scattering phase, deﬁned as log det S ( λ ) / 2 πi where S ( λ ) is the (uni-tary) scattering matrix, is the analogue of the counting function for eigenvalues when dealing with exterior domains and is closely related to Kre˘ın’s spectral shift function. We revisit classical results on asymptotics of the scattering phase and point out that it is never monotone in the case of strong trapping of waves. Perhaps more impor-tantly, we provide the ﬁrst numerical calculations of scattering phases for non-radial scatterers. They show that the asymptotic Weyl law is accurate even at low frequencies and reveal eﬀects of trapping such as lack of monotonicity. This is achieved by using the recent high level multiphysics ﬁnite element software FreeFEM.",
+      "publicationDate": "2022-10-18",
+      "authors": [
+        {
+          "authorId": "11225281",
+          "name": "J. Galkowski"
+        },
+        {
+          "authorId": "2061390380",
+          "name": "P. Marchand"
+        },
+        {
+          "authorId": "2152766005",
+          "name": "Jian Wang"
+        },
+        {
+          "authorId": "1725350",
+          "name": "M. Zworski"
+        }
+      ]
+    },
+    {
+      "paperId": "ac114c198a4b2a2d10ba9ef489cabbeddb497b90",
+      "url": "https://www.semanticscholar.org/paper/ac114c198a4b2a2d10ba9ef489cabbeddb497b90",
+      "title": "Finite Element Simulations of Flip Chip Solder Bumps with Fractures Present using FreeFem++",
+      "abstract": "In this paper, 3D finite element models are built for flip chip solder bumps with fractures present. Three types of cracks are simulated with one located around the top interface of the bumps, one within the bulk and one around the bottom interface of the bumps. The mechanic equilibrium equations are solved to find the elastic stresses and thus to find the locations with stress concentration. Modal analyses are performed to find the influences of cracks on the natural frequencies of the bumps. Simulation results show that the stress concentration at the tip of a type II crack is much smaller; while evident stress concentration at the tips of both type I and III cracks are found except for the case of a type III crack with an applied shear stress; stress concentration is also found on the top surface of the Cu pad, and the maximum of Mises stress there varies on a small scale as the percentage of the fracture area increases; the percentage of the fracture area is not shown to have an evident influence on the natural frequency until the structure of the joint is sufficiently damaged by the crack.",
+      "publicationDate": "2022-08-10",
+      "authors": [
+        {
+          "authorId": "2114292812",
+          "name": "Hao Ren"
+        },
+        {
+          "authorId": "49865411",
+          "name": "Pengcheng Zhou"
+        },
+        {
+          "authorId": "2184569086",
+          "name": "Chunming Zhou"
+        }
+      ]
     }
   ]
 }
