@@ -1,6 +1,43 @@
 {
   "articles": [
     {
+      "paperId": "5d1fcea586d5a8266f97821f7178b1b391103136",
+      "url": "https://www.semanticscholar.org/paper/5d1fcea586d5a8266f97821f7178b1b391103136",
+      "title": "Numerical Modeling for Shoulder Injury Detection Using Microwave Imaging",
+      "abstract": "A portable imaging system for the on-site detection of shoulder injury is necessary to identify its extent and avoid its development to severe condition. Here, firstly a microwave tomography system is introduced using state-of-the-art numerical modeling and parallel computing for imaging different tissues in the shoulder. The results show that the proposed method is capable of accurately detecting and localizing rotator cuff tears of different size. In the next step, an efficient design in terms of computing time and complexity is proposed to detect the variations in the injured model with respect to the healthy model. The method is based on finite element discretization and uses parallel preconditioners from the domain decomposition method to accelerate computations. It is implemented using the open source FreeFEM software.",
+      "publicationDate": "2023-11-09",
+      "authors": [
+        {
+          "authorId": "1581605601",
+          "name": "Sahar Borzooei"
+        },
+        {
+          "authorId": "17158457",
+          "name": "Pierre-Henri Tournier"
+        },
+        {
+          "authorId": "1815537",
+          "name": "V. Dolean"
+        },
+        {
+          "authorId": "2238466967",
+          "name": "Christian Pichot"
+        },
+        {
+          "authorId": "1772931",
+          "name": "N. Joachimowicz"
+        },
+        {
+          "authorId": "2265752000",
+          "name": "Helene Roussel"
+        },
+        {
+          "authorId": "2854725",
+          "name": "C. Migliaccio"
+        }
+      ]
+    },
+    {
       "paperId": "1b5b8bad07cc34a5307bdeab14d3edc789dc2bc9",
       "url": "https://www.semanticscholar.org/paper/1b5b8bad07cc34a5307bdeab14d3edc789dc2bc9",
       "title": "On the Approximation of the Bay of Bengal Domain to be Compatible for the Implementation of Finite Element Method",
@@ -234,31 +271,6 @@
         {
           "authorId": "150189681",
           "name": "Lisheng Liu"
-        }
-      ]
-    },
-    {
-      "paperId": "d1ce6ecc33c806681a4c7dd9e6cd62ffce43220c",
-      "url": "https://www.semanticscholar.org/paper/d1ce6ecc33c806681a4c7dd9e6cd62ffce43220c",
-      "title": "The scattering phase: seen at last",
-      "abstract": "The scattering phase, defined as $ \\log \\det S ( \\lambda ) / 2\\pi i $ where $ S ( \\lambda ) $ is the (unitary) scattering matrix, is the analogue of the counting function for eigenvalues when dealing with exterior domains and is closely related to Krein's spectral shift function. We revisit classical results on asymptotics of the scattering phase and point out that it is never monotone in the case of strong trapping of waves. Perhaps more importantly, we provide the first numerical calculations of scattering phases for non-radial scatterers. They show that the asymptotic Weyl law is accurate even at low frequencies and reveal effects of trapping such as lack of monotonicity. This is achieved by using the recent high level multiphysics finite element software FreeFEM.",
-      "publicationDate": "2022-10-18",
-      "authors": [
-        {
-          "authorId": "11225281",
-          "name": "J. Galkowski"
-        },
-        {
-          "authorId": "2061390380",
-          "name": "Pierre Marchand"
-        },
-        {
-          "authorId": "2152766005",
-          "name": "Jian Wang"
-        },
-        {
-          "authorId": "1725350",
-          "name": "M. Zworski"
         }
       ]
     }
