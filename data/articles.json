@@ -1,6 +1,35 @@
 {
   "articles": [
     {
+      "paperId": "66f559f652749bae0598e80ffa668dab950aa4e8",
+      "url": "https://www.semanticscholar.org/paper/66f559f652749bae0598e80ffa668dab950aa4e8",
+      "title": "COMBINED HORMONE AND BRACHY THERAPIES FOR THE TREATMENT OF PROSTATE CANCER",
+      "abstract": "Prostate cancer is a hormone-dependent cancer characterized by two types of cancer cells, androgen-dependent cancer cells and androgen-resistant ones. The objective of this paper is to present a novel mathematical model for the treatment of prostate cancer under combined hormone therapy and brachytherapy. Using a system of partial differential equations, we quantify and study the evolution of the different cell densities involved in prostate cancer and their responses to the two treatments. Numerical simulations of tumor growth under different therapeutic strategies are explored and presented. The numerical simulations are carried out on FreeFem++ using a 2D finite element method.",
+      "publicationDate": "2023-11-17",
+      "authors": [
+        {
+          "authorId": "2099719009",
+          "name": "S. Chabbar"
+        },
+        {
+          "authorId": "1962608",
+          "name": "A. Habbal"
+        },
+        {
+          "authorId": "145544671",
+          "name": "R. Aboulaich"
+        },
+        {
+          "authorId": "2267115213",
+          "name": "Nabil Ismaili"
+        },
+        {
+          "authorId": "7262772",
+          "name": "Sanaa El Majjaoui"
+        }
+      ]
+    },
+    {
       "paperId": "5d1fcea586d5a8266f97821f7178b1b391103136",
       "url": "https://www.semanticscholar.org/paper/5d1fcea586d5a8266f97821f7178b1b391103136",
       "title": "Numerical Modeling for Shoulder Injury Detection Using Microwave Imaging",
@@ -250,27 +279,6 @@
         {
           "authorId": "117187044",
           "name": "Md. Manik Hossain"
-        }
-      ]
-    },
-    {
-      "paperId": "f57f4788a9e1d36f41676249b823b31ab27eccca",
-      "url": "https://www.semanticscholar.org/paper/f57f4788a9e1d36f41676249b823b31ab27eccca",
-      "title": "Increasing Micro-Rotational Viscosity Results in Large Micro-Rotations: A Study Based on Monolithic Eulerian Cosserat Fluid–Structure Interaction Formulation",
-      "abstract": "In classical continuum mechanics, a monolithic Eulerian formulation is used for numerically solving fluid–structure interaction (FSI) problems in the frame of a physically deformed configuration. This numerical approach is well adapted to large-displacement fluid–structure configurations where velocities of solids and fluids are computed all at once in a single variational equation. In the recent past, a monolithic Eulerian formulation for solving FSI problems of finite deformation to study the different physical features of fluid flow has been employed. Almost all the current studies use a classical framework in their approach. Despite producing decent results, such methods still need to be appropriately configured to generate exceptional results. Recently, a number of researchers have used a non-classical framework in their approach to analyze several physical problems. Therefore, in this paper, a monolithic Eulerian formulation is employed for solving FSI problems in a non-classical framework to study the micro-structural characteristics of fluid flow by validating the results with classical benchmark solutions present in the literature. In this respect, the Cosserat theory of continuum is considered where a continuum of oriented rigid particles has, in addition to the three translational degrees of freedom of classical continuum, three micro-rotational degrees of freedom. The mathematical formulation of model equations is derived from the general laws of continuum mechanics. Based on the variational formulation of the FSI system, we propose the finite element method and semi-implicit scheme for discretizing space and time domains. The results are obtained by computing a well-known classical FSI benchmark test problem FLUSTRUK-FSI-3* with FreeFem++. The results of the study indicate that the increase in micro-rotational viscosity μr leads to significantly large micro-rotations in fluid flow at the micro-structural level. Further, it is found that the amplitude of oscillations is related inversely to the material parameters c1 and μr while the increase in c1 stabilizes the amplitude of oscillations relatively more quickly than increasing μr The color snapshots of the numerical results at different times during the computer simulations and general conclusions drawn from the results are presented.",
-      "publicationDate": "2022-11-09",
-      "authors": [
-        {
-          "authorId": "2190524679",
-          "name": "Nazim Hussain Hajano"
-        },
-        {
-          "authorId": "2115771994",
-          "name": "M. S. Khan"
-        },
-        {
-          "authorId": "150189681",
-          "name": "Lisheng Liu"
         }
       ]
     }
