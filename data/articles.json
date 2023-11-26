@@ -1,6 +1,48 @@
 {
   "articles": [
     {
+      "paperId": "094ab826a7ae2cef8f8f2ba564b06d1117c88e30",
+      "url": "https://www.semanticscholar.org/paper/094ab826a7ae2cef8f8f2ba564b06d1117c88e30",
+      "title": "Optimal Control Strategies for Mitigating Urban Heat Island Intensity in Porous Urban Environments",
+      "abstract": "This work is intended as an attempt to explore the use of optimal control techniques for designing green spaces and for dealing with the environmental problems related to urban heat islands appearing in cities. A three-dimensional model is established for numerical studies of the effects of urban anthropogenic heat and wind velocity in urban and rural regions. The transport mechanism of fluid in the cities is governed by the Navier–Stokes–Forschheimer porous media system. We introduce the penalty approximation method to overcome the difficulty induced by the incompressibility constraint. The partial differential equation optimal control problem is solved by using a Spectral Projected Gradient algorithm. To validate the method, we implement a numerical scheme, based on a finite element method, employing the free software FreeFem++ 14.3. We show the results for the optimized and non-optimized situations to compare the two cases.",
+      "publicationDate": "2023-11-23",
+      "authors": [
+        {
+          "authorId": "2268151043",
+          "name": "Nacer Sellila"
+        },
+        {
+          "authorId": "92921711",
+          "name": "M. Louaked"
+        },
+        {
+          "authorId": "2268152057",
+          "name": "Waleed Mouhali"
+        },
+        {
+          "authorId": "2903234",
+          "name": "Houari Mechkour"
+        }
+      ]
+    },
+    {
+      "paperId": "cb1d662f92b1bb4f58546402fed2e2af37307025",
+      "url": "https://www.semanticscholar.org/paper/cb1d662f92b1bb4f58546402fed2e2af37307025",
+      "title": "Structure-preserving semi-convex-splitting numerical scheme for a Cahn-Hilliard cross-diffusion system in lymphangiogenesis",
+      "abstract": "A fully discrete semi-convex-splitting finite-element scheme with stabilization for a degenerate Cahn-Hilliard cross-diffusion system is analyzed. The system consists of parabolic fourth-order equations for the volume fraction of the fiber phase and the solute concentration, modeling pre-patterning of lymphatic vessel morphology. The existence of discrete solutions is proved, and it is shown that the numerical scheme is energy stable up to stabilization, conserves the solute mass, and preserves the lower and upper bounds of the fiber phase fraction. Numerical experiments in two space dimensions using FreeFEM illustrate the phase segregation and pattern formation.",
+      "publicationDate": "2023-11-19",
+      "authors": [
+        {
+          "authorId": "3051005",
+          "name": "A. Jüngel"
+        },
+        {
+          "authorId": "2267335351",
+          "name": "Boyi Wang"
+        }
+      ]
+    },
+    {
       "paperId": "66f559f652749bae0598e80ffa668dab950aa4e8",
       "url": "https://www.semanticscholar.org/paper/66f559f652749bae0598e80ffa668dab950aa4e8",
       "title": "COMBINED HORMONE AND BRACHY THERAPIES FOR THE TREATMENT OF PROSTATE CANCER",
@@ -210,7 +252,7 @@
     {
       "paperId": "85d9c45abb4022d9350b7b3ba218e578f3aef2f0",
       "url": "https://www.semanticscholar.org/paper/85d9c45abb4022d9350b7b3ba218e578f3aef2f0",
-      "title": "A Finite Element Toolbox for the Bogoliubov-De Gennes Stability Analysis of Bose-Einstein Condensates",
+      "title": "A finite element toolbox for the Bogoliubov-de Gennes stability analysis of Bose-Einstein condensates",
       "abstract": "We present a finite element toolbox for the computation of Bogoliubov-de Gennes modes used to assess the linear stability of stationary solutions of the Gross-Pitaevskii (GP) equation. Applications concern one (single GP equation) or two-component (a system of coupled GP equations) Bose-Einstein condensates in one, two and three dimensions of space. An implementation using the free software FreeFem++ is distributed with this paper. For the computation of the GP stationary (complex or real) solutions we use a Newton algorithm coupled with a continuation method exploring the parameter space (the chemical potential or the interaction constant). Bogoliubov-de Gennes equations are then solved using dedicated libraries for the associated eigenvalue problem. Mesh adaptivity is proved to considerably reduce the computational time for cases implying complex vortex states. Programs are validated through comparisons with known theoretical results for simple cases and numerical results reported in the literature.",
       "publicationDate": "2023-03-09",
       "authors": [
@@ -229,56 +271,6 @@
         {
           "authorId": "1690488",
           "name": "F. Hecht"
-        }
-      ]
-    },
-    {
-      "paperId": "84db6fb5ad9ba646d2c212b5e5b9a9558bf4a6ce",
-      "url": "https://www.semanticscholar.org/paper/84db6fb5ad9ba646d2c212b5e5b9a9558bf4a6ce",
-      "title": "Thermocapillary migration of a thin droplet on wettability-confined tracks",
-      "abstract": "The thermocapillary migration of droplets on a solid surface is widely used in daily life and industrial fields. Regulating droplet thermocapillary migration by changing surface wettability have received extensive attention. Based on the lubrication theory and slip boundary conditions, we establish a mathematical model of the thermocapillary migration dynamics of a droplet on wettability-confined tracks subject to a uniform temperature gradient. Combined with the contact line dynamics, a method for determining the velocity of the contact line in different directions of the three-dimensional droplet is proposed, FreeFEM++ is employed for simulation coding. The evolution of droplet migration is examined, and the effects of track width and wettability on the droplet migration dynamics are emphatically investigated. The results show that the main part of the droplet moves from the high-temperature region to the low-temperature region, the trailing edge of the droplet forms a small bulge during the movement, and a thin liquid film is formed between the bulge and the main part of the droplet. The droplet spreading perpendicular to the track direction is inhibited and remains pinned after shrinking to the track edge. Negative correlation between the velocity of the advancing contact line and track width is observed. The velocity of the advancing line decreases rapidly at first and then slowly decrease to steady. The squeezing effect caused by the wettability confined in perpendicular to the track direction accelerates the thermocapillary migration of the droplet on the track at the initial short time. The enhanced track wettability increases the initial velocity of the receding contact line but has little effect on its stable value. The velocity of the advancing contact line is positively correlated with track wettability. Changing the track width is possibly easier to regulate the thermocapillary migration of a droplet than varying the track wettability.",
-      "publicationDate": null,
-      "authors": [
-        {
-          "authorId": "2189880866",
-          "name": "Li Chun-Xi"
-        },
-        {
-          "authorId": "2189885242",
-          "name": "Ma Cheng"
-        },
-        {
-          "authorId": "2177808534",
-          "name": "Ye Xue-Min"
-        }
-      ]
-    },
-    {
-      "paperId": "ebb4ed770a857ed1159f4f1a46747f984fdaee1b",
-      "url": "https://www.semanticscholar.org/paper/ebb4ed770a857ed1159f4f1a46747f984fdaee1b",
-      "title": "On the Approximation of the Bay of Bengal Domain to be Compatible for the Implementation of Finite Element Method",
-      "abstract": "In this study, the Bay of Bengal domain has been approximated using triangular mesh so that the finite element method (FEM) can be employed on it. The area between 15 ° N and 23 ° N Latitudes and 85 ° E and 95 ° E Longitudes is considered as the physical domain. A MATLAB routine and the cubic spline interpolation have been used to extract the coordinates of the points on the boundary of the whole domain and the points on the boundary of the islands from a colour image of the domain. A C++ routine is used to generate an edp file for triangular mesh using the extracted coordinates. Then FreeFem++ is used to create triangular mesh for the whole domain from the generated edp file. All the major islands are also incorporated in the final mesh. The obtained triangular mesh can be used to develop a storm surge prediction model for the Bay of Bengal region implementing FEM.",
-      "publicationDate": null,
-      "authors": [
-        {
-          "authorId": "102929052",
-          "name": "M. Murshed"
-        },
-        {
-          "authorId": "104191265",
-          "name": "Morshed Bin Shiraj"
-        },
-        {
-          "authorId": "117169539",
-          "name": "Md. Safi Ullah"
-        },
-        {
-          "authorId": "2218557692",
-          "name": "Md. Mizanur Rahman"
-        },
-        {
-          "authorId": "117187044",
-          "name": "Md. Manik Hossain"
         }
       ]
     }
