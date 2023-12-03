@@ -1,6 +1,23 @@
 {
   "articles": [
     {
+      "paperId": "de167c589a7a334f2046a1687c24d6f7fa74eb15",
+      "url": "https://www.semanticscholar.org/paper/de167c589a7a334f2046a1687c24d6f7fa74eb15",
+      "title": "On the instability of travelling wave solutions for the transport-Stokes equation",
+      "abstract": "In this paper, we investigate the instability of the spherical travelling wave solutions for the Transport-Stokes system in $\\mathbb{R}^3$. First, a classical scaling argument ensures instability among all probability measures for the Wasserstein metric and the $L^1$ norm. Secondly, we investigate the instability among patch solutions with a perturbed surface. To this end, we study the linearized system of a contour dynamics equation derived in [18] in the case where the support of the patch is axisymmetric and is described by spherical parametrization. We show numerically the existence of positive eigenvalues, which ensures the instability of the linearized system. Eventually we investigate numerically the instability of the travelling wave by solving the Transport-Stokes equation using a finite element method on FreeFem.",
+      "publicationDate": "2023-11-24",
+      "authors": [
+        {
+          "authorId": "2118252",
+          "name": "M. Bonnivard"
+        },
+        {
+          "authorId": "7559530",
+          "name": "Amina Mecherbet"
+        }
+      ]
+    },
+    {
       "paperId": "094ab826a7ae2cef8f8f2ba564b06d1117c88e30",
       "url": "https://www.semanticscholar.org/paper/094ab826a7ae2cef8f8f2ba564b06d1117c88e30",
       "title": "Optimal Control Strategies for Mitigating Urban Heat Island Intensity in Porous Urban Environments",
@@ -246,31 +263,6 @@
         {
           "authorId": "1412329451",
           "name": "A. Ramos-Martín"
-        }
-      ]
-    },
-    {
-      "paperId": "85d9c45abb4022d9350b7b3ba218e578f3aef2f0",
-      "url": "https://www.semanticscholar.org/paper/85d9c45abb4022d9350b7b3ba218e578f3aef2f0",
-      "title": "A finite element toolbox for the Bogoliubov-de Gennes stability analysis of Bose-Einstein condensates",
-      "abstract": "We present a finite element toolbox for the computation of Bogoliubov-de Gennes modes used to assess the linear stability of stationary solutions of the Gross-Pitaevskii (GP) equation. Applications concern one (single GP equation) or two-component (a system of coupled GP equations) Bose-Einstein condensates in one, two and three dimensions of space. An implementation using the free software FreeFem++ is distributed with this paper. For the computation of the GP stationary (complex or real) solutions we use a Newton algorithm coupled with a continuation method exploring the parameter space (the chemical potential or the interaction constant). Bogoliubov-de Gennes equations are then solved using dedicated libraries for the associated eigenvalue problem. Mesh adaptivity is proved to considerably reduce the computational time for cases implying complex vortex states. Programs are validated through comparisons with known theoretical results for simple cases and numerical results reported in the literature.",
-      "publicationDate": "2023-03-09",
-      "authors": [
-        {
-          "authorId": "2643277",
-          "name": "G. Sadaka"
-        },
-        {
-          "authorId": "67210505",
-          "name": "Victor Kalt"
-        },
-        {
-          "authorId": "1823374",
-          "name": "I. Danaila"
-        },
-        {
-          "authorId": "1690488",
-          "name": "F. Hecht"
         }
       ]
     }
