@@ -126,6 +126,23 @@
       ]
     },
     {
+      "paperId": "bf204955e75e932ce838308506f6bc9144b627d0",
+      "url": "https://www.semanticscholar.org/paper/bf204955e75e932ce838308506f6bc9144b627d0",
+      "title": "Numerical Study of a Two-Dimensional Symmetric Flow of an Incompressible Fluid with a Coordinate-Dependent Viscosity Between Partially Irregular Planes",
+      "abstract": "The structure of a symmetric two-dimensional unsteady flow between two planes having a periodic step-like irregularity is investigated by numerical methods using the finite element package Freefem++. The kinematic viscosity of the fluid is chosen as typical for turbulent flows, depending on the coordinates as 𝜇 = 𝜇0(𝜂2(𝑥) − 𝑧2), 𝜂(𝑥) = ℎ(𝑥) + 𝛿, where 𝜇0 is the characteristic viscosity, 𝛿 is the roughness, ℎ(𝑥) is the function defining the boundary 𝑧 = 𝜂(𝑥) (profiles of planes mirror-symmetric with respect to 𝑧 = 0), 𝑥, 𝑧 are longitudinal and transverse coordinates along the main flow. In contrast to the usual parabolic profile of the Poiseuille flow between the planes, with the specified choice of viscosity, the flow profile is logarithmic and has a singularity at the boundary of the region, to prevent which the roughness of the boundary is introduced. A distinctive feature of the problem under study is the setting of boundary conditions on an irregular part of the boundary. On plane sections of the boundary, we maintain the usual non-slip conditions for a viscous liquid, but on the irregular part of the boundary we set only the impermeability conditions of the boundary for the liquid (no sticking!). Computational experiment - numerical solution of the Navier-Stokes equations for a viscous incompressible fluid using a modified penalty method, showed that for a wide set of parameters, the structure of the flow described by the initial non-stationary complete problem and the quasi-stationary flow described by the asymptotic model constructed in the presented paper, for which there is an exact solution, are in good agreement - in the non-stationary flow, a stable regular system of vortices is established concentrated near those surface irregularities for which the boundary has a negative curvature (`deepening’of boundary).",
+      "publicationDate": "2023-09-25",
+      "authors": [
+        {
+          "authorId": "2269621818",
+          "name": "Natalia M. Polyakova"
+        },
+        {
+          "authorId": "2269625215",
+          "name": "Victoria I. Tsvetkova"
+        }
+      ]
+    },
+    {
       "paperId": "1b5b8bad07cc34a5307bdeab14d3edc789dc2bc9",
       "url": "https://www.semanticscholar.org/paper/1b5b8bad07cc34a5307bdeab14d3edc789dc2bc9",
       "title": "On the Approximation of the Bay of Bengal Domain to be Compatible for the Implementation of Finite Element Method",
@@ -230,39 +247,6 @@
         {
           "authorId": "48328542",
           "name": "C. Pichot"
-        }
-      ]
-    },
-    {
-      "paperId": "8532d222ed475bf3b64f4566afc39bc771562c2a",
-      "url": "https://www.semanticscholar.org/paper/8532d222ed475bf3b64f4566afc39bc771562c2a",
-      "title": "E-Learning Proposal for 3D Modeling and Numerical Simulation with FreeFem++ for the Study of the Discontinuous Dynamics of Biological and Anaerobic Digesters",
-      "abstract": "This work presents an original 3D code in FreeFem++ to recreate the behavior of anaerobic microorganisms in non-stirred anaerobic reactors with an intermittent feed. The physical and biochemical phenomena have been considered using a mathematical model based on a set of partial differential equations: Stokes, advection–diffusion, and diffusion–reaction. The description of the anaerobic metabolism was carried out by implementing the structured AMD1 model. The Galerkin finite element method has been used to solve the partial differential equations defined in the model. Finally, the methodology and procedures are presented by means of a concrete example. Thanks to the inclusion of this e-learning tool for use in virtual laboratories, it is possible to improve the understanding of engineering students on the functioning of the metabolism that takes place inside non-stirred anaerobic reactors that are fed discontinuously. This proposal reinforces to students, in a transversal way, both environmental sensitivity and awareness of the circular economy focused on the implementation of natural wastewater treatment systems in rural areas.",
-      "publicationDate": "2023-03-18",
-      "authors": [
-        {
-          "authorId": "1446651127",
-          "name": "S. Brito-Espino"
-        },
-        {
-          "authorId": "2145653839",
-          "name": "Tania Garcia-Ramirez"
-        },
-        {
-          "authorId": "1686772048",
-          "name": "F. León-Zerpa"
-        },
-        {
-          "authorId": "1446651155",
-          "name": "C. Mendieta-Pino"
-        },
-        {
-          "authorId": "32423291",
-          "name": "J. J. Santana"
-        },
-        {
-          "authorId": "1412329451",
-          "name": "A. Ramos-Martín"
         }
       ]
     }
