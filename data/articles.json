@@ -1,6 +1,43 @@
 {
   "articles": [
     {
+      "paperId": "84abd0e326c0896fc698b4cba4dc61351108061e",
+      "url": "https://www.semanticscholar.org/paper/84abd0e326c0896fc698b4cba4dc61351108061e",
+      "title": "Density-Based Topological Optimization of 3D-Printed Casts for Fracture Treatment with Freefem Software",
+      "abstract": "Abstract 3D printed plastic casts can be used for healing bone fractures. The main requirements for these cases are: they should be light, require little printing time, have good mechanical properties, and ensure proper skin ventilation. We present a density-based topology optimization algorithm for obtaining optimal cast shapes that fulfil these requirements. The algorithm uses a linear stress model and simplified boundary conditions to model the contact problems. The cast shapes were optimized against the influence of several sharp corners. The parametric studies showed that the mass of optimized casts was reduced by 20 %–25 % in comparison with original industrial casts, and the printing time is reduced by 1.4–1.7 h for the largest cast. A major model drawback is the use of 3D numerical volume to model the density distribution. The density distribution should be homogenized across the cast layer. The overhang problem should also be addressed. We also suggest that the cast producers collect more experimental data on the cast breakages for a better calibration of the numerical model.",
+      "publicationDate": "2023-12-01",
+      "authors": [
+        {
+          "authorId": "2273512708",
+          "name": "K. Kokars"
+        },
+        {
+          "authorId": "2273499963",
+          "name": "A. Krauze"
+        },
+        {
+          "authorId": "2273500087",
+          "name": "K. Muiznieks"
+        },
+        {
+          "authorId": "2248916308",
+          "name": "J. Virbulis"
+        },
+        {
+          "authorId": "2273508935",
+          "name": "P. Verners"
+        },
+        {
+          "authorId": "2273499906",
+          "name": "A. Gutcaits"
+        },
+        {
+          "authorId": "2273503707",
+          "name": "J. Olins"
+        }
+      ]
+    },
+    {
       "paperId": "de167c589a7a334f2046a1687c24d6f7fa74eb15",
       "url": "https://www.semanticscholar.org/paper/de167c589a7a334f2046a1687c24d6f7fa74eb15",
       "title": "On the instability of travelling wave solutions for the transport-Stokes equation",
@@ -218,35 +255,6 @@
         {
           "authorId": "145223467",
           "name": "E. Bonyah"
-        }
-      ]
-    },
-    {
-      "paperId": "ae3540a8fb14751a2c210d620249973fad1a1925",
-      "url": "https://www.semanticscholar.org/paper/ae3540a8fb14751a2c210d620249973fad1a1925",
-      "title": "Microwave tomographic imaging of shoulder injury",
-      "abstract": "One of the most challenging shoulder injuries is rotator cuff tear that increases with aging and particularly happens among athletes. These tears cause pain and highly affect the functionality of the shoulder. The motivation of this work is detecting these tears by microwave tomographic imaging. This imaging method requires the solution of an inverse problem based on a minimization algorithm, with successive solutions of a direct problem. We make use of parallel computation from the domain decomposition method and domain-specific language with the open-source FreeFEM solver. Results demonstrate the possibility to detect tendon tear in a simplified shoulder model.",
-      "publicationDate": "2023-03-26",
-      "authors": [
-        {
-          "authorId": "1581605601",
-          "name": "Sahar Borzooei"
-        },
-        {
-          "authorId": "17158457",
-          "name": "Pierre-Henri Tournier"
-        },
-        {
-          "authorId": "2854725",
-          "name": "C. Migliaccio"
-        },
-        {
-          "authorId": "1815537",
-          "name": "V. Dolean"
-        },
-        {
-          "authorId": "48328542",
-          "name": "C. Pichot"
         }
       ]
     }
