@@ -6,7 +6,7 @@ const apiUrl = 'https://api.semanticscholar.org/graph/v1/paper/search'
 const getArticles = async (currentYear) => {
   // Params
   const query = 'query=freefem'
-  const year = 'year=' + currentYear
+  const year = 'year=' + (currentYear - 1) + '-' + currentYear
   const fields =
     'fields=' +
     ['title', 'authors', 'abstract', 'url', 'publicationDate'].join(',')
