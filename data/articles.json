@@ -180,6 +180,23 @@
       ]
     },
     {
+      "paperId": "bd413fbcc9e12a4edcb13e82594c66e0a41371ab",
+      "url": "https://www.semanticscholar.org/paper/bd413fbcc9e12a4edcb13e82594c66e0a41371ab",
+      "title": "Comparative study of simulation methods applied to heat transfer calculation of building walls containing phase change materials",
+      "abstract": "Phase change materials (PCM) have great heat storage capabilities, and can achieve energy-saving effects when used in buildings after simulation optimization. This paper adopts the finite element method (FEM) and the finite difference method (FDM) to simulate the heat transfer process of PCM under the influence of outdoor temperature. The differences between the two methods are analyzed in terms of time step, space step and phase transition interval. The results indicate that the FEM has a higher accuracy with less variation of temperature with time-space step and phase transition interval when simulating PCM. Furthermore, a comparative analysis of the differences in accuracy and computational speed between open-source software (FreeFEM++) and commercial software (COMSOL Multiphysics®) is conducted based on the FEM. The results demonstrate that the simulation using open-source software can be effectively used to analyze the thermal effects of PCM, which also reduces the dependence on commercial software and provides better economy and flexibility.",
+      "publicationDate": "2023-09-04",
+      "authors": [
+        {
+          "authorId": "2290697488",
+          "name": "Xinyue Zhang"
+        },
+        {
+          "authorId": "2215440974",
+          "name": "Xue Fan"
+        }
+      ]
+    },
+    {
       "paperId": "1b5b8bad07cc34a5307bdeab14d3edc789dc2bc9",
       "url": "https://www.semanticscholar.org/paper/1b5b8bad07cc34a5307bdeab14d3edc789dc2bc9",
       "title": "On the Approximation of the Bay of Bengal Domain to be Compatible for the Implementation of Finite Element Method",
@@ -230,31 +247,6 @@
         {
           "authorId": "118337591",
           "name": "J. Lizardi"
-        }
-      ]
-    },
-    {
-      "paperId": "92c221801f42e35da39d5feb106674f5f63a5c2e",
-      "url": "https://www.semanticscholar.org/paper/92c221801f42e35da39d5feb106674f5f63a5c2e",
-      "title": "Computational analysis of magnetic induced micropolar flow in a rectangular channel through FreeFem++",
-      "abstract": "In this article, we aim to computationally analyze the magnetic induced micropolar flow in a rectangular channel using a multiphysics finite element solver, FreeFem++. In this respect, a physical model in the framework of the micropolar continuum is taken into consideration with appropriate boundary conditions. The flow is considered laminar and incompressible and moves under the application of an external magnetic field at the boundary of the flow channel. The flow governing equations of momentum, microrotation, and induction are derived, and their weak integral forms in the context of finite elements are presented. The developed finite element model is then implemented in FreeFem++ in order to compute numerical solutions to the corresponding boundary value problem. The effects of different physical parameters are studied and discussed in detail. The main findings of this investigation pertaining to different physical aspects are summarized in the conclusion. It is interesting to find that the present problem becomes unstable with specific choices of material parameters, thereby leading to an unstable solution by the direct solver. However, numerical experimentation suggests that an iterative solver based on the generalized minimum residual method can stabilize the numerical solutions. In this connection, results are shown for varying Hartmann numbers. Moreover, it is worth mentioning that FreeFEM++ provides an efficient platform to compute and analyze magnetic induced flow within the context of a higher order continuum.",
-      "publicationDate": "2023-04-01",
-      "authors": [
-        {
-          "authorId": "144332717",
-          "name": "M. S. Khan"
-        },
-        {
-          "authorId": "3063110",
-          "name": "Isma Hameed"
-        },
-        {
-          "authorId": "16124777",
-          "name": "M. A. Memon"
-        },
-        {
-          "authorId": "145223467",
-          "name": "E. Bonyah"
         }
       ]
     }

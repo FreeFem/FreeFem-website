@@ -2,6 +2,7 @@ import fetch from 'node-fetch'
 import { promises as fs } from 'fs'
 
 const apiUrl = 'https://api.semanticscholar.org/graph/v1/paper/search'
+const apiKey = process.argv[2]
 
 const getArticles = async (currentYear) => {
   // Params
@@ -14,7 +15,12 @@ const getArticles = async (currentYear) => {
 
   // Fetch
   const res = await fetch(
-    apiUrl + '?' + query + '&' + year + '&' + fields + '&' + limit
+    apiUrl + '?' + query + '&' + year + '&' + fields + '&' + limit,
+    {
+      headers: {
+        'x-api-key': apiKey,
+      },
+    }
   )
   const resJSON = await res.json()
 

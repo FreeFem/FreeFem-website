@@ -1,7 +1,7 @@
 name: SemanticScholar
 on:
   schedule:
-    - cron: "0 0 * * 0"
+    - cron: '0 0 * * 0'
   workflow_dispatch:
 
 jobs:
@@ -24,7 +24,7 @@ jobs:
           cd -
 
       - name: Run
-        run: node tools/semanticScholar/index.js
+        run: node tools/semanticScholar/index.js ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
 
       - name: Update articles.json
         run: |
