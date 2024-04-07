@@ -1,6 +1,48 @@
 {
   "articles": [
     {
+      "paperId": "b728dacd0b8bf96c8a346ab686b3e63f38c8dd98",
+      "url": "https://www.semanticscholar.org/paper/b728dacd0b8bf96c8a346ab686b3e63f38c8dd98",
+      "title": "Topology optimization of three-dimensional structures subject to self-weight loading",
+      "abstract": "PurposeTopology optimization of structures under self-weight loading is a challenging problem which has received increasing attention in the past years. The use of standard formulations based on compliance minimization under volume constraint suffers from numerous difficulties for self-weight dominant scenarios, such as non-monotonic behaviour of the compliance, possible unconstrained character of the optimum and parasitic effects for low densities in density-based approaches. This paper aims to propose an alternative approach for dealing with topology design optimization of structures into three spatial dimensions subject to self-weight loading.Design/methodology/approachIn order to overcome the above first two issues, a regularized formulation of the classical compliance minimization problem under volume constraint is adopted, which enjoys two important features: (a) it allows for imposing any feasible volume constraint and (b) the standard (original) formulation is recovered once the regularizing parameter vanishes. The resulting topology optimization problem is solved with the help of the topological derivative method, which naturally overcomes the above last issue since no intermediate densities (grey-scale) approach is necessary.FindingsA novel and simple approach for dealing with topology design optimization of structures into three spatial dimensions subject to self-weight loading is proposed. A set of benchmark examples is presented, showing not only the effectiveness of the proposed approach but also highlighting the role of the self-weight loading in the final design, which are: (1) a bridge structure is subject to pure self-weight loading; (2) a truss-like structure is submitted to an external horizontal force (free of self-weight loading) and also to the combination of self-weight and the external horizontal loading; and (3) a tower structure is under dominant self-weight loading.Originality/valueAn alternative regularized formulation of the compliance minimization problem that naturally overcomes the difficulties of dealing with self-weight dominant scenarios; a rigorous derivation of the associated topological derivative; computational aspects of a simple FreeFEM implementation; and three-dimensional numerical benchmarks of bridge, truss-like and tower structures.",
+      "publicationDate": "2024-04-02",
+      "authors": [
+        {
+          "authorId": "2294492923",
+          "name": "Jorge Morvan Marotte Luz Filho"
+        },
+        {
+          "authorId": "2294493603",
+          "name": "Antonio Andre Novotny"
+        }
+      ]
+    },
+    {
+      "paperId": "d9314d2b1d2cc49778f6203e65ecf9091fea97a9",
+      "url": "https://www.semanticscholar.org/paper/d9314d2b1d2cc49778f6203e65ecf9091fea97a9",
+      "title": "Parallel finite-element codes for the Bogoliubov-de Gennes stability analysis of Bose-Einstein condensates",
+      "abstract": "We present and distribute a parallel finite-element toolbox written in the free software FreeFem for computing the Bogoliubov-de Gennes (BdG) spectrum of stationary solutions to one- and two-component Gross-Pitaevskii (GP) equations, in two or three spatial dimensions. The parallelization of the toolbox relies exclusively upon the recent interfacing of FreeFem with the PETSc library. The latter contains itself a wide palette of state-of-the-art linear algebra libraries, graph partitioners, mesh generation and domain decomposition tools, as well as a suite of eigenvalue solvers that are embodied in the SLEPc library. Within the present toolbox, stationary states of the GP equations are computed by a Newton method. Branches of solutions are constructed using an adaptive step-size continuation algorithm. The combination of mesh adaptivity tools from FreeFem with the parallelization features from PETSc makes the toolbox efficient and reliable for the computation of stationary states. Their BdG spectrum is computed using the SLEPc eigenvalue solver. We perform extensive tests and validate our programs by comparing the toolbox's results with known theoretical and numerical findings that have been reported in the literature.",
+      "publicationDate": "2024-04-01",
+      "authors": [
+        {
+          "authorId": "2643277",
+          "name": "Georges Sadaka"
+        },
+        {
+          "authorId": "2294359921",
+          "name": "Pierre Jolivet"
+        },
+        {
+          "authorId": "8971754",
+          "name": "E. Charalampidis"
+        },
+        {
+          "authorId": "1823374",
+          "name": "I. Danaila"
+        }
+      ]
+    },
+    {
       "paperId": "84abd0e326c0896fc698b4cba4dc61351108061e",
       "url": "https://www.semanticscholar.org/paper/84abd0e326c0896fc698b4cba4dc61351108061e",
       "title": "Density-Based Topological Optimization of 3D-Printed Casts for Fracture Treatment with Freefem Software",
@@ -193,60 +235,6 @@
         {
           "authorId": "2215440974",
           "name": "Xue Fan"
-        }
-      ]
-    },
-    {
-      "paperId": "1b5b8bad07cc34a5307bdeab14d3edc789dc2bc9",
-      "url": "https://www.semanticscholar.org/paper/1b5b8bad07cc34a5307bdeab14d3edc789dc2bc9",
-      "title": "On the Approximation of the Bay of Bengal Domain to be Compatible for the Implementation of Finite Element Method",
-      "abstract": "In this study, the Bay of Bengal domain has been approximated using triangular mesh so that the finite element method (FEM) can be employed on it. The area between 15º N and 23º N Latitudes and 85º E and 95º E Longitudes is considered as the physical domain. A MATLAB routine and the cubic spline interpolation have been used to extract the coordinates of the points on the boundary of the whole domain and the points on the boundary of the islands from a colour image of the domain. A C++ routine is used to generate an edp file for triangular mesh using the extracted coordinates. Then FreeFem++ is used to create triangular mesh for the whole domain from the generated edp file. All the major islands are also incorporated in the final mesh. The obtained triangular mesh can be used to develop a storm surge prediction model for the Bay of Bengal region implementing FEM.",
-      "publicationDate": "2023-06-30",
-      "authors": [
-        {
-          "authorId": "2221582952",
-          "name": "Md. Masum Murshed"
-        },
-        {
-          "authorId": "2221568608",
-          "name": "Md. Morshed Bin Shiraj"
-        },
-        {
-          "authorId": "2221569026",
-          "name": "Md. Safik Ullah"
-        },
-        {
-          "authorId": "2151615885",
-          "name": "Md. Mizanur Rahman"
-        },
-        {
-          "authorId": "2221568617",
-          "name": "Md. Manik Hossain"
-        }
-      ]
-    },
-    {
-      "paperId": "2d973c18ccbc8bf4daf0d075bf8084e330347213",
-      "url": "https://www.semanticscholar.org/paper/2d973c18ccbc8bf4daf0d075bf8084e330347213",
-      "title": "Viscoelectric effect analysis in an electroosmotic flow with microchannel wall slip",
-      "abstract": "In the present work, we developed a numerical analysis for an electroosmotic flow circulating in a rectangular microchannel considering electrolyte viscosity as a function of the induced electric field; which is also reflected in the slip condition imposed on the system walls, since the slip length is a function of the fluid viscosity. It should be clarified this is an entirely hydrodynamic problem, and for this reason there are no induced pressure gradients, because we are in the presence of a purely electroosmotic flow, where the fluid motion is due only to electrokinetic forces. Based on these comments, the problem is centered on high induced potentials, enabling viscoelectric effect analysis in the electroosmotic flow, which leads to significant increases in velocity and volumetric flow profiles compared to the case where the viscosity is a constant and there is no slip condition. Due to analytical analysis limitations, we implemented a dimensionless equation scheme defined by the continuity equation, the momentum equations in the x and y direction, the Poisson-Boltzmann equation, and the charge conservation equation to obtain the velocity and volumetric flow rate profiles mentioned above. This model is described in its variational form in order to implement the finite element technique using free software, FreeFem++. The results obtained show how the viscoelectric effect is relevant when working with high induced potentials; that is, for values of ζ¯>1 , when the dimensionless viscoelectric parameter f¯ increases, there is a significant decrease in the velocity profiles u, a situation that is not observed when ζ¯≤1 , where there are low induced potentials, and for this reason, as the dimensionless parameter f¯ increases, the velocity profiles remain constant. This condition is preserved for different values of the slip length δ¯ .",
-      "publicationDate": "2023-05-16",
-      "authors": [
-        {
-          "authorId": "145457879",
-          "name": "E. Ramos"
-        },
-        {
-          "authorId": "104266825",
-          "name": "I. Monsivais"
-        },
-        {
-          "authorId": "143602325",
-          "name": "F. Méndez"
-        },
-        {
-          "authorId": "118337591",
-          "name": "J. Lizardi"
         }
       ]
     }
