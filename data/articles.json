@@ -43,6 +43,27 @@
       ]
     },
     {
+      "paperId": "4f9312c8b466357fc9c39324f47e96bfc5f5d447",
+      "url": "https://www.semanticscholar.org/paper/4f9312c8b466357fc9c39324f47e96bfc5f5d447",
+      "title": "Stationary Flow of Incompressible Viscous Fluid Through a Two-Dimensional Branched Channel",
+      "abstract": "The results of a numerical experiment for the problem of an incompressible viscous fluid stationary flow through a branched planar (two-dimensional) channel are presented. The region in which the flow occurs simulates either blood vessels or a river delta. The finite element method and a modification of the penalty method, as well as the splitting method, are used for calculations. The implementation of the calculation algorithm is using with the help the package FreeFem++. The main goal, in addition, of course, to study the properties and structure of the stationary flow, is to demonstrate the effectiveness of the proposed modification of the penalty method. It is assumed that the region has one input boundary section through which the liquid flows into the region, and several (five) boundary sections through which the liquid flows out of the region. The remaining sections of the region boundary are considered impermeable to liquid. The boundary condition corresponding to the Poiseuille flow in a plane rectilinear channel is set at the input section. Three types of boundary conditions are considered on the output boundary secctions. 1. The boundary conditions correspond to the conditions of conservation of motion of luid particles i. e. the material derivative of the velocity is zero. 2. The boundary conditions correspond to the setting of the flow velocity. 3. The boundary conditions correspond to the setting of the same pressure. The stationary solution is constructed by the relaxation method. In fact, a non-stationary problem is solved over a sufficiently large time interval. As an initial condition for a non-stationary problem, a flow is chosen that is a Poiseuille flow in some region near the input boundary. The dependence of the convergence rate of the relaxation method on the initial data is investigated. It is found that the Poiseuille flow, given at the input section of the boundary of the region, induces similar Poiseuille flows at the output boundaries sections of the region in all these cases of boundary conditions. For a region with five sections of the output boundaries for some configuration of the region, the presence of stationary vortex flows (‘maelstorm’) is found.",
+      "publicationDate": "2024-03-29",
+      "authors": [
+        {
+          "authorId": "2295381736",
+          "name": "Elena V. Shiryaeva"
+        },
+        {
+          "authorId": "2295378859",
+          "name": "Alina S. Shokareva"
+        },
+        {
+          "authorId": "2295381255",
+          "name": "Valentina P. Sibil"
+        }
+      ]
+    },
+    {
       "paperId": "84abd0e326c0896fc698b4cba4dc61351108061e",
       "url": "https://www.semanticscholar.org/paper/84abd0e326c0896fc698b4cba4dc61351108061e",
       "title": "Density-Based Topological Optimization of 3D-Printed Casts for Fracture Treatment with Freefem Software",
@@ -218,23 +239,6 @@
         {
           "authorId": "2269625215",
           "name": "Victoria I. Tsvetkova"
-        }
-      ]
-    },
-    {
-      "paperId": "bd413fbcc9e12a4edcb13e82594c66e0a41371ab",
-      "url": "https://www.semanticscholar.org/paper/bd413fbcc9e12a4edcb13e82594c66e0a41371ab",
-      "title": "Comparative study of simulation methods applied to heat transfer calculation of building walls containing phase change materials",
-      "abstract": "Phase change materials (PCM) have great heat storage capabilities, and can achieve energy-saving effects when used in buildings after simulation optimization. This paper adopts the finite element method (FEM) and the finite difference method (FDM) to simulate the heat transfer process of PCM under the influence of outdoor temperature. The differences between the two methods are analyzed in terms of time step, space step and phase transition interval. The results indicate that the FEM has a higher accuracy with less variation of temperature with time-space step and phase transition interval when simulating PCM. Furthermore, a comparative analysis of the differences in accuracy and computational speed between open-source software (FreeFEM++) and commercial software (COMSOL Multiphysics®) is conducted based on the FEM. The results demonstrate that the simulation using open-source software can be effectively used to analyze the thermal effects of PCM, which also reduces the dependence on commercial software and provides better economy and flexibility.",
-      "publicationDate": "2023-09-04",
-      "authors": [
-        {
-          "authorId": "2290697488",
-          "name": "Xinyue Zhang"
-        },
-        {
-          "authorId": "2215440974",
-          "name": "Xue Fan"
         }
       ]
     }
