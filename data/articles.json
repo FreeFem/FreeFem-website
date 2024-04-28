@@ -1,6 +1,19 @@
 {
   "articles": [
     {
+      "paperId": "ea6ac9526d7f4981ac9fb2dbdbac5808558b4959",
+      "url": "https://www.semanticscholar.org/paper/ea6ac9526d7f4981ac9fb2dbdbac5808558b4959",
+      "title": "Accurate 3D modeling of laser-matter interaction in the AFP process by a conductive-radiative FEM approach",
+      "abstract": "Abstract. Mainly driven by aeronautical demands, the Automated Fiber Placement (AFP) process has become pivotal in the in-situ manufacturing of intricate, high-performance composite components. AFP relies on robotic systems to meticulously lay continuous fiber-reinforced materials, employing controlled pressure and precise laser heating. Accurate thermal modeling is imperative to predict thermal effects impacting contact, adhesion, crystallinity, and residual constraints. This work introduces a novel numerical approach for efficient modeling the transient heat transfers in the AFP process using a coupled conductive-radiative finite element method (FEM) scheme. Radiative density from the laser-matter interaction is determined through an in-house parallelized FreeFEM++ code. Heat transfer at the micro-scale is assessed by using an artificial computational geometry based on fiber distributions obtained from tape micrograph. A parametric study with varying absorption coefficients of the carbon fibers is performed to accurately compute the radiative volumetric heat source. The proposed approach investigates various 2D and 3D scenarios involving different laser parameters. Results exhibit strong agreement with experimentally obtained data, showing a maximum temperature difference of 5-6°C at the end of the heating phase. Furthermore, a 3D case demonstrates the potential of this approach for modeling complex micro-scale geometries.",
+      "publicationDate": "2024-05-15",
+      "authors": [
+        {
+          "authorId": "2263528291",
+          "name": "Bruno A. Storti"
+        }
+      ]
+    },
+    {
       "paperId": "b728dacd0b8bf96c8a346ab686b3e63f38c8dd98",
       "url": "https://www.semanticscholar.org/paper/b728dacd0b8bf96c8a346ab686b3e63f38c8dd98",
       "title": "Topology optimization of three-dimensional structures subject to self-weight loading",
@@ -222,23 +235,6 @@
         {
           "authorId": "2854725",
           "name": "C. Migliaccio"
-        }
-      ]
-    },
-    {
-      "paperId": "bf204955e75e932ce838308506f6bc9144b627d0",
-      "url": "https://www.semanticscholar.org/paper/bf204955e75e932ce838308506f6bc9144b627d0",
-      "title": "Numerical Study of a Two-Dimensional Symmetric Flow of an Incompressible Fluid with a Coordinate-Dependent Viscosity Between Partially Irregular Planes",
-      "abstract": "The structure of a symmetric two-dimensional unsteady flow between two planes having a periodic step-like irregularity is investigated by numerical methods using the finite element package Freefem++. The kinematic viscosity of the fluid is chosen as typical for turbulent flows, depending on the coordinates as 𝜇 = 𝜇0(𝜂2(𝑥) − 𝑧2), 𝜂(𝑥) = ℎ(𝑥) + 𝛿, where 𝜇0 is the characteristic viscosity, 𝛿 is the roughness, ℎ(𝑥) is the function defining the boundary 𝑧 = 𝜂(𝑥) (profiles of planes mirror-symmetric with respect to 𝑧 = 0), 𝑥, 𝑧 are longitudinal and transverse coordinates along the main flow. In contrast to the usual parabolic profile of the Poiseuille flow between the planes, with the specified choice of viscosity, the flow profile is logarithmic and has a singularity at the boundary of the region, to prevent which the roughness of the boundary is introduced. A distinctive feature of the problem under study is the setting of boundary conditions on an irregular part of the boundary. On plane sections of the boundary, we maintain the usual non-slip conditions for a viscous liquid, but on the irregular part of the boundary we set only the impermeability conditions of the boundary for the liquid (no sticking!). Computational experiment - numerical solution of the Navier-Stokes equations for a viscous incompressible fluid using a modified penalty method, showed that for a wide set of parameters, the structure of the flow described by the initial non-stationary complete problem and the quasi-stationary flow described by the asymptotic model constructed in the presented paper, for which there is an exact solution, are in good agreement - in the non-stationary flow, a stable regular system of vortices is established concentrated near those surface irregularities for which the boundary has a negative curvature (`deepening’of boundary).",
-      "publicationDate": "2023-09-25",
-      "authors": [
-        {
-          "authorId": "2269621818",
-          "name": "Natalia M. Polyakova"
-        },
-        {
-          "authorId": "2269625215",
-          "name": "Victoria I. Tsvetkova"
         }
       ]
     }
