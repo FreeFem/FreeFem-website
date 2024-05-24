@@ -1,0 +1,332 @@
+load "msh3"
+load "gsl"
+load "ff-Ipopt"
+
+bool hotrestart = 0;
+verbosity=0;
+
+real HUB = 50.0; // bound dxx(f)
+real CUB = 0.5; // bound dx(f) 
+real XUB = 0.5; // bound f
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// 				Mesh generation
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+real H = 1; // 
+int NX = 40; // boundary mesh size
+real alpha = 1.0/NX; 
+real vdent = -1.0; // boundary's speed
+
+int[int] ll=[1];
+mesh Th0 = square(NX,NX*H,[x,y*H]);
+func fclab = (x>0.999)*2 + (x<0.001)*1; // Borders label 
+meshL ThL = extract(Th0,refedge=ll); 
+ThL = change(ThL, flabel = fclab); // (0,1) Straight Mesh with label 1, 2 
+
+mesh Th = Th0;
+meshL ThC = ThL; // Curve Mesh for $\Gamma$
+
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// 				Finite element spaces
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+fespace WhL(ThL,P1); 
+fespace PhL(ThL,P0);
+fespace WhC(ThC,P1);
+fespace Wh(Th,[P2,P2,P1],periodic=[[2,y],[4,y]]);
+
+cout << "Vertices = " << WhL.ndof << " " << " Segments = " << PhL.ndof << endl;
+WhL fm,phi1L,phi2L,cgm;
+
+
+// Hotrestart routine to find easily good initialization points
+func real[int] HOTRESTART(bool &hot)
+{
+	if (hot){
+		WhL Xinit;
+		mesh Th00 = readmesh("Th0old.msh"); // Initial mesh
+		meshL ThL0 = extract(Th00,refedge=ll); 
+		ThL0 = change(ThL0, flabel = fclab); //  Straight Mesh for hotrestart
+		fespace WhL0(ThL0,P1);
+		WhL0 X00;
+		{
+		ifstream file("fsol.txt");
+		file >> X00[];
+		}
+		Xinit = X00; // interpolation on the new mesh}
+		return Xinit[];
+	}
+}
+
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// 				Matrices needed to manage constraints on $f$
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+// Volume constraint
+varf varcvol(uL,vL) = int1d(ThL)(1*vL);
+real[int] aCvol = varcvol(0,WhL); 
+
+matrix mDx = interpolate(PhL,WhL,t=0,op=1); // matrix for dx operator
+
+
+// Matrix to get the jumps of a function
+macro MatJumpofDx(Vh,Th,Azzzz)
+{
+	if( Azzzz.n) Azzzz.clear;
+	matrix Azzzz#1111(Vh.ndof,Th.nt);
+	fespace PPPPh(Th,P0);
+	matrix Dx = interpolate(PPPPh,Vh,op=1);
+	assert(Vh.ndofK==2);
+	int nt = Th.nt;
+	for(int k=0; k< nt;++k)
+	{
+	 Azzzz#1111(Vh(k,0),k)=+1;
+	 Azzzz#1111(Vh(k,1),k)=-1;
+	}
+	Azzzz = Azzzz#1111*Dx;
+} //
+
+matrix mDxx1;
+MatJumpofDx(WhL,ThL,mDxx1);
+matrix mDxx = mDxx1;
+
+mDxx1 = (1.0/alpha)*mDxx; // for constraint on derivatives of $f$
+matrix mDxxL = mDxx'*mDxx; // for H^2 scalar product  
+
+
+varf vL2ThL(u,v)   = int1d(ThL)( u*v ); 
+varf scalarH1(u,v)  = int1d(ThL)( u*v + dx(u)*dx(v) );
+varf vL2ThLdx(u,v) = int1d(ThL)(dx(u)*v); 
+varf vL2ThLdxTest(u,v) = int1d(ThL)(u*dx(v)); 
+matrix M11=vL2ThL(WhL,WhL,solver=sparsesolver); 
+matrix M00=vL2ThL(PhL,PhL,solver=sparsesolver); 
+matrix MH2=scalarH1(WhL,WhL,solver=sparsesolver); 
+matrix M1dx=vL2ThLdx(WhL,WhL,solver=sparsesolver);
+matrix M0dx=vL2ThLdx(WhL,PhL,solver=sparsesolver); 
+matrix M1dxT=vL2ThLdxTest(WhL,WhL); 
+MH2 += mDxxL; // Scalar product matrix in H^2
+
+
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//							Variational formulations
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+
+real mu = 1.0;
+real eps = 0.0;
+
+macro grad(u) [dx(u),dy(u)] //
+macro Grad(u,v) [grad(u),grad(v)] //
+macro SGrad(u,v) [[dx(u), 0.5*(dx(v)+dy(u))], [0.5*(dx(v)+dy(u)), dy(v)]] //
+macro div(u1,u2) (dx(u1)+dy(u2)) //
+macro sigman(u1,u2,p,nx,ny) [(2.0*mu*dx(u1)-p)*nx + mu*(dx(u2)+dy(u1))*ny, mu*(dx(u2)+dy(u1))*nx + (2.0*mu*dy(u2)-p)*ny] //
+
+
+
+Wh [u1,u2,p];
+Wh [v1,v2,q];
+Wh [w1,w2,g];
+u1[]=0;
+int iter0=0;
+
+
+
+// L2 regularization function
+func real[int] L2regular(real[int] &X)
+{
+	WhL f,g,df;
+	f[] = X;
+	solve l2regular(df,g) = int1d(ThL)(df*g) - int1d(ThL)(dx(f)*g); // projection on $L^2$ continuous function
+	return df[];
+}
+
+
+
+
+// Function to regularize the functions involved in equation (4.16)  in order to write the variational formulation (4.17)
+func real[int] L2regulphi(int indexphi) 
+{
+	WhC vC,phiC;
+	WhL phiL;
+	func phi = (1.0-y)/(1.0-fm);
+	func nx = dx(fm)*(1.0+dx(fm)^2)^(-0.5);
+	func ny = -1.0*(1.0+dx(fm)^2)^(-0.5);
+	func c2gm = dx(cgm);
+	if (indexphi == 1){
+		func phi1 = vdent*sigman(v1,v2,q,nx,ny)'*[0.0,1.0]; 
+		solve l2regulphi(phiC,vC) = int1d(ThC)(phiC*vC) - int1d(ThC)(phi1*vC);
+		}
+	if (indexphi == 2){
+		func phi2 = -phi*ny*sigman(v1,v2,q,nx,ny)'*[dx(u1)*nx+dy(u1)*ny,dx(u2)*nx+dy(u2)*ny] ;
+				+vdent*(c2gm*nx)*(phi*ny)*sigman(v1,v2,q,nx,ny)'*[0.0,1.0];
+		solve l2regulphi(phiC,vC) = int1d(ThC)(phiC*vC) - int1d(ThC)(phi2*vC);
+		}
+	phiL = phiC;
+	return phiL[];
+}
+
+
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//							Script Freefem optim - Quadratic cost
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+
+
+// Cost function
+func real J(real[int] &X)
+{
+	iter0++;
+	real cost = 0;
+
+	fm[] = X;
+	Th = movemesh(Th0,[x,fm+y*(H-fm)/H]);
+	
+	cgm[] = L2regular(fm[]); // dx(fm) with P1 continuous
+	
+	solve Stokes( [u1,u2,p],[v1,v2,q] ) =
+	int2d(Th)(2*mu*(SGrad(u1,u2):SGrad(v1,v2)) - div(u1,u2)*q - div(v1,v2)*p)
+	+ on(1,u1=0,u2=vdent*cgm)
+	;
+
+	cost = -int1d(Th,3)(u1);
+
+	plot(Th,[u1,u2],cmm=" J= "+cost +" " +iter0);
+	return cost;
+}
+
+// Gradient of the cost function
+func real[int] dJ(real[int] &X)
+{
+	real[int] dJ(WhL.ndof);
+
+	fm[] = X;
+
+	Th = movemesh(Th0,[x,fm+y*(H-fm)/H]);
+	ThC = movemesh(ThL,[x,fm+y*(H-fm)/H]);
+	
+	cgm[] = L2regular(fm[]); // dx(fm) with P1 continuous
+	
+	solve Stokes( [u1,u2,p],[v1,v2,q] ) =
+	int2d(Th)(2*mu*(SGrad(u1,u2):SGrad(v1,v2)) - div(u1,u2)*q - div(v1,v2)*p)
+	+ on(1,u1=0,u2=vdent*cgm)
+	;
+
+	solve StokesAdjoint( [v1,v2,q],[w1,w2,g] ) = //adjoint problem
+	int2d(Th)(2*mu*(SGrad(v1,v2):SGrad(w1,w2)) - div(w1,w2)*q - div(v1,v2)*g)
+	- int1d(Th,3)(w1)
+	+ on(1,v1=0,v2=0)
+	;
+	
+	phi1L[] = L2regulphi(1);
+	phi2L[] = L2regulphi(2);
+	
+	// We then write the variational formulation on (0,1) int_0^1 \phi_1 g' + \phi_2 g \, dt sur le bord (0,1) qui ne varie pas 
+	
+	real[int] bdJ2 = M11*phi2L[];
+	real[int] bdJ1 = M1dx*phi1L[];
+
+	real[int] bdJ = -bdJ1+bdJ2;
+	dJ = MH2^-1*(bdJ); // GRADIENT in H^2
+
+	return dJ;
+}
+
+// Constraints function
+func real[int] C(real[int] &X)
+{
+	real[int] cont(1+PhL.ndof+WhL.ndof);
+	cont[0] = aCvol'*X; // $\int_0^1 f(x) \,dx = 0$
+	cont(1:PhL.ndof) = mDx*X; // $\vert f'(x) \vert \leq M_1
+	cont(PhL.ndof+1:PhL.ndof+WhL.ndof) = mDxx1*X; // $\vert f''(x) \vert \leq M_2
+	return cont;
+}
+
+// Jacobian of the constraints function
+matrix dc;
+func matrix jacC(real[int] &X)
+{
+	real[int,int] dcc(1,WhL.ndof); dcc = 0.0;
+	dcc(0,:) = aCvol;
+	dc = dcc;
+	dc = [[dc],[mDx]];
+	dc = [[dc],[mDxx1]];
+	return dc;
+}
+
+real[int] start(WhL.ndof);
+real[int] xub(WhL.ndof); 
+real[int] xlb(WhL.ndof); 
+real[int] cub(1+PhL.ndof+WhL.ndof); 
+real[int] clb(1+PhL.ndof+WhL.ndof);
+
+// Variables bounds 
+xub=  XUB;
+xlb= -XUB;
+cub(1:PhL.ndof)=  CUB;
+clb(1:PhL.ndof)= -CUB;
+cub(PhL.ndof+1:PhL.ndof+WhL.ndof)=  HUB;
+clb(PhL.ndof+1:PhL.ndof+WhL.ndof)= -HUB;
+
+xub[0] = 0.0;
+xlb[0] = 0.0;
+xub[WhL.ndof-1] = 0;
+xlb[WhL.ndof-1] = 0;
+clb[0] = 0.0;
+cub[0] = 0.0;
+
+clb[PhL.ndof+WhL.ndof] = -HUB/alpha;
+cub[PhL.ndof+WhL.ndof] = HUB/alpha;
+clb[PhL.ndof+1] = -HUB/alpha;
+cub[PhL.ndof+1] = HUB/alpha;
+
+// Initialization
+WhL X0=0.0125/2*sin(x*pi*2*2);
+start = X0[];
+if (hotrestart){
+	start = HOTRESTART(hotrestart);
+}
+cout << "COUT" << J(start) << endl;
+
+
+
+// Theoretical solution without constraint on the curvature should be
+real[int,int] datacuve  = [ [0,0.25,.75,1], [0,1/8.,-1/8.,0]];
+gslspline fext(gslinterplinear,datacuve);//
+func fth = fext(x);
+X0 = fth;
+real[int] Cthe = C(X0[]);
+
+cout << "fthe" << X0[] << endl;
+cout << "COUT" << J(X0[]) << endl;
+cout << "volume" << Cthe[0] << endl;
+cout << "dx" << Cthe(1:PhL.ndof) << endl;
+cout << "dxx" << Cthe(PhL.ndof+1:WhL.ndof+PhL.ndof) << endl;
+
+// Launch Ipopt with BFGS
+IPOPT(J,dJ,C,jacC,start,lb=xlb,ub=xub,clb=clb,cub=cub,tol=1.e-8);
+
+X0[] = start;
+cout << "COUT" << J(X0[]) << endl;
+cout << "CONT" << C(X0[]) << endl;
+
+// Save solution and mesh for hot restart
+if (hotrestart == 0){
+savemesh(Th0,"Th0old.msh");
+{
+ofstream file("fsol.txt");
+file << X0[];
+}
+}

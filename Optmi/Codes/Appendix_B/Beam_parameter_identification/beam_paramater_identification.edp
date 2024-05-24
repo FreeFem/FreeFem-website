@@ -1,0 +1,198 @@
+/*F.Hecht, G.Lance, E. Trélat
+Reusable template to solve optimization problem using IpOpt within FreeFEM
+Example taken from "PDE constrained optimization within FreeFEM"
+Example in Fig. B.2 in Appendix B
+*/
+
+load "ff-cmaes"
+load "msh3"
+load "gsl"
+load "ffrandom"
+load "ff-ipopt"
+
+verbosity=0;
+
+// Seed for random number generation
+srandomdev();
+gslrng ffrng;
+gslrngset(ffrng,random());
+
+// Parameters
+real E = 21e5;
+real nu = 0.28;
+real f = -9.81; 
+
+// Initial Mesh
+mesh Th = square(10, 10, [20*x,2*y-1]);
+
+int[int] ll = [1,2,3]; // Measured boundaries
+meshL Th1 = extract(Th,refedge=ll); // 1D mesh for the boundary that will be moved
+
+// Fespace
+fespace Vh(Th, [P2,P2]); // P2 finite elements
+Vh [u, v];
+Vh [uu, vv];
+
+// Macro
+real sqrt2=sqrt(2.);
+macro epsilon(u1,u2) [dx(u1),dy(u2),(dy(u1)+dx(u2))/sqrt2] // 
+// The sqrt2 is because we want: epsilon(u1,u2)'* epsilon(v1,v2) = epsilon(u): epsilon(v)
+macro div(u,v) ( dx(u)+dy(v) ) //
+
+
+// Lame's coefficients to be found
+real mu0= E/(2*(1+nu));
+real lambda0 = E*nu/((1+nu)*(1-2*nu));
+
+
+
+
+
+// Import measurements 
+real[int,int] measures(62,100);
+{
+ifstream file("coord_measures.txt");
+for (int i=0;i<measures.n;i++)
+{
+	for (int j=0; j<measures.m; j++)
+	{
+		file >> measures(i,j);
+		}
+	}
+}
+
+
+
+
+
+real eps = 1.e0;
+func real[int] beamcoord(real &lambda, real &mu)
+{
+	// Elasticity PDE solving
+	solve edplame([u, v], [uu, vv])
+	   = int2d(Th)(
+	        lambda * div(u, v) * div(uu, vv)
+	      + 2.*mu * ( epsilon(u,v)' * epsilon(uu,vv) )
+	   )
+
+	   // gravity
+	   - int2d(Th)(
+	        f*vv
+	   )
+	   
+	   + on(4, u=0, v=0)
+	   ;
+	
+	meshL ThL = movemesh(Th1,[x+eps*u,y+eps*v]); // move the boundary with [u,v] displacement
+	
+	real[int] coord(2*ThL.nv); // Coordinates of the boundary's vertices
+	for (int i=0;i<ThL.nv;i++)
+	{
+		coord[i] = ThL(i).x;
+		coord[ThL.nv+i] = ThL(i).y;
+	}
+	
+	return coord;
+}
+
+
+
+
+
+// Additional needed functions
+func real sum(real[int] &X) // Sum of vector's elements
+{
+	real[int] array1(X.n); array1=1.;
+	return array1' *X;
+}
+func real norm1(real[int] &X) // L_1 norm of a vector
+{
+	real[int] array1(X.n); array1=1.;
+	real[int] absX = abs(X);
+	return array1' *absX;	
+}
+func real norm2(real[int] &X) // L_2 norm of a vector
+{
+	return X'*X;
+}
+
+
+
+
+
+
+// Objective function
+func real leastsquaremeasure(real[int] &X) 
+{
+	real[int] coordX = beamcoord(X[0],X[1]); // compute coordinates of the moved beam
+	real objective = 0.;
+	real objective0 = 0.;
+	for (int j=0;j<measures.n;j++)
+	{
+		objective0 = 0.;
+		for (int i=0;i<measures.m;i++)
+		{
+			objective0 += (measures(j,i)-coordX[j])^2; // l2 cost
+			// objective += (1./(norm1(measures(j,:))))*abs(measures(j,i)-coordX[j]); // l1 cost
+		}
+		objective0 *= (1./(norm2(measures(j,:)))); // relative l2 error
+		// objective *= (1./(norm1(measures(j,:)))); // relative l1 error
+		objective += objective0;
+	}
+	objective *= (1./measures.m);
+	// cout << "cout = " << objective << " || lambda = " << X[0] << "|| mu = " << X[1] <<  endl;
+	return objective ;
+}
+
+
+
+
+
+real[int] X0 = [lambda0, mu0]; // to be found
+
+// We are now calling CMA-ES
+real[int] Xinit = [10000,10000]; // initialization point
+real[int] StDevs=[500000,500000]; // initialization of deviation matrices
+
+
+
+
+
+int ntrial = 1; // number of calls to the routine CMA-ES
+real[int] elambda(ntrial);
+real[int] emu(ntrial);
+real[int] lambdaf(ntrial);
+real[int] muf(ntrial);
+
+for (int i=0;i<ntrial;i++)
+{
+	real[int] u0 = Xinit;
+	StDevs=[500000,500000];
+	
+	real min = cmaes(leastsquaremeasure,u0, stopTolFun=1e-6, stopMaxIter=1000,initialStdDevs=StDevs,seed=random(),popsize=50);//random());
+	
+	lambdaf[i] = u0[0];
+	muf[i] = u0[1];
+	
+	elambda[i] = abs(u0[0]-X0[0])/abs(X0[0]);
+	emu[i] = abs(u0[1]-X0[1])/abs(X0[1]);
+	
+	cout << "minimum value is " << endl << leastsquaremeasure(u0) << " for [lambda,mu] = " << u0 << endl;
+	cout << "value for true (lambda0,mu0) "<< X0 << " is " << endl << leastsquaremeasure(X0) << endl;
+
+	cout << "lambda error = " << abs(u0[0]-X0[0])/abs(X0[0]) << endl;
+	cout << "mu error = " << abs(u0[1]-X0[1])/abs(X0[1]) << endl;
+}
+
+
+cout << "average lambda = "<< 1./ntrial*sum(lambdaf) << endl;
+cout << "average mu = "<< 1./ntrial*sum(muf) << endl;
+cout << "average error lambda = "<< 1./ntrial*sum(elambda) << endl;
+cout << "average error mu = "<< 1./ntrial*sum(emu) << endl;
+
+// print data to a file
+{
+ofstream file("data.txt");
+for (int i=0;i<ntrial;i++)
+	{file << lambdaf[i] << " " << muf[i] << " " << elambda[i] << " " << emu[i] << endl;}
+}

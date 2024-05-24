@@ -1,0 +1,128 @@
+/*F.Hecht, G.Lance, E. Trélat
+Reusable template to solve optimization problem using IpOpt within FreeFEM
+Example taken from "PDE constrained optimization within FreeFEM"
+Example (2.1,2.2,2.3) in Section 2.1 in dimension 3:
+Solving template for LQ example using AMPL
+\min_{u} \int_{\Omega} (y-y_d)^2\,dx + \alpha \int_{\Omega} u^2 \,dx
+under the constraints
+-\Delta y = u, y_{\vert \partial \Omega} = 0
+\Omega = [0,1]^3
+*/
+
+load "ff-Ipopt"
+load "msh3"
+
+verbosity = 0;
+
+// mesh
+mesh3 Th = cube(20,20,20);
+int nbs = Th.nv;
+plot(Th,wait=1);
+
+// u_m \leq u \leq u_M
+real xm = -10000;
+real xM = 10000;
+real um = 0;
+real uM = 1;
+
+// real alpha = 1;
+fespace Vh(Th,P1); 
+Vh u,v;
+Vh ydfe=1;
+
+// Variational formulations
+macro grad(u) [dx(u), dy(u), dz(u)] //
+
+varf vA(u,v) = int3d(Th)( grad(u)'*grad(v) )
+			 + on(1,2,3,4,5,6,u=0); // Dirichlet Laplacian
+varf vB(u,v) = int3d(Th)(u*v); // mass
+
+matrix A = vA(Vh,Vh);
+matrix B = vB(Vh,Vh);
+
+real[int,int] zeroArray(nbs,nbs);
+zeroArray=0;
+matrix Mzero  = zeroArray;
+
+// Target
+real[int] yd = ydfe[];
+
+///////////////////////////////Definition objectif et contraintes///////////////
+//Objectif
+func real J(real[int] &YU)
+{
+	real cost;
+	real[int] xint = YU(0:(nbs-1))-yd;
+	real[int] uint = B*xint;	
+	cost = xint'*uint; 
+	uint = B*YU(nbs:(2*nbs-1)); //alpha=1
+	cost+= uint'*YU(nbs:(2*nbs-1));
+	cost = 0.5*cost;
+	return cost;
+}
+
+//Gradient Objectif  
+func real[int] gradJ(real[int] &YU)
+{
+	real[int] xint = YU(0:(nbs-1)) - yd;
+	real[int] p1 = B*xint;
+	real[int] p2 = B*YU(nbs:(2*nbs-1)); //alpha=1
+	real[int] p = [p1, p2];
+	return p;
+}
+
+matrix HJ;
+func matrix HessianJ(real[int] &YU)
+{ 
+	matrix matr = [[B,Mzero]];
+	matrix matrIN = [[Mzero,B]];
+	HJ = [[matr],[matrIN]];
+	return HJ;
+}
+
+//Contraintes   
+func real[int] C(real[int] &YU)
+{
+	real[int] c = A*YU(0:(nbs-1));
+	real[int] c1 = B*YU(nbs:(2*nbs-1));
+	c = c-c1;
+	return c;
+}
+
+//Gradient Contrainte
+matrix dc;
+func matrix jacC(real[int] &YU)
+{
+	matrix matr = -B;
+	dc = [[A,matr]];
+	return dc;
+}
+
+//variable bounds + initialisation
+real[int] xub(2*nbs);
+real[int] xlb(2*nbs);
+real[int] clb(nbs);
+real[int] cub(nbs);
+real[int] start(2*nbs);
+
+for (int i=0;i<nbs;i+=1)
+{
+	xub[i] = xM;
+	xlb[i] = xm;
+	xub[nbs+i] = uM;
+	xlb[nbs+i] = um;
+	cub[i] = 0;
+	clb[i] = 0;
+	start[i] = 1;
+	start[nbs+i] = 1;
+};
+
+
+// Launch ipopt
+IPOPT(J,gradJ,HessianJ,C,jacC,start,clb=clb,cub=cub);
+
+u[] = start(nbs:(2*nbs-1));
+plot(Th,u,fill=1,value=1,wait=1);
+
+
+

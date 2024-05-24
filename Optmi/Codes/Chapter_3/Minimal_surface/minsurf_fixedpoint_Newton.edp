@@ -1,0 +1,67 @@
+/*F.Hecht, G.Lance, E. Trélat
+Reusable template to solve optimization problem using IpOpt within FreeFEM
+Example taken from "PDE constrained optimization within FreeFEM"
+Example (3.1) in Section 3.2:
+Using a method combining fixed point and Newton algorithms
+*/
+
+verbosity = 0;
+
+real meshsize= 0.02; 
+int wait= 1;
+
+// Square mesh
+mesh Th=square(20,20,[x,y]);
+
+fespace Vh(Th,P2); // or P1
+
+Vh u,up,v,uer;
+
+func gd1 = x+2*y; //  
+func gd2 = cos(10*atan2(y,x)); // Hard cas ...
+func gd3 = cos(pi*x)*cos(pi*y); // square mesh function
+
+func gd = gd3;
+
+u = 0; 
+macro grad(w) [dx(w),dy(w)] //
+
+real err=1, eps= 1e-10, erre; 
+
+macro J(u)       int2d(Th)(sqrt(1+grad(u)'*grad(u))) //
+macro DJ(u,up,v) int2d(Th)(grad(u)'*grad(v)/sqrt(1+grad(up)'*grad(up))) //
+macro D2J(u,v,w) int2d(Th)(
+	             grad(w)'*grad(v)/sqrt(1+grad(u)'*grad(u))
+              -  grad(u)'*grad(v)*grad(u)'*grad(w)/sqrt(1+grad(u)'*grad(u))^3 )//
+
+int iter=0;
+bool newton =0; 
+cout.precision(16); 
+while(err > eps && iter++ < 100)
+{
+	up[]=u[]; // 
+	
+	newton = newton | (  err < 0.005); 
+	
+	if( ! newton ) 
+    	    solve PointFixe(u,v) = DJ(u,up,v) + on(1,2,3,4,u=gd);
+
+	else
+	    solve Newton(u,v) = 
+			D2J(up,v,u) 
+			- D2J(up,v,up) 
+			+ DJ(up,up,v)
+			+ on(1,2,3,4,u=gd);
+	real Ju = J(u); // cost
+	err = sqrt(int2d(Th)((u-up)^2)); // error
+	plot(u,cmm=iter + " err =" + err + " Ju=" + Ju);
+	cout << "iter = " << iter << " ||  error  = " << err  << " || J ="<< Ju << " Newton :" << newton <<endl; 	
+}
+
+plot(u,dim=3);
+
+{ofstream fout("usolptfixe.txt");
+fout << u[] << endl;
+}
+
+			  

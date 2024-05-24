@@ -1,0 +1,186 @@
+/*F.Hecht, G.Lance, E. Trélat
+Reusable template to solve optimization problem using IpOpt within FreeFEM
+Example taken from "PDE constrained optimization within FreeFEM"
+Example (2.12,2.13) in Section 2.2:
+Solving template for LQ example 
+\min_{u} \int_{\Omega} (y-y_d)^2\,dx + \alpha \int_{\Omega} u^2 \,dx
+under the constraints
+-\Delta y = u, y_{\vert \partial \Omega} = 0, y(0)= 0
+Option 2 : direct mode with U as unknowns
+*/
+
+load "lapack";
+load "fflapack";
+load "ff-Ipopt";
+
+verbosity = 0;
+
+//mesh
+mesh Th = readmesh("square50.msh");
+int nbs = Th.nv;
+plot(Th,wait=1);
+
+//data of problem
+int Nt = 20;
+int Ntot = nbs*Nt;
+real T = 1;
+real dt = T/(Nt-1);
+
+//u_m \leq u \leq u_M
+real xm = -10000;
+real xM = 10000;
+
+real alpha = 1;
+fespace Vh(Th,P1);
+Vh u,v,ydfe=1;
+
+//formulation variationnelle
+varf vA(u,v) = int2d(Th)(dx(u)*dx(v)+dy(u)*dy(v))+on(10,u=0); //laplacian
+varf vB(u,v) = int2d(Th)(u*v); //mass
+varf vAt(u,v) = int2d(Th)(u*v/dt)+int2d(Th)(dx(u)*dx(v)+dy(u)*dy(v))+on(10,u=0);
+matrix A = vA(Vh,Vh,solver=sparsesolver);
+matrix B = vB(Vh,Vh,solver=sparsesolver);
+matrix At = vAt(Vh,Vh,solver=sparsesolver);
+matrix Bt = dt*B;
+
+matrix gB;
+real[int,int] zeroarray(nbs,nbs);
+zeroarray=0;
+matrix Mzero = zeroarray;
+matrix matr;
+matrix matrIN;
+gB = B;
+for (int i=1;i<Nt;i+=1)
+	{gB = [[gB,Mzero]];}
+
+for (int i=1;i<Nt;i+=1)
+	{matr = Mzero;
+	for (int j=1;j<Nt;j+=1)
+		{if (i==j)
+			{matrIN = B;}
+		else
+			{matrIN = Mzero;}
+		matr = [[matr, matrIN]];}
+	gB = [[gB],[matr]];}
+gB = dt*gB;
+
+//target
+real[int] yd = ydfe[];
+
+func real J(real[int] &U)
+{
+	real cost = 0;
+	real newcost = 0;
+	real[int] yt(nbs);
+	yt = 0;
+	real[int] ut(nbs);
+	real[int] yint(nbs);
+	real[int] uint(nbs);
+	for (int i=0;i<Nt;i+=1)
+	{	
+		ut = U(i*nbs:((i+1)*nbs-1))+(1/dt)*yt;
+		uint = B*ut;
+		yt = At^-1*uint;
+		ut = yt-yd;
+		yint = Bt*ut;
+		newcost = ut'*yint;
+		cost+=0.5*newcost;
+		uint = Bt*U(i*nbs:((i+1)*nbs-1));
+		newcost = uint'*U(i*nbs:((i+1)*nbs-1)); //alpha=1
+		cost+=0.5*newcost;
+	}
+	return cost;
+}
+
+func real[int] gradJ(real[int] &U)
+{
+	real[int] yt(nbs);
+	real[int] ut(nbs);
+	real[int] pt(nbs);
+	real[int] uint(nbs);
+	real[int] ye(Ntot);
+	real[int] ue(Ntot);
+	real[int] pe(Ntot);
+	yt = 0; pt = 0;
+	for (int i=0;i<Nt;i+=1) //state computation, forward
+	{	
+		//ye(i*nbs:((i+1)*nbs-1)) = yt; //ou la
+		ut = U(i*nbs:((i+1)*nbs-1)) + (1/dt)*yt;
+		uint = B*ut;
+		yt = At^-1*uint;
+		ye(i*nbs:((i+1)*nbs-1)) = yt;
+	}
+	for (int i=0;i<Nt;i+=1) //adjoint computation, backward
+	{	
+		//pe(((Nt-i-1)*nbs):((Nt-i)*nbs-1)) = pt;	
+		yt = yd-ye(((Nt-i-1)*nbs):((Nt-i)*nbs-1)); //p^0=-1 PMP
+		ut = yt + (1/dt)*pt;
+		uint = B*ut;
+		pt = At^-1*uint;	
+		pe(((Nt-i-1)*nbs):((Nt-i)*nbs-1)) = pt;	//ou la
+	}
+	ue = -pe + alpha*U; //alpha=1
+	pe = ue;  //gradient descent
+	return pe;
+}
+matrix dc;
+func matrix hessianJ(real[int] &U)
+{	
+	return dc;
+}
+
+//variable bounds + initialisation
+real[int] xub(Ntot);
+real[int] xlb(Ntot);
+real[int] start(Ntot);
+for (int i=0;i<Ntot;i+=1)
+{
+	xub[i] = xM;
+	xlb[i] = xm;
+	start[i] = 0;
+};
+
+//launch ipopt
+IPOPT(J,gradJ,start,optfile="ipopt.opt");
+
+for (int i=0;i<Nt;i+=1)
+{	u[] = start(i*nbs:((i+1)*nbs-1));
+	plot(Th,u,fill=1,value=1,wait=1);
+}
+
+/* Pour le moment la construction s'avère fastidieuse
+//Calcul de la hessienne
+matrix matrL;
+matrix matrC;
+matrix matrIN;
+real[int,int] Atoinv(nbs,nbs),A1(nbs,nbs),TAh(nbs,nbs),TBh(nbs,nbs);
+for (int i=0;i<nbs;i+=1)
+    {for (int j=0;j<nbs;j+=1)
+        {Atoinv(i,j) = At(i,j);}}
+
+// Inversion (lapack)
+A1 = inv(Atoinv);
+for (int i=0;i<nbs;i+=1)
+    {for (int j=0;j<nbs;j+=1)
+		{for (int k=0;k<nbs;k+=1)
+        	{TAh(i,j) = A1(i,k)*B(k,j);
+			 TBh(i,j) = B(i,k)*A1(k,j);}}}
+		
+matrix Ah = TAh;
+matrix Bh = TBh;
+
+for (int i=0;i<=Nt;i+=1)
+	{for (int j=0;j<Nt;j+=1)
+		{	
+			if (j==0) {matrL = };
+			else
+			{
+				if (i==j) {matrIN = B + B;}
+				matrC = 
+				matrL = [matrC,matrL];
+			}
+		}
+		dc = [[dc],[matrL]];
+	}
+*/
+

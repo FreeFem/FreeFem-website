@@ -1,0 +1,101 @@
+/*F.Hecht, G.Lance, E. Trélat
+Reusable template to solve optimization problem using IpOpt within FreeFEM
+Example taken from "PDE constrained optimization within FreeFEM"
+Example (3.1) in Section 3.2:
+Using IpOpt
+*/
+
+load "ff-Ipopt"
+
+int bfgs = 0; // if Newton or quasi-Newton
+int constraint = 1; // if constraint are considered or not
+
+// Square mesh
+// mesh Th=square(50,50,[2*x-1,2*y-1]);
+mesh Th=square(20,20,[x,y]);
+
+fespace Vh(Th,P2); // or P1
+
+Vh up,v,uer;
+
+func gd1 = x+2*y; //  
+func gd2 = cos(10*atan2(y,x)); // Hard cas ...
+func gd3 = cos(pi*x)*cos(pi*y); // square mesh function
+
+func g = gd3;
+
+Vh ue= g ;
+
+fespace Wh(Th,P2dc); //  exact to store the DJ
+
+macro grad(u) [dx(u),dy(u)] // 
+
+// Cost function
+func real J(real[int]& X)
+{
+	Vh u=X;
+	Wh ww = (1+grad(u)'*grad(u));//  exact with P2 Optimisation!!
+	return int2d(Th)(ww) ;
+}
+
+// Gradient of the cost function
+func real[int]  DJ(real[int]& X)
+{
+	Vh u=X;
+	Wh ww = (1+grad(u)'*grad(u));//  exact with P2 Optimisation!!
+	varf vg(uu,v) = int2d(Th)((grad(u)'*grad(v)) / sqrt(ww)) ;
+	real[int] G = vg(0,Vh); 
+	return G;
+}
+
+// Hessian of the cost function
+matrix H; // global variable for Hessian matrix, otherwise  => seg fault in Ipopt
+func matrix  HJ(real[int]& X)
+{
+	Vh u=X;
+	Wh ww = (1+grad(u)'*grad(u));
+	varf vH(v,w) = int2d(Th)( (grad(w)'*grad(v)) / sqrt(ww)
+	- (grad(w)'*grad(u))*(grad(v)'*grad(u)) *(ww)^-1.5 ) ;
+
+	H = vH(Vh,Vh); 
+	return H;
+}  
+
+// Constraint on the boundary
+varf OnGamma(u,v) = on(1,2,3,4,u=1);
+Vh OnG;
+OnG[] =OnGamma(0,Vh,tgv=1); // 1 on Gamma
+Vh lb = OnG!=0 ? g : -1e19 ; // Large bounds or g on the boundary
+Vh ub = OnG!=0 ? g :  1e19 ; // Large bounds or g on the boundary
+Vh u = OnG!=0  ? g : 0 ; //  initialization point
+
+
+// Additional constraint
+Vh clb = 3- (10*( (x-0.5)^2 + (y-0.5)^2 ))^2;
+if(constraint) 
+{
+	lb = max(lb,clb);
+}
+
+//Launch ipopt with or without Hessian
+int ret;
+if(bfgs) 
+{
+	ret = IPOPT(J,DJ,u[],lb=lb[],ub=ub[],bfgs=1,tol=1.e-15);
+}
+else
+{
+	ret = IPOPT(J,DJ,HJ,u[],lb=lb[],ub=ub[],tol=1.e-15); 
+}
+
+cout << " min = "  << J(u[]) << "  ~ " << J(ue[]) << " ret = " << ret << endl; 
+
+plot(clb, wait=1,dim=3);
+plot(u, wait=1,dim=3);
+
+{
+ofstream fout("usolipopt.txt");
+fout << u[] << endl;
+}
+
+

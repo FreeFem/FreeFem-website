@@ -1,0 +1,89 @@
+/*F.Hecht, G.Lance, E. Trélat
+Reusable template to solve optimization problem using IpOpt within FreeFEM
+Example taken from "PDE constrained optimization within FreeFEM"
+Example (2.1,2.2,2.3) in Section 2.1:
+Solving template for LQ example 
+\min_{u} \int_{\Omega} (y-y_d)^2\,dx + \alpha \int_{\Omega} u^2 \,dx
+under the constraints
+-\Delta y = u, y_{\vert \partial \Omega} = 0, y(0)= 0
+
+Construct and export matrices and arrays needed by AMPL thanks to FreeFEM
+*/
+
+load "ff-Ipopt"
+verbosity = 1;
+
+//mesh
+mesh Th = square(50,50,flags=0);
+// plot(Th,wait=1);
+
+//u_m \leq u \leq u_M
+real xm = -10000;
+real xM = 10000;
+real um = 0;
+real uM = 1;
+
+real alpha = 1.0;
+fespace Vh(Th,P1);
+int nbs = Vh.ndof;
+
+cout << nbs << endl;
+
+Vh u,v,ydfe=1;
+
+// Variational formulations
+macro grad(u) [dx(u), dy(u)] //
+
+varf vA(u,v) = int2d(Th)( grad(u)'*grad(v) )
+			 + on(1,2,3,4,u=0); //laplacian
+varf vB(u,v) = int2d(Th)(u*v); //mass
+varf vL(u,v) = int2d(Th)(v); //volume
+
+matrix A = vA(Vh,Vh);
+matrix B = vB(Vh,Vh);
+
+// Target
+real[int] yd = ydfe[];
+real[int] L = vL(0,Vh);
+
+// Export data
+{ofstream fout("A.txt");
+fout << A << endl;
+}
+
+{ofstream fout("B.txt");
+fout << B << endl;
+}
+
+{ofstream fout("yd.txt");
+fout << yd << endl;
+}
+
+{ofstream fout("u.txt");
+fout << u[] << endl;
+}
+
+{ofstream fout("ndof.txt");
+fout << nbs << endl;
+}
+
+{ofstream fout("L.txt");
+fout << nbs << endl;
+}
+
+{ofstream fout("L.txt",append);
+for (int i=0;i<nbs;i++)
+{
+	fout << i  << " " << L[i] << endl;
+}}
+
+// // read solution and plot
+// {
+// ifstream f("upy.txt");
+// f >> u[];
+// };
+//
+// plot(Th,u,wait=1,fill=1);
+
+
+

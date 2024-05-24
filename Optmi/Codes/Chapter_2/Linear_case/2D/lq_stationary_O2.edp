@@ -1,0 +1,93 @@
+/*F.Hecht, G.Lance, E. Trélat
+Reusable template to solve optimization problem using IpOpt within FreeFEM
+Example taken from "PDE constrained optimization within FreeFEM"
+Example (2.1,2.2,2.3) in Section 2.1:
+Solving template for LQ example 
+\min_{u} \int_{\Omega} (y-y_d)^2\,dx + \alpha \int_{\Omega} u^2 \,dx
+under the constraints
+-\Delta y = u, y_{\vert \partial \Omega} = 0, y(0)= 0
+Option 2 : direct mode with U as unknowns
+*/
+
+load "ff-Ipopt";
+verbosity = 0;
+
+// square mesh
+mesh Th = square(50,50); // square mesh with boundary labels 1,2,3,4
+
+fespace Vh(Th,P1); // finite element space with $P_1$ elements
+int nbs = Vh.ndof; // number of degrees of freedom
+
+Vh u,v;
+Vh ydfe = 1.0; // target
+real[int] yd = ydfe[];
+
+// Bounds on control u_m \leq u \leq u_M
+real um = -10000;
+real uM = 10000;
+
+real alpha = 1.0;
+
+// Variational formulations
+macro grad(u) [dx(u), dy(u)] //
+
+varf vA(u,v) = int2d(Th)(dx(u)*dx(v)+dy(u)*dy(v))
+			 + on(1,2,3,4,u=0); // Dirichlet Laplacian
+varf vB(u,v) = int2d(Th)(u*v);
+
+matrix A = vA(Vh,Vh,solver=sparsesolver); // stiffness matrix
+matrix M = vB(Vh,Vh,solver=sparsesolver); // mass matrix
+
+
+func real J(real[int] &X)
+{
+	real cost;
+	real newcost;
+	
+	// Solve state equation
+	real[int] Uint = M*X;
+	real[int] Y = A^-1*Uint;
+	
+	// L2 cost for target function
+	real[int] U = Y-yd;
+	real[int] Yint = M*U;
+	newcost = U'*Yint;
+	
+	// L2 cost for control
+	cost = Uint'*X;
+	cost+=newcost;
+	cost = 0.5*cost;
+	return cost;
+}
+
+func real[int] gradJ(real[int] &X)
+{	
+	// Solve state equation
+	real[int] Uint = M*X;
+	real[int] Y = A^-1*Uint;
+	real[int] U = Y-yd;
+	
+	// Solve adjoint equation
+	Uint = M*U;
+	real[int] p = A^-1*Uint;	
+	
+	// Compute gradient for L2 scalar product
+	U = p + alpha*X; 
+	p = M*U;
+	return p;
+}
+
+
+// Variable bounds + initialisation
+real[int] xub(nbs);
+real[int] xlb(nbs);
+real[int] start(nbs);
+xub = uM;
+xlb = um;
+start = 0.2;
+
+// Launch Ipopt
+IPOPT(J,gradJ,start,optfile="ipopt.opt");
+
+u[] = start;
+plot(Th,u,fill=1,value=1,wait=1);

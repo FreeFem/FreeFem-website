@@ -1,0 +1,150 @@
+/*F.Hecht, G.Lance, E. Trélat
+Reusable template to solve optimization problem using IpOpt within FreeFEM
+Example taken from "PDE constrained optimization within FreeFEM"
+Example (2.12,2.13) in Section 2.2:
+Solving template for LQ example 
+\min_{u} \int_0^T \int_{\Omega} (y-y_d)^2\,dx + \alpha \int_0^T \int_{\Omega} u^2 \,dx
+under the constraints
+y_t-\Delta y = u, y_{\vert \partial \Omega} = 0, y(0)= 0 and  y_t = 0 on Gamma
+Option 1 : direct mode with (Y,U) as unknowns
+The  Schema  for k = 1 to Nt 
+  k =1 
+    (A+M/dt) y_1 - M u_1 = M/dt y_0 
+   k> 1 
+    (A+M/dt) y_k+1 - M/dt y_k - M u_k = 0  
+ Warning  k = 1 to Nt 
+
+Diag(Nt,A) // matrix bock diagonal witn Nt block
+BiDiag(Nt,A,B) // matrix bock bi diagonal witn Nt block [[ A, 0, ..], [ B, A, 0,... ], [0, B, A, 0, .. ], ...] 
+
+So the problem is: 
+   argmin           J(YU) = 1/2 ( (YU-TYU)' HC (YU-TYU) ) = argmin 1/2 (YU'Hc Yu) - Hc TYU
+   Jc YU = bJC // constraint !!
+
+bJC = 0 because y0 = 0 
+Hc = [ Diag(Nt,M), 0] , [0, Diag(Nt,alpha*M)];
+and 
+Jc = [ BiDiag(nt,AMt,Mt),-diag(nT,M) ]
+*/
+
+func matrix Bdiag(int n, matrix& A)
+{
+   matrix B=A;
+   for(int i=1; i<n; ++i)
+    B = [[B,0],[0,A]];
+  return B;
+}
+func matrix Bidiag(int n, matrix &A,matrix & B)
+{
+   matrix C=[[A,0],[B,A]];
+   for(int i=2; i<n; ++i)
+   {
+     matrix zO(A.n,C.m-A.m);// zero matrix 
+     matrix zB = [[zO,B]]; // row mat
+     C = [[C,0],[zB,A]]; 
+   }
+  return C;
+}
+
+load "ff-Ipopt"
+
+verbosity = 0;
+
+//mesh
+mesh Th = square(20,20);
+int[int] lab=labels(Th); // get all label for BC. 
+// P1 finite element in space
+fespace Vh(Th,P1);
+
+int nbs = Vh.ndof;
+plot(Th,wait=1);
+
+// Data of problem
+int Nt = 20; // number of time steps (nb time intervals)
+int Ntot = nbs*Nt; // total degrees of freedom
+real T = 1; // final time
+real dt = T/(Nt); 
+int NYU= 2*Ntot;
+cout << Ntot << endl;
+
+// Bounds on state and control u_m \leq u \leq u_M
+real xm = -10000;
+real xM = 10000;
+real um = 0;
+real uM = 1;
+
+real alpha = 1;
+Vh ydfe=1; // target
+
+matrix Hc,Cc;
+real[int] bHc(2*Ntot), bCc(0:Ntot);
+{ // for clean memory
+Vh u,v;
+
+// Variatinoal formulations
+macro grad(u) [dx(u), dy(u)] //
+
+varf vA(u,v) = int2d(Th)( grad(u)'*grad(v) + u*v/dt)
+			 + on(lab,u=0); // Dirichlet Laplacian
+varf vMcl(u,v) = int2d(Th)(-u*v/dt)+ on(lab,u=0);
+varf vM(u,v)   = int2d(Th)(u*v);
+
+matrix A = vA(Vh,Vh); // Stiffness matrix  row i with CL : delta_ij
+matrix M = vM(Vh,Vh); // Mass matrix no CL
+matrix Mcl = vM(Vh,Vh,tgv=-1); // Mass matrix  row i with CL 1 on delta_ij
+
+// Target
+real[int] TYU(Ntot*2);
+TYU = 0; 
+for(int i=0;i<Nt;++i)
+  TYU(i*nbs:(i+1)*nbs-1)=ydfe[]; // ydfe just on Y part 
+
+{
+matrix HC1 = Bdiag(Nt,M);// Hessian of Cost
+matrix HC2 = alpha*HC1;
+Hc = [[HC1,0],[0,HC2]];
+cout << Hc.n << " " << Hc.n << " TYU.n "<< TYU.n << " "<< bHc.n << endl; 
+bHc= Hc * TYU; 
+bHc = -bHc;
+}
+{
+  matrix An = Bidiag(Nt,A,Mcl);
+  matrix Mn = Bdiag(Nt,Mcl);
+  cout << An.n << " " << An.m << " Cc "< Mn.n << " " << Mn.m  << endl; 
+  Mn = -Mn; 
+  Cc = [[An,Mn]];
+  bCc= 0;// Y0 == 0 
+}
+} // end of block for  cleaning  memory !!!
+//Gradient Contrainte
+
+
+//variable bounds + initialisation
+real[int] xub(2*Ntot);
+real[int] xlb(2*Ntot);
+real[int] clb(Ntot);
+real[int] cub(Ntot);
+real[int] start(2*Ntot);
+
+for (int i=0;i<Ntot;i+=1)
+{
+	xub[i] = xM;
+	xlb[i] = xm;
+	xub[Ntot+i] = uM;
+	xlb[Ntot+i] = um;
+	cub[i] = 0;
+	clb[i] = 0;
+	start[i] = 0;
+	start[Ntot+i] = 0.5;
+};
+
+//launch ipopt minimisation quadratic and affine constraint !!!
+IPOPT([Hc,bHc],[Cc,bCc],start,clb=clb,cub=cub,optfile="ipopt.opt");
+Vh u;// for plot !!!
+for (int i=0;i<Nt;i+=1)
+{	u[] = start((Ntot+i*nbs):(Ntot+((i+1)*nbs-1)));
+	plot(Th,u,fill=1,value=1,wait=1,dim=3,cmm=" i="+i);
+}
+
+
+

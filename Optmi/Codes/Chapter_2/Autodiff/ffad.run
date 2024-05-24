@@ -1,0 +1,20 @@
+# F.Hecht, G.Lance, E. Trélat
+# Reusable template to solve optimization problem using IpOpt within FreeFEM
+# Example taken from "PDE constrained optimization within FreeFEM"
+# Example (2.1,2.2,2.3) in Section 2.1.4:
+# Solving template for LQ example using AMPL
+# \min_{u} \int_{\Omega} (y-y_d)^2\,dx + \alpha \int_{\Omega} u^2 \,dx
+# under the constraints
+# -\Delta y = u, y_{\vert \partial \Omega} = 0, y(0)= 0
+#
+# Use of AMPL solver -> run file with commands
+# You juste have to call: AMPL ffad.run
+
+model ffad.mod;
+data ffad.dat;
+
+option solver ipopt;
+option ipopt_options"max_iter=1000 tol=1.e-12
+     linear_solver=mumps";
+
+solve;

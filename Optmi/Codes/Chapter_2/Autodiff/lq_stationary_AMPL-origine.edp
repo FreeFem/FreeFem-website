@@ -1,0 +1,97 @@
+/*F.Hecht, G.Lance, E. Trélat
+Reusable template to solve optimization problem using IpOpt within FreeFEM
+Example taken from "PDE constrained optimization within FreeFEM"
+Example (2.1,2.2,2.3) in Section 2.1.4:
+Solving template for LQ example using AMPL
+\min_{u} \int_{\Omega} (y-y_d)^2\,dx + \alpha \int_{\Omega} u^2 \,dx
+under the constraints
+-\Delta y = u, y_{\vert \partial \Omega} = 0, y(0)= 0
+Use of AMPL solver -> need to export matrices and array built with FFEM
+*/
+
+verbosity = 0;
+
+// mesh
+mesh Th = square(50,50,flags=0);
+
+// u_m \leq u \leq u_M
+real xm = -10000;
+real xM = 10000;
+real um = 0;
+real uM = 1;
+
+real alpha = 1.0;
+fespace Vh(Th,P1);
+int nbs = Vh.ndof;
+
+cout << nbs << endl;
+
+Vh u,v,ydfe=1;
+
+// Variational formulations
+macro grad(u) [dx(u), dy(u)] //
+
+varf vA(u,v) = int2d(Th)( grad(u)'*grad(v) )
+			 + on(1,2,3,4,u=0); // Dirichlet laplacian
+varf vB(u,v) = int2d(Th)(u*v); // mass
+varf vL(u,v) = int2d(Th)(v); // volume
+
+matrix A = vA(Vh,Vh);
+matrix B = vB(Vh,Vh);
+macro  export(fn,A)
+{
+	ofstream fout(fn+"".txt"");
+	fout << A << endl; 
+	}// EOF Macro 
+
+// Target
+real[int] yd = ydfe[];
+real[int] L = vL(0,Vh);
+
+// Export data
+export("A",A)
+export("B",B)
+export("yd",yd)
+export("ud",u[])
+export("ndof",nbs)
+export("L",nbs)
+
+{ofstream fout("A.txt");
+fout << A << endl;
+}
+
+{ofstream fout("B.txt");
+fout << B << endl;
+}
+
+{ofstream fout("yd.txt");
+fout << yd << endl;
+}
+
+{ofstream fout("u.txt");
+fout << u[] << endl;
+}
+
+{ofstream fout("ndof.txt");
+fout << nbs << endl;
+}
+{ofstream fout("L.txt");
+fout << nbs << endl;
+}
+
+{ofstream fout("L.txt",append);
+for (int i=0;i<nbs;i++)
+{
+	fout << i  << " " << L[i] << endl;
+	}}
+
+// lecture fichier test.py
+{
+ifstream f("upy.txt");
+f >> u[];
+};
+
+plot(Th,u,wait=1,fill=1);
+
+
+

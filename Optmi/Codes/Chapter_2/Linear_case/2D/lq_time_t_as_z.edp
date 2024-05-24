@@ -1,0 +1,141 @@
+//Script solution optimal de min ||y-y_1|| 
+//                         s.c. -\triangle y = a, y_{\partial\Omega}=0 
+//On utilise IpOpt avec Freefem++ (modélisation via les matrices)
+load "ff-Ipopt"
+load "msh3"
+
+verbosity = 0;
+
+real alpha = 1.0;
+real T = 1.0;
+
+// Bounds on state and control u_m \leq u \leq u_M
+real xm = -10000;
+real xM = 10000;
+real um = 0;
+real uM = 1;
+
+// Square domain -> cube domain via buildlayers command
+mesh Th2 = square(20,20,flags=1);
+int[int] rup=[0,30],rdown=[0,20],rmid=[1,10,2,10,3,10,4,10];
+mesh3 Th = buildlayers(Th2,20,zbound=[0,T],labelmid=rmid,labelup=rup,labeldown=rdown);
+
+// Cube domain and extract mesh of down face
+// int[int] labelcube=[10,10,10,10,30,20];
+// mesh3 Th = cube(20,20,20,label=labelcube,flags=1);
+// int[int] ll= [20]; // down face
+// meshS Th2 = extract(Th,refface=ll);
+
+
+// Finite element spaces
+fespace Vh2(Th2,P1);
+int nbs2 = Vh2.ndof;
+fespace Vh(Th,P1);
+int nbs = Vh.ndof; // number of degrees of freedom
+
+Vh2 Y0 = 0; // initial condition
+Vh Y,U,V;
+
+Vh YD = 1.0; // target
+
+// Variational formulations 
+macro grad(Y) [dx(Y), dy(Y)] //
+
+varf vA(Y,V) = int3d(Th)( -dz(V)*Y ) // dz means \partial_t
+			 + int3d(Th)( grad(Y)'*grad(V) ) 
+			 + on(10,Y=0) // Dirichlet Laplacian
+			 + on(20,Y=0); // initial condition
+
+varf vM(Y,V) = int3d(Th)(Y*V);
+
+// Matrix on the state
+matrix A = vA(Vh,Vh,solver=sparsesolver);
+// Matrix on control
+matrix M  = vM(Vh,Vh,solver=sparsesolver);
+
+real[int,int] zeroArray(2,2); zeroArray=0.;
+matrix Mzero = zeroArray;
+Mzero.resize(nbs,nbs);
+
+// Compute Hessian of the cost function outside
+matrix hessian = [[M,Mzero],[Mzero,M]]; // alpha = 1.0
+
+// Compute Jacobian of constraint function outside
+matrix matr = -M;
+matrix jacobian = [[A,matr]];
+
+// Cost function
+func real J(real[int] &YU)
+{
+	// L2 cost for target function
+	real[int] Ya = YU(0:(nbs-1))-YD[];
+	real[int] Ua = M*Ya;	
+	real cost = Ya'*Ua; 
+	
+	// L2 cost for control
+	Ua = M*YU(nbs:(2*nbs-1)); // alpha=1
+	cost+= Ua'*YU(nbs:(2*nbs-1));
+	cost = 0.5*cost;
+	
+	return cost;
+}
+
+// Cost function's gradient
+func real[int] gradJ(real[int] &YU)
+{
+	real[int] Ya = YU(0:(nbs-1)) - YD[];
+	real[int] p1 = M*Ya;
+	real[int] p2 = M*YU(nbs:(2*nbs-1)); //alpha=1
+	real[int] p = [p1, p2];
+	return p;
+}
+
+// Hessian
+matrix HJ;
+func matrix HessianJ(real[int] &YU)
+{ 
+    HJ = hessian;
+    return HJ;
+}
+
+// PDE as a constraint
+func real[int] C(real[int] &YU)
+{
+	real[int] c = A*YU(0:(nbs-1));
+	real[int] c1 = M*YU(nbs:(2*nbs-1));
+	c = c-c1; // PDE constraint
+	return c;
+}
+
+// Jacobian of the constraint
+matrix dc;
+func matrix jacC(real[int] &YU)
+{
+	dc = jacobian;
+    return dc;
+}
+
+real[int] start(2*nbs); 
+real[int] xub(2*nbs); 
+real[int] xlb(2*nbs); 
+real[int] cub(nbs); 
+real[int] clb(nbs);
+
+// Variables bounds
+for (int i=0;i<nbs;i+=1)
+{
+	xub[i] = xM;
+	xlb[i] = xm;
+	xub[nbs+i] = uM;
+	xlb[nbs+i] = um;
+	cub[i] = 0;
+	clb[i] = 0;
+	start[i] = 0;
+	start[nbs+i] = 0.5;
+};
+
+IPOPT(J,gradJ,HessianJ,C,jacC,start,ub=xub,lb=xlb,clb=clb,cub=cub,tol=1.e-12);
+
+U[] = start(nbs:2*nbs-1);
+plot(Th,U,wait=1,dim=3);
+

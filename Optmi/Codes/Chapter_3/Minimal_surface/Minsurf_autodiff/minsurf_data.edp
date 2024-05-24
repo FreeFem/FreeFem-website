@@ -1,0 +1,88 @@
+/*F.Hecht, G.Lance, E. Trélat
+Reusable template to solve optimization problem using IpOpt within FreeFEM
+Example taken from "PDE constrained optimization within FreeFEM"
+Example (3.1) in Section 3.2:
+Using IpOpt and Automatic differentiation via AMPL
+Generate matrices and arrays needed in AMPL with FreeFEM
+*/
+
+load "ff-Ipopt"
+
+verbosity=0;
+
+// Square mesh
+mesh Th=square(20,20,[x,y]);
+
+fespace Vh(Th,P1);
+fespace Ph(Th,P0);
+
+// Choice of boundary function
+func gd1 = x+2*y; //  
+func gd2 = cos(10*atan2(y,x)); // 
+func gd3 = cos(pi*x)*cos(pi*y); // square mesh function
+
+func g = gd3;
+
+Ph ue = g; // interpolate g with Ph finite element
+// Save ue
+{ofstream fout("ue.txt");
+for (int i=0;i<Vh.ndof;i++)
+{
+	fout << i  << " " << ue[][i] << endl;
+	}
+}
+
+macro grad(u) [dx(u),dy(u)]//EOM
+
+matrix Px = interpolate(Ph,Vh,t=0,op=1); // matrix of dx operator
+matrix Py = interpolate(Ph,Vh,t=0,op=2); // matrix of dy operator
+
+// Save Px and Py
+{ofstream fout("Px.txt");
+fout << Px << endl;
+}
+
+{ofstream fout("Py.txt");
+fout << Py << endl;
+}
+
+varf mass(u,v) = int2d(Th)(v); // linear form for the integral involved in the cost function
+real[int] M = mass(0,Ph);
+
+// Save M
+{ofstream fout("M.txt");
+for (int i=0;i<Ph.ndof;i++)
+{
+	fout << i  << " " << M[i] << endl;
+	}
+}
+
+// Indices of the degrees of freedom corresponding to the finite element on the boundary
+varf OnGamma(u,v) = on(1,2,3,4,u=1); 
+Vh OnG;
+OnG[]=OnGamma(0,Vh,tgv=1); // 1 on Gamma 
+real[int,int] OnGa(Vh.ndof,1); 
+OnGa = OnG[];
+
+// Introduce the matrix ong to get the indices of the degrees of freedom on the boundary
+matrix ong = OnGa;
+
+// Triplet format matrix
+int[int] indexG,J;
+real[int] C;
+[indexG,J,C] = ong; // Get back indices via the triplet format of the matrix ong
+
+// print indices
+cout << indexG  << C << endl;
+
+// Save indices. C has here no importance and allows us to get the set indexG in AMPL wia the command param: indexG: ong := include indexG.txt;
+{ofstream fout("indexG.txt");
+for (int i=0;i<indexG.n;i++)
+{
+	fout << indexG[i] << " " << C[i]  << endl;
+}
+}
+
+
+
+

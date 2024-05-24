@@ -1,0 +1,18 @@
+# /*F.Hecht, G.Lance, E. Trélat
+# Reusable template to solve optimization problem using IpOpt within FreeFEM
+# Example taken from "PDE constrained optimization within FreeFEM"
+# Example (3.1) in Section 3.2:
+# Using IpOpt and Automatic differentiation via AMPL
+# data file
+# */
+
+data;
+
+param mV := 121;
+param mP := 200;
+
+param: indexM: M :=  include M.txt;
+param: indexPx: Px := include Px.txt;
+param: indexPy: Py := include Py.txt;
+param: indexUE: ue:= include ue.txt; 
+param: indexG: ong := include indexG.txt;

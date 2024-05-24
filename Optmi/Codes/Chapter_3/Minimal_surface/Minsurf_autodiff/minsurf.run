@@ -1,0 +1,17 @@
+# /*F.Hecht, G.Lance, E. Trélat
+# Reusable template to solve optimization problem using IpOpt within FreeFEM
+# Example taken from "PDE constrained optimization within FreeFEM"
+# Example (3.1) in Section 3.2:
+# Using IpOpt and Automatic differentiation via AMPL
+# commande file
+# */
+
+model surfmin.mod;
+data surfmin.dat;
+
+solve;
+
+display u;
+
+print  mV > usol.txt ;
+print{i in indexV}:  u[i] >> usol.txt ;

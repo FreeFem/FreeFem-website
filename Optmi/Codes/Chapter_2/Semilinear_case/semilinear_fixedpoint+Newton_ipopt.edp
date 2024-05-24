@@ -1,0 +1,154 @@
+/*F.Hecht, G.Lance, E. Trélat
+Reusable template to solve optimization problem using IpOpt within FreeFEM
+Example taken from "PDE constrained optimization within FreeFEM"
+Example (2.1,2.2,2.3) in Section 2.3:
+Solving template for a semilinear example:
+\min_{u} \int_{\Omega} (y-y_d)^2\,dx +\alpha  \int_{\Omega} u^2\,dx
+under the constraints
+-\Delta y + f(y) = u, y_{\vert \partial \Omega} = 0
+with 
+f(y) = y^3
+and such that \int_\Omega u^2 \,dx \leq \frac{1}{4}
+via a Fixed point+Newton method (to solve the PDE)
+*/
+
+load "ff-Ipopt"
+
+verbosity = 0;
+
+mesh Th = square(20,20);
+fespace Vh(Th,P1);
+int nbs = Th.nv; // degrees of freedom
+
+// Volume constraint
+real omega0 = 0.25;
+real tol = 1.e-10;
+real alpha = 1.0;
+
+Vh Y,U,V,P,Q,theta;
+Vh YD = 0.025;
+
+// Variational formulations
+macro grad(Y) [dx(Y),dy(Y)] //
+
+// fixed point method
+macro semilinearstate(){
+	real err=1;
+	Vh W=0;
+	
+	Vh Yold;
+	for (int i=0;i<3;i++){
+		solve semilinear(Y,V) = int2d(Th)( grad(Y)'*grad(V) )
+							  + int2d(Th)( Yold^3*V ) 
+							  - int2d(Th)( U*V )
+							  + on(1,2,3,4,Y=0);
+		err = int2d(Th)((Y-Yold)^2);
+		Yold = Y;
+	}
+	
+	while (err>tol) {
+	Y[] -= W[]; 
+	solve semilinear(W,V) = int2d(Th)( grad(W)'*grad(V) )
+						  + int2d(Th)( 3*Y^2*W*V )
+						  - (
+						    int2d(Th)( grad(Y)'*grad(V) + Y^3*V - U*V )
+							)
+						  + on(1,2,3,4,W=0);
+	err = int2d(Th)(W^2);
+	}
+} //
+
+macro semilinearadjoint() {
+	solve SLAdjoint(P,Q) = int2d(Th)( grad(P)'*grad(Q) )
+						 + int2d(Th)(3*Y^2*P*Q) 
+						 + int2d(Th)((Y-YD)*Q)
+						 + on(1,2,3,4,P=0);
+} //
+
+macro interpgrad() {
+	solve L2grad(theta,V) = int2d(Th)( theta*V ) - int2d(Th)( (alpha*U-P)*V );
+} //
+
+
+// Volume constraint
+varf vL(Y,V) = int2d(Th)(1*V);
+real[int] L = vL(0,Vh);
+real[int,int] Ll(1,nbs); Ll = L; 
+matrix jaccontrainte = Ll;
+
+
+// Cost function
+func real J(real[int] &X)
+{
+	U[] = X;
+	
+	semilinearstate;
+	
+	real cost = 0.5*( int2d(Th)((Y-YD)^2) + alpha*int2d(Th)(U^2) );
+	return cost;
+}
+
+// Cost function gradient
+func real[int] gradJ(real[int] &X)
+{
+	U[] = X;
+	
+	semilinearstate;
+	
+	semilinearadjoint;
+	
+	interpgrad;
+	real[int] dJ = theta[];
+	return dJ;
+}
+
+//Contraintes   
+func real[int] C(real[int] &X)
+{
+	real[int] c(1);
+	c[0] = L'*X; // int2d(Th)(U) < omega0
+    return c;
+}
+
+//Gradient Contrainte
+matrix dc;
+func matrix jacC(real[int] &X)
+{
+	dc = jaccontrainte;
+    return dc;
+}
+
+real[int] start(nbs); 
+real[int] xub(nbs); 
+real[int] xlb(nbs); 
+real[int] cub(1); 
+real[int] clb(1);
+
+//Bornes variables
+for (int iter=0;iter<nbs;iter+=1)
+{
+	xub[iter] = 1;
+	xlb[iter] = 0;
+	start[iter] = 1;
+};
+
+clb[0] = omega0;
+cub[0] = omega0;
+
+IPOPT(J,gradJ,C,jacC,start,ub=xub,lb=xlb,clb=clb,cub=cub,tol=1.e-11);
+
+real[int] X = start; U[] = X;
+cout << "Objectif = " << J(X) << endl;
+cout << "Contrainte = " << C(X) << endl;
+
+plot(Th,U,wait=1,fill=1,value=1,nbiso=20);
+
+// //save solution
+// {
+// ofstream file("apsol.txt");
+// file << a[] <<endl;
+// ofstream file1("cstap.txt");
+// file1 << N << endl;
+// ofstream file2("sol.txt");
+// file2 << X << endl;
+// }

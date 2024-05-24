@@ -1,0 +1,80 @@
+// Reusable template to solve optimization problem using IpOpt within FreeFEM
+// Example taken from "PDE constrained optimization within FreeFEM"
+// Example 1.26 in Section 1.2.4
+
+/*
+\min_{x1,x2} x1x2(1-x1-x2) 
+x1nder the constraints
+x1 \geq 0
+x2 \geq 0
+x1+x2 \leq 1
+x2ariables d'optimisation : x1,x2 
+*/
+
+load "ff-Ipopt"; // load IpOpt environment 
+
+verbosity = 0;
+
+// Cost : Function, Gradient and Hessian
+
+func real J(real[int] &X) // Cost function
+{
+	real x1=X[0],  x2=X[1];// 2-dimension variable X
+	real cost = x1*x2*(1-x1-x2);
+	return cost; // return real
+}
+
+func real[int] gradJ(real[int] &X) // Gradient of the cost function
+{
+	real[int] dJ(X.n); // size of variable X
+	real x1 = X[0];
+	real x2 = X[1];
+	real dx1 = x2*(1-x1-x2) - x1*x2;
+	real dx2 = x1*(1-x1-x2) - x1*x2;
+	dJ = [dx1,dx2];
+	return dJ;  // return array
+}
+
+matrix hess; // matrix has to be allocated outside the Hessian function
+func matrix hessianJ(real[int] &X) // Hessian of the cost function
+{
+	real x1 = X[0];
+	real x2 = X[1];
+	hess = [[-2*x2, 1-2*x1-2*x2],[1-2*x1-2*x2,-2*x1]];
+	return hess; // return matrix
+}
+
+//Constraints : Function and Jacobian
+func real[int] C(real[int] &X)
+{
+	real x1 = X[0];
+	real x2 = X[1];
+	real[int] cont = [x1+x2-1];
+	return cont; // return array
+}
+
+matrix dc; // matrix has to be allocated outside the Hessian function
+func matrix jacC(real[int] &X)
+{
+	dc = [[1,1]];
+	return dc; // return matrix
+}
+
+//Initialisation point
+real[int] start = [1,1];
+
+//Variables bounds
+real[int] Xub = [10000,10000]; // has to be array
+real[int] Xlb = [0,0]; // has to be array
+
+//Constraints box1nds
+real[int] Cub = [0]; // has to be array
+real[int] Clb = [-10000]; // has to be array
+
+//Calling IpOpt
+IPOPT(J,gradJ,hessianJ,C,jacC,start,ub=Xub,lb=Xlb,clb=Clb,cub=Cub,optfile="ipopt.opt");
+
+cout << "(x,y) = " << "(" << start[0] << "," << start[1] << ")" << endl; // print solution
+
+
+

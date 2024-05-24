@@ -1,0 +1,233 @@
+/*F.Hecht, G.Lance, E. Trélat
+Reusable template to solve optimization problem using IpOpt within FreeFEM
+Example taken from "PDE constrained optimization within FreeFEM"
+Example (2.12,2.13) in Section 2.2:
+Solving template for LQ example 
+\min_{u} \int_0^T \int_{\Omega} (y-y_d)^2\,dx + \alpha \int_0^T \int_{\Omega} u^2 \,dx
+under the constraints
+y_t-\Delta y = u, y_{\vert \partial \Omega} = 0, y(0)= 0
+Option 1 : direct mode with (Y,U) as unknowns
+
+
+*/
+
+load "ff-Ipopt"
+
+verbosity = 0;
+
+//mesh
+mesh Th = square(20,20);
+int nbs = Th.nv;
+plot(Th,wait=1);
+
+// Data of problem
+int Nt = 20; // number of time steps
+int Ntot = nbs*Nt; // total degrees of freedom
+real T = 1; // final time
+real dt = T/(Nt-1); 
+
+cout << Ntot << endl;
+
+// Bounds on state and control u_m \leq u \leq u_M
+real xm = -10000;
+real xM = 10000;
+real um = 0;
+real uM = 1;
+
+real alpha = 1;
+
+// P1 finite element in space
+fespace Vh(Th,P1);
+Vh u,v;
+Vh ydfe=1; // target
+
+// Variatinoal formulations
+macro grad(u) [dx(u), dy(u)] //
+
+varf vA(u,v) = int2d(Th)( grad(u)'*grad(v) )
+			 + on(1,2,3,4,u=0); // Dirichlet Laplacian
+varf vB(u,v) = int2d(Th)(u*v); 
+
+matrix A = vA(Vh,Vh); // Stiffness matrix
+matrix B = vB(Vh,Vh); // Mass matrix
+
+// Target
+real[int] yd = ydfe[];
+real[int] ydt = yd;
+for (int i=1;i<Nt;i+=1)
+	{ydt = [ydt, yd];}
+
+// Matrices of the time problem (first discretize then optimize)
+real[int,int] zeroArray(2,2);
+zeroArray = 0;
+real[int,int] IdentiteArray(nbs,nbs); // Identity matrix
+IdentiteArray = 0;
+for (int i=0;i<nbs;i+=1)
+{	for (int j=0;j<nbs;j+=1)
+	{	if(i==j)
+		{	IdentiteArray(i,j)=1;
+		}
+	}
+}
+
+matrix At = A + (1/dt)*B;
+matrix Bt = (-1/dt)*B;
+matrix Mzero = zeroArray;
+matrix Identite = IdentiteArray;
+
+// y_t - \Delta y = u <-> tildeA*y + tildeB*u = 0
+matrix tildeA; // Matrix on state
+matrix tildeB; // Matrix on control
+matrix tildeD; // Matrix for cost function
+matrix matr;
+matrix matrIN;
+
+// Matrix on state
+Mzero.resize(nbs,nbs);
+tildeA = Identite;
+for (int i=1;i<Nt;i+=1)
+	{tildeA = [[tildeA,Mzero]];}
+
+for (int i=1;i<Nt;i+=1)
+	{if (i==1)
+		{matr = Bt;}
+	else
+		{matr = Mzero;}
+	for (int j=1;j<Nt;j+=1)
+		{if (j==i)
+			{matrIN = At;}
+		else
+			{if (j==i-1)
+				{matrIN = Bt;}
+			else
+				{matrIN = Mzero;}}
+		matr = [[matr, matrIN]];}
+	tildeA = [[tildeA],[matr]];}
+
+// Matrix on control
+tildeB = Mzero;
+for (int i=1;i<Nt;i+=1)
+	{tildeB = [[tildeB,Mzero]];}
+
+for (int i=1;i<Nt;i+=1)
+	{matr = Mzero;
+	for (int j=1;j<Nt;j+=1)
+		{if (i==j)
+			{matrIN = B;}
+		else
+			{matrIN = Mzero;}
+		matr = [[matr, matrIN]];}
+	tildeB = [[tildeB],[matr]];}
+tildeB = -tildeB; //AX-BU=0
+
+// Matrix on the cost function
+Mzero.resize(nbs,nbs);
+tildeD = Mzero;
+for (int i=1;i<Nt;i+=1)
+	{tildeD = [[tildeD,Mzero]];}
+
+for (int i=1;i<Nt;i+=1)
+	{matr = Mzero;
+	for (int j=1;j<Nt;j+=1)
+		{if (i==j)
+			{matrIN = B;}
+		else
+			{matrIN = Mzero;}
+		matr = [[matr, matrIN]];}
+	tildeD = [[tildeD],[matr]];}
+tildeD = dt*tildeD;
+
+// Computation of Jacobian and Hessian outside functions (independent of unknowns (Y,U))
+// Hessian of the cost function
+Mzero.resize(Ntot,Ntot);
+matr  = [[tildeD,Mzero]];
+matrIN = [[Mzero,tildeD]]; //alpha=1
+matrix hessiancost = [[matr],[matrIN]];
+
+// Jacobian of constraint function
+Mzero.resize(Nt,Ntot);
+matrix jacobianconstraint = [[tildeA,tildeB]];
+
+// Cost and constraint functions and their derivatives
+func real J(real[int] &XU) // cost function
+{
+	real[int] xint = XU(0:(Ntot-1))-ydt;
+	real[int] uint = tildeD*xint;	
+	real costx = xint'*uint; 
+	uint = tildeD*XU(Ntot:(2*Ntot-1)); //alpha=1
+	real costu= uint'*XU(Ntot:(2*Ntot-1));
+	real cost = 0.5*(costu+costx);
+	return cost;
+}
+
+//Gradient Objectif  
+func real[int] gradJ(real[int] &XU)
+{
+	real[int] xint = XU(0:(Ntot-1)) - ydt;
+	real[int] p1 = tildeD*xint;
+	real[int] p2 = tildeD*XU(Ntot:(2*Ntot-1)); //alpha=1
+	real[int] p = [p1, p2];
+	return p;
+}
+
+matrix HJ;
+func matrix HessianJ(real[int] &XU)
+{ 
+	HJ = hessiancost;
+	return HJ;
+}
+
+//Contraintes   
+func real[int] C(real[int] &XU)
+{
+	real[int] c = tildeA*XU(0:(Ntot-1));
+	c+= tildeB*XU(Ntot:(2*Ntot-1));
+	return c;
+}
+
+//Gradient Contrainte
+matrix dc;
+func matrix jacC(real[int] &XU)
+{
+    dc = jacobianconstraint;
+    return dc;
+}
+cout << " tildeD "<< tildeD.l1 << endl;
+cout << " tildeA "<< tildeA.l1 << endl;
+cout << " tildeB "<< tildeB.l1 << endl;
+
+//variable bounds + initialisation
+real[int] xub(2*Ntot);
+real[int] xlb(2*Ntot);
+real[int] clb(Ntot);
+real[int] cub(Ntot);
+real[int] start(2*Ntot);
+
+for (int i=0;i<Ntot;i+=1)
+{
+	xub[i] = xM;
+	xlb[i] = xm;
+	xub[Ntot+i] = uM;
+	xlb[Ntot+i] = um;
+	cub[i] = 0;
+	clb[i] = 0;
+	start[i] = 0;
+	start[Ntot+i] = 0.5;
+};
+{ ofstream fout("/tmp/mmGL.txt");
+fout << "tildeA =\n" << tildeA << "\n\n\n"<< endl;
+fout << "tildeB =\n" << tildeB << "\n\n\n"<< endl;
+fout << "tildeD =\n" << tildeD << "\n\n\n"<< endl;
+fout << "ydt "<< ydt << "\n\n\n"<< endl;
+}
+cout << J(start) << endl;
+//launch ipopt
+IPOPT(J,gradJ,HessianJ,C,jacC,start,clb=clb,cub=cub,optfile="ipopt.opt");
+
+for (int i=0;i<Nt;i+=1)
+{	u[] = start((Ntot+i*nbs):(Ntot+((i+1)*nbs-1)));
+	plot(Th,u,fill=1,value=1,wait=1,dim=3);
+}
+
+
+

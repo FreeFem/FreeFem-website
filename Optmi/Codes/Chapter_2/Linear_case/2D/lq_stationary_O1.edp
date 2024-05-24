@@ -1,0 +1,130 @@
+/*F.Hecht, G.Lance, E. Trélat
+Reusable template to solve optimization problem using IpOpt within FreeFEM
+Example taken from "PDE constrained optimization within FreeFEM"
+Example (2.1,2.2,2.3) in Section 2.1:
+Solving template for LQ example 
+\min_{u} \int_{\Omega} (y-y_d)^2\,dx + \alpha \int_{\Omega} u^2 \,dx
+under the constraints
+-\Delta y = u, y_{\vert \partial \Omega} = 0, y(0)= 0
+Option 1 : direct mode with (Y,U) as unknowns
+*/
+
+load "ff-Ipopt"
+verbosity = 0;
+
+// Square mesh
+mesh Th = square(50,50);
+plot(Th,wait=1); //mesh plot
+
+// Bounds on controls and states u_m \leq u \leq u_M
+real xm = -10000;
+real xM = 10000;
+real um = -10000;
+real uM = 10000;
+
+// Finite element space with P1 element
+fespace Vh(Th,P1);
+int nbs = Vh.ndof;
+
+
+Vh u,v;
+Vh ydfe = 1.0; // target function
+
+// Variational formulations
+macro grad(u) [dx(u), dy(u)] //
+
+varf vA(u,v) = int2d(Th)( grad(u)'*grad(v) )
+			 + on(1,2,3,4,u=0); // Dirichlet Laplacian
+
+varf vM(u,v) = int2d(Th)(u*v); // Mass
+
+matrix A = vA(Vh,Vh,solver=sparsesolver); // Stiffness matrix
+matrix M = vM(Vh,Vh,solver=sparsesolver); // Mass matrix
+
+
+//target
+real[int] yd = ydfe[];
+
+// Objective function
+func real J(real[int] &YU)
+{
+	real cost;
+	
+	// L2 cost for target function
+	real[int] Y = YU(0:(nbs-1))-yd;
+	real[int] U = M*Y;	
+	cost = Y'*U; 
+	
+	// L2 cost for control
+	U = M*YU(nbs:(2*nbs-1)); //alpha=1
+	cost+= U'*YU(nbs:(2*nbs-1));
+	cost = 0.5*cost;
+	return cost;
+}
+
+// Derivative of objective function
+func real[int] gradJ(real[int] &YU)
+{
+	real[int] Y = YU(0:(nbs-1)) - yd;
+	real[int] p1 = M*Y;
+	real[int] p2 = M*YU(nbs:(2*nbs-1)); //alpha=1
+	real[int] p = [p1, p2];
+	return p;
+}
+
+
+// Hessian of objective function
+matrix HJ; // has to be allocated outside
+func matrix HessianJ(real[int] &YU)
+{ 
+	real[int,int] zeroArray(nbs,nbs); zeroArray=0.;
+	matrix Mzero  = zeroArray;
+	matrix matr = [[M,Mzero]];
+	matrix matrIN = [[Mzero,M]]; // alpha=1
+	HJ = [[matr],[matrIN]];
+	return HJ;
+}
+
+// Constraints function 
+func real[int] C(real[int] &YU)
+{	
+	real[int] c = A*YU(0:(nbs-1));
+	real[int] c1 = M*YU(nbs:(2*nbs-1));
+	c = c-c1; // PDE constraint
+	return c;
+}
+
+// Derivative of constraints function
+matrix dc; // has to be allocated outside
+func matrix jacC(real[int] &YU)
+{
+	matrix matr = -M;
+	dc  = [[A,matr]];
+	return dc;
+}
+
+// Variable bounds + initialization
+real[int] xub(2*nbs);
+real[int] xlb(2*nbs);
+real[int] clb(nbs);
+real[int] cub(nbs);
+real[int] start(2*nbs);
+xub(0:nbs-1)=xM; 
+xub(nbs:2*nbs-1)=uM; 
+xlb(0:nbs-1)=xm; 
+xlb(nbs:2*nbs-1)=um; 
+cub=0.;
+clb=0.;
+start(0:nbs-1)=0.; 
+start(nbs:2*nbs-1)=0.5; 
+
+real[int] X0 = start;
+
+// Launch ipopt
+int i0 = IPOPT(J,gradJ,HessianJ,C,jacC,start,clb=clb,cub=cub,optfile="ipopt.opt");
+
+u[] = start(nbs:(2*nbs-1));
+plot(Th,u,fill=1,value=1,wait=1,dim=3);
+
+
+

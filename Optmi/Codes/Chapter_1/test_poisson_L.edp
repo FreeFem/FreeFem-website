@@ -1,0 +1,45 @@
+/*F.Hecht, G.Lance, E. Trélat
+Reusable template to solve optimization problem using IpOpt within FreeFEM
+Example taken from "PDE constrained optimization within FreeFEM"
+Equation 1.1 in Section 1.2.1
+*/
+
+
+// Build boundaries of the domain
+int[int] lab=[1,1,1,1];
+mesh Th = square(20,20,label=lab);
+Th=trunc(Th,x<0.5 | y<0.5, label=1);
+
+// finite element space with P2 Lagrange elements (e.g. specify P1 instead for P1 Lagrange elements)
+
+fespace Vh(Th,P2);
+// fespace Vh(Th,P1);
+
+Vh Y,V,U=1; //finite element functions
+
+macro grad(Y) [dx(Y),dy(Y)] // //macro ended by //
+
+solve Poisson(Y,V) = int2d(Th)(grad(Y)'*grad(V)) 
+	- int2d(Th)(U*V)
+	+ on(1,Y=0); 
+
+plot(Th,wait=1);  
+plot(Th,Y,fill=1,dim=2,wait=1); // Fig. 1.1
+
+
+
+// To solve with matrices instead of writing the whole variational formulation
+
+// Bilinear form associated to the Laplacian
+varf stiffness(Y,V) = int2d(Th)((grad(Y)'*grad(V)))
+		    + on(1,Y=0); // BC  
+
+// Linear form
+varf mass(Y,V) = int2d(Th)(U*V) + on(1,Y=0);
+
+matrix Ah = stiffness(Vh,Vh,solver=sparsesolver); // with Dirichlet B.C.
+real[int] Uh = mass(0,Vh);
+
+Y[] = Ah^-1*Uh;
+
+plot(Th,Y,fill=1,dim=2,wait=1); // Fig. 1.1

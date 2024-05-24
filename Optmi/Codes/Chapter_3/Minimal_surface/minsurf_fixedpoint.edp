@@ -1,0 +1,48 @@
+/*F.Hecht, G.Lance, E. Trélat
+Reusable template to solve optimization problem using IpOpt within FreeFEM
+Example taken from "PDE constrained optimization within FreeFEM"
+Example (3.1) in Section 3.2:
+Using a fixed point method
+*/
+
+verbosity=0;
+
+real meshsize= 0.02; 
+int wait= 1;
+
+// Square mesh
+mesh Th=square(20,20,[x,y]);
+
+fespace Vh(Th,P2); // or P1
+
+Vh u,up,v,uer;
+
+// Several choices for the boundary function
+func gd1 = x+2*y; //  
+func gd2 = cos(10*atan2(y,x)); // 
+func gd3 = cos(pi*x)*cos(pi*y); // square mesh function
+
+func gd = gd3;
+
+u = 0; 
+macro grad(w) [dx(w),dy(w)] //
+
+real err=1, eps= 1e-5 ; 
+
+for(int iter = 0; iter < 1000; ++iter)
+{
+	up[] =u[]; // save the previous solution (copy dof!)
+	solve Pb(u,v) = int2d(Th) ( grad(u)'*grad(v) / sqrt(1+grad(up)'*grad(up) ))
+				  + on(1,2,3,4,u=gd);
+	plot(u,wait=0,dim=3); 
+	
+	// Stop criterion
+	err = sqrt(int2d(Th)( (u-up)^2 ));
+	
+	real J = int2d(Th)( sqrt(1.+ grad(u)'*grad(u)));
+	
+	cout << "iter = " << iter << " ||  error  = " << err  << " || J ="<< J << endl; 
+	if(err < eps) break; // 
+} 
+
+assert(err< eps);
