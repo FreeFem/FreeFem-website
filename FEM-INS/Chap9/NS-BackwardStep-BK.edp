@@ -1,0 +1,128 @@
+/*
+  Incompressible Navier Stokes 
+    with Taylor-Hood Finite element
+    No linearity : Newton method 
+    continuation on Reynols Number
+    Mesh adaptation 
+    
+    Test case Laminar Flow over a Backward Facing Step  Gamm Workshop
+    
+     K.Morgan, J.Périaux and F.Thomasset, Analysis of laminar flow over a backward facing step, Vol9 of Notes on Num. Fluid Mech., Vieweg, 1984. 
+    
+*/
+
+// FFCS regression test value
+
+
+real[int] Reynold=[50,150,350,500];
+real[int] HH=[1.5,1]; 
+real[int,int] reattachP=[ [ 3, 2 ], [ 6., 4.5 ]] ;  // reattachP[irey,cas]  
+int nerr=0; 
+
+for(int cas=0;cas<2;++cas)
+{
+real h=HH[cas]-0.5,H=HH[cas],l=3,L=22;
+int[int] ll=[3,2,5,1];
+// label: 1 in, 2  out, 3  down wall, 4   step, 5   up wall 
+func zoom=[[2.5,0],[10,H]];
+mesh Th=square(22*10,6*4,[x*22,y*H],label=ll);
+mesh Thp=Th=trunc(Th, (x>l) | (y >0.5),label=4); 
+
+func meshsize= 0.7*max(0.025,max(x-l,0.0)/19./5.);
+func uin=(H-y)*(y-0.5)/square((H-0.5)/2.);
+Th=adaptmesh(Th,meshsize,IsMetric=1,nbvx=1000000);
+Th=adaptmesh(Th,meshsize,IsMetric=1,nbvx=1000000);
+plot(Th,wait=0);
+//plot(Th,wait=0,pdf="Th-BkStep-"+cas+".pdf",bb=zoom);
+fespace Xh(Th,P2);
+fespace Mh(Th,P1);
+fespace Mhp(Thp,P1);
+fespace XXMh(Th,[P2,P2,P1]);
+XXMh [u1,u2,p];
+XXMh [v1,v2,q]; 
+u1[]=0; // to start from 0
+macro div(u) (dx(u#1)+dy(u#2))//
+macro grad(u) [dx(u),dy(u)]//
+macro Grad(u1,u2) [grad(u1),grad(u2)]//
+macro Grads(u1,u2) [[dx(u1),0.5*(dy(u1)+dx(u2))],[0.5*(dx(u2)+dy(u1)),dy(u2)]]//
+
+macro ugrad(u1,u2,v) (u1*dx(v)+u2*dy(v)) //
+macro Ugrad(u1,u2,v1,v2) [ugrad(u1,u2,v1),ugrad(u1,u2,v2)]//
+macro triN(u,w,v)  (Ugrad(u#1,u#2,w#1,w#2)'*[v#1,v#2])//
+
+macro triNas(u,w,v) (0.5*triN(u,w,v)-0.5*triN(u,v,w))// antisymetrique
+macro triNn triN//
+
+Mh psi,phi;
+
+
+problem streamlines(psi,phi) = 
+      int2d(Th)( dx(psi)*dx(phi) + dy(psi)*dy(phi))
+   +  int2d(Th)( -phi*(dy(u1)-dx(u2)))
+   +  on(3,4,psi=0)+ on(5,psi=-2./3.*(H-0.5))
+   ;
+real[int] psiviso(31);
+{int k=0;
+for(int i=-20;i<0;i++)
+ psiviso[k++] = i*2./3.*(H-0.5)/20;
+for(int i=0;i<=10;i++)
+ psiviso[k++] = i*2./3.*(H-0.5)/100/(H*H*H);
+}
+cout << " value of iso psi "<< psiviso << endl;
+int i=0;
+real  nu=1./100.,nus=nu*2;
+real dt=0.1;
+XXMh [up1,up2,pp];
+varf   vDNS ([u1,u2,p],[v1,v2,q]) =
+    int2d(Th)(  
+      + nus * (Grads(u1,u2):Grads(v1,v2))
+	    +  p*div(v) + q* div(u)
+      + triNn(up,u,v)  + triNn(u,up,v)
+           )
+  + on(1,u1=uin, u2=0)
+  + on(3,4,5,u1=0,u2=0) 
+;
+varf   vNS ([u1,u2,p],[v1,v2,q]) =
+    int2d(Th)( triNn(up,up,v) )
+   + on(1,u1=uin, u2=0)
+   + on(3,4,5,u1=0,u2=0) 
+  ;
+
+for(int krey=0;krey<Reynold.n;++krey)
+  { 
+    real re=Reynold[krey];
+    real lerr=0.005;
+    
+	for (i=0;i<=20;i++)
+	  {
+	    nu = (H-h)/re;
+	    nus = nu*2; 
+	    up1[]=u1[];
+	    real[int] b = vNS(0,XXMh);
+	    matrix Ans=vDNS(XXMh,XXMh);
+	    set(Ans,solver=sparsesolver);
+	    real[int] w = u1[];
+      u1[]=Ans^-1*b;
+      w -= u1[];
+	    cout << " iter = "<< i << "  " << w.l2 <<  " rey = " << re <<  " H = " << H << endl;
+	    if(w.l2<1e-6) break; 
+	  } ;
+    streamlines;
+    real rp1=1./(H-h)*int1d(Th,3)( real( (x>=l & x < (l+0.5)) | (x>(l+0.4)) & (x<10)& (dy(psi) >= 1e-5)) ) ;
+    real rp2=1./(H-h)*int1d(Th,3)( real( (x>=l & x < (l+0.5)) | (x>(l+0.4)) & (x<10)& (dy(psi) >= -1e-5)) ) ;
+    real rp3=1./(H-h)*int1d(Th,3)( real( (x>=l & x < (l+0.5)) | (x>(l+0.4)) & (x<10)& (dy(u1)<=0)       ) ) ;
+    cout << " Reattach point " << rp2 << " " << rp2 << " " << rp3 << endl;
+    real rp = (rp1+rp2)/2;
+    real rppaper =  krey < 2 ? reattachP(krey,cas) : 0; 
+    real err= abs(rppaper - rp)/rp;
+    if( err>0.5 &&  krey < 2 ) nerr++;//  
+    cout << "\n\n\n";
+    cout << "H= " << H << " Re " << re << " Reattach point " << rp << " paper=" << rppaper << " err "<< err 
+         << "  psi max = " << psi[].max <<endl; 
+    cout << "\n\n\n";
+    Mhp U1=u1, U2=u2;
+    plot(coef=1,cmm="H="+H+", rey="+re+" [u1,u2] et p  ",p,[U1,U2],wait=0,nbiso=20,bb=zoom,pdf="Up-step-"+H+"-"+re+".pdf");  
+    plot(coef=1,cmm="H="+H+", rey="+re+" psi  ",psi,bb=zoom,viso=psiviso,pdf="psi-step-"+H+"-"+re+".pdf");  
+    plot(coef=1,cmm="H="+H+", rey="+re+" Mesh  ",Th,bb=zoom,viso=psiviso,pdf="Th-step-"+H+"-"+re+".pdf");  
+}}
+assert(nerr==0); 

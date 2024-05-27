@@ -1,0 +1,193 @@
+load "Element_P1bl"  //  
+load "splitmesh3"
+load "qf11to25"
+load "Element_P1bl"  //  
+load "Element_P3"  //  
+load "MUMPS"
+load "BernardiRaugel"
+
+// Bercovier - Engelman test case (1979)
+verbosity=1;
+real mu=1;
+int cartesian=1;
+func pressure = (x-0.5) * (y-0.5);
+func dxp = y-0.5;
+func dyp = x-0.5;
+
+func laplagD1 = -512.0 * (y * (y-1) * (2*y-1) *(6*x*x - 6*x +1) + x*x * (x-1)*(x-1) * (6*y-3));
+func laplagD2 =  512.0 * (x * (x-1) * (2*x-1) *(6*y*y - 6*y +1) + y*y * (y-1)*(y-1) * (6*x-3));
+func f1 = - mu * laplagD1 + dxp;
+func f2 = - mu * laplagD2 + dyp;
+func gD1 = -256.0 * x^2 * (x-1)^2 * y * (y-1) * (2*y-1);
+func gD2 =  256.0 * y^2 * (y-1)^2 * x * (x-1) * (2*x-1);
+// To compute the error
+func dxgD1 = -512.0 * y * (y-1) * (2*y-1) * x * (2*x*x - 3*x + 1);
+func dygD1 = -256.0 * x*x * (x-1)*(x-1) * (6*y*y - 6*y +1);
+func dxgD2 =  256.0 * y*y * (y-1)*(y-1) * (6*x*x - 6*x +1);
+func dygD2 =  512.0 * x * (x-1) * (2*x-1) * y * (2*y*y - 3*y +1);
+
+macro L2err(u,v) sqrt(int2d(Th)(square(u#1-v#1)+square(u#2-v#2)))//
+macro L2perr(u,v) sqrt(int2d(Th)(square((u)-(v))))//
+macro H1err(u,vx,vy) sqrt(int2d(Th)(square(dx(u#1)-vx#1)+square(dx(u#2)-vx#2)+square(dy(u#1)-vy#1)+square(dy(u#2)-vy#2)))//
+macro div(u) (dx(u#1)+dy(u#2))//
+macro Grads(u) [dx(u#1),(dx(u#2)+dy(u#1))*.5,(dx(u#2)+dy(u#1))*.5,dy(u#2)]//
+macro U(u,p) [u#1,u#2,p]//
+real[int] H=[0.1,.05,0.02,0.01, .005,0.002];
+int ppp = 0; 
+ofstream fout("data-err-"+cartesian);
+real[int] rinfo(40);
+int[int] info(40);
+matrix A; 
+verbosity=2;
+mesh Th;
+func bool Write(ofstream & f,real[int] e,int prec)
+{
+	cout.precision(prec);
+	f.precision(prec);
+	for [ i,ei:e] 
+	cout << ei << " ";
+	cout  << endl; 
+	
+	for [ i,ei:e] 
+	f << ei << " ";
+	f << endl; 
+	cout.precision(12);
+	f.precision(12);
+	
+	return 1; 
+}
+func bool logg(real[int] &e,real[int]& eo,real[int] &l)
+{
+	// cout << e.n << " " << eo.n << " " << l.n << endl; 
+	if(e.n != eo.n ) return 0;
+	
+	l.resize(e.n); 
+	for [ i,ei:e] 
+{      
+	  real li=log(e[i]/eo[i]);
+         real lh=log(e[0]/eo[0]);
+         real r=  li/lh;
+	 l[i]=r;
+	 if(isNaN(r)) cout << " ???? NaN "<< li << " "<< lh << endl; 
+	 //cout << " -- " << i<< " " << l[i] ;
+}	
+	
+	return 1;
+}
+macro V3(u,p) [u#1,u#2,p]//
+macro V4(u,p) [u#1,u#2,p,p#0]//
+
+NewMacro PB(PW,NW,PP,PX,PS,V3)
+{
+fout << PS << endl;
+cout << "\n\n" <<PS << "\n\n" << endl;
+real[int] vp,lv;
+int ok=1;
+real p0=0; 
+for [ i,h:H ]
+if(ok) 
+{  
+  int Nx =1./h;
+  real cpu0=clock();
+  if(cartesian)
+   Th = square(Nx,Nx);
+   else
+   {
+	   real[int] xx=[0,1,1,0],
+	             yy=[0,0,1,1];
+         int[int]  NC=[Nx,Nx,Nx,Nx];     	   
+         border bb(t=0,1;i) 
+         {
+         // i is the the index variable of the multi border loop 
+           int ii = (i+1)%4; real t1 = 1-t;
+           x =  xx[i]*t1 + xx[ii]*t;
+           y =  yy[i]*t1 + yy[ii]*t;
+           label = i+1; ; 
+         }
+	Th= buildmesh(bb(NC));
+	
+   }
+   fespace P0h(Th,P0);
+   P0h HH=hTriangle;
+   real hh = HH[].max, hm= HH[].min;
+   cout << " mesh size "<< hh << " min: "<< hm << endl; 
+   fespace Xh(Th, PX);
+  fespace Wh(Th, PW);
+/*  Xh u1, v1;
+  Xh u2, v2;
+  Xh up1, up2;
+  */
+  Wh V3(u,p),V3(v,q); 
+  Xh psi, phi;
+  fespace Mh(Th, PP);
+   // Problem Stokes (with solve)
+  real epsr = 1e-8;
+
+  varf Stokes ([u1, u2, p], [v1, v2, q])//,rinfo=rinfo,info=info)
+  	= int2d(Th)(
+  		( dx(u1)*dx(v1) + dy(u1)*dy(v1)
+  		+ dx(u2)*dx(v2) + dy(u2)*dy(v2) )*mu
+  		- p*q*epsr
+  		- p*dx(v1) - p*dy(v2)
+  		- dx(u1)*q - dy(u2)*q
+  	)
+	+ int2d(Th)( [f1,f2]'*[v1,v2])
+  	+ on(1,2, 3, 4, u1=0, u2=0)
+  	;
+  varf Stokes0 ([u1, u2, p,p0], [v1, v2, q,q0])//,rinfo=rinfo,info=info)
+        	= int2d(Th)(
+        		( dx(u1)*dx(v1) + dy(u1)*dy(v1)
+        		+ dx(u2)*dx(v2) + dy(u2)*dy(v2) )*mu
+        		- p*q*epsr
+        		- p0*q0*epsr
+        		- (p+p0)*dx(v1) - (p+p0)*dy(v2)
+        		- dx(u1)*(q+q0) - dy(u2)*(q+q0)
+        	)
+      	+ int2d(Th)( [f1,f2]'*[v1,v2])
+        	+ on(1,2, 3, 4, u1=0, u2=0)
+;	
+        if(NW==3)
+        A = Stokes(Wh,Wh);
+	else 
+        A = Stokes0(Wh,Wh);
+	
+	set(A,solver="MUMPS",rinfo=rinfo,info=info,factorize=3);
+	//cout << " facto = "<< endl; 	
+	int info9 = info[8]; 
+        real[int] b = Stokes(0,Wh);	
+	u1[]= A^-1*b; 
+        real cpu=clock()-cpu0;
+	real ErrpL2 ;
+	ErrpL2= L2perr(p+p0,pressure);
+	cout << " ErrpL2 "<< ErrpL2 <<   " " << NW << endl;
+	real ErrL2 = L2err(u,gD);
+	real ErrH1 = H1err(u,dxgD,dygD);
+	real l8n, l8= info[8];
+	if( l8 <0) l8 *= -1e6; 
+	real[int] vv=[hh,ErrL2,ErrH1,ErrpL2,Th.nv,A.n,A.nnz,l8,cpu];
+	
+	Write(fout,vv,3);
+	if(vp.n)
+	{
+	   if(logg(vv,vp,lv))
+		  Write(fout,lv,2);
+		  else assert(0); 
+     	     l8n = l8*(vv[0]/vp[0])^lv(8);
+     	    cout << " next memory "<< int(l8n/1e6) << "M "<<  endl;
+     	    if(l8n>1e9) { cout << "memory to big "<< endl;ok=0;} //  break do not work in this loop 	
+		
+	}
+	vp.resize(vv.n);
+	vp =vv;
+  Mh pe = pressure;
+  if(ppp) plot(coef=0.2, cmm="[u1, u2] and p", p, [u1, u2], wait=1);
+
+  }}
+EndMacro
+ PB([P2,P2,P1,P0],4,P0,P2,"P2-(P1+P0)",V4)
+ PB([P2,P2,P0],3,P0,P2,"P2-P1",V3)
+ PB([P2BR,P1],3,P0,P2,"BernardiRaugel-P0",V3)
+ PB([P2,P2,P1],3,P1,P2,"P2-P1",V3)
+ PB([P3,P3,P2],3,P2,P3,"P3-P2",V3)
+ PB([P1b,P1b,P1],3,P1,P2,"P1b-P1",V3)
+ 

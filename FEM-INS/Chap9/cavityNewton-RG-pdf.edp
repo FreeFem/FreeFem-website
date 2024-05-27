@@ -1,0 +1,119 @@
+/*
+ * Incompressible Navier Stokes
+ * with Taylor-Hood Finite element
+ * Non linearity : Newton method
+ * continuation on Reynols Number
+ * Mesh adaptation
+*/
+load "MUMPS"
+// Parameters
+int adapt=0; 
+real[int] Rey=[100,400,1000,2000,3200,5000,7500];
+real[int] vpsi=[-0.1175,-0.115,-0.11,-0.1,-.09,-0.07,-0.05,-.03,-0.01,-1e-4,-1e-5,-1e-6,-1e7,-1e-8,-1e-9,-1e-10
+,1e-8,1e-7,1e-6,1e-5,5e-5,1e-4,2.5e-4,5e-5,1e-3,1.5e-3,3e-3]; 
+real[int] vpsio=[-0.1175,-0.115,-0.11,-0.1,-.09,-0.07,-0.05,-.03,-0.01,-1e-4,-1e-5,-1e7,-1e-10
+,1e-8,1e-7,1e-6,1e-5,5e-5,1e-4,2.5e-4,5e-5,1e-3,1.5e-3,3e-3]; 
+real a = 1./32;
+func BCu1 = sin(pi/(2)*min(1.,min(x,1.-x)/a));
+real epsr=1e-8;
+
+// Mesh
+int nn= 100, nn2 = max( nn/2, 50);
+mesh Th = square(nn, nn);
+plot(Th,pdf="Th-cavity.pdf");
+
+mesh Tp = square(nn2, nn2);
+real nu =1; 
+// Fespace
+fespace Xh(Th, P2);
+fespace Xp(Tp, P1);// for plot ..
+Xp uu1, uu2;
+Xh psi, phi;
+
+fespace Wh(Th, P1dc);
+fespace Mh(Th, P1);
+fespace XXMh(Th, [P2, P2, P1]);
+XXMh [u1, u2, p];
+XXMh [v1, v2, q];
+XXMh [up1, up2, pp];
+
+// Macro to def diff operator
+macro div(u1, u2) (dx(u1) + dy(u2)) //
+macro curl(u1, u2) ( dx(u2) - dy(u1) ) //
+macro grad(u) [dx(u), dy(u)] //
+macro ugrad(u1, u2, v) (u1*dx(v) + u2*dy(v)) //
+macro Ugrad(u1, u2, v1, v2) [ugrad(u1, u2, v1), ugrad(u1, u2, v2)] //
+
+
+// Problem stream-lines 
+problem streamlines (psi, phi) =
+	  int2d(Th)( grad(psi)'*grad(phi) )
+	- int2d(Th)( phi*curl(u1,u2)) 
+	+ on(1, 2, 3, 4, psi=0);
+
+int i = 0;
+u1[]=0; //  starting with zero 
+// Variatonal form definition Navier-Stokes
+// up  previous value , u courant solution 
+//  F(u)(w) =  
+//  Newton loop : is compute w DF(up)(w,v) = F(u)(w) , and u = up -w + BC 
+//   or  Newtown is DF(up)(w,v) = F(u)(w) , and u = up -w + 0 BC 
+//      DF(up)(u) = DF(up)(up) - F(up)
+
+varf vDFNS ([u1, u2, p], [v1, v2, q])
+	= int2d(Th)(
+                nu * ( grad(u1)'*grad(v1) + grad(u2)'*grad(v2) )
+		- p * q * epsr
+		- p*div(v1, v2) - q*div(u1, u2)
+		+ Ugrad(u1, u2, up1, up2)'*[v1, v2]
+		+ Ugrad(up1, up2, u1, u2)'*[v1, v2]
+	)
+	+ int2d(Th)( Ugrad(up1, up2, up1, up2)'*[v1, v2] )
+	+ on(3, u1=BCu1, u2=0)  // on top Border
+	+ on(1, 2, 4, u1=0, u2=0);// on other border
+	;
+
+
+for [ire,re : Rey] {
+	cout << " re = "<< re << endl; 
+	real lerr = 0.1;
+	nu = 1./re;
+
+	if (re > 8000) lerr = 0.05;
+	if (re > 10000) lerr = 0.01;
+	for (int step = 0; step < 1+adapt; step++) {
+		// Mesh adaptation & interpolation
+		if( adapt)
+		{
+		Th = adaptmesh(Th, [u1, u2], p, err=lerr, nbvx=100000, abserror=0, cutoff=0.01);
+		[u1, u2, p] = [u1, u2, p];
+		[up1, up2, pp] = [up1, up2, pp];
+	         }
+		// Newton
+		for (i = 0; i <= 20; i++) {
+			up1[] = u1[];
+			// Solve
+			real[int] b = vDFNS(0, XXMh);	// build right hand side
+			matrix Ans = vDFNS(XXMh, XXMh);	// build matrix
+			set(Ans, solver=sparsesolver);	// set solver
+			u1[] = Ans^-1*b;	// solve linear system			
+			b = u1[]-up1[];// Error reuse vect b.
+			cout << "iter = "<< i << ", err = " << b.l2 << ", rey = " << re << endl;
+			// Convergence criteria
+			if (b.l2 < 1e-6) break;
+			if (b.l2 > 1e3) break; // err to big => explose
+		}
+	}
+
+	// Stream-lines
+	uu1 = u1; uu2 = u2; // 
+	streamlines;
+	Wh w = curl(u1,u2);
+	real[int] visop(21);
+	
+	
+	plot(coef=0.2, cmm="rey="+re+" [u1, u2]",  [uu1, uu2], wait=0, nbiso=20);
+	plot(psi, wait=0, viso=vpsi,cmm=" Rey = "+re, pdf="cavity-streamlines-"+re+".pdf");
+	plot(p, wait=0,cmm=" Rey = "+re, pdf="cavity-isobar-"+re+".pdf",nbiso=100);
+	plot(w, wait=0,cmm=" Rey = "+re, pdf="cavity-vorticity-"+re+".pdf",nbiso=100);
+}

@@ -1,8 +1,8 @@
 PDE-constrained optimization within FreeFEM
-====================================================================================
+=============================================
 
 
-FreeFEM scipts associted to the book 
+FreeFEM scripts associated to the book 
 
 <https://freefem.org/Optim/./index.md>\
 

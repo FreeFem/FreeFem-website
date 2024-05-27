@@ -1,0 +1,261 @@
+load "Element_P1bl"  //  
+load "splitmesh3"
+load "qf11to25"
+load "Element_P1bl"  //  
+load "Element_P3"  //  
+load "MUMPS"
+load "msh3"
+// Bercovier - Engelman test case (1979)
+real LL = 0.25; 
+int withprecon=0;
+verbosity=1;
+real mu=1;
+real  t =0; // time 
+macro TaylorGreenVortex()
+real pi2 = pi*2; 
+real pi6 = pi*6; 
+real pi236 = 36*(pi^2);
+func U1 =  -2*cos(pi2*x)*sin(pi2*y)*sin(pi2*z);
+func U2 =     sin(pi2*x)*cos(pi2*y)*sin(pi2*z);
+func U3 =     sin(pi2*x)*sin(pi2*y)*cos(pi2*z);
+func P = -pi6*sin(pi2*x)*sin(pi2*y)*sin(pi2*z);
+
+func U1x  = +2*pi2*sin(pi2*x)*sin(pi2*y)*sin(pi2*z);
+func U1y  = -2*pi2*cos(pi2*x)*cos(pi2*y)*sin(pi2*z);
+func U1z  = -2*pi2*cos(pi2*x)*sin(pi2*y)*cos(pi2*z);
+
+func U2x  = pi2*cos(pi2*x)*cos(pi2*y)*sin(pi2*z);
+func U2y  = -pi2*sin(pi2*x)*sin(pi2*y)*sin(pi2*z);
+func U2z  = pi2*sin(pi2*x)*cos(pi2*y)*cos(pi2*z);
+
+func U3x  = pi2*cos(pi2*x)*sin(pi2*y)*cos(pi2*z);
+func U3y  = pi2*sin(pi2*x)*cos(pi2*y)*cos(pi2*z);
+func U3z  = -pi2*sin(pi2*x)*sin(pi2*y)*sin(pi2*z);
+
+func f1 = -pi236*cos(pi2*x)*sin(pi2*y)*sin(pi2*z);
+func f2 = 0;
+func f3 = 0;
+// 
+macro Poisseuille()
+real L2 = LL*LL;
+func U1 =  4*z*(LL-z)/L2;
+func U2 =   0;
+func U3 =  0;
+func P =  -8/L2 *(x-LL/2) ;
+
+func f1 = 0;
+func f2 = 0;
+func f3 = 0;
+// 
+macro BeatriceTest() 
+real Pbar = 7.63958172715414;
+func U1 =  -exp(-t+x)*sin(y+z)-exp(-t+z)*cos(x+y);
+func U2 =  -exp(-t+y)*sin(x+z)-exp(-t+x)*cos(y+z);
+func U3 =  -exp(-t+z)*sin(y+y)-exp(-t+y)*cos(x+z);
+
+func P = -exp(-2*t)*( 	exp(x+z)*sin(y+z)*cos(x+y)
+                      +	exp(x+y)*sin(x+z)*cos(y+z)
+                      +	exp(y+z)*sin(x+y)*cos(x+z)
+                      +	0.5*(exp(2*x)+exp(2*y)+exp(2*z) -Pbar));
+
+func f1 = 0;
+func f2 = 0;
+func f3 = 0;
+//
+TaylorGreenVortex;
+
+//Poisseuille; // Ok 
+macro L2perr(u,v) sqrt(int3d(Th)(square((u)-(v))))//
+macro L2err(u,v) sqrt(int3d(Th)(square(u#1-v#1)+square(u#2-v#2)+square(u#3-v#3)))//
+macro H1err2(u,v) (square(dx(u)-v#x)+square(dy(u)-v#y)+square(dz(u)-v#z)) //
+macro H1err(u,v) sqrt(int2d(Th)(H1err2(u#1,v#1)+H1err2(u#2,v#2)+H1err2(u#3,v#3)))//
+macro div(u) (dx(u#1)+dy(u#2)+dz(u#3))//
+macro grad(u) [dx(u),dy(u),dz(u)]//
+macro Grad(u) [grad(u#1),grad(u#2),grad(u#3)]//
+macro U(u,p) [u#1,u#2,u#3,p]//
+real[int] H=[0.1,0.05,0.025];//,0.01];//,.1,0.02];
+int ppp = 0; 
+ofstream fout("data-err-3d-Uzawa-"+withprecon);
+real[int] rinfo(40);
+int[int] info1(40),info2(40),info3(40);
+matrix A; 
+verbosity=2;
+mesh3 Th;
+func bool Write(ofstream & f,real[int] e,int prec)
+{
+	cout.precision(prec);
+	f.precision(prec);
+	for [ i,ei:e] 
+	cout << ei << " ";
+	cout  << endl; 
+	
+	for [ i,ei:e] 
+	f << ei << " ";
+	f << endl; 
+	cout.precision(12);
+	f.precision(12);
+	
+	return 1; 
+}
+func bool logg(real[int] &e,real[int]& eo,real[int] &l)
+{
+	// cout << e.n << " " << eo.n << " " << l.n << endl; 
+	if(e.n != eo.n ) return 0;
+	
+	l.resize(e.n); 
+	for [ i,ei:e] 
+{      
+	  real li=log(e[i]/eo[i]);
+         real lh=log(e[0]/eo[0]);
+         real r=  li/lh;
+	 l[i]=r;
+	 if(isNaN(r)) cout << " ???? NaN "<< li << " "<< lh << endl; 
+	 //cout << " -- " << i<< " " << l[i] ;
+}	
+	
+	return 1;
+}
+NewMacro PB(PU,PP,PS)
+{
+fout << PS << endl;
+cout << "\n\n" <<PS << "\n\n" << endl;
+real[int] vp,lv;
+bool ok=1;// because  break do not  work !!!!
+for [ i,h:H ]
+if(ok)
+{  // Parameters
+  //real h = 0.02;
+  int Nx =1./h;
+  
+  // Mesh
+  real cpu0=clock();
+  int[int] ll=[1,1,1,1,1,1];
+ 
+   Th = cube(Nx,Nx,Nx,label=ll,[x*LL,y*LL,z*LL]);
+   savemesh(Th,"Cube-"+Nx+".meshb");
+    fespace Mh(Th,[PP]);
+   fespace Xh(Th,[PU]);
+   Xh uu1=U1,uu2=U2,uu3=U3;
+   real flux = int2d(Th)([uu1,uu2,uu3]'*N);
+   cout <<PS<< " h = " << h << " out Flux " << flux << endl;
+    // init alpha =0, stokes ..
+   real alpha=0, dt=0 , nu = 1; 
+   real alphap =0, nup= nu;   
+   real epsp = 0e-6;
+    varf vA(p,q) =int3d(Th)( (grad(p)'*grad(q)) + epsp*p*q)  ;//+on(2,3,p=0);//+ int2d(Th,2,3,4,5,6)(1e2*p*q);
+    varf vM(p,q) =int3d(Th,qfV=qfV1lump)(  p*q ) ;
+
+    varf vu([u1],[v1]) = int3d(Th)(alpha*(u1*v1)+nu*(grad(u1)'*grad(v1) )) + on(1,u1=0); 
+                         ;
+    varf vu1([p],[v1]) = int3d(Th)(p*dx(v1)) ;
+    varf vu2([p],[v1]) = int3d(Th)(p*dy(v1)) ;
+    varf vu3([p],[v1]) = int3d(Th)(p*dz(v1)) ;
+   info1=info2=info3=0;
+   
+
+    matrix pAM;
+    matrix pAA;
+    if(withprecon)
+    {
+    pAM=vM(Mh,Mh,solver="MUMPS",rinfo=rinfo,info=info1,factorize=3); 
+    pAA=vA(Mh,Mh,solver="CG"); 
+    }
+    matrix AU=vu(Xh,Xh,solver="MUMPS",rinfo=rinfo,info=info3,factorize=3); 
+    matrix B1=vu1(Mh,Xh);
+    matrix B2=vu2(Mh,Xh);
+    matrix B3=vu3(Mh,Xh);
+   
+   real pm = int3d(Th)(P)/Th.mesure;
+   cout << " mean P: " << pm<< endl;
+   Xh u1,u2,u3, v1,v2,v3;
+   Mh p,q;
+ 
+   //   Boundary condition...
+  varf vonucl([u1],[v1]) =  on(1,u1=1);
+  varf vonu1([u1],[v1]) =  on(1,u1=U1) +int3d(Th)(f1*v1) ;
+  varf vonu2([u1],[v1]) =  on(1,u1=U2)  +int3d(Th)(f2*v1) ;
+  varf vonu3([u1],[v1]) =  on(1,u1=U3)  +int3d(Th)(f3*v1)  ;
+  real[int] bbc = vonucl(0,Xh); 
+  real[int] brhs1 = vonu1(0,Xh);
+  real[int] brhs2 = vonu2(0,Xh);
+  real[int] brhs3 = vonu3(0,Xh);
+ int kiter =0;
+func  real[int]   JUzawa(real[int] & pp) 
+  {
+	   kiter++;
+  	real[int] b1=B1*pp;b1 = bbc ? 0.: b1; b1+=brhs1;
+  	real[int] b2=B2*pp;b2 = bbc ? 0.: b2;b2+=brhs2;
+  	real[int] b3=B3*pp;b3 = bbc ? 0.: b3;b3+=brhs3; 
+  	u1[] = AU^-1 * b1;
+  	u2[] = AU^-1 * b2;
+  	u3[] = AU^-1 * b3;
+  	pp  = B1'*u1[];
+  	pp += B2'*u2[];
+  	pp += B3'*u3[];
+  	pp = -pp; 
+  	return pp; 
+  }
+ 
+func  real[int]   Precon(real[int] & p)
+   {  
+     
+      real[int] pm= pAM^-1*p;
+      real[int] pa= pAA^-1*p;
+      p=pm*nup+ alphap*pa; 
+    	return p;
+   }
+
+verbosity = 1; 
+kiter =0; 
+real eps=1e-6;
+int res=0;
+if(withprecon)
+   res=LinearCG(JUzawa,p[],precon=Precon,nbiter=200,verbosity=5,veps=eps); 
+  else 
+   res=LinearCG(JUzawa,p[]/*,precon=Precon*/,nbiter=200,verbosity=5,veps=eps); 
+ Xh u = dist(u1,u2,u2); 
+real pmm= int3d(Th)(p)/Th.mesure;
+p[] -= pmm;
+if(ppp)plot(u,wait=0, nbiso=10,cmm="U");
+if(ppp)plot(p,wait=0, nbiso=10,cmm="p "+ pmm );  
+ 
+real cpu=clock()-cpu0;
+real ErrpL2 = L2perr((p),(P-pm));
+real ErrL2 = L2err(u,U);
+real ErrH1 = H1err(u,U);//0; //H1err(u,dxgD,dygD);
+func real info8(int[int] &info){ real l8=info[8]; return l8 < 0 ? -l8*1e6: l8;}
+real l8n=0, l8= info8(info1)+info8(info2)+info8(info3);
+real nnz = AU.nnz + B1.nnz+B2.nnz+B3.nnz;
+real[int] vv=[h,ErrL2,ErrH1,ErrpL2,Th.nv,nnz,l8,kiter,cpu];
+cout <<"\n\n h = " <<  h << " "<< PS << "\n\n";
+Write(fout,vv,3);
+if(vp.n)
+	{
+	   if(logg(vv,vp,lv))
+		  Write(fout,lv,2);
+		  else assert(0); 
+	     l8n = l8*(vv[0]/vp[0])^lv(8);
+	    cout << " next memory "<< int(l8n/1e6) << "M "<<  endl;
+	    if(l8n>2e9) { cout << "memory to big "<< endl;ok=0;} //  break do not work in this loop 	
+	}
+cout << "\n\n";
+	
+vp.resize(vv.n);
+vp =vv;
+	  
+if(ppp>2) {
+	  
+	Mh pph =P-pm-p;
+	plot(coef=0.2, cmm=" p-P", pph, wait=1);
+	plot(coef=0.2, cmm=" p ", p, wait=1);
+  Xh uu = dist(u1,u2,u3);
+  Xh Uu = dist(U1,U2,U3);
+  plot(uu,cmm="uu",wait=1);
+  plot(Uu,cmm="Uu",wait=1);}
+  }}
+EndMacro
+
+  PB(P1b,P1,"P1b-P1")
+  PB(P2,P1,"P2-P1")
+  PB(P3,P2,"P3-P2")
+fout << "END" << endl;

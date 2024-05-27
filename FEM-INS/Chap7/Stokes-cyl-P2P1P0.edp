@@ -1,0 +1,58 @@
+load "Element_P1bl"  //  
+load "splitmesh3"
+load "qf11to25"
+real s0=clock();
+real r1=1,r2=5, r12=r2-r1;
+real dtt= 2*pi/6;
+real t0=0*dtt, t1=1*dtt,t2=2*dtt,t3=3*dtt;
+real t4=4*dtt, t5=5*dtt;
+border c1(t=0,2*pi){x=r1*cos(t);y=r1*sin(t);label=1;}
+border c2(t=0,2*pi){x=r2*cos(t);y=r2*sin(t);label=2;}
+
+real vr1=r1,vr2=-r2;
+mesh Th=buildmesh(c1(-50)+c2(50));
+Th=adaptmesh(Th,IsMetric=1,0.2,nbvx=100000);
+plot(Th,wait=0);
+func Pk=P2;
+fespace Ph(Th,P1dc);
+fespace Wh2(Th,[Pk,Pk,P1,P0]);
+macro div(u) (dx(u#1)+dy(u#2))//
+macro Grads(u) [dx(u#1),(dx(u#2)+dy(u#1))*.5,(dx(u#2)+dy(u#1))*.5,dy(u#2)]//
+macro Grad(u) [dx(u#1),dy(u#1),dx(u#2),dy(u#2)]//
+macro U(u,p) [u#1,u#2,p#0,p#1]//
+real nu=1; 
+real epsp= 1e-8; 
+Wh2 U(u,p), U(v,q); 
+solve Stokes  (U(u,p),U(v,q)) =
+    int2d(Th)(
+            nu *2* Grads(u)'*Grads(v) 
+            - (p0)*(q0)*epsp 
+            - p1*q1*epsp 
+            - (p0+p1)*div(v) - (q0+q1)*div(u)
+	    )
+  + on(1,u1=0,u2=0) 
+  + on(2,u1=1,u2=0) ;
+  Ph p = p1+p0; 
+  //   [e1,e2]'* [[a11,a21][a21,a22]] [N.x,N.y]  = [a11 e1 + a12 e2 ,  a12 e1 + a22 e2 ] ' [N.x,N.y ] = 
+  // [a11 e1 N.x + a12 e2 N.x ,  a12 e1 N.y + a22 e2 N.y] 
+  //  [e1,e2]  N' =  [ e1*N.x, e2*N.x, e1.N.y , e2 N.y ]
+  func Ne1 = [ N.x,0.,N.y,0.];
+  func Ne2 = [ 0., N.x,0.,N.y];
+  
+  cout << " fx = "<< int1d(Th,1)( 2*nu*Grads(u)'*Ne1 - p*N.x) << endl; 
+  cout << " fy = "<< int1d(Th,1)( 2*nu*Grads(u)'*Ne2 - p*N.y) << endl; 
+  
+  varf von1(U(u,p),U(v,q)) = on(1,u1=1,u2=0);
+  varf von2(U(u,p),U(v,q)) = on(1,u1=0,u2=1);
+  
+  v1[] = von1(0,Wh2,tgv=1);
+
+  cout << " fx 1  "<<      int2d(Th)(   nu *2* Grads(u)'*Grads(v)  - (p0+p1)*div(v) ) << endl;
+  v1[] = von2(0,Wh2,tgv=1);
+  cout << " fy 2  "<<      int2d(Th)(   nu *2* Grads(u)'*Grads(v)  - (p0+p1)*div(v) ) << endl;
+  
+
+  
+  
+  plot([u1,u2], wait=1);  
+  plot(p, wait=1,bb=[[-r1*1.5,-r1],[-r1*0.9,r1]],nbiso=50);

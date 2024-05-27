@@ -1,0 +1,206 @@
+load "Element_P1bl"  //  
+load "splitmesh3"
+load "qf11to25"
+load "Element_P1bl"  //  
+load "Element_P3"  //  
+load "MUMPS"
+load "msh3"
+// Bercovier - Engelman test case (1979)
+ real LL = 0.25; 
+verbosity=1;
+real mu=1;
+real  t =0; // time 
+macro TaylorGreenVortex()
+real pi2 = pi*2; 
+real pi6 = pi*6; 
+real pi236 = 36*(pi^2);
+func U1 =  -2*cos(pi2*x)*sin(pi2*y)*sin(pi2*z);
+func U2 =     sin(pi2*x)*cos(pi2*y)*sin(pi2*z);
+func U3 =     sin(pi2*x)*sin(pi2*y)*cos(pi2*z);
+func P = -pi6*sin(pi2*x)*sin(pi2*y)*sin(pi2*z);
+
+func U1x  = +2*pi2*sin(pi2*x)*sin(pi2*y)*sin(pi2*z);
+func U1y  = -2*pi2*cos(pi2*x)*cos(pi2*y)*sin(pi2*z);
+func U1z  = -2*pi2*cos(pi2*x)*sin(pi2*y)*cos(pi2*z);
+
+func U2x  = pi2*cos(pi2*x)*cos(pi2*y)*sin(pi2*z);
+func U2y  = -pi2*sin(pi2*x)*sin(pi2*y)*sin(pi2*z);
+func U2z  = pi2*sin(pi2*x)*cos(pi2*y)*cos(pi2*z);
+
+func U3x  = pi2*cos(pi2*x)*sin(pi2*y)*cos(pi2*z);
+func U3y  = pi2*sin(pi2*x)*cos(pi2*y)*cos(pi2*z);
+func U3z  = -pi2*sin(pi2*x)*sin(pi2*y)*sin(pi2*z);
+
+func f1 = -pi236*cos(pi2*x)*sin(pi2*y)*sin(pi2*z);
+func f2 = 0;
+func f3 = 0;
+// 
+macro Poisseuille()
+real L2 = LL*LL;
+func U1 =  4*z*(LL-z)/L2;
+func U2 =   0;
+func U3 =  0;
+func P =  -8/L2 *(x-LL/2) ;
+
+func f1 = 0;
+func f2 = 0;
+func f3 = 0;
+// 
+macro BeatriceTest() 
+real Pbar = 7.63958172715414;
+func U1 =  -exp(-t+x)*sin(y+z)-exp(-t+z)*cos(x+y);
+func U2 =  -exp(-t+y)*sin(x+z)-exp(-t+x)*cos(y+z);
+func U3 =  -exp(-t+z)*sin(y+y)-exp(-t+y)*cos(x+z);
+
+func P = -exp(-2*t)*( 	exp(x+z)*sin(y+z)*cos(x+y)
+                      +	exp(x+y)*sin(x+z)*cos(y+z)
+                      +	exp(y+z)*sin(x+y)*cos(x+z)
+                      +	0.5*(exp(2*x)+exp(2*y)+exp(2*z) -Pbar));
+
+func f1 = 0;
+func f2 = 0;
+func f3 = 0;
+//
+TaylorGreenVortex;
+//Poisseuille; // Ok 
+macro L2perr(u,v) sqrt(int3d(Th)(square((u)-(v))))//
+macro L2err(u,v) sqrt(int3d(Th)(square(u#1-v#1)+square(u#2-v#2)+square(u#3-v#3)))//
+macro H1err2(u,v) (square(dx(u)-v#x)+square(dy(u)-v#y)+square(dz(u)-v#z)) //
+macro H1err(u,v) sqrt(int2d(Th)(H1err2(u#1,v#1)+H1err2(u#2,v#2)+H1err2(u#3,v#3)))//
+macro div(u) (dx(u#1)+dy(u#2)+dz(u#3))//
+macro grad(u) [dx(u),dy(u),dz(u)]//
+macro Grad(u) [grad(u#1),grad(u#2),grad(u#3)]//
+macro U(u,p) [u#1,u#2,u#3,p]//
+real[int] H=[0.1,0.05,0.04];//,0.01];//,.1,0.02];
+int ppp = 0; 
+ofstream fout("data-err-3d");
+real[int] rinfo(40);
+int[int] info(40);
+matrix A; 
+verbosity=2;
+mesh3 Th;
+func bool Write(ofstream & f,real[int] e)
+{
+	cout.precision(4);
+	f.precision(4);
+	for [ i,ei:e] 
+	cout << ei << " ";
+	cout  << endl; 
+	
+	for [ i,ei:e] 
+	f << ei << " ";
+	f << endl; 
+	cout.precision(12);
+	f.precision(12);
+	
+	return 1; 
+}
+func bool logg(real[int] &e,real[int]& eo,real[int] &l)
+{
+	cout << e.n << " " << eo.n << " " << l.n << endl; 
+	if(e.n != eo.n ) return 0;
+	
+	l.resize(e.n); 
+	for [ i,ei:e] 
+{      
+	  real li=log(e[i]/eo[i]);
+         real lh=log(e[0]/eo[0]);
+         real r=  li/lh;
+	 l[i]=r;
+	 if(isNaN(r)) cout << " ???? NaN "<< li << " "<< lh << endl; 
+	 //cout << " -- " << i<< " " << l[i] ;
+}	
+	
+	return 1;
+}
+NewMacro PB(PU,PP,PS)
+{
+fout << PS << endl;
+cout << "\n\n" <<PS << "\n\n" << endl;
+real[int] vp,lv;
+for [ i,h:H ]
+{  // Parameters
+  //real h = 0.02;
+  int Nx =1./h;
+  // Mesh
+  real cpu0=clock();
+  int[int] ll=[1,1,1,1,1,1];
+ 
+   Th = cube(Nx,Nx,Nx,label=ll,[x*LL,y*LL,z*LL]);
+   
+   real pm = int3d(Th)(P)/Th.mesure;
+   cout << " mean P: " << pm<< endl;
+
+  // Fespace
+  fespace Xh(Th, PU);
+  fespace Wh(Th, [PU,PU,PU,PP]);
+/*  Xh u1, v1;
+  Xh u2, v2;
+  Xh up1, up2;
+  */
+  Wh [u1,u2,u3,p]; 
+  Wh [v1,v2,v3,q]; 
+  [v1,v2,v3,q]=[U1,U2,U3,p];
+  //cout << " ErrH1 " << H1err(v,U) << endl; 
+  fespace Mh(Th, PP);
+ // Mh p, q;
+
+  // Problem Stokes (with solve)
+  real epsr = 1e-8;
+
+  varf Stokes (U(u,p), U(v,q))//,rinfo=rinfo,info=info)
+  	= int3d(Th)(
+  		(Grad(u):Grad(v))
+  		- p*q*epsr
+  		- p*div(v)
+  		- q*div(u)
+  	)
+	+ int3d(Th)([v1,v2,v3]'*[f1,f2,f3])
+  	+ on(1,2, u1=U1, u2=U2, u3=U3)
+  	;
+        A = Stokes(Wh,Wh);
+	set(A,solver="MUMPS",rinfo=rinfo,info=info,factorize=3);
+	//cout << " facto = "<< endl; 	
+	int info9 = info[8]; 
+        real[int] b = Stokes(0,Wh);	
+	u1[]= A^-1*b; 
+	real pmm= int3d(Th)(p);
+        real cpu=clock()-cpu0;
+	real ErrpL2 = L2perr(p,(P-pm));
+	real ErrL2 = L2err(u,U);
+	real ErrH1 = H1err(u,U);//0; //H1err(u,dxgD,dygD);
+	//cout << "mean " << pmm << " "<< pm <<" " << ErrpL2 << " " << ErrL2 << endl; 
+	real l8= info[8];
+	if( l8 <0) l8 *= -1e6; 
+	real[int] vv=[h,ErrL2,ErrH1,ErrpL2,Th.nv,A.n,A.nnz,l8,cpu];
+	
+	Write(fout,vv);
+	if(vp.n)
+	{
+	   if(logg(vv,vp,lv))
+		  Write(fout,lv);
+		  else assert(0); 
+		
+	}
+	vp.resize(vv.n);
+	vp =vv;
+	
+	//cout << h << " " << ErrL2 << " " << ErrH1 << " " << Nx << " " << Th.nv <<" " <<  A.nnz << " " << info[8]  << " " << " " << cpu << " " <<  PS << endl;
+	//fout << h << " " << ErrL2 << " " << ErrH1 << " " << Nx << " " << Th.nv <<" " << A.nnz << " "  <<  info[8] << " " << cpu << " "<< PS << endl;
+  // Plot
+  
+  if(ppp) {
+	  
+	   Mh pph =P-pm-p;
+	   plot(coef=0.2, cmm=" p-P", pph, wait=1);
+	   plot(coef=0.2, cmm=" p ", p, wait=1);
+  Xh uu = dist(u1,u2,u3);
+  Xh Uu = dist(U1,U2,U3);
+  plot(uu,cmm="uu",wait=1);
+  plot(Uu,cmm="Uu",wait=1);}
+  }}
+EndMacro
+
+ PB(P1b,P1,"P1b-P1")
+// PB(P3,P2,"P3-P2")
+  PB(P2,P1,"P2-P1")
