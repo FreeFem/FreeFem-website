@@ -12,18 +12,22 @@ B. Riviere
 
 ## Examples for chapter 7 (Stokes problem)
 
-### Example to bluid table 7.1 to 7.16
+### Example to build table 7.1 to 7.16
 
 
 
 <https://freefem.org/FEM-INS/Chap7/Err-Stokes.edp>
+
 <https://freefem.org/FEM-INS/Chap7/Err-Stokes-3d-Uzawa.edp>
+
 <https://freefem.org/FEM-INS/Chap7/Err-Stokes-3d.edp>
 
 
 
 ### Example to build figure  7.1 
+
 <https://freefem.org/FEM-INS/Chap7/Stokes-cyl-P2P1P0.edp>
+
 <https://freefem.org/FEM-INS/Chap7/Stokes-cyl.edp>
 
 
