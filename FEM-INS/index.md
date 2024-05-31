@@ -1,13 +1,12 @@
 Mathematics and Finite Element Discretizations of Incompressible Navier-Stokes Flows
 ====================================================================================
 Authors: 
-C. Bernardi
-V. Girault
-F. Hecht
-P.A. Raviart
-B. Riviere
+C. Bernardi, V. Girault,
+F. Hecht,
+P.A. Raviart,
+B. Riviere.
 
-# FreeFEM scipts Examples of the book :
+# Examples of FreeFEM  scripts  of the book :
 
 
 ## Examples for chapter 7 (Stokes problem)
@@ -34,11 +33,11 @@ B. Riviere
 Examples for chapter 9 (Steady Navier-Stokes problem)
 ----------------------------------------------
 
-### example section 9.4.1 lid driven cavity flow problem
+### example section 9.4.1: Lid driven cavity flow problem
 
 <https://freefem.org/FEM-INS/Chap9/cavityNewton-RG.edp>
 
-### example section 9.4.2 Two dimensional channel with a backward facing step
+### example section 9.4.2: Two dimensional channel with a backward facing step
 
 <https://freefem.org/FEM-INS/Chap9/NS-BackwardStep-BK.edp>
 
