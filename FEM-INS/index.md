@@ -1,6 +1,6 @@
 Mathematics and Finite Element Discretizations of Incompressible Navier-Stokes Flows
 ====================================================================================
-
+Authors: 
 C. Bernardi
 V. Girault
 F. Hecht
@@ -44,10 +44,22 @@ Examples for chapter 9 (Steady Navier-Stokes problem)
 
 Examples for chapter 11 (UnSteady Navier-Stokes problem)
 ----------------------------------------------
-to build 
-{::comment}
-ls -1 */*.edp| awk  '{print "<https://freefem.org/FEM-INS/" $1 ">" }'
-{:/comment}
+
+<https://freefem.org/FEM-INS/Chap11/NS-cara-UzawaCahouetChabart-3d-aorte.edp>
+the associed mesh <https://freefem.org/FEM-INS/Chap11/aorte.mesh>
+
+
+
+
+<https://freefem.org/FEM-INS/Chap11/NSprojection-v2.edp>
+
+
+<https://freefem.org/FEM-INS/Chap11/NSNewtonCyl-100.edp>
+
+A fast parallel version with mpi to see Kármán vortex street
+
+<https://freefem.org/FEM-INS/Chap11/NSCaraCyl-MPI.edp>
+
 
 
 
