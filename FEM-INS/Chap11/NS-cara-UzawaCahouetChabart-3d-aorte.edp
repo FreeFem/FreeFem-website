@@ -1,0 +1,208 @@
+load "medit" load "msh3" load "MUMPS_seq" load "mmg" load "iovtk"
+mesh3 Th; 
+if(1) 
+{
+  Th= readmesh3("aorte.mesh");
+  real h = 0;
+ // int3d(Th)( h=max(h,hTriangle));
+//  cout << " h = " << h << endl; 
+//   Th=mmg3d(Th,hsiz =);
+  Th = movemesh(Th,[x,-y,-z]);
+}
+else
+{
+real nn= 4; 
+real R= 10;
+border C(t=0,2*pi) { x = cos(t); y=sin(t); label=1;}
+mesh Baseh = buildmesh(C(nn*5));
+//plot(Baseh,wait=1);
+
+int[int] rup=[0,3],  rdown=[0,2], rmid=[1,1];
+func zmin= 0;
+func zmax= pi/2;
+int nlayer=R*nn;
+Th=buildlayers(Baseh,nlayer,
+  coef= 1.,
+  zbound=[zmin,zmax],
+  labelmid=rmid, 
+  reffaceup = rup,
+  reffacelow = rdown,
+  transfo=[(R+x)*cos(z),y,(R+x)*sin(z)]);
+    
+}
+/*
+label 1: u = 0
+label 2 to 7 (cut) 
+  2: input ( heart )
+  6: outflow ( exit)
+  3,4,5 : 3 top arteres    
+*/
+ // Compute  normales of 5 cut planes:
+ real[int,int] Nf(3,7),Pf(3,7);
+ real smx=0;
+ real hsize = 1e100;
+ for(int i=2; i< 7;++i)
+ {
+    real si = int2d(Th,i)(1.);
+    if(si)
+    {
+     smx = max(smx,si);    
+     Nf(0,i) = int2d(Th,i)(N.x)/si;
+     Nf(1,i) = int2d(Th,i)(N.y)/si;
+     Nf(2,i) = int2d(Th,i)(N.z)/si;
+     Pf(0,i) = int2d(Th,i)(x)/si;
+     Pf(1,i) = int2d(Th,i)(y)/si;
+     Pf(2,i) = int2d(Th,i)(z)/si;
+     real nn = int2d(Th,i)(1./area);
+     real xl = int2d(Th,i)(1.*label);
+     cout << " lab " << i << " s=" << si <<  " P = " 
+      << Pf(0,i) << " " << Pf(1,i) << " " << Pf(2,i)
+      << " N = " 
+     << Nf(0,i) << " " << Nf(1,i) << " " << Nf(2,i) << " nt= " << nn <<  " " << xl/si<<  endl;
+     hsize = min(hsize,si/nn);
+    }   
+ } 
+ hsize= sqrt(hsize)/2;
+ real D = 2*sqrt(smx/pi); // Diametre aorte ...
+ cout << " aorte  D = " << D << " hsize =" << hsize << endl; 
+ 
+// Boundary condition 
+//   0 on 1
+//   Forces on 2 to 6 
+
+real[int] F(7); // array of Normal forces 
+fespace Mh(Th,[P1]);
+fespace Xh(Th,[P2]);
+fespace Wh(Th,[P0]);
+macro grad(u) [dx(u),dy(u),dz(u)] //
+macro div(u1,u2,u3) (dx(u1)+dy(u2)+dz(u3)) //
+
+ // init alpha =0, stokes ..
+real alpha=0, dt=0 , nu = 0.01; 
+real alphap =0, nup= nu;   
+ varf vA(p,q) =int3d(Th)( (grad(p)'*grad(q)) ) 
+    + int2d(Th,2,3,4,5,6)(1*p*q) ;//+on(2,3,p=0);//+ int2d(Th,2,3,4,5,6)(1e2*p*q);
+ varf vM(p,q) =int3d(Th,qfV=qfV1lump)(  p*q ) ;
+
+ varf vu([u1],[v1]) = int3d(Th)(alpha*(u1*v1)+nu*(grad(u1)'*grad(v1) )) 
+                       + on(1,u1=0) ;
+ varf vu1([p],[v1]) = int3d(Th)(p*dx(v1)) ;
+ varf vu2([p],[v1]) = int3d(Th)(p*dy(v1)) ;
+ varf vu3([p],[v1]) = int3d(Th)(p*dz(v1)) ;
+   
+
+ matrix pAM=vM(Mh,Mh,solver="MUMPS"); 
+ matrix pAA=vA(Mh,Mh,solver="MUMPS"); 
+ matrix AU=vu(Xh,Xh,solver="MUMPS"); 
+ matrix B1=vu1(Mh,Xh);
+ matrix B2=vu2(Mh,Xh);
+ matrix B3=vu3(Mh,Xh);
+ Xh u1,u2,u3,u;
+ Mh p;
+ 
+ //   Boundary condition...
+varf vonu1([u1],[v1]) =  on(1,u1=0) + int2d(Th,2,3,4,5,6)(v1*N.x*F[label]) ;
+varf vonu2([u1],[v1]) =  on(1,u1=0) + int2d(Th,2,3,4,5,6)(v1*N.y*F[label]) ;
+varf vonu3([u1],[v1]) =  on(1,u1=0) + int2d(Th,2,3,4,5,6)(v1*N.z*F[label]) ;
+
+
+real[int] brhs1 = vonu1(0,Xh);
+real[int] brhs2 = vonu2(0,Xh);
+real[int] brhs3 = vonu3(0,Xh);
+ 
+ 
+varf  vrhs1(uu,vv)  = int3d(Th) (convect([u1,u2,u3],-dt,u1)*vv*alpha); 
+varf  vrhs2(uu,vv)  = int3d(Th) (convect([u1,u2,u3],-dt,u2)*vv*alpha);
+varf  vrhs3(uu,vv)  = int3d(Th) (convect([u1,u2,u3],-dt,u3)*vv*alpha);
+
+
+func  real[int]   JUzawa(real[int] & pp) 
+{
+	real[int] b1=brhs1; b1 += B1*pp;
+	real[int] b2=brhs2; b2 += B2*pp;
+	real[int] b3=brhs3; b3 += B3*pp;
+	u1[] = AU^-1 * b1;
+	u2[] = AU^-1 * b2;
+	u3[] = AU^-1 * b3;
+	pp  = B1'*u1[];
+	pp += B2'*u2[];
+	pp += B3'*u3[];
+	pp = -pp; 
+	return pp; 
+}
+int kiter =0;
+func  real[int]   Precon(real[int] & p)
+ {  
+    kiter++;
+    real[int] pm= pAM^-1*p;
+    real[int] pa= pAA^-1*p;
+    p=pm*nup+ alphap*pa; 
+  	return p;
+ }
+
+ verbosity = 1; 
+ p=0;
+ real t=0; // 
+ real T = 2*pi; 
+ F=[0,0,-1,1,0.2,0.2,.3,1]; 
+ F=F*(nu*30.);
+  // Stokes Init... 
+  
+  brhs1 = vonu1(0,Xh);
+  brhs2 = vonu2(0,Xh);
+  brhs3 = vonu3(0,Xh);
+  kiter =0; 
+ cout << " Stokes " << alpha << endl; 
+ real eps=1e-6;
+ int res=AffineCG(JUzawa,p[],precon=Precon,nbiter=200,verbosity=5,veps=eps); 
+   u = sqrt(u1*u1 + u2*u2 + u3*u3); 
+  dt =  hsize/u[].max/2 ; 
+ real Rey = u[].max*D/ nu; 
+ cout << t <<" " << kiter <<" u max = " << u[].linfty 
+          << " p = " << p[].min << " to " << p[].max << " dt= " <<dt << "Rey = " << Rey <<  endl; 
+       // U = h/dt  
+ plot(u,wait=0, nbiso=10,cmm="U");
+ plot(p,wait=0, nbiso=10,cmm="p" );  
+ cout << "CPU = " << clock() << endl;
+  alpha=1/dt; 
+  alphap =  alpha;
+  nup= 0;   
+  pAM=vM(Mh,Mh,solver="MUMPS"); 
+  pAA=vA(Mh,Mh,solver="MUMPS"); 
+  AU=vu(Xh,Xh,solver="MUMPS"); 
+
+ eps =1e-4;
+ int ndt = 50; //T/dt;
+ 
+ 
+ Mh p1,qqq;
+ {
+   solve Prs1(p1,qqq,solver="MUMPS") = int3d(Th) ( grad(p1)'*grad(qqq) ) + on(2,p1=1) + on(3,4,5,6, p1=0);
+ }
+ for(int i=0;i<ndt;++i)
+ {
+     real f2o = F[2]; 
+     F[2] = -30*cos(2*pi*i/25)*nu;
+     p[] += (F[2]*f2o)* p1[]; // initialization CG ?? no real influence . 
+    // F[3] = -F[2]; 
+     brhs1 = vonu1(0,Xh);
+     brhs2 = vonu2(0,Xh);
+     brhs3 = vonu3(0,Xh);
+     brhs1 += vrhs1(0,Xh);
+     brhs2 += vrhs2(0,Xh);
+     brhs3 += vrhs3(0,Xh);
+     kiter=0;
+     int res=LinearCG(JUzawa,p[],precon=Precon,nbiter=1000,verbosity=5,veps=eps); 
+     u = sqrt(u1*u1+u2*u2+u3*u3);
+     t += dt; 
+     cout << i << " " << t <<" " << kiter << " u max = " << u[].linfty 
+          << " p = " << p[].min << " to " << p[].max << endl; 
+     //assert(res==1) ; 
+     eps = -abs(eps); 
+     plot(p,wait=0, nbiso=20,fill=1,cmm="pressure iter="+i,value=1);   
+     plot(u,wait=0, nbiso=20,WindowIndex=1,fill=1,cmm="velocity iter="+i,value=1);   
+     dt = min(dt,T-t);
+ int[int] fforder2=[1,1,1];
+savevtk("aorte-"+i+".vtu",Th,p,[u1,u2,u3],order=fforder2,dataname="p U");
+     if( dt < 1e-10*T) break;    
+ }

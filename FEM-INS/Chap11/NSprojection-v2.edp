@@ -1,0 +1,182 @@
+/****************************************************************************/
+/* This file is part of FreeFEM.                                            */
+/*                                                                          */
+/* FreeFEM is free software: you can redistribute it and/or modify          */
+/* it under the terms of the GNU Lesser General Public License as           */
+/* published by the Free Software Foundation, either version 3 of           */
+/* the License, or (at your option) any later version.                      */
+/*                                                                          */
+/* FreeFEM is distributed in the hope that it will be useful,               */
+/* but WITHOUT ANY WARRANTY; without even the implied warranty of           */
+/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the            */
+/* GNU Lesser General Public License for more details.                      */
+/*                                                                          */
+/* You should have received a copy of the GNU Lesser General Public License */
+/* along with FreeFEM. If not, see <http://www.gnu.org/licenses/>.          */
+/****************************************************************************/
+// Author: F. Hecht
+// (jul. 2023
+// NSprojection semi implicte   
+load "iovtk"
+verbosity=0;
+macro Ugradv(u1,u2,v) (u1*dx(v)+u2*dy(v)) //
+// Parameters
+real  n = 2;
+real Rey = 150; 
+real nu = 1./Rey; // Reynolds=100
+real dt = 0.1;
+real epsv = 1e-6, epsu = 1e-6, epsp = 1e-6;// Eps CG ..
+real H = 1.;
+// Mesh
+border a0(t=H, 0.5){x=-3; y=t; label=1;} // inlet
+border a1(t=-3, 0){x=t; y=0+0.5; label=2;}
+border a2(t=0, -0.5){x=0; y=t+0.5; label=2;}
+border a3(t=0, 1){x=18*t^1.2; y=-0.5+0.5; label=5;}
+border a4(t=0.,H){x=18; y=t; label=3;} // outlet
+border a5(t=1, 0){x=-3+21*t; y=H; label=4;}
+ plot(a0(7*n) + a1(20*n) + a2(20*n) + a3(150*n) + a4(5*n) + a5(100*n),dim=2);
+mesh Th = buildmesh(a0(7*n) + a1(20*n) + a2(20*n) + a3(150*n) + a4(5*n) + a5(100*n));
+real hmin = 0.02, hmax= 0.1;
+func hsize = (x>-0.5) & (x < 5  ) ? hmin : hmax;
+Th=adaptmesh(Th,hsize,nbvx=1000000,IsMetric=1,ratio=1.2);
+plot(Th,wait=1);
+
+// Fespace
+fespace Vh(Th, P1);
+fespace Mh(Th, P1);
+Vh u = 0, v = 0 ,w ;
+Mh p = 0, q = 0,ww ;
+real[int] px(Vh.ndof),py(Vh.ndof), pw(Vh.ndof);
+// Definitions of Matrix dtMx and dtMy
+ matrix dtM1x, dtM1y;
+matrix MM1,MM2,Mx,My;
+real cc= 1., ccmm=1;
+func uin=(y-0.5)*(H-y)/ccmm;
+ccmm =  uin(-3,0.5+(H-0.5)/2);
+cout << " flux in = " << int1d(Th,1)(uin)<< " ccmm " << ccmm << endl; 
+func puin = ( (y-0.5)^3 / 3. -  (y-0.5)^2 / 2.) ;
+func uout = cc*(y)*(H-y);
+
+cc = int1d(Th,1)(uin) / int1d(Th,3)(uout);
+cout << " outflux = "<< int1d(Th,1)(uin) - int1d(Th,3)(uout) << " U max = " << uin(0,0.5+(H-0.5)/2) << endl; 
+
+macro  BuildMat()
+  { /* for memory managenemt */
+    varf vM(unused, v) = int2d(Th)(v) ;
+    varf vM1(u, v) = int2d(Th)(u*v)     + on(1, u=uin)+  on(3, u=uout)
+    + on(2, 4, u=0);
+    varf vM2(u, v) = int2d(Th)(u*v)     + on(1, 2, 3, 4, u=0);
+    varf vdx(u, v) = int2d(Th)(v*dx(u)*dt) ;
+    varf vdy(u, v) = int2d(Th)(v*dy(u)*dt) ;
+
+    real[int] Mlump = vM(0, Vh);
+    real[int] one(Vh.ndof); one = 1;
+    real[int] M1 = one ./ Mlump;
+    matrix dM1 = M1;
+    matrix Mdx = vdx(Mh, Vh);
+    matrix Mdy = vdy(Mh, Vh);
+     MM1 = vM1(Vh,Vh,solver=CG);
+     MM2 = vM2(Vh,Vh,solver=CG);
+     Mx = vdx(Mh,Vh);
+     My = vdy(Mh,Vh);
+    dtM1x = dM1*Mdx;
+    dtM1y = dM1*Mdy;
+  }//
+
+cout << " cc = "<< cc <<endl ;
+BuildMat
+
+real rp = 0; 
+border Reattach(t=0,1){ x = rp; y = 0; label =10;}
+real err = 1, outflux = 1;
+for(int n = 0; n < 1000; n++) {
+  Vh uold = u, vold = v, pold = p;
+
+  solve pb4u(u, w, init=0, solver=UMFPACK, eps=epsu)
+    = int2d(Th)(
+      u*w/dt + nu*(dx(u)*dx(w) + dy(u)*dy(w))
+      + Ugradv(uold, vold,u)*w
+    )
+     - int2d(Th)(
+      //(convect([uold, vold], -dt, uold)/dt
+      uold*w/dt - dx(p)*w
+    )
+    + on(1, u=uin)
+ //   + on(3,u = uout)
+    + on(2, 4,5, u=0);
+
+
+  solve pb4v(v, w, init=0, solver=UMFPACK, eps=epsv)
+    = int2d(Th)(
+      v*w/dt + nu*(dx(v)*dx(w) + dy(v)*dy(w))
+      + Ugradv(uold, vold,v)*w
+    )
+    - int2d(Th)(
+      //(convect([uold, vold], -dt, vold)/dt
+      vold*w/dt - dy(p)*w
+    )
+    + on(1, 2, 3, 4,5, v=0);
+
+  solve pb4p(q, ww, solver=CG, init=n, eps=epsp)
+    = int2d(Th)(dx(q)*dx(ww) + dy(q)*dy(ww) )//+ 1e-8*q*ww)
+    - int2d(Th)((dx(u) + dy(v))*ww/dt)
+   + on(3, q=0);
+;
+  // to have absolute epsilon in CG algorithm.
+  epsv = -abs(epsv);
+  epsu = -abs(epsu);
+  epsp = -abs(epsp);
+
+  p = pold-q;
+  if(Vh.ndof == Mh.ndof+1)
+  {
+  u[] += dtM1x*q[];
+  v[] += dtM1y*q[];
+  }
+  else {
+  px = Mx*q[];
+  py = My*q[];
+  pw = MM1^-1*px;  u[] += pw;
+  pw = MM2^-1*py ;  v[] += pw;
+  }
+ // cout << " outflux" << int1d(Th)(u*N.x) << endl; 
+ rp = int1d(Th,5)(real(dy(u)< -1e-6));
+  plot([u,v],Reattach(2),wait=0,dim=2);
+  if(n%50 == 499) {
+    Th = adaptmesh(Th, [u, v], q, err=0.06, nbvx=100000);
+    plot(Th, wait=true);
+    BuildMat // rebuild mat.
+  }
+
+  err = sqrt(int2d(Th)(square(u - uold) + square(v - vold))/Th.area);
+  outflux = int1d(Th)([u, v]'*[N.x, N.y]) ;
+  cout << " iter " << n << " Err L2 = " << err << " - Outflow = " << outflux << " rp =" << rp << endl;
+  if (err < 1e-4) break;
+}
+
+
+Vh psi,phi;
+real psimax = int1d(Th,1)(u);
+cout << puin(0,0.5) << " "<< puin(0,1.5) << " " << psimax << endl; 
+solve streamlines(psi,phi) = 
+      int2d(Th)( dx(psi)*dx(phi) + dy(psi)*dy(phi))
+   +  int2d(Th)( -phi*(dy(u)-dx(v)))
+   +  on(2,psi=0) + on(4,psi=-psimax);//+ on(1, psi= puin);
+   ;
+ real rp3=int1d(Th,5)(  (dy(psi) >= -1e-5)       ) ;
+  real rp2= int1d(Th,5)(  (dy(u) <= 0)       ) ;
+cout << " reattach point final: = "<< 2*rp3 << " " << 2*rp2 << " " << 2*rp << endl;
+
+plot(p, wait=1, dim=2);
+plot(u,Reattach(2),dim=2, wait=1);
+real[int] psiviso(31);
+{int k=0;
+for(int i=-20;i<0;i++)
+ psiviso[k++] = i*2./3.*(H-0.5)/20;
+for(int i=0;i<=10;i++)
+ psiviso[k++] = i*2./3.*(H-0.5)/100/(H*H*H);
+}
+plot(Reattach(2),psi,dim=2,viso=psiviso);
+assert(abs(outflux) < 5e-3); // verification
+int[int] fforder2=[1,1,1,1];
+savevtk("step.vtu",Th,p,[u,v,0],psi,order=fforder2,dataname="p U psi");
