@@ -1,6 +1,23 @@
 {
   "articles": [
     {
+      "paperId": "7a35912dcbea1b4e2ea83b3979470ca34dba1c48",
+      "url": "https://www.semanticscholar.org/paper/7a35912dcbea1b4e2ea83b3979470ca34dba1c48",
+      "title": "МІКРОСЕРВІСНА АРХІТЕКТУРА СИСТЕМ СКІНЧЕННО-ЕЛЕМЕНТНОГО АНАЛІЗУ",
+      "abstract": "У світі швидкого технологічного розвитку ефективність і гнучкість архітектур програмної інженерії відіграють ключову роль у створенні масштабованих і відмовостійких систем. Це набуває критичного значення для систем скінченно-елементного аналізу (FEA-систем), які використовуються для моделювання складних фізичних процесів в інженерії та часто повинні обробляти великі обсяги даних. Більшість сучасних FEA-систем використовують монолітну архітектуру – традиційну модель із єдиною кодовою базою для виконання різних функцій. Такий підхід має переваги, такі як єдине середовище розробки та легше налагодження взаємодії компонентів, і суттєві недоліки: складність масштабування, низьку відмовостійкість, погане балансування навантаження, зростання часу відповіді при збільшенні обсягів даних і складність впровадження нових функцій/технологій. Одним із можливих рішень є концепція мікросервісної архітектури, яка передбачає розбиття програмного забезпечення на невеликі незалежні компоненти (сервіси). Кожен сервіс виконує одну функцію і взаємодіє з іншими через чітко визначені інтерфейси. Оскільки вони працюють незалежно, їх можна оновлювати, змінювати, розгортати або масштабувати окремо. Це надає низку переваг: швидке розгортання, незалежність сервісів, гнучке окреме масштабування, стійкість до збоїв, технологічну гнучкість, кращу організацію та простоту тестування, переваги у хмарних середовищах. У статті порівнюються монолітні (Elmer FEM, FreeFEM), мікросервісні (SimScale) і хмарно-монолітні (ANSYS Cloud) FEA- системи за критеріями архітектури, масштабованості, відмовостійкості, розгортання та модифікації. Обґрунтовується перевага мікросервісного підходу та пропонується архітектура FEA-системи на основі патернів API Gateway, Aggregator, Database per Service, Event-Driven, Publisher/ Subscriber, Backend for Frontend.",
+      "publicationDate": "2024-05-30",
+      "authors": [
+        {
+          "authorId": "2304125705",
+          "name": "Я. В. Кривий"
+        },
+        {
+          "authorId": "2228086163",
+          "name": "Антон Лісняк"
+        }
+      ]
+    },
+    {
       "paperId": "ea6ac9526d7f4981ac9fb2dbdbac5808558b4959",
       "url": "https://www.semanticscholar.org/paper/ea6ac9526d7f4981ac9fb2dbdbac5808558b4959",
       "title": "Accurate 3D modeling of laser-matter interaction in the AFP process by a conductive-radiative FEM approach",
@@ -198,43 +215,6 @@
         {
           "authorId": "7262772",
           "name": "Sanaa El Majjaoui"
-        }
-      ]
-    },
-    {
-      "paperId": "5d1fcea586d5a8266f97821f7178b1b391103136",
-      "url": "https://www.semanticscholar.org/paper/5d1fcea586d5a8266f97821f7178b1b391103136",
-      "title": "Numerical Modeling for Shoulder Injury Detection Using Microwave Imaging",
-      "abstract": "A portable imaging system for the on-site detection of shoulder injury is necessary to identify its extent and avoid its development to severe condition. Here, firstly a microwave tomography system is introduced using state-of-the-art numerical modeling and parallel computing for imaging different tissues in the shoulder. The results show that the proposed method is capable of accurately detecting and localizing rotator cuff tears of different size. In the next step, an efficient design in terms of computing time and complexity is proposed to detect the variations in the injured model with respect to the healthy model. The method is based on finite element discretization and uses parallel preconditioners from the domain decomposition method to accelerate computations. It is implemented using the open source FreeFEM software.",
-      "publicationDate": "2023-11-09",
-      "authors": [
-        {
-          "authorId": "1581605601",
-          "name": "Sahar Borzooei"
-        },
-        {
-          "authorId": "17158457",
-          "name": "Pierre-Henri Tournier"
-        },
-        {
-          "authorId": "1815537",
-          "name": "V. Dolean"
-        },
-        {
-          "authorId": "2238466967",
-          "name": "Christian Pichot"
-        },
-        {
-          "authorId": "1772931",
-          "name": "N. Joachimowicz"
-        },
-        {
-          "authorId": "2265752000",
-          "name": "Hélène Roussel"
-        },
-        {
-          "authorId": "2854725",
-          "name": "C. Migliaccio"
         }
       ]
     }
