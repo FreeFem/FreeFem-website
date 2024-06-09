@@ -176,7 +176,7 @@
       "paperId": "cb1d662f92b1bb4f58546402fed2e2af37307025",
       "url": "https://www.semanticscholar.org/paper/cb1d662f92b1bb4f58546402fed2e2af37307025",
       "title": "Structure-preserving semi-convex-splitting numerical scheme for a Cahn-Hilliard cross-diffusion system in lymphangiogenesis",
-      "abstract": "A fully discrete semi-convex-splitting finite-element scheme with stabilization for a degenerate Cahn-Hilliard cross-diffusion system is analyzed. The system consists of parabolic fourth-order equations for the volume fraction of the fiber phase and the solute concentration, modeling pre-patterning of lymphatic vessel morphology. The existence of discrete solutions is proved, and it is shown that the numerical scheme is energy stable up to stabilization, conserves the solute mass, and preserves the lower and upper bounds of the fiber phase fraction. Numerical experiments in two space dimensions using FreeFEM illustrate the phase segregation and pattern formation.",
+      "abstract": "A fully discrete semi-convex-splitting finite-element scheme with stabilization for a Cahn-Hilliard cross-diffusion system is analyzed. The system consists of parabolic fourth-order equations for the volume fraction of the fiber phase and solute concentration, modeling pre-patterning of lymphatic vessel morphology. The existence of discrete solutions is proved, and it is shown that the numerical scheme is energy stable up to stabilization, conserves the solute mass, and preserves the lower and upper bounds of the fiber phase fraction. Numerical experiments in two space dimensions using FreeFEM illustrate the phase segregation and pattern formation.",
       "publicationDate": "2023-11-19",
       "authors": [
         {
