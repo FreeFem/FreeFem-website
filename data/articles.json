@@ -1,6 +1,52 @@
 {
   "articles": [
     {
+      "paperId": "d18c2126978909bd89db9b1d36c2f7b1515ffe4c",
+      "url": "https://www.semanticscholar.org/paper/d18c2126978909bd89db9b1d36c2f7b1515ffe4c",
+      "title": "AutoFreeFem: Automatic code generation with FreeFEM++ and LaTex output for shape and topology optimization of non-linear multi-physics problems",
+      "abstract": "For an educational purpose we develop the Python package AutoFreeFem which generates all ingredients for shape optimization with non-linear multi-physics in FreeFEM++ and also outputs the expressions for use in LaTex. As an input, the objective function and the weak form of the problem have to be specified only once. This ensures consistency between the simulation code and its documentation. In particular, AutoFreeFem provides the linearization of the state equation, the adjoint problem, the shape derivative, as well as a basic implementation of the level-set based mesh evolution method for shape optimization. For the computation of shape derivatives we utilize the mathematical Lagrangian approach for differentiating PDE-constrained shape functions. Differentiation is done symbolically using Sympy. In numerical experiments we verify the accuracy of the computed derivatives. Finally, we showcase the capabilities of AutoFreeFem by considering shape optimization of a non-linear diffusion problem, linear and non-linear elasticity problems, a thermo-elasticity problem and a fluid-structure interaction problem.",
+      "publicationDate": "2024-07-16",
+      "authors": [
+        {
+          "authorId": "2311509195",
+          "name": "Gr'egoire Allaire"
+        },
+        {
+          "authorId": "51257846",
+          "name": "M. Gfrerer"
+        }
+      ]
+    },
+    {
+      "paperId": "7081de83579b919cf91181d99796dd1355bfb9d3",
+      "url": "https://www.semanticscholar.org/paper/7081de83579b919cf91181d99796dd1355bfb9d3",
+      "title": "A Domain Decomposition Finite Element Method for the Magneto-Thermal Field Analysis of Electric Machines",
+      "abstract": "In this paper, a domain decomposition finite element method is proposed for the magneto-thermal field analysis of electric machines. 2-D and 3-D numerical models are built for the magnetic field and thermal field of electric machines, respectively. The computational domains of these two fields are decomposed into subdomains based on the discretized meshes to balance the computation work between processors. With the decomposed subdomains, the additive Schwarz method is developed to solve the forming numerical problems of these two fields using the open source platform freefem++, and a significant improvement in efficiency can be observed from the numerical results of single field analysis of a permanent magnet synchronous machine (PMSM). The coupling between these two fields is modelled with the electromagnetic losses and temperature dependent properties, and a two-step searching algorithm is developed for the data mapping between field solvers, which employ different dimensional models and inconsistent meshes. The counterpart subdomain is determined before searching the counterpart element to reduce the computation effort of searching. The magneto-thermal field analysis of the studied PMSM is finally conducted with the proposed method to showcase its effectiveness.",
+      "publicationDate": "2024-06-02",
+      "authors": [
+        {
+          "authorId": "2145041466",
+          "name": "Yunpeng Zhang"
+        },
+        {
+          "authorId": "2312000241",
+          "name": "Jinpeng Cheng"
+        },
+        {
+          "authorId": "91440392",
+          "name": "Xinsheng Yang"
+        },
+        {
+          "authorId": "2311851116",
+          "name": "Qibin Zhou"
+        },
+        {
+          "authorId": "2311713881",
+          "name": "Weinong Fu"
+        }
+      ]
+    },
+    {
       "paperId": "7a35912dcbea1b4e2ea83b3979470ca34dba1c48",
       "url": "https://www.semanticscholar.org/paper/7a35912dcbea1b4e2ea83b3979470ca34dba1c48",
       "title": "МІКРОСЕРВІСНА АРХІТЕКТУРА СИСТЕМ СКІНЧЕННО-ЕЛЕМЕНТНОГО АНАЛІЗУ",
@@ -134,7 +180,7 @@
       "paperId": "de167c589a7a334f2046a1687c24d6f7fa74eb15",
       "url": "https://www.semanticscholar.org/paper/de167c589a7a334f2046a1687c24d6f7fa74eb15",
       "title": "On the instability of travelling wave solutions for the transport-Stokes equation",
-      "abstract": "In this paper, we investigate the instability of the spherical travelling wave solutions for the Transport-Stokes system in $\\mathbb{R}^3$. First, a classical scaling argument ensures instability among all probability measures for the Wasserstein metric and the $L^1$ norm. Secondly, we investigate the instability among patch solutions with a perturbed surface. To this end, we study the linearized system of a contour dynamics equation derived in [18] in the case where the support of the patch is axisymmetric and is described by spherical parametrization and show well-posedness of the linearized system. The actual version does not include the investigation of the eigenvalue and will be completed in the future. Eventually we investigate numerically the instability of the travelling wave by solving the Transport-Stokes equation using a finite element method on FreeFem.",
+      "abstract": "In this paper, we investigate the instability of the spherical travelling wave solutions for the Transport-Stokes system in $\\mathbb{R}^3$. First, a classical scaling argument ensures instability among all probability measures for the Wasserstein metric and the $L^1$ norm. Secondly, we address the instability among patch solutions with a perturbed surface. To this end, we study the linearized system of a contour dynamics equation derived in [18] in the case where the support of the patch is axisymmetric and described by spherical parametrization. We investigate numerically the existence of positive eigenvalues, which ensures the instability of the linearized system. Eventually we recover numerically the instability of the travelling wave by solving the Transport-Stokes equation using a finite element method on FreeFem.",
       "publicationDate": "2023-11-24",
       "authors": [
         {
@@ -169,52 +215,6 @@
         {
           "authorId": "2903234",
           "name": "Houari Mechkour"
-        }
-      ]
-    },
-    {
-      "paperId": "cb1d662f92b1bb4f58546402fed2e2af37307025",
-      "url": "https://www.semanticscholar.org/paper/cb1d662f92b1bb4f58546402fed2e2af37307025",
-      "title": "Structure-preserving semi-convex-splitting numerical scheme for a Cahn-Hilliard cross-diffusion system in lymphangiogenesis",
-      "abstract": "A fully discrete semi-convex-splitting finite-element scheme with stabilization for a Cahn-Hilliard cross-diffusion system is analyzed. The system consists of parabolic fourth-order equations for the volume fraction of the fiber phase and solute concentration, modeling pre-patterning of lymphatic vessel morphology. The existence of discrete solutions is proved, and it is shown that the numerical scheme is energy stable up to stabilization, conserves the solute mass, and preserves the lower and upper bounds of the fiber phase fraction. Numerical experiments in two space dimensions using FreeFEM illustrate the phase segregation and pattern formation.",
-      "publicationDate": "2023-11-19",
-      "authors": [
-        {
-          "authorId": "3051005",
-          "name": "A. Jüngel"
-        },
-        {
-          "authorId": "2267335351",
-          "name": "Boyi Wang"
-        }
-      ]
-    },
-    {
-      "paperId": "66f559f652749bae0598e80ffa668dab950aa4e8",
-      "url": "https://www.semanticscholar.org/paper/66f559f652749bae0598e80ffa668dab950aa4e8",
-      "title": "COMBINED HORMONE AND BRACHY THERAPIES FOR THE TREATMENT OF PROSTATE CANCER",
-      "abstract": "Prostate cancer is a hormone-dependent cancer characterized by two types of cancer cells, androgen-dependent cancer cells and androgen-resistant ones. The objective of this paper is to present a novel mathematical model for the treatment of prostate cancer under combined hormone therapy and brachytherapy. Using a system of partial differential equations, we quantify and study the evolution of the different cell densities involved in prostate cancer and their responses to the two treatments. Numerical simulations of tumor growth under different therapeutic strategies are explored and presented. The numerical simulations are carried out on FreeFem++ using a 2D finite element method.",
-      "publicationDate": "2023-11-17",
-      "authors": [
-        {
-          "authorId": "2099719009",
-          "name": "S. Chabbar"
-        },
-        {
-          "authorId": "1962608",
-          "name": "A. Habbal"
-        },
-        {
-          "authorId": "145544671",
-          "name": "R. Aboulaich"
-        },
-        {
-          "authorId": "2267115213",
-          "name": "Nabil Ismaili"
-        },
-        {
-          "authorId": "7262772",
-          "name": "Sanaa El Majjaoui"
         }
       ]
     }
