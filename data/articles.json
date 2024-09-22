@@ -94,31 +94,6 @@
       ]
     },
     {
-      "paperId": "d9314d2b1d2cc49778f6203e65ecf9091fea97a9",
-      "url": "https://www.semanticscholar.org/paper/d9314d2b1d2cc49778f6203e65ecf9091fea97a9",
-      "title": "Parallel finite-element codes for the Bogoliubov-de Gennes stability analysis of Bose-Einstein condensates",
-      "abstract": "We present and distribute a parallel finite-element toolbox written in the free software FreeFem for computing the Bogoliubov-de Gennes (BdG) spectrum of stationary solutions to one- and two-component Gross-Pitaevskii (GP) equations, in two or three spatial dimensions. The parallelization of the toolbox relies exclusively upon the recent interfacing of FreeFem with the PETSc library. The latter contains itself a wide palette of state-of-the-art linear algebra libraries, graph partitioners, mesh generation and domain decomposition tools, as well as a suite of eigenvalue solvers that are embodied in the SLEPc library. Within the present toolbox, stationary states of the GP equations are computed by a Newton method. Branches of solutions are constructed using an adaptive step-size continuation algorithm. The combination of mesh adaptivity tools from FreeFem with the parallelization features from PETSc makes the toolbox efficient and reliable for the computation of stationary states. Their BdG spectrum is computed using the SLEPc eigenvalue solver. We perform extensive tests and validate our programs by comparing the toolbox's results with known theoretical and numerical findings that have been reported in the literature.",
-      "publicationDate": "2024-04-01",
-      "authors": [
-        {
-          "authorId": "2643277",
-          "name": "Georges Sadaka"
-        },
-        {
-          "authorId": "2294359921",
-          "name": "Pierre Jolivet"
-        },
-        {
-          "authorId": "8971754",
-          "name": "E. Charalampidis"
-        },
-        {
-          "authorId": "1823374",
-          "name": "I. Danaila"
-        }
-      ]
-    },
-    {
       "paperId": "4f9312c8b466357fc9c39324f47e96bfc5f5d447",
       "url": "https://www.semanticscholar.org/paper/4f9312c8b466357fc9c39324f47e96bfc5f5d447",
       "title": "Stationary Flow of Incompressible Viscous Fluid Through a Two-Dimensional Branched Channel",
@@ -215,6 +190,23 @@
         {
           "authorId": "2903234",
           "name": "Houari Mechkour"
+        }
+      ]
+    },
+    {
+      "paperId": "cb1d662f92b1bb4f58546402fed2e2af37307025",
+      "url": "https://www.semanticscholar.org/paper/cb1d662f92b1bb4f58546402fed2e2af37307025",
+      "title": "Structure-preserving semi-convex-splitting numerical scheme for a Cahn-Hilliard cross-diffusion system in lymphangiogenesis",
+      "abstract": "A fully discrete semi-convex-splitting finite-element scheme with stabilization for a Cahn-Hilliard cross-diffusion system is analyzed. The system consists of parabolic fourth-order equations for the volume fraction of the fiber phase and solute concentration, modeling pre-patterning of lymphatic vessel morphology. The existence of discrete solutions is proved, and it is shown that the numerical scheme is energy stable up to stabilization, conserves the solute mass, and preserves the lower and upper bounds of the fiber phase fraction. Numerical experiments in two space dimensions using FreeFEM illustrate the phase segregation and pattern formation.",
+      "publicationDate": "2023-11-19",
+      "authors": [
+        {
+          "authorId": "3051005",
+          "name": "A. Jüngel"
+        },
+        {
+          "authorId": "2267335351",
+          "name": "Boyi Wang"
         }
       ]
     }
