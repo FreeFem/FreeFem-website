@@ -1,6 +1,35 @@
 {
   "articles": [
     {
+      "paperId": "35b39f7f0aa82a86f348659b17220113a46da9da",
+      "url": "https://www.semanticscholar.org/paper/35b39f7f0aa82a86f348659b17220113a46da9da",
+      "title": "Investigation of the Output Voltage of a Piezoresistive MEMS Pressure Sensor Using Finite Element Modelling",
+      "abstract": "In this paper, based on a 3D finite element model of a piezoresistive MEMS pressure sensor developed previously using FreeFem++, the output voltage of the device is calculated via three approaches. In the first approach, the output voltage is calculated using the widely used empirical formula for the Wheatstone bridge circuits, and thus, it is called the empirical result. In the second approach, firstly, the mean stresses are obtained within the four P-type resistors and the resistivity of the resistors is calculated using the constitutive relation of piezoresistivity. Then a steady state equation of the electric potential is solved and the electric potentials are extracted at the corner of the Cu interconnects. Thus, their difference yields the output voltage and it is called the semi-empirical result. However, within the resistors, the distribution of stresses are in fact quite inhomogeneous and thus their resistivity is also inhomogeneous. Hence, in the third approach, the resistivity of the four resistors are determined as functions of the stresses within the resistors using the constitutive relation of piezoresistivity. Then the electrical potential is also obtained numerically and the output voltages are extracted. The result obtained using the third approach is thus called the numerical result, which is the accurate output voltage of the pressure sensor determined numerically. During the simulations, the influences of different thicknesses of the silicon diaphragm, different widths of the P-type silicon resistor, and different distances between the center of the diaphragm and the midpoint of the P-type silicon resistor, are studied. The three results mentioned above are compared. Simulations show that the three results qualitatively agree with each other with the output voltage from the third approach being 30% higher. We argue, though the widely used empirical result leads to a less accurate output voltage, but it can still achieve the purpose of aiding the design of a piezoresistive MEMS pressure sensor satisfactorily.",
+      "publicationDate": "2024-08-07",
+      "authors": [
+        {
+          "authorId": "2322714126",
+          "name": "Yuqing Xia"
+        },
+        {
+          "authorId": "2296559637",
+          "name": "Peng Zhou"
+        },
+        {
+          "authorId": "2322825870",
+          "name": "Chunming Zhou"
+        },
+        {
+          "authorId": "2322541290",
+          "name": "Yubao Zhen"
+        },
+        {
+          "authorId": null,
+          "name": "Xiyao Du"
+        }
+      ]
+    },
+    {
       "paperId": "d18c2126978909bd89db9b1d36c2f7b1515ffe4c",
       "url": "https://www.semanticscholar.org/paper/d18c2126978909bd89db9b1d36c2f7b1515ffe4c",
       "title": "AutoFreeFem: Automatic code generation with FreeFEM++ and LaTex output for shape and topology optimization of non-linear multi-physics problems",
@@ -190,23 +219,6 @@
         {
           "authorId": "2903234",
           "name": "Houari Mechkour"
-        }
-      ]
-    },
-    {
-      "paperId": "cb1d662f92b1bb4f58546402fed2e2af37307025",
-      "url": "https://www.semanticscholar.org/paper/cb1d662f92b1bb4f58546402fed2e2af37307025",
-      "title": "Structure-preserving semi-convex-splitting numerical scheme for a Cahn-Hilliard cross-diffusion system in lymphangiogenesis",
-      "abstract": "A fully discrete semi-convex-splitting finite-element scheme with stabilization for a Cahn-Hilliard cross-diffusion system is analyzed. The system consists of parabolic fourth-order equations for the volume fraction of the fiber phase and solute concentration, modeling pre-patterning of lymphatic vessel morphology. The existence of discrete solutions is proved, and it is shown that the numerical scheme is energy stable up to stabilization, conserves the solute mass, and preserves the lower and upper bounds of the fiber phase fraction. Numerical experiments in two space dimensions using FreeFEM illustrate the phase segregation and pattern formation.",
-      "publicationDate": "2023-11-19",
-      "authors": [
-        {
-          "authorId": "3051005",
-          "name": "A. Jüngel"
-        },
-        {
-          "authorId": "2267335351",
-          "name": "Boyi Wang"
         }
       ]
     }
