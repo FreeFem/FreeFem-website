@@ -144,6 +144,23 @@
       ]
     },
     {
+      "paperId": "3bca8e37fafdbaf34b8852b55a25d79e40296a36",
+      "url": "https://www.semanticscholar.org/paper/3bca8e37fafdbaf34b8852b55a25d79e40296a36",
+      "title": "MODELING OF PRESTRESSED PLATES WITH MATERIAL INHOMOGENEITY, PERFORATIONS AND INCLUSIONS",
+      "abstract": "In the present article, we propose the model of in-plane oscillations of inhomogeneous prestressed plates, both solid ones and those containing a set of holes and inclusions made of different materials. We treat the plates’ mechanical properties and the prestress tensor components in the considered 2D problem statement as functions of two coordinates. In order to formulate the boundary value problems of steady-state in-plane vibrations of plates, we employ the general linearized formulation for an elastic body under conditions of an initial stress-strain state. The developed vibration model makes it possible to specify an arbitrary type of prestress state in the plate in the form of analytical dependences, as well as numerically, by solving the corresponding static problem, in which prestresses arise as a result of applying some initial load. To implement the finite element (FE) approach to solving the problems, we formulated the weak problem statement by projecting the original governing equations on the field of test displacements satisfying the essential boundary conditions. To increase the accuracy of calculations for plates with holes and inclusions, the local refinement of FE meshes are used. The proposed approach to calculating plate vibrations is implemented as a software package via FreeFem++. A method for assessing the effect of prestress on dynamic plates’ characteristics under various types of loads is described; a comprehensive analysis is carried out to identify the probing modes, frequency ranges and response pickup areas, most sensitive to the prestress changes, for each of the plates. We systematize and generalize the results obtained during the analysis, give a few practical recommendations on the choice of probing modes for each type of the plates considered, allowing to perform the most efficient schemes for identifying the prestress components.",
+      "publicationDate": "2023-12-15",
+      "authors": [
+        {
+          "authorId": "2261191160",
+          "name": "I. Bogachev"
+        },
+        {
+          "authorId": "2269625403",
+          "name": "R. Nedin"
+        }
+      ]
+    },
+    {
       "paperId": "84abd0e326c0896fc698b4cba4dc61351108061e",
       "url": "https://www.semanticscholar.org/paper/84abd0e326c0896fc698b4cba4dc61351108061e",
       "title": "Density-Based Topological Optimization of 3D-Printed Casts for Fracture Treatment with Freefem Software",
@@ -194,31 +211,6 @@
         {
           "authorId": "7559530",
           "name": "Amina Mecherbet"
-        }
-      ]
-    },
-    {
-      "paperId": "094ab826a7ae2cef8f8f2ba564b06d1117c88e30",
-      "url": "https://www.semanticscholar.org/paper/094ab826a7ae2cef8f8f2ba564b06d1117c88e30",
-      "title": "Optimal Control Strategies for Mitigating Urban Heat Island Intensity in Porous Urban Environments",
-      "abstract": "This work is intended as an attempt to explore the use of optimal control techniques for designing green spaces and for dealing with the environmental problems related to urban heat islands appearing in cities. A three-dimensional model is established for numerical studies of the effects of urban anthropogenic heat and wind velocity in urban and rural regions. The transport mechanism of fluid in the cities is governed by the Navier–Stokes–Forschheimer porous media system. We introduce the penalty approximation method to overcome the difficulty induced by the incompressibility constraint. The partial differential equation optimal control problem is solved by using a Spectral Projected Gradient algorithm. To validate the method, we implement a numerical scheme, based on a finite element method, employing the free software FreeFem++ 14.3. We show the results for the optimized and non-optimized situations to compare the two cases.",
-      "publicationDate": "2023-11-23",
-      "authors": [
-        {
-          "authorId": "2268151043",
-          "name": "Nacer Sellila"
-        },
-        {
-          "authorId": "92921711",
-          "name": "M. Louaked"
-        },
-        {
-          "authorId": "2268152057",
-          "name": "Waleed Mouhali"
-        },
-        {
-          "authorId": "2903234",
-          "name": "Houari Mechkour"
         }
       ]
     }
