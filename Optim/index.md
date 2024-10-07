@@ -39,4 +39,4 @@ FreeFEM scripts associated to the book
 <https://freefem.org/Optim/./Codes/Chapter_3/Minimal_surface/minsurf_fixedpoint.edp>\
 <https://freefem.org/Optim/./Codes/Chapter_3/Minimal_surface/minsurf_Ipopt.edp>\
 <https://freefem.org/Optim/./Codes/Appendix_A/FreeFEM_autodiff/LQ_stationary_casadi.py>\
-<https://freefem.org/Optim/./Codes/Appendix_A/FreeFEM_autodiff/LQ_stationary_AMPL.edp>\
+<https://freefem.org/Optim/./Codes/Appendix_A/FreeFEM_autodiff/LQ_stationary_AMPL.edp>
