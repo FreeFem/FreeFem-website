@@ -4,7 +4,7 @@ PDE-constrained optimization within FreeFEM
 
 FreeFEM scripts associated to the book 
 
-<https://freefem.org/Optim/./index.md>\
+<https://freefem.org/Optim/./index.md>
 
 
 <https://freefem.org/Optim/./Codes/Chapter_1/test_poisson_L.edp>\
