@@ -1,6 +1,6 @@
 PDE-constrained optimization within FreeFEM
 =============================================
-[download (2.9 Mb)] <https://freefem.org/Optim/book.pdf>
+[download (2.9 Mb)] <https://hal.science/hal-04724788>
 
 FreeFEM scripts associated to the book 
 
