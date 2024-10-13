@@ -1,6 +1,31 @@
 {
   "articles": [
     {
+      "paperId": "f0e89a7a55852a2ac678d3ab80c3a36953e61bb6",
+      "url": "https://www.semanticscholar.org/paper/f0e89a7a55852a2ac678d3ab80c3a36953e61bb6",
+      "title": "Far-field sound field estimation using robotized measurements and the boundary elements method",
+      "abstract": "Sound Field Estimation (SFE) is a numerical technique widely used to identify and reconstruct the acoustic fields radiated by unknown structures. In particular, SFE proves to be useful when data is only available close to the source, but information in the whole space is required. However,\n the practical implementation of this method is still hindered by two major drawbacks: the lack of efficient implementation of existing numerical methodologies, and the time-consuming and tedious roll-out of acoustic measurements. This paper aims to provide a solution to both issues. First,\n the measurements step is fully automated by using a robotic arm, able to accurately gather geometric and acoustic data without any human assistance. In this matter, a particular attention has been paid to the impact of the robot on the acoustic pressure measurements. The sound field prediction\n is then tackled using the Boundary Element Method (BEM), and implemented using the FreeFEM++ BEM library. Numerically simulated measurements have allowed us to assess the method accuracy, and the overall solution has been successfully tested using actual robotized measurements of an unknown\n loudspeaker.",
+      "publicationDate": "2024-10-04",
+      "authors": [
+        {
+          "authorId": "2273981648",
+          "name": "Caroline Pascal"
+        },
+        {
+          "authorId": "2325272834",
+          "name": "Pierre Marchand"
+        },
+        {
+          "authorId": "2274002942",
+          "name": "Alexandre Chapoutot"
+        },
+        {
+          "authorId": "2273983195",
+          "name": "Olivier Doaré"
+        }
+      ]
+    },
+    {
       "paperId": "35b39f7f0aa82a86f348659b17220113a46da9da",
       "url": "https://www.semanticscholar.org/paper/35b39f7f0aa82a86f348659b17220113a46da9da",
       "title": "Investigation of the Output Voltage of a Piezoresistive MEMS Pressure Sensor Using Finite Element Modelling",
@@ -24,7 +49,7 @@
           "name": "Yubao Zhen"
         },
         {
-          "authorId": null,
+          "authorId": "2296674876",
           "name": "Xiyao Du"
         }
       ]
@@ -151,6 +176,26 @@
       "publicationDate": "2023-12-15",
       "authors": [
         {
+          "authorId": "2239566799",
+          "name": "И.В. Богачев"
+        },
+        {
+          "authorId": "2267474191",
+          "name": "Р.Д. Недин"
+        },
+        {
+          "authorId": "2324666502",
+          "name": "© Пнипу"
+        },
+        {
+          "authorId": "2239566788",
+          "name": "Ivan V. Bogachev – CSc"
+        },
+        {
+          "authorId": "2267473458",
+          "name": "Rostislav D. Nedin – CSc"
+        },
+        {
           "authorId": "2261191160",
           "name": "I. Bogachev"
         },
@@ -194,23 +239,6 @@
         {
           "authorId": "2273503707",
           "name": "J. Olins"
-        }
-      ]
-    },
-    {
-      "paperId": "de167c589a7a334f2046a1687c24d6f7fa74eb15",
-      "url": "https://www.semanticscholar.org/paper/de167c589a7a334f2046a1687c24d6f7fa74eb15",
-      "title": "On the instability of travelling wave solutions for the transport-Stokes equation",
-      "abstract": "In this paper, we investigate the instability of the spherical travelling wave solutions for the Transport-Stokes system in $\\mathbb{R}^3$. First, a classical scaling argument ensures instability among all probability measures for the Wasserstein metric and the $L^1$ norm. Secondly, we address the instability among patch solutions with a perturbed surface. To this end, we study the linearized system of a contour dynamics equation derived in [18] in the case where the support of the patch is axisymmetric and described by spherical parametrization. We investigate numerically the existence of positive eigenvalues, which ensures the instability of the linearized system. Eventually we recover numerically the instability of the travelling wave by solving the Transport-Stokes equation using a finite element method on FreeFem.",
-      "publicationDate": "2023-11-24",
-      "authors": [
-        {
-          "authorId": "2118252",
-          "name": "M. Bonnivard"
-        },
-        {
-          "authorId": "7559530",
-          "name": "Amina Mecherbet"
         }
       ]
     }
