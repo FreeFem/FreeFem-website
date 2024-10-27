@@ -1,6 +1,31 @@
 {
   "articles": [
     {
+      "paperId": "19ff5f8bbe918595619d225199514e9fec340c44",
+      "url": "https://www.semanticscholar.org/paper/19ff5f8bbe918595619d225199514e9fec340c44",
+      "title": "Optimal Control of a Domestic Frost-Free Refrigerator Inlet Freezer from the Perspective of Reducing Energy Consumption",
+      "abstract": "This study is dedicated to the development of a mathematical model based on shape optimal control of the inlet domestic frost-free refrigerator in the context of energy consumption reduction. A three-dimensional thermofluid model is established for the numerical studies. As the physical system (with shelves and fruits) can be seen as a porous medium, the coupled state equations of the transport mechanism (for velocity and temperature fields) are governed by Navier–Stokes–Forchheimer/Fourier equations. Then, based on the finite element method, the numerical scheme computation is made with FreeFem++ software (Version 4.6). Numerical results are shown for three different cases: empty without shelves, empty with shelves, and loaded with foods. For each case, the velocity and temperature fields’ results are discussed for the optimal configurations. The characterization of these physical parameters would help engineers in domestic frost-free refrigerator design.",
+      "publicationDate": "2024-10-22",
+      "authors": [
+        {
+          "authorId": "2268151043",
+          "name": "Nacer Sellila"
+        },
+        {
+          "authorId": "2268152057",
+          "name": "Waleed Mouhali"
+        },
+        {
+          "authorId": "92921711",
+          "name": "M. Louaked"
+        },
+        {
+          "authorId": "2903234",
+          "name": "Houari Mechkour"
+        }
+      ]
+    },
+    {
       "paperId": "f0e89a7a55852a2ac678d3ab80c3a36953e61bb6",
       "url": "https://www.semanticscholar.org/paper/f0e89a7a55852a2ac678d3ab80c3a36953e61bb6",
       "title": "Far-field sound field estimation using robotized measurements and the boundary elements method",
@@ -202,43 +227,6 @@
         {
           "authorId": "2269625403",
           "name": "R. Nedin"
-        }
-      ]
-    },
-    {
-      "paperId": "84abd0e326c0896fc698b4cba4dc61351108061e",
-      "url": "https://www.semanticscholar.org/paper/84abd0e326c0896fc698b4cba4dc61351108061e",
-      "title": "Density-Based Topological Optimization of 3D-Printed Casts for Fracture Treatment with Freefem Software",
-      "abstract": "Abstract 3D printed plastic casts can be used for healing bone fractures. The main requirements for these cases are: they should be light, require little printing time, have good mechanical properties, and ensure proper skin ventilation. We present a density-based topology optimization algorithm for obtaining optimal cast shapes that fulfil these requirements. The algorithm uses a linear stress model and simplified boundary conditions to model the contact problems. The cast shapes were optimized against the influence of several sharp corners. The parametric studies showed that the mass of optimized casts was reduced by 20 %–25 % in comparison with original industrial casts, and the printing time is reduced by 1.4–1.7 h for the largest cast. A major model drawback is the use of 3D numerical volume to model the density distribution. The density distribution should be homogenized across the cast layer. The overhang problem should also be addressed. We also suggest that the cast producers collect more experimental data on the cast breakages for a better calibration of the numerical model.",
-      "publicationDate": "2023-12-01",
-      "authors": [
-        {
-          "authorId": "2273512708",
-          "name": "K. Kokars"
-        },
-        {
-          "authorId": "2273499963",
-          "name": "A. Krauze"
-        },
-        {
-          "authorId": "2273500087",
-          "name": "K. Muiznieks"
-        },
-        {
-          "authorId": "2248916308",
-          "name": "J. Virbulis"
-        },
-        {
-          "authorId": "2273508935",
-          "name": "P. Verners"
-        },
-        {
-          "authorId": "2273499906",
-          "name": "A. Gutcaits"
-        },
-        {
-          "authorId": "2273503707",
-          "name": "J. Olins"
         }
       ]
     }
