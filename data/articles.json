@@ -1,6 +1,35 @@
 {
   "articles": [
     {
+      "paperId": "22886d302d3129bccda8bff5017d6d45f235a119",
+      "url": "https://www.semanticscholar.org/paper/22886d302d3129bccda8bff5017d6d45f235a119",
+      "title": "Magnetohydrodynamic mixed convection of nanofluid flow in a split lid driven cavity using finite element method",
+      "abstract": "A computational study on the effect of magnetohydrodynamic mixed convection of nanofluid flow in a square split lid driven cavity with a block placed near the bottom wall is undertaken. Two different nanoparticles gold and alumina are considered for the study. The observations for the study are obtained by solving the non-dimensionalized governing equations by Finite Element Method with variational approach as accessible with the FreeFEM++ software. The results for different Prandtl numbers ( Pr), Richardson number ( Ri), volume fractions of nanoparticles [Formula: see text], Reynolds number (Re), and MHD parameters (M) are displayed through graphs and figures. It has been observed that the pressure distribution significantly increases with the increment in Reynolds number but both the nanoparticles behave differently. The magnetic field enhancement ( M = 0.1, 0.2, 0.5 and 0.9) decreases the velocity within the cavity. The convective heat transfer is faster in the case of Reynolds number ( Re) = 100 than in the case of Reynolds number ( Re) = 14 or 21. And also increasing the Richardson Number from 0.1 to 1.0, the average Nusselt number shows increment of ∼9.5% and with Ri = 1.0 to 10.0, an increment of ∼3% whereas decrement with higher Reynolds Number ( Re = 21, 100) for Gold and Allumina nanoparticles respectively. The present simulations have various applications for the study of natural phenomenon like climate control, meteorological and geophysical activities and industrial applications like cooling of electronics equipment, heat exchanger.",
+      "publicationDate": "2024-11-01",
+      "authors": [
+        {
+          "authorId": "2328885832",
+          "name": "Ankita Dubey"
+        },
+        {
+          "authorId": "107661296",
+          "name": "B. Vasu"
+        },
+        {
+          "authorId": "120900935",
+          "name": "R. Gorla"
+        },
+        {
+          "authorId": "1396899249",
+          "name": "M. H. Borbora"
+        },
+        {
+          "authorId": "2295382025",
+          "name": "A. Chamkha"
+        }
+      ]
+    },
+    {
       "paperId": "19ff5f8bbe918595619d225199514e9fec340c44",
       "url": "https://www.semanticscholar.org/paper/19ff5f8bbe918595619d225199514e9fec340c44",
       "title": "Optimal Control of a Domestic Frost-Free Refrigerator Inlet Freezer from the Perspective of Reducing Energy Consumption",
@@ -190,43 +219,6 @@
         {
           "authorId": "2295381255",
           "name": "Valentina P. Sibil"
-        }
-      ]
-    },
-    {
-      "paperId": "3bca8e37fafdbaf34b8852b55a25d79e40296a36",
-      "url": "https://www.semanticscholar.org/paper/3bca8e37fafdbaf34b8852b55a25d79e40296a36",
-      "title": "MODELING OF PRESTRESSED PLATES WITH MATERIAL INHOMOGENEITY, PERFORATIONS AND INCLUSIONS",
-      "abstract": "In the present article, we propose the model of in-plane oscillations of inhomogeneous prestressed plates, both solid ones and those containing a set of holes and inclusions made of different materials. We treat the plates’ mechanical properties and the prestress tensor components in the considered 2D problem statement as functions of two coordinates. In order to formulate the boundary value problems of steady-state in-plane vibrations of plates, we employ the general linearized formulation for an elastic body under conditions of an initial stress-strain state. The developed vibration model makes it possible to specify an arbitrary type of prestress state in the plate in the form of analytical dependences, as well as numerically, by solving the corresponding static problem, in which prestresses arise as a result of applying some initial load. To implement the finite element (FE) approach to solving the problems, we formulated the weak problem statement by projecting the original governing equations on the field of test displacements satisfying the essential boundary conditions. To increase the accuracy of calculations for plates with holes and inclusions, the local refinement of FE meshes are used. The proposed approach to calculating plate vibrations is implemented as a software package via FreeFem++. A method for assessing the effect of prestress on dynamic plates’ characteristics under various types of loads is described; a comprehensive analysis is carried out to identify the probing modes, frequency ranges and response pickup areas, most sensitive to the prestress changes, for each of the plates. We systematize and generalize the results obtained during the analysis, give a few practical recommendations on the choice of probing modes for each type of the plates considered, allowing to perform the most efficient schemes for identifying the prestress components.",
-      "publicationDate": "2023-12-15",
-      "authors": [
-        {
-          "authorId": "2239566799",
-          "name": "И.В. Богачев"
-        },
-        {
-          "authorId": "2267474191",
-          "name": "Р.Д. Недин"
-        },
-        {
-          "authorId": "2324666502",
-          "name": "© Пнипу"
-        },
-        {
-          "authorId": "2239566788",
-          "name": "Ivan V. Bogachev – CSc"
-        },
-        {
-          "authorId": "2267473458",
-          "name": "Rostislav D. Nedin – CSc"
-        },
-        {
-          "authorId": "2261191160",
-          "name": "I. Bogachev"
-        },
-        {
-          "authorId": "2269625403",
-          "name": "R. Nedin"
         }
       ]
     }
