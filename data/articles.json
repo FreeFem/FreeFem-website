@@ -1,6 +1,60 @@
 {
   "articles": [
     {
+      "paperId": "ac6708076c051c0d3adbee853b451ee58cca75aa",
+      "url": "https://www.semanticscholar.org/paper/ac6708076c051c0d3adbee853b451ee58cca75aa",
+      "title": "FreeFEM analysis of thermally induced higher-grade Darcy-Forchheimer flow through heated semi-circular cylinders",
+      "abstract": "\n In this article, a higher-grade Darcy-Forchheimer porous model is derived by using the concepts of tensor calculus. The model presented is accounting for non-linear flow behavior at highly permeable media where the flow is induced by temperature boundary conditions. To this end, a square geometry with two semi-circular heating cylinders mounted at its bottom wall is considered for the analysis of thermal flow dynamics. To solve the obtained coupled system of highly nonlinear partial differential equations the finite element procedure is adopted. Weak formulation of the problem is calculated via the application of variational calculus. The numerical algorithm is implemented through the open source code FreeFEM++. Obtained solutions are validated by reduced model with exact solutions. Mesh independence of the solution is shown through mesh independence analysis test. Results are computed for varying physical parameters with some interesting new observations. Moreover, streamline plots for the velocities and isotherms are shown and discussed. It is found that the Nusselt number increases with increasing Grashhoff and Frochheimer numbers, but decreases with increasing medium porosity.",
+      "publicationDate": "2024-12-19",
+      "authors": [
+        {
+          "authorId": null,
+          "name": "Muhammad Sabeel Khan"
+        },
+        {
+          "authorId": "2336400341",
+          "name": "Azmat Urunbayev"
+        }
+      ]
+    },
+    {
+      "paperId": "d4b35702d2d9ab5dbbc9d4499af1998ad4d3277e",
+      "url": "https://www.semanticscholar.org/paper/d4b35702d2d9ab5dbbc9d4499af1998ad4d3277e",
+      "title": "Application of the Phase Field Approach for Crack Propagation in Viscoelastic Solid Materials under Thermal Stress: A Case Study of Solder Fracturing",
+      "abstract": "To date, solder has been a crucial component for interconnecting circuit boards (PCBs) and electronic components in the electronics industry. However, solder faces certain challenges, such as cracking due to thermal changes. This paper investigates solder cracking under thermal expansion. We employ a phase field model to study crack propagation under thermal stress in a square domain and in solder with a fillet shape. The model is based on those proposed by Takaishi-Kimura and Alfat, where the stress and strain tensors are modified to account for variations in the temperature field. In this study, we consider the solder material to be viscoelastic, while the other materials are treated as homogeneous and isotropic. A numerical example is computed using the adaptive mesh finite element method, with the code implemented in FreeFEM software. The results of this study are in good agreement with previous numerical and experimental findings.",
+      "publicationDate": "2024-12-18",
+      "authors": [
+        {
+          "authorId": "95071091",
+          "name": "S. Alfat"
+        },
+        {
+          "authorId": "2307115313",
+          "name": "La Ode Ahmad Barata"
+        },
+        {
+          "authorId": "2336185001",
+          "name": "Aditya Rachman"
+        },
+        {
+          "authorId": "78266818",
+          "name": "R. Eso"
+        },
+        {
+          "authorId": "2205118036",
+          "name": "Arman Arman"
+        },
+        {
+          "authorId": "2103039251",
+          "name": "Nurgiantoro Nurgiantoro"
+        },
+        {
+          "authorId": "2336177882",
+          "name": "Ali Mulya Rende"
+        }
+      ]
+    },
+    {
       "paperId": "22886d302d3129bccda8bff5017d6d45f235a119",
       "url": "https://www.semanticscholar.org/paper/22886d302d3129bccda8bff5017d6d45f235a119",
       "title": "Magnetohydrodynamic mixed convection of nanofluid flow in a split lid driven cavity using finite element method",
@@ -42,7 +96,7 @@
         },
         {
           "authorId": "2268152057",
-          "name": "Waleed Mouhali"
+          "name": "W. Mouhali"
         },
         {
           "authorId": "92921711",
@@ -67,7 +121,7 @@
         },
         {
           "authorId": "2333487575",
-          "name": "Ramoni Z. Sedano Azevedo"
+          "name": "R. Z. S. Azevedo"
         },
         {
           "authorId": "2093005249",
@@ -130,23 +184,6 @@
       ]
     },
     {
-      "paperId": "d18c2126978909bd89db9b1d36c2f7b1515ffe4c",
-      "url": "https://www.semanticscholar.org/paper/d18c2126978909bd89db9b1d36c2f7b1515ffe4c",
-      "title": "AutoFreeFem: Automatic code generation with FreeFEM++ and LaTex output for shape and topology optimization of non-linear multi-physics problems",
-      "abstract": "For an educational purpose we develop the Python package AutoFreeFem which generates all ingredients for shape optimization with non-linear multi-physics in FreeFEM++ and also outputs the expressions for use in LaTex. As an input, the objective function and the weak form of the problem have to be specified only once. This ensures consistency between the simulation code and its documentation. In particular, AutoFreeFem provides the linearization of the state equation, the adjoint problem, the shape derivative, as well as a basic implementation of the level-set based mesh evolution method for shape optimization. For the computation of shape derivatives we utilize the mathematical Lagrangian approach for differentiating PDE-constrained shape functions. Differentiation is done symbolically using Sympy. In numerical experiments we verify the accuracy of the computed derivatives. Finally, we showcase the capabilities of AutoFreeFem by considering shape optimization of a non-linear diffusion problem, linear and non-linear elasticity problems, a thermo-elasticity problem and a fluid-structure interaction problem.",
-      "publicationDate": "2024-07-16",
-      "authors": [
-        {
-          "authorId": "2311509195",
-          "name": "Gr'egoire Allaire"
-        },
-        {
-          "authorId": "51257846",
-          "name": "M. Gfrerer"
-        }
-      ]
-    },
-    {
       "paperId": "7081de83579b919cf91181d99796dd1355bfb9d3",
       "url": "https://www.semanticscholar.org/paper/7081de83579b919cf91181d99796dd1355bfb9d3",
       "title": "A Domain Decomposition Finite Element Method for the Magneto-Thermal Field Analysis of Electric Machines",
@@ -202,23 +239,6 @@
         {
           "authorId": "2263528291",
           "name": "Bruno A. Storti"
-        }
-      ]
-    },
-    {
-      "paperId": "b728dacd0b8bf96c8a346ab686b3e63f38c8dd98",
-      "url": "https://www.semanticscholar.org/paper/b728dacd0b8bf96c8a346ab686b3e63f38c8dd98",
-      "title": "Topology optimization of three-dimensional structures subject to self-weight loading",
-      "abstract": "PurposeTopology optimization of structures under self-weight loading is a challenging problem which has received increasing attention in the past years. The use of standard formulations based on compliance minimization under volume constraint suffers from numerous difficulties for self-weight dominant scenarios, such as non-monotonic behaviour of the compliance, possible unconstrained character of the optimum and parasitic effects for low densities in density-based approaches. This paper aims to propose an alternative approach for dealing with topology design optimization of structures into three spatial dimensions subject to self-weight loading.Design/methodology/approachIn order to overcome the above first two issues, a regularized formulation of the classical compliance minimization problem under volume constraint is adopted, which enjoys two important features: (a) it allows for imposing any feasible volume constraint and (b) the standard (original) formulation is recovered once the regularizing parameter vanishes. The resulting topology optimization problem is solved with the help of the topological derivative method, which naturally overcomes the above last issue since no intermediate densities (grey-scale) approach is necessary.FindingsA novel and simple approach for dealing with topology design optimization of structures into three spatial dimensions subject to self-weight loading is proposed. A set of benchmark examples is presented, showing not only the effectiveness of the proposed approach but also highlighting the role of the self-weight loading in the final design, which are: (1) a bridge structure is subject to pure self-weight loading; (2) a truss-like structure is submitted to an external horizontal force (free of self-weight loading) and also to the combination of self-weight and the external horizontal loading; and (3) a tower structure is under dominant self-weight loading.Originality/valueAn alternative regularized formulation of the compliance minimization problem that naturally overcomes the difficulties of dealing with self-weight dominant scenarios; a rigorous derivation of the associated topological derivative; computational aspects of a simple FreeFEM implementation; and three-dimensional numerical benchmarks of bridge, truss-like and tower structures.",
-      "publicationDate": "2024-04-02",
-      "authors": [
-        {
-          "authorId": "2294492923",
-          "name": "Jorge Morvan Marotte Luz Filho"
-        },
-        {
-          "authorId": "2294493603",
-          "name": "Antonio Andre Novotny"
         }
       ]
     }
