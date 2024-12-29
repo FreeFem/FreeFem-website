@@ -1,6 +1,23 @@
 {
   "articles": [
     {
+      "paperId": "6694f98e66180bc55f2c3eb50fdfc1548ec5a748",
+      "url": "https://www.semanticscholar.org/paper/6694f98e66180bc55f2c3eb50fdfc1548ec5a748",
+      "title": "Bounds for higher Steklov and mixed Steklov Neumann eigenvalues on domains with holes",
+      "abstract": "In this article, we study Steklov eigenvalues and mixed Steklov Neumann eigenvalues on a smooth bounded domain in $\\mathbb{R}^{n}$, $n \\geq 2$, having a spherical hole. We focus on two main results related to Steklov eigenvalues. First, we obtain explicit expression for the second nonzero Steklov eigenvalue on concentric annular domain. Secondly, we derive a sharp upper bound of the first $n$ nonzero Steklov eigenvalues on a domain $\\Omega \\subset \\mathbb{R}^{n}$ having symmetry of order $4$ and a ball removed from its center. This bound is given in terms of the corresponding Steklov eigenvalues on a concentric annular domain of the same volume as $\\Omega$. Next, we consider the mixed Steklov Neumann eigenvalue problem on $4^{\\text{th}}$ order symmetric domains in $\\mathbb{R}^{n}$ having a spherical hole and obtain upper bound of the first $n$ nonzero eigenvalues. We also provide some examples to illustrate that symmetry assumption in our results is crucial. Finally, We make some numerical observations about these eigenvalues using FreeFEM++ and state them as conjectures.",
+      "publicationDate": "2024-12-22",
+      "authors": [
+        {
+          "authorId": "2276608326",
+          "name": "Sagar Basak"
+        },
+        {
+          "authorId": "7883726",
+          "name": "Sheela Verma"
+        }
+      ]
+    },
+    {
       "paperId": "ac6708076c051c0d3adbee853b451ee58cca75aa",
       "url": "https://www.semanticscholar.org/paper/ac6708076c051c0d3adbee853b451ee58cca75aa",
       "title": "FreeFEM analysis of thermally induced higher-grade Darcy-Forchheimer flow through heated semi-circular cylinders",
@@ -8,7 +25,7 @@
       "publicationDate": "2024-12-19",
       "authors": [
         {
-          "authorId": null,
+          "authorId": "2266581964",
           "name": "Muhammad Sabeel Khan"
         },
         {
@@ -226,19 +243,6 @@
         {
           "authorId": "2228086163",
           "name": "Антон Лісняк"
-        }
-      ]
-    },
-    {
-      "paperId": "ea6ac9526d7f4981ac9fb2dbdbac5808558b4959",
-      "url": "https://www.semanticscholar.org/paper/ea6ac9526d7f4981ac9fb2dbdbac5808558b4959",
-      "title": "Accurate 3D modeling of laser-matter interaction in the AFP process by a conductive-radiative FEM approach",
-      "abstract": "Abstract. Mainly driven by aeronautical demands, the Automated Fiber Placement (AFP) process has become pivotal in the in-situ manufacturing of intricate, high-performance composite components. AFP relies on robotic systems to meticulously lay continuous fiber-reinforced materials, employing controlled pressure and precise laser heating. Accurate thermal modeling is imperative to predict thermal effects impacting contact, adhesion, crystallinity, and residual constraints. This work introduces a novel numerical approach for efficient modeling the transient heat transfers in the AFP process using a coupled conductive-radiative finite element method (FEM) scheme. Radiative density from the laser-matter interaction is determined through an in-house parallelized FreeFEM++ code. Heat transfer at the micro-scale is assessed by using an artificial computational geometry based on fiber distributions obtained from tape micrograph. A parametric study with varying absorption coefficients of the carbon fibers is performed to accurately compute the radiative volumetric heat source. The proposed approach investigates various 2D and 3D scenarios involving different laser parameters. Results exhibit strong agreement with experimentally obtained data, showing a maximum temperature difference of 5-6°C at the end of the heating phase. Furthermore, a 3D case demonstrates the potential of this approach for modeling complex micro-scale geometries.",
-      "publicationDate": "2024-05-15",
-      "authors": [
-        {
-          "authorId": "2263528291",
-          "name": "Bruno A. Storti"
         }
       ]
     }
