@@ -72,6 +72,31 @@
       ]
     },
     {
+      "paperId": "27cc055b8d73033613670223f7548f255decb264",
+      "url": "https://www.semanticscholar.org/paper/27cc055b8d73033613670223f7548f255decb264",
+      "title": "Asymptotic homogenization, domain decomposition and finite elements combined for calculating effective elastic properties of periodic fiber-reinforced composites with imperfect interfaces",
+      "abstract": "A methodology is presented for calculating the effective elastic properties of periodic multi-phase composites made of an anisotropic linear elastic matrix reinforced with a periodical distribution of unidirectional fibers and exhibiting spring-type imperfect contacts at the interfaces. The periodicity cell contains any finite number of parallel fibers and exhibits arbitrary cross-section. Fibers also exhibit arbitrary cross-sections and are made of a different anisotropic linear elastic material each. The methodology uses asymptotic homogenization (AH) to obtain the mathematical expressions of the effective properties and to formulate the so-called local problems on the periodicity cell on whose solutions the effective properties depend on. In order to deal with the discontinuities arising from the spring-type interfaces, the local problems are then restated via domain decomposition (DD) in a way allowing for an iterative resolution scheme in which the solution of the problem to be solve in each iteration is obtained via finite elements (FE). Results in the examples are obtained via a computational implementation of the methodology based on the FreeFEM open-source software, which allows for the variational formulation of the iteration problem to be dealt with directly.",
+      "publicationDate": "2024-12-02",
+      "authors": [
+        {
+          "authorId": "1484897637",
+          "name": "J. A. Mesejo-Chiong"
+        },
+        {
+          "authorId": "2288101223",
+          "name": "´Angela M. Le´on-Mec´ıas"
+        },
+        {
+          "authorId": "2340456032",
+          "name": "Leslie D. P´erez-Fern´andez"
+        },
+        {
+          "authorId": "2340450311",
+          "name": "Juli´an Bravo-Castillero"
+        }
+      ]
+    },
+    {
       "paperId": "22886d302d3129bccda8bff5017d6d45f235a119",
       "url": "https://www.semanticscholar.org/paper/22886d302d3129bccda8bff5017d6d45f235a119",
       "title": "Magnetohydrodynamic mixed convection of nanofluid flow in a split lid driven cavity using finite element method",
@@ -226,23 +251,6 @@
         {
           "authorId": "2311713881",
           "name": "Weinong Fu"
-        }
-      ]
-    },
-    {
-      "paperId": "7a35912dcbea1b4e2ea83b3979470ca34dba1c48",
-      "url": "https://www.semanticscholar.org/paper/7a35912dcbea1b4e2ea83b3979470ca34dba1c48",
-      "title": "МІКРОСЕРВІСНА АРХІТЕКТУРА СИСТЕМ СКІНЧЕННО-ЕЛЕМЕНТНОГО АНАЛІЗУ",
-      "abstract": "У світі швидкого технологічного розвитку ефективність і гнучкість архітектур програмної інженерії відіграють ключову роль у створенні масштабованих і відмовостійких систем. Це набуває критичного значення для систем скінченно-елементного аналізу (FEA-систем), які використовуються для моделювання складних фізичних процесів в інженерії та часто повинні обробляти великі обсяги даних. Більшість сучасних FEA-систем використовують монолітну архітектуру – традиційну модель із єдиною кодовою базою для виконання різних функцій. Такий підхід має переваги, такі як єдине середовище розробки та легше налагодження взаємодії компонентів, і суттєві недоліки: складність масштабування, низьку відмовостійкість, погане балансування навантаження, зростання часу відповіді при збільшенні обсягів даних і складність впровадження нових функцій/технологій. Одним із можливих рішень є концепція мікросервісної архітектури, яка передбачає розбиття програмного забезпечення на невеликі незалежні компоненти (сервіси). Кожен сервіс виконує одну функцію і взаємодіє з іншими через чітко визначені інтерфейси. Оскільки вони працюють незалежно, їх можна оновлювати, змінювати, розгортати або масштабувати окремо. Це надає низку переваг: швидке розгортання, незалежність сервісів, гнучке окреме масштабування, стійкість до збоїв, технологічну гнучкість, кращу організацію та простоту тестування, переваги у хмарних середовищах. У статті порівнюються монолітні (Elmer FEM, FreeFEM), мікросервісні (SimScale) і хмарно-монолітні (ANSYS Cloud) FEA- системи за критеріями архітектури, масштабованості, відмовостійкості, розгортання та модифікації. Обґрунтовується перевага мікросервісного підходу та пропонується архітектура FEA-системи на основі патернів API Gateway, Aggregator, Database per Service, Event-Driven, Publisher/ Subscriber, Backend for Frontend.",
-      "publicationDate": "2024-05-30",
-      "authors": [
-        {
-          "authorId": "2304125705",
-          "name": "Я. В. Кривий"
-        },
-        {
-          "authorId": "2228086163",
-          "name": "Антон Лісняк"
         }
       ]
     }
