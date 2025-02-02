@@ -1,6 +1,35 @@
 {
   "articles": [
     {
+      "paperId": "b230d3cbf5532181594da88da6b4df923653e85b",
+      "url": "https://www.semanticscholar.org/paper/b230d3cbf5532181594da88da6b4df923653e85b",
+      "title": "Modelling Phase Change Material Solidification/Melting for Accurate Thermal Energy Storage Design in Refrigeration Applications",
+      "abstract": "\n Phase Change Materials (PCMs) offer a promising solution for thermal energy storage (TES) in refrigeration, especially for critical applications like medicine and food preservation. This paper presents a new modelling approach to optimise PCM performance in cold storage systems. The research uses the Enthalpy-Porosity Model (EPM) to simulate PCM solidification and melting processes. This model offers a more accurate prediction than simpler methods and accounts for natural convection effects. The FreeFem++ toolbox and Galerkin method are employed for numerical solutions, enabling efficient parallel computing. By precisely modelling the phase change behaviour, the proposed method aids in designing high-efficiency and reliable cold storage systems with PCMs. This research contributes to advancements in PCM technology for sustainable refrigeration solutions.",
+      "publicationDate": "2025-01-01",
+      "authors": [
+        {
+          "authorId": "2342847001",
+          "name": "A. Ferraioli"
+        },
+        {
+          "authorId": "2342847132",
+          "name": "O. Carotenuto Ternullo"
+        },
+        {
+          "authorId": "2342858698",
+          "name": "A. Maiorino"
+        },
+        {
+          "authorId": "2342859801",
+          "name": "F. Giannetti"
+        },
+        {
+          "authorId": "2342859795",
+          "name": "C. Aprea"
+        }
+      ]
+    },
+    {
       "paperId": "6694f98e66180bc55f2c3eb50fdfc1548ec5a748",
       "url": "https://www.semanticscholar.org/paper/6694f98e66180bc55f2c3eb50fdfc1548ec5a748",
       "title": "Bounds for higher Steklov and mixed Steklov Neumann eigenvalues on domains with holes",
@@ -222,35 +251,6 @@
         {
           "authorId": "2296674876",
           "name": "Xiyao Du"
-        }
-      ]
-    },
-    {
-      "paperId": "7081de83579b919cf91181d99796dd1355bfb9d3",
-      "url": "https://www.semanticscholar.org/paper/7081de83579b919cf91181d99796dd1355bfb9d3",
-      "title": "A Domain Decomposition Finite Element Method for the Magneto-Thermal Field Analysis of Electric Machines",
-      "abstract": "In this paper, a domain decomposition finite element method is proposed for the magneto-thermal field analysis of electric machines. 2-D and 3-D numerical models are built for the magnetic field and thermal field of electric machines, respectively. The computational domains of these two fields are decomposed into subdomains based on the discretized meshes to balance the computation work between processors. With the decomposed subdomains, the additive Schwarz method is developed to solve the forming numerical problems of these two fields using the open source platform freefem++, and a significant improvement in efficiency can be observed from the numerical results of single field analysis of a permanent magnet synchronous machine (PMSM). The coupling between these two fields is modelled with the electromagnetic losses and temperature dependent properties, and a two-step searching algorithm is developed for the data mapping between field solvers, which employ different dimensional models and inconsistent meshes. The counterpart subdomain is determined before searching the counterpart element to reduce the computation effort of searching. The magneto-thermal field analysis of the studied PMSM is finally conducted with the proposed method to showcase its effectiveness.",
-      "publicationDate": "2024-06-02",
-      "authors": [
-        {
-          "authorId": "2145041466",
-          "name": "Yunpeng Zhang"
-        },
-        {
-          "authorId": "2312000241",
-          "name": "Jinpeng Cheng"
-        },
-        {
-          "authorId": "91440392",
-          "name": "Xinsheng Yang"
-        },
-        {
-          "authorId": "2311851116",
-          "name": "Qibin Zhou"
-        },
-        {
-          "authorId": "2311713881",
-          "name": "Weinong Fu"
         }
       ]
     }
