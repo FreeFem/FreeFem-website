@@ -5,6 +5,12 @@
       "url": "https://www.semanticscholar.org/paper/e611c4276e43cddc83ed5fba2255f26bce9aefe5",
       "title": "Pseudo-concave optimization of the first eigenvalue of elliptic operators with application to topology optimization by homogenization",
       "abstract": "We consider optimization problems of the first eigenvalue of linear elliptic operators. It has an application to a two-phase optimal design problem (also known as topology optimization problem) relaxed by the homogenization method. Under certain assumptions, we show that the first eigenvalue is a pseudo-concave function with respect to the density-like parameter and apply the result to optimal design problems of conductivity and elasticity. Due to pseudo-concavity, every stationary point is a global optimal solution for a maximization problem, and there exists a solution that is an extreme point (corresponding to a 0-1 design) for a minimization problem. In numerical experiments, we demonstrate that a global optimal solution or a 0-1 solution can be obtained by a simple projected gradient method. These problems can be used as benchmark problems to test heuristic topology optimization methods used in engineering. The 80-line FreeFEM code is provided in the appendix.",
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null,
+        "disclaimer": "Notice: This abstract is extracted from the open access paper or abstract available at https://arxiv.org/abs/2503.02391, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
       "publicationDate": "2025-03-04",
       "authors": [
         {
@@ -18,6 +24,12 @@
       "url": "https://www.semanticscholar.org/paper/b230d3cbf5532181594da88da6b4df923653e85b",
       "title": "Modelling Phase Change Material Solidification/Melting for Accurate Thermal Energy Storage Design in Refrigeration Applications",
       "abstract": "\n Phase Change Materials (PCMs) offer a promising solution for thermal energy storage (TES) in refrigeration, especially for critical applications like medicine and food preservation. This paper presents a new modelling approach to optimise PCM performance in cold storage systems. The research uses the Enthalpy-Porosity Model (EPM) to simulate PCM solidification and melting processes. This model offers a more accurate prediction than simpler methods and accounts for natural convection effects. The FreeFem++ toolbox and Galerkin method are employed for numerical solutions, enabling efficient parallel computing. By precisely modelling the phase change behaviour, the proposed method aids in designing high-efficiency and reliable cold storage systems with PCMs. This research contributes to advancements in PCM technology for sustainable refrigeration solutions.",
+      "openAccessPdf": {
+        "url": "https://doi.org/10.1088/1742-6596/2940/1/012009",
+        "status": "GOLD",
+        "license": null,
+        "disclaimer": "Notice: This abstract is extracted from the open access paper or abstract available at https://api.unpaywall.org/v2/10.1088/1742-6596/2940/1/012009?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1088/1742-6596/2940/1/012009, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
       "publicationDate": "2025-01-01",
       "authors": [
         {
@@ -47,6 +59,12 @@
       "url": "https://www.semanticscholar.org/paper/6694f98e66180bc55f2c3eb50fdfc1548ec5a748",
       "title": "Bounds for higher Steklov and mixed Steklov Neumann eigenvalues on domains with holes",
       "abstract": "In this article, we study Steklov eigenvalues and mixed Steklov Neumann eigenvalues on a smooth bounded domain in $\\mathbb{R}^{n}$, $n \\geq 2$, having a spherical hole. We focus on two main results related to Steklov eigenvalues. First, we obtain explicit expression for the second nonzero Steklov eigenvalue on concentric annular domain. Secondly, we derive a sharp upper bound of the first $n$ nonzero Steklov eigenvalues on a domain $\\Omega \\subset \\mathbb{R}^{n}$ having symmetry of order $4$ and a ball removed from its center. This bound is given in terms of the corresponding Steklov eigenvalues on a concentric annular domain of the same volume as $\\Omega$. Next, we consider the mixed Steklov Neumann eigenvalue problem on $4^{\\text{th}}$ order symmetric domains in $\\mathbb{R}^{n}$ having a spherical hole and obtain upper bound of the first $n$ nonzero eigenvalues. We also provide some examples to illustrate that symmetry assumption in our results is crucial. Finally, We make some numerical observations about these eigenvalues using FreeFEM++ and state them as conjectures.",
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null,
+        "disclaimer": "Notice: This abstract is extracted from the open access paper or abstract available at https://arxiv.org/abs/2412.17124, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
       "publicationDate": "2024-12-22",
       "authors": [
         {
@@ -64,6 +82,12 @@
       "url": "https://www.semanticscholar.org/paper/ac6708076c051c0d3adbee853b451ee58cca75aa",
       "title": "FreeFEM analysis of thermally induced higher-grade Darcy-Forchheimer flow through heated semi-circular cylinders",
       "abstract": "\n In this article, a higher-grade Darcy-Forchheimer porous model is derived by using the concepts of tensor calculus. The model presented is accounting for non-linear flow behavior at highly permeable media where the flow is induced by temperature boundary conditions. To this end, a square geometry with two semi-circular heating cylinders mounted at its bottom wall is considered for the analysis of thermal flow dynamics. To solve the obtained coupled system of highly nonlinear partial differential equations the finite element procedure is adopted. Weak formulation of the problem is calculated via the application of variational calculus. The numerical algorithm is implemented through the open source code FreeFEM++. Obtained solutions are validated by reduced model with exact solutions. Mesh independence of the solution is shown through mesh independence analysis test. Results are computed for varying physical parameters with some interesting new observations. Moreover, streamline plots for the velocities and isotherms are shown and discussed. It is found that the Nusselt number increases with increasing Grashhoff and Frochheimer numbers, but decreases with increasing medium porosity.",
+      "openAccessPdf": {
+        "url": "",
+        "status": "CLOSED",
+        "license": null,
+        "disclaimer": "Notice: This abstract is extracted from the open access paper or abstract available at https://api.unpaywall.org/v2/10.1088/1402-4896/ada194?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1088/1402-4896/ada194, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
       "publicationDate": "2024-12-19",
       "authors": [
         {
@@ -81,6 +105,12 @@
       "url": "https://www.semanticscholar.org/paper/d4b35702d2d9ab5dbbc9d4499af1998ad4d3277e",
       "title": "Application of the Phase Field Approach for Crack Propagation in Viscoelastic Solid Materials under Thermal Stress: A Case Study of Solder Fracturing",
       "abstract": "To date, solder has been a crucial component for interconnecting circuit boards (PCBs) and electronic components in the electronics industry. However, solder faces certain challenges, such as cracking due to thermal changes. This paper investigates solder cracking under thermal expansion. We employ a phase field model to study crack propagation under thermal stress in a square domain and in solder with a fillet shape. The model is based on those proposed by Takaishi-Kimura and Alfat, where the stress and strain tensors are modified to account for variations in the temperature field. In this study, we consider the solder material to be viscoelastic, while the other materials are treated as homogeneous and isotropic. A numerical example is computed using the adaptive mesh finite element method, with the code implemented in FreeFEM software. The results of this study are in good agreement with previous numerical and experimental findings.",
+      "openAccessPdf": {
+        "url": "",
+        "status": "CLOSED",
+        "license": null,
+        "disclaimer": "Notice: This abstract is extracted from the open access paper or abstract available at https://api.unpaywall.org/v2/10.37934/arnht.28.1.94108?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.37934/arnht.28.1.94108, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
       "publicationDate": "2024-12-18",
       "authors": [
         {
@@ -118,6 +148,12 @@
       "url": "https://www.semanticscholar.org/paper/27cc055b8d73033613670223f7548f255decb264",
       "title": "Asymptotic homogenization, domain decomposition and finite elements combined for calculating effective elastic properties of periodic fiber-reinforced composites with imperfect interfaces",
       "abstract": "A methodology is presented for calculating the effective elastic properties of periodic multi-phase composites made of an anisotropic linear elastic matrix reinforced with a periodical distribution of unidirectional fibers and exhibiting spring-type imperfect contacts at the interfaces. The periodicity cell contains any finite number of parallel fibers and exhibits arbitrary cross-section. Fibers also exhibit arbitrary cross-sections and are made of a different anisotropic linear elastic material each. The methodology uses asymptotic homogenization (AH) to obtain the mathematical expressions of the effective properties and to formulate the so-called local problems on the periodicity cell on whose solutions the effective properties depend on. In order to deal with the discontinuities arising from the spring-type interfaces, the local problems are then restated via domain decomposition (DD) in a way allowing for an iterative resolution scheme in which the solution of the problem to be solve in each iteration is obtained via finite elements (FE). Results in the examples are obtained via a computational implementation of the methodology based on the FreeFEM open-source software, which allows for the variational formulation of the iteration problem to be dealt with directly.",
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null,
+        "disclaimer": "Notice: This abstract is extracted from the open access paper or abstract available at https://api.unpaywall.org/v2/10.55592/cilamce.v6i06.8117?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.55592/cilamce.v6i06.8117, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
       "publicationDate": "2024-12-02",
       "authors": [
         {
@@ -143,6 +179,12 @@
       "url": "https://www.semanticscholar.org/paper/22886d302d3129bccda8bff5017d6d45f235a119",
       "title": "Magnetohydrodynamic mixed convection of nanofluid flow in a split lid driven cavity using finite element method",
       "abstract": "A computational study on the effect of magnetohydrodynamic mixed convection of nanofluid flow in a square split lid driven cavity with a block placed near the bottom wall is undertaken. Two different nanoparticles gold and alumina are considered for the study. The observations for the study are obtained by solving the non-dimensionalized governing equations by Finite Element Method with variational approach as accessible with the FreeFEM++ software. The results for different Prandtl numbers ( Pr), Richardson number ( Ri), volume fractions of nanoparticles [Formula: see text], Reynolds number (Re), and MHD parameters (M) are displayed through graphs and figures. It has been observed that the pressure distribution significantly increases with the increment in Reynolds number but both the nanoparticles behave differently. The magnetic field enhancement ( M = 0.1, 0.2, 0.5 and 0.9) decreases the velocity within the cavity. The convective heat transfer is faster in the case of Reynolds number ( Re) = 100 than in the case of Reynolds number ( Re) = 14 or 21. And also increasing the Richardson Number from 0.1 to 1.0, the average Nusselt number shows increment of ∼9.5% and with Ri = 1.0 to 10.0, an increment of ∼3% whereas decrement with higher Reynolds Number ( Re = 21, 100) for Gold and Allumina nanoparticles respectively. The present simulations have various applications for the study of natural phenomenon like climate control, meteorological and geophysical activities and industrial applications like cooling of electronics equipment, heat exchanger.",
+      "openAccessPdf": {
+        "url": "",
+        "status": "CLOSED",
+        "license": null,
+        "disclaimer": "Notice: This abstract is extracted from the open access paper or abstract available at https://api.unpaywall.org/v2/10.1177/23977914241286355?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1177/23977914241286355, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
       "publicationDate": "2024-11-01",
       "authors": [
         {
@@ -172,6 +214,12 @@
       "url": "https://www.semanticscholar.org/paper/19ff5f8bbe918595619d225199514e9fec340c44",
       "title": "Optimal Control of a Domestic Frost-Free Refrigerator Inlet Freezer from the Perspective of Reducing Energy Consumption",
       "abstract": "This study is dedicated to the development of a mathematical model based on shape optimal control of the inlet domestic frost-free refrigerator in the context of energy consumption reduction. A three-dimensional thermofluid model is established for the numerical studies. As the physical system (with shelves and fruits) can be seen as a porous medium, the coupled state equations of the transport mechanism (for velocity and temperature fields) are governed by Navier–Stokes–Forchheimer/Fourier equations. Then, based on the finite element method, the numerical scheme computation is made with FreeFem++ software (Version 4.6). Numerical results are shown for three different cases: empty without shelves, empty with shelves, and loaded with foods. For each case, the velocity and temperature fields’ results are discussed for the optimal configurations. The characterization of these physical parameters would help engineers in domestic frost-free refrigerator design.",
+      "openAccessPdf": {
+        "url": "https://doi.org/10.3390/math12213306",
+        "status": "GOLD",
+        "license": "CCBY",
+        "disclaimer": "Notice: This abstract is extracted from the open access paper or abstract available at https://api.unpaywall.org/v2/10.3390/math12213306?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.3390/math12213306, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
       "publicationDate": "2024-10-22",
       "authors": [
         {
@@ -197,6 +245,12 @@
       "url": "https://www.semanticscholar.org/paper/0757ef59989e6718333f4128b84fae2a6310120e",
       "title": "Simulação da Dinâmica Populacional do Mexilhão-Dourado Utilizando o Método dos Elementos Finitos via FreeFem",
       "abstract": "Este artigo apresenta uma aplicação do método dos elementos finitos, via o software FreeFem, para resolver um modelo matemático que simula a dinâmica populacional do mexilhão-dourado, suas larvas e as algas. O modelo considera a relação predador-presa e os parâmetros físicos que influenciam o comportamento dessas espécies. A simulação, realizada em diferentes domínios, permite visualizar a concentração do mexilhão-dourado após um ano de experimento. O objetivo é compreender como diferentes condições ambientais afetam a propagação dessa espécie exótica, que é uma praga no Brasil, e assim contribuir para o desenvolvimento de estratégias de controle mais eficazes e menos onerosas.",
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null,
+        "disclaimer": "Notice: This abstract is extracted from the open access paper or abstract available at https://api.unpaywall.org/v2/10.5753/eries.2024.244337?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.5753/eries.2024.244337, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
       "publicationDate": "2024-10-17",
       "authors": [
         {
@@ -218,6 +272,12 @@
       "url": "https://www.semanticscholar.org/paper/f0e89a7a55852a2ac678d3ab80c3a36953e61bb6",
       "title": "Far-field sound field estimation using robotized measurements and the boundary elements method",
       "abstract": "Sound Field Estimation (SFE) is a numerical technique widely used to identify and reconstruct the acoustic fields radiated by unknown structures. In particular, SFE proves to be useful when data is only available close to the source, but information in the whole space is required. However,\n the practical implementation of this method is still hindered by two major drawbacks: the lack of efficient implementation of existing numerical methodologies, and the time-consuming and tedious roll-out of acoustic measurements. This paper aims to provide a solution to both issues. First,\n the measurements step is fully automated by using a robotic arm, able to accurately gather geometric and acoustic data without any human assistance. In this matter, a particular attention has been paid to the impact of the robot on the acoustic pressure measurements. The sound field prediction\n is then tackled using the Boundary Element Method (BEM), and implemented using the FreeFEM++ BEM library. Numerically simulated measurements have allowed us to assess the method accuracy, and the overall solution has been successfully tested using actual robotized measurements of an unknown\n loudspeaker.",
+      "openAccessPdf": {
+        "url": "https://hal.science/hal-04601339/file/Internoise2024.pdf",
+        "status": "GREEN",
+        "license": "other-oa",
+        "disclaimer": "Notice: This abstract is extracted from the open access paper or abstract available at https://api.unpaywall.org/v2/10.3397/in_2024_2661?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.3397/in_2024_2661, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
       "publicationDate": "2024-10-04",
       "authors": [
         {
