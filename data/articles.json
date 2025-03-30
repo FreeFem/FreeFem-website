@@ -20,6 +20,29 @@
       ]
     },
     {
+      "paperId": "7b008b2138f85d2ce0fecd1b56befedfbb5e88df",
+      "url": "https://www.semanticscholar.org/paper/7b008b2138f85d2ce0fecd1b56befedfbb5e88df",
+      "title": "Controle ótimo em equações de ondas via equilíbrios de Nash e Pareto",
+      "abstract": "The objective of this work is to making a theoretical and numerical study on bi-objective optimal control for the linear and semi-linear wave equations, via Nash and Pareto equilibrium strategies, in three-dimensional domains. Due to being related to an optimization process, we will use cost functional minimization, formulated in combination with some strategies related to Nash Equilibrium and Pareto Equilibrium. We will use the FreeFem++ software to transcribe the theoretical problems to the C++ programming language, describing the spatial discretization data through the Finite Element Method (FEM), and the discretization of its temporal evolution, with the Finite Difference Method.",
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null,
+        "disclaimer": "Notice: This abstract is extracted from the open access paper or abstract available at https://api.unpaywall.org/v2/10.5269/bspm.68317?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.5269/bspm.68317, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2025-02-22",
+      "authors": [
+        {
+          "authorId": "2056810155",
+          "name": "Pitágoras Pinheiro de Carvalho"
+        },
+        {
+          "authorId": "2351960785",
+          "name": "Gildenia R. Sousa-Neto"
+        }
+      ]
+    },
+    {
       "paperId": "b230d3cbf5532181594da88da6b4df923653e85b",
       "url": "https://www.semanticscholar.org/paper/b230d3cbf5532181594da88da6b4df923653e85b",
       "title": "Modelling Phase Change Material Solidification/Melting for Accurate Thermal Energy Storage Design in Refrigeration Applications",
@@ -264,37 +287,6 @@
         {
           "authorId": "2093005249",
           "name": "L. Catabriga"
-        }
-      ]
-    },
-    {
-      "paperId": "f0e89a7a55852a2ac678d3ab80c3a36953e61bb6",
-      "url": "https://www.semanticscholar.org/paper/f0e89a7a55852a2ac678d3ab80c3a36953e61bb6",
-      "title": "Far-field sound field estimation using robotized measurements and the boundary elements method",
-      "abstract": "Sound Field Estimation (SFE) is a numerical technique widely used to identify and reconstruct the acoustic fields radiated by unknown structures. In particular, SFE proves to be useful when data is only available close to the source, but information in the whole space is required. However,\n the practical implementation of this method is still hindered by two major drawbacks: the lack of efficient implementation of existing numerical methodologies, and the time-consuming and tedious roll-out of acoustic measurements. This paper aims to provide a solution to both issues. First,\n the measurements step is fully automated by using a robotic arm, able to accurately gather geometric and acoustic data without any human assistance. In this matter, a particular attention has been paid to the impact of the robot on the acoustic pressure measurements. The sound field prediction\n is then tackled using the Boundary Element Method (BEM), and implemented using the FreeFEM++ BEM library. Numerically simulated measurements have allowed us to assess the method accuracy, and the overall solution has been successfully tested using actual robotized measurements of an unknown\n loudspeaker.",
-      "openAccessPdf": {
-        "url": "https://hal.science/hal-04601339/file/Internoise2024.pdf",
-        "status": "GREEN",
-        "license": "other-oa",
-        "disclaimer": "Notice: This abstract is extracted from the open access paper or abstract available at https://api.unpaywall.org/v2/10.3397/in_2024_2661?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.3397/in_2024_2661, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2024-10-04",
-      "authors": [
-        {
-          "authorId": "2273981648",
-          "name": "Caroline Pascal"
-        },
-        {
-          "authorId": "2325272834",
-          "name": "Pierre Marchand"
-        },
-        {
-          "authorId": "2274002942",
-          "name": "Alexandre Chapoutot"
-        },
-        {
-          "authorId": "2273983195",
-          "name": "Olivier Doaré"
         }
       ]
     }
