@@ -1,21 +1,25 @@
 {
   "articles": [
     {
-      "paperId": "e611c4276e43cddc83ed5fba2255f26bce9aefe5",
-      "url": "https://www.semanticscholar.org/paper/e611c4276e43cddc83ed5fba2255f26bce9aefe5",
-      "title": "Pseudo-concave optimization of the first eigenvalue of elliptic operators with application to topology optimization by homogenization",
-      "abstract": "We consider optimization problems of the first eigenvalue of linear elliptic operators. It has an application to a two-phase optimal design problem (also known as topology optimization problem) relaxed by the homogenization method. Under certain assumptions, we show that the first eigenvalue is a pseudo-concave function with respect to the density-like parameter and apply the result to optimal design problems of conductivity and elasticity. Due to pseudo-concavity, every stationary point is a global optimal solution for a maximization problem, and there exists a solution that is an extreme point (corresponding to a 0-1 design) for a minimization problem. In numerical experiments, we demonstrate that a global optimal solution or a 0-1 solution can be obtained by a simple projected gradient method. These problems can be used as benchmark problems to test heuristic topology optimization methods used in engineering. The 80-line FreeFEM code is provided in the appendix.",
+      "paperId": "a27ffc149ba1840ca673f6a0edeed4635ca9f2ff",
+      "url": "https://www.semanticscholar.org/paper/a27ffc149ba1840ca673f6a0edeed4635ca9f2ff",
+      "title": "A level set topology optimization theory based on Hamilton's principle",
+      "abstract": "In this paper, we present a novel framework for deriving the evolution equation of the level set function in topology optimization, departing from conventional Hamilton-Jacobi based formulations. The key idea is the introduction of an auxiliary domain, geometrically identical to the physical design domain, occupied by fictitious matter which is dynamically excited by the conditions prevailing in the design domain. By assigning kinetic and potential energy to this matter and interpreting the level set function as the generalized coordinate to describe its deformation, the governing equation of motion is determined via Hamilton's principle, yielding a modified wave equation. Appropriate combinations of model parameters enable the recovery of classical physical behaviors, including the standard and biharmonic wave equations. The evolution problem is formulated in weak form using variational methods and implemented in the software environment FreeFEM++. The influence of the numerical parameters is analyzed on the example of minimum mean compliance. The results demonstrate that topological complexity and strut design can be effectively controlled by the respective parameters. In addition, the method allows for the nucleation of new holes and eliminates the need for re-initializing the level set function. The inclusion of a damping term further enhances numerical stability. To showcase the versatility and robustness of our method, we also apply it to compliant mechanism design and a bi-objective optimization problem involving self-weight and compliance minimization under local stress constraints.",
       "openAccessPdf": {
         "url": "",
         "status": null,
         "license": null,
-        "disclaimer": "Notice: This abstract is extracted from the open access paper or abstract available at https://arxiv.org/abs/2503.02391, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        "disclaimer": "Notice: This abstract is extracted from the open access paper or abstract available at https://arxiv.org/abs/2504.14892, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
       },
-      "publicationDate": "2025-03-04",
+      "publicationDate": "2025-04-21",
       "authors": [
         {
-          "authorId": "2129631235",
-          "name": "Akatsuki Nishioka"
+          "authorId": "2356547558",
+          "name": "Jan Oellerich"
+        },
+        {
+          "authorId": null,
+          "name": "Takayuki Yamada"
         }
       ]
     },
