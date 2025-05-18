@@ -50,7 +50,7 @@
       "paperId": "b230d3cbf5532181594da88da6b4df923653e85b",
       "url": "https://www.semanticscholar.org/paper/b230d3cbf5532181594da88da6b4df923653e85b",
       "title": "Modelling Phase Change Material Solidification/Melting for Accurate Thermal Energy Storage Design in Refrigeration Applications",
-      "abstract": "\n Phase Change Materials (PCMs) offer a promising solution for thermal energy storage (TES) in refrigeration, especially for critical applications like medicine and food preservation. This paper presents a new modelling approach to optimise PCM performance in cold storage systems. The research uses the Enthalpy-Porosity Model (EPM) to simulate PCM solidification and melting processes. This model offers a more accurate prediction than simpler methods and accounts for natural convection effects. The FreeFem++ toolbox and Galerkin method are employed for numerical solutions, enabling efficient parallel computing. By precisely modelling the phase change behaviour, the proposed method aids in designing high-efficiency and reliable cold storage systems with PCMs. This research contributes to advancements in PCM technology for sustainable refrigeration solutions.",
+      "abstract": "Phase Change Materials (PCMs) offer a promising solution for thermal energy storage (TES) in refrigeration, especially for critical applications like medicine and food preservation. This paper presents a new modelling approach to optimise PCM performance in cold storage systems. The research uses the Enthalpy-Porosity Model (EPM) to simulate PCM solidification and melting processes. This model offers a more accurate prediction than simpler methods and accounts for natural convection effects. The FreeFem++ toolbox and Galerkin method are employed for numerical solutions, enabling efficient parallel computing. By precisely modelling the phase change behaviour, the proposed method aids in designing high-efficiency and reliable cold storage systems with PCMs. This research contributes to advancements in PCM technology for sustainable refrigeration solutions.",
       "openAccessPdf": {
         "url": "https://doi.org/10.1088/1742-6596/2940/1/012009",
         "status": "GOLD",
@@ -64,8 +64,8 @@
           "name": "A. Ferraioli"
         },
         {
-          "authorId": "2342847132",
-          "name": "O. Carotenuto Ternullo"
+          "authorId": "2360501336",
+          "name": "Carotenuto Ternullo"
         },
         {
           "authorId": "2342858698",
@@ -108,7 +108,7 @@
       "paperId": "ac6708076c051c0d3adbee853b451ee58cca75aa",
       "url": "https://www.semanticscholar.org/paper/ac6708076c051c0d3adbee853b451ee58cca75aa",
       "title": "FreeFEM analysis of thermally induced higher-grade Darcy-Forchheimer flow through heated semi-circular cylinders",
-      "abstract": "\n In this article, a higher-grade Darcy-Forchheimer porous model is derived by using the concepts of tensor calculus. The model presented is accounting for non-linear flow behavior at highly permeable media where the flow is induced by temperature boundary conditions. To this end, a square geometry with two semi-circular heating cylinders mounted at its bottom wall is considered for the analysis of thermal flow dynamics. To solve the obtained coupled system of highly nonlinear partial differential equations the finite element procedure is adopted. Weak formulation of the problem is calculated via the application of variational calculus. The numerical algorithm is implemented through the open source code FreeFEM++. Obtained solutions are validated by reduced model with exact solutions. Mesh independence of the solution is shown through mesh independence analysis test. Results are computed for varying physical parameters with some interesting new observations. Moreover, streamline plots for the velocities and isotherms are shown and discussed. It is found that the Nusselt number increases with increasing Grashhoff and Frochheimer numbers, but decreases with increasing medium porosity.",
+      "abstract": "In this article, a higher grade Darcy-Forchheimer porous model is derived by using the concepts of tensor calculus. The model presented is accounting for non-linear flow behavior at highly permeable media where the flow is induced by temperature boundary conditions. To this end, a square geometry with two semi-circular heating cylinders mounted at its bottom wall is considered for the analysis of thermal flow dynamics. To solve the obtained coupled system of highly nonlinear partial differential equations the finite element procedure is adopted. Weak formulation of the problem is calculated via the application of variational calculus. The numerical algorithm is implemented through the open source code FreeFEM++. Obtained solutions are validated by reduced model with exact solutions. Mesh independence of the solution is shown through mesh independence analysis test. Results are computed for varying physical parameters with some interesting new observations. Moreover, streamline plots for the velocities and isotherms are shown and discussed. It is found that the Nusselt number increases with increasing Grashhoff and Frochheimer numbers, but decreases with increasing medium porosity.",
       "openAccessPdf": {
         "url": "",
         "status": "CLOSED",
