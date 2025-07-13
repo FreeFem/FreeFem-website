@@ -1,6 +1,53 @@
 {
   "articles": [
     {
+      "paperId": "9e9ba1d14142f8ad7e19106a5ee2ef37529b8fb8",
+      "url": "https://www.semanticscholar.org/paper/9e9ba1d14142f8ad7e19106a5ee2ef37529b8fb8",
+      "title": "A Novel 3-D-Printed Passive Microfluidic Temperature Sensor for Medical Applications",
+      "openAccessPdf": {
+        "url": "",
+        "status": "CLOSED",
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/TCPMT.2025.3552029?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/TCPMT.2025.3552029, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2025-07-01",
+      "authors": [
+        {
+          "authorId": "2313961724",
+          "name": "Issam El Gmati"
+        },
+        {
+          "authorId": "2350749038",
+          "name": "Yosra Gmati"
+        },
+        {
+          "authorId": "2050409230",
+          "name": "W. Amara"
+        },
+        {
+          "authorId": "2326494054",
+          "name": "Ridha Ghayoula"
+        },
+        {
+          "authorId": "2666070",
+          "name": "A. Smida"
+        },
+        {
+          "authorId": "2115155840",
+          "name": "Mohammed Waly"
+        },
+        {
+          "authorId": "2209717906",
+          "name": "J. Fattahi"
+        },
+        {
+          "authorId": "2350749051",
+          "name": "Jamil Satouri"
+        }
+      ],
+      "abstract": "The electrical response of a novel passive 3-D-printed temperature sensor could significantly broaden its scope of applications and enhance the integration of microelectro-mechanical system (MEMS) microfluidic-based laboratory-on-a-chip (LOC) technologies. This article introduces an innovative temperature sensor based on the microfluidic technology which is well-suited for medical applications. The sensor’s design and optimization were conducted using multiphysics modeling and finite element method (FEM) simulations, implemented through FreeFEM++ software. Samples were produced using stereolithographic 3-D printing. A metal carrier was constructed to secure the chips during tank heating and the flow visualization with a microscope. X-ray microtomography tests were performed on chips to compare real parts with CAD models. Filling tests were conducted to position the liquid within the microfluidic channel. Furthermore, several types of liquids were tested, and contact angle (CA) measurements were employed to characterize the microfluidic chip’s structural material (DS3000) and various liquids, aiding in discerning the dielectric liquid were applied also. Among the liquids tested, water emerged as the most promising for this type of temperature sensor. Volume expansion calculations for different temperature values were performed, revealing a measured linear thermal expansion exceeding <inline-formula> <tex-math notation=\"LaTeX\">$40~\\mu $ </tex-math></inline-formula>m/°C within the range of <inline-formula> <tex-math notation=\"LaTeX\">$20~^{\\circ }$ </tex-math></inline-formula>C–<inline-formula> <tex-math notation=\"LaTeX\">$55~^{\\circ }$ </tex-math></inline-formula>C. This study paves the way for microfluidic devices capable of measuring low flow rates using a temperature effect, thereby providing access to 16 an electrical response."
+    },
+    {
       "paperId": "796b147087b130d5d72f27e1f23fb65b60139f9b",
       "url": "https://www.semanticscholar.org/paper/796b147087b130d5d72f27e1f23fb65b60139f9b",
       "title": "A level set topology optimization theory based on Hamilton's principle",
@@ -266,33 +313,6 @@
         }
       ],
       "abstract": "This study is dedicated to the development of a mathematical model based on shape optimal control of the inlet domestic frost-free refrigerator in the context of energy consumption reduction. A three-dimensional thermofluid model is established for the numerical studies. As the physical system (with shelves and fruits) can be seen as a porous medium, the coupled state equations of the transport mechanism (for velocity and temperature fields) are governed by Navier–Stokes–Forchheimer/Fourier equations. Then, based on the finite element method, the numerical scheme computation is made with FreeFem++ software (Version 4.6). Numerical results are shown for three different cases: empty without shelves, empty with shelves, and loaded with foods. For each case, the velocity and temperature fields’ results are discussed for the optimal configurations. The characterization of these physical parameters would help engineers in domestic frost-free refrigerator design."
-    },
-    {
-      "paperId": "0757ef59989e6718333f4128b84fae2a6310120e",
-      "url": "https://www.semanticscholar.org/paper/0757ef59989e6718333f4128b84fae2a6310120e",
-      "title": "Simulação da Dinâmica Populacional do Mexilhão-Dourado Utilizando o Método dos Elementos Finitos via FreeFem",
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.5753/eries.2024.244337?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.5753/eries.2024.244337, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2024-10-17",
-      "authors": [
-        {
-          "authorId": "2333489143",
-          "name": "Edgard S. Theotonio"
-        },
-        {
-          "authorId": "2333487575",
-          "name": "R. Z. S. Azevedo"
-        },
-        {
-          "authorId": "2093005249",
-          "name": "L. Catabriga"
-        }
-      ],
-      "abstract": "Este artigo apresenta uma aplicação do método dos elementos finitos, via o software FreeFem, para resolver um modelo matemático que simula a dinâmica populacional do mexilhão-dourado, suas larvas e as algas. O modelo considera a relação predador-presa e os parâmetros físicos que influenciam o comportamento dessas espécies. A simulação, realizada em diferentes domínios, permite visualizar a concentração do mexilhão-dourado após um ano de experimento. O objetivo é compreender como diferentes condições ambientais afetam a propagação dessa espécie exótica, que é uma praga no Brasil, e assim contribuir para o desenvolvimento de estratégias de controle mais eficazes e menos onerosas."
     }
   ]
 }
