@@ -1,6 +1,29 @@
 {
   "articles": [
     {
+      "paperId": "cf9ac8201830adb97390c4ff558c160eada055b3",
+      "url": "https://www.semanticscholar.org/paper/cf9ac8201830adb97390c4ff558c160eada055b3",
+      "title": "Some stochastic process techniques applied to deterministic models",
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2508.02700, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2025-07-28",
+      "authors": [
+        {
+          "authorId": "2369403541",
+          "name": "E. J. 'Avila-Vales"
+        },
+        {
+          "authorId": "1402940621",
+          "name": "J. Villa‐Morales"
+        }
+      ],
+      "abstract": "Stochastic mathematical models are essential tools for understanding and predicting complex phenomena. The purpose of this work is to study the exit times of a stochastic dynamical system-specifically, the mean exit time and the distribution of exit times of the stochastic process within a bounded domain. These quantities are obtained by solving elliptic and parabolic partial differential equations (PDEs), respectively. To support practical applications, we propose a numerical scheme implemented in FreeFEM, emphasizing its effectiveness in two- and three-dimensional cases due to the software's limitations in higher dimensions. The examples provided illustrate the theoretical results, which extend known one-dimensional solutions to higher-dimensional settings. This contribution bridges theoretical and computational approaches for analyzing stochastic processes in multidimensional domains, offering insights into their behavior and potential applications."
+    },
+    {
       "paperId": "9e9ba1d14142f8ad7e19106a5ee2ef37529b8fb8",
       "url": "https://www.semanticscholar.org/paper/9e9ba1d14142f8ad7e19106a5ee2ef37529b8fb8",
       "title": "A Novel 3-D-Printed Passive Microfluidic Temperature Sensor for Medical Applications",
@@ -282,37 +305,6 @@
         }
       ],
       "abstract": "A computational study on the effect of magnetohydrodynamic mixed convection of nanofluid flow in a square split lid driven cavity with a block placed near the bottom wall is undertaken. Two different nanoparticles gold and alumina are considered for the study. The observations for the study are obtained by solving the non-dimensionalized governing equations by Finite Element Method with variational approach as accessible with the FreeFEM++ software. The results for different Prandtl numbers ( Pr), Richardson number ( Ri), volume fractions of nanoparticles [Formula: see text], Reynolds number (Re), and MHD parameters (M) are displayed through graphs and figures. It has been observed that the pressure distribution significantly increases with the increment in Reynolds number but both the nanoparticles behave differently. The magnetic field enhancement ( M = 0.1, 0.2, 0.5 and 0.9) decreases the velocity within the cavity. The convective heat transfer is faster in the case of Reynolds number ( Re) = 100 than in the case of Reynolds number ( Re) = 14 or 21. And also increasing the Richardson Number from 0.1 to 1.0, the average Nusselt number shows increment of ∼9.5% and with Ri = 1.0 to 10.0, an increment of ∼3% whereas decrement with higher Reynolds Number ( Re = 21, 100) for Gold and Allumina nanoparticles respectively. The present simulations have various applications for the study of natural phenomenon like climate control, meteorological and geophysical activities and industrial applications like cooling of electronics equipment, heat exchanger."
-    },
-    {
-      "paperId": "19ff5f8bbe918595619d225199514e9fec340c44",
-      "url": "https://www.semanticscholar.org/paper/19ff5f8bbe918595619d225199514e9fec340c44",
-      "title": "Optimal Control of a Domestic Frost-Free Refrigerator Inlet Freezer from the Perspective of Reducing Energy Consumption",
-      "openAccessPdf": {
-        "url": "https://doi.org/10.3390/math12213306",
-        "status": "GOLD",
-        "license": "CCBY",
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.3390/math12213306?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.3390/math12213306, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2024-10-22",
-      "authors": [
-        {
-          "authorId": "2268151043",
-          "name": "Nacer Sellila"
-        },
-        {
-          "authorId": "103316918",
-          "name": "W. Mouhali"
-        },
-        {
-          "authorId": "92921711",
-          "name": "M. Louaked"
-        },
-        {
-          "authorId": "2903234",
-          "name": "Houari Mechkour"
-        }
-      ],
-      "abstract": "This study is dedicated to the development of a mathematical model based on shape optimal control of the inlet domestic frost-free refrigerator in the context of energy consumption reduction. A three-dimensional thermofluid model is established for the numerical studies. As the physical system (with shelves and fruits) can be seen as a porous medium, the coupled state equations of the transport mechanism (for velocity and temperature fields) are governed by Navier–Stokes–Forchheimer/Fourier equations. Then, based on the finite element method, the numerical scheme computation is made with FreeFem++ software (Version 4.6). Numerical results are shown for three different cases: empty without shelves, empty with shelves, and loaded with foods. For each case, the velocity and temperature fields’ results are discussed for the optimal configurations. The characterization of these physical parameters would help engineers in domestic frost-free refrigerator design."
     }
   ]
 }
