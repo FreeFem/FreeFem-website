@@ -1,6 +1,41 @@
 {
   "articles": [
     {
+      "paperId": "96927b16c97a6965904e6361b2f5682641a385f0",
+      "url": "https://www.semanticscholar.org/paper/96927b16c97a6965904e6361b2f5682641a385f0",
+      "title": "Assessment of the Runaway Electrons induced damage to the Tokamak First Wall",
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2508.20502, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2025-08-28",
+      "authors": [
+        {
+          "authorId": "2360491435",
+          "name": "L. Singh"
+        },
+        {
+          "authorId": "2208918184",
+          "name": "M. D. Bastiani"
+        },
+        {
+          "authorId": "2377795900",
+          "name": "R. Bonifetto"
+        },
+        {
+          "authorId": "144944441",
+          "name": "F. Subba"
+        },
+        {
+          "authorId": "2277212525",
+          "name": "D. Borgogno"
+        }
+      ],
+      "abstract": "The study assessed the damage caused by Runaway Electrons (RE) on First Wall tiles, comparing the effects on Beryllium and Tungsten. This was done by using realistic RE energy distribution functions to replicate RE impacts through the FLUKA code. These energy distribution functions are based on the ASDEX Upgrade experiment # 39012. The parametric analysis carried out with FLUKA in the presence of magnetic fields indicated a clear relationship between the beam impact angle and the material deposited energy, demonstrating that higher impact angles lead to deeper electron penetration and greater deposited energies. A finite element model based on apparent heat capacity formulation in FreeFem++ was developed to analyze the material thermal response to such thermal loads using volumetric energy density profiles from FLUKA simulations as input. Different RE current values were simulated to show its influence on the evolution of the material temperature and melting thickness"
+    },
+    {
       "paperId": "cf9ac8201830adb97390c4ff558c160eada055b3",
       "url": "https://www.semanticscholar.org/paper/cf9ac8201830adb97390c4ff558c160eada055b3",
       "title": "Some stochastic process techniques applied to deterministic models",
@@ -270,41 +305,6 @@
         }
       ],
       "abstract": "A methodology is presented for calculating the effective elastic properties of periodic multi-phase composites made of an anisotropic linear elastic matrix reinforced with a periodical distribution of unidirectional fibers and exhibiting spring-type imperfect contacts at the interfaces. The periodicity cell contains any finite number of parallel fibers and exhibits arbitrary cross-section. Fibers also exhibit arbitrary cross-sections and are made of a different anisotropic linear elastic material each. The methodology uses asymptotic homogenization (AH) to obtain the mathematical expressions of the effective properties and to formulate the so-called local problems on the periodicity cell on whose solutions the effective properties depend on. In order to deal with the discontinuities arising from the spring-type interfaces, the local problems are then restated via domain decomposition (DD) in a way allowing for an iterative resolution scheme in which the solution of the problem to be solve in each iteration is obtained via finite elements (FE). Results in the examples are obtained via a computational implementation of the methodology based on the FreeFEM open-source software, which allows for the variational formulation of the iteration problem to be dealt with directly."
-    },
-    {
-      "paperId": "22886d302d3129bccda8bff5017d6d45f235a119",
-      "url": "https://www.semanticscholar.org/paper/22886d302d3129bccda8bff5017d6d45f235a119",
-      "title": "Magnetohydrodynamic mixed convection of nanofluid flow in a split lid driven cavity using finite element method",
-      "openAccessPdf": {
-        "url": "",
-        "status": "CLOSED",
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1177/23977914241286355?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1177/23977914241286355, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2024-11-01",
-      "authors": [
-        {
-          "authorId": "2056569308",
-          "name": "A. Dubey"
-        },
-        {
-          "authorId": "107661296",
-          "name": "B. Vasu"
-        },
-        {
-          "authorId": "120900935",
-          "name": "R. Gorla"
-        },
-        {
-          "authorId": "1396899249",
-          "name": "M. H. Borbora"
-        },
-        {
-          "authorId": "2295382025",
-          "name": "A. Chamkha"
-        }
-      ],
-      "abstract": "A computational study on the effect of magnetohydrodynamic mixed convection of nanofluid flow in a square split lid driven cavity with a block placed near the bottom wall is undertaken. Two different nanoparticles gold and alumina are considered for the study. The observations for the study are obtained by solving the non-dimensionalized governing equations by Finite Element Method with variational approach as accessible with the FreeFEM++ software. The results for different Prandtl numbers ( Pr), Richardson number ( Ri), volume fractions of nanoparticles [Formula: see text], Reynolds number (Re), and MHD parameters (M) are displayed through graphs and figures. It has been observed that the pressure distribution significantly increases with the increment in Reynolds number but both the nanoparticles behave differently. The magnetic field enhancement ( M = 0.1, 0.2, 0.5 and 0.9) decreases the velocity within the cavity. The convective heat transfer is faster in the case of Reynolds number ( Re) = 100 than in the case of Reynolds number ( Re) = 14 or 21. And also increasing the Richardson Number from 0.1 to 1.0, the average Nusselt number shows increment of ∼9.5% and with Ri = 1.0 to 10.0, an increment of ∼3% whereas decrement with higher Reynolds Number ( Re = 21, 100) for Gold and Allumina nanoparticles respectively. The present simulations have various applications for the study of natural phenomenon like climate control, meteorological and geophysical activities and industrial applications like cooling of electronics equipment, heat exchanger."
     }
   ]
 }
