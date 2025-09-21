@@ -1,6 +1,37 @@
 {
   "articles": [
     {
+      "paperId": "4560a01f24998bf47db0e29d3748dc2c28e84522",
+      "url": "https://www.semanticscholar.org/paper/4560a01f24998bf47db0e29d3748dc2c28e84522",
+      "title": "MULTISCALE IN SILICO MODELS OF FRACTURE HEALING: PROVIDING AN INTEGRATIVE FRAMEWORK TO UNDERSTAND THE INFLUENCES OF DEFECT SIZE, SEX DIFFERENCES, AND INFLAMMATION",
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1302/1358-992x.2025.7.097?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1302/1358-992x.2025.7.097, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2025-09-15",
+      "authors": [
+        {
+          "authorId": "1734968757",
+          "name": "Laura Lafuente-Gracia"
+        },
+        {
+          "authorId": "34687120",
+          "name": "Mojtaba Barzegari"
+        },
+        {
+          "authorId": "47751347",
+          "name": "A. Carlier"
+        },
+        {
+          "authorId": "2624344",
+          "name": "L. Geris"
+        }
+      ],
+      "abstract": "Bone healing is a well-coordinated process involving numerous biological entities. While successful healing typically occurs within weeks, fracture severity, anatomical location and host factors can lead to delayed or non-healing. Critical-size defects require intervention to promote healing, with healing depending on the defect's location and its surroundings. Among host factors, the role of sex differences remains poorly understood, as most preclinical research has focused primarily on male subjects. Consequently, treatments may affect men and women differently. The use of (sex-specific) in silico models offers an interesting methodology to investigate the biological mechanisms underlying fracture healing and the influences of external factors, as well as to propose patient-specific treatment strategies.Following existing bioregulatory models we developed multiscale in silico models of bone healing to investigate normal and impaired sex-specific healing in long bone, mandibular and calvarial defects. These geometries were derived from in vivo experimental set-ups in rabbits and rodents. Our in silico models describe the spatiotemporal evolution of biochemical factors, cells and tissues, from the early inflammatory response to hard callus formation, incorporating sprouting angiogenesis with lateral inhibition of endothelial cells via Dll4-Notch1 signaling. The models were parameterized with sex-specific values informed by literature, focusing on young males and females of reproductive age. Finally, we explored the influence of a scaffold produced by melt electrowriting (MEW), coated (or not) with cells and/or growth factors (GF) as a treatment strategy. The models were implemented in MATLAB and FreeFEM and validated against in vivo data from the literature and in-house experiments.For normal healing in long bone defects, our model predicted a stronger inflammatory response in females and a stronger repair response in males, in alignment with literature data (results not shown). The predicted healing outcomes were similar between both sexes, matching experimental observations both qualitatively and quantitatively. For critical-sized craniofacial defects, our in silico predictions of a non-union matched the in vivo results at 4 and 12 weeks. We used our models to investigate adequate GF concentrations to load onto the MEW scaffold to achieve (delayed) healing.In summary, our in silico models predict realistic healing patterns that align with experimentally observed behavior, enhancing our understanding of bone defect healing mechanisms under different conditions, a first step towards the implementation of patient-specific in silico models of bone regeneration."
+    },
+    {
       "paperId": "96927b16c97a6965904e6361b2f5682641a385f0",
       "url": "https://www.semanticscholar.org/paper/96927b16c97a6965904e6361b2f5682641a385f0",
       "title": "Assessment of the Runaway Electrons induced damage to the Tokamak First Wall",
@@ -122,8 +153,8 @@
           "name": "Jan Oellerich"
         },
         {
-          "authorId": "2358303841",
-          "name": "Takayuki Yamada"
+          "authorId": "2244299499",
+          "name": "T. Yamada"
         }
       ],
       "abstract": "In this article, we propose a unified variational framework for deriving the evolution equation of the level set function in topology optimization, departing from conventional Hamilton–Jacobi‐based formulations. The key idea is the introduction of an auxiliary domain, geometrically identical to the physical design domain, occupied by fictitious matter which is dynamically excited by the conditions prevailing in the design domain. By assigning kinetic and potential energy to this matter and interpreting the level set function as the generalized coordinate to describe its deformation, the governing equation of motion is determined via Hamilton's principle, yielding a modified wave equation. Appropriate combinations of model parameters enable the recovery of classical physical behaviors, including the standard and biharmonic wave equations. The evolution problem is formulated in weak form using variational methods and implemented in the software environment FreeFEM++. The influence of the numerical parameters is analyzed on the example of minimum mean compliance. The results demonstrate that topological complexity and strut design can be effectively controlled by the respective parameters. Notably, the proposed formulation inherently supports the nucleation of new holes and maintains a well‐defined level set function without requiring explicit re‐initialization procedures, both of which emerge naturally from the physically motivated variational framework. The inclusion of a damping term further enhances numerical stability. To showcase the versatility and robustness of our method, we also apply it to compliant mechanism design and a bi‐objective optimization problem involving self‐weight and compliance minimization under local stress constraints."
@@ -274,37 +305,6 @@
         }
       ],
       "abstract": "To date, solder has been a crucial component for interconnecting circuit boards (PCBs) and electronic components in the electronics industry. However, solder faces certain challenges, such as cracking due to thermal changes. This paper investigates solder cracking under thermal expansion. We employ a phase field model to study crack propagation under thermal stress in a square domain and in solder with a fillet shape. The model is based on those proposed by Takaishi-Kimura and Alfat, where the stress and strain tensors are modified to account for variations in the temperature field. In this study, we consider the solder material to be viscoelastic, while the other materials are treated as homogeneous and isotropic. A numerical example is computed using the adaptive mesh finite element method, with the code implemented in FreeFEM software. The results of this study are in good agreement with previous numerical and experimental findings."
-    },
-    {
-      "paperId": "27cc055b8d73033613670223f7548f255decb264",
-      "url": "https://www.semanticscholar.org/paper/27cc055b8d73033613670223f7548f255decb264",
-      "title": "Asymptotic homogenization, domain decomposition and finite elements combined for calculating effective elastic properties of periodic fiber-reinforced composites with imperfect interfaces",
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.55592/cilamce.v6i06.8117?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.55592/cilamce.v6i06.8117, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2024-12-02",
-      "authors": [
-        {
-          "authorId": "1484897637",
-          "name": "J. A. Mesejo-Chiong"
-        },
-        {
-          "authorId": "2288101223",
-          "name": "´Angela M. Le´on-Mec´ıas"
-        },
-        {
-          "authorId": "2340456032",
-          "name": "Leslie D. P´erez-Fern´andez"
-        },
-        {
-          "authorId": "2340450311",
-          "name": "Juli´an Bravo-Castillero"
-        }
-      ],
-      "abstract": "A methodology is presented for calculating the effective elastic properties of periodic multi-phase composites made of an anisotropic linear elastic matrix reinforced with a periodical distribution of unidirectional fibers and exhibiting spring-type imperfect contacts at the interfaces. The periodicity cell contains any finite number of parallel fibers and exhibits arbitrary cross-section. Fibers also exhibit arbitrary cross-sections and are made of a different anisotropic linear elastic material each. The methodology uses asymptotic homogenization (AH) to obtain the mathematical expressions of the effective properties and to formulate the so-called local problems on the periodicity cell on whose solutions the effective properties depend on. In order to deal with the discontinuities arising from the spring-type interfaces, the local problems are then restated via domain decomposition (DD) in a way allowing for an iterative resolution scheme in which the solution of the problem to be solve in each iteration is obtained via finite elements (FE). Results in the examples are obtained via a computational implementation of the methodology based on the FreeFEM open-source software, which allows for the variational formulation of the iteration problem to be dealt with directly."
     }
   ]
 }
