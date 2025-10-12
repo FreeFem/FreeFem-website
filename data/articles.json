@@ -1,6 +1,25 @@
 {
   "articles": [
     {
+      "paperId": "57b37c980f7305ce8d323bc946dfce96bf0cdd1a",
+      "url": "https://www.semanticscholar.org/paper/57b37c980f7305ce8d323bc946dfce96bf0cdd1a",
+      "title": "Spectral Bounds and Exit Times for a Stochastic Model of Corruption",
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.3390/mca30050111?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.3390/mca30050111, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2025-10-08",
+      "authors": [
+        {
+          "authorId": "1402940621",
+          "name": "J. Villa‐Morales"
+        }
+      ],
+      "abstract": "We study a stochastic differential model for the dynamics of institutional corruption, extending a deterministic three-variable system—corruption perception, proportion of sanctioned acts, and policy laxity—by incorporating Gaussian perturbations into key parameters. We prove global existence and uniqueness of solutions in the physically relevant domain, and we analyze the linearization around the asymptotically stable equilibrium of the deterministic system. Explicit mean square bounds for the linearized process are derived in terms of the spectral properties of a symmetric matrix, providing insight into the temporal validity of the linear approximation. To investigate global behavior, we relate the first exit time from the domain of interest to backward Kolmogorov equations and numerically solve the associated elliptic and parabolic PDEs with FreeFEM, obtaining estimates of expectations and survival probabilities. An application to the case of Mexico highlights nontrivial effects: while the spectral structure governs local stability, institutional volatility can non-monotonically accelerate global exit, showing that highly reactive interventions without effective sanctions increase uncertainty. Policy implications and possible extensions are discussed."
+    },
+    {
       "paperId": "e35503581cb0d0302d8fd755efe8f34e3495e49d",
       "url": "https://www.semanticscholar.org/paper/e35503581cb0d0302d8fd755efe8f34e3495e49d",
       "title": "Mathematical Aspects of ANM/FEM Numerical Model, Applied to Nonlinear Elastic, and Thermo Elastic Analysis of Wrinkles in Film/Substrate Systems, and a New Implementation in the FreeFEM++ Language",
@@ -29,7 +48,7 @@
           "name": "H. Zahrouni"
         },
         {
-          "authorId": null,
+          "authorId": "2143944009",
           "name": "Fan Xu"
         },
         {
@@ -286,29 +305,6 @@
         }
       ],
       "abstract": "Phase Change Materials (PCMs) offer a promising solution for thermal energy storage (TES) in refrigeration, especially for critical applications like medicine and food preservation. This paper presents a new modelling approach to optimise PCM performance in cold storage systems. The research uses the Enthalpy-Porosity Model (EPM) to simulate PCM solidification and melting processes. This model offers a more accurate prediction than simpler methods and accounts for natural convection effects. The FreeFem++ toolbox and Galerkin method are employed for numerical solutions, enabling efficient parallel computing. By precisely modelling the phase change behaviour, the proposed method aids in designing high-efficiency and reliable cold storage systems with PCMs. This research contributes to advancements in PCM technology for sustainable refrigeration solutions."
-    },
-    {
-      "paperId": "6694f98e66180bc55f2c3eb50fdfc1548ec5a748",
-      "url": "https://www.semanticscholar.org/paper/6694f98e66180bc55f2c3eb50fdfc1548ec5a748",
-      "title": "Bounds for higher Steklov and mixed Steklov Neumann eigenvalues on domains with holes",
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2412.17124, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2024-12-22",
-      "authors": [
-        {
-          "authorId": "2276608326",
-          "name": "Sagar Basak"
-        },
-        {
-          "authorId": "7883726",
-          "name": "Sheela Verma"
-        }
-      ],
-      "abstract": "In this article, we study Steklov eigenvalues and mixed Steklov Neumann eigenvalues on a smooth bounded domain in $\\mathbb{R}^{n}$, $n \\geq 2$, having a spherical hole. We focus on two main results related to Steklov eigenvalues. First, we obtain explicit expression for the second nonzero Steklov eigenvalue on concentric annular domain. Secondly, we derive a sharp upper bound of the first $n$ nonzero Steklov eigenvalues on a domain $\\Omega \\subset \\mathbb{R}^{n}$ having symmetry of order $4$ and a ball removed from its center. This bound is given in terms of the corresponding Steklov eigenvalues on a concentric annular domain of the same volume as $\\Omega$. Next, we consider the mixed Steklov Neumann eigenvalue problem on $4^{\\text{th}}$ order symmetric domains in $\\mathbb{R}^{n}$ having a spherical hole and obtain upper bound of the first $n$ nonzero eigenvalues. We also provide some examples to illustrate that symmetry assumption in our results is crucial. Finally, We make some numerical observations about these eigenvalues using FreeFEM++ and state them as conjectures."
     }
   ]
 }
