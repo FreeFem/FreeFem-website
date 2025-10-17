@@ -29,15 +29,15 @@ int nbs = Vh.ndof;
 
 cout << nbs << endl;
 
-Vh u,v,ydfe=1;
+Vh yh,vh,ydfe=1;
 
 // Variational formulations
-macro grad(u) [dx(u), dy(u)] //
+macro grad(yh) [dx(yh), dy(yh)] //
 
-varf vA(u,v) = int2d(Th)( grad(u)'*grad(v) )
-			 + on(1,2,3,4,u=0); //laplacian
-varf vB(u,v) = int2d(Th)(u*v); //mass
-varf vL(u,v) = int2d(Th)(v); //volume
+varf vA(yh,vh) = int2d(Th)( grad(yh)'*grad(vh) )
+			 + on(1,2,3,4,yh=0); //laplacian
+varf vB(yh,vh) = int2d(Th)(yh*vh); //mass
+varf vL(yh,vh) = int2d(Th)(vh); //volume
 
 matrix A = vA(Vh,Vh);
 matrix B = vB(Vh,Vh);

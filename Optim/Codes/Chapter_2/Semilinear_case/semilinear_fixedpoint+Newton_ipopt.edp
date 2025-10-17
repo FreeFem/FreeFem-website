@@ -8,7 +8,7 @@ under the constraints
 -\Delta y + f(y) = u, y_{\vert \partial \Omega} = 0
 with 
 f(y) = y^3
-and such that \int_\Omega u^2 \,dx \leq \frac{1}{4}
+and such that \int_\Omega u \,dx \leq \frac{1}{4}
 via a Fixed point+Newton method (to solve the PDE)
 */
 
@@ -22,14 +22,19 @@ int nbs = Th.nv; // degrees of freedom
 
 // Volume constraint
 real omega0 = 0.25;
-real tol = 1.e-10;
+real tol = 1.e-30;
 real alpha = 1.0;
 
-Vh Y,U,V,P,Q,theta;
+Vh Y,U,V,P,Q,theta,Usave;
 Vh YD = 0.025;
-
+int nboptsave =0; 
+real CostSave=0;// to save the cost
 // Variational formulations
 macro grad(Y) [dx(Y),dy(Y)] //
+
+// matrix for the numerical gradient (for L^2 product, the matrix coincides with the mass matrix)
+varf vB(Y,V) = int2d(Th)(Y*V);
+matrix M = vB(Vh,Vh,solver=sparsesolver); 
 
 // fixed point method
 macro semilinearstate(){
@@ -47,14 +52,15 @@ macro semilinearstate(){
 	}
 	
 	while (err>tol) {
-	Y[] -= W[]; 
-	solve semilinear(W,V) = int2d(Th)( grad(W)'*grad(V) )
-						  + int2d(Th)( 3*Y^2*W*V )
-						  - (
-						    int2d(Th)( grad(Y)'*grad(V) + Y^3*V - U*V )
-							)
-						  + on(1,2,3,4,W=0);
-	err = int2d(Th)(W^2);
+		/* cout << "Newton" << endl;*/
+		Y[] -= W[]; 
+		solve semilinear(W,V) = int2d(Th)( grad(W)'*grad(V) )
+							  + int2d(Th)( 3*Y^2*W*V )
+							  - (
+								  int2d(Th)( grad(Y)'*grad(V) + Y^3*V - U*V )
+								)
+							  + on(1,2,3,4,W=0);
+		err = int2d(Th)(W^2);
 	}
 } //
 
@@ -77,15 +83,23 @@ real[int,int] Ll(1,nbs); Ll = L;
 matrix jaccontrainte = Ll;
 
 
-// Cost function
+// Cost function with Optimisation 
 func real J(real[int] &X)
 {
+    U[] -= Usave[];
+	if( U[].l1 > 1e-20) 
+	{ // do the computation 
 	U[] = X;
-	
+	Usave[] = X; 
+
 	semilinearstate;
 	
 	real cost = 0.5*( int2d(Th)((Y-YD)^2) + alpha*int2d(Th)(U^2) );
-	return cost;
+	CostSave=cost; 
+	}
+	else 
+	nboptsave++;
+	return CostSave;
 }
 
 // Cost function gradient
@@ -98,7 +112,7 @@ func real[int] gradJ(real[int] &X)
 	semilinearadjoint;
 	
 	interpgrad;
-	real[int] dJ = theta[];
+	real[int] dJ = M*theta[];
 	return dJ;
 }
 
@@ -140,8 +154,8 @@ IPOPT(J,gradJ,C,jacC,start,ub=xub,lb=xlb,clb=clb,cub=cub,tol=1.e-11);
 real[int] X = start; U[] = X;
 cout << "Objectif = " << J(X) << endl;
 cout << "Contrainte = " << C(X) << endl;
-
-plot(Th,U,wait=1,fill=1,value=1,nbiso=20);
+cout << " Nb Optim save ="<< nboptsave << endl;
+plot(Th,U,wait=0,fill=1,value=1,nbiso=20);
 
 // //save solution
 // {

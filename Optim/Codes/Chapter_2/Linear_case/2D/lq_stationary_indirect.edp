@@ -14,7 +14,7 @@ verbosity = 0;
 // square mesh
 mesh Th = square(50,50); // square mesh with boundary labels 1,2,3,4
 
-fespace Vh(Th,P1); // finite element space with $P_1$ elements
+fespace Vh(Th,P2); // finite element space with $P_1$ elements
 int nbs = Vh.ndof; // number of degrees of freedom
 
 Vh Y,V,U,P,Q,theta;
@@ -49,6 +49,10 @@ macro interpgrad() {
 	solve L2grad(theta,V) = int2d(Th)( theta*V ) - int2d(Th)( (alpha*U-P)*V );
 } //
 
+// matrix for the numerical gradient (for L^2 product, the matrix coincides with the mass matrix)
+varf vB(Y,V) = int2d(Th)(Y*V);
+matrix M = vB(Vh,Vh,solver=sparsesolver); 
+
 func real J(real[int] &X)
 {
 	// Value of the control
@@ -75,7 +79,7 @@ func real[int] gradJ(real[int] &X)
 	
 	// Interpolate the gradient
 	interpgrad;
-	real[int] dJ = theta[];
+	real[int] dJ = M*theta[];
 	return dJ;
 }
 

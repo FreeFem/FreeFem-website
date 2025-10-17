@@ -3,7 +3,7 @@
 // Example 1.26 in Section 1.2.4
 
 /*
-\min_{x1,x2} x1x2(1-x1-x2) 
+\min_{x1,x2} -x1x2(1-x1-x2) 
 x1nder the constraints
 x1 \geq 0
 x2 \geq 0
@@ -20,7 +20,7 @@ verbosity = 0;
 func real J(real[int] &X) // Cost function
 {
 	real x1=X[0],  x2=X[1];// 2-dimension variable X
-	real cost = x1*x2*(1-x1-x2);
+	real cost = -x1*x2*(1-x1-x2);
 	return cost; // return real
 }
 
@@ -31,7 +31,7 @@ func real[int] gradJ(real[int] &X) // Gradient of the cost function
 	real x2 = X[1];
 	real dx1 = x2*(1-x1-x2) - x1*x2;
 	real dx2 = x1*(1-x1-x2) - x1*x2;
-	dJ = [dx1,dx2];
+	dJ = -1*[dx1,dx2];
 	return dJ;  // return array
 }
 
@@ -40,7 +40,7 @@ func matrix hessianJ(real[int] &X) // Hessian of the cost function
 {
 	real x1 = X[0];
 	real x2 = X[1];
-	hess = [[-2*x2, 1-2*x1-2*x2],[1-2*x1-2*x2,-2*x1]];
+	hess = -1*[[-2*x2, 1-2*x1-2*x2],[1-2*x1-2*x2,-2*x1]];
 	return hess; // return matrix
 }
 
@@ -60,8 +60,11 @@ func matrix jacC(real[int] &X)
 	return dc; // return matrix
 }
 
-//Initialisation point
+//Initialisation points
 real[int] start = [1,1];
+real[int] lm = [1]; // Lagrange mulitplier of constraint C
+real[int] lz = [1,1]; // Lagrange mulitplier of simple lower bound constraint
+real[int] uz = [1,1]; // Lagrange mulitplier of simple upper bound constraint
 
 //Variables bounds
 real[int] Xub = [10000,10000]; // has to be array
@@ -72,9 +75,12 @@ real[int] Cub = [0]; // has to be array
 real[int] Clb = [-10000]; // has to be array
 
 //Calling IpOpt
-IPOPT(J,gradJ,hessianJ,C,jacC,start,ub=Xub,lb=Xlb,clb=Clb,cub=Cub,optfile="ipopt.opt");
+IPOPT(J,gradJ,hessianJ,C,jacC,start,ub=Xub,lb=Xlb,clb=Clb,cub=Cub,lz=lz,uz=uz,lm=lm,optfile="ipopt.opt");
 
 cout << "(x,y) = " << "(" << start[0] << "," << start[1] << ")" << endl; // print solution
-
+cout << "f(x,y) = " << J(start) << endl; // print solution
+cout << "(lc) = " << lm << endl; // print constraint dual variable
+cout << "(lz) = " << lz << endl; // print simple lower constraint dual variable
+cout << "(uz) = " << uz << endl; // print simple upper constraint dual variable
 
 

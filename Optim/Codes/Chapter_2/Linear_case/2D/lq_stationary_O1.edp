@@ -3,7 +3,7 @@ Reusable template to solve optimization problem using IpOpt within FreeFEM
 Example taken from "PDE constrained optimization within FreeFEM"
 Example (2.1,2.2,2.3) in Section 2.1:
 Solving template for LQ example 
-\min_{u} \int_{\Omega} (y-y_d)^2\,dx + \alpha \int_{\Omega} u^2 \,dx
+\min_{u} \frac{1}{2}\int_{\Omega} (y-y_d)^2\,dx + \frac{\alpha}{2} \int_{\Omega} u^2 \,dx
 under the constraints
 -\Delta y = u, y_{\vert \partial \Omega} = 0, y(0)= 0
 Option 1 : direct mode with (Y,U) as unknowns
@@ -27,16 +27,18 @@ fespace Vh(Th,P1);
 int nbs = Vh.ndof;
 
 
-Vh u,v;
+Vh yh,vh;
 Vh ydfe = 1.0; // target function
 
+real alpha = 1.0;
+
 // Variational formulations
-macro grad(u) [dx(u), dy(u)] //
+macro grad(yh) [dx(yh), dy(yh)] //
 
-varf vA(u,v) = int2d(Th)( grad(u)'*grad(v) )
-			 + on(1,2,3,4,u=0); // Dirichlet Laplacian
+varf vA(yh,vh) = int2d(Th)( grad(yh)'*grad(vh) )
+			 + on(1,2,3,4,yh=0); // Dirichlet Laplacian
 
-varf vM(u,v) = int2d(Th)(u*v); // Mass
+varf vM(yh,vh) = int2d(Th)(yh*vh); // Mass
 
 matrix A = vA(Vh,Vh,solver=sparsesolver); // Stiffness matrix
 matrix M = vM(Vh,Vh,solver=sparsesolver); // Mass matrix
@@ -72,13 +74,14 @@ func real[int] gradJ(real[int] &YU)
 	return p;
 }
 
-
+// Create Mzero in this way leads to memory saving
+real[int,int] zeroArray(1,1); zeroArray=0.;
+matrix Mzero  = zeroArray; 
+Mzero.resize(nbs,nbs); 
 // Hessian of objective function
 matrix HJ; // has to be allocated outside
 func matrix HessianJ(real[int] &YU)
 { 
-	real[int,int] zeroArray(nbs,nbs); zeroArray=0.;
-	matrix Mzero  = zeroArray;
 	matrix matr = [[M,Mzero]];
 	matrix matrIN = [[Mzero,M]]; // alpha=1
 	HJ = [[matr],[matrIN]];
@@ -123,8 +126,8 @@ real[int] X0 = start;
 // Launch ipopt
 int i0 = IPOPT(J,gradJ,HessianJ,C,jacC,start,clb=clb,cub=cub,optfile="ipopt.opt");
 
-u[] = start(nbs:(2*nbs-1));
-plot(Th,u,fill=1,value=1,wait=1,dim=3);
+yh[] = start(nbs:(2*nbs-1));
+plot(Th,yh,fill=1,value=1,wait=1,dim=3);
 
 
 

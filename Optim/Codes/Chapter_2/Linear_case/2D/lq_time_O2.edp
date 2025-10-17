@@ -9,14 +9,14 @@ under the constraints
 Option 2 : direct mode with U as unknowns
 */
 
-load "lapack";
-load "fflapack";
+
 load "ff-Ipopt";
 
 verbosity = 0;
 
 //mesh
-mesh Th = readmesh("square50.msh");
+// mesh Th = readmesh("square50.msh");
+mesh Th = square(40,40);
 int nbs = Th.nv;
 plot(Th,wait=1);
 
@@ -32,12 +32,15 @@ real xM = 10000;
 
 real alpha = 1;
 fespace Vh(Th,P1);
-Vh u,v,ydfe=1;
+Vh yh,vh,ydfe=1;
+
+// define macro grad
+macro grad(yh) [dx(yh), dy(yh)] //
 
 //formulation variationnelle
-varf vA(u,v) = int2d(Th)(dx(u)*dx(v)+dy(u)*dy(v))+on(10,u=0); //laplacian
-varf vB(u,v) = int2d(Th)(u*v); //mass
-varf vAt(u,v) = int2d(Th)(u*v/dt)+int2d(Th)(dx(u)*dx(v)+dy(u)*dy(v))+on(10,u=0);
+varf vA(yh,vh) = int2d(Th)(grad(yh)'*grad(vh))+on(1,2,3,4,yh=0); //laplacian
+varf vB(yh,vh) = int2d(Th)(yh*vh); //mass
+varf vAt(yh,vh) = int2d(Th)(yh*vh/dt)+int2d(Th)(grad(yh)'*grad(vh))+on(1,2,3,4,yh=0);
 matrix A = vA(Vh,Vh,solver=sparsesolver);
 matrix B = vB(Vh,Vh,solver=sparsesolver);
 matrix At = vAt(Vh,Vh,solver=sparsesolver);
@@ -144,8 +147,8 @@ for (int i=0;i<Ntot;i+=1)
 IPOPT(J,gradJ,start,optfile="ipopt.opt");
 
 for (int i=0;i<Nt;i+=1)
-{	u[] = start(i*nbs:((i+1)*nbs-1));
-	plot(Th,u,fill=1,value=1,wait=1);
+{	yh[] = start(i*nbs:((i+1)*nbs-1));
+	plot(Th,yh,fill=1,value=1,wait=1);
 }
 
 /* Pour le moment la construction s'avère fastidieuse

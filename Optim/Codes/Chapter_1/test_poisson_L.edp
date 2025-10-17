@@ -27,7 +27,6 @@ plot(Th,wait=1);
 plot(Th,Y,fill=1,dim=2,wait=1); // Fig. 1.1
 
 
-
 // To solve with matrices instead of writing the whole variational formulation
 
 // Bilinear form associated to the Laplacian

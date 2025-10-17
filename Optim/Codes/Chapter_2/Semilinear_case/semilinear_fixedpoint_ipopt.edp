@@ -21,12 +21,12 @@ fespace Vh(Th,P1);
 int nbs = Th.nv; // degrees of freedom
 
 // Volume constraint
-real omega0 = 0.25;
+real omega0 = 0.025;
 real tol = 1.e-10;
 real alpha = 1.0;
 
 Vh Y,U,V,P,Q,theta;
-Vh YD = 0.025;
+Vh YD = 0.25;
 
 // Variational formulations
 macro grad(Y) [dx(Y),dy(Y)] //
@@ -56,6 +56,9 @@ macro interpgrad() {
 	solve L2grad(theta,V) = int2d(Th)( theta*V ) - int2d(Th)( (alpha*U-P)*V );
 } //
 
+// matrix for the numerical gradient (for L^2 product, the matrix coincides with the mass matrix)
+varf vB(Y,V) = int2d(Th)(Y*V);
+matrix M = vB(Vh,Vh,solver=sparsesolver); 
 
 // Volume constraint
 varf vL(Y,V) = int2d(Th)(1*V);
@@ -85,7 +88,7 @@ func real[int] gradJ(real[int] &X)
 	semilinearadjoint;
 	
 	interpgrad;
-	real[int] dJ = theta[];
+	real[int] dJ = M*theta[];
 	return dJ;
 }
 

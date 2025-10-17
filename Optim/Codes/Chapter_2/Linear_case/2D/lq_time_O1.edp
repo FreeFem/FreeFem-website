@@ -5,46 +5,11 @@ Example (2.12,2.13) in Section 2.2:
 Solving template for LQ example 
 \min_{u} \int_0^T \int_{\Omega} (y-y_d)^2\,dx + \alpha \int_0^T \int_{\Omega} u^2 \,dx
 under the constraints
-y_t-\Delta y = u, y_{\vert \partial \Omega} = 0, y(0)= 0 and  y_t = 0 on Gamma
+y_t-\Delta y = u, y_{\vert \partial \Omega} = 0, y(0)= 0
 Option 1 : direct mode with (Y,U) as unknowns
-The  Schema  for k = 1 to Nt 
-  k =1 
-    (A+M/dt) y_1 - M u_1 = M/dt y_0 
-   k> 1 
-    (A+M/dt) y_k+1 - M/dt y_k - M u_k = 0  
- Warning  k = 1 to Nt 
 
-Diag(Nt,A) // matrix bock diagonal witn Nt block
-BiDiag(Nt,A,B) // matrix bock bi diagonal witn Nt block [[ A, 0, ..], [ B, A, 0,... ], [0, B, A, 0, .. ], ...] 
 
-So the problem is: 
-   argmin           J(YU) = 1/2 ( (YU-TYU)' HC (YU-TYU) ) = argmin 1/2 (YU'Hc Yu) - Hc TYU
-   Jc YU = bJC // constraint !!
-
-bJC = 0 because y0 = 0 
-Hc = [ Diag(Nt,M), 0] , [0, Diag(Nt,alpha*M)];
-and 
-Jc = [ BiDiag(nt,AMt,Mt),-diag(nT,M) ]
 */
-
-func matrix Bdiag(int n, matrix& A)
-{
-   matrix B=A;
-   for(int i=1; i<n; ++i)
-    B = [[B,0],[0,A]];
-  return B;
-}
-func matrix Bidiag(int n, matrix &A,matrix & B)
-{
-   matrix C=[[A,0],[B,A]];
-   for(int i=2; i<n; ++i)
-   {
-     matrix zO(A.n,C.m-A.m);// zero matrix 
-     matrix zB = [[zO,B]]; // row mat
-     C = [[C,0],[zB,A]]; 
-   }
-  return C;
-}
 
 load "ff-Ipopt"
 
@@ -52,19 +17,15 @@ verbosity = 0;
 
 //mesh
 mesh Th = square(20,20);
-int[int] lab=labels(Th); // get all label for BC. 
-// P1 finite element in space
-fespace Vh(Th,P1);
-
-int nbs = Vh.ndof;
+int nbs = Th.nv;
 plot(Th,wait=1);
 
 // Data of problem
-int Nt = 20; // number of time steps (nb time intervals)
+int Nt = 20; // number of time steps
 int Ntot = nbs*Nt; // total degrees of freedom
 real T = 1; // final time
-real dt = T/(Nt); 
-int NYU= 2*Ntot;
+real dt = T/(Nt-1); 
+
 cout << Ntot << endl;
 
 // Bounds on state and control u_m \leq u \leq u_M
@@ -74,50 +35,166 @@ real um = 0;
 real uM = 1;
 
 real alpha = 1;
+
+// P1 finite element in space
+fespace Vh(Th,P1);
+Vh yh,vh;
 Vh ydfe=1; // target
 
-matrix Hc,Cc;
-real[int] bHc(2*Ntot), bCc(0:Ntot);
-{ // for clean memory
-Vh u,v;
-
 // Variatinoal formulations
-macro grad(u) [dx(u), dy(u)] //
+macro grad(yh) [dx(yh), dy(yh)] //
 
-varf vA(u,v) = int2d(Th)( grad(u)'*grad(v) + u*v/dt)
-			 + on(lab,u=0); // Dirichlet Laplacian
-varf vMcl(u,v) = int2d(Th)(-u*v/dt)+ on(lab,u=0);
-varf vM(u,v)   = int2d(Th)(u*v);
+varf vA(yh,vh) = int2d(Th)( grad(yh)'*grad(vh) )
+			 + on(1,2,3,4,yh=0); // Dirichlet Laplacian
+varf vB(yh,vh) = int2d(Th)(yh*vh); 
 
-matrix A = vA(Vh,Vh); // Stiffness matrix  row i with CL : delta_ij
-matrix M = vM(Vh,Vh); // Mass matrix no CL
-matrix Mcl = vM(Vh,Vh,tgv=-1); // Mass matrix  row i with CL 1 on delta_ij
+matrix A = vA(Vh,Vh); // Stiffness matrix
+matrix B = vB(Vh,Vh); // Mass matrix
 
 // Target
-real[int] TYU(Ntot*2);
-TYU = 0; 
-for(int i=0;i<Nt;++i)
-  TYU(i*nbs:(i+1)*nbs-1)=ydfe[]; // ydfe just on Y part 
+real[int] yd = ydfe[];
+real[int] ydt = yd;
+for (int i=1;i<Nt;i+=1)
+	{ydt = [ydt, yd];}
 
-{
-matrix HC1 = Bdiag(Nt,M);// Hessian of Cost
-matrix HC2 = alpha*HC1;
-Hc = [[HC1,0],[0,HC2]];
-cout << Hc.n << " " << Hc.n << " TYU.n "<< TYU.n << " "<< bHc.n << endl; 
-bHc= Hc * TYU; 
-bHc = -bHc;
+// Matrices of the time problem (first discretize then optimize)
+real[int,int] zeroArray(2,2);
+zeroArray = 0;
+real[int,int] IdentiteArray(nbs,nbs); // Identity matrix
+IdentiteArray = 0;
+for (int i=0;i<nbs;i+=1)
+{	for (int j=0;j<nbs;j+=1)
+	{	if(i==j)
+		{	IdentiteArray(i,j)=1;
+		}
+	}
 }
+
+matrix At = A + (1/dt)*B;
+matrix Bt = (-1/dt)*B;
+matrix Mzero = zeroArray;
+matrix Identite = IdentiteArray;
+
+// y_t - \Delta y = u <-> tildeA*y + tildeB*u = 0
+matrix tildeA; // Matrix on state
+matrix tildeB; // Matrix on control
+matrix tildeD; // Matrix for cost function
+matrix matr;
+matrix matrIN;
+
+// Matrix on state
+Mzero.resize(nbs,nbs);
+tildeA = Identite;
+for (int i=1;i<Nt;i+=1)
+	{tildeA = [[tildeA,Mzero]];}
+
+for (int i=1;i<Nt;i+=1)
+	{if (i==1)
+		{matr = Bt;}
+	else
+		{matr = Mzero;}
+	for (int j=1;j<Nt;j+=1)
+		{if (j==i)
+			{matrIN = At;}
+		else
+			{if (j==i-1)
+				{matrIN = Bt;}
+			else
+				{matrIN = Mzero;}}
+		matr = [[matr, matrIN]];}
+	tildeA = [[tildeA],[matr]];}
+
+// Matrix on control
+tildeB = Mzero;
+for (int i=1;i<Nt;i+=1)
+	{tildeB = [[tildeB,Mzero]];}
+
+for (int i=1;i<Nt;i+=1)
+	{matr = Mzero;
+	for (int j=1;j<Nt;j+=1)
+		{if (i==j)
+			{matrIN = B;}
+		else
+			{matrIN = Mzero;}
+		matr = [[matr, matrIN]];}
+	tildeB = [[tildeB],[matr]];}
+tildeB = -tildeB; //AX-BU=0
+
+// Matrix on the cost function
+Mzero.resize(nbs,nbs);
+tildeD = Mzero;
+for (int i=1;i<Nt;i+=1)
+	{tildeD = [[tildeD,Mzero]];}
+
+for (int i=1;i<Nt;i+=1)
+	{matr = Mzero;
+	for (int j=1;j<Nt;j+=1)
+		{if (i==j)
+			{matrIN = B;}
+		else
+			{matrIN = Mzero;}
+		matr = [[matr, matrIN]];}
+	tildeD = [[tildeD],[matr]];}
+tildeD = dt*tildeD;
+
+// Computation of Jacobian and Hessian outside functions (independent of unknowns (Y,U))
+// Hessian of the cost function
+Mzero.resize(Ntot,Ntot);
+matr  = [[tildeD,Mzero]];
+matrIN = [[Mzero,tildeD]]; //alpha=1
+matrix hessiancost = [[matr],[matrIN]];
+
+// Jacobian of constraint function
+Mzero.resize(Nt,Ntot);
+matrix jacobianconstraint = [[tildeA,tildeB]];
+
+// Cost and constraint functions and their derivatives
+func real J(real[int] &XU) // cost function
 {
-  matrix An = Bidiag(Nt,A,Mcl);
-  matrix Mn = Bdiag(Nt,Mcl);
-  cout << An.n << " " << An.m << " Cc "< Mn.n << " " << Mn.m  << endl; 
-  Mn = -Mn; 
-  Cc = [[An,Mn]];
-  bCc= 0;// Y0 == 0 
+	real[int] xint = XU(0:(Ntot-1))-ydt;
+	real[int] uint = tildeD*xint;	
+	real costx = xint'*uint; 
+	uint = tildeD*XU(Ntot:(2*Ntot-1)); //alpha=1
+	real costu= uint'*XU(Ntot:(2*Ntot-1));
+	real cost = 0.5*(costu+costx);
+	return cost;
 }
-} // end of block for  cleaning  memory !!!
+
+//Gradient Objectif  
+func real[int] gradJ(real[int] &XU)
+{
+	real[int] xint = XU(0:(Ntot-1)) - ydt;
+	real[int] p1 = tildeD*xint;
+	real[int] p2 = tildeD*XU(Ntot:(2*Ntot-1)); //alpha=1
+	real[int] p = [p1, p2];
+	return p;
+}
+
+matrix HJ;
+func matrix HessianJ(real[int] &XU)
+{ 
+	HJ = hessiancost;
+	return HJ;
+}
+
+//Contraintes   
+func real[int] C(real[int] &XU)
+{
+	real[int] c = tildeA*XU(0:(Ntot-1));
+	c+= tildeB*XU(Ntot:(2*Ntot-1));
+	return c;
+}
+
 //Gradient Contrainte
-
+matrix dc;
+func matrix jacC(real[int] &XU)
+{
+    dc = jacobianconstraint;
+    return dc;
+}
+cout << " tildeD "<< tildeD.l1 << endl;
+cout << " tildeA "<< tildeA.l1 << endl;
+cout << " tildeB "<< tildeB.l1 << endl;
 
 //variable bounds + initialisation
 real[int] xub(2*Ntot);
@@ -137,13 +214,20 @@ for (int i=0;i<Ntot;i+=1)
 	start[i] = 0;
 	start[Ntot+i] = 0.5;
 };
+{ ofstream fout("/tmp/mmGL.txt");
+fout << "tildeA =\n" << tildeA << "\n\n\n"<< endl;
+fout << "tildeB =\n" << tildeB << "\n\n\n"<< endl;
+fout << "tildeD =\n" << tildeD << "\n\n\n"<< endl;
+fout << "ydt "<< ydt << "\n\n\n"<< endl;
+}
+cout << J(start) << endl;
+//launch ipopt
+IPOPT(J,gradJ,HessianJ,C,jacC,start,clb=clb,cub=cub,optfile="ipopt.opt");
 
-//launch ipopt minimisation quadratic and affine constraint !!!
-IPOPT([Hc,bHc],[Cc,bCc],start,clb=clb,cub=cub,optfile="ipopt.opt");
-Vh u;// for plot !!!
+//plot solution
 for (int i=0;i<Nt;i+=1)
-{	u[] = start((Ntot+i*nbs):(Ntot+((i+1)*nbs-1)));
-	plot(Th,u,fill=1,value=1,wait=1,dim=3,cmm=" i="+i);
+{	vh[] = start((Ntot+i*nbs):(Ntot+((i+1)*nbs-1)));
+	plot(Th,vh,fill=1,value=1,wait=1,dim=3);
 }
 
 
