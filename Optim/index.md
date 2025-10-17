@@ -6,6 +6,9 @@ FreeFEM scripts associated to the book
 
 <https://freefem.org/Optim/./index.md>
 
+The zip file of all exemples :<https://freefem.org/Optim/Codes.zip>
+
+
 
 <https://freefem.org/Optim/./Codes/Chapter_1/test_poisson_L.edp>\
 <https://freefem.org/Optim/./Codes/Chapter_1/Short_example/ipoptfreefem.edp>\
@@ -22,6 +25,7 @@ FreeFEM scripts associated to the book
 <https://freefem.org/Optim/./Codes/Chapter_2/Semilinear_case/semilinear_fixedpoint+Newton_ipopt.edp>\
 <https://freefem.org/Optim/./Codes/Chapter_2/Semilinear_case/semilinear_fixedpoint_ipopt.edp>\
 <https://freefem.org/Optim/./Codes/Chapter_2/Linear_case/3D/lq_stationary_O2_3D.edp>\
+<https://freefem.org/Optim/./Codes/Chapter_2/Linear_case/2D/ipopt.opt>\
 <https://freefem.org/Optim/./Codes/Chapter_2/Linear_case/2D/lq_time_O1.edp>\
 <https://freefem.org/Optim/./Codes/Chapter_2/Linear_case/2D/lq_time_O2.edp>\
 <https://freefem.org/Optim/./Codes/Chapter_2/Linear_case/2D/lq_time_t_as_z.edp>\
