@@ -1,0 +1,19 @@
+#n_sens_steps 1
+#sens_boundcheck yes
+#sens_bound_eps -1e-10
+
+# Turn off the NLP scaling
+#nlp_scaling_method none
+
+file_print_level 6
+
+print_user_options yes
+#run_sens yes
+
+acceptable_tol 1.e-10
+tol 1.e-15
+max_iter 1000
+
+linear_solver mumps
+#hessian_approximation limited-memory
+#hessian_approximation_space all-variables

@@ -1,0 +1,30 @@
+#printing options---------------------------------------------
+# print_user_options yes
+# print_timing_statistics yes
+
+#parameters---------------------------------------------------
+acceptable_tol 0.000000001
+tol 0.0000000001
+max_iter 350
+
+#linear solver------------------------------------------------
+# linear_solver pardiso
+#pardiso_order pmetis 
+
+#check derivatives---------------------------------------------
+#derivative_test first-order
+
+#quasi newton-------------------------------------------------
+#hessian_approximation limited-memory
+
+#derivatives--------------------------------------------------
+jac_c_constant no
+jac_d_constant no
+hessian_constant yes
+
+#type of algorithm--------------------------------------------
+# mehrotra_algorithm yes
+
+#hotrestart---------------------------------------------------
+warm_start_init_point yes
+
