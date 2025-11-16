@@ -1,6 +1,33 @@
 {
   "articles": [
     {
+      "paperId": "d12fbf112232ecceccd8ca1a5ee5db166149a432",
+      "url": "https://www.semanticscholar.org/paper/d12fbf112232ecceccd8ca1a5ee5db166149a432",
+      "title": "ЗАСТОСУВАННЯ МАТЕМАТИЧНОГО АПАРАТУ ОБЧИСЛЮВАЛЬНОЇ ГІДРОДИНАМІКИ ДЛЯ ДОСЛІДЖЕННЯ ПРОЦЕСІВ ГРАВІТАЦІЙНОГО ЗБАГАЧЕННЯ МАГНЕТИТОВИХ РУД У СПІРАЛЬНИХ СЕПАРАТОРАХ",
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.32782/3041-2080/2025-5-32?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.32782/3041-2080/2025-5-32, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2025-11-10",
+      "authors": [
+        {
+          "authorId": "2380177353",
+          "name": "Тетяна Анатоліївна Олійник"
+        },
+        {
+          "authorId": "2392094049",
+          "name": "Людмила Василівна Скляр"
+        },
+        {
+          "authorId": "2392091365",
+          "name": "Дмитро Олександрович Румницький"
+        }
+      ],
+      "abstract": "На прикладі визначення швидкості вільного та стисненого падіння частинок встановлена можливість використання методів обчислювальної гідродинаміки для моделювання процесу осадження мінеральних частинок у рідині та визначення швидкості їх падіння. Показано, що ефективність розділення у спіральних сепараторах суттєво залежить від взаємозв’язку розміру та густини частинок. Збільшення діаметра частинок зменшує вплив турбулентних коливань потоку, що сприяє стабілізації їх траєкторій і забезпечує більш чіткий поділ фракцій. Проведене чисельне моделювання із застосуванням методу скінченних елементів (FEM) у середовищі FreeFEM++ дало змогу визначити гідродинамічні та кінематичні характеристики потоку, які можуть бути використані для оптимізації конструктивних параметрів та режимів роботи спіральних сепараторів задля підвищення селективності процесу гравітаційного збагачення магнетитових руд. Побудова тривимірної моделі потоку відкрила можливості для детального аналізу зон турбулентності, локального збагачення та розподілу концентрацій по ширині каналу. Такі дослідження можуть бути розширені у програмних комплексах OpenFOAM або COMSOL, що підтримують обмін даними з FreeFEM++ через формат mesh-файлів. Результати моделювання були підтверджені фізичними експериментами на спіральному сепараторі СВШ-2-1000, який має параболічну геометрію поперечного перерізу, та сепараторі лабораторного масштабу з профілем поперечного перерізу у вигляді кривої слабко похилої. Лабораторний сепаратор забезпечує отримання концентрату з вищими показниками виходу, вмісту та вилучення магнетиту (до 85,4 %). Втрати магнетиту з хвостами становили 12,5 % для лабораторного апарата СВШ-2-1000 і не перевищували 3 %. Отримані результати свідчать про високу узгодженість чисельних розрахунків і експериментальних даних. Підтверджують перспективність використання обчислювальної гідродинаміки для дослідження та оптимізації процесів гравітаційного збагачення у спіральних сепараторах."
+    },
+    {
       "paperId": "57b37c980f7305ce8d323bc946dfce96bf0cdd1a",
       "url": "https://www.semanticscholar.org/paper/57b37c980f7305ce8d323bc946dfce96bf0cdd1a",
       "title": "Spectral Bounds and Exit Times for a Stochastic Model of Corruption",
@@ -270,41 +297,6 @@
         }
       ],
       "abstract": "The objective of this work is to making a theoretical and numerical study on bi-objective optimal control for the linear and semi-linear wave equations, via Nash and Pareto equilibrium strategies, in three-dimensional domains. Due to being related to an optimization process, we will use cost functional minimization, formulated in combination with some strategies related to Nash Equilibrium and Pareto Equilibrium. We will use the FreeFem++ software to transcribe the theoretical problems to the C++ programming language, describing the spatial discretization data through the Finite Element Method (FEM), and the discretization of its temporal evolution, with the Finite Difference Method."
-    },
-    {
-      "paperId": "b230d3cbf5532181594da88da6b4df923653e85b",
-      "url": "https://www.semanticscholar.org/paper/b230d3cbf5532181594da88da6b4df923653e85b",
-      "title": "Modelling Phase Change Material Solidification/Melting for Accurate Thermal Energy Storage Design in Refrigeration Applications",
-      "openAccessPdf": {
-        "url": "https://doi.org/10.1088/1742-6596/2940/1/012009",
-        "status": "GOLD",
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1088/1742-6596/2940/1/012009?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1088/1742-6596/2940/1/012009, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2025-01-01",
-      "authors": [
-        {
-          "authorId": "2342847001",
-          "name": "A. Ferraioli"
-        },
-        {
-          "authorId": "2360501336",
-          "name": "Carotenuto Ternullo"
-        },
-        {
-          "authorId": "2342858698",
-          "name": "A. Maiorino"
-        },
-        {
-          "authorId": "2342859801",
-          "name": "F. Giannetti"
-        },
-        {
-          "authorId": "2342859795",
-          "name": "C. Aprea"
-        }
-      ],
-      "abstract": "Phase Change Materials (PCMs) offer a promising solution for thermal energy storage (TES) in refrigeration, especially for critical applications like medicine and food preservation. This paper presents a new modelling approach to optimise PCM performance in cold storage systems. The research uses the Enthalpy-Porosity Model (EPM) to simulate PCM solidification and melting processes. This model offers a more accurate prediction than simpler methods and accounts for natural convection effects. The FreeFem++ toolbox and Galerkin method are employed for numerical solutions, enabling efficient parallel computing. By precisely modelling the phase change behaviour, the proposed method aids in designing high-efficiency and reliable cold storage systems with PCMs. This research contributes to advancements in PCM technology for sustainable refrigeration solutions."
     }
   ]
 }
