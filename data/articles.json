@@ -1,6 +1,29 @@
 {
   "articles": [
     {
+      "paperId": "b3a8bdd45fdd89979e483dcaca7901bfe47f5d25",
+      "url": "https://www.semanticscholar.org/paper/b3a8bdd45fdd89979e483dcaca7901bfe47f5d25",
+      "title": "РЕШЕНИЕ МЕТОДОМ КОНЕЧНЫХ ЭЛЕМЕНТОВ КРАЕВОЙ ЗАДАЧИ ДЛЯ ЭЛЛИПТИЧЕСКОГО УРАВНЕНИЯ С ДЕЛЬТА-ФУНКЦИЕЙ ДИРАКА В ПРАВОЙ ЧАСТИ",
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.15372/sjnm20250403?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.15372/sjnm20250403, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2025-11-30",
+      "authors": [
+        {
+          "authorId": "148518408",
+          "name": "Д. Н. Романов"
+        },
+        {
+          "authorId": "2135865116",
+          "name": "М.В. Урев"
+        }
+      ],
+      "abstract": "В данной работе на примере уравнения Пуассона рассматриваются вопросы численного решения методом конечных элементов однородной краевой задачи Дирихле для эллиптического уравнения в двумерной многоугольной выпуклой области Ω с сингулярной правой частью в виде дельта-функции Дирака. Доказана теорема существования и единственности обобщенного решения в дробном гильбертовом пространстве Соболева Hs(Ω), где 1/2 < s < 1. Предложен и изучен подход к дискретному анализу задачи методом конечных элементов. Приведены результаты численных экспериментов по решению методической задачи с помощью пакета FreeFem++, подтверждающие полученную оценку уклонения дискретного решения от точного.\n A numerical solution by the finite element method of a homogeneous Dirichlet boundary value problem for an elliptic equation is examined (using a Poisson equation as an example) in a two-dimensional convex polygonal domain Ω with a singular right-hand side given by the Dirac delta function. A theorem on the existence and uniqueness of a generalized solution in the fractional Sobolev space Hs(Ω), 1/2 < s < 1, is proved. An approach to discrete analysis of the problem using the finite element method is proposed and investigated. The results of numerical experiments for a model problem, obtained using the FreeFem++ software, are presented. They confirm the error estimate of the difference between the discrete and exact solutions derived in the paper."
+    },
+    {
       "paperId": "d12fbf112232ecceccd8ca1a5ee5db166149a432",
       "url": "https://www.semanticscholar.org/paper/d12fbf112232ecceccd8ca1a5ee5db166149a432",
       "title": "ЗАСТОСУВАННЯ МАТЕМАТИЧНОГО АПАРАТУ ОБЧИСЛЮВАЛЬНОЇ ГІДРОДИНАМІКИ ДЛЯ ДОСЛІДЖЕННЯ ПРОЦЕСІВ ГРАВІТАЦІЙНОГО ЗБАГАЧЕННЯ МАГНЕТИТОВИХ РУД У СПІРАЛЬНИХ СЕПАРАТОРАХ",
@@ -26,6 +49,33 @@
         }
       ],
       "abstract": "На прикладі визначення швидкості вільного та стисненого падіння частинок встановлена можливість використання методів обчислювальної гідродинаміки для моделювання процесу осадження мінеральних частинок у рідині та визначення швидкості їх падіння. Показано, що ефективність розділення у спіральних сепараторах суттєво залежить від взаємозв’язку розміру та густини частинок. Збільшення діаметра частинок зменшує вплив турбулентних коливань потоку, що сприяє стабілізації їх траєкторій і забезпечує більш чіткий поділ фракцій. Проведене чисельне моделювання із застосуванням методу скінченних елементів (FEM) у середовищі FreeFEM++ дало змогу визначити гідродинамічні та кінематичні характеристики потоку, які можуть бути використані для оптимізації конструктивних параметрів та режимів роботи спіральних сепараторів задля підвищення селективності процесу гравітаційного збагачення магнетитових руд. Побудова тривимірної моделі потоку відкрила можливості для детального аналізу зон турбулентності, локального збагачення та розподілу концентрацій по ширині каналу. Такі дослідження можуть бути розширені у програмних комплексах OpenFOAM або COMSOL, що підтримують обмін даними з FreeFEM++ через формат mesh-файлів. Результати моделювання були підтверджені фізичними експериментами на спіральному сепараторі СВШ-2-1000, який має параболічну геометрію поперечного перерізу, та сепараторі лабораторного масштабу з профілем поперечного перерізу у вигляді кривої слабко похилої. Лабораторний сепаратор забезпечує отримання концентрату з вищими показниками виходу, вмісту та вилучення магнетиту (до 85,4 %). Втрати магнетиту з хвостами становили 12,5 % для лабораторного апарата СВШ-2-1000 і не перевищували 3 %. Отримані результати свідчать про високу узгодженість чисельних розрахунків і експериментальних даних. Підтверджують перспективність використання обчислювальної гідродинаміки для дослідження та оптимізації процесів гравітаційного збагачення у спіральних сепараторах."
+    },
+    {
+      "paperId": "c44b86771435f418a277baf2b20776d1cb8ab06c",
+      "url": "https://www.semanticscholar.org/paper/c44b86771435f418a277baf2b20776d1cb8ab06c",
+      "title": "PHƯƠNG PHÁP PHẦN TỬ HỮU HẠN KHÔNG – THỜI GIAN GIẢI XẤP XỈ PHƯƠNG TRÌNH PHẢN ỨNG KHUẾCH TÁN",
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.54607/hcmue.js.22.10.4940(2025)?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.54607/hcmue.js.22.10.4940(2025), which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2025-10-30",
+      "authors": [
+        {
+          "authorId": "2399426569",
+          "name": "Phi Hùng Phạm"
+        },
+        {
+          "authorId": "2328919122",
+          "name": "Thị Tuyết Nhung Mai"
+        },
+        {
+          "authorId": "2222823444",
+          "name": "Thị Thanh Mơ Tạ"
+        }
+      ],
+      "abstract": "Trong bài báo này chúng tôi trình bày phương pháp phần tử hữu hạn không-thời gian (space-time finite element method) giải xấp xỉ phương trình phản ứng khuếch tán. Khác với các phương pháp số truyền thống phân tách xấp xỉ miền thời gian và không gian riêng biệt, phương pháp này rời rạc đồng thời miền Q = Ω × (0, T ) trên cùng một cấu trúc lưới, giúp tối ưu chi phí tính toán và nâng cao độ chính xác của nghiệm xấp xỉ. Cách tiếp cận của phương pháp là đưa bài toán ban đầu về dạng biến phân (bài toán yếu). Tính đặt chỉnh của bài toán yếu được chứng minh thông qua việc áp dụng định lí Banach–Nečas–Babuška, đảm bảo sự tồn tại, duy nhất nghiệm. Phân tích đánh giá sai số tiên nghiệm (a priori error estimates) cho thấy phương pháp đạt tốc độ hội tụ tối ưu trong không gian tương ứng. Tính hiệu quả và độ chính xác của phương pháp được kiểm chứng qua các thí nghiệm số được xây dựng trên phần mềm mã nguồn mở FreeFEM++."
     },
     {
       "paperId": "57b37c980f7305ce8d323bc946dfce96bf0cdd1a",
@@ -239,64 +289,6 @@
         }
       ],
       "abstract": "In this article, we propose a unified variational framework for deriving the evolution equation of the level set function in topology optimization, departing from conventional Hamilton–Jacobi‐based formulations. The key idea is the introduction of an auxiliary domain, geometrically identical to the physical design domain, occupied by fictitious matter which is dynamically excited by the conditions prevailing in the design domain. By assigning kinetic and potential energy to this matter and interpreting the level set function as the generalized coordinate to describe its deformation, the governing equation of motion is determined via Hamilton's principle, yielding a modified wave equation. Appropriate combinations of model parameters enable the recovery of classical physical behaviors, including the standard and biharmonic wave equations. The evolution problem is formulated in weak form using variational methods and implemented in the software environment FreeFEM++. The influence of the numerical parameters is analyzed on the example of minimum mean compliance. The results demonstrate that topological complexity and strut design can be effectively controlled by the respective parameters. Notably, the proposed formulation inherently supports the nucleation of new holes and maintains a well‐defined level set function without requiring explicit re‐initialization procedures, both of which emerge naturally from the physically motivated variational framework. The inclusion of a damping term further enhances numerical stability. To showcase the versatility and robustness of our method, we also apply it to compliant mechanism design and a bi‐objective optimization problem involving self‐weight and compliance minimization under local stress constraints."
-    },
-    {
-      "paperId": "7b008b2138f85d2ce0fecd1b56befedfbb5e88df",
-      "url": "https://www.semanticscholar.org/paper/7b008b2138f85d2ce0fecd1b56befedfbb5e88df",
-      "title": "Controle ótimo em equações de ondas via equilíbrios de Nash e Pareto",
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.5269/bspm.68317?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.5269/bspm.68317, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2025-02-22",
-      "authors": [
-        {
-          "authorId": "2056810155",
-          "name": "Pitágoras Pinheiro de Carvalho"
-        },
-        {
-          "authorId": "2351960785",
-          "name": "Gildenia R. Sousa-Neto"
-        }
-      ],
-      "abstract": "The objective of this work is to making a theoretical and numerical study on bi-objective optimal control for the linear and semi-linear wave equations, via Nash and Pareto equilibrium strategies, in three-dimensional domains. Due to being related to an optimization process, we will use cost functional minimization, formulated in combination with some strategies related to Nash Equilibrium and Pareto Equilibrium. We will use the FreeFem++ software to transcribe the theoretical problems to the C++ programming language, describing the spatial discretization data through the Finite Element Method (FEM), and the discretization of its temporal evolution, with the Finite Difference Method."
-    },
-    {
-      "paperId": "b230d3cbf5532181594da88da6b4df923653e85b",
-      "url": "https://www.semanticscholar.org/paper/b230d3cbf5532181594da88da6b4df923653e85b",
-      "title": "Modelling Phase Change Material Solidification/Melting for Accurate Thermal Energy Storage Design in Refrigeration Applications",
-      "openAccessPdf": {
-        "url": "https://doi.org/10.1088/1742-6596/2940/1/012009",
-        "status": "GOLD",
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1088/1742-6596/2940/1/012009?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1088/1742-6596/2940/1/012009, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2025-01-01",
-      "authors": [
-        {
-          "authorId": "2342847001",
-          "name": "A. Ferraioli"
-        },
-        {
-          "authorId": "2360501336",
-          "name": "Carotenuto Ternullo"
-        },
-        {
-          "authorId": "2342858698",
-          "name": "A. Maiorino"
-        },
-        {
-          "authorId": "2342859801",
-          "name": "F. Giannetti"
-        },
-        {
-          "authorId": "2342859795",
-          "name": "C. Aprea"
-        }
-      ],
-      "abstract": "Phase Change Materials (PCMs) offer a promising solution for thermal energy storage (TES) in refrigeration, especially for critical applications like medicine and food preservation. This paper presents a new modelling approach to optimise PCM performance in cold storage systems. The research uses the Enthalpy-Porosity Model (EPM) to simulate PCM solidification and melting processes. This model offers a more accurate prediction than simpler methods and accounts for natural convection effects. The FreeFem++ toolbox and Galerkin method are employed for numerical solutions, enabling efficient parallel computing. By precisely modelling the phase change behaviour, the proposed method aids in designing high-efficiency and reliable cold storage systems with PCMs. This research contributes to advancements in PCM technology for sustainable refrigeration solutions."
     }
   ]
 }
