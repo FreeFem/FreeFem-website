@@ -21,8 +21,8 @@
           "name": "Ariel L. Lombardi"
         },
         {
-          "authorId": "2401410850",
-          "name": "Lucas Venturato"
+          "authorId": "102457451",
+          "name": "L. Venturato"
         }
       ],
       "abstract": "We consider a model for Koiter linear elastic elliptic shells in contact with a deformable obstacle and we study the convergence of the solution of this model towards the solution of the corresponding model for elastic elliptic membrane shells when the small parameter of the model (thickness) tends to zero. Furthermore, we propose a numerical scheme for this kind of contact problems for Koiter shells and show numerical simulations after implementation by using the free software package FreeFem++."
