@@ -48,7 +48,7 @@
           "name": "Á. Arós"
         },
         {
-          "authorId": "2401414437",
+          "authorId": "48327823",
           "name": "Ariel L. Lombardi"
         },
         {
@@ -172,7 +172,7 @@
         },
         {
           "authorId": "2372154995",
-          "name": "Frédéric Hecht"
+          "name": "F. Hecht"
         },
         {
           "authorId": "2306286684",
@@ -214,12 +214,12 @@
       "publicationDate": "2025-09-22",
       "authors": [
         {
-          "authorId": "2381734903",
+          "authorId": "2254347583",
           "name": "Christopher M. Douglas"
         },
         {
           "authorId": "2315587080",
-          "name": "Pierre Jolivet"
+          "name": "P. Jolivet"
         }
       ],
       "abstract": "Nonlinear PDEs give rise to complex dynamics that are often difficult to analyze in state space due to their relatively large numbers of degrees of freedom, ill-conditioned operators, and changing spatial and parameter resolution requirements. This work introduces ff-bifbox: a new open-source toolbox for performing numerical branch tracing, stability/bifurcation analysis, resolvent analysis, and time integration of large, time-dependent nonlinear PDEs discretized on adaptively refined meshes in two and three spatial dimensions. Spatial discretization is handled using finite elements in FreeFEM, with the discretized operators manipulated in a distributed framework via PETSc. Following a summary of the underlying theory and numerics, results from three examples are presented to validate the implementation and demonstrate its capabilities. The considered examples, which are provided with runnable ff-bifbox code, include: a 3-D Brusselator system, a 3-D plate buckling system, and a 2-D compressible Navier--Stokes system. In addition to reproducing results from prior studies, novel results are presented for each system."
