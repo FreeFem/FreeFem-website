@@ -1,6 +1,53 @@
 {
   "articles": [
     {
+      "paperId": "60877c4e7bea9e5a41b42889b437341dae975f12",
+      "url": "https://www.semanticscholar.org/paper/60877c4e7bea9e5a41b42889b437341dae975f12",
+      "title": "On the Interplay of Micropolarity and Viscoelastic Relaxation in Controlling Drag Within a Cavity Flow",
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.37256/cm.7220269430?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.37256/cm.7220269430, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2026-04-15",
+      "authors": [
+        {
+          "authorId": "2268582844",
+          "name": "Khizar Hayat Khan"
+        },
+        {
+          "authorId": "2429914163",
+          "name": "Muhammad Sabeel Khan"
+        },
+        {
+          "authorId": "2429915413",
+          "name": "Nazim Hussain Hanjano"
+        },
+        {
+          "authorId": "2407583049",
+          "name": "Farxod Akmalovich Ixtiyarov"
+        },
+        {
+          "authorId": null,
+          "name": "Saeed Islam"
+        },
+        {
+          "authorId": "2165406432",
+          "name": "Amna"
+        },
+        {
+          "authorId": "2429913361",
+          "name": "Ghulam Khadija"
+        },
+        {
+          "authorId": "2202302796",
+          "name": "M. Bilal"
+        }
+      ],
+      "abstract": "The interplay between microrotation, microinertia, and viscoelastic relaxation significantly influences the hydrodynamic performance of non-Newtonian cavity flows. This study investigates the combined effects of the Eringen number, micropolar coupling constant, and fluid relaxation factor on drag force, microrotation, and flow behavior in a two-dimensional lid-driven cavity. The governing nonlinear partial differential equations are formulated using Eringen’s micropolar theory with relaxation-time-dependent stress, and the characteristic Galerkin finite element method is employed for numerical solution using a custom FreeFEM++ implementation. The results reveal a strong coupling between microrotation and viscoelastic relaxation effects. Increasing the relaxation factor enhances flow elasticity, leading to variations in drag force depending on the flow regime. The Eringen number stabilizes the flow and suppresses drag oscillations, while the micropolar coupling constant modulates shear-layer thickness and vortex intensity. Higher Eringen number increases kinetic energy and produces more ordered streamline patterns, whereas larger values of micropolar constant reduces drag while amplifying microrotation. Overall, tuning Eringen number, micropolar constant and time relaxation provides an effective mechanism for controlling drag and optimizing flow stability. These findings offer valuable insights for the design of advanced microfluidic and rheological systems where microstructural and viscoelastic effects coexist."
+    },
+    {
       "paperId": "1a51327cc71e569ec98af19a79e51f2b1d44fa90",
       "url": "https://www.semanticscholar.org/paper/1a51327cc71e569ec98af19a79e51f2b1d44fa90",
       "title": "Automated Sound Field Estimation combining robotized acoustic\n\nmeasurements and the boundary elements method",
@@ -270,37 +317,6 @@
         }
       ],
       "abstract": "Nonlinear PDEs give rise to complex dynamics that are often difficult to analyze in state space due to their relatively large numbers of degrees of freedom, ill-conditioned operators, and changing spatial and parameter resolution requirements. This work introduces ff-bifbox: a new open-source toolbox for performing numerical branch tracing, stability/bifurcation analysis, resolvent analysis, and time integration of large, time-dependent nonlinear PDEs discretized on adaptively refined meshes in two and three spatial dimensions. Spatial discretization is handled using finite elements in FreeFEM, with the discretized operators manipulated in a distributed framework via PETSc. Following a summary of the underlying theory and numerics, results from three examples are presented to validate the implementation and demonstrate its capabilities. The considered examples, which are provided with runnable ff-bifbox code, include: a 3-D Brusselator system, a 3-D plate buckling system, and a 2-D compressible Navier--Stokes system. In addition to reproducing results from prior studies, novel results are presented for each system."
-    },
-    {
-      "paperId": "4560a01f24998bf47db0e29d3748dc2c28e84522",
-      "url": "https://www.semanticscholar.org/paper/4560a01f24998bf47db0e29d3748dc2c28e84522",
-      "title": "MULTISCALE IN SILICO MODELS OF FRACTURE HEALING: PROVIDING AN INTEGRATIVE FRAMEWORK TO UNDERSTAND THE INFLUENCES OF DEFECT SIZE, SEX DIFFERENCES, AND INFLAMMATION",
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1302/1358-992x.2025.7.097?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1302/1358-992x.2025.7.097, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2025-09-15",
-      "authors": [
-        {
-          "authorId": "1734968757",
-          "name": "Laura Lafuente-Gracia"
-        },
-        {
-          "authorId": "34687120",
-          "name": "Mojtaba Barzegari"
-        },
-        {
-          "authorId": "47751347",
-          "name": "A. Carlier"
-        },
-        {
-          "authorId": "2624344",
-          "name": "L. Geris"
-        }
-      ],
-      "abstract": "Bone healing is a well-coordinated process involving numerous biological entities. While successful healing typically occurs within weeks, fracture severity, anatomical location and host factors can lead to delayed or non-healing. Critical-size defects require intervention to promote healing, with healing depending on the defect's location and its surroundings. Among host factors, the role of sex differences remains poorly understood, as most preclinical research has focused primarily on male subjects. Consequently, treatments may affect men and women differently. The use of (sex-specific) in silico models offers an interesting methodology to investigate the biological mechanisms underlying fracture healing and the influences of external factors, as well as to propose patient-specific treatment strategies.Following existing bioregulatory models we developed multiscale in silico models of bone healing to investigate normal and impaired sex-specific healing in long bone, mandibular and calvarial defects. These geometries were derived from in vivo experimental set-ups in rabbits and rodents. Our in silico models describe the spatiotemporal evolution of biochemical factors, cells and tissues, from the early inflammatory response to hard callus formation, incorporating sprouting angiogenesis with lateral inhibition of endothelial cells via Dll4-Notch1 signaling. The models were parameterized with sex-specific values informed by literature, focusing on young males and females of reproductive age. Finally, we explored the influence of a scaffold produced by melt electrowriting (MEW), coated (or not) with cells and/or growth factors (GF) as a treatment strategy. The models were implemented in MATLAB and FreeFEM and validated against in vivo data from the literature and in-house experiments.For normal healing in long bone defects, our model predicted a stronger inflammatory response in females and a stronger repair response in males, in alignment with literature data (results not shown). The predicted healing outcomes were similar between both sexes, matching experimental observations both qualitatively and quantitatively. For critical-sized craniofacial defects, our in silico predictions of a non-union matched the in vivo results at 4 and 12 weeks. We used our models to investigate adequate GF concentrations to load onto the MEW scaffold to achieve (delayed) healing.In summary, our in silico models predict realistic healing patterns that align with experimentally observed behavior, enhancing our understanding of bone defect healing mechanisms under different conditions, a first step towards the implementation of patient-specific in silico models of bone regeneration."
     }
   ]
 }
