@@ -1,6 +1,49 @@
 {
   "articles": [
     {
+      "paperId": "22f9c65a67048f79cabcb82f48e6acbfe18e8a49",
+      "url": "https://www.semanticscholar.org/paper/22f9c65a67048f79cabcb82f48e6acbfe18e8a49",
+      "title": "Your Simulation Runs but Solves the Wrong Physics: PDE-Grounded Intent Verification for LLM-Generated Multiphysics Simulation Code",
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2605.09360, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2026-05-10",
+      "authors": [
+        {
+          "authorId": "2257123072",
+          "name": "Zhen Song"
+        },
+        {
+          "authorId": "2375500998",
+          "name": "Yulong Liu"
+        },
+        {
+          "authorId": "2311721288",
+          "name": "Cheng Wan"
+        },
+        {
+          "authorId": "2349941403",
+          "name": "Chenjun Li"
+        },
+        {
+          "authorId": "2375702861",
+          "name": "Lingfu Liu"
+        },
+        {
+          "authorId": "2365429952",
+          "name": "Yunyi Li"
+        },
+        {
+          "authorId": "47177291",
+          "name": "C. Yuan"
+        }
+      ],
+      "abstract": "Execution-based evaluation of LLM-generated code implicitly treats successful execution as a proxy for correctness. In scientific simulation, this proxy is insufficient: a generated input file can run, mesh, and converge while encoding governing equations that differ from the user's intent. We call this mismatch between intended physics and generated code the comprehension-generation gap. We instantiate this in MOOSE, where Kernel and BC objects map compositionally to weak-form residual terms, enabling deterministic reconstruction of the encoded PDE and comparison against an intended contract. We formalize this comparison as the Intent Fidelity Score (IFS), a structural metric covering governing terms, BCs, ICs, coefficients, and time scheme. Building on IFS, we develop a PDE-grounded refinement loop that uses deterministic violation reports to correct generated code iteratively. We evaluate on MooseBench, a 220-case multiphysics benchmark with PDE-level ground truth released with this work. On this benchmark, our method consistently improves mean IFS over direct generation, with gains concentrated on hard cases. On the subset where direct generation falls below IFS 0.7, refinement adds +0.22 to +0.41 absolute IFS. In the deployment audit, execution-only repair improves execution success while leaving 39-40% of all 220 cases runnable but still solving the wrong physics across the three main deployment-audit models, exposing executability and intent fidelity as separable failure modes. Static proof-of-concept experiments on four PDE-oriented DSLs (UFL/FEniCS, FreeFEM, FiPy, and Devito) suggest that the reconstruction-and-comparison pattern extends beyond MOOSE. These findings reinforce that executable simulation code should be verified against the mathematical structure it is intended to encode, not accepted on execution alone."
+    },
+    {
       "paperId": "60877c4e7bea9e5a41b42889b437341dae975f12",
       "url": "https://www.semanticscholar.org/paper/60877c4e7bea9e5a41b42889b437341dae975f12",
       "title": "On the Interplay of Micropolarity and Viscoelastic Relaxation in Controlling Drag Within a Cavity Flow",
@@ -203,6 +246,33 @@
       "abstract": "На прикладі визначення швидкості вільного та стисненого падіння частинок встановлена можливість використання методів обчислювальної гідродинаміки для моделювання процесу осадження мінеральних частинок у рідині та визначення швидкості їх падіння. Показано, що ефективність розділення у спіральних сепараторах суттєво залежить від взаємозв’язку розміру та густини частинок. Збільшення діаметра частинок зменшує вплив турбулентних коливань потоку, що сприяє стабілізації їх траєкторій і забезпечує більш чіткий поділ фракцій. Проведене чисельне моделювання із застосуванням методу скінченних елементів (FEM) у середовищі FreeFEM++ дало змогу визначити гідродинамічні та кінематичні характеристики потоку, які можуть бути використані для оптимізації конструктивних параметрів та режимів роботи спіральних сепараторів задля підвищення селективності процесу гравітаційного збагачення магнетитових руд. Побудова тривимірної моделі потоку відкрила можливості для детального аналізу зон турбулентності, локального збагачення та розподілу концентрацій по ширині каналу. Такі дослідження можуть бути розширені у програмних комплексах OpenFOAM або COMSOL, що підтримують обмін даними з FreeFEM++ через формат mesh-файлів. Результати моделювання були підтверджені фізичними експериментами на спіральному сепараторі СВШ-2-1000, який має параболічну геометрію поперечного перерізу, та сепараторі лабораторного масштабу з профілем поперечного перерізу у вигляді кривої слабко похилої. Лабораторний сепаратор забезпечує отримання концентрату з вищими показниками виходу, вмісту та вилучення магнетиту (до 85,4 %). Втрати магнетиту з хвостами становили 12,5 % для лабораторного апарата СВШ-2-1000 і не перевищували 3 %. Отримані результати свідчать про високу узгодженість чисельних розрахунків і експериментальних даних. Підтверджують перспективність використання обчислювальної гідродинаміки для дослідження та оптимізації процесів гравітаційного збагачення у спіральних сепараторах."
     },
     {
+      "paperId": "979a33d89c44b6c5794c0bd2d6068bb6df30b8dc",
+      "url": "https://www.semanticscholar.org/paper/979a33d89c44b6c5794c0bd2d6068bb6df30b8dc",
+      "title": "New Closed-Form Solutions for Electromagnetic Parameters of an Innovative Quasi-TEM Coaxial Directional Coupler for Radar Systems Applications",
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/aicps66617.2025.11513468?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/aicps66617.2025.11513468, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2025-11-02",
+      "authors": [
+        {
+          "authorId": "30538302",
+          "name": "Yamina Bekri"
+        },
+        {
+          "authorId": "2641977",
+          "name": "N. Benahmed"
+        },
+        {
+          "authorId": "2310479318",
+          "name": "Tewfik Khiat"
+        }
+      ],
+      "abstract": "This paper presents accurate and simple closed-form analytical expressions for the quasi-TEM (Transverse Electromagnetic) parameters of an innovative class of high-frequency rectangular coaxial directional couplers with metallic diaphragms, developed primarily for radar and modern telecommunication applications. These couplers are designed to achieve an optimal balance of ultra-low cost, minimal insertion loss, wide operational bandwidth, and high performance, making them highly suitable for next-generation high-frequency systems. The coupling factor is effectively controlled by adjusting the normalized aperture half-width (s/h), offering significant design flexibility. Additionally, the integration of an air gap between the dielectric and the ground substantially reduces circuit losses compared to conventional coupler structures. A two-dimensional finite element method (2D-FEM) analysis was conducted using the FreeFEM environment, supported by a custom-developed computer-aided engineering (CAE) program to compute key electromagnetic (EM) parameters. The proposed closed-form expressions maintain relative errors below 1% across a wide range of geometrical configurations specifically, for s/h ratios varying from 0.025 to 0.475 and dielectric-width to inner-conductor-width ratios (w/a) from 1.1 to 2.7. As a validation example, a 50-ohm, 20-dB directional coupler operating at 8 GHz was designed, achieving 12 dB of directivity and 31 dB of isolation. The S-parameters calculated in MATLAB closely match the results from CST full-wave simulations, confirming the accuracy and practical relevance of the proposed CAD models for advanced microwave component design."
+    },
+    {
       "paperId": "c44b86771435f418a277baf2b20776d1cb8ab06c",
       "url": "https://www.semanticscholar.org/paper/c44b86771435f418a277baf2b20776d1cb8ab06c",
       "title": "PHƯƠNG PHÁP PHẦN TỬ HỮU HẠN KHÔNG – THỜI GIAN GIẢI XẤP XỈ PHƯƠNG TRÌNH PHẢN ỨNG KHUẾCH TÁN",
@@ -247,76 +317,6 @@
         }
       ],
       "abstract": "We study a stochastic differential model for the dynamics of institutional corruption, extending a deterministic three-variable system—corruption perception, proportion of sanctioned acts, and policy laxity—by incorporating Gaussian perturbations into key parameters. We prove global existence and uniqueness of solutions in the physically relevant domain, and we analyze the linearization around the asymptotically stable equilibrium of the deterministic system. Explicit mean square bounds for the linearized process are derived in terms of the spectral properties of a symmetric matrix, providing insight into the temporal validity of the linear approximation. To investigate global behavior, we relate the first exit time from the domain of interest to backward Kolmogorov equations and numerically solve the associated elliptic and parabolic PDEs with FreeFEM, obtaining estimates of expectations and survival probabilities. An application to the case of Mexico highlights nontrivial effects: while the spectral structure governs local stability, institutional volatility can non-monotonically accelerate global exit, showing that highly reactive interventions without effective sanctions increase uncertainty. Policy implications and possible extensions are discussed."
-    },
-    {
-      "paperId": "e35503581cb0d0302d8fd755efe8f34e3495e49d",
-      "url": "https://www.semanticscholar.org/paper/e35503581cb0d0302d8fd755efe8f34e3495e49d",
-      "title": "Mathematical Aspects of ANM/FEM Numerical Model, Applied to Nonlinear Elastic, and Thermo Elastic Analysis of Wrinkles in Film/Substrate Systems, and a New Implementation in the FreeFEM++ Language",
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.3390/math13193063?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.3390/math13193063, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2025-09-23",
-      "authors": [
-        {
-          "authorId": "2222644275",
-          "name": "Pascal Ventura"
-        },
-        {
-          "authorId": "2372154995",
-          "name": "F. Hecht"
-        },
-        {
-          "authorId": "2306286684",
-          "name": "Michel Potier-Ferry"
-        },
-        {
-          "authorId": "9703693",
-          "name": "H. Zahrouni"
-        },
-        {
-          "authorId": "2143944009",
-          "name": "Fan Xu"
-        },
-        {
-          "authorId": "2222935407",
-          "name": "Hamza Azzayani"
-        },
-        {
-          "authorId": "2301519254",
-          "name": "Michael Brun"
-        },
-        {
-          "authorId": "2212262477",
-          "name": "Anh-Khoa Chau"
-        }
-      ],
-      "abstract": "The main purposes of the present paper are to present the mathematical and algorithmic aspects of the ANM/FEM numerical model and to show how it is applied to analyze elastic and thermo-elastic nonlinear solid mechanical problems. ANM is a robust continuation method based on a perturbation technique for solving nonlinear problems dependent on a loading parameter. Historically, this technique has been successfully applied to problems in various fields of solid and fluid mechanics. This paper shows how ANM is used to solve nonlinear elastic and nonlinear thermo-elastic problems involving elastic behavior and geometrical nonlinearities. The implementation of ANM for FEM in the FreeFEM++ language is then presented. The FEM software development platform, called FreeFEM++, is structured to work with variational formulations and, therefore, is well adapted to implement ANM for instability problems in solid mechanics. In order to illustrate the great efficiency of FreeFEM++, scripts will be presented for computing the different steps of ANM continuation for solid elastic structures, considering simple geometries subjected to conservative loading. For the purpose of validation, the problem of a cantilever subjected to an applied force is presented. Next, the new numerical model is applied to study wrinkles appearing in a planar film/substrate system that is subjected to compressive surface forces at the lateral faces of the film. Finally, the model is applied to a spherical film/substrate system subjected to thermo-elastic shrinkage. In both cases, the ANM/FEM prediction method, together with a Newton–Riks correction (if needed), identifies the equilibrium paths efficiently, especially after the post-buckling regime."
-    },
-    {
-      "paperId": "b65358d41ed4f6a06df8d0f89344ad27b4fd23a1",
-      "url": "https://www.semanticscholar.org/paper/b65358d41ed4f6a06df8d0f89344ad27b4fd23a1",
-      "title": "ff-bifbox: A scalable, open-source toolbox for bifurcation analysis of nonlinear PDEs",
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2509.18429, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2025-09-22",
-      "authors": [
-        {
-          "authorId": "2254347583",
-          "name": "Christopher M. Douglas"
-        },
-        {
-          "authorId": "2315587080",
-          "name": "P. Jolivet"
-        }
-      ],
-      "abstract": "Nonlinear PDEs give rise to complex dynamics that are often difficult to analyze in state space due to their relatively large numbers of degrees of freedom, ill-conditioned operators, and changing spatial and parameter resolution requirements. This work introduces ff-bifbox: a new open-source toolbox for performing numerical branch tracing, stability/bifurcation analysis, resolvent analysis, and time integration of large, time-dependent nonlinear PDEs discretized on adaptively refined meshes in two and three spatial dimensions. Spatial discretization is handled using finite elements in FreeFEM, with the discretized operators manipulated in a distributed framework via PETSc. Following a summary of the underlying theory and numerics, results from three examples are presented to validate the implementation and demonstrate its capabilities. The considered examples, which are provided with runnable ff-bifbox code, include: a 3-D Brusselator system, a 3-D plate buckling system, and a 2-D compressible Navier--Stokes system. In addition to reproducing results from prior studies, novel results are presented for each system."
     }
   ]
 }
