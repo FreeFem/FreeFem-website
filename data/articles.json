@@ -1,6 +1,60 @@
 {
   "articles": [
     {
+      "paperId": "5bb1c61c2e3a04c0908a1bb604dcb277d22118d3",
+      "url": "https://www.semanticscholar.org/paper/5bb1c61c2e3a04c0908a1bb604dcb277d22118d3",
+      "title": "Численное моделирование задач теории упругости в напряжениях методом конечных элементов",
+      "openAccessPdf": {
+        "url": "https://doi.org/10.71310/pcam.3_73.2026.09",
+        "status": "HYBRID",
+        "license": "CCBY",
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.71310/pcam.3_73.2026.09?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.71310/pcam.3_73.2026.09, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2026-07-02",
+      "authors": [
+        {
+          "authorId": "2063374931",
+          "name": "А.А. Халджигитов"
+        },
+        {
+          "authorId": "2447543875",
+          "name": "А.А. Бобоназаров"
+        },
+        {
+          "authorId": "2422866054",
+          "name": "Р. Рахмонова"
+        }
+      ],
+      "abstract": "The paper addresses the formulation of plane elasticity problems in terms of stresses and their numerical solution by the Galerkin finite element method. Based on the equilibrium equations, geometric relations, and physical laws of elasticity, a system of differential equations describing the plane stress state of an elastic medium is derived. The Galerkin method yields the weak form of the boundary value problem and a discrete model suitable for computer implementation. The bilinear forms and local finite element matrices required to assemble the global algebraic system are constructed. The algorithms are implemented in C++ and FreeFEM++. The approach is verified on the classical Kirsch problem of stress distribution around a circular hole in an elastic plate: both implementations agree well with each other and with known analytical solutions, confirming the correctness of the formulation and the applicability of the method."
+    },
+    {
+      "paperId": "f7694f0797902bda5f901a0f15871dc548393047",
+      "url": "https://www.semanticscholar.org/paper/f7694f0797902bda5f901a0f15871dc548393047",
+      "title": "Estudio e implementación del método multiescala generalizado (GMsFEM)",
+      "openAccessPdf": {
+        "url": "https://doi.org/10.5377/pc.v1i21.23092",
+        "status": "GOLD",
+        "license": "CCBY",
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.5377/pc.v1i21.23092?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.5377/pc.v1i21.23092, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2026-06-24",
+      "authors": [
+        {
+          "authorId": "2447634225",
+          "name": "A. Forero-Laiton"
+        },
+        {
+          "authorId": "2447633993",
+          "name": "Y. Sarmiento-Perdomo"
+        },
+        {
+          "authorId": "2447637486",
+          "name": "Y. Trujillo-Ladino"
+        }
+      ],
+      "abstract": "The aim of this article is to study and apply three numerical methods for solving elliptic partial differential equations: the finite element method (FEM), the multiscale finite element method (MsFEM), and the generalized multiscale finite element method (GMsFEM), with special emphasis on the latter. To this end, a theoretical review of their variational and matrix foundations is presented, followed by computational implementations for homogeneous, heterogeneous, and high-contrast diffusion problems. The simulations were carried out using FreeFem++ and MATLAB, which made it possible to compare the performance of the methods under different scenarios. The results show that the classical multiscale method has limitations when the problem involves highly heterogeneous media or non-separable scales, whereas the generalized multiscale method provides a better representation of local behavior through the construction of basis functions obtained from local spectral problems. It is concluded that this latter method is a more suitable alternative for the numerical approximation of complex multiscale problems, especially in high-contrast settings, where reducing degrees of freedom is required without significantly compromising approximation quality."
+    },
+    {
       "paperId": "739a13059e6365eb10b35632886da263fceecd77",
       "url": "https://www.semanticscholar.org/paper/739a13059e6365eb10b35632886da263fceecd77",
       "title": "EXPRESSION OF CONCERN to CORRIGENDUM. Development of thermoelasticity equations for strains",
@@ -18,6 +72,37 @@
         }
       ],
       "abstract": "Before corrigendum (First published version)Khaldjigitov, A., Djumayozov, U., Tilovov, O., Bobonazarov, A., Khudazarov, R., Pulatov, S. (2026). EXPRESSION OF CONCERN AND CORRIGENDUM. Development of thermoelasticity equations for strains. EUREKA: Physics and Engineering, 1, 181-194. https://doi.org/10.21303/2461-4262.2026.003924 \nAfter corrigendum (Corrected version)Khaldjigitov, A., Djumayozov, U., Tilovov, O., Bobonazarov, A., Khudazarov, R., Pulatov, S. (2026). CORRIGENDUM. Development of thermoelasticity equations for strains. EUREKA: Physics and Engineering, 1, 229–246. https://doi.org/10.21303/2461-4262.2026.004305 \nCorrigendum notification \nCORRIGENDUM NOTIFICATION to Development of thermoelasticity equations for strains (2026). EUREKA: Physics and Engneering, 1, 247–248. https://doi.org/10.21303/2461-4262.2026.004308 \n============================================ \nA revised version of the paper has been published Khaldjigitov, A., Djumayozov, U., Tilovov, O., Bobonazarov, A., Khudazarov, R., & Pulatov, S. (2026). CORRIGENDUM. Development of thermoelasticity equations for strains. EUREKA: Physics and Engineering, 1, 00–00. https://doi.org/10.21303/2461-4262.2026.004305, adding additional references, strengthening the discussion of compatibility conditions and stress-based formulations, as well as adding new numerical comparisons and convergence illustrations. \nHowever, the editors would like to warn readers that in the paper the admissibility and equivalence of the additional boundary conditions imposed in the strain formulation remain insufficiently justified from a rigorous mathematical standpoint. The revised manuscript demonstrates that the proposed approach may be computationally workable and numerically promising for the considered benchmark problems, but it still falls short of providing a complete theoretical foundation establishing equivalence with classical thermoelasticity. \nThe formulations proposed in the paper remain the subject of further theoretical verification, in particular regarding the rigorous mathematical justification of the boundary conditions and the proof of equivalence with classical thermoelasticity. \nThe revised version clearly reflects the authors' considerable efforts to address the criticisms. The manuscript has been significantly expanded, additional references have been added, the discussion of compatibility conditions and stress-based formulations has been strengthened, and new numerical comparisons and illustrations of convergence have been added. However, despite these improvements, some of the major methodological problems identified in the initial peer review remain only partially resolved. \nThe authors correctly emphasize that strain-based formulations of elasticity and thermoelasticity are admissible within continuum mechanics and that similar conceptual difficulties also arise in stress-based formulations such as the Beltrami–Michell approach. The corrigendum paper provides a broader theoretical context and cites literature discussing the dependence and independence of compatibility equations, uniqueness issues, and alternative formulations in stresses and strains. This addition improves the scientific positioning of the work and weakens the earlier criticism that the proposed formulation is fundamentally incompatible with classical thermoelasticity. \nThe derivation of the generalized compatibility equation, including thermal terms, in the corrigendum paper presented more clearly and consistently. The authors explicitly state that temperature enters the formulation through the Duhamel-Neumann relations and demonstrate the sequence of substitutions leading to equation (10). From the standpoint of thermoelastic theory, this derivation is acceptable. The revised text therefore adequately addresses the earlier concern that thermal effects had been introduced into the compatibility equations in an inconsistent or nonphysical manner. \nHowever, the central issue (namely the mathematical and physical admissibility of the additional boundary conditions) remains insufficiently resolved. The corrigendum paper continues to rely on equilibrium equations imposed on the boundary as additional boundary conditions required to close the strain-based system. Although the authors now cite prior works in which similar ideas were considered for stress-based formulations, this does not constitute a rigorous proof that the proposed boundary conditions are independent, sufficient, or fully equivalent to classical traction or displacement conditions. The response letter openly acknowledges that “a rigorous theoretical proof of equivalence to displacement-based boundary value problems requires a separate investigation and constitutes a subject of future research”. This statement is important because it effectively confirms that the principal mathematical concern has not yet been fully resolved. \nFrom a rigorous continuum mechanics perspective, the problem is not merely whether equilibrium relations can formally be written on the boundary, but whether such conditions ensure a well-posed problem in the Hadamard sense, including existence, uniqueness, and continuous dependence on the prescribed data. The corrigendum paper still does not provide such analysis. No variational framework, functional setting, or proof of equivalence between the proposed strain formulation and the classical displacement formulation is established. Consequently, the mathematical status of Problems A and B remains partially heuristic. \nThe discussion concerning the overdetermined nature of the original system and the subsequent reduction procedure has also been improved but not completely resolved. The authors now explicitly discuss the issue of selecting independent compatibility equations and relate their approach to the Beltrami–Michell framework. Nevertheless, the corrigendum paper still lacks a rigorous proof that the reduced Poisson-type system obtained for Problem B is mathematically equivalent to the original compatibility formulation and does not eliminate physically relevant constraints. The derivation is formally plausible, but the equivalence remains assumed rather than demonstrated. \nThe numerical section has been substantially strengthened compared with the original version. The addition of comparisons with FreeFEM++ finite element results, convergence plots, mesh refinement comments, and quantitative discrepancy estimates represents a clear improvement. The agreement between the finite-difference formulation and the FEM solution is indeed reasonably good for the selected benchmark example. The convergence behavior shown in Fig. 3 also supports the internal numerical consistency of the implemented scheme. \nAt the same time, the presented validation still has limitations. The comparisons are restricted to a single relatively simple benchmark involving a rectangular plate with a prescribed sinusoidal temperature field. The study does not include analytical benchmark solutions, error norms, sensitivity analyses, or verification against cases with nontrivial mechanical loading or mixed boundary conditions. Moreover, the claim that strain-based formulations are “more accurate” than displacement-based approaches because displacement formulations require numerical differentiation is presented too categorically and without sufficient quantitative justification. Modern finite element methods formulated in displacements are capable of highly accurate stress recovery, and the issue is more subtle than stated in the manuscript. The current discussion tends to overgeneralize the limitations of displacement-based methods while emphasizing the advantages of the proposed approach without a sufficiently broad comparative basis. \nAnother important point is that the corrigendum paper occasionally mixes numerical evidence with mathematical validation. Numerical agreement between different discretization certainly supports the practical consistency of the method, but it cannot replace a proof of theoretical equivalence or well-posedness. Several statements in the conclusions continue to overstate the level of validation achieved. For example, assertions that the results “confirm the correctness” and “substantiate the validity” of the proposed thermoelastic equations should be formulated more cautiously, since the theoretical foundation of the additional boundary conditions remains unresolved. \nIn conclusion, the corrigendum paper should not be regarded as fundamentally incorrect, and the additional numerical results substantially strengthen the practical credibility of the approach. \nHowever, the work still contains unresolved theoretical issues that limit the strength of its claims. The paper may therefore be considered an interesting and potentially valuable exploratory contribution to alternative thermoelastic formulations, but not yet a fully validated theoretical framework."
+    },
+    {
+      "paperId": "720b58e49de09f1424a3dc68b2ed451c226f3e26",
+      "url": "https://www.semanticscholar.org/paper/720b58e49de09f1424a3dc68b2ed451c226f3e26",
+      "title": "НЕКОТОРЫЕ ВАРИАНТЫ УРАВНЕНИЯ КАНА-ХИЛЛИАРДА ДЛЯ ВОССТАНОВЛЕНИЯ ИЗОБРАЖЕНИЙ",
+      "openAccessPdf": {
+        "url": "",
+        "status": "CLOSED",
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.15372/sjnm20260207?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.15372/sjnm20260207, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2026-05-29",
+      "authors": [
+        {
+          "authorId": "2448622408",
+          "name": "Х. Факих"
+        },
+        {
+          "authorId": "2448621342",
+          "name": "Н. Насреддин"
+        },
+        {
+          "authorId": "2448620913",
+          "name": "С. Мансур"
+        },
+        {
+          "authorId": "2448622494",
+          "name": "Р. Мгамес"
+        }
+      ],
+      "abstract": "В данной статье интерес для нас представляет комплексная версия уравнения Бертоцци-Эседоглу-Жилле-Кана-Хиллиарда для восстановления черно-белых изображений, а также многокомпонентные системы Кана-Хиллиарда для восстановления изображений, т.е. расширение подхода для восстановления цветных изображений. Мы изучили корректность стационарной задачи, связанной с комплексным уравнением Бертоцци-Эседоглу-Жилле-Кана-Хиллиарда, а также с системами Бертоцци-Эседоглу-Жилле-Кана-Хиллиарда. Затем рассматривалась неявная дискретизация Эйлера по времени в обеих упомянутых выше моделях. Нам удалось доказать устойчивость неявной схемы Эйлера. Были выполнены численные эксперименты, которые подтверждают теоретические результаты и показывают эффективность схемы. Эти эксперименты проводились с использованием FreeFem++.\n In this article, we are interested in the complex version of Bertozzi-Esedoglu-Gillete-Cahn-Hilliard equation for grayscale image inpainting as well as the multi-component Cahn-Hilliard systems for image inpainting, that is an extension approach for color image inpainting. We have studied well-posedness of the steady state problem associated to the complex Bertozzi-Esedoglu-Gillete-Cahn-Hilliard equation as well as to Bertozzi-Esedoglu-Gillete-Cahn Hilliard systems. Then, Backward Euler discretization on time has been considered in both models mentioned above. We were able to prove the stability of the backward Euler scheme. Finally, we do some numerical simulations that confirm the theoretical results and show the efficiency of the scheme. The simulations were done using FreeFem++."
     },
     {
       "paperId": "22f9c65a67048f79cabcb82f48e6acbfe18e8a49",
@@ -236,87 +321,6 @@
         }
       ],
       "abstract": "В данной работе на примере уравнения Пуассона рассматриваются вопросы численного решения методом конечных элементов однородной краевой задачи Дирихле для эллиптического уравнения в двумерной многоугольной выпуклой области Ω с сингулярной правой частью в виде дельта-функции Дирака. Доказана теорема существования и единственности обобщенного решения в дробном гильбертовом пространстве Соболева Hs(Ω), где 1/2 < s < 1. Предложен и изучен подход к дискретному анализу задачи методом конечных элементов. Приведены результаты численных экспериментов по решению методической задачи с помощью пакета FreeFem++, подтверждающие полученную оценку уклонения дискретного решения от точного.\n A numerical solution by the finite element method of a homogeneous Dirichlet boundary value problem for an elliptic equation is examined (using a Poisson equation as an example) in a two-dimensional convex polygonal domain Ω with a singular right-hand side given by the Dirac delta function. A theorem on the existence and uniqueness of a generalized solution in the fractional Sobolev space Hs(Ω), 1/2 < s < 1, is proved. An approach to discrete analysis of the problem using the finite element method is proposed and investigated. The results of numerical experiments for a model problem, obtained using the FreeFem++ software, are presented. They confirm the error estimate of the difference between the discrete and exact solutions derived in the paper."
-    },
-    {
-      "paperId": "d12fbf112232ecceccd8ca1a5ee5db166149a432",
-      "url": "https://www.semanticscholar.org/paper/d12fbf112232ecceccd8ca1a5ee5db166149a432",
-      "title": "ЗАСТОСУВАННЯ МАТЕМАТИЧНОГО АПАРАТУ ОБЧИСЛЮВАЛЬНОЇ ГІДРОДИНАМІКИ ДЛЯ ДОСЛІДЖЕННЯ ПРОЦЕСІВ ГРАВІТАЦІЙНОГО ЗБАГАЧЕННЯ МАГНЕТИТОВИХ РУД У СПІРАЛЬНИХ СЕПАРАТОРАХ",
-      "openAccessPdf": {
-        "url": "https://journals.mipolytech.in.ua/index.php/tech/article/download/173/154",
-        "status": "HYBRID",
-        "license": "CCBYNC",
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.32782/3041-2080/2025-5-32?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.32782/3041-2080/2025-5-32, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2025-11-10",
-      "authors": [
-        {
-          "authorId": "114102896",
-          "name": "Тетяна Анатоліївна Олійник"
-        },
-        {
-          "authorId": "2392094049",
-          "name": "Людмила Василівна Скляр"
-        },
-        {
-          "authorId": "2392091365",
-          "name": "Дмитро Олександрович Румницький"
-        }
-      ],
-      "abstract": "На прикладі визначення швидкості вільного та стисненого падіння частинок встановлена можливість використання методів обчислювальної гідродинаміки для моделювання процесу осадження мінеральних частинок у рідині та визначення швидкості їх падіння. Показано, що ефективність розділення у спіральних сепараторах суттєво залежить від взаємозв’язку розміру та густини частинок. Збільшення діаметра частинок зменшує вплив турбулентних коливань потоку, що сприяє стабілізації їх траєкторій і забезпечує більш чіткий поділ фракцій. Проведене чисельне моделювання із застосуванням методу скінченних елементів (FEM) у середовищі FreeFEM++ дало змогу визначити гідродинамічні та кінематичні характеристики потоку, які можуть бути використані для оптимізації конструктивних параметрів та режимів роботи спіральних сепараторів задля підвищення селективності процесу гравітаційного збагачення магнетитових руд. Побудова тривимірної моделі потоку відкрила можливості для детального аналізу зон турбулентності, локального збагачення та розподілу концентрацій по ширині каналу. Такі дослідження можуть бути розширені у програмних комплексах OpenFOAM або COMSOL, що підтримують обмін даними з FreeFEM++ через формат mesh-файлів. Результати моделювання були підтверджені фізичними експериментами на спіральному сепараторі СВШ-2-1000, який має параболічну геометрію поперечного перерізу, та сепараторі лабораторного масштабу з профілем поперечного перерізу у вигляді кривої слабко похилої. Лабораторний сепаратор забезпечує отримання концентрату з вищими показниками виходу, вмісту та вилучення магнетиту (до 85,4 %). Втрати магнетиту з хвостами становили 12,5 % для лабораторного апарата СВШ-2-1000 і не перевищували 3 %. Отримані результати свідчать про високу узгодженість чисельних розрахунків і експериментальних даних. Підтверджують перспективність використання обчислювальної гідродинаміки для дослідження та оптимізації процесів гравітаційного збагачення у спіральних сепараторах."
-    },
-    {
-      "paperId": "979a33d89c44b6c5794c0bd2d6068bb6df30b8dc",
-      "url": "https://www.semanticscholar.org/paper/979a33d89c44b6c5794c0bd2d6068bb6df30b8dc",
-      "title": "New Closed-Form Solutions for Electromagnetic Parameters of an Innovative Quasi-TEM Coaxial Directional Coupler for Radar Systems Applications",
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/aicps66617.2025.11513468?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/aicps66617.2025.11513468, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2025-11-02",
-      "authors": [
-        {
-          "authorId": "30538302",
-          "name": "Yamina Bekri"
-        },
-        {
-          "authorId": "2641977",
-          "name": "N. Benahmed"
-        },
-        {
-          "authorId": "2310479318",
-          "name": "Tewfik Khiat"
-        }
-      ],
-      "abstract": "This paper presents accurate and simple closed-form analytical expressions for the quasi-TEM (Transverse Electromagnetic) parameters of an innovative class of high-frequency rectangular coaxial directional couplers with metallic diaphragms, developed primarily for radar and modern telecommunication applications. These couplers are designed to achieve an optimal balance of ultra-low cost, minimal insertion loss, wide operational bandwidth, and high performance, making them highly suitable for next-generation high-frequency systems. The coupling factor is effectively controlled by adjusting the normalized aperture half-width (s/h), offering significant design flexibility. Additionally, the integration of an air gap between the dielectric and the ground substantially reduces circuit losses compared to conventional coupler structures. A two-dimensional finite element method (2D-FEM) analysis was conducted using the FreeFEM environment, supported by a custom-developed computer-aided engineering (CAE) program to compute key electromagnetic (EM) parameters. The proposed closed-form expressions maintain relative errors below 1% across a wide range of geometrical configurations specifically, for s/h ratios varying from 0.025 to 0.475 and dielectric-width to inner-conductor-width ratios (w/a) from 1.1 to 2.7. As a validation example, a 50-ohm, 20-dB directional coupler operating at 8 GHz was designed, achieving 12 dB of directivity and 31 dB of isolation. The S-parameters calculated in MATLAB closely match the results from CST full-wave simulations, confirming the accuracy and practical relevance of the proposed CAD models for advanced microwave component design."
-    },
-    {
-      "paperId": "c44b86771435f418a277baf2b20776d1cb8ab06c",
-      "url": "https://www.semanticscholar.org/paper/c44b86771435f418a277baf2b20776d1cb8ab06c",
-      "title": "PHƯƠNG PHÁP PHẦN TỬ HỮU HẠN KHÔNG – THỜI GIAN GIẢI XẤP XỈ PHƯƠNG TRÌNH PHẢN ỨNG KHUẾCH TÁN",
-      "openAccessPdf": {
-        "url": "https://journal.hcmue.edu.vn/index.php/hcmuejos/article/download/4940/3815",
-        "status": "GOLD",
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.54607/hcmue.js.22.10.4940(2025)?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.54607/hcmue.js.22.10.4940(2025), which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2025-10-30",
-      "authors": [
-        {
-          "authorId": "2399426569",
-          "name": "Phi Hùng Phạm"
-        },
-        {
-          "authorId": "2328919122",
-          "name": "Thị Tuyết Nhung Mai"
-        },
-        {
-          "authorId": "2222823444",
-          "name": "Thị Thanh Mơ Tạ"
-        }
-      ],
-      "abstract": "Trong bài báo này chúng tôi trình bày phương pháp phần tử hữu hạn không-thời gian (space-time finite element method) giải xấp xỉ phương trình phản ứng khuếch tán. Khác với các phương pháp số truyền thống phân tách xấp xỉ miền thời gian và không gian riêng biệt, phương pháp này rời rạc đồng thời miền Q = Ω × (0, T ) trên cùng một cấu trúc lưới, giúp tối ưu chi phí tính toán và nâng cao độ chính xác của nghiệm xấp xỉ. Cách tiếp cận của phương pháp là đưa bài toán ban đầu về dạng biến phân (bài toán yếu). Tính đặt chỉnh của bài toán yếu được chứng minh thông qua việc áp dụng định lí Banach–Nečas–Babuška, đảm bảo sự tồn tại, duy nhất nghiệm. Phân tích đánh giá sai số tiên nghiệm (a priori error estimates) cho thấy phương pháp đạt tốc độ hội tụ tối ưu trong không gian tương ứng. Tính hiệu quả và độ chính xác của phương pháp được kiểm chứng qua các thí nghiệm số được xây dựng trên phần mềm mã nguồn mở FreeFEM++."
     }
   ]
 }
