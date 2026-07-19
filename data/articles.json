@@ -28,6 +28,25 @@
       "abstract": "The paper addresses the formulation of plane elasticity problems in terms of stresses and their numerical solution by the Galerkin finite element method. Based on the equilibrium equations, geometric relations, and physical laws of elasticity, a system of differential equations describing the plane stress state of an elastic medium is derived. The Galerkin method yields the weak form of the boundary value problem and a discrete model suitable for computer implementation. The bilinear forms and local finite element matrices required to assemble the global algebraic system are constructed. The algorithms are implemented in C++ and FreeFEM++. The approach is verified on the classical Kirsch problem of stress distribution around a circular hole in an elastic plate: both implementations agree well with each other and with known analytical solutions, confirming the correctness of the formulation and the applicability of the method."
     },
     {
+      "paperId": "3b4407f8ae4c470560f2c2d2cfb28e020da413a7",
+      "url": "https://www.semanticscholar.org/paper/3b4407f8ae4c470560f2c2d2cfb28e020da413a7",
+      "title": "A Review of Finite Element Methods for Fluid-Structure Interactions",
+      "openAccessPdf": {
+        "url": "",
+        "status": "CLOSED",
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.4208/cicp.oa-2025-0165?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.4208/cicp.oa-2025-0165, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2026-07-01",
+      "authors": [
+        {
+          "authorId": "2293407500",
+          "name": "Yongxing Wang"
+        }
+      ],
+      "abstract": "We present a comprehensive review of finite element methods (FEM) for solving fluid–structure interaction (FSI) problems. Our aim is to systematically categorise and compare these methods based on three key aspects: mesh type, coupling strategy, and the choice of solved variables. For each method, we highlight its respective advantages and limitations. In addition, we formulate and compare the finite element weak forms of the various approaches, employing Newton’s method to linearise nonlinear terms at the continuous functional level. We implement six FSI methods in the open-source software package FreeFEM++, and compare these methods based on three benchmarks."
+    },
+    {
       "paperId": "f7694f0797902bda5f901a0f15871dc548393047",
       "url": "https://www.semanticscholar.org/paper/f7694f0797902bda5f901a0f15871dc548393047",
       "title": "Estudio e implementación del método multiescala generalizado (GMsFEM)",
@@ -298,29 +317,6 @@
         }
       ],
       "abstract": "We consider a model for Koiter linear elastic elliptic shells in contact with a deformable obstacle and we study the convergence of the solution of this model towards the solution of the corresponding model for elastic elliptic membrane shells when the small parameter of the model (thickness) tends to zero. Furthermore, we propose a numerical scheme for this kind of contact problems for Koiter shells and show numerical simulations after implementation by using the free software package FreeFem++."
-    },
-    {
-      "paperId": "b3a8bdd45fdd89979e483dcaca7901bfe47f5d25",
-      "url": "https://www.semanticscholar.org/paper/b3a8bdd45fdd89979e483dcaca7901bfe47f5d25",
-      "title": "РЕШЕНИЕ МЕТОДОМ КОНЕЧНЫХ ЭЛЕМЕНТОВ КРАЕВОЙ ЗАДАЧИ ДЛЯ ЭЛЛИПТИЧЕСКОГО УРАВНЕНИЯ С ДЕЛЬТА-ФУНКЦИЕЙ ДИРАКА В ПРАВОЙ ЧАСТИ",
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.15372/sjnm20250403?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.15372/sjnm20250403, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2025-11-30",
-      "authors": [
-        {
-          "authorId": "148518408",
-          "name": "Д. Н. Романов"
-        },
-        {
-          "authorId": "2135865116",
-          "name": "М.В. Урев"
-        }
-      ],
-      "abstract": "В данной работе на примере уравнения Пуассона рассматриваются вопросы численного решения методом конечных элементов однородной краевой задачи Дирихле для эллиптического уравнения в двумерной многоугольной выпуклой области Ω с сингулярной правой частью в виде дельта-функции Дирака. Доказана теорема существования и единственности обобщенного решения в дробном гильбертовом пространстве Соболева Hs(Ω), где 1/2 < s < 1. Предложен и изучен подход к дискретному анализу задачи методом конечных элементов. Приведены результаты численных экспериментов по решению методической задачи с помощью пакета FreeFem++, подтверждающие полученную оценку уклонения дискретного решения от точного.\n A numerical solution by the finite element method of a homogeneous Dirichlet boundary value problem for an elliptic equation is examined (using a Poisson equation as an example) in a two-dimensional convex polygonal domain Ω with a singular right-hand side given by the Dirac delta function. A theorem on the existence and uniqueness of a generalized solution in the fractional Sobolev space Hs(Ω), 1/2 < s < 1, is proved. An approach to discrete analysis of the problem using the finite element method is proposed and investigated. The results of numerical experiments for a model problem, obtained using the FreeFem++ software, are presented. They confirm the error estimate of the difference between the discrete and exact solutions derived in the paper."
     }
   ]
 }
