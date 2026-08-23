@@ -1,6 +1,49 @@
 {
   "articles": [
     {
+      "paperId": "c962c9d407cb96f1c9e899689149dd96470b7f93",
+      "url": "https://www.semanticscholar.org/paper/c962c9d407cb96f1c9e899689149dd96470b7f93",
+      "title": "Stress- and Strain-Based Boundary Value Problems of Elasticity",
+      "openAccessPdf": {
+        "url": "https://doi.org/10.3390/math14162969",
+        "status": "GOLD",
+        "license": "CCBY",
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.3390/math14162969?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.3390/math14162969, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2026-08-17",
+      "authors": [
+        {
+          "authorId": "102254565",
+          "name": "A. Khaldjigitov"
+        },
+        {
+          "authorId": "2051532808",
+          "name": "U. Djumayozov"
+        },
+        {
+          "authorId": "2006725187",
+          "name": "Aziz A. Kalandarov"
+        },
+        {
+          "authorId": "2353889734",
+          "name": "Akmal Bobonazarov"
+        },
+        {
+          "authorId": "2212668316",
+          "name": "Otajon Tilovov"
+        },
+        {
+          "authorId": "2290809324",
+          "name": "Robiya Rakhmonova"
+        },
+        {
+          "authorId": "2290805282",
+          "name": "Zebo Khasanova"
+        }
+      ],
+      "abstract": "Boundary value problems in the theory of elasticity are traditionally formulated in terms of displacements, while stresses and strains are calculated from the displacements. Usually, the calculation of stresses and strains is accompanied by approximation errors. In this paper, alternative formulations of elasticity problems in stresses and strains are developed. It is shown that, to formulate boundary value problems (BVP) in stresses, it suffices to consider the three off-diagonal Beltrami–Michell equations together with the three equilibrium equations. Similarly, the off-diagonal strain compatibility equations are considered in conjunction with the three equilibrium equations expressed in terms of strains. In addition, the Beltrami–Michell equations and the strain compatibility equations are reduced to the Poisson equations for the stress and strain tensors, respectively. For the numerical solution of the formulated BVP in stresses and strains, the finite difference method and the finite element method within the FreeFEM++ framework were applied. A comparison of numerical results for the problems of stretching a rectangular plate under a parabolic load and of a dam subjected to hydrostatic pressure and self-weight with known solutions demonstrates good agreement, thereby confirming the validity of the proposed boundary value problems regarding stresses and strains."
+    },
+    {
       "paperId": "5bb1c61c2e3a04c0908a1bb604dcb277d22118d3",
       "url": "https://www.semanticscholar.org/paper/5bb1c61c2e3a04c0908a1bb604dcb277d22118d3",
       "title": "Численное моделирование задач теории упругости в напряжениях методом конечных элементов",
@@ -290,33 +333,6 @@
         }
       ],
       "abstract": "Предложен подход к реализации метода конечных элементов (МКЭ) для решения многопараметрических и многоитерационных краевых задач. Для создания подхода проанализированы издержки алгоритма МКЭ, имеющиеся в стандартном программном пакете на примере FreeFEM++. Исследованы возможности снижения затрат на производительность за счет устранения дублирования промежуточных данных и, тем самым, уменьшения количества операций копирования, выделения и освобождения памяти. Разработан способ индексации и модифицированный алгоритм решения конечно-элементных задач. Результаты расчетов с использованием разработанного алгоритма были сопоставлены с аналитическим решением (относительное отклонение от аналитического решения составило менее 10−4). С помощью разработанной библиотеки достигнуто ускорение до 3-х раз и более без использования новых вычислительных ядер. Полученные результаты по ускорению расчётов могут быть применены применены при численном моделировании процессов массообмена в химико-технологических системах, где требуется многократное решение сопряжённых нестационарных задач переноса вещества.\n An approach to implementing the finite element method (FEM) for solving multiparameter and multi-iteration boundary value problems is proposed. To develop this approach, the costs of the FEM algorithm available in the standard software package were analyzed using FreeFEM++ as an example. Possibilities of reducing performance costs by eliminating duplication of intermediate data, thereby reducing the number of copying, allocation, and deallocation operations of memory, were investigated. An indexing method and a modified algorithm for solving finite element problems were developed. The calculation results using the developed algorithm were compared with the analytical solution (the relative deviation from the analytical solution was less than 10−4). Using the developed library, an acceleration of up to 3 times or more was achieved without the use of new computing cores. The obtained results in accelerating the calculations can be applied in the numerical modeling of mass transfer processes in chemical engineering systems, where multiple solutions of conjugate non-stationary mass transfer problems are required."
-    },
-    {
-      "paperId": "de0ddea1299ea3af897f9424332ba221366d632b",
-      "url": "https://www.semanticscholar.org/paper/de0ddea1299ea3af897f9424332ba221366d632b",
-      "title": "Mathematical and numerical analysis of Koiter elliptic shells in normal compliance contact",
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1177/10812865251400629?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1177/10812865251400629, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2025-12-26",
-      "authors": [
-        {
-          "authorId": "102207750",
-          "name": "Á. Arós"
-        },
-        {
-          "authorId": "48327823",
-          "name": "Ariel L. Lombardi"
-        },
-        {
-          "authorId": "102457451",
-          "name": "L. Venturato"
-        }
-      ],
-      "abstract": "We consider a model for Koiter linear elastic elliptic shells in contact with a deformable obstacle and we study the convergence of the solution of this model towards the solution of the corresponding model for elastic elliptic membrane shells when the small parameter of the model (thickness) tends to zero. Furthermore, we propose a numerical scheme for this kind of contact problems for Koiter shells and show numerical simulations after implementation by using the free software package FreeFem++."
     }
   ]
 }
