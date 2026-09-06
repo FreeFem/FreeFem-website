@@ -84,7 +84,7 @@
       "authors": [
         {
           "authorId": "2293407500",
-          "name": "Yongxing Wang"
+          "name": "Yong-Xing Wang"
         }
       ],
       "abstract": "We present a comprehensive review of finite element methods (FEM) for solving fluid–structure interaction (FSI) problems. Our aim is to systematically categorise and compare these methods based on three key aspects: mesh type, coupling strategy, and the choice of solved variables. For each method, we highlight its respective advantages and limitations. In addition, we formulate and compare the finite element weak forms of the various approaches, employing Newton’s method to linearise nonlinear terms at the continuous functional level. We implement six FSI methods in the open-source software package FreeFEM++, and compare these methods based on three benchmarks."
@@ -226,7 +226,7 @@
           "name": "Khizar Hayat Khan"
         },
         {
-          "authorId": "2429914163",
+          "authorId": null,
           "name": "Muhammad Sabeel Khan"
         },
         {
@@ -246,7 +246,7 @@
           "name": "Amna"
         },
         {
-          "authorId": "2429913361",
+          "authorId": null,
           "name": "Ghulam Khadija"
         },
         {
@@ -309,15 +309,15 @@
         },
         {
           "authorId": "148619206",
-          "name": "С.Г. Ильясов"
+          "name": "С. Г. Ильясов"
         },
         {
           "authorId": "2073629901",
-          "name": "Г.Т. Суханов"
+          "name": "Геннадий Тимофеевич Суханов"
         },
         {
           "authorId": "1405367194",
-          "name": "Г.В. Пышнограй"
+          "name": "Г. В. Пышнограй"
         },
         {
           "authorId": "91329485",
@@ -325,11 +325,11 @@
         },
         {
           "authorId": "2130528844",
-          "name": "А.Н. Блазнов"
+          "name": "А. Н. Блазнов"
         },
         {
           "authorId": "2190463149",
-          "name": "Александр Григорьевич Овчаренко"
+          "name": "А. Г. Овчаренко"
         }
       ],
       "abstract": "Предложен подход к реализации метода конечных элементов (МКЭ) для решения многопараметрических и многоитерационных краевых задач. Для создания подхода проанализированы издержки алгоритма МКЭ, имеющиеся в стандартном программном пакете на примере FreeFEM++. Исследованы возможности снижения затрат на производительность за счет устранения дублирования промежуточных данных и, тем самым, уменьшения количества операций копирования, выделения и освобождения памяти. Разработан способ индексации и модифицированный алгоритм решения конечно-элементных задач. Результаты расчетов с использованием разработанного алгоритма были сопоставлены с аналитическим решением (относительное отклонение от аналитического решения составило менее 10−4). С помощью разработанной библиотеки достигнуто ускорение до 3-х раз и более без использования новых вычислительных ядер. Полученные результаты по ускорению расчётов могут быть применены применены при численном моделировании процессов массообмена в химико-технологических системах, где требуется многократное решение сопряжённых нестационарных задач переноса вещества.\n An approach to implementing the finite element method (FEM) for solving multiparameter and multi-iteration boundary value problems is proposed. To develop this approach, the costs of the FEM algorithm available in the standard software package were analyzed using FreeFEM++ as an example. Possibilities of reducing performance costs by eliminating duplication of intermediate data, thereby reducing the number of copying, allocation, and deallocation operations of memory, were investigated. An indexing method and a modified algorithm for solving finite element problems were developed. The calculation results using the developed algorithm were compared with the analytical solution (the relative deviation from the analytical solution was less than 10−4). Using the developed library, an acceleration of up to 3 times or more was achieved without the use of new computing cores. The obtained results in accelerating the calculations can be applied in the numerical modeling of mass transfer processes in chemical engineering systems, where multiple solutions of conjugate non-stationary mass transfer problems are required."
