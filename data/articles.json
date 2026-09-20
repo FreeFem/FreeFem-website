@@ -56,16 +56,16 @@
       "publicationDate": "2026-07-02",
       "authors": [
         {
-          "authorId": "2063374931",
-          "name": "А.А. Халджигитов"
+          "authorId": null,
+          "name": "А. А. Халджигитов"
         },
         {
-          "authorId": "2447543875",
-          "name": "А.А. Бобоназаров"
+          "authorId": null,
+          "name": "А. А. Бобоназаров"
         },
         {
-          "authorId": "2422866054",
-          "name": "Р. Рахмонова"
+          "authorId": "2490263941",
+          "name": "Р. А. Рахмонова"
         }
       ],
       "abstract": "The paper addresses the formulation of plane elasticity problems in terms of stresses and their numerical solution by the Galerkin finite element method. Based on the equilibrium equations, geometric relations, and physical laws of elasticity, a system of differential equations describing the plane stress state of an elastic medium is derived. The Galerkin method yields the weak form of the boundary value problem and a discrete model suitable for computer implementation. The bilinear forms and local finite element matrices required to assemble the global algebraic system are constructed. The algorithms are implemented in C++ and FreeFEM++. The approach is verified on the classical Kirsch problem of stress distribution around a circular hole in an elastic plate: both implementations agree well with each other and with known analytical solutions, confirming the correctness of the formulation and the applicability of the method."
@@ -242,7 +242,7 @@
           "name": "Saeed Islam"
         },
         {
-          "authorId": "2165406432",
+          "authorId": "8285829",
           "name": "Amna"
         },
         {
@@ -300,35 +300,35 @@
       "publicationDate": "2025-12-31",
       "authors": [
         {
-          "authorId": "135033573",
+          "authorId": "2493376744",
           "name": "Роман Николаевич Голых"
         },
         {
-          "authorId": "2339884819",
+          "authorId": "2482717072",
           "name": "Александр Романович Барсуков"
         },
         {
-          "authorId": "148619206",
-          "name": "С. Г. Ильясов"
+          "authorId": "2487433462",
+          "name": "Сергей Гаврилович Ильясов"
         },
         {
-          "authorId": "2073629901",
+          "authorId": "2486762416",
           "name": "Геннадий Тимофеевич Суханов"
         },
         {
-          "authorId": "1405367194",
+          "authorId": "2493448728",
           "name": "Г. В. Пышнограй"
         },
         {
-          "authorId": "91329485",
+          "authorId": "2482664114",
           "name": "Л. Ф. Комарова"
         },
         {
-          "authorId": "2130528844",
+          "authorId": "2493486976",
           "name": "А. Н. Блазнов"
         },
         {
-          "authorId": "2190463149",
+          "authorId": "2483760920",
           "name": "А. Г. Овчаренко"
         }
       ],
