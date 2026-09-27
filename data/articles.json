@@ -1,6 +1,92 @@
 {
   "articles": [
     {
+      "paperId": "21eb77fe7c4f974cba46a2f7b71d162e88707fe0",
+      "url": "https://www.semanticscholar.org/paper/21eb77fe7c4f974cba46a2f7b71d162e88707fe0",
+      "title": "Boson Star Factory: Past, Present, and Future",
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2609.24913, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2026-09-21",
+      "authors": [
+        {
+          "authorId": "1916961776",
+          "name": "Romain Gervalle"
+        },
+        {
+          "authorId": "47308883",
+          "name": "Jorge F. M. Delgado"
+        },
+        {
+          "authorId": "2484927081",
+          "name": "E. dos Santos Costa"
+        },
+        {
+          "authorId": "8839673",
+          "name": "C. Herdeiro"
+        },
+        {
+          "authorId": "2067222500",
+          "name": "Víctor Jaramillo"
+        },
+        {
+          "authorId": "2294564407",
+          "name": "Raimon Luna"
+        },
+        {
+          "authorId": "2379545933",
+          "name": "Eugen Radu"
+        }
+      ],
+      "abstract": "Boson stars are self-gravitating solitons of the Einstein-Klein-Gordon equations for a massive complex scalar field, and arguably the simplest horizonless compact objects arising in General Relativity. Beyond spherical symmetry, their construction requires solving a system of nonlinear elliptic partial differential equations, a difficult task per se and that each group has traditionally addressed with its own numerical implementation. A systematic comparison of different methods applied to the same physical model has so far been lacking. In this work, we carry out such a comparison for the two simplest non-spherical configurations: rotating boson stars and static dipolar boson stars. We employ three independent codes, based respectively on finite differences (FIDISOL/CADSOL), finite elements (FreeFem), and spectral methods (Kadath), and assess their accuracy through different diagnostics. The three solvers agree on the global observables to typically eight significant digits. We further compare the runtime of each code on identical hardware and provide precise benchmark values of the relevant physical quantities, intended to serve as reference data for future numerical studies of boson stars. As a further proof of concept, we also present the use of physics-informed neural networks to construct a rotating Q-ball solution."
+    },
+    {
+      "paperId": "e2517a27fd0c9daf0b5003788f76a337cabaced5",
+      "url": "https://www.semanticscholar.org/paper/e2517a27fd0c9daf0b5003788f76a337cabaced5",
+      "title": "Development of the Galerkin Finite Element Method for Stress-Based Elasticity Problems",
+      "openAccessPdf": {
+        "url": "https://doi.org/10.3390/app16189303",
+        "status": "GOLD",
+        "license": "CCBY",
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.3390/app16189303?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.3390/app16189303, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2026-09-19",
+      "authors": [
+        {
+          "authorId": "102254565",
+          "name": "A. Khaldjigitov"
+        },
+        {
+          "authorId": "2353889734",
+          "name": "A. Bobonazarov"
+        },
+        {
+          "authorId": "2051532808",
+          "name": "U. Djumayozov"
+        },
+        {
+          "authorId": "2212668316",
+          "name": "O. Tilovov"
+        },
+        {
+          "authorId": "2488312887",
+          "name": "С. П. Пулатов"
+        },
+        {
+          "authorId": "2503446221",
+          "name": "Maftuna N. Abdirakhmonova"
+        },
+        {
+          "authorId": "2503433055",
+          "name": "Fazilat S. Ochilova"
+        }
+      ],
+      "abstract": "This paper proposes a finite element approach to the numerical solution of boundary value problems of linear elasticity theory formulated directly in terms of the stress tensor components. In contrast to the classical finite element formulation, in which displacements are the primary unknowns, the approach considered here treats the stress components as the sought quantities. Two forms of the boundary value problem are investigated. The first is based on the joint use of the equilibrium equations and the Beltrami–Michell equations, while the second is a transformed system of Poisson-type equations for the stress tensor components. Variational relations based on the Galerkin method are obtained for both formulations. Using linear basis functions on triangular finite elements, local matrices are constructed, and global systems of algebraic equations are formed, whose unknowns are the nodal values of the stresses. The numerical implementation of the developed schemes is carried out in an in-house C++ program and in the FreeFEM++ software environment. To verify the reliability of the proposed mathematical and numerical models, the classical Kirsch problem of a stretched elastic plate with a circular hole—characterized by a pronounced stress concentration near the edge of the hole—is solved. The numerical values of the stress components are compared with the analytical solution obtained using the Airy stress function method, as well as with the results of calculations performed with the FreeFEM++ software package. The comparison shows good agreement between the obtained solutions and confirms the possibility of determining stresses directly, without first computing the displacement field. A mesh-refinement study further showed a systematic reduction in the numerical error: on the finest mesh considered, the relative error decreased to 3.189% for formulation A and to 7.415% for formulation B. The proposed approach extends the applicability of the finite element method to boundary value problems of elasticity theory formulated in terms of stresses and can be used to study problems with complex geometry and local stress concentration."
+    },
+    {
       "paperId": "c962c9d407cb96f1c9e899689149dd96470b7f93",
       "url": "https://www.semanticscholar.org/paper/c962c9d407cb96f1c9e899689149dd96470b7f93",
       "title": "Stress- and Strain-Based Boundary Value Problems of Elasticity",
@@ -26,11 +112,11 @@
         },
         {
           "authorId": "2353889734",
-          "name": "Akmal Bobonazarov"
+          "name": "A. Bobonazarov"
         },
         {
           "authorId": "2212668316",
-          "name": "Otajon Tilovov"
+          "name": "O. Tilovov"
         },
         {
           "authorId": "2290809324",
@@ -60,8 +146,8 @@
           "name": "А. А. Халджигитов"
         },
         {
-          "authorId": null,
-          "name": "А. А. Бобоназаров"
+          "authorId": "2353889734",
+          "name": "A. Bobonazarov"
         },
         {
           "authorId": "2490263941",
@@ -88,6 +174,37 @@
         }
       ],
       "abstract": "We present a comprehensive review of finite element methods (FEM) for solving fluid–structure interaction (FSI) problems. Our aim is to systematically categorise and compare these methods based on three key aspects: mesh type, coupling strategy, and the choice of solved variables. For each method, we highlight its respective advantages and limitations. In addition, we formulate and compare the finite element weak forms of the various approaches, employing Newton’s method to linearise nonlinear terms at the continuous functional level. We implement six FSI methods in the open-source software package FreeFEM++, and compare these methods based on three benchmarks."
+    },
+    {
+      "paperId": "a8944908ad41ebc72432ec99f9b94985a6a470d0",
+      "url": "https://www.semanticscholar.org/paper/a8944908ad41ebc72432ec99f9b94985a6a470d0",
+      "title": "Numerical Hydrodynamic Analysis of Slip Flow in a Permeable Wall Microchannel Controlled by an Inlet Volumetric Flow Rate",
+      "openAccessPdf": {
+        "url": "https://doi.org/10.1007/s44198-026-00452-3",
+        "status": "HYBRID",
+        "license": "CCBYNCND",
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1007/s44198-026-00452-3?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1007/s44198-026-00452-3, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2026-07-01",
+      "authors": [
+        {
+          "authorId": "104266825",
+          "name": "I. Monsivais"
+        },
+        {
+          "authorId": "118337591",
+          "name": "J. Lizardi"
+        },
+        {
+          "authorId": "143602325",
+          "name": "F. Méndez"
+        },
+        {
+          "authorId": "2222486766",
+          "name": "Edgar A. Ramos"
+        }
+      ],
+      "abstract": "In the present work, a numerical study of the incompressible laminar flow of a Newtonian fluid circulating through a rectangular microchannel of parallel plates with permeable walls is carried out considering slip conditions. For this purpose, the corresponding governing equations, i.e., the mass and momentum conservation equations, are solved using the finite element technique with the free software FreeFEM++ to analyze the hydrodynamics of the flow under consideration, obtaining the velocity and pressure profiles. The main results show that by increasing the dimensionless filtration parameter \\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$\\beta$$\\end{document}, the transverse velocity increases, which causes the longitudinal velocity to decrease due to mass conservation. This behavior is maintained even considering the influence of the dimensionless slip parameter \\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$\\delta$$\\end{document}, which is also reflected in the volumetric flow rate, since as this parameter increases, the volumetric flow rate in the longitudinal direction is slightly enhanced."
     },
     {
       "paperId": "f7694f0797902bda5f901a0f15871dc548393047",
@@ -208,131 +325,6 @@
         }
       ],
       "abstract": "Execution-based evaluation of LLM-generated code implicitly treats successful execution as a proxy for correctness. In scientific simulation, this proxy is insufficient: a generated input file can run, mesh, and converge while encoding governing equations that differ from the user's intent. We call this mismatch between intended physics and generated code the comprehension-generation gap. We instantiate this in MOOSE, where Kernel and BC objects map compositionally to weak-form residual terms, enabling deterministic reconstruction of the encoded PDE and comparison against an intended contract. We formalize this comparison as the Intent Fidelity Score (IFS), a structural metric covering governing terms, BCs, ICs, coefficients, and time scheme. Building on IFS, we develop a PDE-grounded refinement loop that uses deterministic violation reports to correct generated code iteratively. We evaluate on MooseBench, a 220-case multiphysics benchmark with PDE-level ground truth released with this work. On this benchmark, our method consistently improves mean IFS over direct generation, with gains concentrated on hard cases. On the subset where direct generation falls below IFS 0.7, refinement adds +0.22 to +0.41 absolute IFS. In the deployment audit, execution-only repair improves execution success while leaving 39-40% of all 220 cases runnable but still solving the wrong physics across the three main deployment-audit models, exposing executability and intent fidelity as separable failure modes. Static proof-of-concept experiments on four PDE-oriented DSLs (UFL/FEniCS, FreeFEM, FiPy, and Devito) suggest that the reconstruction-and-comparison pattern extends beyond MOOSE. These findings reinforce that executable simulation code should be verified against the mathematical structure it is intended to encode, not accepted on execution alone."
-    },
-    {
-      "paperId": "60877c4e7bea9e5a41b42889b437341dae975f12",
-      "url": "https://www.semanticscholar.org/paper/60877c4e7bea9e5a41b42889b437341dae975f12",
-      "title": "On the Interplay of Micropolarity and Viscoelastic Relaxation in Controlling Drag Within a Cavity Flow",
-      "openAccessPdf": {
-        "url": "https://doi.org/10.37256/cm.7220269430",
-        "status": "GOLD",
-        "license": "CCBY",
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.37256/cm.7220269430?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.37256/cm.7220269430, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2026-04-15",
-      "authors": [
-        {
-          "authorId": "2268582844",
-          "name": "Khizar Hayat Khan"
-        },
-        {
-          "authorId": null,
-          "name": "Muhammad Sabeel Khan"
-        },
-        {
-          "authorId": "2429915413",
-          "name": "Nazim Hussain Hanjano"
-        },
-        {
-          "authorId": "2407583049",
-          "name": "F. Ixtiyarov"
-        },
-        {
-          "authorId": "2238166139",
-          "name": "Saeed Islam"
-        },
-        {
-          "authorId": "8285829",
-          "name": "Amna"
-        },
-        {
-          "authorId": null,
-          "name": "Ghulam Khadija"
-        },
-        {
-          "authorId": "2202302796",
-          "name": "M. Bilal"
-        }
-      ],
-      "abstract": "The interplay between microrotation, microinertia, and viscoelastic relaxation significantly influences the hydrodynamic performance of non-Newtonian cavity flows. This study investigates the combined effects of the Eringen number, micropolar coupling constant, and fluid relaxation factor on drag force, microrotation, and flow behavior in a two-dimensional lid-driven cavity. The governing nonlinear partial differential equations are formulated using Eringen’s micropolar theory with relaxation-time-dependent stress, and the characteristic Galerkin finite element method is employed for numerical solution using a custom FreeFEM++ implementation. The results reveal a strong coupling between microrotation and viscoelastic relaxation effects. Increasing the relaxation factor enhances flow elasticity, leading to variations in drag force depending on the flow regime. The Eringen number stabilizes the flow and suppresses drag oscillations, while the micropolar coupling constant modulates shear-layer thickness and vortex intensity. Higher Eringen number increases kinetic energy and produces more ordered streamline patterns, whereas larger values of micropolar constant reduces drag while amplifying microrotation. Overall, tuning Eringen number, micropolar constant and time relaxation provides an effective mechanism for controlling drag and optimizing flow stability. These findings offer valuable insights for the design of advanced microfluidic and rheological systems where microstructural and viscoelastic effects coexist."
-    },
-    {
-      "paperId": "1a51327cc71e569ec98af19a79e51f2b1d44fa90",
-      "url": "https://www.semanticscholar.org/paper/1a51327cc71e569ec98af19a79e51f2b1d44fa90",
-      "title": "Automated Sound Field Estimation combining robotized acoustic\n\nmeasurements and the boundary elements method",
-      "openAccessPdf": {
-        "url": "https://doi.org/10.1051/aacus/2026017",
-        "status": "GOLD",
-        "license": "CCBY",
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1051/aacus/2026017?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1051/aacus/2026017, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2026-02-13",
-      "authors": [
-        {
-          "authorId": "2273981648",
-          "name": "Caroline Pascal"
-        },
-        {
-          "authorId": "2325272834",
-          "name": "Pierre Marchand"
-        },
-        {
-          "authorId": "2274002942",
-          "name": "Alexandre Chapoutot"
-        },
-        {
-          "authorId": "2273983195",
-          "name": "Olivier Doaré"
-        }
-      ],
-      "abstract": "The identification and reconstruction of acoustic fields radiated by unknown structures is usually performed using either Sound Field Estimation or Near-field Acoustic Holography techniques. The latter turns out to be especially useful when data is only available close to the source, but information throughout the whole space is needed.\nYet, the lack of amendable and efficient implementations of state-of-the-art solutions, as well as the laborious and often lengthy deployment of acoustic measurements continue to be significant obstacles to the practical application of such methods.\nThe purpose of this work is to address both problems. First, a completely automated metrology setup is proposed, in which a robotic arm is used to gather extensive and accurately positioned acoustic data without any human intervention. The impact of the robot on acoustic pressure measurements is cautiously evaluated, and proved to remain limited below 1 kHz.\nThe Sound Field Estimation is then tackled using the Boundary Element Method, and implemented using the FreeFEM software. Numerically simulated measurements have allowed us to assess the method accuracy, which matches theoretically expected results and proves to remain robust against positioning inaccuracies, provided that the robot is carefully calibrated.\nThe overall solution has been successfully tested using actual robotized measurements of an unknown loudspeaker, with a reconstruction error of less than 30%."
-    },
-    {
-      "paperId": "023586a45b064a0d99f78f806293b7a8170e4fbb",
-      "url": "https://www.semanticscholar.org/paper/023586a45b064a0d99f78f806293b7a8170e4fbb",
-      "title": "Инструментарий для ускорения конечно-элементного расчёта процессов массообмена в химических технологиях",
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.25699/sssb.2025.64.6.071?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.25699/sssb.2025.64.6.071, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2025-12-31",
-      "authors": [
-        {
-          "authorId": "2493376744",
-          "name": "Роман Николаевич Голых"
-        },
-        {
-          "authorId": "2482717072",
-          "name": "Александр Романович Барсуков"
-        },
-        {
-          "authorId": "2487433462",
-          "name": "Сергей Гаврилович Ильясов"
-        },
-        {
-          "authorId": "2486762416",
-          "name": "Геннадий Тимофеевич Суханов"
-        },
-        {
-          "authorId": "2493448728",
-          "name": "Г. В. Пышнограй"
-        },
-        {
-          "authorId": "2482664114",
-          "name": "Л. Ф. Комарова"
-        },
-        {
-          "authorId": "2493486976",
-          "name": "А. Н. Блазнов"
-        },
-        {
-          "authorId": "2483760920",
-          "name": "А. Г. Овчаренко"
-        }
-      ],
-      "abstract": "Предложен подход к реализации метода конечных элементов (МКЭ) для решения многопараметрических и многоитерационных краевых задач. Для создания подхода проанализированы издержки алгоритма МКЭ, имеющиеся в стандартном программном пакете на примере FreeFEM++. Исследованы возможности снижения затрат на производительность за счет устранения дублирования промежуточных данных и, тем самым, уменьшения количества операций копирования, выделения и освобождения памяти. Разработан способ индексации и модифицированный алгоритм решения конечно-элементных задач. Результаты расчетов с использованием разработанного алгоритма были сопоставлены с аналитическим решением (относительное отклонение от аналитического решения составило менее 10−4). С помощью разработанной библиотеки достигнуто ускорение до 3-х раз и более без использования новых вычислительных ядер. Полученные результаты по ускорению расчётов могут быть применены применены при численном моделировании процессов массообмена в химико-технологических системах, где требуется многократное решение сопряжённых нестационарных задач переноса вещества.\n An approach to implementing the finite element method (FEM) for solving multiparameter and multi-iteration boundary value problems is proposed. To develop this approach, the costs of the FEM algorithm available in the standard software package were analyzed using FreeFEM++ as an example. Possibilities of reducing performance costs by eliminating duplication of intermediate data, thereby reducing the number of copying, allocation, and deallocation operations of memory, were investigated. An indexing method and a modified algorithm for solving finite element problems were developed. The calculation results using the developed algorithm were compared with the analytical solution (the relative deviation from the analytical solution was less than 10−4). Using the developed library, an acceleration of up to 3 times or more was achieved without the use of new computing cores. The obtained results in accelerating the calculations can be applied in the numerical modeling of mass transfer processes in chemical engineering systems, where multiple solutions of conjugate non-stationary mass transfer problems are required."
     }
   ]
 }
