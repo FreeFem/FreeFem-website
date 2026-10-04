@@ -1,6 +1,37 @@
 {
   "articles": [
     {
+      "paperId": "88970f77494e874a0b71bbf7b7eccb19bd5f3303",
+      "url": "https://www.semanticscholar.org/paper/88970f77494e874a0b71bbf7b7eccb19bd5f3303",
+      "title": "Hall effect FEM modeling using FreeFEM++: Illustration on a cross-shaped graphene sensor",
+      "openAccessPdf": {
+        "url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0357905&type=printable",
+        "status": "GOLD",
+        "license": "CCBY",
+        "disclaimer": "Notice: Paper or abstract available at https://pmc.ncbi.nlm.nih.gov/articles/PMC13607873, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2026-09-24",
+      "authors": [
+        {
+          "authorId": "2503807056",
+          "name": "Vigneswaran Ravi"
+        },
+        {
+          "authorId": "2503807654",
+          "name": "Sophias Boko"
+        },
+        {
+          "authorId": "6853948",
+          "name": "C. Coillot"
+        },
+        {
+          "authorId": "2388656695",
+          "name": "S. Nanot"
+        }
+      ],
+      "abstract": "The Hall effect, which occurs in metals and semiconductors, is used in numerous applications, particularly in the fabrication of magnetic field sensors. This phenomenon is influenced by the physical properties of the material (electron mobility, doping), the geometry of the device, and the size and position of the metallic contacts. The analytical model has limitations in accurately capturing all these phenomena. Therefore, in this work, we propose a finite element model using FreeFEM++ to accurately model the Hall effect. The validity of this model is assessed by comparing it to analytical ones. The effect of physical defects on the electrical measurements, which cannot be analytically calculated, is explored to illustrate the usefulness of this model under realistic conditions. These simulations can be used both as teaching tools, to illustrate this physical effect and as research tools, as demonstrated in the case of a graphene-based transistor. The reported simulation script is openly shared."
+    },
+    {
       "paperId": "21eb77fe7c4f974cba46a2f7b71d162e88707fe0",
       "url": "https://www.semanticscholar.org/paper/21eb77fe7c4f974cba46a2f7b71d162e88707fe0",
       "title": "Boson Star Factory: Past, Present, and Future",
@@ -265,66 +296,23 @@
       "publicationDate": "2026-05-29",
       "authors": [
         {
-          "authorId": "2448622408",
+          "authorId": null,
           "name": "Х. Факих"
         },
         {
-          "authorId": "2448621342",
+          "authorId": null,
           "name": "Н. Насреддин"
         },
         {
-          "authorId": "2448620913",
-          "name": "С. Мансур"
+          "authorId": "96776924",
+          "name": "S. Mansur"
         },
         {
-          "authorId": "2448622494",
+          "authorId": null,
           "name": "Р. Мгамес"
         }
       ],
       "abstract": "В данной статье интерес для нас представляет комплексная версия уравнения Бертоцци-Эседоглу-Жилле-Кана-Хиллиарда для восстановления черно-белых изображений, а также многокомпонентные системы Кана-Хиллиарда для восстановления изображений, т.е. расширение подхода для восстановления цветных изображений. Мы изучили корректность стационарной задачи, связанной с комплексным уравнением Бертоцци-Эседоглу-Жилле-Кана-Хиллиарда, а также с системами Бертоцци-Эседоглу-Жилле-Кана-Хиллиарда. Затем рассматривалась неявная дискретизация Эйлера по времени в обеих упомянутых выше моделях. Нам удалось доказать устойчивость неявной схемы Эйлера. Были выполнены численные эксперименты, которые подтверждают теоретические результаты и показывают эффективность схемы. Эти эксперименты проводились с использованием FreeFem++.\n In this article, we are interested in the complex version of Bertozzi-Esedoglu-Gillete-Cahn-Hilliard equation for grayscale image inpainting as well as the multi-component Cahn-Hilliard systems for image inpainting, that is an extension approach for color image inpainting. We have studied well-posedness of the steady state problem associated to the complex Bertozzi-Esedoglu-Gillete-Cahn-Hilliard equation as well as to Bertozzi-Esedoglu-Gillete-Cahn Hilliard systems. Then, Backward Euler discretization on time has been considered in both models mentioned above. We were able to prove the stability of the backward Euler scheme. Finally, we do some numerical simulations that confirm the theoretical results and show the efficiency of the scheme. The simulations were done using FreeFem++."
-    },
-    {
-      "paperId": "22f9c65a67048f79cabcb82f48e6acbfe18e8a49",
-      "url": "https://www.semanticscholar.org/paper/22f9c65a67048f79cabcb82f48e6acbfe18e8a49",
-      "title": "Your Simulation Runs but Solves the Wrong Physics: PDE-Grounded Intent Verification for LLM-Generated Multiphysics Simulation Code",
-      "openAccessPdf": {
-        "url": "",
-        "status": null,
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2605.09360, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2026-05-10",
-      "authors": [
-        {
-          "authorId": "2257123072",
-          "name": "Zhen Song"
-        },
-        {
-          "authorId": "2375500998",
-          "name": "Yulong Liu"
-        },
-        {
-          "authorId": "2311721288",
-          "name": "Cheng Wan"
-        },
-        {
-          "authorId": "2349941403",
-          "name": "Chenjun Li"
-        },
-        {
-          "authorId": "2375702861",
-          "name": "Lingfu Liu"
-        },
-        {
-          "authorId": "2365429952",
-          "name": "Yunyi Li"
-        },
-        {
-          "authorId": "47177291",
-          "name": "C. Yuan"
-        }
-      ],
-      "abstract": "Execution-based evaluation of LLM-generated code implicitly treats successful execution as a proxy for correctness. In scientific simulation, this proxy is insufficient: a generated input file can run, mesh, and converge while encoding governing equations that differ from the user's intent. We call this mismatch between intended physics and generated code the comprehension-generation gap. We instantiate this in MOOSE, where Kernel and BC objects map compositionally to weak-form residual terms, enabling deterministic reconstruction of the encoded PDE and comparison against an intended contract. We formalize this comparison as the Intent Fidelity Score (IFS), a structural metric covering governing terms, BCs, ICs, coefficients, and time scheme. Building on IFS, we develop a PDE-grounded refinement loop that uses deterministic violation reports to correct generated code iteratively. We evaluate on MooseBench, a 220-case multiphysics benchmark with PDE-level ground truth released with this work. On this benchmark, our method consistently improves mean IFS over direct generation, with gains concentrated on hard cases. On the subset where direct generation falls below IFS 0.7, refinement adds +0.22 to +0.41 absolute IFS. In the deployment audit, execution-only repair improves execution success while leaving 39-40% of all 220 cases runnable but still solving the wrong physics across the three main deployment-audit models, exposing executability and intent fidelity as separable failure modes. Static proof-of-concept experiments on four PDE-oriented DSLs (UFL/FEniCS, FreeFEM, FiPy, and Devito) suggest that the reconstruction-and-comparison pattern extends beyond MOOSE. These findings reinforce that executable simulation code should be verified against the mathematical structure it is intended to encode, not accepted on execution alone."
     }
   ]
 }
