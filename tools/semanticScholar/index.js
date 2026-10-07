@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 import { promises as fs } from 'fs'
 
 const apiUrl = 'https://api.semanticscholar.org/graph/v1/paper/search'
-const apiKey = process.argv[2]
+const apiKey = process.env.SEMANTIC_SCHOLAR_API_KEY
 
 const getArticles = async (currentYear) => {
   // Params
