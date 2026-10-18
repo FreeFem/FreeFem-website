@@ -1,6 +1,45 @@
 {
   "articles": [
     {
+      "paperId": "7602d7592417bd08770d57e632f8d328738119da",
+      "url": "https://www.semanticscholar.org/paper/7602d7592417bd08770d57e632f8d328738119da",
+      "title": "Implementation of the Stress-Based Galerkin Finite Element Method for Two-Dimensional Elastodynamic Problems",
+      "openAccessPdf": {
+        "url": "https://doi.org/10.3390/computation14100250",
+        "status": "GOLD",
+        "license": "CCBY",
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.3390/computation14100250?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.3390/computation14100250, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2026-10-13",
+      "authors": [
+        {
+          "authorId": "2353889734",
+          "name": "A. Bobonazarov"
+        },
+        {
+          "authorId": "102254565",
+          "name": "A. Khaldjigitov"
+        },
+        {
+          "authorId": "2051532808",
+          "name": "U. Djumayozov"
+        },
+        {
+          "authorId": "2488312887",
+          "name": "С. П. Пулатов"
+        },
+        {
+          "authorId": "2503446221",
+          "name": "Maftuna N. Abdirakhmonova"
+        },
+        {
+          "authorId": "2512179629",
+          "name": "Yulduz Sh. Narmatova"
+        }
+      ],
+      "abstract": "This study considers a two-dimensional dynamic problem of linear elasticity formulated directly in terms of the stress tensor components. A coupled system of differential equations for two normal stress components and one shear stress component is derived from the equations of motion, kinematic relations, and Hooke’s law. Initial and traction boundary conditions are specified for the resulting system. Spatial discretization is performed using the Galerkin method with linear triangular finite elements. Element mass and stiffness matrices accounting for the coupling between the stress components are derived. Time integration is implemented using the Newmark method in a C++ program. An independent computational implementation is developed in FreeFEM++ using an implicit finite-difference approximation of the time derivatives. The sensitivity of the solution to the finite element size and time step is investigated. Successive refinement of the spatial and temporal discretizations leads to stabilization of the computed stresses. The method is validated using two benchmark problems. For a rectangular domain subjected to a time-dependent surface load, the stress histories computed in C++ and FreeFEM++ are in agreement. For transient wave propagation from a circular cavity, the results are compared with an analytical solution, the QL boundary element method, and the classical displacement-based finite element formulation. The minimum circumferential stress is −1.2250, compared with the analytical value of −1.2253, corresponding to a difference of approximately 0.025%. The direct stress formulation eliminates the need to recover stresses by differentiating the displacement field and yields a smoother time history for the discretization considered. The results confirm the applicability of the developed finite element scheme to dynamic elasticity problems formulated in terms of stresses."
+    },
+    {
       "paperId": "88970f77494e874a0b71bbf7b7eccb19bd5f3303",
       "url": "https://www.semanticscholar.org/paper/88970f77494e874a0b71bbf7b7eccb19bd5f3303",
       "title": "Hall effect FEM modeling using FreeFEM++: Illustration on a cross-shaped graphene sensor",
@@ -282,37 +321,6 @@
         }
       ],
       "abstract": "Before corrigendum (First published version)Khaldjigitov, A., Djumayozov, U., Tilovov, O., Bobonazarov, A., Khudazarov, R., Pulatov, S. (2026). EXPRESSION OF CONCERN AND CORRIGENDUM. Development of thermoelasticity equations for strains. EUREKA: Physics and Engineering, 1, 181-194. https://doi.org/10.21303/2461-4262.2026.003924 \nAfter corrigendum (Corrected version)Khaldjigitov, A., Djumayozov, U., Tilovov, O., Bobonazarov, A., Khudazarov, R., Pulatov, S. (2026). CORRIGENDUM. Development of thermoelasticity equations for strains. EUREKA: Physics and Engineering, 1, 229–246. https://doi.org/10.21303/2461-4262.2026.004305 \nCorrigendum notification \nCORRIGENDUM NOTIFICATION to Development of thermoelasticity equations for strains (2026). EUREKA: Physics and Engneering, 1, 247–248. https://doi.org/10.21303/2461-4262.2026.004308 \n============================================ \nA revised version of the paper has been published Khaldjigitov, A., Djumayozov, U., Tilovov, O., Bobonazarov, A., Khudazarov, R., & Pulatov, S. (2026). CORRIGENDUM. Development of thermoelasticity equations for strains. EUREKA: Physics and Engineering, 1, 00–00. https://doi.org/10.21303/2461-4262.2026.004305, adding additional references, strengthening the discussion of compatibility conditions and stress-based formulations, as well as adding new numerical comparisons and convergence illustrations. \nHowever, the editors would like to warn readers that in the paper the admissibility and equivalence of the additional boundary conditions imposed in the strain formulation remain insufficiently justified from a rigorous mathematical standpoint. The revised manuscript demonstrates that the proposed approach may be computationally workable and numerically promising for the considered benchmark problems, but it still falls short of providing a complete theoretical foundation establishing equivalence with classical thermoelasticity. \nThe formulations proposed in the paper remain the subject of further theoretical verification, in particular regarding the rigorous mathematical justification of the boundary conditions and the proof of equivalence with classical thermoelasticity. \nThe revised version clearly reflects the authors' considerable efforts to address the criticisms. The manuscript has been significantly expanded, additional references have been added, the discussion of compatibility conditions and stress-based formulations has been strengthened, and new numerical comparisons and illustrations of convergence have been added. However, despite these improvements, some of the major methodological problems identified in the initial peer review remain only partially resolved. \nThe authors correctly emphasize that strain-based formulations of elasticity and thermoelasticity are admissible within continuum mechanics and that similar conceptual difficulties also arise in stress-based formulations such as the Beltrami–Michell approach. The corrigendum paper provides a broader theoretical context and cites literature discussing the dependence and independence of compatibility equations, uniqueness issues, and alternative formulations in stresses and strains. This addition improves the scientific positioning of the work and weakens the earlier criticism that the proposed formulation is fundamentally incompatible with classical thermoelasticity. \nThe derivation of the generalized compatibility equation, including thermal terms, in the corrigendum paper presented more clearly and consistently. The authors explicitly state that temperature enters the formulation through the Duhamel-Neumann relations and demonstrate the sequence of substitutions leading to equation (10). From the standpoint of thermoelastic theory, this derivation is acceptable. The revised text therefore adequately addresses the earlier concern that thermal effects had been introduced into the compatibility equations in an inconsistent or nonphysical manner. \nHowever, the central issue (namely the mathematical and physical admissibility of the additional boundary conditions) remains insufficiently resolved. The corrigendum paper continues to rely on equilibrium equations imposed on the boundary as additional boundary conditions required to close the strain-based system. Although the authors now cite prior works in which similar ideas were considered for stress-based formulations, this does not constitute a rigorous proof that the proposed boundary conditions are independent, sufficient, or fully equivalent to classical traction or displacement conditions. The response letter openly acknowledges that “a rigorous theoretical proof of equivalence to displacement-based boundary value problems requires a separate investigation and constitutes a subject of future research”. This statement is important because it effectively confirms that the principal mathematical concern has not yet been fully resolved. \nFrom a rigorous continuum mechanics perspective, the problem is not merely whether equilibrium relations can formally be written on the boundary, but whether such conditions ensure a well-posed problem in the Hadamard sense, including existence, uniqueness, and continuous dependence on the prescribed data. The corrigendum paper still does not provide such analysis. No variational framework, functional setting, or proof of equivalence between the proposed strain formulation and the classical displacement formulation is established. Consequently, the mathematical status of Problems A and B remains partially heuristic. \nThe discussion concerning the overdetermined nature of the original system and the subsequent reduction procedure has also been improved but not completely resolved. The authors now explicitly discuss the issue of selecting independent compatibility equations and relate their approach to the Beltrami–Michell framework. Nevertheless, the corrigendum paper still lacks a rigorous proof that the reduced Poisson-type system obtained for Problem B is mathematically equivalent to the original compatibility formulation and does not eliminate physically relevant constraints. The derivation is formally plausible, but the equivalence remains assumed rather than demonstrated. \nThe numerical section has been substantially strengthened compared with the original version. The addition of comparisons with FreeFEM++ finite element results, convergence plots, mesh refinement comments, and quantitative discrepancy estimates represents a clear improvement. The agreement between the finite-difference formulation and the FEM solution is indeed reasonably good for the selected benchmark example. The convergence behavior shown in Fig. 3 also supports the internal numerical consistency of the implemented scheme. \nAt the same time, the presented validation still has limitations. The comparisons are restricted to a single relatively simple benchmark involving a rectangular plate with a prescribed sinusoidal temperature field. The study does not include analytical benchmark solutions, error norms, sensitivity analyses, or verification against cases with nontrivial mechanical loading or mixed boundary conditions. Moreover, the claim that strain-based formulations are “more accurate” than displacement-based approaches because displacement formulations require numerical differentiation is presented too categorically and without sufficient quantitative justification. Modern finite element methods formulated in displacements are capable of highly accurate stress recovery, and the issue is more subtle than stated in the manuscript. The current discussion tends to overgeneralize the limitations of displacement-based methods while emphasizing the advantages of the proposed approach without a sufficiently broad comparative basis. \nAnother important point is that the corrigendum paper occasionally mixes numerical evidence with mathematical validation. Numerical agreement between different discretization certainly supports the practical consistency of the method, but it cannot replace a proof of theoretical equivalence or well-posedness. Several statements in the conclusions continue to overstate the level of validation achieved. For example, assertions that the results “confirm the correctness” and “substantiate the validity” of the proposed thermoelastic equations should be formulated more cautiously, since the theoretical foundation of the additional boundary conditions remains unresolved. \nIn conclusion, the corrigendum paper should not be regarded as fundamentally incorrect, and the additional numerical results substantially strengthen the practical credibility of the approach. \nHowever, the work still contains unresolved theoretical issues that limit the strength of its claims. The paper may therefore be considered an interesting and potentially valuable exploratory contribution to alternative thermoelastic formulations, but not yet a fully validated theoretical framework."
-    },
-    {
-      "paperId": "720b58e49de09f1424a3dc68b2ed451c226f3e26",
-      "url": "https://www.semanticscholar.org/paper/720b58e49de09f1424a3dc68b2ed451c226f3e26",
-      "title": "НЕКОТОРЫЕ ВАРИАНТЫ УРАВНЕНИЯ КАНА-ХИЛЛИАРДА ДЛЯ ВОССТАНОВЛЕНИЯ ИЗОБРАЖЕНИЙ",
-      "openAccessPdf": {
-        "url": "",
-        "status": "CLOSED",
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.15372/sjnm20260207?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.15372/sjnm20260207, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2026-05-29",
-      "authors": [
-        {
-          "authorId": null,
-          "name": "Х. Факих"
-        },
-        {
-          "authorId": null,
-          "name": "Н. Насреддин"
-        },
-        {
-          "authorId": "96776924",
-          "name": "S. Mansur"
-        },
-        {
-          "authorId": null,
-          "name": "Р. Мгамес"
-        }
-      ],
-      "abstract": "В данной статье интерес для нас представляет комплексная версия уравнения Бертоцци-Эседоглу-Жилле-Кана-Хиллиарда для восстановления черно-белых изображений, а также многокомпонентные системы Кана-Хиллиарда для восстановления изображений, т.е. расширение подхода для восстановления цветных изображений. Мы изучили корректность стационарной задачи, связанной с комплексным уравнением Бертоцци-Эседоглу-Жилле-Кана-Хиллиарда, а также с системами Бертоцци-Эседоглу-Жилле-Кана-Хиллиарда. Затем рассматривалась неявная дискретизация Эйлера по времени в обеих упомянутых выше моделях. Нам удалось доказать устойчивость неявной схемы Эйлера. Были выполнены численные эксперименты, которые подтверждают теоретические результаты и показывают эффективность схемы. Эти эксперименты проводились с использованием FreeFem++.\n In this article, we are interested in the complex version of Bertozzi-Esedoglu-Gillete-Cahn-Hilliard equation for grayscale image inpainting as well as the multi-component Cahn-Hilliard systems for image inpainting, that is an extension approach for color image inpainting. We have studied well-posedness of the steady state problem associated to the complex Bertozzi-Esedoglu-Gillete-Cahn-Hilliard equation as well as to Bertozzi-Esedoglu-Gillete-Cahn Hilliard systems. Then, Backward Euler discretization on time has been considered in both models mentioned above. We were able to prove the stability of the backward Euler scheme. Finally, we do some numerical simulations that confirm the theoretical results and show the efficiency of the scheme. The simulations were done using FreeFem++."
     }
   ]
 }
