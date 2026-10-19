@@ -24,7 +24,9 @@ jobs:
           cd -
 
       - name: Run
-        run: node tools/semanticScholar/index.js ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+        env:
+          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+        run: node tools/semanticScholar/index.js
 
       - name: Update articles.json
         run: |
