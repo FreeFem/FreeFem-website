@@ -1,6 +1,64 @@
 {
   "articles": [
     {
+      "paperId": "18ca831a6f6d85df5be638805f310a0d8229ac7d",
+      "url": "https://www.semanticscholar.org/paper/18ca831a6f6d85df5be638805f310a0d8229ac7d",
+      "title": "Projection-difference implicit scheme for one-dimensional equations of hemodynamics",
+      "openAccessPdf": {
+        "url": "https://applmathjournal.spbu.ru/article/download/24157/14918",
+        "status": "GOLD",
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.21638/spbu10.2026.302?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.21638/spbu10.2026.302, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2026-10-16",
+      "authors": [
+        {
+          "authorId": "4713157",
+          "name": "G. Krivovichev"
+        },
+        {
+          "authorId": "2516195114",
+          "name": "Dana A. Naumova"
+        }
+      ],
+      "abstract": "The paper is devoted to the construction and analysis of a projection-difference scheme for numerical simulation of blood flow in vascular systems. An implicit scheme is proposed for a hyperbolic system obtained by averaging the hydrodynamic equations over the vessel crosssection. The unconditional stability of the proposed scheme is demonstrated. For practical implementation, a method of splitting with respect to physical processes is proposed. The first stage of the method involves computation of the deformed configuration of the vessel for a given flow velocity. The second stage involves computation of the fluid velocity in the deformed vessel. Riemann invariants are used to obtain the values at the boundaries. The FreeFEM++ package is used for the software development. As a result of computations for the scheme with piecewise-linear nodal functions, it is demonstrated that the convergence with second order takes place. As a special case, a scheme with weights is considered. It is demonstrated, that the variations of the weight parameter lead to monotonization of the numerical solutions."
+    },
+    {
+      "paperId": "0e0fa497c6f2ac951ae9636201059c09d0b7f727",
+      "url": "https://www.semanticscholar.org/paper/0e0fa497c6f2ac951ae9636201059c09d0b7f727",
+      "title": "Implementing the EIT complete electrode model through Robin boundary conditions",
+      "openAccessPdf": {
+        "url": "",
+        "status": null,
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2610.22944, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2026-10-16",
+      "authors": [
+        {
+          "authorId": "2514866942",
+          "name": "Bing-Zhou Chen"
+        },
+        {
+          "authorId": "2514442655",
+          "name": "Amelia Deakin"
+        },
+        {
+          "authorId": "2250689493",
+          "name": "Andy Adler"
+        },
+        {
+          "authorId": "2983778",
+          "name": "P. Ledger"
+        },
+        {
+          "authorId": "2356231",
+          "name": "William R. B. Lionheart"
+        }
+      ],
+      "abstract": "Objective. Medical electrical impedance tomography systems prescribe electrode currents. Accurate voltages, even on passive electrodes, require the complete electrode model (CEM), the most accurate model known for skin electrodes. Its current constraints specify total electrode currents, whereas standard finite element boundary interfaces impose local conditions. We describe how to implement the CEM through Robin boundary conditions, which are available in standard FEM packages. Approach. Prescribed electrode potentials give Robin problems whose unit-potential responses define an electrode transadmittance matrix. We prove equivalence to the conventional augmented CEM and formalise the discrete energy, equivalence and reference arguments in Lean 4. Numerical comparisons use two-dimensional P1 finite elements in DOLFINx, FreeFEM, GetFEM, MFEM and NGSolve, with the same nodal reference potential as EIDORS. Main results. For identical assembled blocks, the two procedures have the same solution set whenever the Robin matrix is invertible. Across the five packages in dimensionless test cases, maximum absolute electrode-potential differences from EIDORS were below $5\\times10^{-13}$ (2692 nodes), and errors against an exact rational-arithmetic reference were below $1.1\\times10^{-13}$ (2535 nodes). Significance. Standard Robin solves and consistent electrode-current integration provide a portable route to the current-driven CEM, with current constraints enforced through a small electrode system."
+    },
+    {
       "paperId": "7602d7592417bd08770d57e632f8d328738119da",
       "url": "https://www.semanticscholar.org/paper/7602d7592417bd08770d57e632f8d328738119da",
       "title": "Implementation of the Stress-Based Galerkin Finite Element Method for Two-Dimensional Elastodynamic Problems",
@@ -178,7 +236,7 @@
         },
         {
           "authorId": "2006725187",
-          "name": "Aziz A. Kalandarov"
+          "name": "A. Kalandarov"
         },
         {
           "authorId": "2353889734",
@@ -227,25 +285,6 @@
       "abstract": "The paper addresses the formulation of plane elasticity problems in terms of stresses and their numerical solution by the Galerkin finite element method. Based on the equilibrium equations, geometric relations, and physical laws of elasticity, a system of differential equations describing the plane stress state of an elastic medium is derived. The Galerkin method yields the weak form of the boundary value problem and a discrete model suitable for computer implementation. The bilinear forms and local finite element matrices required to assemble the global algebraic system are constructed. The algorithms are implemented in C++ and FreeFEM++. The approach is verified on the classical Kirsch problem of stress distribution around a circular hole in an elastic plate: both implementations agree well with each other and with known analytical solutions, confirming the correctness of the formulation and the applicability of the method."
     },
     {
-      "paperId": "3b4407f8ae4c470560f2c2d2cfb28e020da413a7",
-      "url": "https://www.semanticscholar.org/paper/3b4407f8ae4c470560f2c2d2cfb28e020da413a7",
-      "title": "A Review of Finite Element Methods for Fluid-Structure Interactions",
-      "openAccessPdf": {
-        "url": "",
-        "status": "CLOSED",
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.4208/cicp.oa-2025-0165?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.4208/cicp.oa-2025-0165, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2026-07-01",
-      "authors": [
-        {
-          "authorId": "2293407500",
-          "name": "Yong-Xing Wang"
-        }
-      ],
-      "abstract": "We present a comprehensive review of finite element methods (FEM) for solving fluid–structure interaction (FSI) problems. Our aim is to systematically categorise and compare these methods based on three key aspects: mesh type, coupling strategy, and the choice of solved variables. For each method, we highlight its respective advantages and limitations. In addition, we formulate and compare the finite element weak forms of the various approaches, employing Newton’s method to linearise nonlinear terms at the continuous functional level. We implement six FSI methods in the open-source software package FreeFEM++, and compare these methods based on three benchmarks."
-    },
-    {
       "paperId": "a8944908ad41ebc72432ec99f9b94985a6a470d0",
       "url": "https://www.semanticscholar.org/paper/a8944908ad41ebc72432ec99f9b94985a6a470d0",
       "title": "Numerical Hydrodynamic Analysis of Slip Flow in a Permeable Wall Microchannel Controlled by an Inlet Volumetric Flow Rate",
@@ -277,50 +316,23 @@
       "abstract": "In the present work, a numerical study of the incompressible laminar flow of a Newtonian fluid circulating through a rectangular microchannel of parallel plates with permeable walls is carried out considering slip conditions. For this purpose, the corresponding governing equations, i.e., the mass and momentum conservation equations, are solved using the finite element technique with the free software FreeFEM++ to analyze the hydrodynamics of the flow under consideration, obtaining the velocity and pressure profiles. The main results show that by increasing the dimensionless filtration parameter \\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$\\beta$$\\end{document}, the transverse velocity increases, which causes the longitudinal velocity to decrease due to mass conservation. This behavior is maintained even considering the influence of the dimensionless slip parameter \\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$\\delta$$\\end{document}, which is also reflected in the volumetric flow rate, since as this parameter increases, the volumetric flow rate in the longitudinal direction is slightly enhanced."
     },
     {
-      "paperId": "f7694f0797902bda5f901a0f15871dc548393047",
-      "url": "https://www.semanticscholar.org/paper/f7694f0797902bda5f901a0f15871dc548393047",
-      "title": "Estudio e implementación del método multiescala generalizado (GMsFEM)",
+      "paperId": "3b4407f8ae4c470560f2c2d2cfb28e020da413a7",
+      "url": "https://www.semanticscholar.org/paper/3b4407f8ae4c470560f2c2d2cfb28e020da413a7",
+      "title": "A Review of Finite Element Methods for Fluid-Structure Interactions",
       "openAccessPdf": {
-        "url": "https://doi.org/10.5377/pc.v1i21.23092",
-        "status": "GOLD",
-        "license": "CCBY",
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.5377/pc.v1i21.23092?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.5377/pc.v1i21.23092, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        "url": "",
+        "status": "CLOSED",
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.4208/cicp.oa-2025-0165?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.4208/cicp.oa-2025-0165, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
       },
-      "publicationDate": "2026-06-24",
+      "publicationDate": "2026-07-01",
       "authors": [
         {
-          "authorId": "2447634225",
-          "name": "A. Forero-Laiton"
-        },
-        {
-          "authorId": "2447633993",
-          "name": "Y. Sarmiento-Perdomo"
-        },
-        {
-          "authorId": "2447637486",
-          "name": "Y. Trujillo-Ladino"
+          "authorId": "2293407500",
+          "name": "Yong-Xing Wang"
         }
       ],
-      "abstract": "The aim of this article is to study and apply three numerical methods for solving elliptic partial differential equations: the finite element method (FEM), the multiscale finite element method (MsFEM), and the generalized multiscale finite element method (GMsFEM), with special emphasis on the latter. To this end, a theoretical review of their variational and matrix foundations is presented, followed by computational implementations for homogeneous, heterogeneous, and high-contrast diffusion problems. The simulations were carried out using FreeFem++ and MATLAB, which made it possible to compare the performance of the methods under different scenarios. The results show that the classical multiscale method has limitations when the problem involves highly heterogeneous media or non-separable scales, whereas the generalized multiscale method provides a better representation of local behavior through the construction of basis functions obtained from local spectral problems. It is concluded that this latter method is a more suitable alternative for the numerical approximation of complex multiscale problems, especially in high-contrast settings, where reducing degrees of freedom is required without significantly compromising approximation quality."
-    },
-    {
-      "paperId": "739a13059e6365eb10b35632886da263fceecd77",
-      "url": "https://www.semanticscholar.org/paper/739a13059e6365eb10b35632886da263fceecd77",
-      "title": "EXPRESSION OF CONCERN to CORRIGENDUM. Development of thermoelasticity equations for strains",
-      "openAccessPdf": {
-        "url": "https://doi.org/10.21303/2461-4262.2026.004307",
-        "status": "GOLD",
-        "license": "CCBY",
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.21303/2461-4262.2026.004307?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.21303/2461-4262.2026.004307, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2026-06-23",
-      "authors": [
-        {
-          "authorId": "2444107480",
-          "name": "EUREKA: Physics and Engineering"
-        }
-      ],
-      "abstract": "Before corrigendum (First published version)Khaldjigitov, A., Djumayozov, U., Tilovov, O., Bobonazarov, A., Khudazarov, R., Pulatov, S. (2026). EXPRESSION OF CONCERN AND CORRIGENDUM. Development of thermoelasticity equations for strains. EUREKA: Physics and Engineering, 1, 181-194. https://doi.org/10.21303/2461-4262.2026.003924 \nAfter corrigendum (Corrected version)Khaldjigitov, A., Djumayozov, U., Tilovov, O., Bobonazarov, A., Khudazarov, R., Pulatov, S. (2026). CORRIGENDUM. Development of thermoelasticity equations for strains. EUREKA: Physics and Engineering, 1, 229–246. https://doi.org/10.21303/2461-4262.2026.004305 \nCorrigendum notification \nCORRIGENDUM NOTIFICATION to Development of thermoelasticity equations for strains (2026). EUREKA: Physics and Engneering, 1, 247–248. https://doi.org/10.21303/2461-4262.2026.004308 \n============================================ \nA revised version of the paper has been published Khaldjigitov, A., Djumayozov, U., Tilovov, O., Bobonazarov, A., Khudazarov, R., & Pulatov, S. (2026). CORRIGENDUM. Development of thermoelasticity equations for strains. EUREKA: Physics and Engineering, 1, 00–00. https://doi.org/10.21303/2461-4262.2026.004305, adding additional references, strengthening the discussion of compatibility conditions and stress-based formulations, as well as adding new numerical comparisons and convergence illustrations. \nHowever, the editors would like to warn readers that in the paper the admissibility and equivalence of the additional boundary conditions imposed in the strain formulation remain insufficiently justified from a rigorous mathematical standpoint. The revised manuscript demonstrates that the proposed approach may be computationally workable and numerically promising for the considered benchmark problems, but it still falls short of providing a complete theoretical foundation establishing equivalence with classical thermoelasticity. \nThe formulations proposed in the paper remain the subject of further theoretical verification, in particular regarding the rigorous mathematical justification of the boundary conditions and the proof of equivalence with classical thermoelasticity. \nThe revised version clearly reflects the authors' considerable efforts to address the criticisms. The manuscript has been significantly expanded, additional references have been added, the discussion of compatibility conditions and stress-based formulations has been strengthened, and new numerical comparisons and illustrations of convergence have been added. However, despite these improvements, some of the major methodological problems identified in the initial peer review remain only partially resolved. \nThe authors correctly emphasize that strain-based formulations of elasticity and thermoelasticity are admissible within continuum mechanics and that similar conceptual difficulties also arise in stress-based formulations such as the Beltrami–Michell approach. The corrigendum paper provides a broader theoretical context and cites literature discussing the dependence and independence of compatibility equations, uniqueness issues, and alternative formulations in stresses and strains. This addition improves the scientific positioning of the work and weakens the earlier criticism that the proposed formulation is fundamentally incompatible with classical thermoelasticity. \nThe derivation of the generalized compatibility equation, including thermal terms, in the corrigendum paper presented more clearly and consistently. The authors explicitly state that temperature enters the formulation through the Duhamel-Neumann relations and demonstrate the sequence of substitutions leading to equation (10). From the standpoint of thermoelastic theory, this derivation is acceptable. The revised text therefore adequately addresses the earlier concern that thermal effects had been introduced into the compatibility equations in an inconsistent or nonphysical manner. \nHowever, the central issue (namely the mathematical and physical admissibility of the additional boundary conditions) remains insufficiently resolved. The corrigendum paper continues to rely on equilibrium equations imposed on the boundary as additional boundary conditions required to close the strain-based system. Although the authors now cite prior works in which similar ideas were considered for stress-based formulations, this does not constitute a rigorous proof that the proposed boundary conditions are independent, sufficient, or fully equivalent to classical traction or displacement conditions. The response letter openly acknowledges that “a rigorous theoretical proof of equivalence to displacement-based boundary value problems requires a separate investigation and constitutes a subject of future research”. This statement is important because it effectively confirms that the principal mathematical concern has not yet been fully resolved. \nFrom a rigorous continuum mechanics perspective, the problem is not merely whether equilibrium relations can formally be written on the boundary, but whether such conditions ensure a well-posed problem in the Hadamard sense, including existence, uniqueness, and continuous dependence on the prescribed data. The corrigendum paper still does not provide such analysis. No variational framework, functional setting, or proof of equivalence between the proposed strain formulation and the classical displacement formulation is established. Consequently, the mathematical status of Problems A and B remains partially heuristic. \nThe discussion concerning the overdetermined nature of the original system and the subsequent reduction procedure has also been improved but not completely resolved. The authors now explicitly discuss the issue of selecting independent compatibility equations and relate their approach to the Beltrami–Michell framework. Nevertheless, the corrigendum paper still lacks a rigorous proof that the reduced Poisson-type system obtained for Problem B is mathematically equivalent to the original compatibility formulation and does not eliminate physically relevant constraints. The derivation is formally plausible, but the equivalence remains assumed rather than demonstrated. \nThe numerical section has been substantially strengthened compared with the original version. The addition of comparisons with FreeFEM++ finite element results, convergence plots, mesh refinement comments, and quantitative discrepancy estimates represents a clear improvement. The agreement between the finite-difference formulation and the FEM solution is indeed reasonably good for the selected benchmark example. The convergence behavior shown in Fig. 3 also supports the internal numerical consistency of the implemented scheme. \nAt the same time, the presented validation still has limitations. The comparisons are restricted to a single relatively simple benchmark involving a rectangular plate with a prescribed sinusoidal temperature field. The study does not include analytical benchmark solutions, error norms, sensitivity analyses, or verification against cases with nontrivial mechanical loading or mixed boundary conditions. Moreover, the claim that strain-based formulations are “more accurate” than displacement-based approaches because displacement formulations require numerical differentiation is presented too categorically and without sufficient quantitative justification. Modern finite element methods formulated in displacements are capable of highly accurate stress recovery, and the issue is more subtle than stated in the manuscript. The current discussion tends to overgeneralize the limitations of displacement-based methods while emphasizing the advantages of the proposed approach without a sufficiently broad comparative basis. \nAnother important point is that the corrigendum paper occasionally mixes numerical evidence with mathematical validation. Numerical agreement between different discretization certainly supports the practical consistency of the method, but it cannot replace a proof of theoretical equivalence or well-posedness. Several statements in the conclusions continue to overstate the level of validation achieved. For example, assertions that the results “confirm the correctness” and “substantiate the validity” of the proposed thermoelastic equations should be formulated more cautiously, since the theoretical foundation of the additional boundary conditions remains unresolved. \nIn conclusion, the corrigendum paper should not be regarded as fundamentally incorrect, and the additional numerical results substantially strengthen the practical credibility of the approach. \nHowever, the work still contains unresolved theoretical issues that limit the strength of its claims. The paper may therefore be considered an interesting and potentially valuable exploratory contribution to alternative thermoelastic formulations, but not yet a fully validated theoretical framework."
+      "abstract": "We present a comprehensive review of finite element methods (FEM) for solving fluid–structure interaction (FSI) problems. Our aim is to systematically categorise and compare these methods based on three key aspects: mesh type, coupling strategy, and the choice of solved variables. For each method, we highlight its respective advantages and limitations. In addition, we formulate and compare the finite element weak forms of the various approaches, employing Newton’s method to linearise nonlinear terms at the continuous functional level. We implement six FSI methods in the open-source software package FreeFEM++, and compare these methods based on three benchmarks."
     }
   ]
 }
