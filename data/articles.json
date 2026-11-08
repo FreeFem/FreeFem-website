@@ -1,29 +1,6 @@
 {
   "articles": [
     {
-      "paperId": "18ca831a6f6d85df5be638805f310a0d8229ac7d",
-      "url": "https://www.semanticscholar.org/paper/18ca831a6f6d85df5be638805f310a0d8229ac7d",
-      "title": "Projection-difference implicit scheme for one-dimensional equations of hemodynamics",
-      "openAccessPdf": {
-        "url": "https://applmathjournal.spbu.ru/article/download/24157/14918",
-        "status": "GOLD",
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.21638/spbu10.2026.302?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.21638/spbu10.2026.302, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2026-10-16",
-      "authors": [
-        {
-          "authorId": "4713157",
-          "name": "G. Krivovichev"
-        },
-        {
-          "authorId": "2516195114",
-          "name": "Dana A. Naumova"
-        }
-      ],
-      "abstract": "The paper is devoted to the construction and analysis of a projection-difference scheme for numerical simulation of blood flow in vascular systems. An implicit scheme is proposed for a hyperbolic system obtained by averaging the hydrodynamic equations over the vessel crosssection. The unconditional stability of the proposed scheme is demonstrated. For practical implementation, a method of splitting with respect to physical processes is proposed. The first stage of the method involves computation of the deformed configuration of the vessel for a given flow velocity. The second stage involves computation of the fluid velocity in the deformed vessel. Riemann invariants are used to obtain the values at the boundaries. The FreeFEM++ package is used for the software development. As a result of computations for the scheme with piecewise-linear nodal functions, it is demonstrated that the convergence with second order takes place. As a special case, a scheme with weights is considered. It is demonstrated, that the variations of the weight parameter lead to monotonization of the numerical solutions."
-    },
-    {
       "paperId": "0e0fa497c6f2ac951ae9636201059c09d0b7f727",
       "url": "https://www.semanticscholar.org/paper/0e0fa497c6f2ac951ae9636201059c09d0b7f727",
       "title": "Implementing the EIT complete electrode model through Robin boundary conditions",
@@ -57,6 +34,29 @@
         }
       ],
       "abstract": "Objective. Medical electrical impedance tomography systems prescribe electrode currents. Accurate voltages, even on passive electrodes, require the complete electrode model (CEM), the most accurate model known for skin electrodes. Its current constraints specify total electrode currents, whereas standard finite element boundary interfaces impose local conditions. We describe how to implement the CEM through Robin boundary conditions, which are available in standard FEM packages. Approach. Prescribed electrode potentials give Robin problems whose unit-potential responses define an electrode transadmittance matrix. We prove equivalence to the conventional augmented CEM and formalise the discrete energy, equivalence and reference arguments in Lean 4. Numerical comparisons use two-dimensional P1 finite elements in DOLFINx, FreeFEM, GetFEM, MFEM and NGSolve, with the same nodal reference potential as EIDORS. Main results. For identical assembled blocks, the two procedures have the same solution set whenever the Robin matrix is invertible. Across the five packages in dimensionless test cases, maximum absolute electrode-potential differences from EIDORS were below $5\\times10^{-13}$ (2692 nodes), and errors against an exact rational-arithmetic reference were below $1.1\\times10^{-13}$ (2535 nodes). Significance. Standard Robin solves and consistent electrode-current integration provide a portable route to the current-driven CEM, with current constraints enforced through a small electrode system."
+    },
+    {
+      "paperId": "18ca831a6f6d85df5be638805f310a0d8229ac7d",
+      "url": "https://www.semanticscholar.org/paper/18ca831a6f6d85df5be638805f310a0d8229ac7d",
+      "title": "Projection-difference implicit scheme for one-dimensional equations of hemodynamics",
+      "openAccessPdf": {
+        "url": "https://applmathjournal.spbu.ru/article/download/24157/14918",
+        "status": "GOLD",
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.21638/spbu10.2026.302?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.21638/spbu10.2026.302, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2026-10-16",
+      "authors": [
+        {
+          "authorId": "4713157",
+          "name": "G. Krivovichev"
+        },
+        {
+          "authorId": "2516195114",
+          "name": "Dana A. Naumova"
+        }
+      ],
+      "abstract": "The paper is devoted to the construction and analysis of a projection-difference scheme for numerical simulation of blood flow in vascular systems. An implicit scheme is proposed for a hyperbolic system obtained by averaging the hydrodynamic equations over the vessel crosssection. The unconditional stability of the proposed scheme is demonstrated. For practical implementation, a method of splitting with respect to physical processes is proposed. The first stage of the method involves computation of the deformed configuration of the vessel for a given flow velocity. The second stage involves computation of the fluid velocity in the deformed vessel. Riemann invariants are used to obtain the values at the boundaries. The FreeFEM++ package is used for the software development. As a result of computations for the scheme with piecewise-linear nodal functions, it is demonstrated that the convergence with second order takes place. As a special case, a scheme with weights is considered. It is demonstrated, that the variations of the weight parameter lead to monotonization of the numerical solutions."
     },
     {
       "paperId": "7602d7592417bd08770d57e632f8d328738119da",
@@ -96,6 +96,33 @@
         }
       ],
       "abstract": "This study considers a two-dimensional dynamic problem of linear elasticity formulated directly in terms of the stress tensor components. A coupled system of differential equations for two normal stress components and one shear stress component is derived from the equations of motion, kinematic relations, and Hooke’s law. Initial and traction boundary conditions are specified for the resulting system. Spatial discretization is performed using the Galerkin method with linear triangular finite elements. Element mass and stiffness matrices accounting for the coupling between the stress components are derived. Time integration is implemented using the Newmark method in a C++ program. An independent computational implementation is developed in FreeFEM++ using an implicit finite-difference approximation of the time derivatives. The sensitivity of the solution to the finite element size and time step is investigated. Successive refinement of the spatial and temporal discretizations leads to stabilization of the computed stresses. The method is validated using two benchmark problems. For a rectangular domain subjected to a time-dependent surface load, the stress histories computed in C++ and FreeFEM++ are in agreement. For transient wave propagation from a circular cavity, the results are compared with an analytical solution, the QL boundary element method, and the classical displacement-based finite element formulation. The minimum circumferential stress is −1.2250, compared with the analytical value of −1.2253, corresponding to a difference of approximately 0.025%. The direct stress formulation eliminates the need to recover stresses by differentiating the displacement field and yields a smoother time history for the discretization considered. The results confirm the applicability of the developed finite element scheme to dynamic elasticity problems formulated in terms of stresses."
+    },
+    {
+      "paperId": "6f9046e0b0059b9578fdad3e89fcaccc26de6d30",
+      "url": "https://www.semanticscholar.org/paper/6f9046e0b0059b9578fdad3e89fcaccc26de6d30",
+      "title": "Numerical Solution of the Plane Dynamic Problem of Elasticity in Terms of Stresses",
+      "openAccessPdf": {
+        "url": "https://pmjournal.uz/jour/article/download/20/10",
+        "status": "HYBRID",
+        "license": "CCBY",
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.68846/pmjournal-2026-37-00002?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.68846/pmjournal-2026-37-00002, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2026-09-30",
+      "authors": [
+        {
+          "authorId": "2353889734",
+          "name": "A. Bobonazarov"
+        },
+        {
+          "authorId": "102254565",
+          "name": "A. Khaldjigitov"
+        },
+        {
+          "authorId": "2212668316",
+          "name": "O. Tilovov"
+        }
+      ],
+      "abstract": "This study addresses the formulation and numerical solution of a plane dynamic elasticity problem in which the stress tensor components are the primary unknowns. The objective is to develop a numerical algorithm for directly determining the dynamic stress field in a homogeneous isotropic elastic medium. The equations of motion, strain–displacement relations, and Hooke’s law are used to derive a system of three differential equations in terms of stresses, supplemented by initial and boundary conditions. Spatial discretization is performed using the Galerkin finite element method. Time integration is carried out using the Newmark method in a C++ program and a finite difference scheme in a FreeFEM++ implementation. A rectangular domain is subjected to a time-dependent normal load on its upper boundary, while the remaining boundaries are traction-free. Spatial stress distributions and the time history of the normal stress at the centre of the domain are obtained. Comparison of the two implementations shows qualitative agreement in the stress distributions and their oscillatory behaviour. The results demonstrate the applicability of the approach to the numerical investigation of plane dynamic elasticity problems formulated in terms of stresses."
     },
     {
       "paperId": "88970f77494e874a0b71bbf7b7eccb19bd5f3303",
@@ -270,8 +297,8 @@
       "publicationDate": "2026-07-02",
       "authors": [
         {
-          "authorId": null,
-          "name": "А. А. Халджигитов"
+          "authorId": "102838163",
+          "name": "A. Khaldzhigitov"
         },
         {
           "authorId": "2353889734",
@@ -283,37 +310,6 @@
         }
       ],
       "abstract": "The paper addresses the formulation of plane elasticity problems in terms of stresses and their numerical solution by the Galerkin finite element method. Based on the equilibrium equations, geometric relations, and physical laws of elasticity, a system of differential equations describing the plane stress state of an elastic medium is derived. The Galerkin method yields the weak form of the boundary value problem and a discrete model suitable for computer implementation. The bilinear forms and local finite element matrices required to assemble the global algebraic system are constructed. The algorithms are implemented in C++ and FreeFEM++. The approach is verified on the classical Kirsch problem of stress distribution around a circular hole in an elastic plate: both implementations agree well with each other and with known analytical solutions, confirming the correctness of the formulation and the applicability of the method."
-    },
-    {
-      "paperId": "a8944908ad41ebc72432ec99f9b94985a6a470d0",
-      "url": "https://www.semanticscholar.org/paper/a8944908ad41ebc72432ec99f9b94985a6a470d0",
-      "title": "Numerical Hydrodynamic Analysis of Slip Flow in a Permeable Wall Microchannel Controlled by an Inlet Volumetric Flow Rate",
-      "openAccessPdf": {
-        "url": "https://doi.org/10.1007/s44198-026-00452-3",
-        "status": "HYBRID",
-        "license": "CCBYNCND",
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1007/s44198-026-00452-3?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1007/s44198-026-00452-3, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2026-07-01",
-      "authors": [
-        {
-          "authorId": "104266825",
-          "name": "I. Monsivais"
-        },
-        {
-          "authorId": "118337591",
-          "name": "J. Lizardi"
-        },
-        {
-          "authorId": "143602325",
-          "name": "F. Méndez"
-        },
-        {
-          "authorId": "2222486766",
-          "name": "Edgar A. Ramos"
-        }
-      ],
-      "abstract": "In the present work, a numerical study of the incompressible laminar flow of a Newtonian fluid circulating through a rectangular microchannel of parallel plates with permeable walls is carried out considering slip conditions. For this purpose, the corresponding governing equations, i.e., the mass and momentum conservation equations, are solved using the finite element technique with the free software FreeFEM++ to analyze the hydrodynamics of the flow under consideration, obtaining the velocity and pressure profiles. The main results show that by increasing the dimensionless filtration parameter \\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$\\beta$$\\end{document}, the transverse velocity increases, which causes the longitudinal velocity to decrease due to mass conservation. This behavior is maintained even considering the influence of the dimensionless slip parameter \\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$\\delta$$\\end{document}, which is also reflected in the volumetric flow rate, since as this parameter increases, the volumetric flow rate in the longitudinal direction is slightly enhanced."
     },
     {
       "paperId": "3b4407f8ae4c470560f2c2d2cfb28e020da413a7",
