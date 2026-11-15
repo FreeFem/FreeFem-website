@@ -1,6 +1,29 @@
 {
   "articles": [
     {
+      "paperId": "18ca831a6f6d85df5be638805f310a0d8229ac7d",
+      "url": "https://www.semanticscholar.org/paper/18ca831a6f6d85df5be638805f310a0d8229ac7d",
+      "title": "Projection-difference implicit scheme for one-dimensional equations of hemodynamics",
+      "openAccessPdf": {
+        "url": "https://applmathjournal.spbu.ru/article/download/24157/14918",
+        "status": "GOLD",
+        "license": null,
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.21638/spbu10.2026.302?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.21638/spbu10.2026.302, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+      },
+      "publicationDate": "2026-10-16",
+      "authors": [
+        {
+          "authorId": "4713157",
+          "name": "G. V. Krivovichev"
+        },
+        {
+          "authorId": "2516195114",
+          "name": "Dana A. Naumova"
+        }
+      ],
+      "abstract": "The paper is devoted to the construction and analysis of a projection-difference scheme for numerical simulation of blood flow in vascular systems. An implicit scheme is proposed for a hyperbolic system obtained by averaging the hydrodynamic equations over the vessel crosssection. The unconditional stability of the proposed scheme is demonstrated. For practical implementation, a method of splitting with respect to physical processes is proposed. The first stage of the method involves computation of the deformed configuration of the vessel for a given flow velocity. The second stage involves computation of the fluid velocity in the deformed vessel. Riemann invariants are used to obtain the values at the boundaries. The FreeFEM++ package is used for the software development. As a result of computations for the scheme with piecewise-linear nodal functions, it is demonstrated that the convergence with second order takes place. As a special case, a scheme with weights is considered. It is demonstrated, that the variations of the weight parameter lead to monotonization of the numerical solutions."
+    },
+    {
       "paperId": "0e0fa497c6f2ac951ae9636201059c09d0b7f727",
       "url": "https://www.semanticscholar.org/paper/0e0fa497c6f2ac951ae9636201059c09d0b7f727",
       "title": "Implementing the EIT complete electrode model through Robin boundary conditions",
@@ -34,29 +57,6 @@
         }
       ],
       "abstract": "Objective. Medical electrical impedance tomography systems prescribe electrode currents. Accurate voltages, even on passive electrodes, require the complete electrode model (CEM), the most accurate model known for skin electrodes. Its current constraints specify total electrode currents, whereas standard finite element boundary interfaces impose local conditions. We describe how to implement the CEM through Robin boundary conditions, which are available in standard FEM packages. Approach. Prescribed electrode potentials give Robin problems whose unit-potential responses define an electrode transadmittance matrix. We prove equivalence to the conventional augmented CEM and formalise the discrete energy, equivalence and reference arguments in Lean 4. Numerical comparisons use two-dimensional P1 finite elements in DOLFINx, FreeFEM, GetFEM, MFEM and NGSolve, with the same nodal reference potential as EIDORS. Main results. For identical assembled blocks, the two procedures have the same solution set whenever the Robin matrix is invertible. Across the five packages in dimensionless test cases, maximum absolute electrode-potential differences from EIDORS were below $5\\times10^{-13}$ (2692 nodes), and errors against an exact rational-arithmetic reference were below $1.1\\times10^{-13}$ (2535 nodes). Significance. Standard Robin solves and consistent electrode-current integration provide a portable route to the current-driven CEM, with current constraints enforced through a small electrode system."
-    },
-    {
-      "paperId": "18ca831a6f6d85df5be638805f310a0d8229ac7d",
-      "url": "https://www.semanticscholar.org/paper/18ca831a6f6d85df5be638805f310a0d8229ac7d",
-      "title": "Projection-difference implicit scheme for one-dimensional equations of hemodynamics",
-      "openAccessPdf": {
-        "url": "https://applmathjournal.spbu.ru/article/download/24157/14918",
-        "status": "GOLD",
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.21638/spbu10.2026.302?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.21638/spbu10.2026.302, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
-      },
-      "publicationDate": "2026-10-16",
-      "authors": [
-        {
-          "authorId": "4713157",
-          "name": "G. Krivovichev"
-        },
-        {
-          "authorId": "2516195114",
-          "name": "Dana A. Naumova"
-        }
-      ],
-      "abstract": "The paper is devoted to the construction and analysis of a projection-difference scheme for numerical simulation of blood flow in vascular systems. An implicit scheme is proposed for a hyperbolic system obtained by averaging the hydrodynamic equations over the vessel crosssection. The unconditional stability of the proposed scheme is demonstrated. For practical implementation, a method of splitting with respect to physical processes is proposed. The first stage of the method involves computation of the deformed configuration of the vessel for a given flow velocity. The second stage involves computation of the fluid velocity in the deformed vessel. Riemann invariants are used to obtain the values at the boundaries. The FreeFEM++ package is used for the software development. As a result of computations for the scheme with piecewise-linear nodal functions, it is demonstrated that the convergence with second order takes place. As a special case, a scheme with weights is considered. It is demonstrated, that the variations of the weight parameter lead to monotonization of the numerical solutions."
     },
     {
       "paperId": "7602d7592417bd08770d57e632f8d328738119da",
@@ -185,7 +185,7 @@
         },
         {
           "authorId": "2067222500",
-          "name": "Víctor Jaramillo"
+          "name": "Víctor J. Jaramillo"
         },
         {
           "authorId": "2294564407",
@@ -312,23 +312,35 @@
       "abstract": "The paper addresses the formulation of plane elasticity problems in terms of stresses and their numerical solution by the Galerkin finite element method. Based on the equilibrium equations, geometric relations, and physical laws of elasticity, a system of differential equations describing the plane stress state of an elastic medium is derived. The Galerkin method yields the weak form of the boundary value problem and a discrete model suitable for computer implementation. The bilinear forms and local finite element matrices required to assemble the global algebraic system are constructed. The algorithms are implemented in C++ and FreeFEM++. The approach is verified on the classical Kirsch problem of stress distribution around a circular hole in an elastic plate: both implementations agree well with each other and with known analytical solutions, confirming the correctness of the formulation and the applicability of the method."
     },
     {
-      "paperId": "3b4407f8ae4c470560f2c2d2cfb28e020da413a7",
-      "url": "https://www.semanticscholar.org/paper/3b4407f8ae4c470560f2c2d2cfb28e020da413a7",
-      "title": "A Review of Finite Element Methods for Fluid-Structure Interactions",
+      "paperId": "a8944908ad41ebc72432ec99f9b94985a6a470d0",
+      "url": "https://www.semanticscholar.org/paper/a8944908ad41ebc72432ec99f9b94985a6a470d0",
+      "title": "Numerical Hydrodynamic Analysis of Slip Flow in a Permeable Wall Microchannel Controlled by an Inlet Volumetric Flow Rate",
       "openAccessPdf": {
-        "url": "",
-        "status": "CLOSED",
-        "license": null,
-        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.4208/cicp.oa-2025-0165?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.4208/cicp.oa-2025-0165, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        "url": "https://doi.org/10.1007/s44198-026-00452-3",
+        "status": "HYBRID",
+        "license": "CCBYNCND",
+        "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1007/s44198-026-00452-3?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1007/s44198-026-00452-3, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
       },
       "publicationDate": "2026-07-01",
       "authors": [
         {
-          "authorId": "2293407500",
-          "name": "Yong-Xing Wang"
+          "authorId": "104266825",
+          "name": "I. Monsivais"
+        },
+        {
+          "authorId": "118337591",
+          "name": "J. Lizardi"
+        },
+        {
+          "authorId": "143602325",
+          "name": "F. Méndez"
+        },
+        {
+          "authorId": "2222486766",
+          "name": "Edgar A. Ramos"
         }
       ],
-      "abstract": "We present a comprehensive review of finite element methods (FEM) for solving fluid–structure interaction (FSI) problems. Our aim is to systematically categorise and compare these methods based on three key aspects: mesh type, coupling strategy, and the choice of solved variables. For each method, we highlight its respective advantages and limitations. In addition, we formulate and compare the finite element weak forms of the various approaches, employing Newton’s method to linearise nonlinear terms at the continuous functional level. We implement six FSI methods in the open-source software package FreeFEM++, and compare these methods based on three benchmarks."
+      "abstract": "In the present work, a numerical study of the incompressible laminar flow of a Newtonian fluid circulating through a rectangular microchannel of parallel plates with permeable walls is carried out considering slip conditions. For this purpose, the corresponding governing equations, i.e., the mass and momentum conservation equations, are solved using the finite element technique with the free software FreeFEM++ to analyze the hydrodynamics of the flow under consideration, obtaining the velocity and pressure profiles. The main results show that by increasing the dimensionless filtration parameter \\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$\\beta$$\\end{document}, the transverse velocity increases, which causes the longitudinal velocity to decrease due to mass conservation. This behavior is maintained even considering the influence of the dimensionless slip parameter \\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$\\delta$$\\end{document}, which is also reflected in the volumetric flow rate, since as this parameter increases, the volumetric flow rate in the longitudinal direction is slightly enhanced."
     }
   ]
 }
